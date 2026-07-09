@@ -1,0 +1,71 @@
+# .clauderc_memory — persistent context, portable across machines/failures
+# This is the durable memory file. Unlike Claude Code's built-in per-machine
+# memory (~/.claude/projects/.../memory/), THIS file is meant to be committed
+# and pushed, so a full computer death doesn't lose it. Read this at the start
+# of every session, after .clauderc. Update it as things change — prune stale
+# entries rather than letting them silently rot.
+#
+# Format: dated entries, most recent state first per topic. Keep entries
+# honest about what's confirmed vs. hypothesis vs. failed.
+
+═══════════════════════════════════════════════════════════════════════════
+HOW TO USE THIS FILE (meta)
+═══════════════════════════════════════════════════════════════════════════
+
+- This file holds CROSS-CUTTING material only — things with no single home
+  directory (standing feedback, git/credential hygiene, the repo map itself).
+  Anything scoped to one repo lives in .clauderc_context_1 under that repo's
+  own heading instead (2026-07-07 restructure — directory-scoped content
+  used to live here, migrated out to keep this file from duplicating
+  context_1 and to keep each directory's context pure/self-contained).
+- Prefer `tree` over brute-force `find` for exploration (Cody's correction,
+  2026-07-07) — see .clauderc for the pattern.
+- Repo paths/URLs live in .clauderc, not here.
+- Canonical equations/notation live in .clauderc_canonical_maths, not here —
+  this file should describe STATE and DECISIONS, not re-derive the maths.
+- When a hypothesis is tested and fails, record the failure and WHY, not just
+  "tried X, didn't work" — the diagnosis is what prevents repeating it.
+
+═══════════════════════════════════════════════════════════════════════════
+ACTIVE THREAD — UDEO: the exploit vs. the translator
+═══════════════════════════════════════════════════════════════════════════
+
+Moved to .clauderc_context_1, under "## VAPMIP" — that's the thread's actual
+home directory (UDEO_monad.py and Tuning-the-Engine.md Phase 22 both live
+there). Read that entry, not this one, for current state.
+
+═══════════════════════════════════════════════════════════════════════════
+REPO / SESSION HOUSEKEEPING (check freshness before trusting)
+═══════════════════════════════════════════════════════════════════════════
+
+VAPMIP's working-tree state moved to .clauderc_context_1 ("## VAPMIP").
+
+Ainulindale (as of the 2026-06-30 primer — STALE, re-check with `git
+status` before trusting, and migrate into its own .clauderc_context_1
+entry next time that repo is worked on): uncommitted changes
+(wiki/00_index.md, wiki/72), untracked wiki/73-75. Not pushed.
+
+═══════════════════════════════════════════════════════════════════════════
+GIT / CREDENTIALS — handle with care
+═══════════════════════════════════════════════════════════════════════════
+
+Several repo `origin` remotes under $THEPLACE have GitHub PATs embedded in
+plaintext in the URL (ghp_... visible via `git remote -v`). Never copy a
+remote URL verbatim into a file that gets committed/pushed -- always use
+the clean https://github.com/... form (see .clauderc). This was flagged
+2026-07-07, tokens not yet rotated as of that date.
+
+═══════════════════════════════════════════════════════════════════════════
+FEEDBACK LOG — how Cody wants this worked
+═══════════════════════════════════════════════════════════════════════════
+
+- 2026-07-07: Use `tree` (scoped/filtered to context) instead of brute-force
+  `find` for directory exploration. Reason: find-everything is slow and
+  noisy; tree with the right flags gives the needed picture directly.
+- 2026-07-07: When Cody uses vivid/loaded language ("EXACT", "Universal
+  Translator working") treat it as describing a SPECIFIC case precisely,
+  not as license to generalize that property to every adjacent test. Ask
+  or reread source material before assuming scope.
+- 2026-07-07: Don't reconstruct a mechanism from a verbal description
+  repeatedly when it keeps failing -- go find/run the original
+  implementation instead of guessing at its shape again.

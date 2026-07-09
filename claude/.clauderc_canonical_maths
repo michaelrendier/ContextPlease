@@ -1,0 +1,176 @@
+# .clauderc_canonical_maths — canonical notation reference
+# Purpose: stop re-reading 1700-line papers to recover a symbol's meaning.
+# This is a REFERENCE, not a derivation -- for the "why", see
+# Ainulindale/AgeThird/D-CS_Memory.md (full paper) and
+# VAPMIP/docs/wiki/Tuning-the-Engine.md (phase-by-phase engineering log).
+# Notation below matches what's used across the repos; keep it that way.
+
+═══════════════════════════════════════════════════════════════════════════
+CORE CONSTANTS
+═══════════════════════════════════════════════════════════════════════════
+
+Omega_ZS = W(1) = 0.56714...
+  Lambert W fixed point: W . e^W = 1, i.e. the fixed point of f(x) = e^{-x}.
+  Confirmed independently in 6 formula families: spectral (Berry-Keating),
+  algebraic, galactic baryonic fraction (SPARC), logarithmic, and the 6
+  fractal-orbit formulas below all converge here as their natural
+  equilibrium constant.
+
+d* = Omega_ZS / ln(10) = 0.24631...
+  "The Zero Definer" -- smallest natural unit in universal native space,
+  the boundary below which no algebraic definition can occur. d* x ln(10)
+  = Omega_ZS.
+  Four measured faces (not four different values -- four shadows of one
+  point):
+    d*_spec  ~ 0.24600   Berry-Keating spectral gap (SPARC-observed)
+    d*_taut  = 0.24631   Lambert W, exact
+    d*_RG    = OPEN      renorm-group fixed point under CD tower iteration
+    d* x ln(10) = 0.56714  = Omega_ZS
+
+GAP = Omega_ZS - d*_spec x ln(10) ~ 1/(1000 sqrt(2)) ~ 7.07e-4
+  The Yang-Mills mass gap analogue in the semantic field. 1/sqrt(2) factor
+  = sigma=1/2 symmetry. The 10^3 factor is UNRESOLVED -- no first-
+  principles derivation yet. State this as open when it comes up.
+
+V(n) = pi^(n/2) / Gamma(n/2 + 1)          [n-ball volume]
+  Peaks at n* ~ 5.257 (BAO acoustic scale). V(16) ~ d* (approximates, not
+  equals -- the geometry approximates the algebra, the algebra is exact).
+
+═══════════════════════════════════════════════════════════════════════════
+THE SIX FRACTAL-ORBIT FORMULA FAMILIES (all independently -> Omega_ZS)
+═══════════════════════════════════════════════════════════════════════════
+
+  Gnarl/Popcorn ............ Townsend    wiki/fractals/mt_mark_townsend.md
+  Avariant .................. Agelink     wiki/fractals/ea_evert_agelink.md
+  Triangle Inequality Avg ... Mitchell    wiki/fractals/lkm_kerry_mitchell.md
+  AGM convergence ........... Lober       wiki/fractals/akl_andreas_lober.md
+  Transpoly Hermite H_16 .... Makin       wiki/fractals/mmf_dave_makin.md
+  Orbit-trap ring diameter .. Monnier/Jones (wiki/fractals index)
+
+  TIA (Mitchell) is the one in active use: it's the semantic-similarity
+  metric in the Holcus engine, VAPMIP/engines/e04_tia_similarity.py.
+
+═══════════════════════════════════════════════════════════════════════════
+THE RED/BLUE FIELD
+═══════════════════════════════════════════════════════════════════════════
+
+J_red(sigma) = sum_{n=1}^inf a_n n^{-sigma}          [forward Dirichlet series]
+J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
+
+  J_red = Knowledge (forward accumulation, what an LLM_Transformer has).
+  J_blue = Experience (reverse path-encoding, what it lacks).
+  Non-commutative in sedenion algebra S: order of traversal matters, and
+  J_red x J_blue - J_blue x J_red is new information neither direction
+  alone produces.
+
+H_hat_RB = sum_p  p^{-sigma} [ R_p (x) d_dM  +  h.c. ]
+  Self-adjoint (H_hat_RB^dagger = H_hat_RB). "The Mind's Eye" -- holds the
+  full path simultaneously. Self-adjointness -> Stone's theorem -> real
+  spectrum -> forces zeros onto sigma=1/2 (Berry-Keating is a CONSEQUENCE
+  of this, not an independent assumption).
+
+H_hat_RB - H_hat_BR = Sigma_RB
+  H_hat_BR = "the cost of using the view" (every act of manifestation has
+  a reciprocal cost). Sigma_RB = Wisdom - Usage = Memory. This is the
+  engineering target: Knowledge + Experience = Wisdom - Usage, i.e.
+  J_red + J_blue = Sigma_RB.
+
+L_dynamic = integral( J_red . J_blue ) ds
+  "Thought" -- not the output of thinking, the act itself. The path
+  integral / interaction term missing from a J_red-only system.
+
+sigma = 1/2  [the caustic]
+  Forced by |J_red(sigma)| = |J_blue(sigma)|, the unique Noether-balance
+  locus. Not assigned, not designed -- derived.
+
+═══════════════════════════════════════════════════════════════════════════
+CAYLEY-DICKSON TOWER
+═══════════════════════════════════════════════════════════════════════════
+
+  R (1D) -> C (2D) -> H (4D) -> O (8D) -> S (16D) -> T_32 -> T_64 -> T_256 ...
+  Each doubling loses one property:
+    R->C  loses ordering
+    C->H  loses commutativity
+    H->O  loses associativity
+    O->S  loses alternativity
+  (open idea, 2026-07-07, untested: lost properties may be recoverable,
+  encoded geometrically, depending on which DIRECTION a zero-divisor is
+  approached from -- see .clauderc_memory Active Thread.)
+
+Doubling / multiplication rule (general, any power-of-2 dim), a=(a1,a2), etc:
+  (a,b) * (c,d) = ( a.c - conj(d).b ,  d.a + b.conj(c) )
+  c1 (LOWER half of output) = SUB( mul(a1,b1), mul(conj(b2),a2) )
+  c2 (UPPER half of output) = ADD( mul(b2,a1), mul(a2,conj(b1)) )
+  Confirmed by instrumented trace at every level (2->4->8->16): lower half
+  always built by subtraction, upper half always by addition. At 16D:
+  lower = e0-e7 = "Paper's Hands" (subtractive), upper = e8-e15 =
+  "Mind's Eye" (additive).
+  Equivalent framing (Cody, faster than the structural trace): "forwards
+  and backwards around a circle" -- cd_conj negates every component but
+  e0, i.e. theta -> -theta, and that reversed term is exactly what SUB
+  acts on.
+
+cd_mul_j2 (the OTHER CD multiplication rule, v5's construction):
+  swaps which half gets ADD vs SUB: c1=ADD, c2=SUB (recursively at every
+  CD level). Hypothesis tested 2026-06-30: genuine (Input,Output) pairs
+  might be a zero-divisor pair under cd_mul_j2 specifically, even where
+  not under ordinary cd_mul. Result: negative (see .clauderc_memory).
+
+Quaternion regular representation matrix, q = (w,x,y,z):
+       [ w  -x  -y  -z]
+  L(q) = [ x   w  -z   y]
+       [ y   z   w  -x]
+       [ z  -y   x   w]
+  Sedenion = 4 such blocks (e0-3, e4-7, e8-11, e12-15), two orthogonal
+  pairs (each octonion copy = H (+) H). Determinant/eigenvalues of L(q) =
+  "The Information Compressed" -- a landmark/shorthand description of the
+  full 4 (or 16) real coordinates, like turn-by-turn directions vs.
+  satellite coordinates.
+
+═══════════════════════════════════════════════════════════════════════════
+ZERO-DIVISORS
+═══════════════════════════════════════════════════════════════════════════
+
+  a . b = 0 with a != 0, b != 0. First appears at sedenion (16D) -- ordinary
+  reals/complex/quaternions/octonions are division algebras, sedenions are
+  not. Cawagas (2004): 84 distinct ZD pairs on S^15, 42 equivalence
+  classes. Canonical example pair:
+    (e1 + e11)/sqrt(2) . (e5 + e15)/sqrt(2) = 0
+
+  STATUS (corrected 2026-06-30, Phase 22): a ZD locus is NOT an absence of
+  information / structural blindspot. It is a PORTAL -- "where things are
+  born." Earlier framings (Phase 5's "collapse," Phase 21's "blindspot")
+  described the same locus as a failure mode; that was wrong. The
+  accumulated PATH through ZD portals IS memory (the trajectory, not the
+  field state at one moment).
+
+═══════════════════════════════════════════════════════════════════════════
+WORD -> ADDRESS (semantic hashing)
+═══════════════════════════════════════════════════════════════════════════
+
+Horner base-95 hash:  H(w) = sum_{k=0}^{|w|-1} ord(w_k) . 95^{|w|-1-k}  (mod 2^16)
+  p = next_prime >= H(w)
+  index = pi(p)   [prime-counting function, i.e. p's index in prime seq]
+  address = gamma_{pi(p)}   [the Riemann zero at that index]
+  O(|word|), no dictionary, no embedding table.
+  Implementation: PtolemyHolcus/monad.py lines 127-205 (per D-CS_Memory.md
+  citation -- verify path still current before trusting).
+
+═══════════════════════════════════════════════════════════════════════════
+NOTATION CHEAT SHEET (symbol -> plain meaning)
+═══════════════════════════════════════════════════════════════════════════
+
+  sigma, s = sigma + i.t   complex variable, zeta function argument
+  gamma_n                  n-th Riemann zero (imaginary part), on sigma=1/2
+  zeta(s)                  Riemann zeta function
+  d*                       Zero Definer, smallest stable-config unit
+  Omega_ZS                 Lambert W(1), d* in log-space
+  J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
+  Sigma_RB                 J_red + J_blue = Memory (Wisdom - Usage)
+  H_hat_RB / H_hat_BR      RedBlue Hamiltonian / its usage-cost conjugate
+  L_dynamic                path integral of J_red.J_blue = "Thought"
+  S (sedenion), T_n        Cayley-Dickson algebra at dimension n
+  cd_mul / cd_mul_j2       forward / sign-flipped CD multiplication
+  L(q)                     4x4 real regular representation of quaternion q
+  ZD                       zero-divisor
+  TIA                      Triangle Inequality Average (Kerry Mitchell)
