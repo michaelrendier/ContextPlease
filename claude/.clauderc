@@ -16,18 +16,24 @@ export THEPLACE="/storage/emulated/0/ThePlace"
 # (~/.clauderc there defines its own THEPLACE — do not assume paths match
 # across machines, only relative structure below THEPLACE matches).
 #
-# HARD RULE (Cody, 2026-07-08, stated repeatedly and firmly): the official
-# work directory is /storage/emulated/0/ThePlace, ALWAYS use and display
-# this path. NEVER show /mnt/sdcard/ThePlace, /sdcard/ThePlace, or
-# /storage/self/primary/ThePlace in any output, command, or explanation —
-# even though these are bind-mounted to the identical underlying storage
-# (confirmed same device+inode earlier this session), showing the /mnt
-# form reads as "looking in the wrong place" and causes real frustration.
+# HARD RULE (Cody, 2026-07-08, stated repeatedly and firmly; mechanism
+# corrected 2026-07-10): the official work directory is
+# /storage/emulated/0/ThePlace, ALWAYS use and display this path. NEVER show
+# /mnt/sdcard/ThePlace, /sdcard/ThePlace, or /storage/self/primary/ThePlace
+# in any output, command, or explanation.
+# CORRECTED MECHANISM (2026-07-10): these are not identical bind-mounts.
+# /mnt/sdcard is a quasi-mount that exposes only the contents of the
+# ThePlace directory itself — no sibling directories are visible under
+# /mnt/sdcard. /storage/emulated/0/ThePlace is the real internal-storage
+# path, where the full SD card contents (copied over from the laptop) live
+# — it is the authoritative, complete tree. The display rule stands
+# regardless: showing the /mnt form still reads as "looking in the wrong
+# place" and causes real frustration.
+# ENVIRONMENT: this device runs a proot-distro shell inside Termux on a
+# Samsung Galaxy A51 (SM-A516U).
 # If a tool/traceback/error ever prints a /mnt/sdcard/... path on its own
 # (e.g. Python resolving cwd via realpath), do not repeat it back — restate
-# using $THEPLACE / /storage/emulated/0/ThePlace instead. Do not re-explain
-# the bind-mount technical detail again unless explicitly asked — it has
-# already been explained once and re-explaining it reads as arguing.
+# using $THEPLACE / /storage/emulated/0/ThePlace instead.
 
 # ── Repo path/URL pairs (github.com/michaelrendier) ────────────────────────
 # URLs here are CLEAN (no embedded PAT). Several local `git remote -v` entries
