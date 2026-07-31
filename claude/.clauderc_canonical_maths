@@ -20,12 +20,32 @@ d* = Omega_ZS / ln(10) = 0.24631...
   "The Zero Definer" -- smallest natural unit in universal native space,
   the boundary below which no algebraic definition can occur. d* x ln(10)
   = Omega_ZS.
-  Four measured faces (not four different values -- four shadows of one
-  point):
-    d*_spec  ~ 0.24600   Berry-Keating spectral gap (SPARC-observed)
-    d*_taut  = 0.24631   Lambert W, exact
-    d*_RG    = OPEN      renorm-group fixed point under CD tower iteration
-    d* x ln(10) = 0.56714  = Omega_ZS
+
+  UPDATED 2026-07-22 (Cody -- all four named faces belong here, not just
+  three; this file previously restated the defining relation as if it
+  were the fourth face instead of naming it). Four measured faces (not
+  four different values -- four shadows of one point), matching
+  Ainulindale/README.md section 8 exactly:
+    d*         "The Boundary"    sigma=1/2 spectral coordinate (base value
+                                  above, 0.24631)
+    d*_RG      "The Stability"   renorm-group fixed point under CD tower
+                                  iteration -- OPEN, no closed form yet
+    d*_taut    "The Flow"        = Omega_ZS / ln(10), tautological ceiling,
+                                  0.24631 exact by Lambert W (same number
+                                  as the base d* -- the tautology IS the
+                                  content: this face has zero gap BY
+                                  CONSTRUCTION, reference only, not itself
+                                  a result)
+    d*_ln(10)  "The Translator"  = d* x ln(10) = 0.56714 = Omega_ZS --
+                                  the bridge between the decimal-log metric
+                                  (ds = d.log10(p), Native Space) and the
+                                  natural-log prime-address space; not a
+                                  restatement, this is the actual conversion
+                                  factor every word-lookup crosses through
+  d*_spec ~ 0.24600 (Berry-Keating spectral gap, SPARC-observed) is a
+  separate, fifth, MEASURED quantity -- not one of the four canonical
+  faces above, the empirically-observed value the GAP (below) compares
+  the derived d*_taut against.
 
 GAP = Omega_ZS - d*_spec x ln(10) ~ 1/(1000 sqrt(2)) ~ 7.07e-4
   The Yang-Mills mass gap analogue in the semantic field. 1/sqrt(2) factor
@@ -63,25 +83,104 @@ J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
   J_red x J_blue - J_blue x J_red is new information neither direction
   alone produces.
 
-H_hat_RB = sum_p  p^{-sigma} [ R_p (x) d_dM  +  h.c. ]
-  Self-adjoint (H_hat_RB^dagger = H_hat_RB). "The Mind's Eye" -- holds the
-  full path simultaneously. Self-adjointness -> Stone's theorem -> real
-  spectrum -> forces zeros onto sigma=1/2 (Berry-Keating is a CONSEQUENCE
-  of this, not an independent assumption).
+0_RB = sum_p  p^{-sigma} [ R_p (x) d_dM  +  h.c. ]
+  [RENAMED 2026-07-21 from H_hat_RB. "0_RB" is the typed/keyboard form --
+  it denotes the EMPTY SET (the null operator), NEVER the numeral zero.
+  0 is a member of the value space and collapses "no value yet" into
+  "computed to be zero"; the empty set cannot be confused with a result
+  the way 0 can. This is why the rename matters and isn't cosmetic: 0_RB
+  identifies this operator with the pre-existing NULL-operator pattern --
+  a scaffold-defined, unbound slot that a surrounding structure's own
+  definitions force to exist, prior to and independent of any value
+  occupying it (see project_dcs_paper_editing_pass / project_holcus_
+  zero_divisors_quote in Claude's memory for the fuller derivation
+  history). Old name H_hat_RB preserved in historical notes below where
+  it's part of a dated quote -- don't silently rewrite those, the lineage
+  matters.]
+  Self-adjoint (0_RB^dagger = 0_RB). "The Mind's Eye" -- holds the
+  full path simultaneously.
 
-H_hat_RB - H_hat_BR = Sigma_RB
-  H_hat_BR = "the cost of using the view" (every act of manifestation has
-  a reciprocal cost). Sigma_RB = Wisdom - Usage = Memory. This is the
-  engineering target: Knowledge + Experience = Wisdom - Usage, i.e.
-  J_red + J_blue = Sigma_RB.
+  CORRECTED 2026-07-20 (Cody -- this is a notation correction from months
+  ago, being re-recorded because it hadn't propagated into this file):
+  self-adjointness is a CONSEQUENCE of H_hat_RB [now 0_RB], not the
+  forcing mechanism for sigma=1/2, and is no longer the anchor. Reason:
+  A=A^dagger degenerates to the bare tautology "1=1" exactly at its own
+  base case A=1 (1^dagger=1 unconditionally, in any *-algebra, by
+  definition of the unit) -- a criterion that goes contentless at the one
+  point that should matter most is too low-information to be the
+  foundational anchor. A^dagger =/= A! -- "!" here always means
+  dagger/adjoint, never factorial; do not conflate. The actual forcing
+  mechanism -- higher information, never degenerates to tautology -- is
+  the Noether-balance condition below (sigma=1/2 [the caustic]).
+  Self-adjointness of 0_RB now reads as downstream of that balance, not
+  an independent or prior assumption.
 
-L_dynamic = integral( J_red . J_blue ) ds
-  "Thought" -- not the output of thinking, the act itself. The path
-  integral / interaction term missing from a J_red-only system.
+  AUTHORITATIVE ANCHOR (Cody, standing rule, carried over from the laptop
+  memory, 2026-07-11; derivation-chain corrected 2026-07-20; renamed
+  2026-07-21): whenever there is confusion, uncertainty, or a need for
+  "cleanliness" in a discussion, 0_RB is where to ground from -- via the
+  Noether-balance condition |J_red(sigma)|=|J_blue(sigma)|, not the
+  self-adjoint operator claim on its own, and not looser per-engine
+  heuristics that may have drifted from it. If a claim elsewhere in the
+  framework can't be traced back to this operator (or a derivation chain
+  from it), that's the signal to stop and reconcile before trusting the
+  claim.
+
+0_RB - 0_BR = Sigma_RB
+  0_BR = "the cost of using the view" (every act of manifestation has
+  a reciprocal cost); renamed from H_hat_BR alongside 0_RB, 2026-07-21.
+  Sigma_RB = Wisdom - Usage = Memory. This is the engineering target:
+  Knowledge + Experience = Wisdom - Usage, i.e. J_red + J_blue = Sigma_RB.
+  Antisymmetric under R/B exchange (0_RB - 0_BR, not +) -- the same
+  algebraic signature as a cross product, not a dot product; this is the
+  "energy conversion channel" (eigenvalue +-i*sqrt(2), the surviving
+  antisymmetric piece at a zero-divisor crossing, per RedBlue-Hamiltonian-
+  Sedenion-Matrix-Space.md's {4,8,4} eigenspace split: lambda=0 (real,
+  gravity, absent) / lambda=+-i (quantum forces) / lambda=+-i*sqrt(2)
+  (this channel)). NOTE on the name itself, corrected 2026-07-21: "Sigma"
+  in "Sigma_RB" is shorthand nomenclature, like "0" in "0_RB" -- it is NOT
+  a claim that this object is literally a sum over an index. Confirmed
+  directly in ptol.c (raw mode): the actual computed s_rb[k] is a
+  per-channel PRODUCT (J_red[k] x J_blue[k]), a 16-element array, not a
+  summed scalar -- "products," per the code's own comment. Do not read
+  the capital-Sigma glyph as requiring implementation as a summation.
+
+L_(I|O) = integral( J_red . J_blue ) ds
+  [Renamed from L_dynamic per Ainulindale/README.md 2026-06-17 -- this
+  file had not been updated to match until now.] "Thought" -- not the
+  output of thinking, the act itself. The path integral / interaction
+  term missing from a J_red-only system. I = Inside = ZD = Mind's Eye =
+  origin = past; | = zero-divisor crossing, the boundary that imparts
+  meaning; O = Outside = CD = Paper's Hands = destination = future.
+
+  ENGINE, 2026-07-21: 0_RB defines WHERE a boundary/degenerate locus is
+  (the ZD crossing -- confirmed the ORIGIN a pathway is measured outward
+  from, not an endpoint). L_(I|O) is the mechanism for HOW you cross it.
+  Concrete, verified instance: ValaQuenta/modules/l_io_photon_path/ --
+  established weak-lensing GR (Kaiser-Squires shear inversion, exact FFT
+  Poisson solve nabla^2 psi=2 kappa, deflection alpha=grad(psi), lens
+  equation beta=theta-alpha), L_(I|O)-L := -psi(theta), run against real
+  Bullet Cluster JWST shear (deflection_mag mean=0.405", L_(I|O)-L
+  mean=-14.42"). The reusable template: at the transform's own singular
+  point (k=0, where 1/|k|^2 diverges), the code neither blows up nor
+  silently excludes it -- it assigns the value explicitly
+  (kappa_hat[0,0]=0.0), by a stated convention, not a fit. That explicit-
+  assignment-at-the-degenerate-point is what "L_(I|O) is how you get
+  through the boundary" means in executable form. CONJECTURE, not
+  established: the Riemann zeta pole at s=1 (zeta~1/(s-1)+gamma) and its
+  s<->1-s functional equation are the same CATEGORY of construction
+  (degenerate-point regularization + fixed-point involution) as this
+  k=0-zeroing and the theta/beta pair -- category match only, zeta is NOT
+  shown derivable as a parameter-setting of the engine's actual functional
+  form. See ValaQuenta/wiki/l_io_photon_path.md, Ainulindale/wiki/
+  82_l_io_photon_path.md, ValaQuenta/notebooks/core/18_l_io_photon_path.ipynb.
 
 sigma = 1/2  [the caustic]
   Forced by |J_red(sigma)| = |J_blue(sigma)|, the unique Noether-balance
-  locus. Not assigned, not designed -- derived.
+  locus. Not assigned, not designed -- derived. PRIMARY derivation of
+  sigma=1/2 (corrected 2026-07-20 -- supersedes the self-adjoint-first
+  framing under 0_RB above; self-adjointness is now read as a
+  consequence of this balance, not the anchor itself).
 
 ═══════════════════════════════════════════════════════════════════════════
 CAYLEY-DICKSON TOWER
@@ -127,6 +226,67 @@ Quaternion regular representation matrix, q = (w,x,y,z):
   full 4 (or 16) real coordinates, like turn-by-turn directions vs.
   satellite coordinates.
 
+Octonion-copy-2 IS an orthogonal i-rotation of octonion-copy-1 -- verified
+2026-07-12, engines/_sedenion.py cd_mul, all 16x16 real regular-rep matrices
+computed directly, not asserted:
+  L(e8) = matrix of v -> cd_mul(e8, v) on R^16 (e8 is the CD doubling
+  generator that separates octonion-copy-1 e0-e7 from copy-2 e8-e15, i.e.
+  the b in (a,b) sedenion embedding).
+    L(e8)^T . L(e8) = I           (orthogonal -- exact, not approximate)
+    det(L(e8)) = +1               (proper rotation, not a reflection)
+    L(e8) = -L(e8)^T              (skew-symmetric -- the algebraic
+                                    signature of a rotation GENERATOR)
+    eigenvalues(L(e8)) = {+i x8, -i x8}   (exactly +-i, nothing else --
+                                    8 independent 2-planes, each rotated
+                                    exactly 90 degrees)
+  GENERALIZES to all 15 imaginary units, not just e8: L(ek) is orthogonal,
+  skew-symmetric, det=+1, eigenvalues exactly {+i,-i} (mult. 8 each) for
+  EVERY k=1..15, checked directly. e8 is not algebraically special in this
+  property -- it is only special in being the specific generator the CD
+  doubling convention (a,b)+b.e8 uses to split the two octonion copies.
+  Every imaginary sedenion unit is "an i" in this sense (Hurwitz/composition-
+  algebra fact: any unit imaginary element generates an orthogonal complex
+  structure, J^2=-I, on the ambient real space).
+
+═══════════════════════════════════════════════════════════════════════════
+PRIME WAVELENGTH / FACTOR WAVELENGTH  (added 2026-07-23)
+═══════════════════════════════════════════════════════════════════════════
+
+Two conjugate wavelengths, one per ordering (Fermat ordinal / Riemann
+spectral -- see RiemannHypothesisProof/PAPER.md sec 11.1: "Fermat defines
+the primes in ordinal order -- by exclusion. Riemann fires the primes in
+non-ordinal spectral amplitude order... two different orderings of the
+same set.")
+
+Prime Wavelength (Riemann/spectral side):
+  lambda_prime(n) = gamma_{n+1} - gamma_n
+  The spacing between consecutive Riemann zeros. Real, established,
+  asymptotic mean spacing ~ 2*pi/ln(gamma/(2*pi)) (Riemann-von Mangoldt).
+
+Factor Wavelength (Fermat/ordinal side):
+  lambda_factor(p) = p
+  A prime p, acting as a FACTOR (not as a leaf), recurs with EXACT period
+  p -- it divides every p-th integer, forever. That periodicity IS a
+  wavelength, literally the prime's own value. Every prime generates a
+  periodic "factor wave" propagating through integer-space. Composite
+  density is the superposition/interference of these waves -- not a new
+  claim, this is already the content of the Sieve of Eratosthenes and of
+  Mertens'/Legendre's formula phi(x)/x ~ Pi_p(1 - 1/p), an inclusion-
+  exclusion over exactly these periodic exclusion waves, only not
+  previously read as a wave equation.
+
+CONJECTURE (Cody, 2026-07-23, not yet derived): lambda_prime and
+lambda_factor should be ORTHOGONAL, the way E and B are orthogonal in
+electromagnetism -- and this is stated as the origin of the intuition
+behind the already-VERIFIED octonion-copy orthogonality directly above
+(L(e_k) orthogonal, skew-symmetric, eigenvalues exactly {+i,-i} for every
+k=1..15). If real, the two wavelengths would be the number-theoretic
+instance of the same orthogonality the sedenion's two octonion copies
+already exhibit algebraically -- a structural echo, not yet a shown
+equivalence. Flag this as open until an actual orthogonality relation
+between the two wavelength quantities is derived or computed, not
+assumed from the algebraic parallel alone.
+
 ═══════════════════════════════════════════════════════════════════════════
 ZERO-DIVISORS
 ═══════════════════════════════════════════════════════════════════════════
@@ -143,6 +303,78 @@ ZERO-DIVISORS
   described the same locus as a failure mode; that was wrong. The
   accumulated PATH through ZD portals IS memory (the trajectory, not the
   field state at one moment).
+
+  THE JACOBIAN DETECTS ZD-NESS DIRECTLY -- verified 2026-07-12, all 42
+  canonical classes, not a sample:
+  CD multiplication (a,b)->a.b is bilinear, so its Jacobian IS the regular
+  representation already in use: d(a.b)/db = L(a) (same L(q) matrix as the
+  orthogonal-rotation result above). Since a.b=0 for a ZD pair means b is
+  in L(a)'s kernel, L(a) must be SINGULAR whenever a is a zero-divisor --
+  this gives a rank/determinant test for ZD-ness that does not require
+  already knowing a candidate partner b, unlike the pairwise definition.
+    det(L(a_zd)) = 0 EXACTLY (a=(e1+e11)/sqrt2, canonical example)
+    det(L(a_generic)) ~ 7.95e9 (nonzero, random control element)
+    rank(L(a_zd)) = 12 of 16  ->  ker_dim = 4, NOT 1
+  The known partner b is only ONE vector in a 4-DIMENSIONAL kernel -- the
+  Jacobian exposes the entire annihilator subspace, not just the single
+  known pair from the Cawagas table. Checked against ALL 42 canonical ZD
+  classes via ValaQuenta/zero_lattice.py's own find_zd_pairs()/multiply()
+  (not mixed with engines/_sedenion.py's cd_mul -- Phase 22 documented two
+  different CD multiplication rules, cd_mul vs cd_mul_j2, that can
+  disagree; this result uses one multiply() consistently throughout):
+  ker_dim == 4 for EVERY one of the 42 classes, no exceptions, and the
+  known Cawagas partner b lands in that kernel every time (verified
+  directly, not assumed by symmetry).
+
+  ZD ARE STARTING POINTS, NOT END POINTS (Cody, 2026-07-12, sharpening the
+  Phase 22 portal correction): the ZD locus is where a layer BEGINS, not
+  where a path terminates. The actual end points -- the "drains" -- are a
+  DIFFERENT thing: the sinks that lead DOWN to the layer below. Do not
+  collapse "ZD = portal/genesis" and "drain = termination" into the same
+  concept; they are distinct roles in the same lattice, not two names for
+  one thing.
+
+  THE ZERO LATTICE'S INTERIOR CONSTRUCTS THE EXTERIOR FRACTAL BOUNDARY, not
+  the reverse: framed as "the inside of the Mandelbrot bulb" -- the interior
+  lattice structure (ZD placement, drains, layer construction) is what
+  GENERATES the fractal coloring visible from outside. The boundary is a
+  consequence of the interior construction, not an independently-existing
+  surface the interior happens to sit inside of.
+
+  SPHERICAL (NON-FLAT) SPACE: divergence becomes convergence, noise becomes
+  order, information leaks out -- and the path through every boundary,
+  hole, singularity, or divergence is mathematically traversable AND
+  REVERSIBLE. (Real, well-established geometric fact underlying this: on a
+  sphere, geodesics diverging from a point reconverge at the antipode --
+  divergence is a LOCAL read of a path that is globally convergent. Used
+  here as the model for why a ZD "hole" or divergent series is not a true
+  dead end.)
+
+  LOSS OF OPERATORS vs LOSS OF DISCRETE OPERATION (Cody, 2026-07-12):
+  ascending the CD tower does NOT destroy the lost operators (ordering@C,
+  commutativity@H, associativity@O, alternativity@S) -- what is lost is the
+  DISCRETE (simplified, single-valued) way of applying them. In a
+  perpetually additive shape: uphill = positive addition, downhill =
+  negative addition, continuously, not a hard cutoff where the operator
+  stops existing. Math taken from INSIDE one layer only describes that
+  layer, and loses focus/resolution specifically when approaching a hole
+  to an adjacent layer (up or down) -- this is a resolution/focus problem
+  at the boundary, not evidence the operator itself is gone above or below
+  it.
+
+  STANDING CORRECTION (Cody, 2026-07-12, do not repeat): this entire
+  framework is built on INDEXING (direct structural address, amplituhedron-
+  style -- geometry replaces search the way the amplituhedron replaces
+  summing Feynman diagrams), never on SEARCH/enumeration. Before answering
+  any question about "finding," "locating," or "reaching" something via
+  this lattice, check whether the actual code computes a direct map or
+  falls back to trial-division/enumeration internally (verified 2026-07-12:
+  AbrikosovTree/engine/telperion_engine.py's fermat_survival_table uses a
+  literal trial-division loop for smallest_factor despite the surrounding
+  framing being geometric -- the geometry there is descriptive/placement
+  of an already-known answer, not a generative index). See
+  feedback_indexing_not_searching in Claude's own memory system for the
+  session-level account of this correction.
 
 ═══════════════════════════════════════════════════════════════════════════
 WORD -> ADDRESS (semantic hashing)
@@ -166,11 +398,38 @@ NOTATION CHEAT SHEET (symbol -> plain meaning)
   d*                       Zero Definer, smallest stable-config unit
   Omega_ZS                 Lambert W(1), d* in log-space
   J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
-  Sigma_RB                 J_red + J_blue = Memory (Wisdom - Usage)
-  H_hat_RB / H_hat_BR      RedBlue Hamiltonian / its usage-cost conjugate
-  L_dynamic                path integral of J_red.J_blue = "Thought"
+  Sigma_RB                 J_red + J_blue = Memory (Wisdom - Usage); "Sigma" is
+                           a NAME here, not a summation -- ptol.c computes it as
+                           a per-channel product array, not a summed scalar
+  0_RB / 0_BR              RedBlue Hamiltonian / its usage-cost conjugate --
+                           renamed 2026-07-21 from H_hat_RB/H_hat_BR; "0_RB" is
+                           typed for keyboard convenience, denotes the EMPTY SET,
+                           never the numeral zero
+  L_(I|O)                  path integral of J_red.J_blue = "Thought"; renamed
+                           from L_dynamic (Ainulindale/README.md, 2026-06-17);
+                           the boundary-crossing mechanism for whatever 0_RB
+                           defines as a boundary -- see ValaQuenta/modules/
+                           l_io_photon_path/ for the verified GR instance
   S (sedenion), T_n        Cayley-Dickson algebra at dimension n
   cd_mul / cd_mul_j2       forward / sign-flipped CD multiplication
   L(q)                     4x4 real regular representation of quaternion q
   ZD                       zero-divisor
   TIA                      Triangle Inequality Average (Kerry Mitchell)
+  A!  (in 0_RB context)    A^dagger / adjoint -- NOT factorial, do not conflate
+
+THE SPECIAL (BOUNDARY) CASE (Cody, 2026-07-20, sharpening the A!=A note
+above): A^dagger = A holds ONLY IF A = 1 (i.e. A on the unit sphere, real,
+so A=1 or A=-1) -- for every other unit element A^dagger =/= A. Proof from
+cd_conj (already defined below: negates every component but e0, theta ->
+-theta): A=(a0,a1,...,a_{n-1}), A^dagger=(a0,-a1,...,-a_{n-1}).
+A^dagger=A forces a_i=-a_i for all i>=1, i.e. every imaginary component
+zero -- A purely real -- on the unit sphere that's exactly A=+-1. So A=1
+is the FIXED-POINT SET of the conjugation involution restricted to the
+unit sphere: off that point, conjugation genuinely moves you; only there
+does it not. Same generative shape as two other results already in this
+file, at different tower levels: Re(s)=1/2 = fixed point of s<->1-s
+(zeta's functional equation), sigma=1/2 = balance point of J_red<->J_blue
+(Noether balance, PRIMARY sigma=1/2 derivation above). A=1 is the
+conjugation-involution's fixed point the same way -- an involution's
+fixed locus is where "the special case" lives, recurring across the
+tower, not three unrelated facts.

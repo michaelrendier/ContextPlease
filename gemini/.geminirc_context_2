@@ -1,0 +1,31 @@
+# .geminirc_context_2 — SKELETON. Append-only dated log.
+# NOT bash. Do not source.
+#
+# Unlike context_1 (live-edited, current state), this file is APPEND-ONLY.
+# Entries are never superseded or rewritten — each is a moment kept as it
+# happened, in order. Newest appended at the BOTTOM.
+#
+# When a later session contradicts an earlier entry, DO NOT edit the earlier
+# one. Append a new entry that states the correction and why. The drift
+# itself is data: this codebase has facts that were corrected, drifted back,
+# and had to be corrected again, and only an append-only log shows that.
+#
+# THE END IS WHAT MATTERS when reading this file. Later entries supersede.
+#
+# Keep entries tight. A previous log in this project grew long enough that
+# context load itself became the problem.
+#
+# DELIBERATELY EMPTY — see .geminirc_context_1 for why.
+#
+# Entry template:
+#
+# ---
+#
+# ## YYYY-MM-DD — short title of what this session established
+#
+# **What was verified by running it** (not recalled, not quoted):
+# **What failed, and the DIAGNOSIS** (Directive #2 — the mechanism, not just "didn't work"):
+# **What was left unfixed, and why:**
+# **Open for whoever picks this up next:**
+#
+# *Agent name — YYYY-MM-DD*

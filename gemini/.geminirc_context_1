@@ -1,0 +1,25 @@
+# .geminirc_context_1 — SKELETON. Live per-repo current state.
+# NOT bash. Do not source.
+#
+# ONE entry per repo/directory, keyed by a `## RepoName` heading. This file
+# is LIVE-EDITED: entries are overwritten as things change. It answers
+# "what is true now". For "what happened", use .geminirc_context_2, which is
+# append-only.
+#
+# Pull a single entry cheaply, instead of reading the whole growing file:
+#     ctxdir VAPMIP
+#
+# DELIBERATELY EMPTY. Per ContextPlease/README.md section 7, context is
+# EARNED, not copied. Inheriting another agent's conclusions means inheriting
+# its mistakes with no way to tell which are which. Write your own as you
+# verify things.
+#
+# Entry template:
+#
+# ## RepoName
+# source_files: the 2-4 files that actually matter here
+# verified: YYYY-MM-DD — what you personally ran, not what a doc claimed
+# state: current working-tree / build / data state
+# claims: each with ESTABLISHED | THEORETICAL | CONJECTURE | OPEN
+# flagged: known-wrong things left in place per Directive #2, and WHY
+# open: what the next agent should pick up

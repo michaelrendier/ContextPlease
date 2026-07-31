@@ -1,133 +1,208 @@
-# .clauderc — environment shortcuts for Claude Code sessions in ThePlace
-# Source this, or just read it, at the start of a session:  source .claude/.clauderc
-# Purpose: stop re-deriving repo paths/URLs and directory structure by brute-force
-# `find` every session. Read this + .clauderc_memory + .clauderc_canonical_maths first.
-#
-# Sibling files, all in this same .claude/ directory:
-#   .clauderc               — this file
-#   .clauderc_memory         — persistent memory.md equivalent, portable across machines
-#   .clauderc_canonical_maths — canonical equations/notation reference
-#   .clauderc_context_1/2    — reserved, empty, rotating-context design TBD
-#   .clauderc_file_structure — `tree -J -I '.git' "$THEPLACE"` snapshot, regenerate as needed
+# ~/.clauderc — Claude Code environment
+# Sourced by .bashrc. Bash-first protocol shortcuts, repo paths, constants.
+# Do not duplicate vars already in .bashrc / .profile.
 
-# ── Root ─────────────────────────────────────────────────────────────────
-export THEPLACE="/storage/emulated/0/ThePlace"
-# NOTE: on the laptop this same tree lives at a different absolute path
-# (~/.clauderc there defines its own THEPLACE — do not assume paths match
-# across machines, only relative structure below THEPLACE matches).
-#
-# HARD RULE (Cody, 2026-07-08, stated repeatedly and firmly; mechanism
-# corrected 2026-07-10): the official work directory is
-# /storage/emulated/0/ThePlace, ALWAYS use and display this path. NEVER show
-# /mnt/sdcard/ThePlace, /sdcard/ThePlace, or /storage/self/primary/ThePlace
-# in any output, command, or explanation.
-# CORRECTED MECHANISM (2026-07-10): these are not identical bind-mounts.
-# /mnt/sdcard is a quasi-mount that exposes only the contents of the
-# ThePlace directory itself — no sibling directories are visible under
-# /mnt/sdcard. /storage/emulated/0/ThePlace is the real internal-storage
-# path, where the full SD card contents (copied over from the laptop) live
-# — it is the authoritative, complete tree. The display rule stands
-# regardless: showing the /mnt form still reads as "looking in the wrong
-# place" and causes real frustration.
-# ENVIRONMENT: this device runs a proot-distro shell inside Termux on a
-# Samsung Galaxy A51 (SM-A516U).
-# If a tool/traceback/error ever prints a /mnt/sdcard/... path on its own
-# (e.g. Python resolving cwd via realpath), do not repeat it back — restate
-# using $THEPLACE / /storage/emulated/0/ThePlace instead.
+# ============================================================
+# PROJECT ROOT
+# ============================================================
 
-# ── Repo path/URL pairs (github.com/michaelrendier) ────────────────────────
-# URLs here are CLEAN (no embedded PAT). Several local `git remote -v` entries
-# DO have plaintext tokens (ghp_...) baked into the origin URL — never copy
-# `git remote get-url origin` output verbatim into a file that gets pushed.
-export REPO_ABRIKOSOVTREE_PATH="$THEPLACE/AbrikosovTree"
-export REPO_ABRIKOSOVTREE_URL="https://github.com/michaelrendier/ZeroLatticeTree.git"
+export PROJ="/media/rendier/0123-4567/ThePlace"
 
-export REPO_AINULINDALE_PATH="$THEPLACE/Ainulindale"
-export REPO_AINULINDALE_URL="https://github.com/michaelrendier/Ainulindale.git"
+# ============================================================
+# REPO SHORTCUTS
+# ============================================================
 
-export REPO_AINULINDALEBAK_PATH="$THEPLACE/AinulindaleBAK"
-export REPO_AINULINDALEBAK_URL="https://github.com/michaelrendier/AinulindaleBAK.git"
+export AIN="$PROJ/Ainulindale"
+export VALE="$PROJ/ValaQuenta"
+export VAPMIP_DIR="$PROJ/VAPMIP"
+export FAP="$PROJ/FourthAgePapers"
+export TURING="$PROJ/TuringStack"
+export PTORRENT="$PROJ/PTorrent"
+export POE_DIR="$PROJ/POE"
+export USYNTH="$PROJ/UniversalSynth"
+export DATASETS="$PROJ/DataSets"
+export ADDPAPERS="$AIN/AddPapers"
 
-export REPO_ARDAQUENTA_PATH="$THEPLACE/ArdaQuenta"
-export REPO_ARDAQUENTA_URL="https://github.com/michaelrendier/ArdaQuenta.git"
+# ============================================================
+# MEMORY + SCRATCHPAD
+# ============================================================
 
-export REPO_BULLETCLUSTER_PATH="$THEPLACE/BulletCluster"
-export REPO_BULLETCLUSTER_URL="https://github.com/michaelrendier/BulletCluster.git"
+export CLAUDE_MEMORY="/home/rendier/.claude/projects/-media-rendier-0123-4567-ThePlace/memory"
+export CLAUDE_SCRATCH="/tmp/claude-1000/-media-rendier-0123-4567-ThePlace"
 
-export REPO_DERIVECANCERDRUGS_PATH="$THEPLACE/DeriveCancerDrugs"
-# no remote configured as of 2026-07-07
+# ============================================================
+# PYTHON PATH — enables: from ValaQuenta.X import Y
+# ============================================================
 
-export REPO_FOURTHAGEPAPERS_PATH="$THEPLACE/FourthAgePapers"
-export REPO_FOURTHAGEPAPERS_URL="https://github.com/michaelrendier/FourthAgePapers.git"
+export PYTHONPATH="$PROJ:${PYTHONPATH}"
 
-export REPO_MEDICINEISALWAYSFREE_PATH="$THEPLACE/MedicineIsAlwaysFree"
-# no remote configured as of 2026-07-07
+# ============================================================
+# AINULINDALE CANONICAL CONSTANTS
+# Exact values from canonical_math.md — use these, never retype.
+# ============================================================
 
-export REPO_POE_PATH="$THEPLACE/POE"
-export REPO_POE_URL="https://github.com/michaelrendier/POE.git"
+export D_STAR="0.24600"
+export OMEGA_ZS="0.5671432904097838"
+export GAP="0.000707357533249"
+export GAP_APPROX="1/(1000*sqrt(2))"       # 0.035% approx — NOT 1/sqrt(2000)
+export N_STAR="5.2570"                       # n-ball volume peak
+export V16="0.2353"                          # V(16) — NOT equal to D_STAR
+export ZD_PAIRS="84"                         # sedenion zero-divisor pairs on S^15
+export ZD_CLASSES="42"                       # canonical equivalence classes
+export ZD_COMPOSITE="168"                    # composite zero-divisors
 
-export REPO_PTORRENT_PATH="$THEPLACE/PTorrent"
-export REPO_PTORRENT_URL="https://github.com/michaelrendier/PTorrent.git"
+# ============================================================
+# GIT — push any repo using GITHUB_TOKEN
+# Usage: gpush                    (auto-detects repo name)
+#        gpush RepoName           (explicit)
+# ============================================================
 
-export REPO_PTOLEMYDESKTOP_PATH="$THEPLACE/PtolemyDesktop"
-export REPO_PTOLEMYDESKTOP_URL="https://github.com/michaelrendier/Ptolemy.git"
-
-export REPO_RIEMANNHYPOTHESISPROOF_PATH="$THEPLACE/RiemannHypothesisProof"
-export REPO_RIEMANNHYPOTHESISPROOF_URL="https://github.com/michaelrendier/RiemannHypothesisProof.git"
-
-export REPO_SEDENIONSPECTRALRELATIVITY_PATH="$THEPLACE/SedenionSpectralRelativity"
-export REPO_SEDENIONSPECTRALRELATIVITY_URL="https://github.com/michaelrendier/SedenionSpectralRelativity.git"
-
-export REPO_SEMANTICWORDENGINE_PATH="$THEPLACE/SemanticWordEngine"
-export REPO_SEMANTICWORDENGINE_URL="https://github.com/michaelrendier/SemanticWordEngine.git"
-
-export REPO_TURINGSTACK_PATH="$THEPLACE/TuringStack"
-export REPO_TURINGSTACK_URL="https://github.com/michaelrendier/TuringStack.git"
-
-export REPO_UNIVERSALSYNTH_PATH="$THEPLACE/UniversalSynth"
-export REPO_UNIVERSALSYNTH_URL="https://github.com/michaelrendier/UniversalSynth.git"
-
-export REPO_VAPMIP_PATH="$THEPLACE/VAPMIP"
-export REPO_VAPMIP_URL="https://github.com/michaelrendier/VAPMIP.git"
-
-export REPO_VALAQUENTA_PATH="$THEPLACE/ValaQuenta"
-export REPO_VALAQUENTA_URL="https://github.com/michaelrendier/ValaQuenta.git"
-
-# Non-repo but load-bearing directories (large, not git-tracked)
-# Ptolemy2/ and TheWanderingGod/ (~7.1GB combined: vendored sourcebuilds/
-# examples + a WordPress export) were deleted 2026-07-08 to free space on
-# this device — both remain backed up on the dead laptop's NVMe (in an
-# enclosure, not yet readable/powerable from this phone). If ever needed
-# again, they must be recovered from that drive, not re-cloned from here.
-export DIR_DATASETS="$THEPLACE/DataSets"
-export DIR_PDESKTOP="$THEPLACE/PDesktop"            # outreach/disclosure emails (CISA/MITRE/CERT-CC)
-export DIR_PHONE_PULL="$THEPLACE/phone_pull_2026-06-06"  # older primer archive, superseded
-
-# ── Directory "maneuvers" ───────────────────────────────────────────────
-# Jump helpers. Usage: cdrepo ainulindale
-cdrepo() {
-  local var="REPO_$(echo "$1" | tr '[:lower:]' '[:upper:]')_PATH"
-  local path="${!var}"
-  if [ -z "$path" ]; then echo "no repo path var for '$1'"; return 1; fi
-  cd "$path" || return 1
+gpush() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    if [ -z "$repo" ]; then
+        echo "gpush: not in a git repo and no repo name given" >&2
+        return 1
+    fi
+    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
 }
 
-# ── Per-directory context extraction ────────────────────────────────────
-# .clauderc_context_1 holds one authoritative, live-edited entry per
-# directory/repo, keyed by a `## RepoName` heading. Pull just one entry
-# (cheap, bounded, no need to read the whole growing file) with:
-#   ctxdir VAPMIP
-ctxdir() {
-  awk -v d="## $1" '$0==d{f=1;next} /^## /{f=0} f' \
-    "$THEPLACE/.claude/.clauderc_context_1"
+# Pull with token
+gpull() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
 }
 
-# ── Exploration: prefer `tree`, not `find` ──────────────────────────────
-# Feedback from Cody (2026-07-07): brute-forcing `find` every session is slow
-# and noisy. Default to `tree` scoped to what's actually needed, e.g.:
-#   tree -L 2 "$THEPLACE"                     # shallow orientation
-#   tree -P '*.md|*.py' -I '__pycache__' DIR   # content-filtered
-#   tree -J DIR > out.json                     # machine-readable, for grep -o/jq
-# .clauderc_file_structure (this directory) is the full `tree -J -I '.git'`
-# of all of ThePlace, regenerate it when the tree changes meaningfully:
-#   tree -J -I '.git' "$THEPLACE" > "$THEPLACE/.claude/.clauderc_file_structure"
+# ============================================================
+# REPO STATUS — quick sweep of all project repos
+# ============================================================
+
+rstatus() {
+    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth; do
+        local path="$PROJ/$repo"
+        if [ -d "$path/.git" ]; then
+            local branch count
+            branch=$(git -C "$path" rev-parse --abbrev-ref HEAD 2>/dev/null)
+            count=$(git -C "$path" status --porcelain 2>/dev/null | wc -l)
+            printf "%-20s  %-6s  %s dirty files\n" "$repo" "$branch" "$count"
+        fi
+    done
+}
+
+# ============================================================
+# VALAQUEST — run a ValaQuenta engine one-liner
+# Usage: vale "from ValaQuenta.bao_mass_gap import validate; validate()"
+# ============================================================
+
+vale() {
+    python3 -c "$@"
+}
+
+# ============================================================
+# CANONICAL MATH CHECK — print key constants to console
+# Prevents introducing wrong values mid-session.
+# ============================================================
+
+canon() {
+    echo "d*       = $D_STAR"
+    echo "OMEGA_ZS = $OMEGA_ZS   (Lambert W(1))"
+    echo "GAP      = $GAP"
+    echo "GAP approx: $GAP_APPROX  (NOT 1/sqrt(2000))"
+    echo "n*       = $N_STAR       (n-ball peak)"
+    echo "V(16)    = $V16          (≠ d*, 4.3% off)"
+    echo "ZD:      $ZD_PAIRS pairs / $ZD_CLASSES classes / $ZD_COMPOSITE composite on S^15"
+    echo ""
+    echo "Full table: $CLAUDE_MEMORY/canonical_math.md"
+}
+
+# ============================================================
+# SEARCH — grep across all project repos
+# Usage: psearch "symbol_name"
+#        psearch "symbol_name" "*.py"
+# ============================================================
+
+psearch() {
+    local pattern="$1"
+    local glob="${2:-*}"
+    grep -r --include="$glob" -l "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".archive" 2>/dev/null
+}
+
+# Print matching lines with context
+pgrep() {
+    local pattern="$1"
+    local glob="${2:-*.py}"
+    grep -r --include="$glob" -n "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".archive" 2>/dev/null
+}
+
+# ============================================================
+# MEMORY — quick read of a memory file by partial name
+# Usage: mem canonical_math
+#        mem user_profile
+# ============================================================
+
+mem() {
+    local name="$1"
+    local file
+    file=$(find "$CLAUDE_MEMORY" -name "*${name}*" 2>/dev/null | head -1)
+    if [ -n "$file" ]; then
+        cat "$file"
+    else
+        echo "mem: no file matching '$name' in $CLAUDE_MEMORY" >&2
+        ls "$CLAUDE_MEMORY"
+    fi
+}
+
+# ============================================================
+# WIKI — open a ValaQuenta wiki page by number or name
+# Usage: wiki 64
+#        wiki noether
+# ============================================================
+
+wiki() {
+    local query="$1"
+    local file
+    file=$(find "$VALE/wiki" -name "*${query}*" 2>/dev/null | head -1)
+    if [ -n "$file" ]; then
+        cat "$file"
+    else
+        echo "wiki: no page matching '$query'" >&2
+        ls "$VALE/wiki" 2>/dev/null | head -20
+    fi
+}
+
+# ============================================================
+# BIN ARCHIVE — holcus monad .bin files
+# ============================================================
+
+export BIN_ARCHIVE="/media/rendier/0123-4567/PTorrent/bin_archive/clean"
+
+# ============================================================
+# PTOL — C sedenion engine shortcuts
+# ============================================================
+
+export PTOL_BIN="$VAPMIP_DIR/PtolC/ptol"
+export PTOL_DIR="$VAPMIP_DIR/PtolC"
+export PTOL_PAPERS="$HOME/.ptolemy/papers"
+
+# Run ptol with raw output piped to ptol_layer for full response
+ptol_r() { "$PTOL_BIN" -r "$@"; }
+ptol_s() { "$PTOL_BIN" "$@"; }   # default: SVG + English path
+
+# ============================================================
+# UDEO — Unified Dimensional Entropy Oracle (TuringStack)
+# Zero-divisor attack class; embargo ends 2026-11-25.
+# ============================================================
+
+export UDEO_POC="$TURING/udeo_poc.py"
+export UDEO_EMBARGO="2026-11-25"
+
+# ============================================================
+# NETCUP SERVER — ssh shorthand
+# ============================================================
+
+ptol_ssh() {
+    ssh "${NETCUP_REMOTE_SSH_USERNAME}@${NETCUP_REMOTE_SSH_HOSTNAME}" "$@"
+}

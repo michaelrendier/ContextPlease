@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# .geminirc_ValaQuenta — SKELETON. Per-engine context index for ValaQuenta.
+# This file IS bash and is safe to source.
+#
+# Purpose: avoid re-reading ValaQuenta/modules/*/maths.py from scratch every
+# session. One variable per engine holding a distilled summary — claim,
+# engines, confidence tiers, key constants, flagged issues. Look it up by
+# name instead of grepping source.
+#
+# Usage:
+#     source .geminirc_ValaQuenta
+#     ctxengine _crosscutting        # read this one FIRST
+#     ctxengine <module>
+#     echo "$VALAQUENTA_ENGINE_INDEX"
+#
+# CONFIDENCE TIERS (from ValaQuenta/engine/registry.py — same meaning here):
+#   ESTABLISHED  verified by code and/or established mathematics
+#   THEORETICAL  a defined test/derivation path exists, not closed
+#   CONJECTURE   a named direction, no formal derivation
+#   OPEN         active open problem
+# maths.py docstrings often use COMPOUND tags. tools.py sometimes FLATTENS
+# them to a single higher tier — a known failure mode. When in doubt, trust
+# maths.py's own docstring, not the registration.
+
+# Populate by surveying ValaQuenta/modules/ yourself. Do NOT copy the claude
+# index wholesale: it records what THAT agent verified, and some entries name
+# modules that are absent from this working copy.
+export VALAQUENTA_ENGINE_INDEX=""
+
+ctxengine() {
+  local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
+  if [ -z "${!var}" ]; then
+    echo "no context for '$1' -- available:"
+    echo "  ${VALAQUENTA_ENGINE_INDEX:-(index empty — survey modules/ and populate)}"
+    return 1
+  fi
+  echo "${!var}"
+}
+
+# Block template — one per engine:
+#
+# export CTX_<NAME>="
+# <name> -- <display name>. v<version>. confidence_floor=<tier>.
+# Engines: <fn> (<tier>), <fn> (<tier>), ...
+# Key constants: <only those NOT in the shared core>
+# Verified: <what you actually ran, and when>
+# FLAGGED: <known-wrong, left in place per Directive #2, and why>
+# "

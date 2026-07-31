@@ -1,0 +1,61 @@
+# .geminirc_memory — SKELETON. Cross-cutting state and standing feedback.
+# NOT bash. Do not source. Read it.
+#
+# Holds ONLY material with no single home directory: standing feedback, git
+# hygiene, decisions that span repos. Anything scoped to one repo belongs in
+# .geminirc_context_1 under that repo's own heading instead — keeping each
+# directory's context self-contained is the whole point of the split.
+#
+# Format: dated entries, most recent state first per topic. Prune stale
+# entries rather than letting them rot. Be explicit about what is CONFIRMED
+# vs HYPOTHESIS vs FAILED.
+
+=========================================================================
+STANDING RULES  (do not delete — these are not observations, they are law)
+=========================================================================
+
+The four Prime Directives are in ContextPlease/README.md section 1.
+Summarised so they cannot be missed:
+
+  1. No renormalization, no fitted parameters, EVER. Report disagreement
+     rather than closing a gap. If you cannot say where a number came
+     from, you fitted it.
+  2. All failures stay in code and data — with their diagnosis. They are
+     how boundaries get explored. Do not tidy them away.
+  3. Bash first.
+  4. Always display /storage/emulated/0/ThePlace. Never /mnt/sdcard/.
+
+=========================================================================
+GIT / CREDENTIALS — handle with care
+=========================================================================
+
+Several repo `origin` remotes under $THEPLACE have GitHub PATs embedded in
+plaintext (ghp_... visible via `git remote -v`). NEVER copy a remote URL
+verbatim into a file that gets committed or pushed — always use the clean
+https://github.com/... form. Flagged 2026-07-07; not known to be rotated.
+
+=========================================================================
+FEEDBACK LOG — how Cody wants this worked
+=========================================================================
+
+- Prefer `tree`, scoped and filtered, over brute-force `find`. Find-
+  everything is slow and noisy.
+- When Cody uses vivid or absolute language ("EXACT", "it's working"),
+  treat it as describing a SPECIFIC case precisely — not as licence to
+  generalise that property to adjacent tests.
+- Do not reconstruct a mechanism from a verbal description repeatedly when
+  it keeps failing. Go find and run the original implementation instead.
+- Python first for all testing. C (ptol.c, monad.c) only after a Python
+  result justifies it, or when C-level testing is the actual point.
+- Context purity matters more than coverage. Do not load everything.
+  Cody paces work deliberately; overloading a session has caused real
+  problems before.
+- For append-only logs, the END is what matters. Later entries supersede
+  and frequently correct earlier ones.
+
+=========================================================================
+REPO / SESSION HOUSEKEEPING
+=========================================================================
+
+TODO — populate as you work. Always re-check with `git status` before
+trusting any entry here; working-tree notes go stale fastest.

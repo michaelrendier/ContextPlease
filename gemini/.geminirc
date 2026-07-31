@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+# .geminirc — SKELETON. Environment shortcuts for AI sessions in ThePlace.
+#
+# STATUS: skeleton. Paths below are real and verified; everything marked
+# TODO is deliberately empty — see ContextPlease/README.md section 7.
+#
+# This file IS bash and is safe to source:
+#     source /storage/emulated/0/ThePlace/ContextPlease/gemini/.geminirc
+#
+# Its sibling .geminirc_file_structure is JSON and MUST NEVER be sourced —
+# it passes `bash -n` and would execute as commands. Source by name, never
+# by glob. See README.md section 3.
+
+# ── Root ─────────────────────────────────────────────────────────────────
+# ALWAYS display this form. Android reports /mnt/sdcard/ThePlace for the same
+# location; never show that form, not even when echoing back a traceback.
+export THEPLACE="/storage/emulated/0/ThePlace"
+export CONTEXTPLEASE="$THEPLACE/ContextPlease"
+
+# ── Reference documents: paths only, NOT sourced ─────────────────────────
+_G="$CONTEXTPLEASE/gemini"
+export GEMINIRC_MEMORY="$_G/.geminirc_memory"
+export GEMINIRC_CANONICAL_MATHS="$_G/.geminirc_canonical_maths"
+export GEMINIRC_CONTEXT_1="$_G/.geminirc_context_1"
+export GEMINIRC_CONTEXT_2="$_G/.geminirc_context_2"
+export GEMINIRC_FILE_STRUCTURE="$_G/.geminirc_file_structure"   # JSON. Never source.
+
+# ── Repo paths (github.com/michaelrendier) ───────────────────────────────
+# URLs here must stay CLEAN. Several local `git remote -v` entries have
+# plaintext PATs (ghp_...) baked into the origin URL — never copy
+# `git remote get-url origin` output into a file that gets committed.
+export REPO_VAPMIP_PATH="$THEPLACE/VAPMIP"                # the world: monad, LSHS, PtolC
+export REPO_VALAQUENTA_PATH="$THEPLACE/ValaQuenta"        # the engines: runnable maths
+export REPO_AINULINDALE_PATH="$THEPLACE/Ainulindale"      # the music: theory, wikis
+# TODO: remaining repos — copy from ../claude/.clauderc, they are shared.
+
+# ── Environment facts (verified 2026-07-28; see README.md section 3) ──────
+# PATH leaks Termux binaries: `command -v gcc` can resolve OUTSIDE the proot.
+#   Verify with `dpkg -l`, or check the path resolves under /usr.
+# $THEPLACE cannot hold the exec bit: chmod +x silently no-ops there.
+#   Build in place, copy to /root/bin, chmod THERE.
+# Python is PEP-668 managed on arm64: use `apt install python3-<pkg>`, not pip.
+export ROOTFS_BIN="/root/bin"      # where built binaries must live to run
+
+# ── Helpers ──────────────────────────────────────────────────────────────
+# Pull ONE repo's current-state entry instead of reading the whole file.
+ctxdir() {
+  [ -r "$GEMINIRC_CONTEXT_1" ] || { echo "context_1 not populated"; return 1; }
+  awk -v d="## $1" '$0==d{f=1;next} /^## /{f=0} f' "$GEMINIRC_CONTEXT_1"
+}
+
+cdrepo() {
+  local var="REPO_$(echo "$1" | tr '[:lower:]' '[:upper:]')_PATH"
+  local path="${!var}"
+  [ -z "$path" ] && { echo "no repo path var for '$1'"; return 1; }
+  cd "$path" || return 1
+}
+
+# Prefer `tree` scoped to what you need over brute-force `find`.
+#   tree -L 2 "$THEPLACE"
+#   tree -P '*.md|*.py' -I '__pycache__' DIR

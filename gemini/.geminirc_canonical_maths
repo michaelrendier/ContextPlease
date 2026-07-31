@@ -1,0 +1,23 @@
+# .geminirc_canonical_maths — SKELETON. Authoritative equations and notation.
+# NOT bash. Do not source.
+#
+# THE STARTING POINT for any derivation, code, or research task. Do not
+# re-derive notation from a source file — source files drift; this file is
+# the one that is maintained. If code and this file disagree, that is a
+# finding: report it, do not silently trust either.
+#
+# THE MATHEMATICS IS NOT PER-AGENT. Copy ../claude/.clauderc_canonical_maths
+# verbatim rather than restating it — a paraphrase introduces drift, and
+# notation drift here has caused real errors.
+#
+#     cp ../claude/.clauderc_canonical_maths ./.geminirc_canonical_maths
+#
+# What that file carries, so you know what you are missing until you copy it:
+#   - the shared constant core (OMEGA_ZS, D_STAR, GAP, PHI, R_H, ALPHA)
+#   - the H_hat_RB / 0_RB derivation chain and its anchor
+#   - notation conventions, including: A! ALWAYS means A-dagger, NEVER factorial
+#   - standing corrections, dated, that have not yet propagated into code
+#
+# Every equation carries a tier: ESTABLISHED | THEORETICAL | CONJECTURE | OPEN.
+# Compound tags are correct where they apply; do NOT flatten a compound tag
+# to its higher half.
