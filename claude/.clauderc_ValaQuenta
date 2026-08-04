@@ -899,10 +899,22 @@ leaf drops off IS one of the prime factors'; (3) every tone shares envelope
 2*x^sigma, = 2*sqrt(x) on the line. EQUAL ENVELOPE <=> ALL NODES ON ONE LINE
 <=> RH.
 
-SYMBOL COLLISION, DO NOT MERGE: psi(x) here is CHEBYSHEV's function
-(prime counter). psi(theta) in l_io_photon_path is the FERMAT/LENSING
-potential (nabla^2 psi = 2 kappa). Unrelated. This module always spells it
-chebyshev_psi_* in full.
+SLOT CORRESPONDENCE (2026-08-04, supersedes the earlier 'unrelated, do not
+merge' note). The two psi are DIFFERENT OBJECTS -- psi_Cheb is a monotone
+step function on R+, one integration above the discrete measure Lambda(n);
+psi_Fermat is a smooth 2D field, two integrations above continuous kappa.
+Keep them itemised. BUT they are ONE SLOT APART in the same equation:
+  lensing: L_(I|O) = L - psi_Fermat ;  primes: psi_Cheb = x - SUM_rho x^rho/rho
+  psi_Cheb <-> L_(I|O) (actual bent path); x <-> L (clean geodesic);
+  SUM_rho x^rho/rho <-> psi_Fermat (the bend).
+So Chebyshev psi is the counterpart of L_(I|O), NOT of the Fermat potential.
+The counterpart of psi_Fermat is the ZERO SUM -- unnamed in any repo until
+2026-08-04 because it only existed inline in the explicit formula. Now
+zero_sum(). The main term x IS L, 'the path of least primes' -> clean_path_L().
+The prime side already HAD an L_(I|O) and was calling it psi; de-lensing here
+means recovering the source, and the source is Lambda -- the primes. FOURTH
+COLUMN of the primer's s4 dictionary. l_io_decomposition() returns the three
+slots by role name. chebyshev_psi_* KEEPS its name (standard, expected).
 
 LAMBERT W GIVES BOTH COORDINATES OF EVERY ZERO -- the structural find:
 W(1)=OMEGA_ZS pins sigma=1/2 (real part, already PAPER.md 12.1), and

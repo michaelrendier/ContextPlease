@@ -489,10 +489,41 @@ Three readings:
      every zero. EQUAL ENVELOPE ⟺ ALL NODES ON ONE LINE ⟺ RH.
      An off-line zero at σ drowns the rest by x^(σ−½) → ∞.
 
-⚠ SYMBOL COLLISION — DO NOT MERGE:
-    ψ(x)  Chebyshev's function, Σ ln p (prime counter)  — archimedes_screw
-    ψ(θ)  Fermat / lensing potential, ∇²ψ = 2κ          — l_io_photon_path
-  The module spells the first chebyshev_psi_* in full, everywhere.
+THE SLOT CORRESPONDENCE (2026-08-04 — supersedes the earlier
+"two unrelated ψ, do not merge" note, which was true but undersold it):
+
+  DIFFERENT OBJECTS, keep them itemised:
+    ψ_Cheb(x)   Σ ln p over prime powers ≤ x. Domain ℝ⁺, 1-D, a monotone
+                STEP function. Source = discrete measure Λ(n);
+                ψ' = Σ Λ(n)δ(x−n) — ONE integration above it. ψ ~ x.
+    ψ_Fermat(θ) lensing potential, l_io_photon_path. SMOOTH 2D field.
+                Source = continuous κ; ∇²ψ = 2κ — TWO integrations above.
+  You cannot Poisson-solve a staircase, nor read a prime off a smooth field.
+
+  BUT THEY ARE ONE SLOT APART IN THE SAME EQUATION:
+    lensing:   L_(I|O)  =  L  −  ψ_Fermat
+    primes:    ψ_Cheb   =  x  −  Σ_ρ x^ρ/ρ   (− ln2π − ½ln(1−x⁻²))
+
+    ψ_Cheb      ↔  L_(I|O)     the ACTUAL, bent path
+    x           ↔  L           the CLEAN geodesic
+    Σ_ρ x^ρ/ρ   ↔  ψ_Fermat    the POTENTIAL — the bend
+
+  So Chebyshev ψ is the counterpart of L_(I|O), NOT of the Fermat
+  potential. The counterpart of ψ_Fermat is the ZERO SUM — which had no
+  name in any repo until 2026-08-04 (it lived inline inside the explicit
+  formula, which is exactly why the collision read as a naming accident).
+  Now archimedes_screw.zero_sum().
+
+  Consequences: the main term x IS L, "the path of least primes" — the
+  pole term, what ψ would be if no zero contributed. Now clean_path_L().
+  And the prime side already HAD an L_(I|O); it was being called ψ.
+  De-lensing here = recovering the source from the bent path, and the
+  source is Λ — the primes themselves. That is the FOURTH COLUMN of the
+  primer's §4 dictionary, and it was the missing one.
+
+  l_io_decomposition(x) returns all three slots by role name; identity
+  L_IO = L − psi_bend + trivial holds by construction.
+  chebyshev_psi_* KEEPS its name — it is standard and expected.
 
 LAMBERT W SUPPLIES BOTH COORDINATES OF EVERY ZERO:
 
