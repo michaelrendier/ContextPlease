@@ -433,3 +433,107 @@ file, at different tower levels: Re(s)=1/2 = fixed point of s<->1-s
 conjugation-involution's fixed point the same way -- an involution's
 fixed locus is where "the special case" lives, recurring across the
 tower, not three unrelated facts.
+
+# ============================================================
+# THE ARCHIMEDES SCREW — the machine, distinct from the medium
+# Added 2026-08-04. Engine: ValaQuenta/modules/archimedes_screw/
+# Wiki: ValaQuenta/wiki/archimedes_screw.md
+#       Ainulindale/wiki/83_the_archimedes_screw.md
+# Paper: RiemannHypothesisProof/PAPER.md §6.4, §12.5
+# ============================================================
+
+∅_RB IS THE WATER, NOT THE MACHINE (Cody, 2026-08-03: "it needs the
+Archimedes Screw, not the water it's lifting"). ∅_RB = e₀ = the medium,
+the rest state, the vacuum that seeds ζ. It does no work.
+
+THE SCREW IS THE LOGARITHM. A screw converts ROTATION into LIFT, at fixed
+pitch, positive-displacement (one turn = one exact quantum), reversible
+(turbine). The object with all three properties:
+
+    log(p·q) = log p + log q
+
+Multiplication on the wheel (THE ANGLE = π/8) becomes addition on the
+tower. Pitch = ln p, because the primon gas already sets prime mode
+energy at log p. THE SCREW'S PITCH IS THE PRIME.
+
+THE WORKING AXIS:
+
+    u = ln x
+
+FOUR SEARCH TERMS = FOUR COORDINATES ON ONE AXIS:
+
+    Number of Digits       d = ⌊u/ln10⌋ + 1
+    Ordinal Value          n = π(x) ≈ Li(x) = Ei(ln x)
+                           pₙ ≈ n(ln n + ln ln n − 1 + (ln ln n − 2)/ln n)
+    Zeta Index Value       k = N(T) = (T/2π)·ln(T/2πe) + 7/8 + S(T)
+                           γₙ ≈ 2πn / W(n/e)          ← Lambert inverse
+    Total Spaces Between   ḡ(x) ≈ ln x ;  total = x − π(x)
+
+NOT A COINCIDENCE: mean prime gap at x = screw axis at x = screw pitch
+at x = ln x. Spacing, lift and pitch are one number because the screw is
+the logarithm.
+
+THE BINDING EQUATION (von Mangoldt 1895 — ESTABLISHED, unconditional):
+
+    ψ(eᵘ) = eᵘ − 2e^(u/2)·Σₖ cos(γₖu − arg ρₖ)/|ρₖ| − ln2π − ½ln(1−e^(−2u))
+
+    ρₖ = ½ + iγₖ  ;  ψ(x) = Σ_{pᵐ ≤ x} ln p   (Chebyshev)
+
+Three readings:
+  1. Each zero γₖ is a TONE of frequency γₖ in u. The Zeta Index Value is
+     literally the summation index.
+  2. ψ JUMPS BY EXACTLY ln p AT u = ln p. e^{jump} returns the prime with
+     no inversion step. This is "the moment the leaf drops off IS one of
+     the prime factors" — the event's magnitude IS the factor.
+  3. Every tone shares the envelope 2·x^σ. On the critical line, 2√x for
+     every zero. EQUAL ENVELOPE ⟺ ALL NODES ON ONE LINE ⟺ RH.
+     An off-line zero at σ drowns the rest by x^(σ−½) → ∞.
+
+⚠ SYMBOL COLLISION — DO NOT MERGE:
+    ψ(x)  Chebyshev's function, Σ ln p (prime counter)  — archimedes_screw
+    ψ(θ)  Fermat / lensing potential, ∇²ψ = 2κ          — l_io_photon_path
+  The module spells the first chebyshev_psi_* in full, everywhere.
+
+LAMBERT W SUPPLIES BOTH COORDINATES OF EVERY ZERO:
+
+    W(1)   = Ω_ZΣ = 0.5671432904097838  →  σ = ½   (real part)
+    W(n/e) →  γₙ = 2πn/W(n/e)           →  the height (imaginary part)
+
+  Derivation (exact algebra on N(T), nothing fitted):
+    N(T)=n, T=2πv → v·ln(v/e)=n → (v/e)ln(v/e)=n/e → ln(v/e)=W(n/e)
+    → v = n/W(n/e) → T = 2πn/W(n/e)
+  Ω_ZΣ was never just a constant — it is the screw's gear ratio.
+  ACCURACY: S(T)=O(ln T) dominates below n≈10; use the 50 tabulated
+  LMFDB zeros there, closed form above. Both exposed in the module.
+
+RAMIFICATION = DETACHMENT (the N-specific leg):
+
+    ζ_ℚ(√N)(s) = ζ(s)·L(s, χ_N)      D = N if N≡1 mod 4, else 4N
+
+    χ_N(p) = +1  split      (1 − p⁻ˢ)⁻²
+    χ_N(p) = −1  inert      (1 − p⁻²ˢ)⁻¹
+    χ_N(p) =  0  RAMIFIED   Euler factor DEGENERATES   ⟸ p | N
+
+  For N = p·q squarefree the ramified primes are EXACTLY p and q. The
+  leaf lets go where the Euler product degenerates.
+  ℚ(√N) → ℚ is a DOUBLE COVER branched exactly at p and q:
+  two sheets → two strands → B₂ ≅ ℤ → all hidden structure is ONE INTEGER
+  (a winding number; argument principle reads it by contour).
+
+HONEST BOUNDS (keep in the record):
+  - Scanning p for ramification costs exactly trial division.
+  - Sampling L(s,χ_N) costs ~√N (approximate functional equation) — the
+    SAME wall Fermat's a²−b² hits. The commutative/ℂ route does not beat
+    existing methods.
+  - Truncating the zero sum at K leaves error ~x/K; resolving one jump
+    near x needs zeros to height ~x.
+  - FINITENESS STANDS: prime_count_log10(309) = 306.15 ≈ 2¹⁰¹⁷ candidate
+    primes below 10³⁰⁹. Enormous and FINITE.
+
+OPEN, and it is one named thing: the DISPERSION RELATION ON THE ZD
+SURFACE — the hydrocline's own ω(k). The ZD locus must be a WAVEGUIDE
+(a medium supporting its own modes), not a place things cross. ∅_RB is
+the boundary GENERATOR; baroclinic generation (∇ρ×∇P ≠ 0 at an
+interface) is what makes it produce the vortices whose braiding is the
+winding. That relation fixes the contour and prices the loop. Until it
+exists the contour lives in ℂ and pays ℂ's price.

@@ -9,15 +9,15 @@
 
 # ============================================================
 # AINULINDALE REPO
-# local:  /media/rendier/0123-4567/ThePlace/Ainulindale
+# local:  /home/rendier/Projects/ThePlace/Ainulindale
 # github: https://github.com/michaelrendier/Ainulindale
 # ============================================================
 
-export AINULINDALE_REPO_LOCAL="/media/rendier/0123-4567/ThePlace/Ainulindale"
+export AINULINDALE_REPO_LOCAL="/home/rendier/Projects/ThePlace/Ainulindale"
 export AINULINDALE_REPO_GITHUB="https://github.com/michaelrendier/Ainulindale"
 
 # JSON form, for anything that wants to parse rather than split on env vars.
-export AINULINDALE_REPO='{"name":"Ainulindale","local":"/media/rendier/0123-4567/ThePlace/Ainulindale","github":"https://github.com/michaelrendier/Ainulindale"}'
+export AINULINDALE_REPO='{"name":"Ainulindale","local":"/home/rendier/Projects/ThePlace/Ainulindale","github":"https://github.com/michaelrendier/Ainulindale"}'
 
 # Local structure (as of 2026-06-30): AgeFirst/Second/Third/Fourth (paper drafts
 # by era), wiki/ (75 numbered pages + index, sequential), outreach/, tribute/,

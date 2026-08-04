@@ -6,7 +6,7 @@
 # PROJECT ROOT
 # ============================================================
 
-export PROJ="/media/rendier/0123-4567/ThePlace"
+export PROJ="/home/rendier/Projects/ThePlace"
 
 # ============================================================
 # REPO SHORTCUTS
@@ -27,8 +27,8 @@ export ADDPAPERS="$AIN/AddPapers"
 # MEMORY + SCRATCHPAD
 # ============================================================
 
-export CLAUDE_MEMORY="/home/rendier/.claude/projects/-media-rendier-0123-4567-ThePlace/memory"
-export CLAUDE_SCRATCH="/tmp/claude-1000/-media-rendier-0123-4567-ThePlace"
+export CLAUDE_MEMORY="/home/rendier/.claude/projects/-home-rendier-Projects-ThePlace/memory"
+export CLAUDE_SCRATCH="/tmp/claude-1000/-home-rendier-Projects-ThePlace"
 
 # ============================================================
 # PYTHON PATH — enables: from ValaQuenta.X import Y
@@ -177,7 +177,7 @@ wiki() {
 # BIN ARCHIVE — holcus monad .bin files
 # ============================================================
 
-export BIN_ARCHIVE="/media/rendier/0123-4567/PTorrent/bin_archive/clean"
+export BIN_ARCHIVE="/home/rendier/Projects/ThePlace/PTorrent/bin_archive/clean"
 
 # ============================================================
 # PTOL — C sedenion engine shortcuts

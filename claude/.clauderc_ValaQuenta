@@ -33,9 +33,43 @@
 #   "ESTABLISHED (X) + THEORETICAL (Y)" -- X is solid, Y is the
 #   interpretive/identification layer on top. tools.py sometimes FLATTENS
 #   these to a single tier -- see _crosscutting block, item 2.
+#
+# ============================================================================
+# FULL ENGINE PROTOCOL  (amended 2026-08-04 by Cody -- FIVE parts, was four)
+# ============================================================================
+# An engine is not "done" until all five artifacts exist. Shipping the code
+# alone leaves the engine undiscoverable from a cold context, which is the
+# failure this whole .clauderc_* family exists to prevent.
+#
+#   1. ENGINE          ValaQuenta/modules/<name>/{__init__,maths,tools}.py
+#                      implementing the engine/registry.py EquationModule
+#                      contract, and REGISTERED in ValaQuenta/__main__.py
+#                      _register_all() plus listed in modules/__init__.py.
+#   2. NOTEBOOK        ValaQuenta/notebooks/engines/NN_<name>.ipynb
+#                      (or the topic subdirectory), exercising the formulary
+#                      end to end, with the open items shown honestly.
+#   3. AINULINDALE WIKI  Ainulindale/wiki/NN_<name>.md -- the narrative page:
+#                      origin quote, what changed, honest boundaries,
+#                      predecessor links.
+#   4. VALAQUENTA WIKI   ValaQuenta/wiki/<name>.md -- the engineering page:
+#                      file, class, claim, mechanism, confidence table.
+#                      Add the row to wiki/00_index.md.
+#   5. .clauderc_ValaQuenta ENTRY  <-- NEW, added 2026-08-04.
+#                      export CTX_<NAME>="..." below, AND the module name
+#                      appended to VALAQUENTA_ENGINE_INDEX above, so
+#                      `ctxengine <name>` resolves without reading source.
+#                      An engine absent from this file is invisible to a
+#                      cold session no matter how complete its code is --
+#                      l_io_photon_path sat unindexed for weeks in exactly
+#                      that state (see CTX_L_IO_PHOTON_PATH, "WAS MISSING
+#                      FROM THIS INDEX").
+#
+# A canonical-maths change accompanying an engine also goes in
+# ~/.clauderc_canonical_maths, and all ~/.clauderc* files are copied into
+# ContextPlease/claude/ before the push (github push protocol).
 # ============================================================================
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path monad translator_discocat translator_vsa translator_common _crosscutting"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw monad translator_discocat translator_vsa translator_common _crosscutting"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -829,4 +863,90 @@ symptom, different mechanism. Do not treat this as confirming Phase 22, and
 do not expect T32/T64 to fix it.
 OPEN, FOR CODY NOT CLAUDE: is stripping the common mode a legitimate fix, or
 is it tuning the encoder to manufacture a result? Not touched pending that.
+"
+
+export CTX_ARCHIMEDES_SCREW="
+archimedes_screw -- The Archimedes Screw (Prime Coordinate Engine). v0.1
+(added 2026-08-04). confidence_floor=THEORETICAL; the individual pieces are
+ESTABLISHED classical number theory, the FRAMING is the new part.
+
+ORIGIN (Cody, 2026-08-03): '0_RB is the water, not the machine -- the Monad
+needs the Archimedes Screw, not the water it's lifting.' Every prior module
+treated 0_RB as the operative object. It is the MEDIUM (= e0, rest state,
+the vacuum seeding zeta). It does no work.
+
+THE SCREW IS THE LOGARITHM. Rotation -> lift, fixed pitch,
+positive-displacement, reversible as a turbine: log(p*q)=log p + log q.
+Multiplication on the wheel (THE ANGLE=pi/8) becomes addition on the tower.
+Pitch = ln p (primon gas already sets mode energy at log p).
+THE SCREW'S PITCH IS THE PRIME.
+
+WORKING AXIS u = ln x. Cody's four search terms are four coordinates on it,
+not four queries: Number of Digits (d=floor(u/ln10)+1), Ordinal Value
+(n=pi(x)~Li(x)), Zeta Index Value (k=N(T), inverse gamma_n=2*pi*n/W(n/e)),
+Total Spaces Between (gbar~ln x, total=x-pi(x)). Entry: screw_coordinates
+(term, value) -- enter on any one, leave on all.
+NOT A COINCIDENCE: mean prime gap at x = screw axis at x = screw pitch at x
+= ln x. Spacing, lift and pitch are one number because the screw is the log.
+
+BINDING EQUATION (von Mangoldt 1895, ESTABLISHED, unconditional):
+  psi(e^u) = e^u - 2e^(u/2)*SUM_k cos(gamma_k*u - arg rho_k)/|rho_k|
+             - ln(2pi) - 0.5*ln(1-e^(-2u))
+Three readings, all executable: (1) each zero is a TONE, zeta index IS the
+summation index; (2) psi JUMPS BY EXACTLY ln p at u=ln p, so e^{jump}
+returns the prime with no inversion step -- this is Cody's 'the moment the
+leaf drops off IS one of the prime factors'; (3) every tone shares envelope
+2*x^sigma, = 2*sqrt(x) on the line. EQUAL ENVELOPE <=> ALL NODES ON ONE LINE
+<=> RH.
+
+SYMBOL COLLISION, DO NOT MERGE: psi(x) here is CHEBYSHEV's function
+(prime counter). psi(theta) in l_io_photon_path is the FERMAT/LENSING
+potential (nabla^2 psi = 2 kappa). Unrelated. This module always spells it
+chebyshev_psi_* in full.
+
+LAMBERT W GIVES BOTH COORDINATES OF EVERY ZERO -- the structural find:
+W(1)=OMEGA_ZS pins sigma=1/2 (real part, already PAPER.md 12.1), and
+W(n/e) inverts N(T) to give gamma_n (imaginary part). Same function.
+OMEGA_ZS was never just a constant; it is the screw's gear ratio.
+ACCURACY: S(T)=O(ln T) dominates below n~10 -- module tabulates the first 50
+LMFDB zeros (ZEROS_KNOWN) and switches to zero_height_lambert above. Both
+exposed so the crossover is inspectable. Do not use the closed form at low n.
+
+RAMIFICATION = DETACHMENT (N-specific leg): zeta_Q(sqrt N)=zeta*L(s,chi_N);
+chi_N(p)=0 means p RAMIFIES and the Euler factor DEGENERATES; for N=p*q
+squarefree the ramified primes are EXACTLY p and q. Q(sqrt N)->Q is a DOUBLE
+COVER branched at p,q: two sheets -> two strands -> B_2 = Z -> all hidden
+structure is ONE INTEGER (winding; argument principle reads it by contour).
+Functions: kronecker, fundamental_discriminant, splitting_type,
+splitting_vector, ramified_primes.
+
+HONEST BOUNDS, stated in the module's own docstrings, not buried:
+ - ramified_primes() scanning p costs EXACTLY what trial division costs. It
+   is a structural readout at toy scale, NOT a shortcut, and is labelled so.
+ - Sampling L(s,chi_N) costs ~sqrt(N) (approximate functional equation) --
+   the SAME wall Fermat's a^2-b^2 hits. The commutative/C route does not beat
+   existing methods and fails at the classical place.
+ - Truncating the zero sum at K leaves error ~x/K; resolving one jump near x
+   needs zeros to height ~x. shake_order() REPORTS this residual.
+ - FINITENESS STANDS: prime_count_log10(309)=306.15 ~ 2^1017 candidates
+   below 10^309. Enormous and FINITE -- Cody's point, computed not asserted.
+
+NUMERICS: transcendental throughout (ln, Lambert W, cos), so float-native
+rather than Fraction-native. The registry contract's Fraction rule is stated
+as inapplicable here rather than silently ignored -- only digit counts and
+indices are exact, and those stay int.
+
+OPEN, one named thing: the DISPERSION RELATION ON THE ZD SURFACE (the
+hydrocline's own omega(k)). The resolution wall is a MEASUREMENT wall;
+integers do not pay it. The ZD locus must be a WAVEGUIDE (a medium
+supporting its own modes), not a place things cross. 0_RB is the boundary
+GENERATOR; baroclinic generation (grad rho x grad P != 0 at an interface) is
+what makes it produce the vortices whose braiding is the winding. That
+relation fixes the contour and prices the loop. Until it exists the contour
+lives in C and pays C's price. THIS ENGINE IS THE INSTRUMENT BUILT TO LOOK AT
+THAT QUESTION, NOT THE ANSWER TO IT.
+
+See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
+notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
+sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
 "
