@@ -958,6 +958,27 @@ relation fixes the contour and prices the loop. Until it exists the contour
 lives in C and pays C's price. THIS ENGINE IS THE INSTRUMENT BUILT TO LOOK AT
 THAT QUESTION, NOT THE ANSWER TO IT.
 
+v0.2 (2026-08-05) THE COMPOSITE SIDE, which the engine was blind to (psi
+counts only prime powers, so a composite contributes nothing -- it could name
+every prime and say nothing about any child). TWO FALLS: discovery at lpf(N)
+(first strike, cofactor free) and THE FALL at gpf(N) (sieve finished with N).
+14 = 2*7 is struck at 2 but STAYS ON THE TREE; it drops at 7. Not a stylistic
+ordering choice -- SMOOTHNESS IS DEFINED BY gpf, and smooth relations are the
+engine of GNFS/QS/CFRAC/index calculus. Fall-time distribution is DICKMAN rho
+in u = lnN/ln(gpf N), a RATIO OF LIFTS hence native to this axis; balanced
+semiprime is u=2 exactly, exponent 1/2. Harvest is closed form: Psi(X/p,p) at
+step p, pi(min(p,X/p)) for two-parent leaves; harvest_curve() cross-checks off
+a gpf_table sieve and they agree exactly. Family identity EXACT on the screw:
+ln p1 + ln p2 = ln N, so ln p = 0.5lnN -/+ delta with delta = 0.5*ln(q/p) THE
+ENTIRE HIDDEN CONTENT (same object as BKT threshold and B_2=Z winding, third
+route). WHY BALANCED RSA IS HARD: the falls are separated by 2*delta; balanced
+=> delta->0 => BOTH COLLAPSE ONTO lnN/2, no early event to catch. Not "search
+space large" -- THE TWO OBSERVABLES COINCIDE. Functions: lpf, gpf, fall_height,
+discovery_height, smoothness_u, dickman_rho, gpf_table, psi_smooth, harvest,
+harvest_curve, semiprime_harvest, fall_split. COST: lpf/gpf trial division
+O(sqrt n); harvest O(X log log X)/O(X). Tracking is cheap, REACHING IS NOT --
+2048-bit still means sieving to 2^1024. Naming the event does not move the wall.
+
 See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
 notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
 sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
