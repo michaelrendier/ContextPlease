@@ -616,3 +616,32 @@ CHEAP; REACHING IT IS NOT — for a 2048-bit modulus, observing the event
 still means sieving to 2¹⁰²⁴. Naming the event correctly does not move the
 wall. It puts the target on the function the field already uses, in the
 coordinate the screw already speaks, with a known distribution attached.
+
+# ------------------------------------------------------------
+# THE PROJECTION LEDGER — what "the domain" actually is
+# domain_ladder(modulus_bits), added 2026-08-05
+# ------------------------------------------------------------
+RSA-2048, as log₂(count):
+    all integers 2 … N                          2048
+    all integers 2 … √N        trial range      1024
+    all PRIMES ≤ √N            only these test  1014.53
+    primes with exactly 1024 bits               1013.53
+    GNFS pathway actually walked                 112
+
+    √N bound saves     1024 bits  (FREE — p ≤ q ⟹ p ≤ √N; nothing past √N)
+    primes-only saves     9.47 bits
+    size restriction      1.00 bit
+    GNFS saves further  901.53 bits
+
+THE ONE-BIT FACT: restricting to primes "with enough digits" prunes by a
+factor of EXACTLY 2. Primes are top-heavy — 1/ln x barely moves across an
+octave (0.1% at 2¹⁰²⁴), so π(x) − π(x/2) ≈ x/(2 ln x) ≈ ½π(x). HALF OF ALL
+PRIMES BELOW ANY BOUND LIVE IN THE TOP OCTAVE. Saving measured: 1.0028 at
+1024 bits, 1.0014 at 2048, 1.0007 at 4096 → exactly 1 in the limit.
+
+Joins the other cheap constraints, all single digits: mod4 ≈1 bit,
+mod16 = 3 bits, size = 1 bit.
+
+⚠ THE ONLY ROW THAT IS A TARGET IS GNFS AT 2¹¹². Everything above it is
+naive-domain accounting, beaten in the 1990s. A new method must clear
+2¹¹², not 2¹⁰²⁴. Put this row in front of any claimed reduction.
