@@ -1061,12 +1061,45 @@ SKELETON: PG(3,2) -- 15 points (the pure imaginaries), 35 lines of 3 (the
 multiplication triplets), 15 Fano planes. NOT 32; figures circulating with
 '32 interlocking Fano planes' are wrong.
 
+v0.2 (2026-08-05) DO THE CHARTS TOUCH? YES -- IN THE SKELETON. Two structures
+on one object, both statements hold: ADJACENCY (ZD products) gives 7
+disconnected components; SKELETON (shared basis indices) has EVERY USABLE INDEX
+IN 6 OF 7 CHARTS, with every chart pair sharing exactly 10 points. For strut s
+an Assessor is (a, (a XOR s)+8), valid iff a != s, so index a is in every chart
+EXCEPT s = a.
+!! EXACTLY TWO BASIS ELEMENTS ARE IN NO ASSESSOR: e_0 (the identity, 0_RB, THE
+FIXED POINT) and e_8 (the CD doubling generator). Each chart carries ONE zero
+mode = the constant = SEVEN COPIES OF ONE OBJECT. Identify them and the atlas
+connects -- at e_0 and nowhere else. That is the sense in which 0_RB points to
+fixed-point space 'where the boundary and the geometries are the same thing':
+at the fixed point the boundary generator and the geometry's own mode are the
+SAME VECTOR; away from it they separate.
+
+THE CHART OF ADDRESSES -- the monad connector. chart_of(v) for a 16-vector from
+VAPMIP/monad_sedenion_addresses.pkl (book[name]['sedenion']) reports norm,
+peak_dim, fixed_point_weight (v0^2/|v|^2), energy_split (e0/e8/lower/upper),
+chart_energy for all 7, dominant chart + share, nearest Assessor, both diagonal
+amplitudes, local associator curvature, is_zero_divisor, outside_share.
+address_census() runs it over a corpus (check_zd=False by default; the exact ZD
+test is 168 products, ~9ms/address).
+
+CENSUS, monad book, 3288 entries -- DESCRIPTIVE, nothing scored:
+  all 42 Assessors occupied; mean fixed-point weight 0.6435 (min 0.0583, max
+  1.0000); mean outside share e0+e8 0.6537; peak_dim=0 for 2751/3288 (84%);
+  dominant chart strut 2 30.1% ... strut 7 2.2%; mean local curvature 8.37.
+  TWO THIRDS OF THE AVERAGE ADDRESS SITS OUTSIDE THE ZD GEOMETRY ENTIRELY.
+  Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE IS
+  e_0 + e_8, the two elements in no Assessor. The part of an address living
+  outside the geometry is exactly the part carrying no discriminating signal.
+
 Functions: cd_multiplication_table, basis_mul, multiply, associator,
 commutator, associator_defect, associator_census, assessors, strut, box_kites,
 zero_divisor_pairs, verify_counts, box_kite_graph, chart_spectrum, glued_graph,
 glued_spectrum, associator_field, eigenvalues_symmetric (pure-Python Jacobi),
 pg32_points, pg32_lines, fano_planes, psl27_order, skeleton_counts,
-e0_is_outside.
+e0_is_outside, index_chart_membership, skeleton_overlap,
+fixed_point_gluing, fixed_point_weight, energy_split, assessor_coordinates,
+chart_projection, nearest_assessor, local_curvature, chart_of, address_census.
 
 See wiki/box_kite.md, Ainulindale/wiki/84_the_box_kite_debugger.md,
 notebooks/engines/15_box_kite.ipynb.

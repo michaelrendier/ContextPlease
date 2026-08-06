@@ -725,3 +725,42 @@ THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle — opposite polarity):
   Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2δ.
   Balanced RSA: δ→0, ALL THREE coincide at ½ln N.
   A prime is the degenerate case — grown, extinct and identified at once.
+
+# ------------------------------------------------------------
+# DO THE CHARTS TOUCH? — yes, in the skeleton (box_kite v0.2)
+# ------------------------------------------------------------
+TWO STRUCTURES ON ONE OBJECT — both statements hold:
+  ADJACENCY (zero-divisor products): 7 components, 7 zero modes. DISCONNECTED.
+  SKELETON  (shared basis indices):  every usable index in 6 OF 7 CHARTS.
+                                     Every chart pair shares exactly 10 points.
+  For strut s an Assessor is (a, (a XOR s)+8), valid iff a ≠ s — so index a
+  is in every chart EXCEPT s = a.
+
+⚠ EXACTLY TWO BASIS ELEMENTS ARE IN NO ASSESSOR:
+    e₀  the identity — ∅_RB, THE FIXED POINT
+    e₈  the Cayley-Dickson doubling generator
+  Each chart carries ONE zero mode = the constant function = SEVEN COPIES OF
+  ONE OBJECT. Identify them and the atlas connects — at e₀ and nowhere else.
+  THAT is the sense in which 0_RB points to fixed-point space "where the
+  boundary and the geometries are the same thing": at the fixed point the
+  boundary generator and the geometry's own mode are the SAME VECTOR. Away
+  from it they separate.
+
+THE CHART OF ADDRESSES (the monad connector):
+  chart_of(v) for a 16-vector from monad_sedenion_addresses.pkl reports
+  norm, peak_dim, fixed_point_weight (v₀²/|v|²), energy_split
+  (e₀/e₈/lower/upper), chart_energy for all 7, dominant chart + share,
+  nearest Assessor, both diagonal amplitudes, local associator curvature,
+  is_zero_divisor, outside_share. address_census() runs it over a corpus.
+
+CENSUS, monad book, 3288 entries (DESCRIPTIVE — nothing scored):
+    all 42 Assessors occupied
+    mean fixed-point weight  0.6435   (min 0.0583, max 1.0000)
+    mean outside share e₀+e₈ 0.6537
+    peak_dim = 0             2751/3288 = 84%
+    dominant chart           strut 2: 30.1% … strut 7: 2.2%
+    mean local curvature     8.37
+  TWO THIRDS OF THE AVERAGE ADDRESS SITS OUTSIDE THE ZD GEOMETRY.
+  Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE
+  IS e₀ + e₈ — the two elements belonging to no Assessor. The part of an
+  address outside the geometry is exactly the part carrying no signal.
