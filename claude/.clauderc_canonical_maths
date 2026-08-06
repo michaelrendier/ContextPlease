@@ -645,3 +645,83 @@ mod16 = 3 bits, size = 1 bit.
 ⚠ THE ONLY ROW THAT IS A TARGET IS GNFS AT 2¹¹². Everything above it is
 naive-domain accounting, beaten in the 1990s. A new method must clear
 2¹¹², not 2¹⁰²⁴. Put this row in front of any claimed reduction.
+
+# ============================================================
+# THE BOX-KITE GEOMETRY — the ZD surface, exactly enumerated
+# Engine: ValaQuenta/modules/box_kite/  (2026-08-05)
+# Wiki: ValaQuenta/wiki/box_kite.md, Ainulindale/wiki/84
+# ============================================================
+
+⚠ THE OBJECT IS PSL(2,7), NOT G₂.
+  Moreno (1997): sedenion norm-one ZDs ≅ G₂. TRUE, and the wrong place to
+  build. de Marrais (2000): "Moreno discovered a homomorphism — a
+  'blow-up' — and the blow-ups have all entailed the loss of something."
+  G₂ (continuous, dim 14, Aut 𝕆) FORGETS WHICH FANO LINE IS WHICH.
+  PSL(2,7) (finite, order 168, Aut Fano = GL(3,2)) is the finite subgroup
+  of G₂ that PRESERVES THE LABELLING. That is the exact object.
+
+DERIVED FROM THE CD TABLE (agreement with 84/42/168 is a CHECK, not input):
+  ASSESSOR  = plane span(e_a, e_{b+8}), a,b ∈ 1..7, diagonals e_a ± e_{b+8}
+              zero-divide.  a == b NEVER works.
+  42        = 49 − 7 aligned planes            ZD_CLASSES
+  84        = 42 × 2 diagonals                 ZD_PAIRS
+  168       = 42 × 4 signed unit points        = |PSL(2,7)|
+  336       = ordered annihilating pairs = 84 × 4 (each kills exactly 4)
+  STRUT     s = a XOR b ∈ 1..7 — indexes the box-kite
+  7 × 6     = 42 — seven box-kites, six Assessors each
+
+THE SHAPE IS AN OCTAHEDRON. Every strut gives a 4-regular graph on 6
+vertices with 3 non-edges = the reversal pairs (a,b)↔(b,a) = K₂,₂,₂.
+Verified for all 7 from actual vanishing products.
+
+DISPERSION RELATION, CHART LEVEL:
+    adjacency  4, 0, 0, 0, −2, −2
+    Laplacian  0, 4, 4, 4, 6, 6      ← ω²(k)
+  THE ZERO MODE IS e₀'s SIGNATURE — everywhere, propagates nowhere.
+  It emerges from the graph; it is not inserted.
+
+∅_RB IS NOT THE GEOMETRY (checked, not asserted — e0_is_outside()):
+  e₀ is not a point of PG(3,2), is in NO Assessor, is a vertex of NO
+  box-kite, and [e₀,·,·] = 0 always. It generates the boundary and does
+  not live on it.
+
+CURVATURE = THE ASSOCIATOR  [a,b,c] = (ab)c − a(bc).  Torsion = [a,b].
+  1848 of 4096 basis triples curve. associator_field(s) paints it.
+
+⚠ THE FINDING: THE CHARTS DO NOT TOUCH. The 42-vertex atlas has 84 edges
+  and ZERO CROSS-STRUT EDGES. Seven disconnected octahedra; the glued
+  Laplacian has 7 zero modes. So the gluing is NOT an edge problem —
+  either there is no global medium, or the transition maps are the
+  PSL(2,7) ACTION ON STRUTS (group elements, not edges). The latter is
+  the named next step. Also: 84 = ZD_PAIRS = the atlas edge count
+  (42 vertices × degree 4 / 2). One number, two readings.
+
+SKELETON: PG(3,2) — 15 points (the pure imaginaries), 35 lines of 3
+  (the multiplication triplets), 15 Fano planes. NOT 32.
+
+# ------------------------------------------------------------
+# THE NEGATIVE SPACE — μ, Mertens, and the three motions
+# archimedes_screw v0.3, 2026-08-05
+# ------------------------------------------------------------
+ψ counts what ACCUMULATES; it had no counterpart for what is EXCLUDED.
+The sieve is exclusion: you never test primality positively.
+
+    GROWTH      ζ(s)   = Σ n⁻ˢ     = ∏(1 − p⁻ˢ)⁻¹
+    EXTINCTION  1/ζ(s) = Σ μ(n)n⁻ˢ = ∏(1 − p⁻ˢ)
+
+  Same product, inverted exponent. μ = the Dirichlet inverse of 1,
+  Σ_{d|n} μ(d) = [n=1]. Legendre's sieve IS μ.
+
+    ψ(x) = Σ_{pᵐ≤x} ln p   the BULK      ψ(x) ~ x
+    M(x) = Σ_{n≤x} μ(n)    the MERTENS   RH ⟺ M(x) = O(x^{½+ε})
+
+  THE SAME ½, on the exclusion side. Verified: M(10)=−1, M(100)=1,
+  M(1000)=2, M(10000)=−23.
+
+THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle — opposite polarity):
+    GROWN       ζ orders; the leaf is placed at ln N
+    EXTINCT     μ excludes; struck WITHOUT NAMING      at lpf  (negative)
+    IDENTIFIED  the N-shape NAMES the factors          at gpf  (bulk)
+  Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2δ.
+  Balanced RSA: δ→0, ALL THREE coincide at ½ln N.
+  A prime is the degenerate case — grown, extinct and identified at once.

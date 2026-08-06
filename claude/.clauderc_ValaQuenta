@@ -69,7 +69,7 @@
 # ContextPlease/claude/ before the push (github push protocol).
 # ============================================================================
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw monad translator_discocat translator_vsa translator_common _crosscutting"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -972,8 +972,8 @@ a gpf_table sieve and they agree exactly. Family identity EXACT on the screw:
 ln p1 + ln p2 = ln N, so ln p = 0.5lnN -/+ delta with delta = 0.5*ln(q/p) THE
 ENTIRE HIDDEN CONTENT (same object as BKT threshold and B_2=Z winding, third
 route). WHY BALANCED RSA IS HARD: the falls are separated by 2*delta; balanced
-=> delta->0 => BOTH COLLAPSE ONTO lnN/2, no early event to catch. Not "search
-space large" -- THE TWO OBSERVABLES COINCIDE. Functions: lpf, gpf, fall_height,
+=> delta->0 => BOTH COLLAPSE ONTO lnN/2, no early event to catch. Not 'search
+space large' -- THE TWO OBSERVABLES COINCIDE. Functions: lpf, gpf, fall_height,
 discovery_height, smoothness_u, dickman_rho, gpf_table, psi_smooth, harvest,
 harvest_curve, semiprime_harvest, fall_split. COST: lpf/gpf trial division
 O(sqrt n); harvest O(X log log X)/O(X). Tracking is cheap, REACHING IS NOT --
@@ -992,7 +992,82 @@ THE TOP OCTAVE. Measured 1.0028 @1024b, 1.0014 @2048b, 1.0007 @4096b.
 !! THE ONLY TARGET ROW IS GNFS AT 2^112. Everything above it was beaten in the
 1990s. Put this row in front of ANY claimed reduction before believing it.
 
+v0.3 (2026-08-05) THE NEGATIVE SPACE. psi counts what ACCUMULATES; it had no
+counterpart for what is EXCLUDED, and the sieve is exclusion (you never test
+primality positively -- you remove multiples and keep the residue). The two
+motions are reciprocal Euler products: zeta = SUM n^-s = PROD(1-p^-s)^-1
+(growth) and 1/zeta = SUM mu(n)n^-s = PROD(1-p^-s) (extinction). mu is the
+Dirichlet inverse of 1; Legendre's sieve IS mu. Mertens M(x)=SUM mu(n) is psi's
+mirror and RH <=> M(x)=O(x^(1/2+eps)) -- THE SAME 1/2 on the exclusion side.
+Verified M(10)=-1, M(100)=1, M(1000)=2, M(10000)=-23.
+THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle -- opposite polarity):
+GROWN (zeta orders, leaf placed at lnN); EXTINCT at lpf (mu excludes, struck
+WITHOUT NAMING, negative space); IDENTIFIED at gpf (N-shape NAMES, bulk).
+Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2*delta.
+Balanced RSA: delta->0, all three coincide at lnN/2. A prime is degenerate:
+grown, extinct and identified at once. Functions: mobius, mertens,
+mertens_envelope, sieve_extinction.
+
 See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
 notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
 sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
+"
+
+export CTX_BOX_KITE="
+box_kite -- The Box-Kite Debugger (ZD Geometry). v0.1 (2026-08-05).
+confidence_floor=ESTABLISHED -- everything is derived from the Cayley-Dickson
+multiplication table and cross-checked; nothing is asserted.
+
+!! THE OBJECT IS PSL(2,7), NOT G2. Moreno (1997): sedenion norm-one ZDs are
+homeomorphic to G2 -- TRUE and the wrong place to build. de Marrais (2000):
+'Moreno discovered a homomorphism -- a blow-up -- and the blow-ups have all
+entailed the loss of something.' G2 (continuous, dim 14, Aut O) FORGETS WHICH
+FANO LINE IS WHICH. PSL(2,7) (finite, order 168, Aut Fano = GL(3,2)) is the
+finite subgroup of G2 that PRESERVES THE LABELLING. Build there.
+
+DERIVED (agreement with ZD_PAIRS=84 / ZD_CLASSES=42 / 168 is a CHECK, not an
+input; verify_counts() returns booleans so it cannot be skimmed):
+  ASSESSOR = plane span(e_a, e_{b+8}), a,b in 1..7, whose diagonals
+  e_a +/- e_{b+8} zero-divide. a==b NEVER works.
+  42 = 49-7 aligned; 84 = 42x2 diagonals; 168 = 42x4 signed unit points =
+  |PSL(2,7)|; 336 ordered annihilating pairs = 84x4 (each kills exactly 4);
+  STRUT s = a XOR b in 1..7; 7 box-kites x 6 Assessors = 42.
+  Cross-check: de Marrais Box-Kite I = (3,10),(2,11),(5,12),(4,13),(7,14),
+  (6,15) = this module's strut 1, exact match.
+
+THE SHAPE IS AN OCTAHEDRON. Every strut gives a 4-regular graph on 6 vertices
+with 3 non-edges = the reversal pairs (a,b)<->(b,a) = K_{2,2,2}. Verified for
+all 7 from actual vanishing products, not imposed.
+
+DISPERSION RELATION (chart level): Laplacian spectrum {0,4,4,4,6,6}.
+THE ZERO MODE IS e_0's SIGNATURE -- exists everywhere, propagates nowhere.
+It EMERGES from the graph; it is not inserted.
+
+0_RB IS NOT THE GEOMETRY -- checked by e0_is_outside(): e_0 is not a point of
+PG(3,2), is in NO Assessor, is a vertex of NO box-kite, and [e_0,.,.] = 0
+always. It generates the boundary and does not live on it.
+
+CURVATURE = ASSOCIATOR [a,b,c] = (ab)c - a(bc); torsion = commutator.
+1848 of 4096 basis triples curve. associator_field(s) is the debug view.
+
+!! THE FINDING: THE CHARTS DO NOT TOUCH. The 42-vertex atlas has 84 edges and
+ZERO CROSS-STRUT EDGES -- seven disconnected octahedra, 7 zero modes in the
+glued Laplacian. The gluing is NOT an edge problem. Either there is no global
+medium, or the transition maps are the PSL(2,7) ACTION ON STRUTS (group
+elements, not edges) -- the latter is the named next step and is CONJECTURE.
+Also: 84 = ZD_PAIRS = the atlas edge count (42 vertices x degree 4 / 2).
+
+SKELETON: PG(3,2) -- 15 points (the pure imaginaries), 35 lines of 3 (the
+multiplication triplets), 15 Fano planes. NOT 32; figures circulating with
+'32 interlocking Fano planes' are wrong.
+
+Functions: cd_multiplication_table, basis_mul, multiply, associator,
+commutator, associator_defect, associator_census, assessors, strut, box_kites,
+zero_divisor_pairs, verify_counts, box_kite_graph, chart_spectrum, glued_graph,
+glued_spectrum, associator_field, eigenvalues_symmetric (pure-Python Jacobi),
+pg32_points, pg32_lines, fano_planes, psl27_order, skeleton_counts,
+e0_is_outside.
+
+See wiki/box_kite.md, Ainulindale/wiki/84_the_box_kite_debugger.md,
+notebooks/engines/15_box_kite.ipynb.
 "
