@@ -26,3 +26,66 @@ export AINULINDALE_REPO='{"name":"Ainulindale","local":"/home/rendier/Projects/T
 # Repo structure: origin = local disk, git remote = github.com/michaelrendier/Ainulindale,
 # branch main. NOTE (2026-06-30): working tree has uncommitted wiki changes —
 # modified 00_index.md and 72_the_cosmic_telescope.md, untracked 73/74/75 — not yet pushed.
+
+# ============================================================
+# VALAQUENTA REPO
+# local:  /home/rendier/Projects/ThePlace/ValaQuenta
+# github: https://github.com/michaelrendier/ValaQuenta
+# ============================================================
+
+export VALAQUENTA_REPO_LOCAL="/home/rendier/Projects/ThePlace/ValaQuenta"
+export VALAQUENTA_REPO_GITHUB="https://github.com/michaelrendier/ValaQuenta"
+export VALAQUENTA_REPO='{"name":"ValaQuenta","local":"/home/rendier/Projects/ThePlace/ValaQuenta","github":"https://github.com/michaelrendier/ValaQuenta"}'
+
+# Local structure (as of 2026-08-05): modules/ (38 engines, each
+# __init__/maths/tools implementing engine/registry.py's EquationModule
+# contract), engine/ (registry, console_curses, console_qt, constants, units),
+# notebooks/ (73, engines/ + topic subdirs), wiki/ (one page per engine +
+# 00_index.md), ZeroLattice/, data/, addenda/. Branch main.
+# Newest: modules/archimedes_screw (v0.3), modules/box_kite (v0.1).
+
+# ============================================================
+# RIEMANNHYPOTHESISPROOF REPO
+# local:  /home/rendier/Projects/ThePlace/RiemannHypothesisProof
+# github: https://github.com/michaelrendier/RiemannHypothesisProof
+# ============================================================
+
+export RHP_REPO_LOCAL="/home/rendier/Projects/ThePlace/RiemannHypothesisProof"
+export RHP_REPO_GITHUB="https://github.com/michaelrendier/RiemannHypothesisProof"
+export RHP_REPO='{"name":"RiemannHypothesisProof","local":"/home/rendier/Projects/ThePlace/RiemannHypothesisProof","github":"https://github.com/michaelrendier/RiemannHypothesisProof"}'
+
+# PAPER.md is the live paper (14 sections). RiemannHypothesisProof.txt and
+# RHP_rewrite_v2.txt are earlier long-form drafts; papers/ holds archives.
+# This is the ONE place in the project where the academic register is correct
+# (Cody, 2026-08-04: "the RiemannHypothesisProof IS an academic framing...
+# clay institute level"). Everything else is engineering, not proof-writing.
+
+# ============================================================
+# VAPMIP REPO
+# local:  /home/rendier/Projects/ThePlace/VAPMIP
+# github: https://github.com/michaelrendier/VAPMIP
+# ============================================================
+
+export VAPMIP_REPO_LOCAL="/home/rendier/Projects/ThePlace/VAPMIP"
+export VAPMIP_REPO_GITHUB="https://github.com/michaelrendier/VAPMIP"
+export VAPMIP_REPO='{"name":"VAPMIP","local":"/home/rendier/Projects/ThePlace/VAPMIP","github":"https://github.com/michaelrendier/VAPMIP"}'
+
+# Virtual Action Potential Monad Information Propagation. docs/wiki/
+# Tuning-the-Engine.md is the phase-by-phase engineering log (Phase 25 as of
+# 2026-08-05). PtolC/ is the C sedenion engine. CONTEXT_PRIMER_*.txt are the
+# session primers -- read the newest before starting cold.
+
+# ============================================================
+# CONTEXTPLEASE REPO   (branch: master, NOT main)
+# local:  /home/rendier/Projects/ThePlace/ContextPlease
+# github: https://github.com/michaelrendier/ContextPlease
+# ============================================================
+
+export CONTEXTPLEASE_REPO_LOCAL="/home/rendier/Projects/ThePlace/ContextPlease"
+export CONTEXTPLEASE_REPO_GITHUB="https://github.com/michaelrendier/ContextPlease"
+export CONTEXTPLEASE_REPO='{"name":"ContextPlease","local":"/home/rendier/Projects/ThePlace/ContextPlease","github":"https://github.com/michaelrendier/ContextPlease","branch":"master"}'
+
+# Mirror of ~/.clauderc* (claude/) and the Gemini equivalents (gemini/).
+# GITHUB PUSH PROTOCOL: copy ~/.clauderc* into claude/ BEFORE committing any
+# session's work. NOTE the branch is master, not main -- pushing "main" here
+# silently creates a second branch.

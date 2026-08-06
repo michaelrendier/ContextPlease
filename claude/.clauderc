@@ -47,9 +47,25 @@ export GAP="0.000707357533249"
 export GAP_APPROX="1/(1000*sqrt(2))"       # 0.035% approx — NOT 1/sqrt(2000)
 export N_STAR="5.2570"                       # n-ball volume peak
 export V16="0.2353"                          # V(16) — NOT equal to D_STAR
-export ZD_PAIRS="84"                         # sedenion zero-divisor pairs on S^15
-export ZD_CLASSES="42"                       # canonical equivalence classes
-export ZD_COMPOSITE="168"                    # composite zero-divisors
+export ZD_PAIRS="84"                         # diagonals = 42 Assessors x 2
+export ZD_CLASSES="42"                       # Assessors (canonical classes)
+export ZD_PRIMITIVE="168"                    # PRIMITIVE unit ZDs = 42x4 = |PSL(2,7)|
+export ZD_COMPOSITE="168"                    # DEPRECATED alias of ZD_PRIMITIVE.
+# LABEL CORRECTION 2026-08-05 (de Marrais 2000, verified by modules/box_kite):
+#   168 is the count of PRIMITIVE UNIT zero divisors, = |PSL(2,7)|, arranged as
+#   point-set quartets along the 42 Assessors. COMPOSITE zero divisors are NOT
+#   168 -- they "comprise all points of certain hyperplanes of up to 4
+#   dimensions", i.e. a continuum, not a count. ZD_COMPOSITE is kept as an alias
+#   so nothing breaks; use ZD_PRIMITIVE in new work.
+export ZD_ORDERED_PAIRS="336"                # ordered annihilating pairs = 84x4
+export ZD_BOX_KITES="7"                      # octahedral charts, 6 Assessors each
+export ZD_GROUP="PSL(2,7)"                   # order 168 = Aut(Fano) = GL(3,2).
+# NOT G2. Moreno (1997): norm-one ZDs are homeomorphic to G2 -- true, but that
+# is a "blow-up" (de Marrais) that forgets which Fano line is which. PSL(2,7) is
+# the finite subgroup of G2 that PRESERVES the labelling. Build there.
+export PG32_POINTS="15"                      # pure imaginaries as PG(3,2) points
+export PG32_LINES="35"                       # multiplication triplets
+export PG32_PLANES="15"                      # Fano planes -- 15, NOT 32
 
 # ============================================================
 # GIT — push any repo using GITHUB_TOKEN
@@ -109,7 +125,9 @@ canon() {
     echo "GAP approx: $GAP_APPROX  (NOT 1/sqrt(2000))"
     echo "n*       = $N_STAR       (n-ball peak)"
     echo "V(16)    = $V16          (≠ d*, 4.3% off)"
-    echo "ZD:      $ZD_PAIRS pairs / $ZD_CLASSES classes / $ZD_COMPOSITE composite on S^15"
+    echo "ZD:      $ZD_PAIRS diagonals / $ZD_CLASSES Assessors / $ZD_PRIMITIVE primitive (=|PSL(2,7)|)"
+    echo "         $ZD_ORDERED_PAIRS ordered pairs / $ZD_BOX_KITES box-kites (octahedra) / group $ZD_GROUP -- NOT G2"
+    echo "PG(3,2): $PG32_POINTS points / $PG32_LINES lines / $PG32_PLANES Fano planes (not 32)"
     echo ""
     echo "Full table: $CLAUDE_MEMORY/canonical_math.md"
 }
