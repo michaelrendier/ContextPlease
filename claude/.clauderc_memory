@@ -121,3 +121,16 @@ instruct. KEEP a warning when it steers the caller; a warning IS an
 instruction. In this repo's terms: a docstring is a DATUM (definitional,
 self-contained, no last-time); a wiki page is a BEARING (relational, holds
 the record, retractions load-bearing).
+
+DOCSTRING STANDARD: SPHINX reST FIELD LISTS. Native sphinx.ext.autodoc form:
+  :param x:  :type x:  :returns:  :rtype:  :raises Err:  :ivar:  (classes)
+  .. warning::  .. seealso::  ``literal``  :func:`x`  :class:`X`
+NOT Google (Args:/Returns:) and NOT NumPy (Parameters\n----------). Those need
+the napoleon extension; the repo standard is the native one, no extension.
+Config lives at ValaQuenta/docs/conf.py; build with
+  .venv/bin/python -m sphinx -b html docs docs/_build -q
+Converted so far: modules/angular_rank/ (22/23, builds clean, 0 warnings).
+The rest of the repo is still prose -- convert opportunistically when editing
+a file, do not do a mass rewrite.
+! Watch for PARAMETER SHADOWING when renaming: a param named `datum` shadows
+  the module function datum(). Renamed those params to `ref`.
