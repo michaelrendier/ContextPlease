@@ -1347,3 +1347,78 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 #   WHAT SURVIVES: the cycle-walk method, every census, the parity law, the
 #   {4,8,4} split, and P6 at 256/512 -- none of them used Q^2 = I. The nullity
 #   derivation used the cycle structure and the L-th roots of sigma only.
+#
+# --- THE GAIN SPECTRUM, THE CLOCK, AND WORK vs COST (2026-08-15, late) -----
+#
+# THE THREE CHANNELS of L_a are singular-value GAINS, not force labels:
+#     sv = 0      CONTRACT   the kernel. Pure cost. |sv-1| = 1
+#     sv = 1      NEUTRAL    isometry. Neither work nor cost.  |sv-1| = 0
+#     sv = sqrt2  DILATE     pure gain.                        |sv-1| = 0.4142
+#   and sum(sv^2) = dim ALWAYS -- the budget closes. What the dilator gains
+#   the contractor loses.
+#
+# ! WORK AND COST MASQUERADE EXACTLY AT sv = 1, AND ONLY THERE. |sv - 1| IS
+#   the separation. A length-preserving map neither extracts nor spends, so
+#   at the neutral channel the two are not hard to distinguish -- they are
+#   THE SAME THING. In Navier-Stokes the same statement is lambda_2 = 0
+#   (pure shear); measured 10.56% of points within 5% of it, so it is a thin
+#   set but NOT measure zero.
+#
+# ! {4,8,4} IS A dim-16 FACT, NOT THE GENERAL TREAD. Measured proportions:
+#     dim 16 e1+e10  (4,8,4)     dim 32 e1+e18 (12,8,12)
+#     dim 64 e1+e34 (28,8,28)    dim128 e1+e66 (60,8,60)
+#   0_RB fixes the TOTAL (sum sv^2 = dim), not the SHARES. Any reading of
+#   {4,8,4} as SU(3)xSU(2)xU(1) is anchored to dim 16 and does not climb.
+#
+# ! PRESERVE = 8 * 2^(INHERITANCE DEPTH).  Verified 10/10, dims 16..128.
+#     born HERE (depth 0) -> 8    inherited once -> 16    twice -> 32
+#   The isometry channel CARRIES ITS BIRTH LEVEL. Contract and dilate track
+#   dim; preserve tracks depth.
+#
+# ! AND THAT MAKES CODY'S WRAPPING READING EXACT -- for INHERITED divisors:
+#     dim 16 depth 0   (4,8,4)      = H | O | H
+#     dim 32 depth 1   (8,16,8)     = O | S | O
+#     dim 64 depth 2   (16,32,16)   = S | T32 | S
+#   an octonion wrapped by its two constituent quaternions, doubling
+#   coherently on every inheritance. NATIVE divisors do NOT wrap:
+#   (12,8,12), (28,8,28), (60,8,60) have no CD dimension in the outer slots.
+#   Same depth-0 / depth-n split the address system encodes, from an
+#   independent measurement.
+#
+# --- ORDER IS THE CLOCK; THE KERNEL IS THE PAST ---------------------------
+# ker(AB) CONTAINS ker(B) always, so composing only ever ADDS to the kernel.
+#   A path through zero divisors is a MONOTONE DESCENT.
+#     PAST   = the kernel. What can no longer be reached. GROWS.
+#     FUTURE = the image.  What is still reachable.       SHRINKS.
+#     NOW    = the split.  rank + nullity = dim, the only addressable object.
+#   You cannot query the past (it maps to zero, returning NOTHING not an
+#   error) and you cannot query the future (you know only its SIZE).
+#   Measured: 24 orders of 4 divisors -> 1 final nullity, 3 distinct
+#   trajectories, every one monotone non-decreasing.
+#
+# ! DIRECTION HAD TO COME FROM ORDER. There is no arrow in the algebra --
+#   multiplication has no preferred sense and the mirror is an involution.
+#   The arrow is in COMPOSITION, because kernels accumulate and never release.
+#
+# ! A COMPOSITE IS BORN IN CHARACTERISTIC 2. a - b = a + b <=> 2b = 0 <=> XOR.
+#   The strut is computed in the ONE arithmetic where subtraction and
+#   addition coincide -- which is why the interface is free and needs no
+#   table. Birth happens where +/- stop being distinguishable.
+#
+# ! RETRACTED (stated in conversation, corrected same session): the sedenion
+#   associator is NOT alternating. Only the full reversal returns -base;
+#   other transpositions change the MAGNITUDE (1.000 vs 1.414). Octonions ARE
+#   alternative; sedenions lose it. So visit-order is a PATH, not an
+#   ORIENTATION -- you cannot reverse-and-negate.
+#
+# ! 35/35 XOR-TRIPLES AT dim 16 ARE QUATERNION SUBALGEBRAS (verified closed,
+#   x^2=-1, anticommuting). The strut label IS the third point of a PG(k-1,2)
+#   line. Chart structure and quaternion structure are one object read twice.
+#   Imaginaries = 2^k - 1 = |PG(k-1,2)|; lines = (2^k-1)(2^(k-1)-1)/3 ~ d^2/3.
+#
+# ! THE LOG IS FORCED BY THE RECURRENCE, not chosen. N(bd)=bN(d)+cd+e gives
+#   A=c/b, C=e/(1-b) for ANY b>=2 -- the log exists at every face-count, only
+#   its base and coefficient move. And it lives EXACTLY in the survivors:
+#   non-ZD ~ d log d, everything that annihilates ~ d^2.
+#   log is defined ONLY on units (orbits that return to 1); a zero divisor's
+#   orbit falls to 0 and never comes back. log 0 IS the fault.
