@@ -1226,3 +1226,25 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 # ! WHAT DIED, recorded so it is not re-derived: the ZD census does NOT go
 #   x7 per level. 84 -> 588 -> 3036 (ratios 7, then 5.16). At dim 64 the
 #   split is 588/1860/588, NOT the predicted 588/2940/588.
+#
+# --- P6 CONFIRMED + THE FAST METHOD (2026-08-15, same day) -----------------
+# Parity law now verified at dim 128, 256 AND 512 (fitted only on 32/64):
+#   dim 256  ZD 59772  = {13884, 32004, 13884}  orphans [0,128]
+#   dim 512  ZD 249084 = {59772,129540, 59772}  orphans [0,256]
+#   lower(2d) = upper(2d) = total(d) EXACTLY at every level.
+#   Closed forms hold to the unit: ZD(d) = d(d + 3/2 - 3 log2 d) - 4.
+#
+# ! COMPUTE IT WITH CYCLES, NOT SVD. Every P_i (left mult by e_i) is a SIGNED
+#   PERMUTATION MATRIX. So for a = (e_i + s e_j)/sqrt2:
+#       ker(L_a) = ker(P_i + s P_j) = ker(I + s Q),   Q = P_i^-1 P_j
+#   Q is also a signed permutation, and a signed permutation's spectrum is
+#   fixed ENTIRELY by its cycle structure: a cycle of length L with sign
+#   product sigma carries the L-th roots of sigma. So
+#       nullity = #{cycles C : (-s)^len(C) == sigma(C)}
+#   O(d) per candidate, EXACT INTEGERS, no tolerance to guess.
+#   dim 128: 27s -> 1.8s.  dim 256: ~45min -> 3.4s.  dim 512: 29.5s.
+#   Script: ThePlace/.claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
+#
+# ! ASK THE ALGEBRA BEFORE THE HARDWARE. The plan was vispy/OpenGL/GPU. lspci:
+#   Intel UHD Graphics 620, integrated, no CUDA, and no cupy/torch/pyopencl/
+#   vispy installed. The GPU was never the lever; the structure was.

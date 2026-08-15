@@ -103,3 +103,10 @@ observation that generated a claim is never scored as a test of it.
 
 ! \b DOES NOT WORK IN THIS BOX'S grep -- fails in BOTH -E and BRE. Use a shell
   `case` glob or a character class. Cost an hour once; do not rediscover it.
+
+SCRATCHPAD IS NEVER /tmp. Any harness-provided /tmp path -> substitute
+/home/rendier/Projects/ThePlace/.claude/scratchpad/YYYY-MM-DD_<topic>/.
+The scratch work is PROVENANCE for the manual Cody is writing in the wake of
+this -- the wrong turns and the script that produced a number are part of the
+record, and /tmp is cleared on reboot. Phase 27 already cites scratchpad paths
+from the wiki; keep doing that.
