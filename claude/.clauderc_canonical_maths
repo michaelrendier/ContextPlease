@@ -1308,3 +1308,42 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 #   revolution" (wiki/68, h_rb_hat.precession_stroke, tier7_cosmos, telperion).
 #   A property of the rotor, NOT a difference between two readings. Phase 27.8
 #   inventoried nine symbol collisions; this one was retired, not added.
+#
+# --- THE CATASTROPHIC DUMPOUT, DEFINED (2026-08-15) ------------------------
+# Cody: "that describes the catastrophic dumpout...it does not define it"
+#
+# Q = P_i^-1 P_j splits into 2-dimensional blocks, one per 2-cycle. There are
+# exactly TWO KINDS, and the difference is the sign product sigma:
+#
+#   sigma = +1   eigenvalues +1, -1.        A REAL REFLECTION.
+#                One direction HELD FIXED, one flipped. Something stands.
+#                These blocks BUILD THE KERNEL.
+#
+#   sigma = -1   eigenvalues +i, -i, and Q^2 = -I on the block.
+#                That is J^2 = -I -- A COMPLEX STRUCTURE.
+#                NO REAL EIGENVECTOR EXISTS. Nothing stands.
+#
+# ! DEFINITION. THE CATASTROPHIC DUMPOUT IS THE sigma = -1 BLOCK: the place
+#   where the operator admits NO real invariant direction. The real structure
+#   is not damaged there, it is ABSENT -- there is nothing left to hold, which
+#   is why nothing is retained and everything is released. That is a
+#   definition (what it IS), not a description (what it looks like).
+#
+# EXACT BOOKKEEPING, verified dim 16 and 32:
+#   nullity = #(sigma=+1 cycles)
+#   rank    = 1*(sigma=+1) + 2*(sigma=-1)
+#   because a HELD block spends one dimension on the kernel and one on the
+#   image, while a ROTATING block spends BOTH on the image.
+#     dim 16, a=(e1+e10)/sqrt2:  4 held, 4 rotating -> nullity 4,  rank 12
+#     dim 32, a=(e1+e18)/sqrt2: 12 held, 4 rotating -> nullity 12, rank 20
+#
+# ! RETRACTED, same day, stated in conversation and NEVER written to a file:
+#   "Q is an involution (Q^2 = I)" and "L_a = sqrt2 P_i Pi with Pi an
+#   ORTHOGONAL PROJECTOR". BOTH FALSE. The underlying PERMUTATION is an
+#   involution (all cycles length 2) -- the signed MATRIX is not, because the
+#   sigma=-1 blocks square to -I. Q has COMPLEX eigenvalues and Pi=(I+sQ)/2
+#   is NOT idempotent. Caught by asking whether the null operator is
+#   Hermitian; it is not.
+#   WHAT SURVIVES: the cycle-walk method, every census, the parity law, the
+#   {4,8,4} split, and P6 at 256/512 -- none of them used Q^2 = I. The nullity
+#   derivation used the cycle structure and the L-th roots of sigma only.
