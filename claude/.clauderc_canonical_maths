@@ -1248,3 +1248,63 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 # ! ASK THE ALGEBRA BEFORE THE HARDWARE. The plan was vispy/OpenGL/GPU. lspci:
 #   Intel UHD Graphics 620, integrated, no CUDA, and no cupy/torch/pyopencl/
 #   vispy installed. The GPU was never the lever; the structure was.
+#
+# --- THE LINEAGE RECURSION (2026-08-15, derived from the closed form) ------
+# Cody: "i also definitely meant a generational lineage...like the granpappy
+#        of recursion factor"
+#
+#     total(2d)  =  2 * total(d)  +  2 (d-1)(d-2)          total(8) = 0
+#                   \__________/     \____________/
+#                    INHERITED         NEW COUPLINGS
+#                  two whole copies    between the two
+#                  of the parent       inherited lines
+#
+# EXACT at all six measured levels: 84, 588, 3036, 13884, 59772, 249084.
+# The crossing term ALONE equals 2(d-1)(d-2) at every level, d = parent dim.
+# And each half is EXACTLY the parent's whole census:
+#     lower(2d) = upper(2d) = total(d)      verified 16..512
+#
+# THE KINSHIP RULE. The -1 and -2 are not fitting constants:
+#   -1  excludes e_0, the IDENTITY -- the founder, in no Assessor at ANY level
+#   -2  additionally excludes i == j -- you cannot couple with your own image
+#                                       across the mirror (the a==b case that
+#                                       "never works", de Marrais)
+#   => you may pair with anyone in the OTHER line except YOURSELF and THE
+#      FOUNDER. That is a genealogy rule, and it is exact.
+#
+# ASYMPTOTICS. total(d) ~ d^2, so inherited ~ 2d^2 and new ~ 2d^2:
+#   EVERY GENERATION IS ASYMPTOTICALLY HALF ANCESTRY, HALF NEW COUPLING.
+#   measured new/inherited: inf, 2.50, 1.58, 1.29, 1.15, 1.08 -> 1
+#   The new couplings always dominate, and the dominance decays to parity.
+#
+# This is why ZD density -> 1: intermarriage between the two inherited lines
+# grows quadratically while the lines themselves only double.
+#
+# --- NAMING: DATUM / BEARING / SIGHT (renamed 2026-08-15) ------------------
+# ! The operator is L_(I|O), WITH THE PIPE. 'L-IO' appears ONLY in filenames
+#   (a pipe is hostile to shells/URLs/git). The filesystem spelling must never
+#   propagate into the notation, this file, prose, or equations.
+#
+# Cody, on the box-kite struts:
+#   "the ends of the struts are definitional not relational...
+#    until after 'movement' then relation to 'last time' emerges"
+#
+#   DATUM    a declared reference point. DEFINITIONAL -- self-contained,
+#            stamped, true by declaration. partner(a) = a XOR s consults NO
+#            multiplication table. (was: snapshot() / Epoch)
+#   BEARING  the reading BETWEEN two datums. RELATIONAL -- does not exist
+#            until something moved. (was: precession())
+#   SIGHT    ONE guarded read against a held datum. Binary: "did it move?"
+#            The seqlock face. Sufficient for DETECTION, not for measurement.
+#
+# THE TWO FACES: detection is definitional (one read, sight()); measurement is
+# relational (two datums, bearing()). A moved-flag is not a drift meter --
+# bounded and unbounded drift both set moved=True, and only a bearing
+# separates them. That separation is Phase 27.3, and it is why the PAIR is the
+# minimum structure that can represent movement at all.
+#
+# ! 'precession' was RETIRED from this use -- it is already canonical here as
+#   KINEMATICS: the ZD wobble's signature, "one L_(I|O) cycle = one precession
+#   revolution" (wiki/68, h_rb_hat.precession_stroke, tier7_cosmos, telperion).
+#   A property of the rotor, NOT a difference between two readings. Phase 27.8
+#   inventoried nine symbol collisions; this one was retired, not added.

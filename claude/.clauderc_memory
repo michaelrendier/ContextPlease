@@ -110,3 +110,9 @@ The scratch work is PROVENANCE for the manual Cody is writing in the wake of
 this -- the wrong turns and the script that produced a number are part of the
 record, and /tmp is cleared on reboot. Phase 27 already cites scratchpad paths
 from the wiki; keep doing that.
+
+DOCSTRINGS ARE EXEMPT FROM HISTORICAL PRECEDENT. Cody, 2026-08-15: a
+docstring is CURRENT documentation for the code it precedes -- not a record
+of what the code used to be. Replace an out-of-date docstring outright, in
+ANY code, without asking. Do not preserve a stale docstring the way a wiki
+retraction is preserved; the wiki keeps history, the docstring keeps truth.

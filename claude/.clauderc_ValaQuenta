@@ -92,14 +92,14 @@ is UNDECIDABLE from the signal, so it must be CARRIED from the port, never
 re-derived. The scope is not a display -- it is a RANK TEST, and it does not
 diagonalise because the machine is never asked to decide anything.
 
-!! THE EPOCH DISCIPLINE. Cody, 2026-08-15: reading the internal span while the
+!! THE DATUM DISCIPLINE. Cody, 2026-08-15: reading the internal span while the
 thinking threads GROW it is iterate-while-modify one level up. It does not
 raise -- it DRIFTS until the span covers the kernel and the instrument reports
-all-quiet forever. Fix is not a lock, it is an EPOCH: snapshot() freezes the
+all-quiet forever. Fix is not a lock, it is an EPOCH: datum() freezes the
 field with a sha256 stamp and is the ONLY way in; every other entry point
-raises TypeError on a live sequence; precession() DATES mutation between two
+raises TypeError on a live sequence; bearing() DATES mutation between two
 epochs instead of straddling it. NO MEASUREMENT IS REPORTABLE WITHOUT ITS
-EPOCH. Bounded reference is Phase 27.3: net winding +0.0000, non-accumulating,
+DATUM. Bounded reference is Phase 27.3: net winding +0.0000, non-accumulating,
 held by the gearing not computed.
 
 !! TWO MANDATORY NULLS.
