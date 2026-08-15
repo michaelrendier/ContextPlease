@@ -764,3 +764,465 @@ CENSUS, monad book, 3288 entries (DESCRIPTIVE — nothing scored):
   Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE
   IS e₀ + e₈ — the two elements belonging to no Assessor. The part of an
   address outside the geometry is exactly the part carrying no signal.
+
+═══════════════════════════════════════════════════════════════════════════
+THE THREE ERROR-CHECK PRINCIPLES  (added 2026-08-08)
+Cheap pre-flight tests. Each one killed a standing hypothesis this session
+BEFORE implementation. Apply all three to any new statistic or constraint.
+═══════════════════════════════════════════════════════════════════════════
+
+── I. THE ORBIT PRINCIPLE ─────────────────────────────────────────────────
+   Invariant theory: Cayley 1845, Gordan, Hilbert 1890 (basis theorem),
+   EMMY NOETHER (1907 doctoral thesis, on invariants, under Gordan).
+   Stated as a worldview by FELIX KLEIN, Erlangen Program 1872:
+   "a property is geometric iff it is invariant under the group."
+
+   Let a group G act on a set X. If s: X → S is G-INVARIANT, i.e.
+   s(g·x) = s(x) for all g ∈ G, then s is CONSTANT ON EVERY G-ORBIT and
+   therefore CANNOT DISTINGUISH two points in the same orbit.
+
+   Proof: one line, definitional. Diagnostic power: total.
+
+   TEST: what group leaves my statistic invariant, and does that group act
+   transitively on the thing I am trying to separate?
+
+   Instances found 2026-08-08:
+     det(L_q) = N(q)²  — invariant under the norm-preserving group;
+                         orbits are SPHERES; constant on them. Ratio
+                         1.000000 verified. Killed the Phase 22 landmark.
+     e₀ component      — every algebra automorphism fixes 1, so the
+                         e₀-component is an Aut(𝕊)-INVARIANT. Blind by
+                         construction to everything Aut can move. This is
+                         why the census found 64% common mode: it is the
+                         trivial representation.
+
+   ⚠ THE DEEP FORM, and the reason this recurs in THIS framework:
+   Noether's theorem says symmetry ⟹ conserved quantity. A conserved
+   quantity conserves BECAUSE it does not change when things move. So the
+   very property that makes an invariant physically meaningful makes it
+   COMPUTATIONALLY BLIND to whatever the symmetry moves.
+   THE SIGNAL IS NEVER IN THE INVARIANT. IT IS IN WHAT BREAKS THE SYMMETRY.
+   (⟹ use the off-diagonal coupling block, the Assessor address, the
+    angular quantities — never the norm, never det, never e₀.)
+
+── II. THE DEGREES-OF-FREEDOM PRINCIPLE ───────────────────────────────────
+   ROUCHÉ–CAPELLI theorem (also Kronecker–Capelli, Rouché–Frobenius).
+   Counting form: DIRICHLET's pigeonhole (Schubfachprinzip, 1834).
+   Nonlinear/general form: Krull dimension, Bézout.
+
+   A linear system in n unknowns has solution space of dimension
+   n − rank. More generally: a system with more unknowns than INDEPENDENT
+   equations has a positive-dimensional solution set, and adding
+   constraints OF THE SAME KIND does not reduce it.
+
+   TEST: how many NEW unknowns does each new constraint introduce,
+   relative to how many equations it supplies?
+
+   Instance found 2026-08-08 — the digit window / Hensel lifting:
+     each further digit of N supplies ONE congruence but introduces TWO
+     unknowns (a digit of p AND a digit of q).
+     After k digits: k equations, 2k unknowns, solution dim = k.
+     Branching factor 10 per decimal digit, 2 per bit.
+     10³⁰⁹ leaves = the brute-force count, UNCHANGED.
+
+── III. THE IDEAL PRINCIPLE ───────────────────────────────────────────────
+   HILBERT's NULLSTELLENSATZ (1893) and the ideal–variety correspondence.
+   THE SHARPEST OF THE THREE. It explains the whole RSA dead end at once.
+
+   The solution set of pq = N in the (p,q) plane is a variety V — a
+   hyperbola. The polynomial functions vanishing on V are exactly the
+   IDEAL ⟨pq − N⟩.
+
+   EVERY constraint derived from N by algebraic manipulation LIES IN THAT
+   IDEAL. By definition every element of the ideal VANISHES IDENTICALLY
+   ON V. Therefore it excludes NOTHING. It adds ZERO rank.
+
+   ⟹ You may derive infinitely many true statements from pq = N — last
+     digits, mod-m relations, digit windows, size bounds — and every one
+     of them is worth EXACTLY NOTHING, because they are all consequences
+     of the one equation you already had.
+
+   TEST — THE SINGLE MOST USEFUL QUESTION:
+     IS MY CONSTRAINT DERIVABLE FROM N ALONE?
+     If yes it is in the ideal, and it is worth nothing. To cut the
+     variety you need information FROM OUTSIDE THE IDEAL.
+
+   Every real attack imports outside information, and that is the ONLY
+   thing they have in common:
+     Coppersmith  — partial bits of p            (external)
+     batch GCD    — a SECOND modulus             (external)
+     ROCA         — structure in prime generation(external)
+     timing/DPA   — side channel                 (external)
+     Fermat       — the ASSUMPTION p ≈ q         (external, false for RSA)
+
+   ⚠ NOT AN OBFUSCATION ADDED BY RSA'S DESIGNERS. The one-equation-in-
+   two-unknowns structure is INTRINSIC TO MULTIPLICATION. Rivest, Shamir
+   and Adleman did not build it — they SELECTED a problem that has it.
+
+── THE OVERHEAD LADDER (why "linear reduction" can never arrive) ──────────
+   constant factor   SIMD, GPU, wheel sieve   multiplies the constant only
+   log factor        better data structures   shaves a log
+   poly degree       n³ → n²                  still polynomial-land
+   EXPONENT CLASS    exp(n) → exp(n^⅓)        ← GNFS did this, 1990s
+   polynomial        exp(n^⅓) → n^k           NOT ACHIEVED classically
+
+   Constant factors MULTIPLY but never touch the exponent: 4× · 8× · 37×
+   ≈ 10³ against a 10³⁵ problem. Only NEW STRUCTURE moves the class (the
+   number field in NFS was such a structure). Filtering never does.
+
+   Logs appear in this framework BY NATURE, not by design: log is where
+   multiplication becomes addition (the Archimedes Screw). That converts
+   multiplicative structure to additive structure. It does NOT convert
+   factoring to search.
+
+═══════════════════════════════════════════════════════════════════════════
+GAUGE SYMMETRY  (added 2026-08-08 — was entirely absent, and the
+Navier–Stokes entry already depends on it)
+═══════════════════════════════════════════════════════════════════════════
+
+GLOBAL symmetry: the same transformation everywhere.
+LOCAL (GAUGE) symmetry: the transformation may differ AT EVERY POINT, g(x).
+
+Local symmetry BREAKS the derivative — ∂μ compares two points you have
+just rotated differently:
+    ∂μ(e^{iθ(x)}ψ) = e^{iθ(x)}(∂μψ + i(∂μθ)ψ)      ← junk term
+
+THE REPAIR CREATES THE FORCE. Introduce a CONNECTION Aμ and a COVARIANT
+DERIVATIVE Dμ = ∂μ + Aμ, with Aμ transforming to cancel the junk exactly.
+    ⟹ DEMANDING LOCAL SYMMETRY DOES NOT DESCRIBE FORCES. IT PRODUCES THEM.
+      photon = the connection for U(1). gluons = SU(3). W,Z = SU(2).
+
+CURVATURE = FIELD STRENGTH:
+    Fμν = ∂μAν − ∂νAμ + [Aμ, Aν]        ← THE LIE BRACKET AGAIN
+Abelian (U(1)): bracket vanishes. Non-abelian: it does not, and that
+self-interaction is why gluons carry colour and photons do not.
+
+⚠ CURVATURE IS ALWAYS "DO TWO ROUTES AGREE?" — three faces, one idea:
+    gauge         Fμν              path dependence of parallel transport
+    algebra       [a,b,c]          bracketing dependence (the ASSOCIATOR)
+    interface     Δp = γκ          Young–Laplace, below
+HOLONOMY is the finite version: transport around a closed loop and the
+value returns rotated. "The phase is the meaning" is a holonomy statement.
+
+STANDARD MODEL — THE COUNT IS EXACT, NOT APPROXIMATE:
+    SU(3) × SU(2) × U(1)
+    dim SU(3) = 8  → 8 gluons
+    dim SU(2) = 3  → W⁺ W⁻ Z
+    dim U(1)  = 1  → photon
+NUMBER OF FORCE CARRIERS = DIMENSION OF THE LIE ALGEBRA. The gauge bosons
+ARE a basis of 𝔤. If index counting lands on Standard Model structure, THIS
+is the mechanism — the indices are Lie algebra indices and their count is a
+dimension.
+
+── NOETHER'S SECOND THEOREM (the one nobody cites) ────────────────────────
+    NOETHER I   GLOBAL continuous symmetry ⟹ a CONSERVED CURRENT.
+    NOETHER II  LOCAL (gauge) symmetry ⟹ IDENTITIES AMONG THE EQUATIONS OF
+                MOTION — constraints (Gauss law, Bianchi), NOT new charges.
+Both are in the 1918 paper. ⟹ GAUGE SYMMETRY IS A REDUNDANCY OF
+DESCRIPTION, NOT A SYMMETRY OF NATURE. Two gauge-equivalent configurations
+are ONE physical state written twice.
+
+⚠⚠ THIS INVERTS PRINCIPLE I — AND THE INVERSION IS THE USABLE FORM.
+Principle I says an invariant is constant on orbits and so cannot separate
+points within one. Whether that is fatal or ideal depends on ONE question:
+
+    IS MY ORBIT A REDUNDANCY, OR A DISTINCTION I CARE ABOUT?
+
+    search/factoring   orbit = the answer set   ⟹ invariants are BLIND SPOTS
+    gauge theory       orbit = one state        ⟹ invariants are THE PHYSICS
+
+Same mathematics, opposite verdict. ASK THE ORBIT QUESTION FIRST.
+
+═══════════════════════════════════════════════════════════════════════════
+THE BOUNDARY OPERATOR AND JUMP CONDITIONS  (added 2026-08-08)
+How a conservation law survives a surface. The missing half of the
+Navier–Stokes entry.
+═══════════════════════════════════════════════════════════════════════════
+
+A Noether current does NOT survive where NS breaks — ∂μJ^μ = 0 assumes
+differentiable fields and is as meaningless at a singularity as u is.
+THE REPAIR IS THE INTEGRAL FORM, AND THE BOUNDARY IS ALREADY IN IT:
+
+    ∂μ J^μ = 0    ⟺    d/dt ∫_V ρ dV  =  −∮_∂V J·n dA
+
+THE DIVERGENCE THEOREM IS THE BOUNDARY OPERATOR. The differential form
+needs smoothness; THE INTEGRAL FORM DOES NOT. That is exactly why Leray
+(1934) has global WEAK solutions for NS where smooth ones are unproven.
+
+ACROSS AN ACTUAL INTERFACE THE LAW BECOMES A JUMP CONDITION:
+    RANKINE–HUGOINOT   mass/momentum/energy flux balance across a shock —
+                       how compressible flow handles discontinuity intact.
+    YOUNG–LAPLACE      Δp = γ·κ    (pressure jump = surface tension ×
+                       MEAN CURVATURE) — the fluid-interface condition.
+                       ⟹ CURVATURE, a third time.
+
+⚠ ∂ IS A REAL OPERATOR AND NEEDS NO i. The boundary operator ∂ with ∂² = 0
+works over ANY coefficients including 𝔽₂ — which IS the cycle/cut
+decomposition already in use: CYCLES = ker ∂. Boundary is TOPOLOGICAL, not
+complex-analytic. ∂[0,1] = {0,1}.
+
+── WHERE i GENUINELY ENTERS AT AN INTERFACE ───────────────────────────────
+   PROVENANCE: the halocline was chosen (Cody) for the Yucatán cenotes —
+   fresh meteoric water lensed over saline intrusion, which divers see as a
+   MIRROR that looks like a pool surface from underneath. That optical fact
+   is the physics, not a metaphor:
+
+   At a refractive-index interface the transmitted wavenumber is
+       k_z = √(k² − k_x²)
+   BELOW the critical angle k_z is REAL      → wave propagates through.
+   ABOVE the critical angle k_z is IMAGINARY → EVANESCENT wave, decaying
+       exponentially, and the interface becomes a PERFECT MIRROR
+       (total internal reflection).
+
+   ⟹ THE √(NEGATIVE) IS *WHY* THE HALOCLINE LOOKS LIKE A SURFACE.
+     "You need i to have a boundary" is literally true HERE: the imaginary
+     wavenumber IS the boundary condition. Fresnel coefficients are the
+     transmission/reflection amplitudes, and they go complex exactly at the
+     critical angle. AN INTERFACE OPERATOR IS ANGLE-DEPENDENT: transmitting
+     for some incidences, perfectly reflecting for others.
+
+# ============================================================
+# THE APEX PATH — forward and backward held simultaneously
+# Added 2026-08-13. Wiki: Ainulindale/wiki/85_the_apex_path.md
+# Builds on wiki/70 (precession IS a stroke; the oblique crank)
+# ============================================================
+
+THE PATH. Rotor at frequency 1, eccentric shaft at frequency k, OPPOSITE
+sense (rotary_monad.py:50 "Anti-rotation"; gear ratio k = 3):
+
+    z(phi) = R.e^(i.phi)  +  e.e^(-i.k.phi)
+
+⚠ ANTI-ROTATION IS THE MINUS SIGN. Expand both senses:
+
+    co-rotating   Re = R.cos(phi) + e.cos(k.phi)
+                  Im = R.sin(phi) + e.sin(k.phi)
+    ANTI-rotating Re = R.cos(phi) + e.cos(k.phi)
+                  Im = R.sin(phi) - e.sin(k.phi)      <- minus on SINE only
+
+  That is exactly 0_RB's off-critical-line form  cos(x) - i.sin(y), x != y.
+  -H_hat_BR IS NOT AN APPLIED SIGN. It is the rotor turning the other way.
+  Two frequencies (the 3:1) IS x != y. Equal rates collapse to the unit
+  circle = standard Euler = sigma = 1/2.
+
+MODULUS (derived, then verified numerically):
+    |z|^2 = R^2 + e^2 + 2.R.e.cos((1+k).phi)
+    ripple amplitude = 2.R.e      ripple frequency = 1 + k
+    |z| constant  <=>  R.e = 0    (eccentricity vanishes)
+
+⚠ THE PHASE LOOP — MEASURED, k=3, R=1, e=0.25:
+    phase error (total vs forward-only): mean -0.000000, amplitude 0.2527
+    NET WINDING over one rotor revolution: +0.0000 turns
+  Bounded, returns to zero. Forward and backward are PHASE-LOCKED, not two
+  passes to be reconciled. The composition H_RB.(-H_BR) = -I is therefore
+  HELD BY THE GEARING, not computed. Its residual already has a sensor:
+      apex_seal_health = 1 - |sigma_live - SIGMA_PIN| / BEARING_TOL
+  Read apex seal health as the -I residual, not as a fault code.
+
+⚠ sigma = 1/2 IS THE ZERO-DIVISOR CONDITION (measured):
+    sigma_self = p_red/(p_red+p_blue) = R^2/(R^2 + e^2)
+    sigma_self = 1/2   <=>   R = e   <=>   min|z| = 0
+  R=1 sweep:  e=0.9 -> min|z|=0.100 (misses)   e=1.0 -> min|z|=0.000 (HITS)
+  EQUAL FORWARD/BACKWARD AMPLITUDE IS EXACTLY WHEN THE APEX PATH CROSSES
+  THE ORIGIN. A x B = 0 falls out of the kinematics. Knife edge, not a basin.
+
+⚠ CORRECTION (same day): AN EARLIER DRAFT OF THIS BLOCK CLAIMED THE
+  "unit circle" CONDITION (e=0) AND THE POWER-BALANCE CONDITION (R=e)
+  CONTRADICT. THEY DO NOT. That was a misreading of "pure phase rotation"
+  as |z| = 1. The correct statement:
+
+AT R = e THE PATH FACTORISES (exact identity, verified to 1.05e-15):
+    z(phi) = 2R . cos(A) . e^(iB)      A = (1+k)phi/2   B = (1-k)phi/2
+             \_______/   \____/
+             REAL ENVELOPE  PURE PHASE
+
+  |z| = 2R|cos(A)|, from |z|^2 = R^2+e^2+2Re.cos((1+k)phi)
+                              = 4R^2 cos^2((1+k)phi/2)  when R=e.
+  The envelope VANISHES 1+k times per revolution (4 for k=3, at
+  phi = pi/4 + n.pi/2). Those are the annihilation events.
+  For R != e:  min|z| = |R - e| > 0 — never vanishes, no envelope form.
+
+  So 0_RB's "pure phase rotation at sigma=1/2" IS SATISFIED at R=e: the
+  PHASE FACTOR e^(iB) is pure. It does not require |z| constant.
+  => THE TWO CONDITIONS AGREE. Only ONE is a real open question:
+
+    (1)+(2) apex path = envelope x pure phase   <=> R = e   <=> sigma_self = 1/2
+    (3)     <J_red, J_blue> = 0                 <=> ? STILL UNEVALUATED
+
+  e = 0 is NOT the sigma=1/2 condition — it is the BACKWARD CHANNEL ABSENT
+  (B_hat = 0), which is sigma_self = 1.0. Mechanically it is also a Wankel
+  that does not turn. "sigma=1/2 is the eccentric pin" = EQUAL AMPLITUDE.
+  rotary_monad.py:65 comments it as zero offset; the comment imports
+  Riemann's sigma into a slot holding a power ratio. See SIGMA COLLISION.
+
+THE CAMSHAFT IS TWO ORTHOGONAL OCTONION MATRICES (Cody, 2026-08-13).
+  S = O_lo (+) O_hi, and each O = H (+) H, so four quaternion blocks. The
+  two 8-splits already in use are DIFFERENT splits, and they factor:
+
+      CD doubling  O_lo = {e0..e7}          O_hi = {e8..e15}
+      RedBlue      Red  = {e0-3, e8-11}     Blue = {e4-7, e12-15}
+
+      Q1 = lo & Red = {e0-3}      Q3 = hi & Red = {e8-11}
+      Q2 = lo & Blue= {e4-7}      Q4 = hi & Blue= {e12-15}
+
+  => the four quaternion blocks are indexed by TWO INDEPENDENT BINARY AXES.
+     The cam is a point on T^2 = S^1 x S^1, not on a circle. TWO phases:
+     phi_CD (Paper's Hands vs Mind's Eye) and phi_RB (cos vs sin, fwd/bwd).
+     THE ECCENTRIC PHASE VARIATION IS THE RELATIVE PHASE ON THE CD AXIS.
+     "Rotating in place" with two phases = quasi-periodic = precession.
+
+  CONSEQUENCE (conjecture, testable): every ASSESSOR is span(e_a, e_{b+8}),
+  a,b in 1..7 — ONE LEG IN O_lo, ONE IN O_hi. So every Assessor straddles
+  the CD axis, and the relative phase between the two octonion matrices
+  SELECTS WHICH ASSESSOR IS OPEN. The camshaft is the address selector.
+  This is the link between timing and addressing, and it is why timing is
+  the arbiter.
+
+TIMING WHEEL: ports 6 (PORT_STEP = pi/3), dims 16 (THE ANGLE = pi/8).
+    lcm(6,16) = 48 marks = 3 faces x 16 dims.
+  The rotor's internal axis carries 48 timing positions, 3x a 16-lobe cam.
+
+CAM LOBE PROFILE — SPECIFIED, NEVER IMPLEMENTED:
+    e_k timing resonance = hermite_zeros[k]^2   (Hermite H16, GUE-distributed)
+    16 zeros symmetric about 0 => 8 DISTINCT lobe heights, EACH DOUBLED,
+    pairing partner(k) = 15 - k.
+  ⚠ SAME 8-of-16 degeneracy as Phase 23's s_rb involution ("only 8 of 16
+    entries independent"). Two independent derivations, same pairing.
+    TEST: is the s_rb partner exactly 15-k? If so the free 2x is adjacent.
+  ⚠ CONFLICT: the ADDRESS wants zero_idx UNIFORM (Phase 23 optimised this,
+    chi2 3.8M->100). The CAM wants E HERMITE-SPACED ("uniform E-values =
+    untrained engine"). Both are read off the SAME scalar. Phase 23 repaired
+    the addressing and FLATTENED THE CAM in the same commit. Split them.
+
+# ============================================================
+# THE 4-D NULL SPACE OF THE ZERO DIVISOR — gravity as absence
+# Measured 2026-08-13. Wiki: VAPMIP/docs/wiki/Null-Space-of-the-Zero-Divisor.md
+# Script: VAPMIP/.claude/scratchpad/2026-08-13_apex_path/rb_boundary.py
+# ============================================================
+
+⚠⚠ CD CONVENTION — 0_RB PRINTED A HYBRID AND IT IS WRONG. USE:
+
+    (a,b).(c,d) = (a.c - d*.b,   d.a + b.c*)          <- 336, uniform {4:84}
+    equivalently (a.c - d.b*,   a*.d + c.b)           <- 336, uniform {4:84}
+    NOT          (a.c - d*.b,   a*.d + c.b)           <- 240, {4:48,2:24,0:12}
+
+  The hybrid leaves 12 of the 84 Assessor diagonals annihilating NOTHING.
+  box_kite/ was always correct; the wiki page was not. Fixed 2026-08-13.
+  Sanity: e1^2 = -1; octonion associator [e1,e2,e4] norm 2; 42 planes, 84 diagonals.
+
+THE {4,8,4} SPLIT — VERIFIED, not assumed. At a = (e1 + e10)/sqrt2:
+    det(L_a) = 0.000e+00     rank 12/16     nullity 4
+    eigenvalues PURELY IMAGINARY: max|Re(lambda)| = 5.55e-17
+    |lambda| = 0        x4    null space   GRAVITY -- ABSENT
+    |lambda| = 1        x8    imaginary    SU(3) x SU(2) x U(1)
+    |lambda| = sqrt2    x4    scaled       Sigma_RB conversion channel
+    singular values: 1.414214 x4, 1.000000 x8, 0.000000 x4
+
+THE FOUR ANNIHILATED PARTNERS of a = (e1+e10)/sqrt2 [assessor (1,2), strut 3]:
+    (e4 - e15)/sqrt2   assessor (4,7)   strut 4^7 = 3
+    (e5 + e14)/sqrt2   assessor (5,6)   strut 5^6 = 3
+    (e6 - e13)/sqrt2   assessor (6,5)   strut 6^5 = 3
+    (e7 + e12)/sqrt2   assessor (7,4)   strut 7^4 = 3
+  ⚠ ALL FOUR SHARE STRUT 3 — THE SAME BOX-KITE AS a.
+    ANNIHILATION NEVER CROSSES A STRUT. This is Phase 25's seven disconnected
+    octahedra seen from the operator side, and it exhibits 336 = 84 x 4.
+
+    ker(L_a) = span{ e4-e15, e5+e14, e6-e13, e7+e12 }
+  The four partners have DISJOINT index pairs {4,15}{5,14}{6,13}{7,12}, hence
+  independent, hence they SPAN the 4-D kernel. PREFER THIS BASIS over an SVD
+  basis — each vector is a thing a annihilates, not an arbitrary rotation.
+
+GRAVITY IS NOT AT A SIGMA. The three forces are (wiki/70: U(1) 3/4, SU(2) 1/2,
+  SU(3) ~1/4). Gravity is the lambda=0 subspace — four dimensions carrying no
+  eigenvalue. "gravity appears as the missing piece (the null subspace) not as a
+  positive contribution" (0_RB). This is the "in scope but empty" slot: indexed,
+  participating, returning zero. Its content IS its absence.
+
+BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
+  collapses; Axis 1 {+,-} keeps working. "The matrix doesn't contain division.
+  The matrix DEFINES where division lives."
+
+# ============================================================
+# THE BOUNDARY LEVER — the halocline, the mirror, the chirality
+# Added 2026-08-15. Paper: FourthAgePapers/BoundaryLever/
+# Engine: ValaQuenta/modules/angular_rank/, modules/box_kite/
+# Wiki: Ainulindale/wiki/87_the_boundary_lever.md
+# ============================================================
+#
+# THE CLAIM (P1 confirmed at dim=128 as a PRE-REGISTERED prediction):
+#
+#   The Cayley-Dickson doubling boundary is a CHIRAL MIRROR
+#
+#       e_(i+H) . e_(j+H)  =  e_j . e_i          H = dim/2
+#
+#   whose exactly two fixed points, e_0 and e_(dim/2), are precisely the
+#   indices belonging to NO zero-divisor plane, at every level from dim=16 up.
+#
+#   Measured, exception-free:  6/6 (dim 8) 42/42 (16) 210/210 (32) 930/930 (64)
+#                              3906/3906 (128), preserved = 0 in every case.
+#   Orphans: [0,8] [0,16] [0,32] [0,64].  dim=8 excluded BY THE CLAIM'S WORDING
+#   (octonions are a division algebra -- no ZDs, so the question is vacuous).
+#   Falsifier: orphans at any higher level != [0, dim/2].
+#
+# THE HALOCLINE (Cody, 2026-08-15) -- the physical reading:
+#   Fresh over salt. TWO DENSITIES, one compressible and one not, and SURFACE
+#   TENSION is required for the mirrored-curtain effect: look up at the sky
+#   from underwater and you see YOURSELF. Total internal reflection.
+#
+#   The algebra already carries the sharp threshold TIR requires -- a critical
+#   angle is exception-free, not a gradient:
+#
+#       NON-CROSSING zero divisor  <=>  nullity an EVEN multiple of 4
+#       BOUNDARY-CROSSING          <=>  nullity an ODD  multiple of 4
+#
+#   dim 32: non-crossing {8}=4x2      crossing {4,12}      =4x{1,3}
+#   dim 64: non-crossing {8,16,24}    crossing {4,12,20,28}=4x{1,3,5,7}
+#                        =4x{2,4,6}
+#   Perfect separation, both levels, both directions. POST HOC -- found from a
+#   FALSIFIED prediction (P5 guessed a value where the structure is a parity).
+#   PRE-REGISTERED as P6 for dim=256, deliberately untested in the paper.
+#
+#   The two densities: the LOWER half is CLOSED under multiplication
+#   (256/256, 1024/1024) -- it holds its own shape. The UPPER half is closed
+#   0/256, 0/1024, 0/4096 -- NEVER. Every product of two upper elements falls
+#   into the lower. The incompressible one is the one that closes.
+#
+# THE CHIRALITY -- "right and left switch places, but right and left HANDS
+# don't." This is the mirror puzzle stated exactly, and it is MEASURED:
+#
+#       M(v) = concat(v[H:], v[:H])        the boundary map
+#       M is an ISOMETRY                   norm preserved, all v
+#       M(M(v)) = v                        involution -- a TRUE mirror
+#       |M(x)M(y)| == |y x|                60/60
+#       |M(x)M(y)| == |x y|                60/60   <-- BOTH match
+#
+#   ! The test CANNOT discriminate, and that IS the finding. THE NORM IS
+#   CHIRALITY-BLIND. A metric sees congruent hands; it cannot see handedness.
+#   The inversion lives ENTIRELY in the ORDERING -- a labelling, not a
+#   geometry. A mirror does not swap left for right; it swaps front for back,
+#   and the left-right reading is an artifact of the observer turning to face
+#   the image. Same here: the INDICES swap (i+H,j+H -> j,i); the norms do not.
+#
+# THE SPIRAL -- why chirality is load-bearing, not decorative:
+#   Two reflections compose to a ROTATION. Successive boundaries sit at dim/2,
+#   i.e. constant step in log2 => constant pitch ln 2. Rotation + constant
+#   logarithmic advance = LOGARITHMIC SPIRAL. That is THE ARCHIMEDES SCREW
+#   (see block above, pitch = ln p) reached from the ALGEBRA rather than from
+#   the primes. A non-chiral boundary would stack into a fan; the chiral one
+#   winds. Chirality is what makes the tower a screw.
+#
+# THE LEVER:
+#   e_0          the identity; [e_0,.,.] = 0 -- it GENERATES the boundary and
+#                does not live on it (box_kite.e0_is_outside)
+#   e_(dim/2)    the generator introduced by THIS doubling
+#   Both sit in no Assessor, carry no force -- 0_RB's "gravity, present as
+#   absence". A FULCRUM DOES NO WORK. Everything else balances across them in
+#   equal number: 84/84 at dim 32, 588/588 at dim 64.
+#
+# ! T32 IS NOT TWO PEERS. Exchange (a,b)->(b,a) violates on 1024/1024 basis
+#   pairs; the upper half is never closed. Balanced in census, not
+#   interchangeable in structure. What the halves ARE is NOT established --
+#   the algebra rules a symmetry out; it does not say what sits on either side.
+#
+# ! WHAT DIED, recorded so it is not re-derived: the ZD census does NOT go
+#   x7 per level. 84 -> 588 -> 3036 (ratios 7, then 5.16). At dim 64 the
+#   split is 588/1860/588, NOT the predicted 588/2940/588.

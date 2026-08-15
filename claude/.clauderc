@@ -28,7 +28,14 @@ export ADDPAPERS="$AIN/AddPapers"
 # ============================================================
 
 export CLAUDE_MEMORY="/home/rendier/.claude/projects/-home-rendier-Projects-ThePlace/memory"
-export CLAUDE_SCRATCH="/tmp/claude-1000/-home-rendier-Projects-ThePlace"
+
+# PERSISTENT SCRATCHPAD (Cody, 2026-08-08) — NOT /tmp.
+# Claude's side work has archival value and feeds the "complete storytelling"
+# of the Ainulindale CS paper. The harness still hands Claude a /tmp path at
+# session start; Claude is to IGNORE it and use this instead, one dated
+# subdirectory per piece of work, each with a README.md.
+export CLAUDE_SCRATCH="/home/rendier/Projects/ThePlace/.claude/scratchpad"
+scratch() { mkdir -p "$CLAUDE_SCRATCH/$(date +%F)_$1" && cd "$CLAUDE_SCRATCH/$(date +%F)_$1"; }
 
 # ============================================================
 # PYTHON PATH — enables: from ValaQuenta.X import Y
@@ -240,3 +247,27 @@ export UDEO_EMBARGO="2026-11-25"
 ptol_ssh() {
     ssh "${NETCUP_REMOTE_SSH_USERNAME}@${NETCUP_REMOTE_SSH_HOSTNAME}" "$@"
 }
+
+
+# ── THE BOUNDARY LEVER (2026-08-15) ─────────────────────────────────────────
+# Paper : FourthAgePapers/BoundaryLever/   (00_vision 01_predictions 02_data 03_results)
+# Engine: ValaQuenta/modules/angular_rank/ (the 16D oscilloscope, 12 equations)
+# Wiki  : Ainulindale/wiki/87_the_boundary_lever.md
+#         Ainulindale/wiki/86_the_16d_oscilloscope.md
+#         ValaQuenta/wiki/angular_rank.md
+#         VAPMIP/docs/wiki/Operating-L-IO.md   (the L_(I|O) operator's manual)
+# Canonical maths: ~/.clauderc_canonical_maths, THE BOUNDARY LEVER block.
+#
+# CLAIM: the Cayley-Dickson doubling boundary is a CHIRAL MIRROR
+#   e_(i+H) e_(j+H) = e_j e_i,  H = dim/2
+# whose two fixed points e_0 and e_(dim/2) are exactly the indices in no
+# zero-divisor plane, at every level from dim=16 up.
+# P1 (orphans at dim=128 == [0,64]) CONFIRMED as a pre-registered prediction.
+# P2/P4/P5 falsified and reported as such; P5's failure produced the parity law
+# (non-crossing nullity EVEN x4, crossing ODD x4), pre-registered as P6 @ 256.
+#
+# The norm is CHIRALITY-BLIND: M is an isometry and an involution, and
+# |M(x)M(y)| matches BOTH |xy| and |yx| -- the handedness lives entirely in the
+# ORDERING, never in the metric. "right and left switch places but the hands
+# don't." Two reflections compose to a rotation; boundaries at dim/2 give pitch
+# ln 2; rotation + log advance = the Archimedes screw, from the algebra.

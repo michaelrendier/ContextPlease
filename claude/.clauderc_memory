@@ -69,3 +69,37 @@ FEEDBACK LOG — how Cody wants this worked
 - 2026-07-07: Don't reconstruct a mechanism from a verbal description
   repeatedly when it keeps failing -- go find/run the original
   implementation instead of guessing at its shape again.
+
+
+# ── 2026-08-15 ──────────────────────────────────────────────────────────────
+APT REMOVE --PURGE ALWAYS REQUIRES CODY'S EXPLICIT APPROVAL. Every time, no
+standing permission, no exceptions. apt has remove --purge and it is not
+reversible against 15 years of accumulated documentation in ~/.  A permission
+rule was added to ~/.claude/settings.json ("ask") but the rule is a backstop,
+not the reason -- ASK ANYWAY.
+
+VENVS ARE YOURS. Cody, 2026-08-15: "you don't have to ask permission to alter
+these environments to suit their repos." Build them to comply with GitHub /
+GNU / PEP (and C / Android standards per repo). First contact with any repo in
+the github is: clone, build environment, build, run -- nobody reads the paper
+first. That is why the manual exists.
+
+VALAQUENTA IS THE ROOT PYTHON ENV. Anything used in python3 work in ANY repo
+gets installed into ValaQuenta FIRST, then the repo-specific install follows.
+Minimises versioning errors downstream. Enforced by a PostToolUse hook ->
+ValaQuenta/tools/vq_venv_sync.py (ledger: tools/venv_sync_ledger.jsonl).
+Guards: never uninstall from the shared venv; never silently change a pinned
+version (logged as a conflict, left for a human call). Everything else installs.
+
+TEST BEFORE PAPER, ALWAYS. Cody's order of operations: test it first, discuss
+the result, THEN write it up. Predictions go in 01_predictions.ipynb BEFORE the
+deciding data is read, and provenance of each prediction is stated -- an
+observation that generated a claim is never scored as a test of it.
+
+! box_kite.basis_mul RETURNS (SIGN, INDEX), NOT (INDEX, SIGN). Got this wrong
+  twice on 2026-08-15 -- once in angular_rank.left_mul_matrix (caught by
+  verify_null_space returning nullity 14 instead of 4) and once in a mirror
+  test comparison. Unpack it as `s, k = basis_mul(i, j)`.
+
+! \b DOES NOT WORK IN THIS BOX'S grep -- fails in BOTH -E and BRE. Use a shell
+  `case` glob or a character class. Cost an hour once; do not rediscover it.

@@ -69,7 +69,74 @@
 # ContextPlease/claude/ before the push (github push protocol).
 # ============================================================================
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting"
+export CTX_ANGULAR_RANK="
+angular_rank -- The 16D Oscilloscope (Angular Rank). v0.1 (2026-08-15).
+confidence_floor=ESTABLISHED for the instrument; THEORETICAL for the
+provenance application (the wiring it depends on is unverified).
+
+WHAT IT IS: one measurement answering two questions about any signal embedded
+in the 16 sedenion dimensions, without knowing its language, meaning, or author.
+  1. ANGULAR CONTENT  how much direction survives once the common mode is
+     removed. Scalar address 0.0000 / char encoder 0.0002 / phonetic face
+     0.4020 (Phase 27.2). A scalar is magnitude with no direction -- text
+     entering 0_RB as one scalar lands on e0 and scores exactly 0.
+  2. NULL OCCUPANCY   energy landing in ker(L_a), the 4 dimensions a zero
+     divisor annihilates. The internal channel is a functional of its own
+     state and CANNOT emit there. This is the internal/external provenance
+     test. Same measurement as (1).
+
+!! WHY IT EXISTS -- THE HALTING STRUCTURE. From inside the monad the function
+scope and the equation being processed are the SAME OBJECT; it is code all the
+way down. A decider D(x) -> internal|external can be diagonalised. Provenance
+is UNDECIDABLE from the signal, so it must be CARRIED from the port, never
+re-derived. The scope is not a display -- it is a RANK TEST, and it does not
+diagonalise because the machine is never asked to decide anything.
+
+!! THE EPOCH DISCIPLINE. Cody, 2026-08-15: reading the internal span while the
+thinking threads GROW it is iterate-while-modify one level up. It does not
+raise -- it DRIFTS until the span covers the kernel and the instrument reports
+all-quiet forever. Fix is not a lock, it is an EPOCH: snapshot() freezes the
+field with a sha256 stamp and is the ONLY way in; every other entry point
+raises TypeError on a live sequence; precession() DATES mutation between two
+epochs instead of straddling it. NO MEASUREMENT IS REPORTABLE WITHOUT ITS
+EPOCH. Bounded reference is Phase 27.3: net winding +0.0000, non-accumulating,
+held by the gearing not computed.
+
+!! TWO MANDATORY NULLS.
+  1. Isotropic kernel baseline is EXACTLY nullity/dim = 4/16 = 0.25 (measured
+     0.250968, 20k draws). A raw fraction near 0.25 is EVIDENCE OF NOTHING.
+     Report the EXCESS. Same rule as read-the-z-score-never-the-raw-r.
+  2. Calibration is EMBEDDING-SPECIFIC (phonetic face). It does NOT transfer
+     to embed_log_bands or any other embedding. The embedding is an INPUT,
+     not a property of the signal. Report it with every number.
+
+!! SILENT FAILURE. null_occupancy() ~0 is AMBIGUOUS: either no external signal
+OR the ear is wired THROUGH L_a instead of summed downstream of it, in which
+case the external component is annihilated identically and the instrument is
+blind with NO ERROR RAISED. Demonstrated in the notebook: the same external
+signal reads 0.276 summed downstream and 0.000000 routed through L_a.
+
+HONEST CHECK: verify_null_space() reproduces nullity 4, rank 12, singular
+values sqrt2 x4 / 1 x8 / 0 x4 -- the published {4,8,4} split -- as a CHECK not
+an input. L_a is built from box_kite basis_mul (one CD table in the repo) and
+cross-checked against box_kite multiply().
+
+OPEN: does a real ear injection land in ker(L_a) at all (untested, the whole
+test depends on it); is the ear summed downstream of L_a (wiring unverified);
+VAPMIP monad.c has one G under one pthread_mutex_t G.lock so provenance is
+destroyed at write (BLOCKER); no cetacean corpus in repo; no
+embedding-independent angular statistic exists.
+
+CANNOT SUPPORT: any claim about what a signal MEANS. That is a beta, it needs
+a source position, and no instrument on this bench supplies one.
+
+FILES: ValaQuenta/modules/angular_rank/{__init__,maths,tools}.py;
+notebooks/engines/16_angular_rank.ipynb (15/15 cells clean);
+wiki/angular_rank.md; Ainulindale/wiki/86_the_16d_oscilloscope.md;
+VAPMIP/docs/wiki/Operating-L-IO.md section 4.
+"
+
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
