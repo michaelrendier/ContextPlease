@@ -111,8 +111,13 @@ this -- the wrong turns and the script that produced a number are part of the
 record, and /tmp is cleared on reboot. Phase 27 already cites scratchpad paths
 from the wiki; keep doing that.
 
-DOCSTRINGS ARE EXEMPT FROM HISTORICAL PRECEDENT. Cody, 2026-08-15: a
-docstring is CURRENT documentation for the code it precedes -- not a record
-of what the code used to be. Replace an out-of-date docstring outright, in
-ANY code, without asking. Do not preserve a stale docstring the way a wiki
-retraction is preserved; the wiki keeps history, the docstring keeps truth.
+DOCSTRINGS INSTRUCT FUNCTION -- they do not keep a record. Cody, 2026-08-15:
+"docstrings don't keep truth, they instruct function." The test is not "is
+this accurate" but "does this make the CALLER do the right thing". Imperative
+register, not descriptive. So they are exempt from historical precedent:
+replace an out-of-date docstring outright, in ANY code, without asking, and
+never append "formerly X" / "renamed on DATE" -- a changelog does not
+instruct. KEEP a warning when it steers the caller; a warning IS an
+instruction. In this repo's terms: a docstring is a DATUM (definitional,
+self-contained, no last-time); a wiki page is a BEARING (relational, holds
+the record, retractions load-bearing).
