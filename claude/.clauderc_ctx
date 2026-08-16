@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+# Context lookup for the two-tier scheme.
+#
+#   REFERENCE (equations, timeless)  ->  .clauderc_canonical_maths   @RCCM_<NAME>
+#   HISTORY   (dissertation, dated)  ->  .clauderc_ValaQuenta        @RCVQ_<NAME>
+#
+# Both files carry matching @<TIER>_<NAME> ... @END blocks. Reference tells you
+# what is true; history tells you how it was established, what was refuted, and
+# what is still untested.
+#
+#   rccm FANO_SEDENION     equations only
+#   rcvq FANO_SEDENION     provenance, corrections, open leads
+#   rcboth FANO_SEDENION   both, reference first
+#   rcls                   list every block in both tiers
+#
+# Source from ~/.bashrc:   [ -f ~/.clauderc_ctx ] && . ~/.clauderc_ctx
+
+_rc_block() {
+    local file="$1" tag="$2"
+    awk -v t="@${tag}" '
+        $0 ~ "^"t"$" { on=1; next }
+        on && /^@END$/ { exit }
+        on { print }
+    ' "$file"
+}
+
+rccm() {
+    [ -z "$1" ] && { echo "usage: rccm <NAME>   (rcls to list)" >&2; return 2; }
+    local out; out=$(_rc_block ~/.clauderc_canonical_maths "RCCM_${1^^}")
+    [ -z "$out" ] && { echo "no @RCCM_${1^^} in canonical maths" >&2; return 1; }
+    printf '%s\n' "$out"
+}
+
+rcvq() {
+    [ -z "$1" ] && { echo "usage: rcvq <NAME>   (rcls to list)" >&2; return 2; }
+    local out; out=$(_rc_block ~/.clauderc_ValaQuenta "RCVQ_${1^^}")
+    [ -z "$out" ] && { echo "no @RCVQ_${1^^} in ValaQuenta" >&2; return 1; }
+    printf '%s\n' "$out"
+}
+
+rcboth() {
+    [ -z "$1" ] && { echo "usage: rcboth <NAME>" >&2; return 2; }
+    echo "── REFERENCE ─────────────────────────────────────────"
+    rccm "$1"
+    echo "── HISTORY ───────────────────────────────────────────"
+    rcvq "$1"
+}
+
+rcls() {
+    echo "REFERENCE  (~/.clauderc_canonical_maths)"
+    grep -o '^@RCCM_[A-Z0-9_]*' ~/.clauderc_canonical_maths | sed 's/^@RCCM_/    /'
+    echo "HISTORY    (~/.clauderc_ValaQuenta)"
+    grep -o '^@RCVQ_[A-Z0-9_]*' ~/.clauderc_ValaQuenta | sed 's/^@RCVQ_/    /'
+}
+
+# Housekeeping: refresh the file-structure index. Run once per session, not per file.
+#   rctree          regenerate  ThePlace/.claude/.clauderc_file_structure
+#   rcfind <name>   grep it for a filename -> where/if it exists
+rctree() {
+    ( cd /home/rendier/Projects/ThePlace \
+      && tree -Ja -I '.git|node_modules|__pycache__|.venv|*.pyc' . \
+         > .claude/.clauderc_file_structure \
+      && echo "refreshed: $(ls -lh .claude/.clauderc_file_structure | awk '{print $5}')" )
+}
+rcfind() {
+    [ -z "$1" ] && { echo "usage: rcfind <filename-fragment>" >&2; return 2; }
+    grep -o "\"name\":\"[^\"]*$1[^\"]*\"" \
+        /home/rendier/Projects/ThePlace/.claude/.clauderc_file_structure \
+        | sed 's/"name":"//;s/"$//' | sort -u
+}
+
+# Regenerate the repo map inside ~/.clauderc_context_hub from live git remotes.
+rcrepos() {
+    python3 - <<'PY'
+import subprocess, json, pathlib, re
+root = pathlib.Path("/home/rendier/Projects/ThePlace")
+out = []
+for g in sorted(root.glob("*/.git")) + sorted(root.glob("*/*/.git")):
+    d = g.parent
+    def q(*a):
+        try: return subprocess.run(["git","-C",str(d),*a],capture_output=True,text=True).stdout.strip()
+        except Exception: return ""
+    out.append({"name":d.name,"local":str(d),
+                "github":q("remote","get-url","origin"),
+                "branch":q("rev-parse","--abbrev-ref","HEAD")})
+p = pathlib.Path.home()/".clauderc_context_hub"
+t = p.read_text()
+new = "export THEPLACE_REPOS='" + json.dumps(out, indent=2) + "'"
+t = re.sub(r"export THEPLACE_REPOS='\[.*?\n\]'", new, t, flags=re.S)
+p.write_text(t)
+print(f"repo map refreshed: {len(out)} repos")
+PY
+}

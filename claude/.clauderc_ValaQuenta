@@ -1171,3 +1171,115 @@ chart_projection, nearest_assessor, local_curvature, chart_of, address_census.
 See wiki/box_kite.md, Ainulindale/wiki/84_the_box_kite_debugger.md,
 notebooks/engines/15_box_kite.ipynb.
 "
+
+export CTX_SESSION_20260815="
+═══════════════════════════════════════════════════════════════════════════
+CONTEXT HEADERS — @RCVQ_<NAME> is the DISSERTATION for the equation block
+@RCCM_<NAME> in .clauderc_canonical_maths. Reference there; history here.
+History includes what FAILED, which does not survive compression to equations.
+═══════════════════════════════════════════════════════════════════════════
+
+@RCVQ_OMEGA_DIAL
+Session 2026-08-15. Cody: 'is generational lineage the factoral decomposition
+mechanic?' Answer NO -- it is the omega=1 case. Established by testing the CD
+tower's preserve = 8*2^depth against factorint(dim): depth is a DIFFERENCE OF
+2-ADIC VALUATIONS, so lineage is factorisation with the multi-prime part
+deleted. Corroborated independently: the Laplacian spectrum of Gamma(Z/N) is
+{0,p-1,q-1,p+q-2}, SYMMETRIC in p and q -- the symmetry IS the absence of
+order, and it is the RSA wall restated. You cannot descend a lineage to factor
+N because with two primes there is no 'down'.
+ANSWERS THE EARLIER base_48 QUESTION: 48 = 2^4*3 is omega=2, so a 48-rank
+admits 7 and 13 that no pure 2^k tower can reach.
+@END
+
+@RCVQ_FERMATS_MONSTER
+CORRECTION, LOAD-BEARING (2026-08-15). MonsterFermat.md line 9 read 'Its primes
+land there and nowhere else.' THIS IS FALSE and was measured false: the 15
+supersingular primes hit NINE residues mod 16, not three. They COVER the
+Niemeier gap {1,11,15}; they do not land only on it. Niemeier's 13 and the
+Monster's 9 OVERLAP IN 6 SLOTS. nightmare_engine.py only ever claimed covering
+-- THE ENGINE WAS RIGHT AND THE PAPER'S PROSE INFLATED IT. Prose corrected in
+place 2026-08-15; engine untouched.
+SECOND CAVEAT: mod 16 is not obviously privileged. mod 10, 12 and 14 each leave
+exactly ONE gap, also covered by Monster primes. 16 is distinguished only by
+leaving THREE. Do not claim 'the sedenion is doing the work' on this evidence.
+NEW 2026-08-15, not previously in any engine or paper: 196560 (Leech kissing)
+factors ENTIRELY into the (p-1)|24 primes; 196883 (Monster min irrep) factors
+ENTIRELY into primes that are NOT. Their difference is 323 = 17x19, both
+Monster-exclusive. Reading: the lattice is built from the primes the RANK can
+reach, the group from exactly those it cannot. Structural, not proven.
+COROLLARY (Cody, 2026-08-16): the Monster reads as an ORIENTATION rather than a
+location -- covering nine of sixteen IS 'pointing everywhere'. Consistent with
+the measured V4 blind spot (see @RCVQ_VALVE_GROUP) but NO construction links the
+42-fold degeneracy to supersingular primes. Do not assert the link.
+@END
+
+@RCVQ_FANO_SEDENION
+Measured 2026-08-15/16 over the full 84-diagonal census at dim 16.
+PRESERVE is O -- confirmed by Hurwitz, not assumed: dim 8, contains 1, closed
+(leak 9.5e-16), norm-multiplicative (5.3e-15), alternative (2.7e-14), NOT
+associative (72.27), zero zero-divisors in 600 draws.
+CORRECTS the '{4;8;4} = octonion wrapped by its constituent quaternions'
+reading. The wings LEAK (1.393, 1.414) and are not algebras, jointly or
+severally. The quaternions are the 21 PAIRWISE INTERSECTIONS of the octonions
+-- all C(7,2)=21 are dim 4, closed, contain 1, hence H. Same picture, different
+location. It is a CLATHRATE: cage that is not the guest.
+Strut/octonion incidence is PG(2,2), every Fano axiom verified. It is the SAME
+Fano plane as the octonion multiplication table's -- lines identical entry for
+entry.
+REFUTED, and the refutations constrain harder than the results:
+  * E8^3 UNREACHABLE AT ANY TOWER HEIGHT. 3 octonions x 8 = 24 = Niemeier rank,
+    but every PRESERVE octonion CONTAINS 1, so no two can be orthogonal.
+    dim 32: 35 octonions, 595 pairs, ZERO orthogonal, min intersection 2.
+    Structurally closed, not merely unfound.
+  * E8 does NOT require 48. Octonion is dim 8 at depth 0 at every level.
+  * PG(2,2) is a dim-16 fact only. dim 32 gives 35 octonions on 15 struts with
+    |line n line| in {0,1} -- a projective SPACE, skew pairs exist.
+LEAD, UNTESTED: 21 is the point count of PG(2,4), whose Aut = PSL(3,4) = M21
+sits inside M22 < M23 < M24. If the 21 quaternions carry PG(2,4) that is a
+direct line into the Mathieu chain. 21 may just be C(7,2).
+@END
+
+@RCVQ_VALVE_GROUP
+Measured 2026-08-16. Cody's model -- '2 valves per sedenion rotor face, three
+phase style' -- confirmed numerically: per strut 12 = 3 octonions x 2 signs x 2
+per cell, all 42 cells exactly 2.
+The three natural pairings sA (flip sign), sC (XOR-translate holding sign),
+sN (same annihilation signature) are ALL FREE, ALL COMMUTE, and generate V4 --
+ORDER 4, NOT 8. sN = sA.sC. The blind spot is not a third valve; it is the two
+valves operated together, which is why annihilation cannot see it.
+84/4 = 21 orbits = |quaternions| = |Fano flags|. Counting closes exactly.
+I predicted (Z/2)^3 the turn before and was wrong; the arithmetic already said
+so, since 8 does not divide 84 but 4 does. I noticed the divisibility and
+talked past it.
+@END
+
+@RCVQ_ERRORS_20260815
+Recorded per standing protocol. Pattern worth naming: I repeatedly put
+INTERPRETATION IN THE SAME PRINT BLOCK AS THE MEASUREMENT, so pre-written
+conclusions shipped alongside data that contradicted them. Three times in one
+session. Fix: never write the conclusion text before reading the numbers.
+  1. Printed a phase relationship ('180 deg, second harmonic') from an EMPTY
+     measurement list. Zero data, stated result.
+  2. Printed 'critical angle ~89 deg' over computed values of 74.50 and 62.13.
+  3. Printed 'separation degrades for sibling' over a measured 0.0000 error.
+  4. Packing densities > 1 and negative void for d=1,2,3,4,16 -- wrong
+     covolumes (used det, needed sqrt(det)). E8/Leech were right so the
+     asymptotic conclusion never moved, but 5 published rows were wrong.
+     RULE: a density > 1 is self-evidently impossible; catch before printing.
+  5. 'Mirror/stranger discriminator' built on an INCONSISTENT CANDIDATE LIST
+     (four hand-swaps of a, three of a'). Manufactured the pattern from my own
+     bookkeeping error. Census refuted it, then refuted the rescued version.
+  6. sigp() subspace signature used eigenvalues of a projector -- identical for
+     every rank-8 subspace in 16 dims. Discriminated nothing; reported '1
+     distinct octonion' when the true answer was 7.
+  7. Greedy search had both branches of a ternary IDENTICAL, so it always
+     followed the 'annihilates' branch instead of the actual answer. Probe
+     counts meaningless until fixed.
+  8. Hubble tension 74/62: NUMEROLOGY, refuted three ways -- angles are outputs
+     of a B I chose by hand, 62.13 is ~10 sigma off Planck's 67.36, and degrees
+     vs km/s/Mpc are incommensurable. Note 1.084 appeared TWICE by accident in
+     one printout (62.13 deg in radians, and the true Hubble ratio). That is how
+     available such matches are.
+@END
+"

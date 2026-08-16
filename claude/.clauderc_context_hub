@@ -1,0 +1,199 @@
+#!/usr/bin/env bash
+# ~/.clauderc_context_hub — where context LIVES, and the rules for keeping it there.
+#
+# Renamed 2026-08-16 from ~/.clauderc_file_structure, which collided with
+# ThePlace/.claude/.clauderc_file_structure. Those were doing opposite jobs:
+#
+#   ThePlace/.claude/.clauderc_file_structure   MACHINE-GENERATED tree -J index.
+#                                               Answers "where is X". Disposable;
+#                                               regenerate with `rctree`.
+#   ~/.clauderc_context_hub  (this file)        HAND-MAINTAINED policy + repo map.
+#                                               Answers "what exists and what are
+#                                               the rules". Not regenerable.
+#
+# The old registry was dropped, not migrated: it listed 5 of 22 repos and its
+# structural notes were stale from 2026-06-30. The repo map below is generated
+# from `git remote -v` instead, so it is complete and cannot drift silently.
+
+export CONTEXT_HUB="/home/rendier/Projects/ThePlace/.claude"
+export FILE_INDEX="$CONTEXT_HUB/.clauderc_file_structure"   # tree -J; rctree to refresh
+
+# ============================================================
+# REPO MAP — generated 2026-08-16 from git remote. Regenerate with rcrepos.
+# ============================================================
+export THEPLACE_REPOS='[
+  {
+    "name": ".claude",
+    "local": "/home/rendier/Projects/ThePlace/.claude",
+    "github": "",
+    "branch": "main"
+  },
+  {
+    "name": "AbrikosovTree",
+    "local": "/home/rendier/Projects/ThePlace/AbrikosovTree",
+    "github": "https://github.com/michaelrendier/AbrikosovTree.git",
+    "branch": "main"
+  },
+  {
+    "name": "Ainulindale",
+    "local": "/home/rendier/Projects/ThePlace/Ainulindale",
+    "github": "https://github.com/michaelrendier/Ainulindale.git",
+    "branch": "main"
+  },
+  {
+    "name": "ArdaQuenta",
+    "local": "/home/rendier/Projects/ThePlace/ArdaQuenta",
+    "github": "https://github.com/michaelrendier/ArdaQuenta.git",
+    "branch": "main"
+  },
+  {
+    "name": "BulletCluster",
+    "local": "/home/rendier/Projects/ThePlace/BulletCluster",
+    "github": "https://github.com/michaelrendier/BulletCluster.git",
+    "branch": "main"
+  },
+  {
+    "name": "ContextPlease",
+    "local": "/home/rendier/Projects/ThePlace/ContextPlease",
+    "github": "https://github.com/michaelrendier/ContextPlease.git",
+    "branch": "master"
+  },
+  {
+    "name": "DeriveCancerDrugs",
+    "local": "/home/rendier/Projects/ThePlace/DeriveCancerDrugs",
+    "github": "https://github.com/michaelrendier/DeriveCancerDrugs.git",
+    "branch": "master"
+  },
+  {
+    "name": "FourthAgePapers",
+    "local": "/home/rendier/Projects/ThePlace/FourthAgePapers",
+    "github": "https://github.com/michaelrendier/FourthAgePapers.git",
+    "branch": "main"
+  },
+  {
+    "name": "MedicineIsAlwaysFree",
+    "local": "/home/rendier/Projects/ThePlace/MedicineIsAlwaysFree",
+    "github": "https://github.com/michaelrendier/MedicineIsAlwaysFree.git",
+    "branch": "master"
+  },
+  {
+    "name": "POE",
+    "local": "/home/rendier/Projects/ThePlace/POE",
+    "github": "https://github.com/michaelrendier/POE.git",
+    "branch": "main"
+  },
+  {
+    "name": "PTorrent",
+    "local": "/home/rendier/Projects/ThePlace/PTorrent",
+    "github": "https://github.com/michaelrendier/PTorrent.git",
+    "branch": "main"
+  },
+  {
+    "name": "PtolemyDesktop",
+    "local": "/home/rendier/Projects/ThePlace/PtolemyDesktop",
+    "github": "https://github.com/michaelrendier/PtolemyDesktop.git",
+    "branch": "main"
+  },
+  {
+    "name": "RiemannHypothesisProof",
+    "local": "/home/rendier/Projects/ThePlace/RiemannHypothesisProof",
+    "github": "https://github.com/michaelrendier/RiemannHypothesisProof.git",
+    "branch": "main"
+  },
+  {
+    "name": "SedenionFactorialRelativity",
+    "local": "/home/rendier/Projects/ThePlace/SedenionFactorialRelativity",
+    "github": "https://github.com/michaelrendier/SedenionFactorialRelativity.git",
+    "branch": "master"
+  },
+  {
+    "name": "SedenionSpectralRelativity",
+    "local": "/home/rendier/Projects/ThePlace/SedenionSpectralRelativity",
+    "github": "https://github.com/michaelrendier/SedenionSpectralRelativity",
+    "branch": "main"
+  },
+  {
+    "name": "SemanticWordEngine",
+    "local": "/home/rendier/Projects/ThePlace/SemanticWordEngine",
+    "github": "https://github.com/michaelrendier/SemanticWordEngine.git",
+    "branch": "main"
+  },
+  {
+    "name": "TuringStack",
+    "local": "/home/rendier/Projects/ThePlace/TuringStack",
+    "github": "https://github.com/michaelrendier/TuringStack.git",
+    "branch": "main"
+  },
+  {
+    "name": "UniversalSynth",
+    "local": "/home/rendier/Projects/ThePlace/UniversalSynth",
+    "github": "https://github.com/michaelrendier/UniversalSynth.git",
+    "branch": "main"
+  },
+  {
+    "name": "VAPMIP",
+    "local": "/home/rendier/Projects/ThePlace/VAPMIP",
+    "github": "https://github.com/michaelrendier/VAPMIP.git",
+    "branch": "main"
+  },
+  {
+    "name": "ValaQuenta",
+    "local": "/home/rendier/Projects/ThePlace/ValaQuenta",
+    "github": "https://github.com/michaelrendier/ValaQuenta.git",
+    "branch": "main"
+  }
+]'
+# THE CONTEXT HUB — .claude/ consolidation policy
+# Established 2026-08-16. Audit and re-consolidate on a regular basis.
+# ============================================================
+
+
+# POLICY. Claude Code creates a .claude/ wherever it is started. Two kinds of
+# thing land there and they have OPPOSITE homes:
+#
+#   CONTENT   scratchpad/, commands/, notes, READMEs
+#             -> CENTRALISE into $CONTEXT_HUB. Portable, no CWD dependency.
+#
+#   CONFIG    settings.json, settings.local.json
+#             -> MUST STAY. Claude Code resolves these relative to the startup
+#                directory. Moving them silently drops that project's
+#                permissions and plugins. This is not a preference.
+#
+#   MEMORY    MEMORY.md and memory/*.md
+#             -> LEAVE PARTITIONED, deliberately. Per-work-directory memory is
+#                more useful where it landed than in a hub. Directory-specific
+#                facts stay local; anything that transcends a directory is
+#                promoted to the ThePlace-level memory.
+#                NOTE: these live under ~/.claude/projects/<slug>/memory/,
+#                NOT inside ThePlace. There are zero MEMORY.md files in the
+#                ThePlace tree itself (verified 2026-08-16).
+
+# CONSOLIDATION 2026-08-16 — 8 .claude dirs reduced to 5.
+#   MOVED to hub:
+#     VAPMIP/.claude/scratchpad/2026-08-13_apex_path/  (11 files)
+#     PtolemyDesktop/.claude/commands/*.md             (5 slash commands)
+#       ! CAVEAT: those commands were project-scoped to PtolemyDesktop and are
+#         now hub-scoped. They resolve when Claude Code starts in ThePlace root,
+#         NOT when started in PtolemyDesktop. Revert with:
+#         mkdir -p PtolemyDesktop/.claude/commands && \
+#           cp $CONTEXT_HUB/commands/*.md PtolemyDesktop/.claude/commands/
+#   DELETED as stale (each verified dead before removal):
+#     BulletCluster/.claude/scheduled_tasks.lock        pid 25870 not running
+#     FourthAgePapers/CryptoVulnerability/.claude/      granted /root/** paths,
+#                                                       unreadable here — wrong env
+#     AinulindaleBAK/FirstAge/ResearchPaper/.claude/    granted /Projects/SMNNT/,
+#                                                       path does not exist; and
+#                                                       AinulindaleBAK is a backup
+#                                                       of a live Ainulindale
+#
+# SURVIVING satellites, config ONLY, all four legitimate — do not remove:
+export CLAUDE_SATELLITES='[
+  {"dir":"VAPMIP/.claude","file":"settings.local.json","why":"114 allow rules, active project"},
+  {"dir":"BulletCluster/.claude","file":"settings.local.json","why":"active project, telescope downloads"},
+  {"dir":"VAPMIP/face/.claude","file":"settings.json","why":"expo plugin; face/ has package.json"},
+  {"dir":"VAPMIP_build/face/.claude","file":"settings.json","why":"expo plugin; build mirror"}
+]'
+
+# AUDIT COMMAND — run periodically; anything beyond the four above is drift.
+#   find /home/rendier/Projects/ThePlace -maxdepth 4 -type d -name .claude \
+#     -exec sh -c 'printf "%s: " "$1"; find "$1" -type f -printf "%P "; echo' _ {} \;

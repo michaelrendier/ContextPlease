@@ -396,6 +396,10 @@ NOTATION CHEAT SHEET (symbol -> plain meaning)
   gamma_n                  n-th Riemann zero (imaginary part), on sigma=1/2
   zeta(s)                  Riemann zeta function
   d*                       Zero Definer, smallest stable-config unit
+                           [ANALYTIC constant. NOT a zero divisor. See @RCCM_ZERO_QUALIFIERS]
+  0_RB                     EMPTY SET / null operator -- never the numeral zero
+  0_RZ                     Riemann Zeros, rho = 1/2 + i.gamma   (actual zeros of zeta)
+  0_ZD                     Zero Divisors, a.b = 0 with a,b != 0 (actual zeros of a product)
   Omega_ZS                 Lambert W(1), d* in log-space
   J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
   Sigma_RB                 J_red + J_blue = Memory (Wisdom - Usage); "Sigma" is
@@ -1422,3 +1426,148 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 #   non-ZD ~ d log d, everything that annihilates ~ d^2.
 #   log is defined ONLY on units (orbits that return to 1); a zero divisor's
 #   orbit falls to 0 and never comes back. log 0 IS the fault.
+
+═══════════════════════════════════════════════════════════════════════════
+CONTEXT HEADERS — @RCCM_<NAME> marks an equation block. Equations only.
+Dissertation, provenance and refutations live in .clauderc_ValaQuenta
+under the matching @RCVQ_<NAME>. Reference here; history there.
+═══════════════════════════════════════════════════════════════════════════
+
+@RCCM_OMEGA_DIAL
+  omega(n)      = count of DISTINCT primes of n
+  omega = 1     divisor lattice is a CHAIN  -> lineage exists, depth = v_p
+  omega >= 2    divisor lattice is a GRID   -> no total order, gaps appear
+  depth         = v_2(D) - v_2(birth_dim)
+  birth_dim     = D / 2^depth
+  preserve(D)   = 8 * 2^depth
+  contract      = dilate = (D - preserve)/2
+@END
+
+@RCCM_FERMATS_MONSTER
+  A-series Niemeier component  A_(p-1)^(R/(p-1)),  h(A_n) = n+1  =>  h = p
+  exists  <=>  (p-1) | R
+  R = 2^k      =>  p = 2^m + 1        FERMAT PRIMES {2,3,5,17,257,65537}
+  R = 24       =>  p in {2,3,5,7,13}
+  R = 48       =>  p in {2,3,5,7,13,17}
+  23 Niemeier h mod 16   hits 13 of 16;  MISSING {1, 11, 15}
+  supersingular p mod 16 hits 9 of 16:   {1,2,3,5,7,9,11,13,15}   (covers, not equals)
+  196560 = 2^4·3^3·5·7·13     Leech kissing;  all p with (p-1)|24
+  196883 = 47·59·71           Monster irrep;  no p with (p-1)|24
+  196883 - 196560 = 323 = 17·19
+  196884 = 196883 + 1         McKay
+@END
+
+@RCCM_NIGHTMARE_GROUP
+  71 holomorphic VOAs at c = 24  (Schellekens list)
+  70 with V_1 != 0,  + V-natural (V_1 = 0, Aut = Monster)
+  71 is PRIME  ->  omega = 1
+  |M| = 2^46·3^20·5^9·7^6·11^2·13^3·17·19·23·29·31·41·47·59·71
+@END
+
+@RCCM_GAIN_SPECTRUM
+  L_a for a a zero divisor, dim 16:
+    sv = 0      mult 4     CONTRACT
+    sv = 1      mult 8     PRESERVE
+    sv = sqrt2  mult 4     DILATE
+  SUM sv^2 = dim                                    (forced; no other spectrum)
+  corr(CONTRACT, DILATE) = -1                       exact antiphase
+  swing(PRESERVE) = 0                               DC rail
+  L_a^T = L_conj(a) ;  a pure imaginary => L_a^T = -L_a, tr L_a = 0
+  det exp(t L_a) = exp(t tr L_a) = 1                volume preserving
+@END
+
+@RCCM_CRITICAL_ANGLE
+  n1 = sqrt2 (DILATE),  n2 = 1 (PRESERVE)
+  sin(theta_c) = n2/n1 = 1/sqrt2   =>   theta_c = 45 deg
+  1/sqrt2 is an ANGLE, not a gain — it is not in the spectrum
+  critical angle == equipartition angle  <=>  n1/n2 = sqrt2  (forced by SUM sv^2 = dim)
+@END
+
+@RCCM_ZERO_POLE_CONJUGACY
+  zeros of L  =  poles of L^-1        s -> 1/s
+    s = 0     -> inf        kernel IS resonance
+    s = 1     -> 1          unique positive fixed point; s^2 = 1
+    s = sqrt2 -> 1/sqrt2    not in spectrum -> the critical angle
+@END
+
+@RCCM_FANO_SEDENION
+  dim 16:  84 ZD diagonals, 7 struts (i XOR j in 9..15), 12 per strut
+  7 PRESERVE octonions, 12 diagonals each
+  O_i closed, contains 1, norm-multiplicative, alternative, non-associative
+    => O by Hurwitz.  CONTRACT/DILATE leak (1.393, 1.414) — NOT algebras.
+  dim(O_i ∩ O_j) = 4 for all C(7,2) = 21 pairs; each is H by Hurwitz
+  incidence(strut, octonion) = PG(2,2) = Fano = Steiner S(2,3,7)
+    7 points (octonions), 7 lines (struts), 3 per line, 3 per point,
+    |line ∩ line| = 1,  lines through any 2 points = 1
+  strut 9:[0,1,2] 10:[0,3,4] 11:[0,5,6] 12:[1,3,5] 13:[1,4,6] 14:[2,3,6] 15:[2,4,5]
+  dim 32:  588 diagonals, 252 at depth 0, 35 octonions, 15 struts,
+           |line ∩ line| in {0,1}  -> projective SPACE, skew pairs exist
+@END
+
+@RCCM_VALVE_GROUP
+  three free involutions on the 84 diagonals:
+    sA  (i,j,s) -> (i,j,-s)                     flip sign
+    sC  (i,j,s) -> (i^d, j^d, s)                XOR-translate, hold sign
+    sN  (i,j,s) -> (i^d, j^d, -s)               same annihilation signature
+  sA·sC = sN ;  sA·sN = sC ;  sC·sN = sA
+  GROUP = V4 (Klein four), order 4, all elements free, all commute
+  orbits: 84 / 4 = 21  =  |quaternions|  =  |Fano flags|
+  per strut: 12 = 3 octonions x 2 signs x 2 per cell
+  annihilation resolves 84 -> 42 and STOPS; sN is invisible to it
+  |ann set| per probe = 4;  worst-case probes = 11 (floor log2 84 = 6.39)
+@END
+
+@RCCM_PACKING
+  densest known lattice packing:
+    d=1  Z      1.000000     d=8   E8     0.253670
+    d=2  A2     0.906900     d=16  BW16   0.014708
+    d=3  D3     0.740480     d=24  Leech  0.001930 = pi^12/12!
+    d=4  D4     0.616850
+  Kabatiansky-Levenshtein:  density <= 2^(-0.599 d)
+  integral octonions (octavians) = E8 lattice; |units| = 240 = E8 kissing
+@END
+
+@RCCM_QED_BIREFRINGENCE
+  n_par  = 1 + (7/2)(alpha/45 pi)(B/Bc)^2
+  n_perp = 1 + ( 2 )(alpha/45 pi)(B/Bc)^2
+  Bc = 4.414e9 T ;  ratio of deviations = 7:4, INDEPENDENT of B
+  weak-field form valid only for B << Bc
+@END
+
+@RCCM_CHIRALITY
+  achiral <=> w = w^-1 <=> w^2 = 1        (2-torsion)
+  free group: torsion-free  -> EVERY non-identity word chiral
+  PSL(2,Z) = Z/2 * Z/3 :  S order 2 achiral;  T order inf, ST order 3 chiral
+  finite order (elliptic)   -> closes  -> cone points, FACETS
+  infinite order (parabolic)-> never   -> limit set, FRACTALS
+@END
+
+
+@RCCM_ZERO_QUALIFIERS
+  Established 2026-08-16 (Cody). Three objects carry "zero"; only two are zeros.
+
+    0_RB   EMPTY SET, the null operator. A TYPE, not a value.
+           An unbound slot the surrounding scaffold forces to exist, prior to
+           and independent of any value occupying it. NEVER the numeral 0:
+           0 lives in the value space and collapses "no value yet" into
+           "computed to be zero". null != 0.
+
+    0_RZ   RIEMANN ZEROS.  rho = 1/2 + i.gamma,  zeta(rho) = 0.
+           ANALYTIC. A function vanishing AT A POINT.
+           = the Zero Tree, the Zero Lattice, Telperion's spectral nodes.
+           Chladni role: NODE (still). Primes are the ANTINODES.
+
+    0_ZD   ZERO DIVISORS.  a.b = 0 with a != 0 and b != 0.
+           ALGEBRAIC. A product vanishing BETWEEN two non-zero things.
+           84 diagonals at dim 16, 336 annihilating ordered pairs.
+           Role: the INSTRUMENT. Selects the 7 octonions from a continuum.
+
+  d*     is ANALYTIC (Omega_ZS/ln(10) = 0.24631) and is NEITHER of the above.
+         Its historical label "The Zero Definer" collides with the argument
+         that 0_ZD deserves the word "definer"; the two are unrelated.
+
+  WHY THE SPLIT MATTERS: 0_RZ is where NOTHING MOVES (the node, sigma=1/2,
+  PRESERVE). 0_ZD is the only place anything can be DEFINED (annihilation).
+  Opposite roles. The shared word is an accident of "vanishing" meaning two
+  different things.
+@END
