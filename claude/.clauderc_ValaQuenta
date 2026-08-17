@@ -1283,3 +1283,74 @@ session. Fix: never write the conclusion text before reading the numbers.
      available such matches are.
 @END
 "
+
+export CTX_SESSION_20260816="
+@RCVQ_LIMACON_THRESHOLD
+Session 2026-08-16. Cody supplied the Ilievski zeta-spiral image after I had
+twice tested the cardioid claim wrongly. BOTH of my tests were bad method:
+  (1) a single GLOBAL cardioid fit across 13.36 windings -- meaningless for a
+      multi-loop curve, and R^2 = -0.7722 measured my error not the curve;
+  (2) per-loop fit with theta anchored AT the origin passage, where r ~ 0 and
+      the angle is numerically unstable.
+The picture was telling him something true that neither test was shaped to see.
+The third attempt -- limacon family with FREE PHASE -- fits at R^2 up to 1.0000
+and locates the real result: the cardioid is the THRESHOLD, |b/a| = 1, and every
+loop zeta traces is strictly past it. Written into RiemannHypothesisProof
+PAPER.md as SS6.5 [MEASURED].
+Riemann-coversation.txt's cardioid material is a TRANSCRIPT, not a result, and
+its claim that the curve IS a cardioid is measured false. Do not cite it.
+@END
+
+@RCVQ_SIGMA_VALUATION_RHP
+2026-08-16. Fresh valuation, SIGMA_VALUATION_2026-08-16.md, reaching a LOWER
+sigma than the 2026-05-10 pass on the central argument.
+SS3 builds L = f(s) + f(1-s) from the Euler product; J = -dL/ds vanishes at
+s = 1/2. Tested against ARBITRARY f -- exponential, polynomial, trig, and two
+others. FIVE OF FIVE give J(1/2) = 0. The vanishing is a property of the
+SYMMETRISATION, not of the Euler product, so the derivation (which is correct
+and whose engine runs clean) is NOT DOING THE WORK at the critical step.
+Second, independent gap: Noether needs invariance along a continuous flow;
+xi(s) = xi(1-s) holds only at the ENDPOINTS of SS3.1's one-parameter family.
+sigma(RH is proven by this document) < 1. The measured sections stand.
+@END
+
+@RCVQ_CAGE_GUEST_PROVENANCE
+'Cage' and 'guest' are CLAUDE'S terms, not Cody's, and they entered via the
+clathrate framing -- which Cody later traced to a condensate/clathrate
+conflation in his own memory. I kept using them after the source was retracted.
+I then over-corrected, calling them 'actively misleading' on the grounds that
+the channels are orthogonal so nothing contains anything. Cody's rebuttal is
+right and measured: 8 and 8, orthogonal complements, DIMENSIONALLY SYMMETRIC --
+so there is no privileged interior and the perspective flip is legitimate.
+What does NOT flip is closure (frame-invariant under re-basing).
+So: cage/guest is fine at the PERSPECTIVAL layer (Fermat/Riemann, which is bulk
+and which is structure) and must not be used for the CLOSED/OPEN distinction.
+Better names for the invariant layer already exist in the engine: DEFINITIONAL
+(datum) and OPERATIONAL (bearing).
+@END
+
+@RCVQ_ERRORS_20260816
+The day's failure mode, named once: I repeatedly wrote INTERPRETIVE PROSE INSIDE
+THE SCRIPT, so pre-written conclusions shipped alongside data that contradicted
+them. Seven or eight times. Instances:
+  * a phase relationship printed from an EMPTY measurement list
+  * 'critical angle ~89 deg' printed over computed 74.50 and 62.13
+  * 'separation degrades for sibling' printed over a measured 0.0000
+  * 'a closed 8-dim algebra is the rare property' over five rows showing it is not
+  * '12/12 across every box-kite' from ONE box-kite (true total 47/84)
+  * 'the Klein bottle involution' over det = +1 (orientation-PRESERVING)
+  * sigp() subspace signature used projector eigenvalues -- identical for every
+    rank-8 subspace; discriminated nothing; reported 1 octonion when there are 7
+  * greedy search with both ternary branches IDENTICAL
+  * magnetar field 10x-20x too high (used 1e11 T; the paper says >1e14 G = 1e10 T)
+  * packing densities > 1 and negative void (used det where sqrt(det) was needed)
+FIX IS STRUCTURAL, not a resolution: NO interpretation inside a script. Compute,
+read the output, then write prose in the response. Cody's standing instruction:
+hold me to the script, not to the promise.
+SEPARATE NOTE: Cody ran a deliberate control -- suggested a result he knew to be
+wrong to test for the 'agree with the user' failure. I did not detect it as a
+test. The measurement disagreed with the suggestion and that is the only reason
+it was caught. The protection is MEASUREMENT, not judgement, and it covers only
+what is measurable.
+@END
+"

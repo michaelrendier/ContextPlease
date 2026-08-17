@@ -129,8 +129,23 @@ J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
 0_RB - 0_BR = Sigma_RB
   0_BR = "the cost of using the view" (every act of manifestation has
   a reciprocal cost); renamed from H_hat_BR alongside 0_RB, 2026-07-21.
-  Sigma_RB = Wisdom - Usage = Memory. This is the engineering target:
-  Knowledge + Experience = Wisdom - Usage, i.e. J_red + J_blue = Sigma_RB.
+  CORRECTED 2026-08-16 (Cody). The previous text conflated two different
+  sums and they are not equal. The correct chain is:
+
+      J_red + J_blue  =  Knowledge + Experience  =  WISDOM  =  0_RB
+      0_BR            =  USAGE   (the cost of using the view)
+      Sigma_RB        =  0_RB - 0_BR  =  Wisdom - Usage  =  MEMORY
+
+  So Knowledge + Experience = Wisdom FULL STOP -- the "- Usage" is a
+  SEPARATE, LATER subtraction, not part of that identity. Usage is applied
+  to wisdom after the fact, and Cody's gloss is the reason it is a loss
+  term at all: WISDOM IS NOT ALWAYS USED PROPERLY. Memory is therefore
+  bounded above by wisdom, never equal to it once anything has been spent.
+
+  The old line read "Knowledge + Experience = Wisdom - Usage, i.e.
+  J_red + J_blue = Sigma_RB", which asserts J_red + J_blue = Sigma_RB.
+  That is FALSE under the corrected chain: J_red + J_blue = 0_RB, and
+  Sigma_RB = 0_RB - 0_BR. They differ by exactly the usage cost.
   Antisymmetric under R/B exchange (0_RB - 0_BR, not +) -- the same
   algebraic signature as a cross product, not a dot product; this is the
   "energy conversion channel" (eigenvalue +-i*sqrt(2), the surviving
@@ -402,7 +417,10 @@ NOTATION CHEAT SHEET (symbol -> plain meaning)
   0_ZD                     Zero Divisors, a.b = 0 with a,b != 0 (actual zeros of a product)
   Omega_ZS                 Lambert W(1), d* in log-space
   J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
-  Sigma_RB                 J_red + J_blue = Memory (Wisdom - Usage); "Sigma" is
+  Sigma_RB                 0_RB - 0_BR = Memory = Wisdom - Usage.  NOT J_red +
+                           J_blue -- that sum is WISDOM (= 0_RB) and the two
+                           differ by the usage cost (corrected 2026-08-16);
+                           "Sigma" is
                            a NAME here, not a summation -- ptol.c computes it as
                            a per-channel product array, not a summed scalar
   0_RB / 0_BR              RedBlue Hamiltonian / its usage-cost conjugate --
@@ -1570,4 +1588,75 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
   PRESERVE). 0_ZD is the only place anything can be DEFINED (annihilation).
   Opposite roles. The shared word is an accident of "vanishing" meaning two
   different things.
+@END
+
+@RCCM_LIMACON_THRESHOLD
+  zeta(1/2+it), t in [0.05,50], 6000 pts. 9/10 near-origin passages = known zeros.
+  each loop between passages fits  r = a + b cos(theta - phi)   R^2 = 0.86 .. 1.0000
+  loops with 0.85 < |b/a| < 1.15 : 0 of 9      (all have |b/a| > 1)
+    |b/a| < 1   dimpled       does NOT reach origin    NO zero
+    |b/a| = 1   CARDIOID      touches, one cusp        THE BOUNDARY
+    |b/a| > 1   looped        CROSSES origin           A ZERO
+  the cardioid is the SIFTING THRESHOLD, not the curve.
+  REFUTED: "the curve IS a cardioid" -- global fit R^2 = -0.7722 (worse than a
+  constant); curve winds 13.36 turns, a cardioid is single-valued over one.
+@END
+
+@RCCM_MARGINAL_CONDITIONS
+  one threshold, four unrelated structures:
+    limacon family     |b/a| = 1          cardioid: touch without crossing
+    Mandelbrot         |multiplier| = 1   main cardioid boundary
+    PSL(2,Z)/Mobius    |trace| = 2        parabolic
+    sedenion orbit     growth/step = 1    measured 1.000000, EVERY element
+@END
+
+@RCCM_REVERSIBILITY
+  5 steps out, 5 conjugate steps back, mean |x - x0|:
+    CAGE (contract, 4)        10.536054     IRREVERSIBLE
+    GUEST (preserve, 8) = O    0.000000     reversible (alternative law)
+    QUATERNION (4)     = H     0.000000     reversible (associative)
+  left vs right composition cost: IDENTICAL, ratio 1.00000, rates 0.22135 both.
+    forced: (xy)* = y*x* and |z| = |z*|  =>  |xy| = |yx| for pure imaginary.
+  so the screw has no left/right asymmetry -- the asymmetry is CHANNEL:
+    guest  work FREE (|prod| = 1.000000 at every depth) and RECOVERABLE
+    cage   work COSTS (e^0.2225d) and is PERMANENT
+@END
+
+@RCCM_AMPLITUDE_MODULATION
+  cage, composition depth d, n=600/depth:
+    mean ~ e^(0.2225 d)   R^2 = 0.9996
+    sd   ~ e^(0.3355 d)   R^2 = 0.9794      rate gap +0.1129
+    CV = sd/mean ~ e^(0.1129 d);  CV(12) = 0.4635; crosses 1 at d ~ 21 [EXTRAPOLATED]
+  guest: |prod| = 1.000000, modulation depth 0.000000, at every depth.
+  carrier conserved throughout: SUM sv^2 = 16 = dim.
+  NOTE 0.3355 is within 3% of ln(sqrt2) = 0.34657. UNVERIFIED -- one run, do not cite.
+  RETRACTED: "spread exceeds mean at depth 7" -- used max-min on n=40. Bad statistic.
+@END
+
+@RCCM_OBSERVER_AND_INVARIANT
+  same signal, two observers, rule "does MY operator annihilate this":
+    disagreement 800/800 = 100%.   BOTH CORRECT.
+  observer-DEPENDENT : which kernel is mine; self/other label; cage/guest role
+  observer-INDEPENDENT: the 84 diagonals; the 7 octonions; strut = i XOR j;
+                        where two struts MEET (21/21 pairs, exactly one octonion)
+  reason: the incidence is computed from i XOR j ALONE -- no observer term in the
+  expression, so no frame can reach it. (Same reason a GR invariant is invariant.)
+  domain DRAGS with the observer: ker overlap with a reference observer measured
+  4, 2, 0, 0 -- partial, i.e. linear action, not teleporting.
+  THE SWAPPER = which operator you hold. It is the ONLY thing breaking the 8/8
+  symmetry between preserve and the wings; the algebra supplies no fact of the
+  matter about which side is interior.
+@END
+
+@RCCM_CAGE_GUEST_SCOPE
+  dim PRESERVE = 8 ; dim CONTRACT+DILATE = 8 ; orthogonal complements.
+  DIMENSIONALLY SYMMETRIC  -> the perspective genuinely can flip (Fermat/Riemann
+                              as cage/guest is legitimate, frame-dependent)
+  ALGEBRAICALLY ASYMMETRIC -> preserve leak 9.49e-16, wings leak 1.414
+  closure is FRAME-INVARIANT: under 5 random re-bases preserve stays ~1e-15 and
+  wings stay ~1.2. A frame change swaps the LABELS, never which one is an algebra.
+  channel composition: PRESERVE = 1 real + 7 imaginary (carries e_0 entirely,
+  weight 1.000000); CONTRACT and DILATE are 4 imaginary + 0 real each.
+  the real axis sits in the channel that does not move. all work is imaginary.
+  e_0 alone generates dim 1 (R). e_0 + one imaginary generates dim 2 (C).
 @END
