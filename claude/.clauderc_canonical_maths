@@ -1513,7 +1513,11 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
   7 PRESERVE octonions, 12 diagonals each
   O_i closed, contains 1, norm-multiplicative, alternative, non-associative
     => O by Hurwitz.  CONTRACT/DILATE leak (1.393, 1.414) — NOT algebras.
-  dim(O_i ∩ O_j) = 4 for all C(7,2) = 21 pairs; each is H by Hurwitz
+  dim(O_i ∩ O_j) = 4 for all C(7,2) = 21 pairs; each is H by Hurwitz.
+  BUT ONLY 7 DISTINCT QUATERNIONS (corrected 2026-08-16): the 3 pairs on a Fano
+  line share ONE 4-space (joint span dim 4, not 12). So 7-7-7:
+    7 octonions (points) / 7 struts (lines) / 7 quaternions (one per line core)
+  21 is the FLAG count and the V4 orbit count -- NOT the quaternion count.
   incidence(strut, octonion) = PG(2,2) = Fano = Steiner S(2,3,7)
     7 points (octonions), 7 lines (struts), 3 per line, 3 per point,
     |line ∩ line| = 1,  lines through any 2 points = 1

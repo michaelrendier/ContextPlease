@@ -1221,7 +1221,10 @@ PRESERVE is O -- confirmed by Hurwitz, not assumed: dim 8, contains 1, closed
 associative (72.27), zero zero-divisors in 600 draws.
 CORRECTS the '{4;8;4} = octonion wrapped by its constituent quaternions'
 reading. The wings LEAK (1.393, 1.414) and are not algebras, jointly or
-severally. The quaternions are the 21 PAIRWISE INTERSECTIONS of the octonions
+severally. The quaternions are pairwise intersections of the octonions -- but there are
+only 7 DISTINCT ones, not 21 (corrected 2026-08-16). All three pairs on a Fano
+line share the same 4-space. 21 is the flag/orbit count; I conflated the two
+and published 21 in wiki 89/90 before catching it.
 -- all C(7,2)=21 are dim 4, closed, contain 1, hence H. Same picture, different
 location. It is a CLATHRATE: cage that is not the guest.
 Strut/octonion incidence is PG(2,2), every Fano axiom verified. It is the SAME
