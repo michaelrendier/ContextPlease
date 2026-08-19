@@ -1265,7 +1265,7 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 #       nullity = #{cycles C : (-s)^len(C) == sigma(C)}
 #   O(d) per candidate, EXACT INTEGERS, no tolerance to guess.
 #   dim 128: 27s -> 1.8s.  dim 256: ~45min -> 3.4s.  dim 512: 29.5s.
-#   Script: ThePlace/.claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
+#   Script: ThePlace/ContextPlease/claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
 #
 # ! ASK THE ALGEBRA BEFORE THE HARDWARE. The plan was vispy/OpenGL/GPU. lspci:
 #   Intel UHD Graphics 620, integrated, no CUDA, and no cupy/torch/pyopencl/

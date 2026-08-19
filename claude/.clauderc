@@ -34,7 +34,7 @@ export CLAUDE_MEMORY="/home/rendier/.claude/projects/-home-rendier-Projects-TheP
 # of the Ainulindale CS paper. The harness still hands Claude a /tmp path at
 # session start; Claude is to IGNORE it and use this instead, one dated
 # subdirectory per piece of work, each with a README.md.
-export CLAUDE_SCRATCH="/home/rendier/Projects/ThePlace/.claude/scratchpad"
+export CLAUDE_SCRATCH="/home/rendier/Projects/ThePlace/ContextPlease/claude/scratchpad"
 scratch() { mkdir -p "$CLAUDE_SCRATCH/$(date +%F)_$1" && cd "$CLAUDE_SCRATCH/$(date +%F)_$1"; }
 
 # ============================================================

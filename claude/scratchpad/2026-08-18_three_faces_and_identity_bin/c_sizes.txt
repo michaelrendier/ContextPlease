@@ -1,0 +1,10 @@
+mi_header_t 384
+mi_entry_t 96
+mi_chan_t 8
+mi_edge_t 12
+off.spell 16
+off.chan_off 52
+off.addr_fp 72
+off.parent 80
+hdr.s_entries 240
+hdr.checksum 376

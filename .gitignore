@@ -1,0 +1,8 @@
+# generated artefacts — regenerable by the scripts beside them, so not versioned
+__pycache__/
+*.pyc
+*.bin
+*.o
+# compiled check binaries
+claude/scratchpad/**/sizecheck
+claude/scratchpad/**/sedmul
