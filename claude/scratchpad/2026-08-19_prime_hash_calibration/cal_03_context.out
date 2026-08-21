@@ -1,0 +1,56 @@
+==========================================================================
+PASS 5a — THREE PRIME LADDERS IN THE LIVE CODE   (CALIBRATION)
+==========================================================================
+lineage_hash  letters   n= 26   min=   2  max= 101
+lineage_hash  context   n= 64   min= 317  max= 727
+prime_hash    letters   n= 20   min=   2  max=  71
+prime_hash    context   n= 64   min=  73  max= 433
+context_fill  kites     n=  7   min=   2  max=  17
+
+pairwise integer overlap between ladders that must not share values
+  lineage_hash  letters  x  prime_hash    context   |overlap|= 6  [73, 79, 83, 89, 97, 101]   = letters 'vkjxqz'
+  context_fill  kites    x  lineage_hash  letters   |overlap|= 7  [2, 3, 5, 7, 11, 13, 17]   = letters 'etaoins'
+  context_fill  kites    x  prime_hash    letters   |overlap|= 7  [2, 3, 5, 7, 11, 13, 17]   = letters 'etaoins'
+  lineage_hash  context  x  prime_hash    context   |overlap|=19  [317, 331, 337, 347, 349, 353, 359, 367, 373, 379]
+
+==========================================================================
+PASS 5b — IS box_kite() A VALID REDUCER?   (RESULT)
+==========================================================================
+box_kite() returns None for   991 words
+  class 1  BELOW division  (no gen-3 letter at all)     547
+  class 2  PURE division   (gen-3 letters ONLY)         444
+  the two classes are disjoint                        True
+  class 1 alphabet   aeinost
+  class 2 alphabet   bcdfghjklmpqruvwxyz
+  class 1 sample     ['a', 'assisi', 'ina', 'nat', 'oat', 'sensation', 'state', 'tenseness']
+  class 2 sample     ['b', 'cfc', 'dryly', 'ghz', 'hz', 'mb', 'plucky', 'ryukyu']
+
+==========================================================================
+PASS 5c — THE REFINING PASS, 16-WORD SEDENION WINDOW
+   CONTROL RUN FIRST: identical pipeline on SHUFFLED context.
+==========================================================================
+corpus  crawford_thesis_clean.txt   68241 tokens, 2908 types
+sedenion windows (16 words, non-overlapping)   4265
+
+sampling 1200 windows = 19200 word-fills per condition
+
+CONTROL  (shuffled context)
+   hash      coherence=0.1545  over   673 repeated words       15.8 us/word     0.253 ms/window
+   letters   coherence=1.0000  over   673 repeated words        8.4 us/word     0.134 ms/window
+   descent   coherence=0.9961  over   673 repeated words        9.0 us/word     0.143 ms/window
+
+REAL     (true context)
+   hash      coherence=0.1540  over   673 repeated words       15.3 us/word     0.245 ms/window
+   letters   coherence=1.0000  over   673 repeated words        7.2 us/word     0.115 ms/window
+   descent   coherence=0.9956  over   673 repeated words        7.7 us/word     0.123 ms/window
+
+==========================================================================
+PASS 5d — ONE STRING -> 7 STRINGS   (CALIBRATION)
+==========================================================================
+the pencil: the 7 ways to factor one XOR relation into two others
+  relation  1 (0001)  -> 7 factor pairs  [(2, 3), (4, 5), (6, 7), (8, 9), (10, 11), (12, 13), (14, 15)]
+  relation  6 (0110)  -> 7 factor pairs  [(1, 7), (2, 4), (3, 5), (8, 14), (9, 15), (10, 12), (11, 13)]
+  relation 15 (1111)  -> 7 factor pairs  [(1, 14), (2, 13), (3, 12), (4, 11), (5, 10), (6, 9), (7, 8)]
+
+factor-pair count per relation, over all 15 relations   {7: 15}
+105 incidences / 15 relations = 7

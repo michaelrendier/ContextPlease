@@ -1,0 +1,97 @@
+==========================================================================
+PASS 1 — THE FERMAT LADDER  (CALIBRATION)
+==========================================================================
+FERMAT               [3, 5, 17, 257]
+prod                 65535
+2^16 - 1             65535
+prod == 2^16-1       True
+nonempty subsets     15
+  containing 257     8
+  minus no-free-bit  7
+F_n == 2^(2^n)+1     True
+
+==========================================================================
+PASS 2 — THE LETTER MAP  (CALIBRATION)
+==========================================================================
+LETTER_CAP  lineage_hash  313   pool=65   CONTEXT_PRIMES[0]=317
+LETTER_CAP  prime_hash    71   pool=20   CONTEXT_PRIMES[0]=73
+
+letter  prime  gen   generation-name
+   e        2   0    ranking
+   t        3   0    ranking
+   a        5   1    factors
+   o        7   2    GROUPING
+   i       11   2    GROUPING
+   n       13   2    GROUPING
+   s       17   2    GROUPING
+   h       19   3    division
+   r       23   3    division
+   d       29   3    division
+   l       31   3    division
+   c       37   3    division
+   u       41   3    division
+   m       43   3    division
+   w       47   3    division
+   f       53   3    division
+   g       59   3    division
+   y       61   3    division
+   p       67   3    division
+   b       71   3    division
+   v       73   3    division
+   k       79   3    division
+   j       83   3    division
+   x       89   3    division
+   q       97   3    division
+   z      101   3    division
+
+max letter prime actually used   101
+prime_hash LETTER_CAP            71
+letters above prime_hash cap     [('v', 73), ('k', 79), ('j', 83), ('x', 89), ('q', 97), ('z', 101)]
+
+generation histogram over the 26 letters
+  gen 0 (  ranking)    2    7.7%
+  gen 1 (  factors)    1    3.8%
+  gen 2 ( GROUPING)    4   15.4%
+  gen 3 ( division)   19   73.1%
+
+==========================================================================
+PASS 3 — SPELL BIJECTION + STRUT DISTRIBUTION OVER A REAL CORPUS
+==========================================================================
+corpus  /usr/share/dict/words   73445 distinct [a-z]+ words
+distinct spell codes             73445
+spell collisions                 0
+words > 13 letters (uint64 OOB)  1448
+unspell round-trip               73445/73445
+
+STRUT distribution   (bit0=ranking bit1=factors bit2=GROUPING bit3=division)
+  0001   1         5     0.01%
+  0010   2         3     0.00%
+  0011   3        11     0.01%
+  0100   4        39     0.05%
+  0101   5       228     0.31%
+  0110   6        49     0.07%
+  0111   7       212     0.29%
+  1000   8       444     0.60%
+  1001   9      1860     2.53%
+  1010  10       866     1.18%
+  1011  11      3015     4.11%
+  1100  12      6296     8.57%
+  1101  13     26953    36.70%
+  1110  14      7491    10.20%
+  1111  15     25973    35.36%
+
+BOX KITE distribution   (strut & 0b0111, division bit forced)
+     1      1860     2.53%
+     2       866     1.18%
+     3      3015     4.11%
+     4      6296     8.57%
+     5     26953    36.70%
+     6      7491    10.20%
+     7     25973    35.36%
+  None       991     1.35%
+
+H(strut)     2.2108 bits   (max 3.9069)
+H(box_kite)  2.1836 bits   (max 3.0000)
+H(lineage)   14.1160 bits   over 36165 distinct ordered lineages
+
+words with NO box kite (never reach division gen)  991

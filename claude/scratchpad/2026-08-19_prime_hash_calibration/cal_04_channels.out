@@ -1,0 +1,27 @@
+corpus 68241 tokens / 2908 types
+co-occurrence table built in 0.36 s   (229552 nonzero cells)
+channel codes for 2908 types in 0.14 s (mean 47.8 us/type, computed ONCE)
+mean channels per type   8.00
+
+sampling 1200 windows = 19200 word-fills per condition
+
+==========================================================================
+PPMI CHANNEL DESCENT — control first
+==========================================================================
+CONTROL (shuffled context)
+   coherence        0.6814   over 673 repeated words
+   mean |shared|    2.751 channels
+   empty descents   6458/19200  (33.6%)
+   cost             36.3 us/word   0.581 ms/window
+
+REAL    (true context)
+   coherence        0.4047   over 673 repeated words
+   mean |shared|    3.645 channels
+   empty descents   2708/19200  (14.1%)
+   cost             28.1 us/word   0.449 ms/window
+
+REAL - CONTROL   -0.2767      ratio 0.5939
+
+for comparison, the two candidates from cal_03:
+   hash      0.1540 real / 0.1545 shuffled   diff -0.0005
+   descent   0.9956 real / 0.9961 shuffled   diff -0.0005

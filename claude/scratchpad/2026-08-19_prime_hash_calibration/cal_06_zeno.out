@@ -1,0 +1,71 @@
+corpus 73445 words
+
+==============================================================================
+(1) THE LADDER — is p_n linear?   (CALIBRATION)
+==============================================================================
+p_1..p_26 used as letters   2 .. 101   (factor 50.5 over 26 steps)
+FERMAT F_0..F_3             3 .. 257   (factor 85.7 over 4 steps)
+
+ n   p_n   n*ln(n)   ratio     which Fermat band
+ 1     2      1.00    2.00     gen 0
+ 2     3      1.39    2.16     gen 0
+ 5    11      8.05    1.37     gen 2
+10    29     23.03    1.26     gen 3
+20    71     59.91    1.19     gen 3
+26   101     84.71    1.19     gen 3
+40   173    147.56    1.17     gen 3
+65   313    271.34    1.15     gen 4
+
+primes available per Fermat band, up to the 313 pool
+  gen 0    2 primes available
+  gen 1    1 primes available
+  gen 2    4 primes available
+  gen 3   48 primes available
+  gen 4   10 primes available
+letters actually assigned   {0: 2, 1: 1, 2: 4, 3: 19}
+
+VERDICT (1): p_n / (n ln n) stays within a factor of ~1.2 across the range,
+so the ladder is QUASI-linear. Cutting it at doubly-exponential thresholds
+is the whole source of the 2/1/4/19 lopsidedness. That claim stands.
+
+==============================================================================
+(2) THE OCCUPANCY — Zeno. is v_p geometric?   (RESULT)
+==============================================================================
+For a RANDOM integer:  P(v_p >= k) = p^-k,  E[v_p] = 1/(p-1).
+For a WORD composite:  v_p(comp w) = how many times that letter occurs.
+
+letter  p    P(v>=1)   P(v>=2)   P(v>=3)     E[v]   random E[v]   ratio
+   e     2    0.6565    0.2203    0.0423    0.923      1.0000     0.92
+   t     3    0.4372    0.0938    0.0075    0.539      0.5000     1.08
+   a     5    0.5122    0.1122    0.0115    0.637      0.2500     2.55
+   o     7    0.3925    0.0824    0.0081    0.484      0.1667     2.90
+   i    11    0.5344    0.1370    0.0215    0.696      0.1000     6.96
+   n    13    0.4672    0.1007    0.0114    0.580      0.0833     6.96
+   s    17    0.5331    0.1433    0.0238    0.704      0.0625    11.27
+   h    19    0.1777    0.0127    0.0004    0.191      0.0556     3.43
+   r    23    0.4864    0.0848    0.0061    0.577      0.0455    12.70
+   d    29    0.2772    0.0344    0.0025    0.314      0.0357     8.79
+
+'e' (prime 2) survival curve      [0.6565, 0.2203, 0.0423, 0.0038, 0.0002]
+random-integer survival curve     [0.5, 0.25, 0.125, 0.0625, 0.0312]
+ratio of successive terms, 'e'    [0.336, 0.192, 0.09, 0.047]
+  (a geometric law would hold this ratio CONSTANT at 1/p = 0.5)
+
+omega  (distinct prime factors)   mean 6.674
+Omega  (with multiplicity)        mean 8.090
+Omega - omega  = repeated mass    mean 1.415
+  a random integer near 2^80 has omega ~ ln ln 2^80 = 4.02
+
+==============================================================================
+WHAT EACH ENCODING KEEPS   (RESULT)
+==============================================================================
+encoding                             bits   classes    kept
+spell (Horner, ordered)            16.164     73445  100.0%
+valuation vector (multiset)        15.985     67460   98.9%
+support (which letters, OR)        14.890     40711   92.1%
+generation profile                  8.750      1544   54.1%
+strut (generation OR)               2.211        15   13.7%
+box kite                            2.184         8   13.5%
+
+multiset -> support  loses 1.095 bits = the p-adic DEPTH (how many times, not whether)
+support  -> strut    loses 12.680 bits = which letter, collapsed to which generation

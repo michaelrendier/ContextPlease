@@ -1,0 +1,25 @@
+==========================================================================
+CORRECTED REDUCER — gate handled, paired per word
+==========================================================================
+CONTROL (shuffled)
+   readings              19200
+   EMPTY descents        6458  (33.6%)   [gate, reported separately]
+   mean |shared| overall 2.751
+   mean |shared| non-mt  4.145
+   agreement (Jaccard)   0.4158   over 493 words
+
+REAL    (true ctx)
+   readings              19200
+   EMPTY descents        2708  (14.1%)   [gate, reported separately]
+   mean |shared| overall 3.645
+   mean |shared| non-mt  4.244
+   agreement (Jaccard)   0.3162   over 976 words
+
+==========================================================================
+PAIRED PER-WORD TEST — same word, same reducer, real vs shuffled
+==========================================================================
+|shared| real-ctrl      mean +1.4644   words better  611 / worse   47   sign-test z = +21.99
+empty%   real-ctrl      mean -0.3843   words better   33 / worse  575   sign-test z = -21.98
+agreement real-ctrl     mean -0.0321   words better  216 / worse  209   sign-test z = +0.34
+
+words compared   673
