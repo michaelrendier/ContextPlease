@@ -1,0 +1,2654 @@
+===== repair started 2026-08-19T12:04:43-07:00 =====
+kernel: 6.8.0-138-lowlatency   host: rendier-HP-EliteBook-820-G3
+
+--- [1/6] masking vboxdrv
+    (prevents the MOK prompt livelock recurring on the next boot;
+     unmask after the MOK is enrolled or Secure Boot is disabled)
+Created symlink /etc/systemd/system/vboxdrv.service → /dev/null.
+    masked vboxdrv.service
+
+--- [2/6] masking phantom units (no such hardware on this machine)
+    masked casper-md5check.service
+    masked pd-mapper.service
+    masked rmtfs.service
+    masked qcom-modem-setup.service
+
+--- [3/6] creating missing adbusers group (silences udev rule spam)
+    created adbusers
+    added rendier to adbusers
+
+--- [4/6] purging old kernel packages
+    keeping: 6.8.0-138-lowlatency (running), 6.8.0-138-generic, 6.8.0-137-lowlatency
+    purging: 142 packages
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 30665 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+    purge exit: 100
+
+--- [5/6] regenerating initramfs for all remaining kernels
+update-initramfs: Generating /boot/initrd.img-6.8.0-138-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-138-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-137-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-137-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-136-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-136-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-124-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-117-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-117-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-111-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-111-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-110-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-110-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-106-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+
+===== repair PART 2 started 2026-08-19T12:08:34-07:00 =====
+--- [0/3] pre-flight: dpkg lock must be free
+    lock is free
+
+--- [0b/3] clearing interrupted-run leftovers
+removed '/boot/initrd.img-6.8.0-106-lowlatency.new'
+
+--- [1/3] purging old kernel packages
+    keeping: 6.8.0-138-lowlatency (running), 6.8.0-138-generic, 6.8.0-137-lowlatency
+    purging: 142 packages
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  docutils-common fonts-hack libutf8proc3 libzfp1t64 python3-alabaster
+  python3-asciitree python3-astropy-healpix python3-bcrypt python3-blosc
+  python3-cloudpickle python3-dask python3-distributed python3-docutils
+  python3-fasteners python3-fsspec python3-fusepy python3-imageio
+  python3-imagesize python3-lazy-loader python3-libarchive-c python3-locket
+  python3-monotonic python3-paramiko python3-partd python3-pyavm
+  python3-pydata-sphinx-theme python3-pygit2 python3-pyregion python3-roman
+  python3-shapely python3-skimage python3-skimage-lib python3-snowballstemmer
+  python3-sphinx python3-sphinx-copybutton python3-tblib python3-tifffile
+  python3-toolz python3-zfpy python3-zict qtermwidget5-data sphinx-common
+Use 'apt autoremove' to remove them.
+The following packages will be REMOVED:
+  linux-headers-6.8.0-100* linux-headers-6.8.0-100-generic*
+  linux-headers-6.8.0-100-lowlatency* linux-headers-6.8.0-101*
+  linux-headers-6.8.0-101-generic* linux-headers-6.8.0-101-lowlatency*
+  linux-headers-6.8.0-106* linux-headers-6.8.0-106-generic*
+  linux-headers-6.8.0-106-lowlatency* linux-headers-6.8.0-110*
+  linux-headers-6.8.0-110-generic* linux-headers-6.8.0-110-lowlatency*
+  linux-headers-6.8.0-111* linux-headers-6.8.0-111-generic*
+  linux-headers-6.8.0-111-lowlatency* linux-headers-6.8.0-117*
+  linux-headers-6.8.0-117-generic* linux-headers-6.8.0-117-lowlatency*
+  linux-headers-6.8.0-124* linux-headers-6.8.0-124-generic*
+  linux-headers-6.8.0-136* linux-headers-6.8.0-136-generic*
+  linux-headers-6.8.0-136-lowlatency* linux-headers-6.8.0-137-generic*
+  linux-headers-6.8.0-51* linux-headers-6.8.0-51-generic*
+  linux-headers-6.8.0-62* linux-headers-6.8.0-62-generic*
+  linux-headers-6.8.0-62-lowlatency* linux-headers-6.8.0-63*
+  linux-headers-6.8.0-63-generic* linux-headers-6.8.0-63-lowlatency*
+  linux-headers-6.8.0-64* linux-headers-6.8.0-64-generic*
+  linux-headers-6.8.0-64-lowlatency* linux-headers-6.8.0-65-lowlatency*
+  linux-headers-6.8.0-71* linux-headers-6.8.0-71-generic*
+  linux-headers-6.8.0-78* linux-headers-6.8.0-78-generic*
+  linux-headers-6.8.0-78-lowlatency* linux-headers-6.8.0-85*
+  linux-headers-6.8.0-85-generic* linux-headers-6.8.0-85-lowlatency*
+  linux-headers-6.8.0-87* linux-headers-6.8.0-87-generic*
+  linux-headers-6.8.0-87-lowlatency* linux-headers-6.8.0-90*
+  linux-headers-6.8.0-90-generic* linux-headers-6.8.0-90-lowlatency*
+  linux-headers-6.8.0-94* linux-headers-6.8.0-94-generic*
+  linux-headers-6.8.0-94-lowlatency* linux-image-6.8.0-100-generic*
+  linux-image-6.8.0-100-lowlatency* linux-image-6.8.0-101-generic*
+  linux-image-6.8.0-101-lowlatency* linux-image-6.8.0-106-generic*
+  linux-image-6.8.0-106-lowlatency* linux-image-6.8.0-110-generic*
+  linux-image-6.8.0-110-lowlatency* linux-image-6.8.0-111-generic*
+  linux-image-6.8.0-111-lowlatency* linux-image-6.8.0-117-generic*
+  linux-image-6.8.0-117-lowlatency* linux-image-6.8.0-124-generic*
+  linux-image-6.8.0-136-generic* linux-image-6.8.0-136-lowlatency*
+  linux-image-6.8.0-137-generic* linux-image-6.8.0-51-generic*
+  linux-image-6.8.0-62-generic* linux-image-6.8.0-62-lowlatency*
+  linux-image-6.8.0-63-generic* linux-image-6.8.0-63-lowlatency*
+  linux-image-6.8.0-64-generic* linux-image-6.8.0-64-lowlatency*
+  linux-image-6.8.0-65-lowlatency* linux-image-6.8.0-71-generic*
+  linux-image-6.8.0-78-generic* linux-image-6.8.0-78-lowlatency*
+  linux-image-6.8.0-85-generic* linux-image-6.8.0-85-lowlatency*
+  linux-image-6.8.0-87-generic* linux-image-6.8.0-87-lowlatency*
+  linux-image-6.8.0-90-generic* linux-image-6.8.0-90-lowlatency*
+  linux-image-6.8.0-94-generic* linux-image-6.8.0-94-lowlatency*
+  linux-modules-6.8.0-100-generic* linux-modules-6.8.0-100-lowlatency*
+  linux-modules-6.8.0-101-generic* linux-modules-6.8.0-101-lowlatency*
+  linux-modules-6.8.0-106-generic* linux-modules-6.8.0-106-lowlatency*
+  linux-modules-6.8.0-110-generic* linux-modules-6.8.0-110-lowlatency*
+  linux-modules-6.8.0-111-generic* linux-modules-6.8.0-111-lowlatency*
+  linux-modules-6.8.0-117-generic* linux-modules-6.8.0-117-lowlatency*
+  linux-modules-6.8.0-124-generic* linux-modules-6.8.0-136-generic*
+  linux-modules-6.8.0-136-lowlatency* linux-modules-6.8.0-137-generic*
+  linux-modules-6.8.0-51-generic* linux-modules-6.8.0-62-generic*
+  linux-modules-6.8.0-62-lowlatency* linux-modules-6.8.0-63-generic*
+  linux-modules-6.8.0-63-lowlatency* linux-modules-6.8.0-64-generic*
+  linux-modules-6.8.0-64-lowlatency* linux-modules-6.8.0-65-lowlatency*
+  linux-modules-6.8.0-71-generic* linux-modules-6.8.0-78-generic*
+  linux-modules-6.8.0-78-lowlatency* linux-modules-6.8.0-85-generic*
+  linux-modules-6.8.0-85-lowlatency* linux-modules-6.8.0-87-generic*
+  linux-modules-6.8.0-87-lowlatency* linux-modules-6.8.0-90-generic*
+  linux-modules-6.8.0-90-lowlatency* linux-modules-6.8.0-94-generic*
+  linux-modules-6.8.0-94-lowlatency* linux-modules-extra-6.8.0-100-generic*
+  linux-modules-extra-6.8.0-101-generic*
+  linux-modules-extra-6.8.0-106-generic*
+  linux-modules-extra-6.8.0-110-generic*
+  linux-modules-extra-6.8.0-111-generic*
+  linux-modules-extra-6.8.0-117-generic*
+  linux-modules-extra-6.8.0-124-generic*
+  linux-modules-extra-6.8.0-136-generic*
+  linux-modules-extra-6.8.0-137-generic* linux-modules-extra-6.8.0-51-generic*
+  linux-modules-extra-6.8.0-62-generic* linux-modules-extra-6.8.0-63-generic*
+  linux-modules-extra-6.8.0-64-generic* linux-modules-extra-6.8.0-71-generic*
+  linux-modules-extra-6.8.0-78-generic* linux-modules-extra-6.8.0-85-generic*
+  linux-modules-extra-6.8.0-87-generic* linux-modules-extra-6.8.0-90-generic*
+  linux-modules-extra-6.8.0-94-generic*
+0 upgraded, 0 newly installed, 142 to remove and 22 not upgraded.
+After this operation, 8,399 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 2235861 files and directories currently installed.)
+Removing linux-headers-6.8.0-100-generic (6.8.0-100.100) ...
+Removing linux-headers-6.8.0-100 (6.8.0-100.100) ...
+Removing linux-headers-6.8.0-100-lowlatency (6.8.0-100.100.1) ...
+Removing linux-headers-6.8.0-101-generic (6.8.0-101.101) ...
+Removing linux-headers-6.8.0-101 (6.8.0-101.101) ...
+Removing linux-headers-6.8.0-101-lowlatency (6.8.0-101.101.1) ...
+Removing linux-headers-6.8.0-106-generic (6.8.0-106.106) ...
+Removing linux-headers-6.8.0-106 (6.8.0-106.106) ...
+Removing linux-headers-6.8.0-106-lowlatency (6.8.0-106.106.1) ...
+Removing linux-headers-6.8.0-110-generic (6.8.0-110.110) ...
+Removing linux-headers-6.8.0-110 (6.8.0-110.110) ...
+Removing linux-headers-6.8.0-110-lowlatency (6.8.0-110.110.1) ...
+Removing linux-headers-6.8.0-111-generic (6.8.0-111.111) ...
+Removing linux-headers-6.8.0-111 (6.8.0-111.111) ...
+Removing linux-headers-6.8.0-111-lowlatency (6.8.0-111.111.1) ...
+Removing linux-headers-6.8.0-117-generic (6.8.0-117.117) ...
+Removing linux-headers-6.8.0-117 (6.8.0-117.117) ...
+Removing linux-headers-6.8.0-117-lowlatency (6.8.0-117.117.1) ...
+Removing linux-headers-6.8.0-124-generic (6.8.0-124.124) ...
+Removing linux-headers-6.8.0-124 (6.8.0-124.124) ...
+Removing linux-headers-6.8.0-136-generic (6.8.0-136.136) ...
+Removing linux-headers-6.8.0-136 (6.8.0-136.136) ...
+Removing linux-headers-6.8.0-136-lowlatency (6.8.0-136.136.2) ...
+Removing linux-headers-6.8.0-137-generic (6.8.0-137.137) ...
+Removing linux-headers-6.8.0-51-generic (6.8.0-51.52) ...
+Removing linux-headers-6.8.0-51 (6.8.0-51.52) ...
+Removing linux-headers-6.8.0-62-generic (6.8.0-62.65) ...
+Removing linux-headers-6.8.0-62 (6.8.0-62.65) ...
+Removing linux-headers-6.8.0-62-lowlatency (6.8.0-62.65.1) ...
+Removing linux-headers-6.8.0-63-generic (6.8.0-63.66) ...
+Removing linux-headers-6.8.0-63 (6.8.0-63.66) ...
+Removing linux-headers-6.8.0-63-lowlatency (6.8.0-63.66.1) ...
+Removing linux-headers-6.8.0-64-generic (6.8.0-64.67) ...
+Removing linux-headers-6.8.0-64 (6.8.0-64.67) ...
+Removing linux-headers-6.8.0-64-lowlatency (6.8.0-64.67.1) ...
+Removing linux-headers-6.8.0-65-lowlatency (6.8.0-65.68.1) ...
+Removing linux-headers-6.8.0-71-generic (6.8.0-71.71) ...
+Removing linux-headers-6.8.0-71 (6.8.0-71.71) ...
+Removing linux-headers-6.8.0-78-generic (6.8.0-78.78) ...
+Removing linux-headers-6.8.0-78 (6.8.0-78.78) ...
+Removing linux-headers-6.8.0-78-lowlatency (6.8.0-78.78.1) ...
+Removing linux-headers-6.8.0-85-generic (6.8.0-85.85) ...
+Removing linux-headers-6.8.0-85 (6.8.0-85.85) ...
+Removing linux-headers-6.8.0-85-lowlatency (6.8.0-85.85.1) ...
+Removing linux-headers-6.8.0-87-generic (6.8.0-87.88) ...
+Removing linux-headers-6.8.0-87 (6.8.0-87.88) ...
+Removing linux-headers-6.8.0-87-lowlatency (6.8.0-87.88.1) ...
+Removing linux-headers-6.8.0-90-generic (6.8.0-90.91) ...
+Removing linux-headers-6.8.0-90 (6.8.0-90.91) ...
+Removing linux-headers-6.8.0-90-lowlatency (6.8.0-90.91.1) ...
+Removing linux-headers-6.8.0-94-generic (6.8.0-94.96) ...
+Removing linux-headers-6.8.0-94 (6.8.0-94.96) ...
+Removing linux-headers-6.8.0-94-lowlatency (6.8.0-94.96.1) ...
+Removing linux-image-6.8.0-100-generic (6.8.0-100.100) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-100-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-100-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-100-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod.....
+I: /boot/initrd.img.old is now a symlink to initrd.img-6.8.0-138-lowlatency
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-100-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-106-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-106-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-101-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-101-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-100-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-100-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-106-generic
+Found initrd image: /boot/initrd.img-6.8.0-106-generic
+Found linux image: /boot/vmlinuz-6.8.0-101-generic
+Found initrd image: /boot/initrd.img-6.8.0-101-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-100-lowlatency (6.8.0-100.100.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-100-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-100-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-100-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod.....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-100-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-106-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-106-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-101-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-101-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-106-generic
+Found initrd image: /boot/initrd.img-6.8.0-106-generic
+Found linux image: /boot/vmlinuz-6.8.0-101-generic
+Found initrd image: /boot/initrd.img-6.8.0-101-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-101-generic (6.8.0-101.101) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-101-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-101-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-101-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-101-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-106-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-106-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-101-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-101-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-106-generic
+Found initrd image: /boot/initrd.img-6.8.0-106-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-101-lowlatency (6.8.0-101.101.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-101-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-101-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-101-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-101-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-106-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-106-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-106-generic
+Found initrd image: /boot/initrd.img-6.8.0-106-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-106-generic (6.8.0-106.106) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-106-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-106-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-106-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-106-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-106-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-106-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-106-lowlatency (6.8.0-106.106.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-106-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-106-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-106-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-106-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-110-generic
+Found initrd image: /boot/initrd.img-6.8.0-110-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-110-generic (6.8.0-110.110) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-110-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-110-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-110-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-110-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-110-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-110-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-110-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-110-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-110-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-110-lowlatency (6.8.0-110.110.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-110-lowlatency) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-110-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-110-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-110-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-110-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-110-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-110-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-111-generic
+Found initrd image: /boot/initrd.img-6.8.0-111-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-111-generic (6.8.0-111.111) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-111-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-111-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-111-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-111-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-111-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-111-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-111-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-111-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-111-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-111-lowlatency (6.8.0-111.111.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-111-lowlatency) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-111-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-111-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-111-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-111-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-111-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-111-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-117-generic
+Found initrd image: /boot/initrd.img-6.8.0-117-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-117-generic (6.8.0-117.117) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-117-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-117-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-117-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-117-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-117-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-117-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-117-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-117-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-117-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-117-lowlatency (6.8.0-117.117.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-117-lowlatency) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-117-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-117-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-117-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-117-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-117-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-117-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-124-generic
+Found initrd image: /boot/initrd.img-6.8.0-124-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-124-generic (6.8.0-124.124) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-124-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-124-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-124-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-124-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-124-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-124-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-124-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-136-generic
+Found initrd image: /boot/initrd.img-6.8.0-136-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-136-generic (6.8.0-136.136) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-136-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-136-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-136-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-136-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-136-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-136-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-136-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-136-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-136-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-136-lowlatency (6.8.0-136.136.2) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-136-lowlatency) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-136-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-136-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-136-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-136-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-136-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-136-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-137-generic
+Found initrd image: /boot/initrd.img-6.8.0-137-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-137-generic (6.8.0-137.137) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: acpi-call 1.2.2 (6.8.0-137-generic) (x86_64)
+Module acpi-call-1.2.2 for kernel 6.8.0-137-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+acpi_call.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-137-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod....
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-137-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-137-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-137-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-137-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Found linux image: /boot/vmlinuz-6.8.0-51-generic
+Found initrd image: /boot/initrd.img-6.8.0-51-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-51-generic (6.8.0-51.52) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-51-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Found linux image: /boot/vmlinuz-6.8.0-62-generic
+Found initrd image: /boot/initrd.img-6.8.0-62-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-62-generic (6.8.0-62.65) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-62-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-62-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-62-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-62-lowlatency (6.8.0-62.65.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-62-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Found linux image: /boot/vmlinuz-6.8.0-63-generic
+Found initrd image: /boot/initrd.img-6.8.0-63-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-63-generic (6.8.0-63.66) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-63-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-63-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-63-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-63-lowlatency (6.8.0-63.66.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-63-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Found linux image: /boot/vmlinuz-6.8.0-64-generic
+Found initrd image: /boot/initrd.img-6.8.0-64-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-64-generic (6.8.0-64.67) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-64-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-64-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-64-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-64-lowlatency (6.8.0-64.67.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-64-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-65-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-65-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-65-lowlatency (6.8.0-65.68.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-65-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Found linux image: /boot/vmlinuz-6.8.0-71-generic
+Found initrd image: /boot/initrd.img-6.8.0-71-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-71-generic (6.8.0-71.71) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-71-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Found linux image: /boot/vmlinuz-6.8.0-78-generic
+Found initrd image: /boot/initrd.img-6.8.0-78-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-78-generic (6.8.0-78.78) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-78-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-78-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-78-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-78-lowlatency (6.8.0-78.78.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-78-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Found linux image: /boot/vmlinuz-6.8.0-85-generic
+Found initrd image: /boot/initrd.img-6.8.0-85-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-85-generic (6.8.0-85.85) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-85-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-85-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-85-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-85-lowlatency (6.8.0-85.85.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-85-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Found linux image: /boot/vmlinuz-6.8.0-87-generic
+Found initrd image: /boot/initrd.img-6.8.0-87-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-87-generic (6.8.0-87.88) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-87-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-87-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-87-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-87-lowlatency (6.8.0-87.88.1) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-87-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Found linux image: /boot/vmlinuz-6.8.0-90-generic
+Found initrd image: /boot/initrd.img-6.8.0-90-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-90-generic (6.8.0-90.91) ...
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-90-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-90-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-90-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-90-lowlatency (6.8.0-90.91.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-90-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-90-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-90-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod.....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-90-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Found linux image: /boot/vmlinuz-6.8.0-94-generic
+Found initrd image: /boot/initrd.img-6.8.0-94-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-94-generic (6.8.0-94.96) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-94-generic) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-94-generic (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-94-generic/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod.....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-94-generic
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-94-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-94-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-image-6.8.0-94-lowlatency (6.8.0-94.96.1) ...
+/etc/kernel/prerm.d/dkms:
+dkms: removing: xtrx 0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 (6.8.0-94-lowlatency) (x86_64)
+Module xtrx-0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1 for kernel 6.8.0-94-lowlatency (x86_64).
+Before uninstall, this module version was ACTIVE on this kernel.
+
+xtrx.ko.zst:
+ - Uninstallation
+   - Deleting from: /lib/modules/6.8.0-94-lowlatency/updates/dkms/
+ - Original module
+   - No original module was found for this module on this kernel.
+   - Use the dkms install command to reinstall any previous module version.
+depmod.....
+/etc/kernel/postrm.d/initramfs-tools:
+update-initramfs: Deleting /boot/initrd.img-6.8.0-94-lowlatency
+/etc/kernel/postrm.d/zz-update-grub:
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+Removing linux-modules-extra-6.8.0-100-generic (6.8.0-100.100) ...
+Removing linux-modules-6.8.0-100-generic (6.8.0-100.100) ...
+Removing linux-modules-6.8.0-100-lowlatency (6.8.0-100.100.1) ...
+Removing linux-modules-extra-6.8.0-101-generic (6.8.0-101.101) ...
+Removing linux-modules-6.8.0-101-generic (6.8.0-101.101) ...
+Removing linux-modules-6.8.0-101-lowlatency (6.8.0-101.101.1) ...
+Removing linux-modules-extra-6.8.0-106-generic (6.8.0-106.106) ...
+Removing linux-modules-6.8.0-106-generic (6.8.0-106.106) ...
+Removing linux-modules-6.8.0-106-lowlatency (6.8.0-106.106.1) ...
+Removing linux-modules-extra-6.8.0-110-generic (6.8.0-110.110) ...
+Removing linux-modules-6.8.0-110-generic (6.8.0-110.110) ...
+Removing linux-modules-6.8.0-110-lowlatency (6.8.0-110.110.1) ...
+Removing linux-modules-extra-6.8.0-111-generic (6.8.0-111.111) ...
+Removing linux-modules-6.8.0-111-generic (6.8.0-111.111) ...
+Removing linux-modules-6.8.0-111-lowlatency (6.8.0-111.111.1) ...
+Removing linux-modules-extra-6.8.0-117-generic (6.8.0-117.117) ...
+Removing linux-modules-6.8.0-117-generic (6.8.0-117.117) ...
+Removing linux-modules-6.8.0-117-lowlatency (6.8.0-117.117.1) ...
+Removing linux-modules-extra-6.8.0-124-generic (6.8.0-124.124) ...
+Removing linux-modules-6.8.0-124-generic (6.8.0-124.124) ...
+Removing linux-modules-extra-6.8.0-136-generic (6.8.0-136.136) ...
+Removing linux-modules-6.8.0-136-generic (6.8.0-136.136) ...
+Removing linux-modules-6.8.0-136-lowlatency (6.8.0-136.136.2) ...
+Removing linux-modules-extra-6.8.0-137-generic (6.8.0-137.137) ...
+Removing linux-modules-6.8.0-137-generic (6.8.0-137.137) ...
+Removing linux-modules-extra-6.8.0-51-generic (6.8.0-51.52) ...
+Removing linux-modules-6.8.0-51-generic (6.8.0-51.52) ...
+Removing linux-modules-extra-6.8.0-62-generic (6.8.0-62.65) ...
+Removing linux-modules-6.8.0-62-generic (6.8.0-62.65) ...
+Removing linux-modules-6.8.0-62-lowlatency (6.8.0-62.65.1) ...
+Removing linux-modules-extra-6.8.0-63-generic (6.8.0-63.66) ...
+Removing linux-modules-6.8.0-63-generic (6.8.0-63.66) ...
+Removing linux-modules-6.8.0-63-lowlatency (6.8.0-63.66.1) ...
+Removing linux-modules-extra-6.8.0-64-generic (6.8.0-64.67) ...
+Removing linux-modules-6.8.0-64-generic (6.8.0-64.67) ...
+Removing linux-modules-6.8.0-64-lowlatency (6.8.0-64.67.1) ...
+Removing linux-modules-6.8.0-65-lowlatency (6.8.0-65.68.1) ...
+Removing linux-modules-extra-6.8.0-71-generic (6.8.0-71.71) ...
+Removing linux-modules-6.8.0-71-generic (6.8.0-71.71) ...
+Removing linux-modules-extra-6.8.0-78-generic (6.8.0-78.78) ...
+Removing linux-modules-6.8.0-78-generic (6.8.0-78.78) ...
+Removing linux-modules-6.8.0-78-lowlatency (6.8.0-78.78.1) ...
+Removing linux-modules-extra-6.8.0-85-generic (6.8.0-85.85) ...
+Removing linux-modules-6.8.0-85-generic (6.8.0-85.85) ...
+Removing linux-modules-6.8.0-85-lowlatency (6.8.0-85.85.1) ...
+Removing linux-modules-extra-6.8.0-87-generic (6.8.0-87.88) ...
+Removing linux-modules-6.8.0-87-generic (6.8.0-87.88) ...
+Removing linux-modules-6.8.0-87-lowlatency (6.8.0-87.88.1) ...
+Removing linux-modules-extra-6.8.0-90-generic (6.8.0-90.91) ...
+Removing linux-modules-6.8.0-90-generic (6.8.0-90.91) ...
+Removing linux-modules-6.8.0-90-lowlatency (6.8.0-90.91.1) ...
+Removing linux-modules-extra-6.8.0-94-generic (6.8.0-94.96) ...
+Removing linux-modules-6.8.0-94-generic (6.8.0-94.96) ...
+Removing linux-modules-6.8.0-94-lowlatency (6.8.0-94.96.1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 1246660 files and directories currently installed.)
+Purging configuration files for linux-modules-extra-6.8.0-137-generic (6.8.0-137.137) ...
+Purging configuration files for linux-image-6.8.0-137-generic (6.8.0-137.137) ...
+Purging configuration files for linux-image-6.8.0-136-lowlatency (6.8.0-136.136.2) ...
+rmdir: failed to remove '/lib/modules/6.8.0-136-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-110-generic (6.8.0-110.110) ...
+Purging configuration files for linux-image-6.8.0-94-generic (6.8.0-94.96) ...
+Purging configuration files for linux-image-6.8.0-87-lowlatency (6.8.0-87.88.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-87-lowlatency': Directory not empty
+Purging configuration files for linux-modules-extra-6.8.0-94-generic (6.8.0-94.96) ...
+Purging configuration files for linux-image-6.8.0-85-generic (6.8.0-85.85) ...
+Purging configuration files for linux-image-6.8.0-111-lowlatency (6.8.0-111.111.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-111-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-111-generic (6.8.0-111.111) ...
+Purging configuration files for linux-modules-6.8.0-110-generic (6.8.0-110.110) ...
+Purging configuration files for linux-image-6.8.0-117-generic (6.8.0-117.117) ...
+Purging configuration files for linux-modules-6.8.0-101-lowlatency (6.8.0-101.101.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-101-lowlatency, directory '/lib/modules/6.8.0-101-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-117-generic (6.8.0-117.117) ...
+Purging configuration files for linux-image-6.8.0-100-lowlatency (6.8.0-100.100.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-100-lowlatency': Directory not empty
+Purging configuration files for linux-modules-extra-6.8.0-64-generic (6.8.0-64.67) ...
+Purging configuration files for linux-modules-6.8.0-62-generic (6.8.0-62.65) ...
+dpkg: warning: while removing linux-modules-6.8.0-62-generic, directory '/lib/modules/6.8.0-62-generic' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-111-generic (6.8.0-111.111) ...
+Purging configuration files for linux-image-6.8.0-124-generic (6.8.0-124.124) ...
+Purging configuration files for linux-modules-6.8.0-137-generic (6.8.0-137.137) ...
+Purging configuration files for linux-modules-extra-6.8.0-101-generic (6.8.0-101.101) ...
+Purging configuration files for linux-modules-extra-6.8.0-51-generic (6.8.0-51.52) ...
+Purging configuration files for linux-modules-6.8.0-64-lowlatency (6.8.0-64.67.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-64-lowlatency, directory '/lib/modules/6.8.0-64-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-87-lowlatency (6.8.0-87.88.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-87-lowlatency, directory '/lib/modules/6.8.0-87-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-100-generic (6.8.0-100.100) ...
+Purging configuration files for linux-image-6.8.0-94-lowlatency (6.8.0-94.96.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-94-lowlatency': Directory not empty
+Purging configuration files for linux-modules-extra-6.8.0-78-generic (6.8.0-78.78) ...
+Purging configuration files for linux-modules-6.8.0-63-generic (6.8.0-63.66) ...
+dpkg: warning: while removing linux-modules-6.8.0-63-generic, directory '/lib/modules/6.8.0-63-generic' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-78-generic (6.8.0-78.78) ...
+dpkg: warning: while removing linux-modules-6.8.0-78-generic, directory '/lib/modules/6.8.0-78-generic' not empty so not removed
+Purging configuration files for linux-image-6.8.0-117-lowlatency (6.8.0-117.117.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-117-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-100-lowlatency (6.8.0-100.100.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-100-lowlatency, directory '/lib/modules/6.8.0-100-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-106-generic (6.8.0-106.106) ...
+Purging configuration files for linux-modules-6.8.0-51-generic (6.8.0-51.52) ...
+dpkg: warning: while removing linux-modules-6.8.0-51-generic, directory '/lib/modules/6.8.0-51-generic' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-111-lowlatency (6.8.0-111.111.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-111-lowlatency, directory '/lib/modules/6.8.0-111-lowlatency' not empty so not removed
+Purging configuration files for linux-image-6.8.0-63-lowlatency (6.8.0-63.66.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-63-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-78-lowlatency (6.8.0-78.78.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-78-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-106-generic (6.8.0-106.106) ...
+dpkg: warning: while removing linux-modules-6.8.0-106-generic, directory '/lib/modules/6.8.0-106-generic' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-87-generic (6.8.0-87.88) ...
+Purging configuration files for linux-image-6.8.0-100-generic (6.8.0-100.100) ...
+Purging configuration files for linux-image-6.8.0-78-generic (6.8.0-78.78) ...
+Purging configuration files for linux-image-6.8.0-101-lowlatency (6.8.0-101.101.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-101-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-101-generic (6.8.0-101.101) ...
+Purging configuration files for linux-modules-6.8.0-63-lowlatency (6.8.0-63.66.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-63-lowlatency, directory '/lib/modules/6.8.0-63-lowlatency' not empty so not removed
+Purging configuration files for linux-image-6.8.0-90-generic (6.8.0-90.91) ...
+Purging configuration files for linux-modules-6.8.0-85-lowlatency (6.8.0-85.85.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-85-lowlatency, directory '/lib/modules/6.8.0-85-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-136-generic (6.8.0-136.136) ...
+Purging configuration files for linux-modules-extra-6.8.0-85-generic (6.8.0-85.85) ...
+Purging configuration files for linux-image-6.8.0-106-lowlatency (6.8.0-106.106.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-106-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-106-lowlatency (6.8.0-106.106.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-106-lowlatency, directory '/lib/modules/6.8.0-106-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-124-generic (6.8.0-124.124) ...
+Purging configuration files for linux-image-6.8.0-90-lowlatency (6.8.0-90.91.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-90-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-71-generic (6.8.0-71.71) ...
+dpkg: warning: while removing linux-modules-6.8.0-71-generic, directory '/lib/modules/6.8.0-71-generic' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-90-lowlatency (6.8.0-90.91.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-90-lowlatency, directory '/lib/modules/6.8.0-90-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-71-generic (6.8.0-71.71) ...
+Purging configuration files for linux-modules-extra-6.8.0-62-generic (6.8.0-62.65) ...
+Purging configuration files for linux-modules-6.8.0-110-lowlatency (6.8.0-110.110.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-110-lowlatency, directory '/lib/modules/6.8.0-110-lowlatency' not empty so not removed
+Purging configuration files for linux-image-6.8.0-110-lowlatency (6.8.0-110.110.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-110-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-101-generic (6.8.0-101.101) ...
+Purging configuration files for linux-modules-extra-6.8.0-90-generic (6.8.0-90.91) ...
+Purging configuration files for linux-modules-6.8.0-90-generic (6.8.0-90.91) ...
+Purging configuration files for linux-image-6.8.0-62-generic (6.8.0-62.65) ...
+rmdir: failed to remove '/lib/modules/6.8.0-62-generic': Directory not empty
+Purging configuration files for linux-image-6.8.0-63-generic (6.8.0-63.66) ...
+Purging configuration files for linux-image-6.8.0-106-generic (6.8.0-106.106) ...
+Purging configuration files for linux-modules-6.8.0-62-lowlatency (6.8.0-62.65.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-62-lowlatency, directory '/lib/modules/6.8.0-62-lowlatency' not empty so not removed
+Purging configuration files for linux-image-6.8.0-64-generic (6.8.0-64.67) ...
+Purging configuration files for linux-modules-6.8.0-85-generic (6.8.0-85.85) ...
+Purging configuration files for linux-modules-6.8.0-117-lowlatency (6.8.0-117.117.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-117-lowlatency, directory '/lib/modules/6.8.0-117-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-124-generic (6.8.0-124.124) ...
+Purging configuration files for linux-image-6.8.0-62-lowlatency (6.8.0-62.65.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-62-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-87-generic (6.8.0-87.88) ...
+Purging configuration files for linux-modules-6.8.0-136-generic (6.8.0-136.136) ...
+dpkg: warning: while removing linux-modules-6.8.0-136-generic, directory '/lib/modules/6.8.0-136-generic' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-94-lowlatency (6.8.0-94.96.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-94-lowlatency, directory '/lib/modules/6.8.0-94-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-136-lowlatency (6.8.0-136.136.2) ...
+dpkg: warning: while removing linux-modules-6.8.0-136-lowlatency, directory '/lib/modules/6.8.0-136-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-extra-6.8.0-63-generic (6.8.0-63.66) ...
+Purging configuration files for linux-modules-6.8.0-64-generic (6.8.0-64.67) ...
+Purging configuration files for linux-modules-6.8.0-65-lowlatency (6.8.0-65.68.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-65-lowlatency, directory '/lib/modules/6.8.0-65-lowlatency' not empty so not removed
+Purging configuration files for linux-image-6.8.0-85-lowlatency (6.8.0-85.85.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-85-lowlatency': Directory not empty
+Purging configuration files for linux-image-6.8.0-65-lowlatency (6.8.0-65.68.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-65-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-117-generic (6.8.0-117.117) ...
+Purging configuration files for linux-modules-extra-6.8.0-110-generic (6.8.0-110.110) ...
+Purging configuration files for linux-image-6.8.0-51-generic (6.8.0-51.52) ...
+rmdir: failed to remove '/lib/modules/6.8.0-51-generic': Directory not empty
+Purging configuration files for linux-image-6.8.0-71-generic (6.8.0-71.71) ...
+Purging configuration files for linux-image-6.8.0-64-lowlatency (6.8.0-64.67.1) ...
+rmdir: failed to remove '/lib/modules/6.8.0-64-lowlatency': Directory not empty
+Purging configuration files for linux-modules-6.8.0-100-generic (6.8.0-100.100) ...
+Purging configuration files for linux-image-6.8.0-136-generic (6.8.0-136.136) ...
+Purging configuration files for linux-modules-6.8.0-87-generic (6.8.0-87.88) ...
+Purging configuration files for linux-modules-6.8.0-94-generic (6.8.0-94.96) ...
+Purging configuration files for linux-modules-6.8.0-78-lowlatency (6.8.0-78.78.1) ...
+dpkg: warning: while removing linux-modules-6.8.0-78-lowlatency, directory '/lib/modules/6.8.0-78-lowlatency' not empty so not removed
+Purging configuration files for linux-modules-6.8.0-111-generic (6.8.0-111.111) ...
+    purge OK
+    kernels now in /boot: 3
+
+--- [2/3] regenerating initramfs for remaining kernels
+update-initramfs: Generating /boot/initrd.img-6.8.0-138-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-138-generic
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+update-initramfs: Generating /boot/initrd.img-6.8.0-137-lowlatency
+I: The initramfs will attempt to resume from /dev/nvme0n1p3
+I: (UUID=9d72433b-4585-42a4-8451-c602d2098330)
+I: Set the RESUME variable to override this.
+    initramfs exit: 0
+
+--- [3/3] updating grub
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/50_linuxmint.cfg'
+Sourcing file `/etc/default/grub.d/ubuntustudio.cfg'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-6.8.0-138-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-138-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-137-lowlatency
+Found initrd image: /boot/initrd.img-6.8.0-137-lowlatency
+Found linux image: /boot/vmlinuz-6.8.0-138-generic
+Found initrd image: /boot/initrd.img-6.8.0-138-generic
+Warning: os-prober will be executed to detect other bootable partitions.
+Its output will be used to detect bootable binaries on them and create new boot entries.
+Adding boot menu entry for UEFI Firmware Settings ...
+done
+    grub exit: 0
+
+===== repair PART 2 finished 2026-08-19T12:18:16-07:00 =====
+
+--- disk after:
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme0n1p2   92G   44G   43G  51% /
+/dev/nvme0n1p1  476M  7.1M  468M   2% /boot/efi
+
+--- kernels remaining:
+/boot/vmlinuz-6.8.0-137-lowlatency
+/boot/vmlinuz-6.8.0-138-generic
+/boot/vmlinuz-6.8.0-138-lowlatency
+
+--- failed units:
+  UNIT                     LOAD   ACTIVE SUB    DESCRIPTION
+● casper-md5check.service  masked failed failed casper-md5check.service
+● lighttpd.service         loaded failed failed Lighttpd Daemon
+● pd-mapper.service        masked failed failed pd-mapper.service
+● qcom-modem-setup.service masked failed failed qcom-modem-setup.service
+● rmtfs.service            masked failed failed rmtfs.service
+● vboxdrv.service          masked failed failed vboxdrv.service
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+6 loaded units listed.
+
+--- DKMS status:
+acpi-call/1.2.2, 6.8.0-137-lowlatency, x86_64: installed
+acpi-call/1.2.2, 6.8.0-138-generic, x86_64: installed
+acpi-call/1.2.2, 6.8.0-138-lowlatency, x86_64: installed
+xtrx/0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1, 6.8.0-137-lowlatency, x86_64: installed
+xtrx/0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1, 6.8.0-138-generic, x86_64: installed
+xtrx/0.0.1+git20190320.5ae3a3e-3.2ubuntu2.1, 6.8.0-138-lowlatency, x86_64: installed
