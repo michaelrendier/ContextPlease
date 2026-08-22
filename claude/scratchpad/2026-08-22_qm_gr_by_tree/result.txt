@@ -1,0 +1,10 @@
+QM proxy — NON-COMMUTATIVITY by tree of the pair:
+   BB    :   21/  28  (75%)
+   RR    :   28/  28  (100%)
+   cross :   56/  64  (88%)
+
+GR proxy — CURVATURE = ASSOCIATOR by tree of the triple:
+   within-lower:   168/  336  (50%)
+   within-upper:   336/  336  (100%)
+   crosses     :  1344/ 2688  (50%)
+   -> 27% within a single tree, 73% cross the boundary
