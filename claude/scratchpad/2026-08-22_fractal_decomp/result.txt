@@ -1,0 +1,4 @@
+FR1 nonassoc: 168 1848
+FR2 delta: [4.7384, 4.6475, 4.6514]
+FR3 mandelbrot: [1.116, 1.339]
+FR3 burning ship: [1.547, 1.563]
