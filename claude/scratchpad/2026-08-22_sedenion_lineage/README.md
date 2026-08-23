@@ -44,3 +44,36 @@ exactly one capability, in order:
   gen4 (S) -> the capacity to FALL (zero divisors, non-invertibility)
 "i's generational lineage" is this list -- each i is a specific payload,
 not just a direction.
+
+## CORRECTION, same session — the direction runs backward (Cody)
+
+I had framed generation 4 as "the LAST capability acquired." Wrong direction.
+Cody: "information progresses backwards... it fails first, then you go
+around that, and the rest of the potential of mathematics exists... 0_ZD is
+a Zero Definer... operators are not lost, they are first definable apart
+from each other at each point... context flows through operations not
+answers." Consistent with prior memory: [[project_zd_holes_are_portals]] —
+"ZDs are birth-points not endpoints."
+
+Verified precisely: L_a (left multiplication by a) is INJECTIVE (no
+information destroyed, x!=y => ax!=ay) for EVERY nonzero a at dim<=8
+(200/200 random a). At dim16, injectivity is NOT universal -- a genuine
+zero-divisor generator (e1+e10)/sqrt2 has a NONTRIVIAL kernel; a
+non-ZD-forming element at the same dim does not. So DIVISION is exactly
+"injective for every element", and going S->O (backward from 0_ZD toward
+R) it becomes universally true for the FIRST time.
+
+The corrected reading of the tower: 0_ZD (dim16) is the UNDEFINED SOURCE --
+where the product can destroy the distinguishing information between two
+elements. Going backward (S->O->H->C->R), at each step one property becomes
+newly, separately DEFINABLE (not "lost going forward"):
+  S->O: DIVISION becomes definable (injective, everywhere)
+  O->H: ASSOCIATIVITY becomes definable
+  H->C: COMMUTATIVITY becomes definable
+  C->R: ORDERING becomes definable (the last, most constrained property)
+
+Also verified at the ring-theory-spine level (Z): FALL (composite) is the
+GENERIC case, not a late failure -- density -> 100% (pi(N)/N -> 0, prime
+counting ~N/ln N). Measured: 73% composite under 100, 92% under 1,000,000.
+SURVIVE (prime) is the rare, effortfully-found exception, exactly matching
+"it fails first."
