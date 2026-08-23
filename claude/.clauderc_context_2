@@ -390,3 +390,154 @@ cell 0 = `# Engine: <Name>` markdown with a **Claim:** line, cell 1 =
 path-bootstrap + import + capability print, then alternating `## Section`
 markdown and code. All 50 notebooks are committed with outputs STRIPPED
 (0/50 carry stored outputs) — keep it that way.
+
+## 2026-08-22 — TuringStack UDEO reduction; SedenionFactoralRelativity gets a full ring-theory/fractal/pathway engine (0→37/37); three Ainulindale wiki pages; FourthAgePapers/CollatzShift
+
+**TuringStack — pruned to the one honest result.** Cody: the README carried
+"previous results... that were lies from claude.ai" (an earlier retraction
+apparatus, corrective language, superseded-result history) and the CVE is a
+white paper, not a research paper — it should not carry a history at all.
+README rewritten around the single fact: SHA-1's five IV constants sit exactly
+on the T32/GF(2) zero-divisor nodal line (trace-Laplacian distance 0); its four
+round constants sit at maximum distance (32) — verified live, not asserted.
+`UDEO_Cryptographic_Vulnerability.md` gutted from a 652-line "attack pathway"
+paper (RSA-in-sedenions §5, UDEO pathway §6, ECC/Wiles §7, open problems §8) to
+the name-collision core only. Full prune per Cody's explicit choice: removed
+`rsa_framework.md`, `zero_divisor_attack.md`,
+`wiki/RSA-Key-Recovery-Attempts-2026-07-09.md` (git history keeps them). **This
+directly resolves the discrepancy flagged in this file's TuringStack entry
+2026-07-08/07-10** ("README language more confident than the attached PoC
+code supports", Vectors 1-3 described as working exploits) — those vectors are
+now gone, not just hedged.
+
+**A genuine proof error found and fixed, independent of the above.** Building
+SedenionFactoralRelativity's ring-theory relation G5 surfaced that the white
+paper's proof asserted "the all-ones vector `𝟏₃₂` is a global annihilator,
+`x·𝟏=0` for every x" — FALSE, and it contradicts the paper's own distance table
+(the round constants have `Δ(K)=𝟏≠0`, that's *why* they're at distance 32). The
+correct, machine-verified law is `Δ(w)=0 ⟺ w²=0` (nilpotency), exhaustive at
+dim 8, 20,000 random at dim 32. The THEOREM (IV nilpotency, a null subalgebra —
+not "ideal", the algebra is non-associative) is unaffected; the shortcut proof
+is retracted in §4.2 with a note. **Still NOT pruned** (left for a future
+pass, flagged not fixed): `secp256k1_locus.py`/`_results.md`,
+`udeo_crypto/UDEO_RSA_DEMO.py`, `paper.tex`/`paper.pdf`, `TODO.md` all still
+carry RSA/ECC recovery language.
+
+**SedenionFactoralRelativity — renamed from SedenionFactorialRelativity
+(2026-08-21, Cody: the exclamation-mark collision with `n!` and with
+`.clauderc_canonical_maths`'s `A!` = adjoint, "NOT factorial, do not
+conflate"), and given a full generational-lineage engine from zero.** GitHub
+remote itself was renamed by Cody between sessions — confirmed 2026-08-22 by
+`git ls-remote`: both `SedenionFactorialRelativity.git` and
+`SedenionFactoralRelativity.git` resolve to the same commit (GitHub's
+rename-redirect). Local branch was `master`; renamed to `main` to match every
+other repo's convention and the remote's actual default branch, before
+pushing (verified `1b76527` — the pre-rename initial commit — is an ancestor of
+HEAD, so the push is a clean fast-forward, not a force).
+
+`engine/lineage.py` went from not existing to **37/37 self-checked relations**
+in one extended session, four blocks on top of R1-R8 (carried verbatim from
+`VAPMIP/engines/e10_generational_lineage.py`):
+  - **F1-F6** (factoral) — the Two Trees partition exactly; densities conserve;
+    the Mingling is measured at THREE crossings (n=9,11,13 — corrects the
+    generational-lineage skill's own "n~9, near e²" prose, which is accurate
+    only for the first of three); gcd=LCA over 20k pairs; Ω(n)=lineage length;
+    the 15 XOR-differences (F6) as the factoring-is-on-the-edges structure.
+  - **G1-G8** (ring theory) — the unifying statement "an element FALLS iff its
+    quotient ring has zero divisors" (ℤ/N field-vs-not = the Two Trees, exactly);
+    gcd = the integer trace-Laplacian; primary decomposition = the cepstrum
+    (von Mangoldt Λ); the GF(2) radical/units split; the corrected Δ(w)=0⟺w²=0
+    law (see TuringStack above — G5 found the bug); the associator as the
+    obstruction to being a ring (≡0 for ℝ,ℂ,ℍ, ≠0 from 𝕆); G7 — ring theory
+    holds BOTH closed pathways (orbit returns to anchor 1 ⟺ unit) and open ones
+    (never returns ⟺ zero divisor — two kinds, terminating/nilpotent and
+    convergent/Möbius, the latter matching the ORIGINAL, not revised,
+    `ValaQuenta/code`-adjacent Gemini event-horizon sim,
+    `z_{n+1}=1+1/z_n → φ`); G8 — the arithmetic derivative (Barbeau 1961) as
+    the ring-theory answer to "what is a derivative": a derivation, `p'=1`,
+    Leibniz determines the rest; fixed points D(n)=n forced to n=p^p (4,27,3125).
+  - **FR1-FR6** (fractal + the UF formulary) — the CD tower is an exact
+    self-similar recursion (168→1848=11·168); the period-doubling cascade
+    brackets the Feigenbaum constant; the fall/survive boundary of an iterated
+    generator is fractal (1<D<2), using `Ainulindale/wiki/fractals/` (200+
+    Ultra Fractal `.ufm`/`.ucl` formulas from
+    `PtolemyDesktop/Archimedes/Maths/Formula/UFformulary/`, 507 files) as
+    controls; Newton basins on z^k-1 give EXACTLY k basins = ring splitting
+    (FR4, the bridge back to G1); the UF `.ucl` coloring methods lifted as
+    labelings — escape rate (order 1), orbit trap (support), `dmj-Curvature`
+    (order 3, the associator on dynamics), Lyapunov (the drift).
+  - **PW1-PW9** (pathway) — Cody's diagnosis "my RSA attempts were all
+    bifurcation, pathway is a different class of maths completely" tested and
+    confirmed: bifurcation classifies (localizes nothing), CFRAC/pathway
+    construction reaches a factor in <=10 steps; the spiral is additive
+    (address(pq)=address(p)+address(q), the anchor=1=e0=∅_RB); L_(I|O) tested
+    as the mechanism of "the Observer's generational lineage" (its fixed point
+    r=1, order-4 closing orbit, J⁻¹=J³ reverse-inherent, Heisenberg conjugate
+    r·(1/r)=1) — MEASURED exact, naming is framework interpretation, stated as
+    such; the two-anchor Fermat geodesic (PW5) named by Cody "mathematical
+    X-ray crystallography" — verified as an exact correspondence (Ewald sphere
+    = two anchors, Patterson function = the XOR-difference edges, the PHASE
+    PROBLEM = why factoring is hard/why bifurcation is at chance);
+    node→edge→pathway (PW6, Cody's own primitive) as the shared structure
+    under F6/Patterson/G1; the Smith chart (PW8, a real Veritasium video,
+    transcript-unavailable on YouTube's JS page, grounded via summify.io) as
+    an INDEPENDENT 90-year-old engineering confirmation of the same Möbius
+    family (fixed-point anchor, boundary horizon, Y=1/Z as a π-rotation) —
+    explicitly flagged as not evidence for the framework, evidence the SHAPE
+    is what real engineering reaches for; PW9, the NUMBER CHART, applies the
+    Smith-chart METHODOLOGY (not the analogy) directly to `fermat_path`: a
+    bounded Γ_N∈[0,1) coordinate where the factor node's radial position IS a
+    difficulty gauge (balanced N near the anchor, unbalanced far toward the
+    horizon) — this resolves the open visualiser-design question from earlier
+    in the session (one bounded chart + fixed landmarks + a tuning dial, not
+    five side-by-side panels).
+
+**Not yet built:** the actual visualiser rendering (Artifact HTML/canvas vs.
+local) — `decompose_number(N)` and `number_chart_point()` are the data model,
+confirmed wired and tested, but no pixels exist yet. Next concrete decision is
+Cody's.
+
+**Ainulindale** — README §20 (owner's-manual register, front-facing) + three
+new wiki pages: `92_ring_theory_spine.md` (the G1-G8 material, front-facing),
+`93_qm_gr_by_tree.md` (Cody's "does QM live only in Telperion, GR only in
+Laurelin" — tested and REFUTED as stated; both signatures live in both trees;
+replaced with three true findings: QM/GR are consecutive TOWER RUNGS not
+trees, dim 4 vs dim 8; GR/curvature is 73% a BOUNDARY phenomenon between
+trees, not within either; the trees split by whether they hold e0, not by
+QM/GR — flags the Telperion/Laurelin↔upper/lower-octonion naming tangle
+between the skill and the engine as an open cleanup, unresolved), and
+`94_mathematical_xray_crystallography.md` (the PW5 synthesis).
+
+**ValaQuenta** — new `wiki/ring_theory.md`, tying the ring-theory spine to
+`inversion.md` (J_N as a torus involution, same family as J_2) and
+`hamiltonian.md`; added to `00_index.md`.
+
+**FourthAgePapers/CollatzShift** — a full paper (engine, 4 notebooks, README,
+wiki page) with NO claim and NO prediction, deliberately — the one paper in the
+series without a `01_predictions.ipynb`, and the README says why (nothing here
+is a claim in doubt; it's either a cited theorem — Bernstein-Lagarias, the
+shift conjugacy — or an exact enumeration). OURS content: the Collatz branch
+tree is EXACTLY Pascal's triangle (C(k,d)), so the "chaos" is a p-adic address
+read in the wrong metric; forward T is exactly 2-to-1 (destroys log 2
+nats/step), backward on ℕ has mean out-degree 4/3 (restores log(4/3)),
+shortfall log(3/2) EXACTLY. Lineage verdict: T=ADD∘SCALE∘SIGN, no new
+generator — the +1 is the sole coupling between ADD and SCALE's different
+identities, and is the whole of the difficulty. Three MATHS-FAULTs on first
+run, all the author's own errors (a necklace-primitivity bug, a wrong
+assertion of 4 against a correct measurement of 2, a phantom oddness
+condition), all kept on record, the third correction making the result EXACT.
+
+**What was NOT done, stated per the "record what you did not do" convention:**
+no full audit of every UDEO-adjacent file across the repo tree for retracted-
+claim language (only the files Cody named were touched); the visualiser has
+no rendering code; `secp256k1_locus.py` etc. in TuringStack still carry
+unreconciled RSA/ECC language; the Telperion/Laurelin naming tangle flagged in
+wiki/93 is unresolved; PW9's `number_chart_point` has not been extended to an
+actual overlaid-grid rendering — only the coordinate transform is built and
+tested.
+
+All of the above is committed in each repo (SedenionFactoralRelativity, at
+`61b878e`; TuringStack at `59a95b2`; Ainulindale at three commits ending
+`eb7b3bf`; ValaQuenta at `b1b2f4e`; FourthAgePapers at `3e4d88a`). This entry
+and the accompanying scratchpad mirrors are the ContextPlease-side record,
+written and pushed same session per Cody's "context please protocol to push".
