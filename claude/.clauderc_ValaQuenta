@@ -136,7 +136,7 @@ wiki/angular_rank.md; Ainulindale/wiki/86_the_16d_oscilloscope.md;
 VAPMIP/docs/wiki/Operating-L-IO.md section 4.
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank scale units"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -1356,4 +1356,96 @@ test. The measurement disagreed with the suggestion and that is the only reason
 it was caught. The protection is MEASUREMENT, not judgement, and it covers only
 what is measurable.
 @END
+"
+
+export CTX_SCALE="
+scale -- The Scale: Decompositional Analysis, Forwards and Backwards.
+v0.1. confidence_floor=ESTABLISHED (every equation here is elementary
+complex analysis, independently verified in this module, not a new
+theorem). Built 2026-08-25 (this session).
+SCALE is tier-0 (generational-lineage skill sec.1, alongside ADD and
+SIGN) -- this module pulls it out of a quantity and names what's left,
+both directions, at three DIFFERENT levels with three DIFFERENT answers:
+  (1) ONE POINT: polar_decompose/recompose, Z=r*e^{i theta}, exact --
+      recompose(*decompose(Z))==Z verified to <1e-9 across 5 test points.
+      theta is scale-blind under Z -> lambda*Z (lambda>0), exactly.
+  (2) THE TWO-RING/MOBIUS FOLD: a DIFFERENT question -- does theta
+      survive Gamma=(Z-Z0)/(Z+Z0)? MEASURED NO (rejected candidate, kept
+      in the record, not smoothed over) -- the fold's fixed point is Z0
+      not 0, so arg(Gamma) ranges 1.054->0.007 rad across one fixed
+      rescaling. The actual invariant is the CROSS-RATIO of any 4
+      points -- exact under EVERY anchor, verified across 4 wildly
+      different anchors including one near the fold's own pole.
+  (3) A WHOLE PROCESS: pathway_decompose (ProcessOperator DAG, not a
+      forced linear chain) -- RSA CRT-decrypt (p=61,q=53) as the control
+      case: m1/m2 are siblings depending only on the ciphertext, h
+      depends on BOTH, the final message depends on h AND m2 again -- a
+      genuine fan-out a linear chain cannot represent, resolved correctly.
+Also verified: NO true caustic (dGamma/dZ never zero for finite Z, only
+diverges at the single pole Z=-Z0 -- checked across 6 magnitudes 1e-3 to
+1e6) -- crowding-toward-infinity at one point is NOT an envelope/fold
+singularity, not conflated here despite looking similar in a picture.
+HONEST EXCEPTIONS, stated not hidden: works in complex floats (cmath)
+throughout, not fractions.Fraction (the domain is transcendental,
+Fraction has no complex support); 'ring' here (two-ring circle families)
+is NOT abstract-algebra 'ring' -- checked, not asserted: Mobius
+composition forms a GROUP, which is the group of units of M_2(C) one
+level underneath, only the multiplicative half operationally used.
+Same results first proven in SedenionFactoralRelativity/engine/lineage.py
+PW13-PW15; this module is an independent port, not a cross-repo import,
+per this project's per-repo self-containment convention. See
+wiki/scale.md, Ainulindale/wiki/95_the_scale.md,
+notebooks/engines/17_scale.ipynb (executed clean, 0 errors).
+
+UPDATED same day: now 10 equations (was 7). Added the MASTER IDENTITY
+(Gamma=tanh(ln(Z/Z0)/2) exact, any complex Z -- verified off-axis, not
+just the real case) with its exact inverse (unfold=arctanh+exp);
+LOCALLY-SQUARE proven AUTOMATIC for any ring1/ring2 (a property of the
+fold being holomorphic, not of any special relationship between the two
+rings -- verified at two unrelated points); and custom_ring_chart/
+custom_ring_chart_series, letting a caller supply ANY two functions as
+the rings. FIVE candidate ring-pairs tested with real data (log/raw-
+count, inertia/Shannon-entropy, RSA forward/backward, Lagrangian-proxy/
+Omega_ZS-distance, J_red/J_blue) -- four gave real, non-degenerate
+charts; the fifth (J_red/J_blue) was CAUGHT AS DEGENERATE: J_red+J_blue=
+1.0000000000 exactly on every real sentence tested (10 decimal places)
+-- not two independent rings, one number (sigma_self) wearing two
+labels, because the encoder is unit-normalized and RED/BLUE partition
+all 16 dims with no overlap. The real two-independent-ring version
+would be sigma_self vs J_green (the su(2) commutator quantity) instead
+-- flagged, not built. Full numbers in wiki/scale.md sec.6-8.
+"
+
+export CTX_UNITS="
+units -- UNITS (The Equation Index). v0.1. confidence_floor=ESTABLISHED
+(elementary dimensional analysis -- Buckingham Pi theorem territory --
+independently verified in this module). Built 2026-08-25 (this session).
+A FOURTH domain for this project's factoral-decomposition discipline:
+numbers (factor_lineage: prime/composite), processes (pathway_decompose:
+operator DAG), now UNITS -- the 7 SI base dimensions (kg,m,s,A,K,mol,cd)
+as the leaves. Multiplying quantities ADDS exponent vectors; dividing
+SUBTRACTS; cancellation is a component landing on zero, no special-casing
+(unit_vector/unit_mul/unit_div/unit_pow).
+LINEAGE_TABLE: 11 named compounds (N,J,W,Pa,C,V,ohm,F,Wb,T,H) each with an
+exact (parent,power) lineage back to the leaves, verified to RECOMBINE to
+their own declared vector (verify_lineage_table -- 11/11 True). CAUGHT
+WHILE BUILDING, not hidden: first draft stored bare parent NAMES and
+always ADDED them, failing all six units tested (Tesla is Wb/m^2, a
+divide by a square, not an add) -- fixed by carrying SIGNED (parent,
+power) pairs per step.
+EQUATION_INDEX (the new content, Cody: "units...should be considered
+'word possibilities'...they are the equation index"): a dimension
+signature narrows to its candidate physical laws, the exact structural
+parallel to box_kite's context_vector narrowing a word to its candidate
+synsets -- (1,2,-2,0,0,0,0)->[E=half m v^2, E=mgh, W=F.d, ...],
+(1,0,-2,-1,0,0,0)->[B=Phi/A, F=qvB]. 16 signatures tabled currently, not
+exhaustive.
+Units are a GEOMETRY, same finding as 0_RB/sigma_RB: no numeric content,
+does no work itself, but decides which recombinations of content are
+dimensionally legal.
+Same results first proven in SedenionFactoralRelativity/engine/lineage.py
+PW16; independent port, not a cross-repo import. Original design (string-
+list based) at PtolemyDesktop/Archimedes/UnitVector.py. See
+wiki/units.md, Ainulindale/wiki/97_units_as_the_equation_index.md,
+SedenionFactoralRelativity/wiki/Units-and-the-Equation-Index.md.
 "

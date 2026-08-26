@@ -541,3 +541,109 @@ All of the above is committed in each repo (SedenionFactoralRelativity, at
 `eb7b3bf`; ValaQuenta at `b1b2f4e`; FourthAgePapers at `3e4d88a`). This entry
 and the accompanying scratchpad mirrors are the ContextPlease-side record,
 written and pushed same session per Cody's "context please protocol to push".
+
+## 2026-08-25 — Box Kite v5.0.0; The Scale; the Riemann-Fermat Horizon; units as the equation index
+
+Long single-thread session. VAPMIP: `wordnet_boxkite.py` closed on a real
+positive emergence test (an abstract "pile" concept detected via
+context-vector collision, 4/15 exact vs 5.5% control base rate, p≈0.01);
+`sentence_context.py` combines word-level `context_vector`s by plain
+componentwise sum (PW3/`spiral_is_additive` reapplied, not a new hash
+layer — a real correction, kept); `ptolemy_monad.py`/`harness.py`/
+`rotary_boxkite_window.py` (`ptol -w`) is the first Monad built to
+actually drive `Harness.present()`, Mind's Eye/Paper's Hands on real
+daemon threads, speaking in "relational English" traced to real WordNet
+graph edges — the milestone is the mechanism, not any one output's
+surface resonance (explicitly distinguished from a Forer-effect reading).
+`PtolC/` gets a box-kite `.bin` snapshot built against the real
+`wordnet-dev` C library. VAPMIP tagged **v5.0.0 "Box Kite"** (full major
+bump, Cody's explicit call — "significant upgrade").
+
+`SedenionFactoralRelativity/engine/lineage.py`: PW13 (`factoral_spiral`/
+`chart_scale_factor`, the Smith-chart flattening artifact as an exact
+conformal derivative), PW14 (`pathway_decomposition` — corrected TWICE
+per Cody: first from "number decomposition" to "process decomposition"
+framing, then from a `cd_level`/quaternion-octonion-named linear chain to
+a genuine DAG, RSA CRT-decrypt's `m2` fan-out as the control case), PW15
+(cross-ratio the genuine scale-blind Möbius invariant; the raw angle
+tested and rejected first), PW16 (unit lineage — see below). Real
+historical Vigenère/Enigma/RSA ciphers built in `PtolemyDesktop/Kryptos/
+Ciphers/` as structural process records (Enigma corrected from a flat
+7-slot octonion to a hierarchical `RotorQuaternion`+`EnigmaVector` per
+Cody). Engine: 44/44.
+
+**The Scale** — full ValaQuenta engine protocol (`modules/scale/`, 10
+equations, notebook executed clean, wiki pages in both repos): SCALE
+(tier-0, alongside ADD/SIGN) pulled out of a quantity at three levels —
+one point (polar decompose/recompose, exact), the two-ring Möbius fold
+(the raw angle does NOT survive the fold, a rejected candidate kept in
+the record; the cross-ratio does, verified across 4 anchors), a whole
+process (`pathway_decompose`). Master identity found by testing the
+intuition, not assuming it: `Γ=tanh(½·ln(Z/Z0))`, exact, verified
+off-axis. "Locally square" proven automatic (holomorphic-in-Z), not
+conditional on what the two rings mean. Five real ring-pairs tested;
+`J_red`/`J_blue` caught as degenerate — `J_red+J_blue=1.0000000000`
+exactly, one DOF wearing two labels, not two independent rings.
+
+**The Riemann-Fermat Horizon** (`Ainulindale/wiki/96`, renamed from
+Cody's own first proposal "Heartbeat" once the project's own extensive
+prior "horizon=σ=½" precedent — `wiki/29/30/26/31/33` — was checked):
+the standing-wave power identity `∫₀^{2π}sin²(x)dx=π` exactly, firing
+precisely at the `sin=cos` phase (`π/4`) that `wiki/73` Engine 5 already
+calls σ=½ electromagnetically. `wiki/73` gained a real addendum (§9):
+Engines 2 and 3 (Lagrangian minimum, AM-GM/N-shape closure) are PROVEN
+the same fact stated twice (minimizing `a+b` under fixed `ab=c` IS the
+AM-GM equality condition), Engine 6 (leaves) is genuinely prior (no `σ`
+exists before primes do), Engines 1/4/5 are downstream restatements or
+physical instantiations of one single AM-GM emergence point, not six
+independent derivations — sharpens `wiki/51`'s "Fermat is prior" into
+something checkable.
+
+**Units as the equation index** (PW16 + `ValaQuenta/modules/units/` +
+`Ainulindale/wiki/97` + `SedenionFactoralRelativity/wiki/Units-and-the-
+Equation-Index.md`): a unit is a point in the 7-axis SI base-dimension
+lattice; 11 named compounds (N,J,W,Pa,C,V,Ω,F,Wb,T,H) trace an exact
+lineage back to the leaves. First draft of the lineage tracer stored bare
+parent names and always summed them — failed all six units built by
+division (Tesla is `Wb/m²`, not `Wb+m`) on first run; fixed with signed
+`(parent,power)` lineage steps, kept in the record. `EQUATION_INDEX`: a
+dimension signature narrows to its candidate physical laws — the exact
+structural parallel to `context_vector` narrowing a word to candidate
+WordNet senses, units as "word possibilities" for equations (Cody's own
+framing). Packaged as a new Claude Code skill,
+`~/.claude/skills/unit-management/SKILL.md`. Original design found and
+credited: `PtolemyDesktop/Archimedes/UnitVector.py` (string-list-based,
+pre-dates Python 3 — genuine `SyntaxError` confirmed via `py_compile`,
+masked by a same-named sibling package shadowing plain `import Formula`).
+
+Also, this same day: a real, checked identity —
+`σ_RB[k]=(r_k²/2)sin(2θ_k)` where `(r_k,θ_k)` is the polar decomposition
+of the XOR-4-paired components `(ψ[k],ψ[k⊕4])`, exact to `3.6e-15` —
+followed by Cody's own correction that a full sedenion coordinate
+decomposition (8×(r,θ)) needs no new tooling: it's just `polar_decompose`
+(Scale) composed with the XOR-4 pairing (`σ_RB`), two pre-existing tools
+turning out to be each other's missing half — recorded as the
+generational-lineage skill's negative emergence branch, not silently
+passed over.
+
+Repos committed and pushed this session: VAPMIP (`v5.0.0` tag +
+`c56e552`), SedenionFactoralRelativity (`b98d12c`; also repointed
+`origin` off the old `SedenionFactorialRelativity` typo spelling),
+Ainulindale (`6def7da`), ValaQuenta (`a5338e7`), PtolemyDesktop
+(`bdd3b52`). This entry, the `.clauderc_ValaQuenta` `CTX_SCALE`/
+`CTX_UNITS` blocks (appended, not overwriting the pre-existing divergent
+structure — see caveat below), and the accompanying scratchpad mirrors
+are the ContextPlease-side record, written and pushed same session per
+Cody's "push with ContextPlease protocol."
+
+**Caveat, stated rather than silently resolved:** `ThePlace/.claude/
+.clauderc_ValaQuenta` (979 lines) and this repo's copy (1359 lines before
+today's append) have structurally diverged — this repo's copy carries
+older content (a "FULL ENGINE PROTOCOL amended 2026-08-04" section) not
+present in the active working copy, and the active copy carries this
+whole session's fresh additions this repo's copy lacked (`scale`,
+`box_kite`, `angular_rank`, `units` context blocks — the latter two now
+appended here). Only an additive sync was done (new `CTX_SCALE`/
+`CTX_UNITS` blocks appended, engine index updated) — no attempt was made
+to reconcile the deeper structural divergence between the two files
+blind; that is a real, separate task, flagged here rather than guessed at.
