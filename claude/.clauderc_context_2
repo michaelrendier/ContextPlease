@@ -647,3 +647,51 @@ appended here). Only an additive sync was done (new `CTX_SCALE`/
 `CTX_UNITS` blocks appended, engine index updated) — no attempt was made
 to reconcile the deeper structural divergence between the two files
 blind; that is a real, separate task, flagged here rather than guessed at.
+
+## 2026-08-25 (cont.) — .clauderc_ValaQuenta divergence resolved; 4 registered engines were missing context blocks entirely
+
+Follow-up to the caveat flagged at the end of the entry above. Cody: the
+old, divergent ContextPlease copy archives (not deletes) rather than
+merges blind. Done: `claude/.clauderc_ValaQuenta` (the pre-existing,
+structurally-diverged 1359-line copy) moved to
+`claude/archive/.clauderc_ValaQuenta.pre-2026-08-25` via `git mv`
+(history preserved); the active `ThePlace/.claude/.clauderc_ValaQuenta`
+copied in to replace it at the normal path, so this repo's in-use copy
+now matches the working copy exactly rather than diverging from it.
+
+Auditing the active copy against ground truth (`ValaQuenta/__main__.py`'s
+real `_register_all()` output and `find modules -name tools.py`) surfaced
+a real gap, not just a stale-index problem: **four currently-registered,
+live ValaQuenta engines had NO context block at all** —
+`archimedes_screw` (v0.3, 29 equations — "∅_RB is the water, the screw is
+the logarithm", von Mangoldt explicit formula, Lambert W supplying both
+coordinates of every zero), `bao_mass_gap` (v0.131, 7 equations — the
+mass gap as BAO spectral residue, `Δ=1/(1000√2)` closed form, zero free
+parameters, 7/7 checks), `hypergon_constructibility` (v0.100, 3
+equations — Gauss-Wantzel gives 4/16 constructible sedenion-prime
+hypergons; Phase 22's factoring conjecture RE-TESTED against a proper
+magnitude-matched control and does NOT survive — an honest negative kept
+in the record, not smoothed over), `t32_nilpotency` (v0.100, 1 equation —
+the shared Hyperwebster/T32/GF(2) primitive module that exists
+specifically because duplicating this exact code caused two real,
+caught transcription bugs). All four now have blocks, sourced from each
+engine's own `wiki/*.md` page, not fabricated.
+
+`VALAQUENTA_ENGINE_INDEX` also caught and fixed a real bash bug from
+earlier the same session — `CTX_UNITS`'s block had an unescaped literal
+double-quote inside Cody's own quoted words ("...should be considered
+'word possibilities'..."), which silently truncated the exported string
+and left the rest of the line executing as bash commands. `bash -n`
+(syntax-only) did not catch it; sourcing the file for real did. Fixed by
+switching the inner quotation to single quotes.
+
+The index itself is now split into three honestly-labeled tiers rather
+than one flat list: REGISTERED (20, reachable live through the registry),
+MODULE EXISTS / NOT REGISTERED (11 real `modules/*/tools.py` files
+`_register_all()` never calls `register()` on — `clay_millennium`,
+`constants`, `derivation_chain`, `h_rb_hat`, `tier6_physics` through
+`tier9_chem`, `translator_discocat`, `translator_vsa`, `udeo_crypto` —
+not investigated further this pass), and ORPHANED CTX BLOCK / NO MODULE
+DIRECTORY (`monad`, `sigma_cavitation`, `spherical`, `translator_common`
+— likely predate a rename/removal or document a different repo's
+concept; not resolved this pass, flagged rather than guessed at).

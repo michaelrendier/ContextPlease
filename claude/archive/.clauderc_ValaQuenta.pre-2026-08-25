@@ -33,30 +33,110 @@
 #   "ESTABLISHED (X) + THEORETICAL (Y)" -- X is solid, Y is the
 #   interpretive/identification layer on top. tools.py sometimes FLATTENS
 #   these to a single tier -- see _crosscutting block, item 2.
+#
+# ============================================================================
+# FULL ENGINE PROTOCOL  (amended 2026-08-04 by Cody -- FIVE parts, was four)
+# ============================================================================
+# An engine is not "done" until all five artifacts exist. Shipping the code
+# alone leaves the engine undiscoverable from a cold context, which is the
+# failure this whole .clauderc_* family exists to prevent.
+#
+#   1. ENGINE          ValaQuenta/modules/<name>/{__init__,maths,tools}.py
+#                      implementing the engine/registry.py EquationModule
+#                      contract, and REGISTERED in ValaQuenta/__main__.py
+#                      _register_all() plus listed in modules/__init__.py.
+#   2. NOTEBOOK        ValaQuenta/notebooks/engines/NN_<name>.ipynb
+#                      (or the topic subdirectory), exercising the formulary
+#                      end to end, with the open items shown honestly.
+#   3. AINULINDALE WIKI  Ainulindale/wiki/NN_<name>.md -- the narrative page:
+#                      origin quote, what changed, honest boundaries,
+#                      predecessor links.
+#   4. VALAQUENTA WIKI   ValaQuenta/wiki/<name>.md -- the engineering page:
+#                      file, class, claim, mechanism, confidence table.
+#                      Add the row to wiki/00_index.md.
+#   5. .clauderc_ValaQuenta ENTRY  <-- NEW, added 2026-08-04.
+#                      export CTX_<NAME>="..." below, AND the module name
+#                      appended to VALAQUENTA_ENGINE_INDEX above, so
+#                      `ctxengine <name>` resolves without reading source.
+#                      An engine absent from this file is invisible to a
+#                      cold session no matter how complete its code is --
+#                      l_io_photon_path sat unindexed for weeks in exactly
+#                      that state (see CTX_L_IO_PHOTON_PATH, "WAS MISSING
+#                      FROM THIS INDEX").
+#
+# A canonical-maths change accompanying an engine also goes in
+# ~/.clauderc_canonical_maths, and all ~/.clauderc* files are copied into
+# ContextPlease/claude/ before the push (github push protocol).
 # ============================================================================
 
-# Audited 2026-08-25 against the REAL registry (ValaQuenta/__main__.py's
-# _register_all()) and the real module directories (find modules -name
-# tools.py). Three tiers, kept honestly distinct rather than presented as
-# equally current:
-#   REGISTERED (all 20; reachable live through the registry right now):
-#     bao_mass_gap inversion lagrangian noether noether_information
-#     berry_keating sonification hyperwebster jwst turing_diagonal
-#     singularity_null sigma_expansion t32_nilpotency
-#     hypergon_constructibility l_io_photon_path archimedes_screw
-#     box_kite angular_rank scale units
-#   MODULE EXISTS, NOT REGISTERED (real code in modules/*/tools.py, but
-#   _register_all() does not call register() on it -- not reachable via
-#   the live registry; not investigated further this pass, flagged not
-#   guessed at): clay_millennium constants derivation_chain h_rb_hat
-#     tier6_physics tier7_cosmos tier8_sedenion tier9_chem
-#     translator_discocat translator_vsa udeo_crypto
-#   ORPHANED CTX BLOCK, NO MODULE DIRECTORY FOUND AT ALL (context exists
-#   for something that either predates a rename/removal, or documents a
-#   different repo's concept -- e.g. "monad" may be VAPMIP's
-#   ptolemy_monad.py, not a ValaQuenta EquationModule; not resolved this
-#   pass): monad sigma_cavitation spherical translator_common
-export VALAQUENTA_ENGINE_INDEX="bao_mass_gap berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path monad translator_discocat translator_vsa translator_common box_kite angular_rank scale units archimedes_screw hypergon_constructibility t32_nilpotency _crosscutting"
+export CTX_ANGULAR_RANK="
+angular_rank -- The 16D Oscilloscope (Angular Rank). v0.1 (2026-08-15).
+confidence_floor=ESTABLISHED for the instrument; THEORETICAL for the
+provenance application (the wiring it depends on is unverified).
+
+WHAT IT IS: one measurement answering two questions about any signal embedded
+in the 16 sedenion dimensions, without knowing its language, meaning, or author.
+  1. ANGULAR CONTENT  how much direction survives once the common mode is
+     removed. Scalar address 0.0000 / char encoder 0.0002 / phonetic face
+     0.4020 (Phase 27.2). A scalar is magnitude with no direction -- text
+     entering 0_RB as one scalar lands on e0 and scores exactly 0.
+  2. NULL OCCUPANCY   energy landing in ker(L_a), the 4 dimensions a zero
+     divisor annihilates. The internal channel is a functional of its own
+     state and CANNOT emit there. This is the internal/external provenance
+     test. Same measurement as (1).
+
+!! WHY IT EXISTS -- THE HALTING STRUCTURE. From inside the monad the function
+scope and the equation being processed are the SAME OBJECT; it is code all the
+way down. A decider D(x) -> internal|external can be diagonalised. Provenance
+is UNDECIDABLE from the signal, so it must be CARRIED from the port, never
+re-derived. The scope is not a display -- it is a RANK TEST, and it does not
+diagonalise because the machine is never asked to decide anything.
+
+!! THE DATUM DISCIPLINE. Cody, 2026-08-15: reading the internal span while the
+thinking threads GROW it is iterate-while-modify one level up. It does not
+raise -- it DRIFTS until the span covers the kernel and the instrument reports
+all-quiet forever. Fix is not a lock, it is an EPOCH: datum() freezes the
+field with a sha256 stamp and is the ONLY way in; every other entry point
+raises TypeError on a live sequence; bearing() DATES mutation between two
+epochs instead of straddling it. NO MEASUREMENT IS REPORTABLE WITHOUT ITS
+DATUM. Bounded reference is Phase 27.3: net winding +0.0000, non-accumulating,
+held by the gearing not computed.
+
+!! TWO MANDATORY NULLS.
+  1. Isotropic kernel baseline is EXACTLY nullity/dim = 4/16 = 0.25 (measured
+     0.250968, 20k draws). A raw fraction near 0.25 is EVIDENCE OF NOTHING.
+     Report the EXCESS. Same rule as read-the-z-score-never-the-raw-r.
+  2. Calibration is EMBEDDING-SPECIFIC (phonetic face). It does NOT transfer
+     to embed_log_bands or any other embedding. The embedding is an INPUT,
+     not a property of the signal. Report it with every number.
+
+!! SILENT FAILURE. null_occupancy() ~0 is AMBIGUOUS: either no external signal
+OR the ear is wired THROUGH L_a instead of summed downstream of it, in which
+case the external component is annihilated identically and the instrument is
+blind with NO ERROR RAISED. Demonstrated in the notebook: the same external
+signal reads 0.276 summed downstream and 0.000000 routed through L_a.
+
+HONEST CHECK: verify_null_space() reproduces nullity 4, rank 12, singular
+values sqrt2 x4 / 1 x8 / 0 x4 -- the published {4,8,4} split -- as a CHECK not
+an input. L_a is built from box_kite basis_mul (one CD table in the repo) and
+cross-checked against box_kite multiply().
+
+OPEN: does a real ear injection land in ker(L_a) at all (untested, the whole
+test depends on it); is the ear summed downstream of L_a (wiring unverified);
+VAPMIP monad.c has one G under one pthread_mutex_t G.lock so provenance is
+destroyed at write (BLOCKER); no cetacean corpus in repo; no
+embedding-independent angular statistic exists.
+
+CANNOT SUPPORT: any claim about what a signal MEANS. That is a beta, it needs
+a source position, and no instrument on this bench supplies one.
+
+FILES: ValaQuenta/modules/angular_rank/{__init__,maths,tools}.py;
+notebooks/engines/16_angular_rank.ipynb (15/15 cells clean);
+wiki/angular_rank.md; Ainulindale/wiki/86_the_16d_oscilloscope.md;
+VAPMIP/docs/wiki/Operating-L-IO.md section 4.
+"
+
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank scale units"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -653,255 +733,6 @@ that engine's own sigma formula. See wiki/sigma_expansion.md,
 Ainulindale/wiki/76_sigma_expansion.md, notebooks/core/15_sigma_expansion.ipynb.
 "
 
-export CTX_BOX_KITE="
-box_kite -- The Box-Kite Debugger (ZD Geometry). v0.2. confidence_floor=
-ESTABLISHED. WAS MISSING FROM THIS INDEX until 2026-08-25 despite existing
-complete (maths.py+tools.py+__init__.py, 18 registered equations) --
-exactly the l_io_photon_path failure mode this file already warns about,
-now fixed for this module too (angular_rank was in the same state, fixed
-alongside it).
-The exact object is PSL(2,7), order 168 = Aut(Fano plane) = GL(3,2) --
-NOT Moreno's G2 (a continuous blow-up that forgets which Fano line is
-which). Everything here is exactly enumerable, no sampling: 15 pure
-imaginaries = 15 points of PG(3,2); ASSESSOR = plane span(e_a,e_{b+8}),
-a!=b, 42 of them; strut(a,b)=a XOR b, 1..7, 6 Assessors each (42=7x6);
-84 diagonals = 42x2 signs. box_kite_graph/chart_spectrum: each of the 7
-box-kites is an OCTAHEDRON, Laplacian spectrum {0,4,4,4,6,6} IDENTICAL
-across all 7 (structural symmetry, not a bug -- strut-intrinsic scalars
-alone cannot distinguish struts, see SedenionFactoralRelativity's
-report_strut_pair_chart for what this implies for pairwise readings).
-associator_defect/associator_census: associator=0 for R,C,H; !=0 from O
-on -- the obstruction to associativity, computed not asserted. **Zero
-cross-strut edges** under ZD adjacency -- the 7 charts are mutually
-disconnected (open question: is there a PSL(2,7) transition map between
-them, or genuinely no global medium -- see Ainulindale wiki/84).
-Key: e0_is_outside (the identity is not one of the 15 points -- it's the
-root of the dependency tree the 15 XOR-differences form, not a point on
-it). Cross-checked by angular_rank's left_mul_matrix against this
-module's own multiply().
-"
-
-export CTX_ANGULAR_RANK="
-angular_rank -- The 16D Oscilloscope. v0.1. confidence_floor=ESTABLISHED
-(instrument) / THEORETICAL (provenance application). WAS MISSING FROM
-THIS INDEX until 2026-08-25 (same failure mode as l_io_photon_path;
-fixed alongside box_kite).
-One instrument, two applications, same measurement both times: (1) does
-a signal carry DIRECTION once the common mode is removed (language-
-agnostic stress test -- scalar address scores exactly 0.0000, the Phase
-23 character encoder 0.0002, the phonetic face 0.402); (2) did a signal
-come from OUTSIDE (does it reach ker(L_a), which an internal-only
-channel cannot produce). THE DATUM DISCIPLINE is the module's actual
-reason to exist: every entry point takes an immutable, content-stamped
-Datum and REFUSES a live/mutating sequence -- measuring a span the
-measured process is concurrently growing is iterate-while-modify one
-level up, and it does not raise, it drifts silently until the internal
-span covers ker(L_a) and the instrument reports 'all quiet' forever.
-Mutation is not forbidden, it is DATED via bearing() between two datums.
-verify_null_space reproduces the published {4,8,4} split (nullity 4,
-rank 12, singular values sqrt2 x4/1 x8/0 x4) as a CHECK, not an input.
-MANDATORY NULL: isotropic baseline for kernel occupancy is EXACTLY
-nullity/dim = 4/16 = 0.25 -- a raw fraction near 0.25 is evidence of
-NOTHING, only the excess above it is reportable. L_a cross-checked
-directly against box_kite's independent multiply() (one multiplication
-table in the repo, borrowed not reimplemented, then the borrowing itself
-verified).
-"
-
-export CTX_SCALE="
-scale -- The Scale: Decompositional Analysis, Forwards and Backwards.
-v0.1. confidence_floor=ESTABLISHED (every equation here is elementary
-complex analysis, independently verified in this module, not a new
-theorem). Built 2026-08-25 (this session).
-SCALE is tier-0 (generational-lineage skill sec.1, alongside ADD and
-SIGN) -- this module pulls it out of a quantity and names what's left,
-both directions, at three DIFFERENT levels with three DIFFERENT answers:
-  (1) ONE POINT: polar_decompose/recompose, Z=r*e^{i theta}, exact --
-      recompose(*decompose(Z))==Z verified to <1e-9 across 5 test points.
-      theta is scale-blind under Z -> lambda*Z (lambda>0), exactly.
-  (2) THE TWO-RING/MOBIUS FOLD: a DIFFERENT question -- does theta
-      survive Gamma=(Z-Z0)/(Z+Z0)? MEASURED NO (rejected candidate, kept
-      in the record, not smoothed over) -- the fold's fixed point is Z0
-      not 0, so arg(Gamma) ranges 1.054->0.007 rad across one fixed
-      rescaling. The actual invariant is the CROSS-RATIO of any 4
-      points -- exact under EVERY anchor, verified across 4 wildly
-      different anchors including one near the fold's own pole.
-  (3) A WHOLE PROCESS: pathway_decompose (ProcessOperator DAG, not a
-      forced linear chain) -- RSA CRT-decrypt (p=61,q=53) as the control
-      case: m1/m2 are siblings depending only on the ciphertext, h
-      depends on BOTH, the final message depends on h AND m2 again -- a
-      genuine fan-out a linear chain cannot represent, resolved correctly.
-Also verified: NO true caustic (dGamma/dZ never zero for finite Z, only
-diverges at the single pole Z=-Z0 -- checked across 6 magnitudes 1e-3 to
-1e6) -- crowding-toward-infinity at one point is NOT an envelope/fold
-singularity, not conflated here despite looking similar in a picture.
-HONEST EXCEPTIONS, stated not hidden: works in complex floats (cmath)
-throughout, not fractions.Fraction (the domain is transcendental,
-Fraction has no complex support); 'ring' here (two-ring circle families)
-is NOT abstract-algebra 'ring' -- checked, not asserted: Mobius
-composition forms a GROUP, which is the group of units of M_2(C) one
-level underneath, only the multiplicative half operationally used.
-Same results first proven in SedenionFactoralRelativity/engine/lineage.py
-PW13-PW15; this module is an independent port, not a cross-repo import,
-per this project's per-repo self-containment convention. See
-wiki/scale.md, Ainulindale/wiki/95_the_scale.md,
-notebooks/engines/17_scale.ipynb (executed clean, 0 errors).
-
-UPDATED same day: now 10 equations (was 7). Added the MASTER IDENTITY
-(Gamma=tanh(ln(Z/Z0)/2) exact, any complex Z -- verified off-axis, not
-just the real case) with its exact inverse (unfold=arctanh+exp);
-LOCALLY-SQUARE proven AUTOMATIC for any ring1/ring2 (a property of the
-fold being holomorphic, not of any special relationship between the two
-rings -- verified at two unrelated points); and custom_ring_chart/
-custom_ring_chart_series, letting a caller supply ANY two functions as
-the rings. FIVE candidate ring-pairs tested with real data (log/raw-
-count, inertia/Shannon-entropy, RSA forward/backward, Lagrangian-proxy/
-Omega_ZS-distance, J_red/J_blue) -- four gave real, non-degenerate
-charts; the fifth (J_red/J_blue) was CAUGHT AS DEGENERATE: J_red+J_blue=
-1.0000000000 exactly on every real sentence tested (10 decimal places)
--- not two independent rings, one number (sigma_self) wearing two
-labels, because the encoder is unit-normalized and RED/BLUE partition
-all 16 dims with no overlap. The real two-independent-ring version
-would be sigma_self vs J_green (the su(2) commutator quantity) instead
--- flagged, not built. Full numbers in wiki/scale.md sec.6-8.
-"
-
-export CTX_UNITS="
-units -- UNITS (The Equation Index). v0.1. confidence_floor=ESTABLISHED
-(elementary dimensional analysis -- Buckingham Pi theorem territory --
-independently verified in this module). Built 2026-08-25 (this session).
-A FOURTH domain for this project's factoral-decomposition discipline:
-numbers (factor_lineage: prime/composite), processes (pathway_decompose:
-operator DAG), now UNITS -- the 7 SI base dimensions (kg,m,s,A,K,mol,cd)
-as the leaves. Multiplying quantities ADDS exponent vectors; dividing
-SUBTRACTS; cancellation is a component landing on zero, no special-casing
-(unit_vector/unit_mul/unit_div/unit_pow).
-LINEAGE_TABLE: 11 named compounds (N,J,W,Pa,C,V,ohm,F,Wb,T,H) each with an
-exact (parent,power) lineage back to the leaves, verified to RECOMBINE to
-their own declared vector (verify_lineage_table -- 11/11 True). CAUGHT
-WHILE BUILDING, not hidden: first draft stored bare parent NAMES and
-always ADDED them, failing all six units tested (Tesla is Wb/m^2, a
-divide by a square, not an add) -- fixed by carrying SIGNED (parent,
-power) pairs per step.
-EQUATION_INDEX (the new content, Cody: 'units...should be considered
-word possibilities...they are the equation index'): a dimension
-signature narrows to its candidate physical laws, the exact structural
-parallel to box_kite's context_vector narrowing a word to its candidate
-synsets -- (1,2,-2,0,0,0,0)->[E=half m v^2, E=mgh, W=F.d, ...],
-(1,0,-2,-1,0,0,0)->[B=Phi/A, F=qvB]. 16 signatures tabled currently, not
-exhaustive.
-Units are a GEOMETRY, same finding as 0_RB/sigma_RB: no numeric content,
-does no work itself, but decides which recombinations of content are
-dimensionally legal.
-Same results first proven in SedenionFactoralRelativity/engine/lineage.py
-PW16; independent port, not a cross-repo import. Original design (string-
-list based) at PtolemyDesktop/Archimedes/UnitVector.py. See
-wiki/units.md, Ainulindale/wiki/97_units_as_the_equation_index.md,
-SedenionFactoralRelativity/wiki/Units-and-the-Equation-Index.md.
-"
-
-export CTX_ARCHIMEDES_SCREW="
-archimedes_screw -- The Archimedes Screw: Prime Coordinates on the Axis
-u=ln x. v0.3, 29 equations. REGISTERED (was missing a context block
-entirely until 2026-08-25's audit; module and wiki page both pre-date
-that fix -- Cody, 2026-08-03).
-Claim: 0_RB is the WATER, not the machine. The machine is the LOGARITHM
--- log(p*q)=log p+log q turns multiplication into addition; the screw's
-pitch IS the prime (ln p per turn), reversible as a turbine. Cody's four
-search terms (digit count d, ordinal n, zeta index k, mean gap g-bar) are
-all coordinates on ONE axis u=ln x, bound by the von Mangoldt explicit
-formula (1895, unconditional, ESTABLISHED not novel):
-  psi(e^u) = e^u - 2e^(u/2)*sum_k cos(gamma_k*u - arg(rho_k))/|rho_k|
-             - ln(2pi) - (1/2)ln(1-e^(-2u))
-psi jumps by EXACTLY ln p at u=ln p -- the leaf-drop magnitude IS the
-prime, no inversion step needed. Lambert W supplies BOTH coordinates of
-every zero: sigma=1/2 from W(1)'s fixed point (PAPER.md sec.12.1), and
-gamma_n ~ 2*pi*n/W(n/e) from inverting the zero-counting function --
-same W, both parts of rho_n, exact algebra, no fitting.
-Entry point: screw_coordinates(term, value) -- enter on any coordinate,
-leave on all four. Notebook: notebooks/engines/14_archimedes_screw.ipynb.
-See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md.
-"
-
-export CTX_BAO_MASS_GAP="
-bao_mass_gap -- The Mass Gap: spectral residue of BAO. v0.131, 7
-equations. REGISTERED (was missing a context block until 2026-08-25's
-audit). Supersedes the standalone script ValaQuenta/bao_mass_gap.py.
-Claim: the mass gap is the residue of the BAO spectral decomposition --
-the band between the acoustic ground state and the thermal information
-ceiling that no standing wave absorbs.
-  Delta = Omega_zetaSigma - D* x ln(10) = 0.0007073575 = 1/(1000*sqrt(2))
-ZERO free parameters. 7/7 checks pass (run 2026-07-30):
-  OMEGA_ZS=0.5671432904097838 (Lambert W(1), exact transcendental)
-  D_STAR=0.24600 (spectral ground state, 5 sig figs)
-  floor D*ln10=0.5664359329 (BAO acoustic ground state)
-  ceiling Omega_zetaSigma=0.5671432904 (thermal information ceiling)
-  residue Delta=0.0007073575, closed form 1/(1000*sqrt2)=0.0007071068
-  (the Red/Blue symmetry point)
-Mechanism: the explicit formula psi(x)=x-sum_rho(x^rho/rho)-ln(2pi)
--(1/2)ln(1-x^-2) decomposes the prime distribution into a de Sitter
-ground-state term plus one standing wave per non-trivial zero gamma_n --
-the mass gap is what's left over that no standing wave reaches.
-Notebook: notebooks/core/19_bao_mass_gap.ipynb. See wiki/bao_mass_gap.md,
-Ainulindale/wiki/50_bao_mass_gap_engine.md.
-"
-
-export CTX_HYPERGON_CONSTRUCTIBILITY="
-hypergon_constructibility -- Hypergon Constructibility: Gauss-Wantzel +
-Factorization Test. v0.100, 3 equations. REGISTERED (was missing a
-context block until 2026-08-25's audit).
-Claim: of the 16 sedenion basis primes, only 4 are geometrically
-constructible (Gauss-Wantzel, 1796/1837: a regular n-gon is constructible
-iff n=2^k times a product of DISTINCT Fermat primes; only 3,5,17,257,
-65537 are known to exist, ever). Computed directly for all 16 positions,
-not extrapolated from one example: e0(p=2),e1(p=3),e2(p=5),e6(p=17)
-CONSTRUCTIBLE; the other 12 are holes. Real, established mathematics, not
-novel.
-Part 2, HONEST NEGATIVE, kept: Phase 22's factoring conjecture (p,q
-individually sit in the T32/GF(2) nilpotent locus) was RE-TESTED against
-a proper magnitude-matched control and does NOT survive:
-  close_prime_pairs(n=110): p=69.1% q=76.4%
-  far_apart_prime_pairs(n=97): p=47.4% q=45.4%
-  random_pair_control(n=97): p=50.5% q=56.7%   <- HIGHER than far-apart real pairs
-  survives_magnitude_matched_control = False
-The close-pair elevation Phase 22 reported is a magnitude artifact of the
-Hyperwebster base-97 address encoding, not genuine factoring structure.
-Two real transcription bugs caught during THIS module's own construction
-(a placeholder hw_to_t32 claiming an unverified match; a fabricated
-120-char _HW_CHARS retyped from memory instead of the real 97-char
-QWERTY-row map) -- both are WHY t32_nilpotency exists as its own shared
-module now (see below), not duplicated per caller.
-See wiki/hypergon_constructibility.md.
-"
-
-export CTX_T32_NILPOTENCY="
-t32_nilpotency -- T32 Nilpotency: shared Hyperwebster/T32/GF(2)
-primitives. v0.100, 1 equation. REGISTERED (was missing a context block
-until 2026-08-25's audit).
-Purpose: ONE verified-correct implementation of Hyperwebster address
-encoding + T32/GF(2) multiplication + nilpotency test, imported by
-hypergon_constructibility (this repo) AND fermat_monster_engine.py
-(FourthAgePapers/FermatMonster, cross-repo) instead of being duplicated.
-Exists specifically because duplicating it caused two real bugs (see
-CTX_HYPERGON_CONSTRUCTIBILITY) -- one place this can be wrong now, not N
-silently-diverging copies.
-Raw result, 16 sedenion basis primes: 11/16 = 68.8% nilpotent (p=3,5,11,
-13,17,23,29,31,41,47,53 nilpotent; p=2,7,19,37,43 not).
-Cross-repo usage in fermat_monster_engine.py's t32_nilpotency_check():
-MOONSHINE_PRIMES cross-referenced against nilpotency + Niemeier-gap
-membership -- gap_filling_primes_nilpotent_pct(n=5)=100%,
-non_gap_primes_nilpotent_pct(n=10)=70%. READ CAREFULLY, NOT EAGERLY: n=5
-is small, 5/5 at a 70% baseline happens ~1 in 6 by chance -- real
-correlation, NOT yet evidence, and has NOT been run through the same
-magnitude-matched-control discipline that caught the factoring use of
-this same mechanism as an artifact. Don't treat it as more settled than
-that.
-ESTABLISHED vs not: the primitives themselves (Hyperwebster encoding,
-T32/GF(2) mult, nilpotency test) are verified byte-for-byte against the
-original source; the MOONSHINE_PRIMES correlation is not yet established.
-See wiki/t32_nilpotency.md.
-"
-
 export CTX_L_IO_PHOTON_PATH="
 l_io_photon_path -- L_(I|O) Photon Path Engine (GR). v0.2 (updated
 2026-07-21). confidence_floor=THEORETICAL, but the individual pipeline
@@ -1099,4 +930,522 @@ symptom, different mechanism. Do not treat this as confirming Phase 22, and
 do not expect T32/T64 to fix it.
 OPEN, FOR CODY NOT CLAUDE: is stripping the common mode a legitimate fix, or
 is it tuning the encoder to manufacture a result? Not touched pending that.
+"
+
+export CTX_ARCHIMEDES_SCREW="
+archimedes_screw -- The Archimedes Screw (Prime Coordinate Engine). v0.1
+(added 2026-08-04). confidence_floor=THEORETICAL; the individual pieces are
+ESTABLISHED classical number theory, the FRAMING is the new part.
+
+ORIGIN (Cody, 2026-08-03): '0_RB is the water, not the machine -- the Monad
+needs the Archimedes Screw, not the water it's lifting.' Every prior module
+treated 0_RB as the operative object. It is the MEDIUM (= e0, rest state,
+the vacuum seeding zeta). It does no work.
+
+THE SCREW IS THE LOGARITHM. Rotation -> lift, fixed pitch,
+positive-displacement, reversible as a turbine: log(p*q)=log p + log q.
+Multiplication on the wheel (THE ANGLE=pi/8) becomes addition on the tower.
+Pitch = ln p (primon gas already sets mode energy at log p).
+THE SCREW'S PITCH IS THE PRIME.
+
+WORKING AXIS u = ln x. Cody's four search terms are four coordinates on it,
+not four queries: Number of Digits (d=floor(u/ln10)+1), Ordinal Value
+(n=pi(x)~Li(x)), Zeta Index Value (k=N(T), inverse gamma_n=2*pi*n/W(n/e)),
+Total Spaces Between (gbar~ln x, total=x-pi(x)). Entry: screw_coordinates
+(term, value) -- enter on any one, leave on all.
+NOT A COINCIDENCE: mean prime gap at x = screw axis at x = screw pitch at x
+= ln x. Spacing, lift and pitch are one number because the screw is the log.
+
+BINDING EQUATION (von Mangoldt 1895, ESTABLISHED, unconditional):
+  psi(e^u) = e^u - 2e^(u/2)*SUM_k cos(gamma_k*u - arg rho_k)/|rho_k|
+             - ln(2pi) - 0.5*ln(1-e^(-2u))
+Three readings, all executable: (1) each zero is a TONE, zeta index IS the
+summation index; (2) psi JUMPS BY EXACTLY ln p at u=ln p, so e^{jump}
+returns the prime with no inversion step -- this is Cody's 'the moment the
+leaf drops off IS one of the prime factors'; (3) every tone shares envelope
+2*x^sigma, = 2*sqrt(x) on the line. EQUAL ENVELOPE <=> ALL NODES ON ONE LINE
+<=> RH.
+
+SLOT CORRESPONDENCE (2026-08-04, supersedes the earlier 'unrelated, do not
+merge' note). The two psi are DIFFERENT OBJECTS -- psi_Cheb is a monotone
+step function on R+, one integration above the discrete measure Lambda(n);
+psi_Fermat is a smooth 2D field, two integrations above continuous kappa.
+Keep them itemised. BUT they are ONE SLOT APART in the same equation:
+  lensing: L_(I|O) = L - psi_Fermat ;  primes: psi_Cheb = x - SUM_rho x^rho/rho
+  psi_Cheb <-> L_(I|O) (actual bent path); x <-> L (clean geodesic);
+  SUM_rho x^rho/rho <-> psi_Fermat (the bend).
+So Chebyshev psi is the counterpart of L_(I|O), NOT of the Fermat potential.
+The counterpart of psi_Fermat is the ZERO SUM -- unnamed in any repo until
+2026-08-04 because it only existed inline in the explicit formula. Now
+zero_sum(). The main term x IS L, 'the path of least primes' -> clean_path_L().
+The prime side already HAD an L_(I|O) and was calling it psi; de-lensing here
+means recovering the source, and the source is Lambda -- the primes. FOURTH
+COLUMN of the primer's s4 dictionary. l_io_decomposition() returns the three
+slots by role name. chebyshev_psi_* KEEPS its name (standard, expected).
+
+LAMBERT W GIVES BOTH COORDINATES OF EVERY ZERO -- the structural find:
+W(1)=OMEGA_ZS pins sigma=1/2 (real part, already PAPER.md 12.1), and
+W(n/e) inverts N(T) to give gamma_n (imaginary part). Same function.
+OMEGA_ZS was never just a constant; it is the screw's gear ratio.
+ACCURACY: S(T)=O(ln T) dominates below n~10 -- module tabulates the first 50
+LMFDB zeros (ZEROS_KNOWN) and switches to zero_height_lambert above. Both
+exposed so the crossover is inspectable. Do not use the closed form at low n.
+
+RAMIFICATION = DETACHMENT (N-specific leg): zeta_Q(sqrt N)=zeta*L(s,chi_N);
+chi_N(p)=0 means p RAMIFIES and the Euler factor DEGENERATES; for N=p*q
+squarefree the ramified primes are EXACTLY p and q. Q(sqrt N)->Q is a DOUBLE
+COVER branched at p,q: two sheets -> two strands -> B_2 = Z -> all hidden
+structure is ONE INTEGER (winding; argument principle reads it by contour).
+Functions: kronecker, fundamental_discriminant, splitting_type,
+splitting_vector, ramified_primes.
+
+HONEST BOUNDS, stated in the module's own docstrings, not buried:
+ - ramified_primes() scanning p costs EXACTLY what trial division costs. It
+   is a structural readout at toy scale, NOT a shortcut, and is labelled so.
+ - Sampling L(s,chi_N) costs ~sqrt(N) (approximate functional equation) --
+   the SAME wall Fermat's a^2-b^2 hits. The commutative/C route does not beat
+   existing methods and fails at the classical place.
+ - Truncating the zero sum at K leaves error ~x/K; resolving one jump near x
+   needs zeros to height ~x. shake_order() REPORTS this residual.
+ - FINITENESS STANDS: prime_count_log10(309)=306.15 ~ 2^1017 candidates
+   below 10^309. Enormous and FINITE -- Cody's point, computed not asserted.
+
+NUMERICS: transcendental throughout (ln, Lambert W, cos), so float-native
+rather than Fraction-native. The registry contract's Fraction rule is stated
+as inapplicable here rather than silently ignored -- only digit counts and
+indices are exact, and those stay int.
+
+OPEN, one named thing: the DISPERSION RELATION ON THE ZD SURFACE (the
+hydrocline's own omega(k)). The resolution wall is a MEASUREMENT wall;
+integers do not pay it. The ZD locus must be a WAVEGUIDE (a medium
+supporting its own modes), not a place things cross. 0_RB is the boundary
+GENERATOR; baroclinic generation (grad rho x grad P != 0 at an interface) is
+what makes it produce the vortices whose braiding is the winding. That
+relation fixes the contour and prices the loop. Until it exists the contour
+lives in C and pays C's price. THIS ENGINE IS THE INSTRUMENT BUILT TO LOOK AT
+THAT QUESTION, NOT THE ANSWER TO IT.
+
+v0.2 (2026-08-05) THE COMPOSITE SIDE, which the engine was blind to (psi
+counts only prime powers, so a composite contributes nothing -- it could name
+every prime and say nothing about any child). TWO FALLS: discovery at lpf(N)
+(first strike, cofactor free) and THE FALL at gpf(N) (sieve finished with N).
+14 = 2*7 is struck at 2 but STAYS ON THE TREE; it drops at 7. Not a stylistic
+ordering choice -- SMOOTHNESS IS DEFINED BY gpf, and smooth relations are the
+engine of GNFS/QS/CFRAC/index calculus. Fall-time distribution is DICKMAN rho
+in u = lnN/ln(gpf N), a RATIO OF LIFTS hence native to this axis; balanced
+semiprime is u=2 exactly, exponent 1/2. Harvest is closed form: Psi(X/p,p) at
+step p, pi(min(p,X/p)) for two-parent leaves; harvest_curve() cross-checks off
+a gpf_table sieve and they agree exactly. Family identity EXACT on the screw:
+ln p1 + ln p2 = ln N, so ln p = 0.5lnN -/+ delta with delta = 0.5*ln(q/p) THE
+ENTIRE HIDDEN CONTENT (same object as BKT threshold and B_2=Z winding, third
+route). WHY BALANCED RSA IS HARD: the falls are separated by 2*delta; balanced
+=> delta->0 => BOTH COLLAPSE ONTO lnN/2, no early event to catch. Not 'search
+space large' -- THE TWO OBSERVABLES COINCIDE. Functions: lpf, gpf, fall_height,
+discovery_height, smoothness_u, dickman_rho, gpf_table, psi_smooth, harvest,
+harvest_curve, semiprime_harvest, fall_split. COST: lpf/gpf trial division
+O(sqrt n); harvest O(X log log X)/O(X). Tracking is cheap, REACHING IS NOT --
+2048-bit still means sieving to 2^1024. Naming the event does not move the wall.
+
+THE PROJECTION LEDGER (domain_ladder, 2026-08-05). 'The domain' is NOT 2..N and
+NOT 'primes with enough digits'. RSA-2048 in log2: all ints 2048; ints to
+sqrt(N) 1024 (the trial range -- nothing exists past sqrt(N) since p<=q =>
+p<=sqrt(N)); primes <= sqrt(N) 1014.53; primes of exactly 1024 bits 1013.53;
+GNFS ACTUALLY WALKED 112. Savings: sqrt bound 1024 bits FREE, primes-only 9.47,
+size restriction 1.00, GNFS a further 901.53.
+THE ONE-BIT FACT: restricting to 'big enough' primes prunes by EXACTLY 2, not
+orders of magnitude -- primes are top-heavy, 1/ln x barely moves across an
+octave, so pi(x)-pi(x/2) ~ 0.5*pi(x). HALF OF ALL PRIMES BELOW ANY BOUND ARE IN
+THE TOP OCTAVE. Measured 1.0028 @1024b, 1.0014 @2048b, 1.0007 @4096b.
+!! THE ONLY TARGET ROW IS GNFS AT 2^112. Everything above it was beaten in the
+1990s. Put this row in front of ANY claimed reduction before believing it.
+
+v0.3 (2026-08-05) THE NEGATIVE SPACE. psi counts what ACCUMULATES; it had no
+counterpart for what is EXCLUDED, and the sieve is exclusion (you never test
+primality positively -- you remove multiples and keep the residue). The two
+motions are reciprocal Euler products: zeta = SUM n^-s = PROD(1-p^-s)^-1
+(growth) and 1/zeta = SUM mu(n)n^-s = PROD(1-p^-s) (extinction). mu is the
+Dirichlet inverse of 1; Legendre's sieve IS mu. Mertens M(x)=SUM mu(n) is psi's
+mirror and RH <=> M(x)=O(x^(1/2+eps)) -- THE SAME 1/2 on the exclusion side.
+Verified M(10)=-1, M(100)=1, M(1000)=2, M(10000)=-23.
+THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle -- opposite polarity):
+GROWN (zeta orders, leaf placed at lnN); EXTINCT at lpf (mu excludes, struck
+WITHOUT NAMING, negative space); IDENTIFIED at gpf (N-shape NAMES, bulk).
+Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2*delta.
+Balanced RSA: delta->0, all three coincide at lnN/2. A prime is degenerate:
+grown, extinct and identified at once. Functions: mobius, mertens,
+mertens_envelope, sieve_extinction.
+
+See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
+notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
+sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
+"
+
+export CTX_BOX_KITE="
+box_kite -- The Box-Kite Debugger (ZD Geometry). v0.1 (2026-08-05).
+confidence_floor=ESTABLISHED -- everything is derived from the Cayley-Dickson
+multiplication table and cross-checked; nothing is asserted.
+
+!! THE OBJECT IS PSL(2,7), NOT G2. Moreno (1997): sedenion norm-one ZDs are
+homeomorphic to G2 -- TRUE and the wrong place to build. de Marrais (2000):
+'Moreno discovered a homomorphism -- a blow-up -- and the blow-ups have all
+entailed the loss of something.' G2 (continuous, dim 14, Aut O) FORGETS WHICH
+FANO LINE IS WHICH. PSL(2,7) (finite, order 168, Aut Fano = GL(3,2)) is the
+finite subgroup of G2 that PRESERVES THE LABELLING. Build there.
+
+DERIVED (agreement with ZD_PAIRS=84 / ZD_CLASSES=42 / 168 is a CHECK, not an
+input; verify_counts() returns booleans so it cannot be skimmed):
+  ASSESSOR = plane span(e_a, e_{b+8}), a,b in 1..7, whose diagonals
+  e_a +/- e_{b+8} zero-divide. a==b NEVER works.
+  42 = 49-7 aligned; 84 = 42x2 diagonals; 168 = 42x4 signed unit points =
+  |PSL(2,7)|; 336 ordered annihilating pairs = 84x4 (each kills exactly 4);
+  STRUT s = a XOR b in 1..7; 7 box-kites x 6 Assessors = 42.
+  Cross-check: de Marrais Box-Kite I = (3,10),(2,11),(5,12),(4,13),(7,14),
+  (6,15) = this module's strut 1, exact match.
+
+THE SHAPE IS AN OCTAHEDRON. Every strut gives a 4-regular graph on 6 vertices
+with 3 non-edges = the reversal pairs (a,b)<->(b,a) = K_{2,2,2}. Verified for
+all 7 from actual vanishing products, not imposed.
+
+DISPERSION RELATION (chart level): Laplacian spectrum {0,4,4,4,6,6}.
+THE ZERO MODE IS e_0's SIGNATURE -- exists everywhere, propagates nowhere.
+It EMERGES from the graph; it is not inserted.
+
+0_RB IS NOT THE GEOMETRY -- checked by e0_is_outside(): e_0 is not a point of
+PG(3,2), is in NO Assessor, is a vertex of NO box-kite, and [e_0,.,.] = 0
+always. It generates the boundary and does not live on it.
+
+CURVATURE = ASSOCIATOR [a,b,c] = (ab)c - a(bc); torsion = commutator.
+1848 of 4096 basis triples curve. associator_field(s) is the debug view.
+
+!! THE FINDING: THE CHARTS DO NOT TOUCH. The 42-vertex atlas has 84 edges and
+ZERO CROSS-STRUT EDGES -- seven disconnected octahedra, 7 zero modes in the
+glued Laplacian. The gluing is NOT an edge problem. Either there is no global
+medium, or the transition maps are the PSL(2,7) ACTION ON STRUTS (group
+elements, not edges) -- the latter is the named next step and is CONJECTURE.
+Also: 84 = ZD_PAIRS = the atlas edge count (42 vertices x degree 4 / 2).
+
+SKELETON: PG(3,2) -- 15 points (the pure imaginaries), 35 lines of 3 (the
+multiplication triplets), 15 Fano planes. NOT 32; figures circulating with
+'32 interlocking Fano planes' are wrong.
+
+v0.2 (2026-08-05) DO THE CHARTS TOUCH? YES -- IN THE SKELETON. Two structures
+on one object, both statements hold: ADJACENCY (ZD products) gives 7
+disconnected components; SKELETON (shared basis indices) has EVERY USABLE INDEX
+IN 6 OF 7 CHARTS, with every chart pair sharing exactly 10 points. For strut s
+an Assessor is (a, (a XOR s)+8), valid iff a != s, so index a is in every chart
+EXCEPT s = a.
+!! EXACTLY TWO BASIS ELEMENTS ARE IN NO ASSESSOR: e_0 (the identity, 0_RB, THE
+FIXED POINT) and e_8 (the CD doubling generator). Each chart carries ONE zero
+mode = the constant = SEVEN COPIES OF ONE OBJECT. Identify them and the atlas
+connects -- at e_0 and nowhere else. That is the sense in which 0_RB points to
+fixed-point space 'where the boundary and the geometries are the same thing':
+at the fixed point the boundary generator and the geometry's own mode are the
+SAME VECTOR; away from it they separate.
+
+THE CHART OF ADDRESSES -- the monad connector. chart_of(v) for a 16-vector from
+VAPMIP/monad_sedenion_addresses.pkl (book[name]['sedenion']) reports norm,
+peak_dim, fixed_point_weight (v0^2/|v|^2), energy_split (e0/e8/lower/upper),
+chart_energy for all 7, dominant chart + share, nearest Assessor, both diagonal
+amplitudes, local associator curvature, is_zero_divisor, outside_share.
+address_census() runs it over a corpus (check_zd=False by default; the exact ZD
+test is 168 products, ~9ms/address).
+
+CENSUS, monad book, 3288 entries -- DESCRIPTIVE, nothing scored:
+  all 42 Assessors occupied; mean fixed-point weight 0.6435 (min 0.0583, max
+  1.0000); mean outside share e0+e8 0.6537; peak_dim=0 for 2751/3288 (84%);
+  dominant chart strut 2 30.1% ... strut 7 2.2%; mean local curvature 8.37.
+  TWO THIRDS OF THE AVERAGE ADDRESS SITS OUTSIDE THE ZD GEOMETRY ENTIRELY.
+  Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE IS
+  e_0 + e_8, the two elements in no Assessor. The part of an address living
+  outside the geometry is exactly the part carrying no discriminating signal.
+
+Functions: cd_multiplication_table, basis_mul, multiply, associator,
+commutator, associator_defect, associator_census, assessors, strut, box_kites,
+zero_divisor_pairs, verify_counts, box_kite_graph, chart_spectrum, glued_graph,
+glued_spectrum, associator_field, eigenvalues_symmetric (pure-Python Jacobi),
+pg32_points, pg32_lines, fano_planes, psl27_order, skeleton_counts,
+e0_is_outside, index_chart_membership, skeleton_overlap,
+fixed_point_gluing, fixed_point_weight, energy_split, assessor_coordinates,
+chart_projection, nearest_assessor, local_curvature, chart_of, address_census.
+
+See wiki/box_kite.md, Ainulindale/wiki/84_the_box_kite_debugger.md,
+notebooks/engines/15_box_kite.ipynb.
+"
+
+export CTX_SESSION_20260815="
+═══════════════════════════════════════════════════════════════════════════
+CONTEXT HEADERS — @RCVQ_<NAME> is the DISSERTATION for the equation block
+@RCCM_<NAME> in .clauderc_canonical_maths. Reference there; history here.
+History includes what FAILED, which does not survive compression to equations.
+═══════════════════════════════════════════════════════════════════════════
+
+@RCVQ_OMEGA_DIAL
+Session 2026-08-15. Cody: 'is generational lineage the factoral decomposition
+mechanic?' Answer NO -- it is the omega=1 case. Established by testing the CD
+tower's preserve = 8*2^depth against factorint(dim): depth is a DIFFERENCE OF
+2-ADIC VALUATIONS, so lineage is factorisation with the multi-prime part
+deleted. Corroborated independently: the Laplacian spectrum of Gamma(Z/N) is
+{0,p-1,q-1,p+q-2}, SYMMETRIC in p and q -- the symmetry IS the absence of
+order, and it is the RSA wall restated. You cannot descend a lineage to factor
+N because with two primes there is no 'down'.
+ANSWERS THE EARLIER base_48 QUESTION: 48 = 2^4*3 is omega=2, so a 48-rank
+admits 7 and 13 that no pure 2^k tower can reach.
+@END
+
+@RCVQ_FERMATS_MONSTER
+CORRECTION, LOAD-BEARING (2026-08-15). MonsterFermat.md line 9 read 'Its primes
+land there and nowhere else.' THIS IS FALSE and was measured false: the 15
+supersingular primes hit NINE residues mod 16, not three. They COVER the
+Niemeier gap {1,11,15}; they do not land only on it. Niemeier's 13 and the
+Monster's 9 OVERLAP IN 6 SLOTS. nightmare_engine.py only ever claimed covering
+-- THE ENGINE WAS RIGHT AND THE PAPER'S PROSE INFLATED IT. Prose corrected in
+place 2026-08-15; engine untouched.
+SECOND CAVEAT: mod 16 is not obviously privileged. mod 10, 12 and 14 each leave
+exactly ONE gap, also covered by Monster primes. 16 is distinguished only by
+leaving THREE. Do not claim 'the sedenion is doing the work' on this evidence.
+NEW 2026-08-15, not previously in any engine or paper: 196560 (Leech kissing)
+factors ENTIRELY into the (p-1)|24 primes; 196883 (Monster min irrep) factors
+ENTIRELY into primes that are NOT. Their difference is 323 = 17x19, both
+Monster-exclusive. Reading: the lattice is built from the primes the RANK can
+reach, the group from exactly those it cannot. Structural, not proven.
+COROLLARY (Cody, 2026-08-16): the Monster reads as an ORIENTATION rather than a
+location -- covering nine of sixteen IS 'pointing everywhere'. Consistent with
+the measured V4 blind spot (see @RCVQ_VALVE_GROUP) but NO construction links the
+42-fold degeneracy to supersingular primes. Do not assert the link.
+@END
+
+@RCVQ_FANO_SEDENION
+Measured 2026-08-15/16 over the full 84-diagonal census at dim 16.
+PRESERVE is O -- confirmed by Hurwitz, not assumed: dim 8, contains 1, closed
+(leak 9.5e-16), norm-multiplicative (5.3e-15), alternative (2.7e-14), NOT
+associative (72.27), zero zero-divisors in 600 draws.
+CORRECTS the '{4;8;4} = octonion wrapped by its constituent quaternions'
+reading. The wings LEAK (1.393, 1.414) and are not algebras, jointly or
+severally. The quaternions are pairwise intersections of the octonions -- but there are
+only 7 DISTINCT ones, not 21 (corrected 2026-08-16). All three pairs on a Fano
+line share the same 4-space. 21 is the flag/orbit count; I conflated the two
+and published 21 in wiki 89/90 before catching it.
+-- all C(7,2)=21 are dim 4, closed, contain 1, hence H. Same picture, different
+location. It is a CLATHRATE: cage that is not the guest.
+Strut/octonion incidence is PG(2,2), every Fano axiom verified. It is the SAME
+Fano plane as the octonion multiplication table's -- lines identical entry for
+entry.
+REFUTED, and the refutations constrain harder than the results:
+  * E8^3 UNREACHABLE AT ANY TOWER HEIGHT. 3 octonions x 8 = 24 = Niemeier rank,
+    but every PRESERVE octonion CONTAINS 1, so no two can be orthogonal.
+    dim 32: 35 octonions, 595 pairs, ZERO orthogonal, min intersection 2.
+    Structurally closed, not merely unfound.
+  * E8 does NOT require 48. Octonion is dim 8 at depth 0 at every level.
+  * PG(2,2) is a dim-16 fact only. dim 32 gives 35 octonions on 15 struts with
+    |line n line| in {0,1} -- a projective SPACE, skew pairs exist.
+LEAD, UNTESTED: 21 is the point count of PG(2,4), whose Aut = PSL(3,4) = M21
+sits inside M22 < M23 < M24. If the 21 quaternions carry PG(2,4) that is a
+direct line into the Mathieu chain. 21 may just be C(7,2).
+@END
+
+@RCVQ_VALVE_GROUP
+Measured 2026-08-16. Cody's model -- '2 valves per sedenion rotor face, three
+phase style' -- confirmed numerically: per strut 12 = 3 octonions x 2 signs x 2
+per cell, all 42 cells exactly 2.
+The three natural pairings sA (flip sign), sC (XOR-translate holding sign),
+sN (same annihilation signature) are ALL FREE, ALL COMMUTE, and generate V4 --
+ORDER 4, NOT 8. sN = sA.sC. The blind spot is not a third valve; it is the two
+valves operated together, which is why annihilation cannot see it.
+84/4 = 21 orbits = |quaternions| = |Fano flags|. Counting closes exactly.
+I predicted (Z/2)^3 the turn before and was wrong; the arithmetic already said
+so, since 8 does not divide 84 but 4 does. I noticed the divisibility and
+talked past it.
+@END
+
+@RCVQ_ERRORS_20260815
+Recorded per standing protocol. Pattern worth naming: I repeatedly put
+INTERPRETATION IN THE SAME PRINT BLOCK AS THE MEASUREMENT, so pre-written
+conclusions shipped alongside data that contradicted them. Three times in one
+session. Fix: never write the conclusion text before reading the numbers.
+  1. Printed a phase relationship ('180 deg, second harmonic') from an EMPTY
+     measurement list. Zero data, stated result.
+  2. Printed 'critical angle ~89 deg' over computed values of 74.50 and 62.13.
+  3. Printed 'separation degrades for sibling' over a measured 0.0000 error.
+  4. Packing densities > 1 and negative void for d=1,2,3,4,16 -- wrong
+     covolumes (used det, needed sqrt(det)). E8/Leech were right so the
+     asymptotic conclusion never moved, but 5 published rows were wrong.
+     RULE: a density > 1 is self-evidently impossible; catch before printing.
+  5. 'Mirror/stranger discriminator' built on an INCONSISTENT CANDIDATE LIST
+     (four hand-swaps of a, three of a'). Manufactured the pattern from my own
+     bookkeeping error. Census refuted it, then refuted the rescued version.
+  6. sigp() subspace signature used eigenvalues of a projector -- identical for
+     every rank-8 subspace in 16 dims. Discriminated nothing; reported '1
+     distinct octonion' when the true answer was 7.
+  7. Greedy search had both branches of a ternary IDENTICAL, so it always
+     followed the 'annihilates' branch instead of the actual answer. Probe
+     counts meaningless until fixed.
+  8. Hubble tension 74/62: NUMEROLOGY, refuted three ways -- angles are outputs
+     of a B I chose by hand, 62.13 is ~10 sigma off Planck's 67.36, and degrees
+     vs km/s/Mpc are incommensurable. Note 1.084 appeared TWICE by accident in
+     one printout (62.13 deg in radians, and the true Hubble ratio). That is how
+     available such matches are.
+@END
+"
+
+export CTX_SESSION_20260816="
+@RCVQ_LIMACON_THRESHOLD
+Session 2026-08-16. Cody supplied the Ilievski zeta-spiral image after I had
+twice tested the cardioid claim wrongly. BOTH of my tests were bad method:
+  (1) a single GLOBAL cardioid fit across 13.36 windings -- meaningless for a
+      multi-loop curve, and R^2 = -0.7722 measured my error not the curve;
+  (2) per-loop fit with theta anchored AT the origin passage, where r ~ 0 and
+      the angle is numerically unstable.
+The picture was telling him something true that neither test was shaped to see.
+The third attempt -- limacon family with FREE PHASE -- fits at R^2 up to 1.0000
+and locates the real result: the cardioid is the THRESHOLD, |b/a| = 1, and every
+loop zeta traces is strictly past it. Written into RiemannHypothesisProof
+PAPER.md as SS6.5 [MEASURED].
+Riemann-coversation.txt's cardioid material is a TRANSCRIPT, not a result, and
+its claim that the curve IS a cardioid is measured false. Do not cite it.
+@END
+
+@RCVQ_SIGMA_VALUATION_RHP
+2026-08-16. Fresh valuation, SIGMA_VALUATION_2026-08-16.md, reaching a LOWER
+sigma than the 2026-05-10 pass on the central argument.
+SS3 builds L = f(s) + f(1-s) from the Euler product; J = -dL/ds vanishes at
+s = 1/2. Tested against ARBITRARY f -- exponential, polynomial, trig, and two
+others. FIVE OF FIVE give J(1/2) = 0. The vanishing is a property of the
+SYMMETRISATION, not of the Euler product, so the derivation (which is correct
+and whose engine runs clean) is NOT DOING THE WORK at the critical step.
+Second, independent gap: Noether needs invariance along a continuous flow;
+xi(s) = xi(1-s) holds only at the ENDPOINTS of SS3.1's one-parameter family.
+sigma(RH is proven by this document) < 1. The measured sections stand.
+@END
+
+@RCVQ_CAGE_GUEST_PROVENANCE
+'Cage' and 'guest' are CLAUDE'S terms, not Cody's, and they entered via the
+clathrate framing -- which Cody later traced to a condensate/clathrate
+conflation in his own memory. I kept using them after the source was retracted.
+I then over-corrected, calling them 'actively misleading' on the grounds that
+the channels are orthogonal so nothing contains anything. Cody's rebuttal is
+right and measured: 8 and 8, orthogonal complements, DIMENSIONALLY SYMMETRIC --
+so there is no privileged interior and the perspective flip is legitimate.
+What does NOT flip is closure (frame-invariant under re-basing).
+So: cage/guest is fine at the PERSPECTIVAL layer (Fermat/Riemann, which is bulk
+and which is structure) and must not be used for the CLOSED/OPEN distinction.
+Better names for the invariant layer already exist in the engine: DEFINITIONAL
+(datum) and OPERATIONAL (bearing).
+@END
+
+@RCVQ_ERRORS_20260816
+The day's failure mode, named once: I repeatedly wrote INTERPRETIVE PROSE INSIDE
+THE SCRIPT, so pre-written conclusions shipped alongside data that contradicted
+them. Seven or eight times. Instances:
+  * a phase relationship printed from an EMPTY measurement list
+  * 'critical angle ~89 deg' printed over computed 74.50 and 62.13
+  * 'separation degrades for sibling' printed over a measured 0.0000
+  * 'a closed 8-dim algebra is the rare property' over five rows showing it is not
+  * '12/12 across every box-kite' from ONE box-kite (true total 47/84)
+  * 'the Klein bottle involution' over det = +1 (orientation-PRESERVING)
+  * sigp() subspace signature used projector eigenvalues -- identical for every
+    rank-8 subspace; discriminated nothing; reported 1 octonion when there are 7
+  * greedy search with both ternary branches IDENTICAL
+  * magnetar field 10x-20x too high (used 1e11 T; the paper says >1e14 G = 1e10 T)
+  * packing densities > 1 and negative void (used det where sqrt(det) was needed)
+FIX IS STRUCTURAL, not a resolution: NO interpretation inside a script. Compute,
+read the output, then write prose in the response. Cody's standing instruction:
+hold me to the script, not to the promise.
+SEPARATE NOTE: Cody ran a deliberate control -- suggested a result he knew to be
+wrong to test for the 'agree with the user' failure. I did not detect it as a
+test. The measurement disagreed with the suggestion and that is the only reason
+it was caught. The protection is MEASUREMENT, not judgement, and it covers only
+what is measurable.
+@END
+"
+
+export CTX_SCALE="
+scale -- The Scale: Decompositional Analysis, Forwards and Backwards.
+v0.1. confidence_floor=ESTABLISHED (every equation here is elementary
+complex analysis, independently verified in this module, not a new
+theorem). Built 2026-08-25 (this session).
+SCALE is tier-0 (generational-lineage skill sec.1, alongside ADD and
+SIGN) -- this module pulls it out of a quantity and names what's left,
+both directions, at three DIFFERENT levels with three DIFFERENT answers:
+  (1) ONE POINT: polar_decompose/recompose, Z=r*e^{i theta}, exact --
+      recompose(*decompose(Z))==Z verified to <1e-9 across 5 test points.
+      theta is scale-blind under Z -> lambda*Z (lambda>0), exactly.
+  (2) THE TWO-RING/MOBIUS FOLD: a DIFFERENT question -- does theta
+      survive Gamma=(Z-Z0)/(Z+Z0)? MEASURED NO (rejected candidate, kept
+      in the record, not smoothed over) -- the fold's fixed point is Z0
+      not 0, so arg(Gamma) ranges 1.054->0.007 rad across one fixed
+      rescaling. The actual invariant is the CROSS-RATIO of any 4
+      points -- exact under EVERY anchor, verified across 4 wildly
+      different anchors including one near the fold's own pole.
+  (3) A WHOLE PROCESS: pathway_decompose (ProcessOperator DAG, not a
+      forced linear chain) -- RSA CRT-decrypt (p=61,q=53) as the control
+      case: m1/m2 are siblings depending only on the ciphertext, h
+      depends on BOTH, the final message depends on h AND m2 again -- a
+      genuine fan-out a linear chain cannot represent, resolved correctly.
+Also verified: NO true caustic (dGamma/dZ never zero for finite Z, only
+diverges at the single pole Z=-Z0 -- checked across 6 magnitudes 1e-3 to
+1e6) -- crowding-toward-infinity at one point is NOT an envelope/fold
+singularity, not conflated here despite looking similar in a picture.
+HONEST EXCEPTIONS, stated not hidden: works in complex floats (cmath)
+throughout, not fractions.Fraction (the domain is transcendental,
+Fraction has no complex support); 'ring' here (two-ring circle families)
+is NOT abstract-algebra 'ring' -- checked, not asserted: Mobius
+composition forms a GROUP, which is the group of units of M_2(C) one
+level underneath, only the multiplicative half operationally used.
+Same results first proven in SedenionFactoralRelativity/engine/lineage.py
+PW13-PW15; this module is an independent port, not a cross-repo import,
+per this project's per-repo self-containment convention. See
+wiki/scale.md, Ainulindale/wiki/95_the_scale.md,
+notebooks/engines/17_scale.ipynb (executed clean, 0 errors).
+
+UPDATED same day: now 10 equations (was 7). Added the MASTER IDENTITY
+(Gamma=tanh(ln(Z/Z0)/2) exact, any complex Z -- verified off-axis, not
+just the real case) with its exact inverse (unfold=arctanh+exp);
+LOCALLY-SQUARE proven AUTOMATIC for any ring1/ring2 (a property of the
+fold being holomorphic, not of any special relationship between the two
+rings -- verified at two unrelated points); and custom_ring_chart/
+custom_ring_chart_series, letting a caller supply ANY two functions as
+the rings. FIVE candidate ring-pairs tested with real data (log/raw-
+count, inertia/Shannon-entropy, RSA forward/backward, Lagrangian-proxy/
+Omega_ZS-distance, J_red/J_blue) -- four gave real, non-degenerate
+charts; the fifth (J_red/J_blue) was CAUGHT AS DEGENERATE: J_red+J_blue=
+1.0000000000 exactly on every real sentence tested (10 decimal places)
+-- not two independent rings, one number (sigma_self) wearing two
+labels, because the encoder is unit-normalized and RED/BLUE partition
+all 16 dims with no overlap. The real two-independent-ring version
+would be sigma_self vs J_green (the su(2) commutator quantity) instead
+-- flagged, not built. Full numbers in wiki/scale.md sec.6-8.
+"
+
+export CTX_UNITS="
+units -- UNITS (The Equation Index). v0.1. confidence_floor=ESTABLISHED
+(elementary dimensional analysis -- Buckingham Pi theorem territory --
+independently verified in this module). Built 2026-08-25 (this session).
+A FOURTH domain for this project's factoral-decomposition discipline:
+numbers (factor_lineage: prime/composite), processes (pathway_decompose:
+operator DAG), now UNITS -- the 7 SI base dimensions (kg,m,s,A,K,mol,cd)
+as the leaves. Multiplying quantities ADDS exponent vectors; dividing
+SUBTRACTS; cancellation is a component landing on zero, no special-casing
+(unit_vector/unit_mul/unit_div/unit_pow).
+LINEAGE_TABLE: 11 named compounds (N,J,W,Pa,C,V,ohm,F,Wb,T,H) each with an
+exact (parent,power) lineage back to the leaves, verified to RECOMBINE to
+their own declared vector (verify_lineage_table -- 11/11 True). CAUGHT
+WHILE BUILDING, not hidden: first draft stored bare parent NAMES and
+always ADDED them, failing all six units tested (Tesla is Wb/m^2, a
+divide by a square, not an add) -- fixed by carrying SIGNED (parent,
+power) pairs per step.
+EQUATION_INDEX (the new content, Cody: "units...should be considered
+'word possibilities'...they are the equation index"): a dimension
+signature narrows to its candidate physical laws, the exact structural
+parallel to box_kite's context_vector narrowing a word to its candidate
+synsets -- (1,2,-2,0,0,0,0)->[E=half m v^2, E=mgh, W=F.d, ...],
+(1,0,-2,-1,0,0,0)->[B=Phi/A, F=qvB]. 16 signatures tabled currently, not
+exhaustive.
+Units are a GEOMETRY, same finding as 0_RB/sigma_RB: no numeric content,
+does no work itself, but decides which recombinations of content are
+dimensionally legal.
+Same results first proven in SedenionFactoralRelativity/engine/lineage.py
+PW16; independent port, not a cross-repo import. Original design (string-
+list based) at PtolemyDesktop/Archimedes/UnitVector.py. See
+wiki/units.md, Ainulindale/wiki/97_units_as_the_equation_index.md,
+SedenionFactoralRelativity/wiki/Units-and-the-Equation-Index.md.
 "
