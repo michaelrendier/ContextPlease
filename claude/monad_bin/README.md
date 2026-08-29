@@ -10,26 +10,42 @@ builder at.
 Formal format spec: `scripts/SPEC.md` (also `VAPMIP/monad_bin/SPEC.md`).
 The same builder lives in `VAPMIP/monad_bin/` — this copy carries the corpuses.
 
-## Build it
+## Build it — `bootstrap.py` (project first, always)
+
+**Every Monad starts PROJECT FLUENT.** `bootstrap.py` ingests the engineering
+corpus in this directory *first and always* — the primers, TODOs, and every
+repo's wiki/README/docs prose — then folds in general language and any user
+additions. No matter who builds it, they start from the same project-fluent
+algorithm and can talk about the engine's own functionality, in code-shape and
+English, from word one. That is the point of putting all the text here.
 
 ```
-# 1. per-domain factor bins → ~/.ptolemy/  (already built; rebuild any from its corpus)
-python3 scripts/ingest.py            #  corpus/corpus_all.txt  → monad_engineering.bin
-python3 scripts/ingest_war.py        #  the prime-directive primers → monad_war.bin
-python3 scripts/corpus_repos.py --ingest   #  corpus/corpus_repos.txt → monad_repos.bin
-
-# 2. fold every factor bin into one
-python3 scripts/build_monad_bin.py test      # each factor bin loads + generates standalone
-python3 scripts/build_monad_bin.py merge     # union → ~/.ptolemy/monad.bin  (+ manifest.json)
-python3 scripts/build_monad_bin.py verify
-
-# 3. (optional) pack for the C monad — see SPEC.md §5
+python3 scripts/bootstrap.py                 # project-fluent build
+python3 scripts/bootstrap.py --project-only  # engineering corpus ONLY
+python3 scripts/bootstrap.py --add DIR ...   # + user prose trees (repeatable)
+python3 scripts/bootstrap.py --pack          # + PtolC/monad3_c.bin for ptol.c
+python3 scripts/bootstrap.py --override      # replace an incompatible existing bin
 ```
 
-**Custom corpus:** point `corpus_strip.py` / `corpus_repos.py` at any tree of
-`.md`/`.txt`, ingest into a named bin, add it to `FACTORS` in
-`build_monad_bin.py` (or drop the others), and `merge`. The word addresses are
-deterministic, so every build from the same inputs is byte-identical.
+The result carries a `_bootstrap` marker
+(`kind: "project-fluent"`, `spec_version`, `project_corpus_sha256`,
+`project_factors`).
+
+### Safety + override
+
+An existing `~/.ptolemy/monad.bin` that this bootstrap did **not** produce (no
+marker / wrong kind / different `spec_version`) is **left untouched** — the
+build refuses and asks for `--override`, which backs the old file up first.
+Compatible bins refresh in place. C-side: `VAPMIP/PtolC/monad_guard.sh`
+(`PTOL_MONAD_OVERRIDE=1` to force), run by the ptol.c build before it installs
+`monad3_c.bin`.
+
+### Lower level / custom corpus
+
+`bootstrap.py` calls `scripts/build_monad_bin.py` (`test` / `merge` / `verify`
+/ `manifest`). For a custom corpus: point `corpus_strip.py` / `corpus_repos.py`
+at any `.md`/`.txt` tree, or use `bootstrap.py --add DIR`. Word addresses are
+deterministic → every build from the same inputs is byte-identical.
 
 ## Everything the engine builds in
 

@@ -9,7 +9,10 @@ sys.path.insert(0, "/home/rendier/Projects/ThePlace")
 from VAPMIP.monad import Engine
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CORPUS = os.path.join(HERE, "corpus_all.txt")
+_cands = [os.environ.get("MONAD_CORPUS_ALL"),
+          os.path.join(os.path.dirname(HERE), "corpus", "corpus_all.txt"),
+          os.path.join(HERE, "corpus_all.txt")]
+CORPUS = next(c for c in _cands if c and os.path.exists(c))
 OUT = os.path.expanduser("~/.ptolemy/monad_engineering.bin")
 WEIGHT = 1.5   # Cody's own detailed engineering descriptions — authoritative
 
