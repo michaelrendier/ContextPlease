@@ -1,0 +1,19 @@
+ITEM: Ptolemy++ C++ port (build directory, archive/scratchpad structure)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Ptolemy++ was finna be C++ PTOL...for now it's a build directory...separate the code...old edited worked on and sterile working code"
+
+"Ptolemy++/archive/ — old edited versions (bak, .old, .old2, commented drafts)
+Ptolemy++/scratchpad/ — pushback.cpp type noise, belongs nowhere"
+
+"SIP was confirmed as the correct tool for PtolCPP hot-path modules (not a Python-to-C++ transpiler), using qtermwidget's .sip spec files as the binding template."
+
+"First CUDA kernel target: sedenion multiplication — 16x16 sign table, 256 multiply-accumulate ops, runs in single GPU warp."
+
+"CUDA kernels = custom C code running directly on GPU. Bypasses PyTorch overhead entirely. Sedenion multiplication is the first candidate for Ptolemy++ CUDA kernel — 180K parallel sedenion ops."
+
+"LSH_Datatype C++ canonical" [v0.9 directive — formal proof needed that Hermitian/self-adjoint claim is mathematically rigorous]
+
+"HyperWebster address-value model (coordinates instead of pointers) may completely bypass C++ pointer cycle memory leak problems."

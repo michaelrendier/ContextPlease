@@ -1,0 +1,33 @@
+ITEM: docs/faces/ (11 Face docs)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"11 Face .md docs + docs/INDEX.md" [built and pushed]
+
+"docs/faces/" [confirmed pushed — 11 Face documentation pages]
+
+[11 Faces with documentation pages:]
+Pharos — primary core/runtime, desktop interface layer
+Callimachus — all data I/O, archival, HyperDatabase
+Archimedes — mathematics and science
+Kryptos — encryption, authentication, .perm files
+Tesla — device interfacing
+Mouseion — Flask web presence at thewanderinggod.tech
+Alexandria — OpenGL visualization
+Philadelphos — LLM/language experimentation, AI face
+Phaleron — internal search
+Anaximander — navigation
+Aule — forge daemon; sole writer to dmesg
+
+YOUR NAMING RATIONALE:
+"Pharos: primary core"
+"Callimachus: was the first archivist"
+"Archimedes: for obvious reasons...will be the maths and scientific face"
+"Kryptos will handle the eventual encryptions"
+"Phaleron: The person frequently cited as organizing the establishment and foundational collection of the Library of Alexandria is Demetrius of Phaleron"
+"Anaximander: was the first cartographer and will handle the navigational aspects of my travels and journeys"
+"Tesla: device interfacing"
+"Mouseion: Flask website at thewanderinggod.tech"
+"Alexandria: OpenGL visualization"
+"Philadelphos: LLM / language architecture"

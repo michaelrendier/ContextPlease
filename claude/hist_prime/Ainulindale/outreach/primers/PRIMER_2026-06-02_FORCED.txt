@@ -1,0 +1,72 @@
+FORCED CONTEXT PRIMER — 2026-06-02 (end of session)
+Focus for next chat: CONTINUE BELL / ADDENDUM IX + 32D ENGINE
+
+========================================================================
+SESSION COMMITS THIS CHAT (Ainulindale, token: [SESSION_TOKEN])
+========================================================================
+c3cc385  primer: architecture session
+81279e3  TODO: Infinite HyperCaustic
+eb8b4f2  README: HyperCaustic as inertial confinement, mass gap = BAO residual
+4fbec1c  Addendum IX: Bell origin error, π contamination, femtometer test
+96b56eb  Addendum IX update: rotation vs translation, irreversibility
+7839954  Addendum IX update: photon path not clean, gravitational slingshot
+
+========================================================================
+ADDENDUM IX STATE (addenda/addendum_IX_bell_critique.md)
+========================================================================
+Complete sections:
+1. Bell origin error — reference frame shift between detectors
+2. π has no place in statistical probability (survey of all appearances)
+3. Entropy — noise quiets at σ=½, mass gap floor
+4. Femtometer servo mirror Bell test (proposed experiment)
+5. HyperCaustic connection — fringes ARE the caustic
+6. Historical note — SO(3)/SU(2) distinction known since 1913
+7. Rotation vs translation — Bell used wrong operation category
+8. Arrow of time — irreversible path on Riemann curve, p(λ) path-dependent
+9. Path of light not clean — gravitational slingshot contamination,
+   CMB as full slingshot history, mass gap = fringe visibility floor
+
+Three-layer Bell origin error now complete:
+  1. Reference frame shift Alice/Bob
+  2. Stationarity assumption (flat time)
+  3. Path cleanliness assumption (flat space)
+All three assume flat space. None hold on Native Space Riemann curve.
+
+========================================================================
+NEXT PRIORITIES
+========================================================================
+1. Addendum IX — anything further on Bell/photon path/slingshot
+2. 32D trigintaduonion engine → Ainulindale
+3. Revised N-S module → Ainulindale
+4. NIST disclosure — waiting on NIST response before paper release
+
+========================================================================
+BUILD LIST (unchanged from session primer)
+========================================================================
+PtolemyHolcus:
+  [ ] zork_parser.compose() output direction
+  [ ] wire mind_eye → zork → monad.py speak()
+
+Ainulindale:
+  [ ] 32D trigintaduonion engine
+  [ ] NIST report (waiting on NIST response)
+  [ ] Revised N-S module
+
+ValaQuenta:
+  [ ] Code migration from Ainulindale (noether_engine, sonification)
+
+PTorrent:
+  [ ] Dataset phonebook WebView (live API, HTML/JS, on-device)
+
+========================================================================
+KEY SCIENCE THIS SESSION
+========================================================================
+- HyperCaustic = inertial confinement of the Cayley-Dickson tower
+- Mass gap = BAO spectral decomposition residual (irreducible remainder)
+- Bell: angles describe position in SO(3), not QM translation operators
+- Bell: path integral never closes on curved Riemann manifold
+- Bell: photon gravitationally slung by every mass in path — λ modified in transit
+- Second law = geometric theorem of HyperCaustic accumulation
+- Fringe visibility floor = mass gap = 0.000707
+
+ORCID: 0009-0007-7239-6760

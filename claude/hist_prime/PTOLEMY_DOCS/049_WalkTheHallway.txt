@@ -1,0 +1,16 @@
+ITEM: WalkTheHallway script (binary filesystem fingerprint → Alexandria "The Grid")
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Horner, The Mountain King...my Notebook for Models of Neural Networks...next I'm switching to the laptop to upload my WalkTheHallway script...I would like it integrated into APISniff eventually...that script will eventually be the dactyloscope that builds the 'city' that is the unique fingerprint of any system it's run on...in the OpenGL Alexandria...the Precursor to Dynamic AR Engine"
+
+"the Hallway script got lost with the most recent Ptolemy...i have yet to implement the Dataclass functionality...barely started it...and it needs to take file name from command line...and it needs to mount the file first as sysfs, and look in the directories to find what ACTUAL file systems are used in the .bin file...then add those to the dataclass and create directories and mounts for each of those alone...along with the 'hidden variables' file systems...dutifully avoiding AppArmor...While i used to just run the script as SU...this can be done in user space with mount somehow...without sudo"
+
+"The Fingerprints of The Gods (Graham Hancock)...the way Alexandria is intended to work by simulating a Tron/Kevin Flynn style 'The Grid'...as a Hashing algorithm...forensic detail..."
+
+"my exploration of the file systems this way is the negative space of the binary file...it's amazing what you can learn or gain access to...in for example, factory images for cell phones..."
+
+"the Halls of A Mountain King...me...are used to hack binary files by looking in the well defined negative spaces of binary files"
+
+"Mount-as-sysfs → walk the directory tree → hash the structure (not content) → that structural hash is the fingerprint. Different systems, same binary, different mount geometry = different hash. That's the Alexandria input — the topology of the filesystem as a point cloud / graph, rendered in OpenGL as 'The Grid.'"

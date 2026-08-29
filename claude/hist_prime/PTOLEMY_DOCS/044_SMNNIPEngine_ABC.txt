@@ -1,0 +1,14 @@
+ITEM: SMNNIPEngine ABC
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Philadelphos/smnnip_engine.py — SMNNIPEngine ABC with verify(), sign(), is_conserved(), handle_violation(). Docstring documents the self-adjoint claim honestly: empirically verified, formally open, explains exactly what the formal proof needs to establish, and flags the Berry-Keating connection from smnnip_full_tower.py"
+
+"SMNNIPEngine ABC" [built and pushed]
+
+"LSH_Datatype C++ canonical — formal proof needed that the Hermitian/self-adjoint operator claim is mathematically rigorous (currently architectural, not proven)"
+
+"Hermitian vs Self-Adjoint — are they the same? Short answer: in finite dimensions, yes. In infinite dimensions, no — and that distinction matters for your proof."
+
+"check math" [your instruction — not 'prove'. Distinction enforced by you.]

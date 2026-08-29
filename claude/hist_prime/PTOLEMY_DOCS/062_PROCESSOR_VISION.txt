@@ -1,0 +1,20 @@
+ITEM: PROCESSOR_VISION.md (IC engineer spec)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"PROCESSOR_VISION.md — IC engineer spec + energy" [listed as new file in session]
+
+"Woz as hardware lead for Ptolemy open-sourcing — approach after arXiv preprint"
+
+"Anthropic letter: orthogonal market (privacy-sovereign, no cloud required)"
+
+"Datacenter obsolescence argument: storage+retrieval layer, not compute"
+
+"Pre-trained LSH networks as licensed products (Sotheby's model per franchise). Student: one-time laptop-purchase pricing. Researcher: free (especially large dataset researchers — Vera Rubin Observatory)."
+
+"7-atom transistor = quantum tunneling threshold (IBM). 8 atoms minimum for stable logic gate."
+
+"VCSEL arrays at sub-millimeter scale — existing. MEMS mirrors for individual beam steering — existing. 8-13 VCSELs on circular substrate + MEMS = pendant-scale focal point."
+
+"Power at atomic-scale circuit: RFID coil — passive harvest, no battery. Qi wireless — 15W close range. Phone in pocket = always-on Qi source."

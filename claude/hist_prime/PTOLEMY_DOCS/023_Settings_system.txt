@@ -1,0 +1,19 @@
+ITEM: Settings system: 18 modules, select_section(), all Faces get a Settings tab/page under Modules parent
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Modular Everything. Anywhere a module can go gets a Ptolemy Settings tab or page...under a Modules parent category."
+
+"Settings system complete (18 modules, select_section(), alias)"
+
+"Standard stack schema (every settings.json must conform):
+{module, face, display, version, settings: {key: {value, type, label, stub}}}"
+
+"Currently 18 modules registered across all Faces."
+
+"select_section(name) — navigates settings window by module_id, display name, or Face name."
+
+"ptolemy_settings.py scans all of PTOL_ROOT for settings.json files conforming to the standard stack schema. All discovered modules appear in PtolemySettingsWindow."
+
+"Pharos Settings system" [listed as v0.9 directive]

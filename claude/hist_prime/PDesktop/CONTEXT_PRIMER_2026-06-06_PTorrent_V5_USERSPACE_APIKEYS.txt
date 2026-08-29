@@ -1,0 +1,311 @@
+CONTEXT PRIMER — 2026-06-06
+PTorrent / PtolemyHolcus
+Session: APK v5.0 — User Space + User-Defined API Keys
+
+═══════════════════════════════════════════════════════════════════════════════
+WHERE WE ARE: VERSION HISTORY SNAPSHOT
+═══════════════════════════════════════════════════════════════════════════════
+
+v2.0  2026-05-19  Initial APK. 7 corpora. PTorrent file format. FileObserver inbox.
+v3.0  2026-05-31  Color scheme (red/cyan/blue). Settings screen stub. Mind's Eye
+                  speak routing (contemplate → describe). Fermat corpus rename.
+                  Crawler rewrite (API-first, robots.txt). corpus save bug fixed.
+v4.0  2026-06-03  RDOP (Responsible Disclosure Open Protocol).
+                  ptorrent_chain.py: 7 new tx types (EVALUATE/CLASSIFY/ACKNOWLEDGE/
+                  DISCLOSE/REVOKE/FLAG/NOTIFY). skills/disclosure/ (STIX 2.1,
+                  notifier, TAXII 2.1). Full scientific adapter stack. Android
+                  safety sandbox (preflight.py, sandbox.py, ThermalMonitor).
+                  Model-Insertion-API (Anthropic/OpenAI/webhook/MCP/ClaudeCode hooks).
+                  wiki/ expanded (RDOP spec, Agency-Interface, Security-Classification).
+
+CURRENT APK:  android/PtolemySeeder/app-debug-v4.0.0.apk
+              versionCode 4, versionName "4.0"
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 1 — WHAT v5.0 MUST BUILD
+═══════════════════════════════════════════════════════════════════════════════
+
+Two features define v5.0. Both are load-bearing for any external user of PTorrent.
+
+─────────────────────────────────────────────────────────────
+1A. USER SPACE
+─────────────────────────────────────────────────────────────
+
+WHAT IT IS:
+  A first-class sandboxed storage layer that belongs to the user,
+  separate from the app's system defaults and the PTorrent chain.
+  Every user-owned artifact lives in user space. The app owns nothing
+  in user space; it only reads from it with permission.
+
+WHY IT MATTERS:
+  Right now every bin, every ptorrent, every key lives in the app's
+  extDir(). When the app is updated, config is lost. When multiple
+  users want different corpora, they can't. There's no concept of
+  "this is mine." v5.0 establishes ownership.
+
+ARCHITECTURE:
+
+  User Space root:  /sdcard/PTorrent/userspace/<orcid_hash>/
+  (or configurable in Settings; orcid_hash = SHA256(ORCID)[:12])
+
+  Directory layout:
+    userspace/<orcid_hash>/
+      profile.json         ← name, ORCID, email (plaintext, user-owned)
+      keys/                ← encrypted key store (see 1B)
+        keys.enc           ← AES-256-GCM encrypted, Android Keystore key
+        keys.iv            ← 12-byte IV (per-write, rotated on every save)
+      bins/                ← user's trained corpus bins
+        monad_*.bin        ← user's checkpoints
+      ptorrents/           ← user's ptorrent library
+        *.ptorrent         ← user-curated .ptorrent files
+      chain/               ← user's disclosure chain
+        ptorrent_chain.json
+      scratch/             ← temp files (safe to delete; app clears on startup)
+
+  Key invariants:
+    - The app NEVER writes to userspace/ without user action.
+    - The app NEVER deletes from userspace/ without explicit user confirmation.
+    - profile.json is human-readable. The user can open it in any text editor.
+    - The bins/ directory is THE authoritative store — no copies in extDir().
+    - userspace/ survives app uninstall IF the user has "preserve storage" on.
+      (Android: MANAGE_EXTERNAL_STORAGE or scoped storage with MediaStore.)
+
+  Android storage strategy:
+    - API 29+: use getExternalFilesDir() for the app's own data,
+      MediaStore or SAF (Storage Access Framework) for user-chosen paths.
+    - The Settings screen lets the user pick the userspace/ root via SAF
+      (DocumentFile picker). The chosen URI is persisted in SharedPreferences.
+    - Default: Environment.getExternalStorageDirectory() + "/PTorrent/userspace/"
+
+  Migration from v4.0:
+    On first v5.0 launch, if old extDir() bins exist and no userspace/ exists:
+    - Prompt user: "Migrate existing bins to your user space? [Yes / Not now]"
+    - On Yes: copy (not move) bins to userspace/<orcid_hash>/bins/
+    - Log migration in a migration_log.txt in userspace/scratch/
+    - Never auto-delete old bins.
+
+─────────────────────────────────────────────────────────────
+1B. USER-DEFINED API KEYS
+─────────────────────────────────────────────────────────────
+
+WHAT IT IS:
+  Encrypted, per-user, in-app storage for API keys with a Settings UI.
+  Replaces the env-var pattern (PTOL_NIST_API_KEY, ANTHROPIC_API_KEY, etc.)
+  for the Android app context where env vars are not appropriate.
+
+WHY IT MATTERS:
+  The current pattern (api_key_env: "ANTHROPIC_API_KEY" in ptorrent files,
+  env vars in the DISCLOSURE_CHECKLIST) is correct for desktop/CLI use.
+  On Android there is no shell environment. Keys currently can't be set
+  without recompiling or adb tricks. v5.0 makes keys first-class.
+
+ENCRYPTION:
+  Android Keystore (hardware-backed TEE where available, software fallback):
+    - KeyPairGenerator / KeyGenerator with KeyGenParameterSpec
+    - Key alias: "ptorrent_user_keys_v1"
+    - Algorithm: AES/GCM/NoPadding, 256-bit
+    - IV: 12 bytes, generated fresh on every write, stored beside ciphertext
+    - The raw key NEVER leaves the Keystore; only encryption/decryption ops.
+
+  Serialisation:
+    keys.enc contains AES-GCM encrypted JSON:
+    {
+      "anthropic":  "sk-ant-...",
+      "openai":     "sk-...",
+      "nist_nvd":   "...",
+      "github":     "ghp_...",
+      "smtp_pass":  "...",
+      "custom": {
+        "<label>":  "<value>"
+      }
+    }
+
+  In Python (Chaquopy): read via jnius/pyjnius bridge:
+    from jnius import autoclass
+    KeyManager = autoclass('com.ptolemy.seeder.KeyManager')
+    api_key = KeyManager.get("anthropic")
+
+  KeyManager.java (new class):
+    get(String slot) → String | null
+    set(String slot, String value) → void
+    delete(String slot) → void
+    list() → List<String>   ← key names only, not values
+    clear() → void          ← wipe all keys (with confirmation dialog)
+
+SETTINGS SCREEN (v3.0 stub → v5.0 real implementation):
+  "API Keys" section replaces the stub "API credentials (encrypted)":
+
+    [ Anthropic ]      [sk-ant-••••••••••••]  [Edit] [Clear]
+    [ OpenAI / Local ] [sk-••••••••••••••••]  [Edit] [Clear]
+    [ NIST NVD ]       [set]                  [Edit] [Clear]
+    [ GitHub ]         [not set]              [Edit] [Clear]
+    [ SMTP Password ]  [set]                  [Edit] [Clear]
+    [ + Add Custom ]
+
+  Each Edit → bottom sheet dialog with:
+    - Label (read-only for built-ins, editable for custom)
+    - Masked value field (show/hide toggle)
+    - [Save] [Cancel]
+  Values displayed as "set" or "not set" (never the key itself in the list).
+
+PYTHON BRIDGE (ptorrent_keys.py — new skills helper):
+  """
+  skills/ptorrent_keys.py — User API key store (Android Keystore bridge).
+  On non-Android (desktop/CI), falls back to os.environ with PTOL_ prefix.
+  """
+
+  class KeyStore:
+      _SLOTS = {
+          'anthropic':  'ANTHROPIC_API_KEY',
+          'openai':     'OPENAI_API_KEY',
+          'nist_nvd':   'PTOL_NIST_API_KEY',
+          'github':     'GITHUB_TOKEN',
+          'smtp_pass':  'PTOL_SMTP_PASS',
+      }
+
+      def get(self, slot: str) -> str | None:
+          try:
+              from jnius import autoclass
+              KeyManager = autoclass('com.ptolemy.seeder.KeyManager')
+              return KeyManager.get(slot) or None
+          except Exception:
+              # Desktop fallback
+              env_var = self._SLOTS.get(slot, slot.upper())
+              return os.environ.get(env_var)
+
+      def is_set(self, slot: str) -> bool:
+          return self.get(slot) is not None
+
+  # Singleton
+  keys = KeyStore()
+
+  Usage everywhere that previously used os.environ.get("PTOL_NIST_API_KEY"):
+    from skills.ptorrent_keys import keys
+    api_key = keys.get('nist_nvd')  # works on Android and desktop
+
+PTORRENT FILE FORMAT UPDATE (v1.1):
+  api_key_env field becomes api_key_slot:
+  Before (v1.0): "api_key_env": "ANTHROPIC_API_KEY"
+  After  (v1.1): "api_key_slot": "anthropic"
+  Backwards compatible: if api_key_env present and api_key_slot absent,
+  fall back to env var (desktop compatibility preserved).
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 2 — FILES TO CREATE/MODIFY
+═══════════════════════════════════════════════════════════════════════════════
+
+NEW FILES:
+  android/PtolemySeeder/app/src/main/java/com/ptolemy/seeder/KeyManager.java
+  android/PtolemySeeder/app/src/main/python/skills/ptorrent_keys.py
+  wiki/User-Space.md         ← architecture doc for user space
+  wiki/API-Keys.md           ← architecture doc for key store
+
+MODIFIED FILES:
+  Settings screen (SettingsActivity.kt or SettingsFragment) — API Keys section
+  SeedService.kt             ← use KeyManager.get() instead of env vars
+  skills/adapters/nist_nvd_adapter.py  ← use keys.get('nist_nvd')
+  skills/disclosure/notifier.py        ← use keys.get('anthropic') etc.
+  spec/ptorrent-format-v1.md ← document api_key_slot field (v1.1)
+  CHANGELOG.md               ← v5.0 entry
+
+UNCHANGED (explicitly):
+  ptorrent_chain.py          ← v4.0 RDOP is complete; do not touch
+  monad.py                   ← engine is stable; do not touch
+  All existing .ptorrent files ← backwards compatible; old api_key_env still works
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 3 — BUILD + RELEASE PROCEDURE
+═══════════════════════════════════════════════════════════════════════════════
+
+versionCode:  5
+versionName:  "5.0"
+build.gradle target:
+  versionCode 5
+  versionName "5.0"
+
+Build:
+  cd /media/rendier/0123-4567/PTorrent/android/PtolemySeeder
+  ./gradlew assembleDebug
+  Output: app/build/outputs/apk/debug/app-debug.apk
+  Rename: app-debug-v5.0.0.apk
+
+GitHub release tag: v5.0.0
+Release title: PTorrent v5.0 — User Space + User-Defined API Keys
+APK asset: app-debug-v5.0.0.apk
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 4 — CONTEXT: WHAT CHANGED THIS SESSION (2026-06-06)
+═══════════════════════════════════════════════════════════════════════════════
+
+UDEO DISCLOSURE SENT:
+  The UDEO white hat paper was disclosed to 4 agencies simultaneously:
+    1. CISA (primary)    vuln@cisa.dhs.gov  + CC nvd@nist.gov
+    2. MITRE CVE         cve@mitre.org      (CVE reservation)
+    3. CERT/CC           vulnreport@cert.org
+    4. Implementers      (heads-up only, no technical detail)
+  Embargo: 2026-12-02 (180 days from today)
+  CVE: RESERVED status pending MITRE assignment
+  Tim Stout received the 5th copy (private technical review).
+  Desktop: UDEO_Tim_Stout/ and UDEO_Tim_Stout_EMBARGO_2026-12-02.zip
+
+PHONE PULL (2026-06-06):
+  /media/rendier/0123-4567/phone_pull_2026-06-06/ contains:
+  - PTorrent/inbox/ : 9 σface ptorrents (allsky_2mass, desi_dr1_bao, eht_m87,
+    gaia_dr3, jwst_nirspec, planck_cmb, seti_breakthrough, vera_rubin, wmap_cmb)
+  - PTorrent/peval/ : sparc_σface.peval
+  - Ptolemy/bins/   : 10 bins (c, english, foundations, mathematics, meaning,
+    physics, python, sedenion, war, wordnet)
+  - Ptolemy/ptorrents/ : 11 ptorrents (c_posix, english_complete, fermat,
+    foundations, framenet, mathematics, meaning, physics, python,
+    riemann_zeros, and others)
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 5 — CONSTANTS AND INVARIANTS (do not rederive)
+═══════════════════════════════════════════════════════════════════════════════
+
+σ = ½                        Critical line (Riemann Hypothesis)
+d* = V(16) ≈ 1.8952×10⁻³    16-ball volume — the sedenion volume constant
+BAO freeze: n* ≈ 5.257       N-ball peak = data/code boundary
+Triple point: Quality × Quantity × Speed = σ = ½
+V(n) = π^(n/2) / Γ(n/2 + 1) CD layer transformer
+T_n/GF(2) Frobenius:  x² ∈ {0, e₀}  for all x in any Cayley-Dickson / GF(2)
+ORCID: 0009-0007-7239-6760
+Embargo: 2026-12-02
+Package: com.ptolemy.seeder (com.ptolemy.seeder.debug for debug builds)
+Chain file: /media/rendier/0123-4567/PTorrent/ptorrent_chain.json
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 6 — WHAT TO DO NEXT SESSION
+═══════════════════════════════════════════════════════════════════════════════
+
+PRIORITY 1 (v5.0 core):
+  [ ] KeyManager.java — Android Keystore AES-GCM, 5 slots + custom
+  [ ] SettingsActivity: replace API cred stubs with real KeyManager UI
+  [ ] skills/ptorrent_keys.py — Python bridge + desktop env fallback
+  [ ] Wire nist_nvd_adapter.py to use keys.get('nist_nvd')
+  [ ] Wire disclosure/notifier.py to use keys.get('anthropic'), etc.
+  [ ] Update ptorrent-format-v1.md: api_key_slot field (v1.1)
+  [ ] User Space: define userspace/ root in Settings (SAF picker)
+  [ ] SeedService: write bins to userspace/bins/ (not extDir)
+  [ ] v4.0 → v5.0 migration prompt on first launch
+  [ ] CHANGELOG.md v5.0 entry
+
+PRIORITY 2 (phone pull integration):
+  [ ] Ingest phone_pull_2026-06-06/PTorrent/inbox/ σface ptorrents
+      (allsky_2mass, desi_dr1, eht_m87, gaia_dr3, jwst_nirspec,
+       planck_cmb, seti_breakthrough, vera_rubin, wmap_cmb)
+  [ ] Ingest phone_pull_2026-06-06/Ptolemy/bins/ into userspace/bins/
+
+PRIORITY 3 (after v5.0 APK built and pushed):
+  [ ] Tim Stout copy: wait for official secure channel; zip is on desktop
+  [ ] ORCID profile completion (public, institutional = Independent Researcher)
+  [ ] Gmail app-specific password for SMTP (PTOL_SMTP_PASS)
+  [ ] NIST API key (nvd.nist.gov/developers/request-an-api-key)
+
+═══════════════════════════════════════════════════════════════════════════════
+REPOS
+═══════════════════════════════════════════════════════════════════════════════
+PTorrent / PtolemyHolcus: github.com/michaelrendier/PtolemyHolcus
+Ainulindale:              github.com/michaelrendier/Ainulindale
+Local PTorrent:           /media/rendier/0123-4567/PTorrent/
+Local Ainulindale:        /media/rendier/0123-4567/Ainulindale/

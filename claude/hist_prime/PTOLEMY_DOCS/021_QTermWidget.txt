@@ -1,0 +1,14 @@
+ITEM: QTermWidget integration
+=================================================================================================
+
+YOUR PROMPTS:
+
+"QTermWidget owns ALL display, pty, ANSI, interactive programs. Mode detector intercepts only the input bar — QTermWidget is never replaced."
+
+"QTermWidget repo (https://github.com/lxqt/qtermwidget) added to INSTALL.md as a third-party build dependency alongside vispy."
+
+"QTermWidget was originally SIP-bound from source and a CMake+SIP build script was written for Linux Mint Xia."
+
+"PtolShell wrapping QTermWidget with a MetaPrompt mode router"
+
+"Boot status: Desktop renders, Pharos responsive, sidebar present, Philadelphos boot chain successful — but window is not moveable and QTermWidget is not yet built."

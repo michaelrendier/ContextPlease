@@ -1,0 +1,12 @@
+ITEM: PtolColor / Macedonian color palette
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Macedonian shell interface and royal color palette" [session title]
+
+"Fix author email; correct Ptolemy C/O mode — BBS buffer not Commandow passthrough" [commit that also fixed PtolColor.py]
+
+[PtolColor.py: Ptolemy colour palette, built and pushed. Macedonian royal color scheme — the color identities used throughout the interface including MetaPrompt mode colors: cyan for Ptolemy C/O, green for Python3, yellow for bash, red for root.]
+
+"__author__ = 'rendier@thewanderinggod.tech'" [corrected in PtolColor.py]

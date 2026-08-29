@@ -1,0 +1,12 @@
+ITEM: GitNexus repurposed as semantic knowledge corpus visualizer
+=================================================================================================
+
+YOUR PROMPTS:
+
+"GitNexus — to be repurposed as a semantic knowledge corpus visualizer (blockchain-style HyperIndex visual showing what Ptolemy knows). Tabled for dedicated session."
+
+"GitNexus: Blockchain-input filesystem map. Content-addressed node graph. Each node = hash of content + children hashes. Merkle-tree structure over the filesystem. Diff-able by structure alone. Phaleron Face domain."
+
+"GitNexus applies the blockchain input model (content-addressed nodes, parent hashes, immutable chaining) as a filesystem map for HyperWebster space, not Ptolemy file space. HyperWebster addresses are DataInputs — full SemanticWord persistent knowledge records containing API source layers, completeness states, semantic relationship edges, and temporal provenance. A regular file manager cannot navigate this space because it has no awareness of semantic topology, acquisition state, or relationship graphs."
+
+"Redesign GitNexus as a blockchain HyperIndex visual" [added to TODO]

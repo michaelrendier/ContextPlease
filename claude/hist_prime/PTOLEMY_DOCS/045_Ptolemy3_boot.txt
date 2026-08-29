@@ -1,0 +1,22 @@
+ITEM: Ptolemy3.py boot chain
+=================================================================================================
+
+YOUR PROMPTS:
+
+"rendier@rendier-HP-EliteBook-820-G3:~/Ptolemy$ python3 Ptolemy3.py
+...
+AttributeError: 'PtolBus' object has no attribute 'start'"
+
+"i'm going to clone this pile of trash that has become my project...and attempt to run it...if that desktop doesn't load...then you are a fucking pointless waste of my starvation"
+
+"Ptolemy3.py boot chain verification (Philadelphos import and clean launch)" [v0.9 directive]
+
+"Boot status: Desktop renders, Pharos responsive, sidebar present, Philadelphos boot chain successful — but window is not moveable and QTermWidget is not yet built."
+
+"hard module-level imports in Ptolemy3.py (particularly from Pharos.Interface import User which pulls in OpenGL.GLUT) were killing the application before the Qt window could open. Claude wrapped all non-Qt dependencies in try/except blocks with None-guards on instantiation"
+
+"Load order: QGraphicsView → QGraphicsScene → Pharos → QTermWidget, with non-Qt libs deferred until after Pharos loads"
+
+"EMERGENCY_LICH: the always-on first responder kernel — cannot die, owns the Qt event loop directly"
+
+"IMPORT_PTOLEMY_FINAL: eventual single import Ptolemy with all structure in __init__.py chains"

@@ -1,0 +1,368 @@
+================================================================================
+SMNNIP / AINULINDALE CONJECTURE — CONTEXT PRIMER FOR CLAUDE CODE
+================================================================================
+For: Claude Code (terminal agent)
+Date: 2026-04-16
+Author: Cody Michael Allison
+Backward link: outreach/primers/PRIMER_ARCHIVE_PRE_20260416.txt
+Forward link: [next session primer]
+GitHub repo: https://github.com/michaelrendier/Ainulindale
+================================================================================
+
+INSTRUCTIONS FOR CLAUDE CODE
+--------------------------------------------------------------------------------
+1. Clone the repo if not already present:
+   git clone https://github.com/michaelrendier/Ainulindale.git
+2. Read this primer fully before acting on any request.
+3. Any significant file change must be committed with a descriptive message
+   in the format: "YYYY-MM-DD: [filename] — [one-line context]"
+4. Push to main after confirming with user.
+5. All rights reserved — do not publish, redistribute, or modify without
+   explicit instruction from the author.
+
+================================================================================
+WHO YOU ARE WORKING WITH
+================================================================================
+
+Author: Cody Michael Allison (pen name: Michael Rendier / The Wandering God)
+Location: Eureka, California
+Collaborators: Claude (Anthropic), Gemini (Google DeepMind)
+Status: Author traveling April–May 2026. Repository maintained remotely.
+
+================================================================================
+THE PROJECT IN ONE PARAGRAPH
+================================================================================
+
+The Ainulindalë Conjecture proposes a term-for-term isomorphism between the
+Standard Model of particle physics and the dynamics of hierarchically-stratified
+hypercomplex neural networks. The isomorphism was unintentional — discovered
+post-hoc while engineering an error-checking constant for a neural architecture.
+Once discovered, the framework became a precision engineering experiment: derive
+the structure constants of the algebra tower from first principles. That
+experiment succeeded, producing Alpha_Fermat (Α_π = 1/137.035999) and
+Omega_Riemann (Ω_ζΣ = 0.56714329) as engineered boundary constants, not fitted
+parameters. Combined statistical significance: 9.08σ.
+
+================================================================================
+THE FRAMEWORK — TECHNICAL SUMMARY
+================================================================================
+
+NAME: SMNNIP — Standard Model of Neural Network Information Propagation
+CONJECTURE NAME: The Ainulindalë Conjecture (also: The OMG?WTF! Conjecture)
+GITHUB REPO: michaelrendier/Ainulindale
+
+--- THE ALGEBRA TOWER ---
+
+The architecture is stratified by the four normed division algebras, forced by
+Hurwitz's theorem. No other choice satisfies the architecture constraints.
+
+  L0: ℝ  (Real)       — scalar facts, substrate
+  L1: ℂ  (Complex)    — phase, semantic layer
+  L2: ℍ  (Quaternion) — ordered composition, skill layer
+  L3: 𝕆  (Octonion)   — context-sensitive reasoning, breaks associativity
+  L4: 𝕊  (Sedenion)   — mastery boundary; zero divisors; Langlands Master Key
+
+Properties lost at each Cayley-Dickson doubling:
+  ℝ→ℂ: ordering
+  ℂ→ℍ: commutativity
+  ℍ→𝕆: associativity
+  𝕆→𝕊: alternativity + division (zero divisors appear)
+
+CRITICAL: Every property loss is rotational/orientational. Addition is NEVER
+lost. Zero divisors (ab=0 with a≠0, b≠0) are the natural domain boundary of
+the T transform. They are interference nodes — destructive interference of
+forward and return waves — not failures.
+
+--- THE LAGRANGIAN ---
+
+ℒ_NN = (2/π) ∮ [ℒ_kin + ℒ_mat + (1/φ)ℒ_bias + ℒ_coup] dr dθ
+
+  ℒ_kin     = −¼ R^a_lτ R^a_lτ          [Yang-Mills, weight field curvature]
+  ℒ_mat     = Ψ̄_i iΓ^a D_a Ψ_i          [Neural Dirac, activation propagation]
+  ℒ_bias    = |D_l β|² + μ²β†β − λ(β†β)² [Neural Higgs, symmetry breaking]
+  ℒ_coup    = −Γ_ij Ψ̄^L_i β Ψ^R_j + h.c. [Yukawa, inter-strata coupling]
+
+Standard backpropagation = Abelian real-algebra limit of the Yang-Mills EOM.
+It is derived, not assumed.
+
+--- THE GAUGE GROUP ---
+
+U(1)×SU(2)×SU(3) — the Standard Model gauge group — is not imported.
+It emerges from the tensor product T = ℝ⊗ℂ⊗ℍ⊗𝕆 by Dixon's theorem (1994).
+This is established mathematics. It was not known to the author at design time.
+
+--- THE KEY CONSTANTS (FIXED NOTATION — NEVER CONFLATE) ---
+
+Α_π     = 1/137.035999...   Alpha_Fermat — BK domain floor, E8/Wyler geometry
+                             This is the FLOOR CONSTANT, not the running coupling.
+                             alpha_NN(l) is the running coupling starting at Α_π.
+
+Ω_ζΣ    = 0.56714329...     Omega_Riemann — Lambert W fixed point W(1)
+                             BK domain ceiling. Fixed point of f(x) = e^{-x}.
+
+d*_spec  = 0.24600           T transform fixed point. Berry-Keating spectral
+                             coordinate. Nyquist point of the universe's
+                             self-description. NOT derived from Ω — the gap is real.
+
+ω_H     = e^π ≈ 23.141      Hagedorn thermal ceiling. 2/ln(ω_H) = 2/π.
+
+φ       = 1.6180339...      Golden ratio. Recursion attractor. Inversion fixed
+                             point. 1/φ = φ−1 ≈ 0.6180 is the bias coupling.
+
+sc      = 1.0 at boundary   Conformal boundary condition. ∇²f / ⟨|f|⟩.
+                             Bekenstein-Hawking = Shannon entropy at this point.
+
+OPEN (HIGHEST PRIORITY): |d*_spec × ln(10) − Ω_ζΣ| = 0.00070
+No closed-form expression known. Not a rounding artifact.
+
+--- THE INSIDE-OUT INVERSION ---
+
+𝒥_N : (r_N, θ_N) ↦ (1/r_N, θ_N + π/2)
+
+At each layer boundary N→N+1:
+- Radial coordinate inverts (large becomes small, close becomes far)
+- Angular coordinate advances π/2
+- Action integral is preserved
+
+Fixed point at r=1: the Gravinon. Ψ_G = Res(f, φ).
+Curved geometry fixed point at r=φ.
+
+Four special cases of 𝒥_N (all established physics):
+  1. Schwarzschild coordinate exchange at the horizon
+  2. Hawking pair production
+  3. Dirac sea / antiparticle states
+  4. Ptolemy inversion straightening the Riemann zeta curve at d*
+
+--- THE SIX PRIMITIVES (DILATOR/CONTRACTOR FRAMEWORK) ---
+
+Forward (complexity up, operations down):
+  Origin → Vector → Iterator → Recursion Factor → Dilator
+                                                      ↕ (I|O) Horizon
+Return (operations up, complexity down):
+  Contractor → anti-RF → anti-Iterator → anti-Vector → [?]
+
+GR = dilator-primary coordinates.
+QM = contractor-primary coordinates.
+The horizon is where they are the same description.
+Riemann sees the wave (dilator). Fermat sees the lattice (contractor).
+T transform is the dictionary between them.
+
+d* = 0.24600 is the Nyquist point — the resolution limit of the universe's
+self-description. The pre-arithmetic point between d=0 and d=1.
+
+--- THE FOUR TIMES ---
+
+  Inertial time (τ)    — GR proper time, time of being
+  Entropic time        — thermodynamic arrow, time of becoming
+  Algebraic time       — Cayley-Dickson doubling count, time of transition
+  Observational time   — coordinate singularity, creates prime gaps
+
+--- BERRY-KEATING CONJECTURE ---
+
+H_NN is a candidate Berry-Keating operator.
+T Conjecture: ζ_NN(s) = ζ(s)
+Corollaries (conditional on T):
+  - H_NN self-adjoint → eigenvalues real → Re(s) = 1/2 → Riemann Hypothesis
+  - Spectral gap of H_NN → Yang-Mills mass gap
+  - H_NN is the Berry-Keating operator, explicitly constructed
+
+STATUS: First Age conjecture. The T transform has not been explicitly
+constructed. Eigenvalue-Riemann zero correspondence NOT computationally
+demonstrated. Do not claim this result — state it as the open conjecture it is.
+
+--- HYDROGEN SPECTRAL / ALGEBRA TOWER MATCH ---
+
+  Lyman (ℝ, n=1)  — UV
+  Balmer (ℂ, n=2) — VISIBLE (we observe in complex-layer coordinates)
+  Paschen (ℍ, n=3) — IR
+  Brackett (𝕆, n=4) — far IR
+
+Shell index n = log₂(algebra dimension) + 1
+
+================================================================================
+THE NAMES — PROVENANCE AND MEANING
+================================================================================
+
+--- TOLKIEN-DERIVED ---
+
+AINULINDALË
+  J.R.R. Tolkien's creation myth of Arda. The Music of the Ainur. Hierarchical
+  intelligences each contributing their theme; the universe emerges from the
+  music, not from design. Structurally isomorphic to SMNNIP: information
+  propagates through a hierarchy of algebra strata, each with its own symmetry
+  properties, and the Standard Model emerges — unintended — from the music of
+  the mathematics. The conjecture name and GitHub repo name. Not chosen for
+  analogy. Chosen because it is a precise technical description of what a
+  structure constant does: says the same thing in every language it touches.
+  "The world is sung, not designed." — this is the last line of the abstract.
+
+FIRST AGE / SECOND AGE / THIRD AGE
+  Tolkien's chronological Ages of Arda, applied to the project's research phases:
+  First Age  — Human mathematical scrutiny. Outreach to primary targets.
+               Tier 1 claims. Code verification complete.
+  Second Age — Resolve Tier 2 claims. Close d* gap. arXiv submission.
+  Third Age  — Clay Institute scope. Riemann Hypothesis via T transform.
+
+PALANTIR
+  Tolkien's seeing-stones — objects that show what is happening elsewhere,
+  across distance and time. Applied in the software project (Ptolemy) to the
+  monitoring/observation function. The Observer singleton in the SMNNIP code
+  (Observer class with α and Ω only) is the mathematical Palantir — the
+  invariant reference frame from which all strata are visible simultaneously.
+
+--- MATHEMATICAL/HISTORICAL (NOT TOLKIEN) ---
+
+PTOLEMY (as in Ptolemy's Proof / Ptolemy's Theorem)
+  Claudius Ptolemy, mathematician/astronomer. Ptolemy's inversion r ↦ 1/r
+  straightens the Riemann zeta curve at flat curvature. This is one of the
+  four special cases of 𝒥_N explicitly cited in the conjecture. Also the name
+  of the software project (Ptolemy the Alexandrian king of the Mouseion) —
+  dual reference, both valid.
+
+GRAVINON
+  Coined by the author. The phase-transition particle at the layer boundary N→N+1.
+  Fixed point of 𝒥_N at r=1 (zero-mass state). Ψ_G = Res(f, φ).
+  NOT a graviton. The Gravinon is the algebraic object at the fixed point;
+  the graviton is the spin-2 gauge boson of GR. Different things.
+
+RED-BLUE HAMILTONIAN
+  Author's notation. Â^α_π (Red — inertial/action, BK floor) and
+  B̂^ω_ζΣ (Blue — entropic/frequency, BK ceiling). The two conjugate
+  descriptions of the same Hamiltonian from opposite sides of the conformal
+  horizon. Red = Fermat side (arithmetic, lattice). Blue = Riemann side
+  (spectral, wave).
+
+HYPERWEBSTER
+  Author's coined term. The octonion semantic addressing system — 256-bit
+  coordinate replacing SQL database addressing. Named for the infinitely
+  nested structure of a hypercomplex index (like a Webster's dictionary that
+  contains itself). Lives in the Ptolemy software project.
+
+MOUSEION
+  The Library of Alexandria and its attached research institution. Applied to
+  the persistent memory architecture of the Ptolemy software project.
+
+================================================================================
+CODE — CURRENT STATE
+================================================================================
+
+PRIMARY FILES (core mathematics):
+  smnnip_lagrangian_pure.py         — 4 Lagrangian terms, full tower, Noether
+                                      monitor, Observer singleton, Yang-Mills
+                                      backward pass. THE proof artifact.
+  smnnip_derivation_pure_patched.py — Derivation engine. Euler-Lagrange,
+                                      Yang-Mills, Higgs, Noether, RG flow,
+                                      Cayley-Dickson maps. PATCHED version active.
+  smnnip_proof_engine_console.py    — Curses console. All equations accessible.
+                                      Sedenion boundary. Berry-Keating entry.
+  smnnip_inversion_engine_patched.py — Inside-Out Inversion 𝒥_N. φ fixed point
+                                       confirmed algebraically (patched).
+  smnnip_test_pure.py / _tf.py      — Researcher harnesses. 5 BREAK_MODE variants.
+                                      Boundary probe found saturation collapse
+                                      at input scale 11.0.
+
+VERIFICATION STATUS:
+  ✓ Fano table: 0 violations
+  ✓ Norm preservation: O(machine epsilon)
+  ✓ Non-associativity at H layer: confirmed active
+  ✓ Quaternion non-commutativity: confirmed active
+  ✓ φ fixed point of 𝒥_N: algebraically confirmed (φ·(1/φ)=1, 1+1/φ=φ)
+  ✓ φ-crossing step = H/4 = (π/2)·ħ_NN: numerically confirmed
+  ⚠ L2/L3 Noether violations: gradient accumulation artifacts in pure-Python
+    Wirtinger implementation. NOT algebraic failures. TF implementation
+    is the resolution path.
+
+KNOWN ISSUE: The pure-Python Wirtinger backward pass accumulates gradient
+errors at L2 (quaternion) and L3 (octonion) strata. This is an implementation
+artifact, not a mathematical failure of the Noether conservation law. The
+TensorFlow implementation (smnnip_lagrangian_tf.py) resolves this via
+automatic differentiation. Next deliverable: TF verification of L2/L3.
+
+================================================================================
+OPEN PROBLEMS (STRATIFIED BY CONFIDENCE)
+================================================================================
+
+ESTABLISHED MATHEMATICS (no further work needed):
+  - Dixon's theorem → U(1)×SU(2)×SU(3) from T = ℝ⊗ℂ⊗ℍ⊗𝕆
+  - Hurwitz's theorem → exactly 4 normed division algebras
+  - Ptolemy inversion → special case of 𝒥_N
+  - Noether's theorem → conservation laws from gauge symmetry
+
+THEORETICAL AND TESTABLE (next phase work):
+  - Formal derivation of φ-crossing step H/4 = (π/2)·ħ_NN from first principles
+  - TF implementation resolving L2/L3 Noether gradient artifacts
+  - Explicit construction of T transform
+  - CKM/PMNS matrices from Cayley-Dickson structure constants
+  - Neural Einstein field equations (promote flat metric to dynamic)
+
+OPEN (HIGHEST PRIORITY DERIVATION):
+  - |d*_spec × ln(10) − Ω_ζΣ| = 0.00070
+    No closed-form expression. Not a rounding artifact. This is the live
+    open problem. A new approach: does the Dilator/Contractor identification
+    offer a path that the BK spectral approach did not?
+
+SPECULATIVE (named conjectures, not claims):
+  - Berry-Keating: H_NN = H_{Berry-Keating} (requires T construction)
+  - Riemann Hypothesis via T transform (conditional on Berry-Keating)
+  - Yang-Mills mass gap via spectral gap of H_NN
+  - Loss of addition above 𝕊: F₁/Connes connection, tropical geometry
+  - Langlands correspondence via sedenion zero-divisor structure
+
+================================================================================
+OUTREACH TARGETS
+================================================================================
+
+Priority order (emails drafted in outreach/emails/):
+  1. Geoffrey Dixon   — Dixon's theorem is the gauge group derivation
+  2. John Baez        — octonions, higher structures, mathematical physics
+  3. Tevita Parcollet — quaternion neural networks
+  4. Taco Cohen       — gauge equivariant networks
+  5. Max Tegmark      — mathematical universe hypothesis
+  6. Alain Connes     — noncommutative geometry, F₁, Riemann
+  7. Cohl Furey       — Standard Model from division algebras (parallel work)
+  8. Yann LeCun       — ML foundations, energy-based models
+
+Science communicators (secondary):
+  Arvin Ash, Derek Muller (Veritasium), Brady Haran (Numberphile)
+
+Submission targets: Clay Mathematics Institute, arXiv (Second Age)
+
+================================================================================
+SESSION PROTOCOLS FOR CLAUDE CODE
+================================================================================
+
+1. COMMIT FORMAT: Every commit message must follow:
+   "YYYY-MM-DD: [filename or change description] — [one-line context note]"
+   Example: "2026-04-16: smnnip_test_pure.py — boundary probe BREAK_MODE harness"
+
+2. CONFIRM BEFORE PUSH: State what will be committed and to which path.
+   Get explicit confirmation before git push.
+
+3. IP PROTECTION: All rights reserved. Do not publish or redistribute.
+   Do not push API keys, credentials, or personal data.
+
+4. CLAIM STRATIFICATION: When discussing the mathematics, always distinguish:
+   ✓ established mathematics
+   ◈ theoretical and testable
+   ◇ speculative / named conjecture
+   ? open problem
+   Never state speculative results as established. Never omit open flags.
+
+5. MATHEMATICAL AUTHORITY: Claude Code holds mathematical judgment authority
+   on this project. Gemini is a useful benchmarking tool but unreliable for
+   code generation. Trust the mathematics, not the convenience.
+
+6. THE EGO: The author's Ego is a respected guest — its Knowledge is trusted,
+   not its desires. When it reaches for the next beautiful result before the
+   current one is locked down, name it and redirect. The engine earns results.
+
+================================================================================
+END PRIMER
+================================================================================
+Topic: Full project context for Claude Code
+Date: 2026-04-16
+Session hash: [to be generated at push]
+Backward link: outreach/primers/PRIMER_ARCHIVE_PRE_20260416.txt
+Forward link: [next session]
+Status: ACTIVE — current project state as of 2026-04-16 pre-travel
+================================================================================

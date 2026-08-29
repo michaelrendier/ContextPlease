@@ -1,0 +1,14 @@
+ITEM: System/architecture wiki pages (still needed): SMIP, LuthSpell, PtolBus, LSH_Datatype, CyclicContextBuffer, PtolShell, Aule_Sanitation, Blockchain, Callimachus_v09, Ainulindale
+=================================================================================================
+
+YOUR PROMPTS:
+
+"System/architecture pages still needed: SMIP, LuthSpell, PtolBus, LSH_Datatype, CyclicContextBuffer, PtolShell, Aule_Sanitation, Blockchain, Callimachus_v09, Ainulindale"
+
+"Wiki pages still needed — System/Architecture (10): SMIP, LuthSpell, PtolBus, LSH_Datatype, CyclicContextBuffer, PtolShell, Aule_Sanitation, Blockchain, Callimachus_v09, Ainulindale" [from primer May 4]
+
+"Ptolemy wiki is THE backbone. All other repos link back here."
+
+"SMIP is not a CDNN, not a hypercomplex perceptron. It's a monolith. The distinction is worth one clear paragraph in the SMIP wiki page — acknowledges the related field, states clearly why the architecture diverges."
+
+[These 10 pages are documented as STILL NEEDED as of May 4 2026 — not yet written or pushed.]

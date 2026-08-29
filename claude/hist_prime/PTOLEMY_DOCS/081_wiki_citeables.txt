@@ -1,0 +1,18 @@
+ITEM: Citeables wiki pages (still needed): CohlFurey, KajetanMlynarski, LambertW, Langlands, Hagedorn, AinulindaléConjecture, YangMills, JohnBaez
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Citeables (8): CohlFurey, KajetanMlynarski, LambertW, Langlands, Hagedorn, AinulindaléConjecture, YangMills, JohnBaez" [from primer — still needed]
+
+[These 8 citeable reference pages are documented as STILL NEEDED as of May 4 2026.]
+
+[Context on each:]
+CohlFurey — octonion/sedenion physics researcher
+KajetanMlynarski — mathematical physics, relevant to SMIP
+LambertW — Lambert W function (D_STAR_TAUT = Omega/ln(10) connection)
+Langlands — Langlands program, connections to gauge theory
+Hagedorn — Hagedorn temperature (omega_H = e^pi, Tongue G:A:V ratio)
+AinulindaléConjecture — the conjecture itself as a citeable page
+YangMills — Yang-Mills equations (engine module)
+JohnBaez — mathematical physics, octonions, cited work

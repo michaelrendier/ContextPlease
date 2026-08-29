@@ -1,0 +1,1320 @@
+{
+  "generated": "2026-08-28",
+  "note": "All context/session primers migrated out of every ThePlace repo into hist_prime/, organised by originating repo. PTOLEMY_DOCS moved wholesale & deleted. TODOs copied (originals remain) into hist_todo/. git history in each source repo preserves pre-move lineage.",
+  "hist_prime": {
+    "root": "ContextPlease/claude/hist_prime",
+    "totals": {
+      "files": 194,
+      "txt": 174,
+      "md": 19,
+      "other": 1,
+      "bytes": 1522666
+    },
+    "repos": {
+      "Ainulindale": {
+        "file_count": 30,
+        "by_ext": {
+          ".txt": 29,
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "AgeFirst/original_2026/ResearchPaper/FirstDraft/FirstAge/gradient-flow-primer.txt",
+            "ext": ".txt",
+            "bytes": 7386
+          },
+          {
+            "path": "AgeFirst/original_2026/ResearchPaper/context_primer.txt",
+            "ext": ".txt",
+            "bytes": 12288
+          },
+          {
+            "path": "AgeFirst/original_2026/ResearchPaper/gemini_context_primer.txt",
+            "ext": ".txt",
+            "bytes": 2796
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-05-30_APK_V2_ADDPAPERS.txt",
+            "ext": ".txt",
+            "bytes": 17657
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-06-10_FIXED_POINT_SONGS.txt",
+            "ext": ".txt",
+            "bytes": 13079
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-06-30_UDEO_TRANSLATOR.txt",
+            "ext": ".txt",
+            "bytes": 15332
+          },
+          {
+            "path": "NATIVE_SPACE_PRIMER.md",
+            "ext": ".md",
+            "bytes": 5713
+          },
+          {
+            "path": "media/add-reading/thebigquestion_primer.txt",
+            "ext": ".txt",
+            "bytes": 8028
+          },
+          {
+            "path": "outreach/SESSION_PRIMER_SMNNIP.txt",
+            "ext": ".txt",
+            "bytes": 4301
+          },
+          {
+            "path": "outreach/primers/AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt",
+            "ext": ".txt",
+            "bytes": 41759
+          },
+          {
+            "path": "outreach/primers/CONTEXT_PRIMER_SEMANTIC_ENGINE_2026-05-11.txt",
+            "ext": ".txt",
+            "bytes": 5975
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-04-17_noether_ocr.txt",
+            "ext": ".txt",
+            "bytes": 8719
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-05-03_four_phases.txt",
+            "ext": ".txt",
+            "bytes": 12070
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-05-03_phase3_qt_viewer.txt",
+            "ext": ".txt",
+            "bytes": 12482
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-05-14_genetic_genomic.txt",
+            "ext": ".txt",
+            "bytes": 11632
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-05-16_second_age_conjecture_complete.txt",
+            "ext": ".txt",
+            "bytes": 11684
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-05-27_DarkMatter_NoParticle_Datasets.txt",
+            "ext": ".txt",
+            "bytes": 23843
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-06-02_FORCED.txt",
+            "ext": ".txt",
+            "bytes": 3441
+          },
+          {
+            "path": "outreach/primers/PRIMER_2026-06-02_session_architecture.txt",
+            "ext": ".txt",
+            "bytes": 5100
+          },
+          {
+            "path": "outreach/primers/PRIMER_ARCHIVE_PRE_20260416.txt",
+            "ext": ".txt",
+            "bytes": 17100
+          },
+          {
+            "path": "outreach/primers/PRIMER_BCE_ConformalHorizon_T_20260415.txt",
+            "ext": ".txt",
+            "bytes": 10216
+          },
+          {
+            "path": "outreach/primers/PRIMER_FOR_CLAUDE_CODE_20260416.txt",
+            "ext": ".txt",
+            "bytes": 18035
+          },
+          {
+            "path": "outreach/primers/PRIMER_HilbertLaplacian_T_Sonification_20260415.txt",
+            "ext": ".txt",
+            "bytes": 6337
+          },
+          {
+            "path": "outreach/primers/PRIMER_MASTERS_TRIBUTE_NOETHER_20260417.txt",
+            "ext": ".txt",
+            "bytes": 13156
+          },
+          {
+            "path": "outreach/primers/PRIMER_Millennium_Prize_Path.txt",
+            "ext": ".txt",
+            "bytes": 14432
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_SESSION_PRIMER_20260418b.txt",
+            "ext": ".txt",
+            "bytes": 18177
+          },
+          {
+            "path": "outreach/primers/SESSION_PRIMER_2026-05-03.txt",
+            "ext": ".txt",
+            "bytes": 8196
+          },
+          {
+            "path": "outreach/primers/SESSION_PRIMER_CONSTANTS_DECOHERENCE_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 6943
+          },
+          {
+            "path": "outreach/primers/SESSION_PRIMER_DILATOR_CONTRACTOR_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 9575
+          },
+          {
+            "path": "outreach/primers/SESSION_PRIMER_VOID_LATTICE_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 8028
+          }
+        ]
+      },
+      "ArdaQuenta": {
+        "file_count": 1,
+        "by_ext": {
+          ".txt": 1
+        },
+        "files": [
+          {
+            "path": "CONTEXT_PRIMER_2026-05-30.txt",
+            "ext": ".txt",
+            "bytes": 8745
+          }
+        ]
+      },
+      "BulletCluster": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "CLAUDE_PRIMER.md",
+            "ext": ".md",
+            "bytes": 21026
+          }
+        ]
+      },
+      "FourthAgePapers": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "SESSION_CONTEXT_2026-07-29.md",
+            "ext": ".md",
+            "bytes": 15248
+          }
+        ]
+      },
+      "PDesktop": {
+        "file_count": 3,
+        "by_ext": {
+          ".txt": 3
+        },
+        "files": [
+          {
+            "path": "AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt",
+            "ext": ".txt",
+            "bytes": 41771
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-06-06_PTorrent_V5_USERSPACE_APIKEYS.txt",
+            "ext": ".txt",
+            "bytes": 17222
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-06-14_GENOME_SPIRAL_NARRATIVE.txt",
+            "ext": ".txt",
+            "bytes": 11723
+          }
+        ]
+      },
+      "POE": {
+        "file_count": 2,
+        "by_ext": {
+          ".md": 2
+        },
+        "files": [
+          {
+            "path": "architecture_primer.md",
+            "ext": ".md",
+            "bytes": 13713
+          },
+          {
+            "path": "hardware_primer.md",
+            "ext": ".md",
+            "bytes": 9462
+          }
+        ]
+      },
+      "PTOLEMY_DOCS": {
+        "file_count": 89,
+        "by_ext": {
+          ".txt": 88,
+          ".html": 1
+        },
+        "files": [
+          {
+            "path": "001_LLH_system.txt",
+            "ext": ".txt",
+            "bytes": 1382
+          },
+          {
+            "path": "002_SMIP_pipeline.txt",
+            "ext": ".txt",
+            "bytes": 2030
+          },
+          {
+            "path": "003_HyperWebster.txt",
+            "ext": ".txt",
+            "bytes": 1981
+          },
+          {
+            "path": "004_SemanticWord_LSH.txt",
+            "ext": ".txt",
+            "bytes": 2536
+          },
+          {
+            "path": "005_9layer_reduction.txt",
+            "ext": ".txt",
+            "bytes": 1404
+          },
+          {
+            "path": "006_Dixon_algebra_towers.txt",
+            "ext": ".txt",
+            "bytes": 1094
+          },
+          {
+            "path": "007_HyperDatabase.txt",
+            "ext": ".txt",
+            "bytes": 1058
+          },
+          {
+            "path": "008_HyperGallery.txt",
+            "ext": ".txt",
+            "bytes": 1621
+          },
+          {
+            "path": "009_Callimachus_v09.txt",
+            "ext": ".txt",
+            "bytes": 983
+          },
+          {
+            "path": "010_CyclicContextBuffer.txt",
+            "ext": ".txt",
+            "bytes": 2099
+          },
+          {
+            "path": "011_LuthSpell.txt",
+            "ext": ".txt",
+            "bytes": 2243
+          },
+          {
+            "path": "012_PtolBus.txt",
+            "ext": ".txt",
+            "bytes": 1544
+          },
+          {
+            "path": "013_PtolChain_Blockchain.txt",
+            "ext": ".txt",
+            "bytes": 1359
+          },
+          {
+            "path": "014_ForgeQueue.txt",
+            "ext": ".txt",
+            "bytes": 924
+          },
+          {
+            "path": "015_Aule_sanitation.txt",
+            "ext": ".txt",
+            "bytes": 614
+          },
+          {
+            "path": "016_5thread_model.txt",
+            "ext": ".txt",
+            "bytes": 1436
+          },
+          {
+            "path": "017_PtolShell_MetaPrompt.txt",
+            "ext": ".txt",
+            "bytes": 1307
+          },
+          {
+            "path": "018_JACK_process_graph.txt",
+            "ext": ".txt",
+            "bytes": 922
+          },
+          {
+            "path": "019_Sidebar.txt",
+            "ext": ".txt",
+            "bytes": 501
+          },
+          {
+            "path": "020_dual_system_tray.txt",
+            "ext": ".txt",
+            "bytes": 403
+          },
+          {
+            "path": "021_QTermWidget.txt",
+            "ext": ".txt",
+            "bytes": 763
+          },
+          {
+            "path": "022_window_moveable.txt",
+            "ext": ".txt",
+            "bytes": 841
+          },
+          {
+            "path": "023_Settings_system.txt",
+            "ext": ".txt",
+            "bytes": 914
+          },
+          {
+            "path": "024_Modules_directory.txt",
+            "ext": ".txt",
+            "bytes": 1100
+          },
+          {
+            "path": "025_PtolFace_mixin.txt",
+            "ext": ".txt",
+            "bytes": 669
+          },
+          {
+            "path": "026_FaceIdentity.txt",
+            "ext": ".txt",
+            "bytes": 496
+          },
+          {
+            "path": "027_PtolDmesg.txt",
+            "ext": ".txt",
+            "bytes": 754
+          },
+          {
+            "path": "028_PtolColor.txt",
+            "ext": ".txt",
+            "bytes": 676
+          },
+          {
+            "path": "029_TuningDisplay.txt",
+            "ext": ".txt",
+            "bytes": 746
+          },
+          {
+            "path": "030_PtolDesktop.txt",
+            "ext": ".txt",
+            "bytes": 1105
+          },
+          {
+            "path": "031_ArchimedesShell.txt",
+            "ext": ".txt",
+            "bytes": 736
+          },
+          {
+            "path": "032_Alexandria_FractalRenderer.txt",
+            "ext": ".txt",
+            "bytes": 1313
+          },
+          {
+            "path": "033_Tesla_SensorStream.txt",
+            "ext": ".txt",
+            "bytes": 714
+          },
+          {
+            "path": "034_Kryptos_KCF.txt",
+            "ext": ".txt",
+            "bytes": 948
+          },
+          {
+            "path": "035_Philadelphos_Julius_Caesar.txt",
+            "ext": ".txt",
+            "bytes": 983
+          },
+          {
+            "path": "036_Mouseion.txt",
+            "ext": ".txt",
+            "bytes": 667
+          },
+          {
+            "path": "037_Truth_Propaganda.txt",
+            "ext": ".txt",
+            "bytes": 731
+          },
+          {
+            "path": "038_GitNexus.txt",
+            "ext": ".txt",
+            "bytes": 1151
+          },
+          {
+            "path": "039_filesystem_ingest.txt",
+            "ext": ".txt",
+            "bytes": 863
+          },
+          {
+            "path": "040_acquire_py.txt",
+            "ext": ".txt",
+            "bytes": 1502
+          },
+          {
+            "path": "041_acquire_inline.txt",
+            "ext": ".txt",
+            "bytes": 616
+          },
+          {
+            "path": "042_LorenzStirling.txt",
+            "ext": ".txt",
+            "bytes": 886
+          },
+          {
+            "path": "043_SMIP_engines_13_17.txt",
+            "ext": ".txt",
+            "bytes": 1071
+          },
+          {
+            "path": "044_SMNNIPEngine_ABC.txt",
+            "ext": ".txt",
+            "bytes": 916
+          },
+          {
+            "path": "045_Ptolemy3_boot.txt",
+            "ext": ".txt",
+            "bytes": 1323
+          },
+          {
+            "path": "046_Flutter_client.txt",
+            "ext": ".txt",
+            "bytes": 594
+          },
+          {
+            "path": "047_SERVER_SPEC.txt",
+            "ext": ".txt",
+            "bytes": 505
+          },
+          {
+            "path": "048_Ptolemy_plusplus.txt",
+            "ext": ".txt",
+            "bytes": 1228
+          },
+          {
+            "path": "049_WalkTheHallway.txt",
+            "ext": ".txt",
+            "bytes": 2029
+          },
+          {
+            "path": "050_HolePunch_KVM.txt",
+            "ext": ".txt",
+            "bytes": 785
+          },
+          {
+            "path": "051_openStanDev_stub.txt",
+            "ext": ".txt",
+            "bytes": 919
+          },
+          {
+            "path": "052_LLM_to_LSH_sweep.txt",
+            "ext": ".txt",
+            "bytes": 980
+          },
+          {
+            "path": "053_GitNexus_HyperIndex.txt",
+            "ext": ".txt",
+            "bytes": 1002
+          },
+          {
+            "path": "054_Ainulindale_conjecture_restructure.txt",
+            "ext": ".txt",
+            "bytes": 1420
+          },
+          {
+            "path": "055_Nature_paper.txt",
+            "ext": ".txt",
+            "bytes": 1453
+          },
+          {
+            "path": "056_Ptolemy_Wiki.txt",
+            "ext": ".txt",
+            "bytes": 927
+          },
+          {
+            "path": "057_GrammarNeuron.txt",
+            "ext": ".txt",
+            "bytes": 1266
+          },
+          {
+            "path": "058_WordMonad_isolation.txt",
+            "ext": ".txt",
+            "bytes": 965
+          },
+          {
+            "path": "059_Tongue_output_tuner.txt",
+            "ext": ".txt",
+            "bytes": 1742
+          },
+          {
+            "path": "060_Noether_Information_Current.txt",
+            "ext": ".txt",
+            "bytes": 1456
+          },
+          {
+            "path": "061_DataInput_bus_command.txt",
+            "ext": ".txt",
+            "bytes": 1165
+          },
+          {
+            "path": "062_PROCESSOR_VISION.txt",
+            "ext": ".txt",
+            "bytes": 1114
+          },
+          {
+            "path": "063_docs_HYPERWEBSTER.txt",
+            "ext": ".txt",
+            "bytes": 1045
+          },
+          {
+            "path": "064_docs_ErrorCatalog.txt",
+            "ext": ".txt",
+            "bytes": 1038
+          },
+          {
+            "path": "065_docs_INDEX.txt",
+            "ext": ".txt",
+            "bytes": 418
+          },
+          {
+            "path": "066_docs_faces.txt",
+            "ext": ".txt",
+            "bytes": 1411
+          },
+          {
+            "path": "067_CONTEXT_PRIMER_system.txt",
+            "ext": ".txt",
+            "bytes": 1192
+          },
+          {
+            "path": "068_Ainulindale_8_engines.txt",
+            "ext": ".txt",
+            "bytes": 1406
+          },
+          {
+            "path": "069_Qt_viewer_curses.txt",
+            "ext": ".txt",
+            "bytes": 759
+          },
+          {
+            "path": "070_Ainulindale_wiki_13.txt",
+            "ext": ".txt",
+            "bytes": 915
+          },
+          {
+            "path": "071_TODO_md.txt",
+            "ext": ".txt",
+            "bytes": 724
+          },
+          {
+            "path": "072_Sonification.txt",
+            "ext": ".txt",
+            "bytes": 822
+          },
+          {
+            "path": "073_UniversalSynth.txt",
+            "ext": ".txt",
+            "bytes": 593
+          },
+          {
+            "path": "074_DerivationEngine.txt",
+            "ext": ".txt",
+            "bytes": 864
+          },
+          {
+            "path": "075_SMIP_repo.txt",
+            "ext": ".txt",
+            "bytes": 1126
+          },
+          {
+            "path": "076_wiki_30_pages.txt",
+            "ext": ".txt",
+            "bytes": 1105
+          },
+          {
+            "path": "077_MathLex_lessons.txt",
+            "ext": ".txt",
+            "bytes": 851
+          },
+          {
+            "path": "078_fractal_derivation_pages.txt",
+            "ext": ".txt",
+            "bytes": 857
+          },
+          {
+            "path": "079_wiki_historical_figures.txt",
+            "ext": ".txt",
+            "bytes": 1607
+          },
+          {
+            "path": "080_wiki_system_architecture_pages.txt",
+            "ext": ".txt",
+            "bytes": 1058
+          },
+          {
+            "path": "081_wiki_citeables.txt",
+            "ext": ".txt",
+            "bytes": 1009
+          },
+          {
+            "path": "082_MathLex_index.txt",
+            "ext": ".txt",
+            "bytes": 781
+          },
+          {
+            "path": "083_Pharos_Settings.txt",
+            "ext": ".txt",
+            "bytes": 908
+          },
+          {
+            "path": "084_PGui_window_manager.txt",
+            "ext": ".txt",
+            "bytes": 4624
+          },
+          {
+            "path": "ATTACK_PLAN.txt",
+            "ext": ".txt",
+            "bytes": 23851
+          },
+          {
+            "path": "All_The_Maths.txt",
+            "ext": ".txt",
+            "bytes": 22593
+          },
+          {
+            "path": "additional_ainulindale.html",
+            "ext": ".html",
+            "bytes": 15307
+          },
+          {
+            "path": "additional_ainulindale.txt",
+            "ext": ".txt",
+            "bytes": 19280
+          },
+          {
+            "path": "opengpt.txt",
+            "ext": ".txt",
+            "bytes": 43351
+          }
+        ]
+      },
+      "PTorrent": {
+        "file_count": 2,
+        "by_ext": {
+          ".md": 2
+        },
+        "files": [
+          {
+            "path": "wiki/PRIMER_C_CORE_AND_CURSES_FACE.md",
+            "ext": ".md",
+            "bytes": 17412
+          },
+          {
+            "path": "wiki/claude_code_context_primer.md",
+            "ext": ".md",
+            "bytes": 17171
+          }
+        ]
+      },
+      "PtolemyDesktop": {
+        "file_count": 27,
+        "by_ext": {
+          ".md": 5,
+          ".txt": 22
+        },
+        "files": [
+          {
+            "path": ".primers/CONTEXT_PRIMER.md",
+            "ext": ".md",
+            "bytes": 5478
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-01.txt",
+            "ext": ".txt",
+            "bytes": 4929
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-02.txt",
+            "ext": ".txt",
+            "bytes": 8713
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-02B.txt",
+            "ext": ".txt",
+            "bytes": 9800
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-02C.txt",
+            "ext": ".txt",
+            "bytes": 9600
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-03.txt",
+            "ext": ".txt",
+            "bytes": 7827
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-03D.txt",
+            "ext": ".txt",
+            "bytes": 8225
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-03E.txt",
+            "ext": ".txt",
+            "bytes": 8656
+          },
+          {
+            "path": ".primers/CONTEXT_PRIMER_2026-05-03F.txt",
+            "ext": ".txt",
+            "bytes": 9915
+          },
+          {
+            "path": ".primers/PRIMER_NEXT_CHAT.txt",
+            "ext": ".txt",
+            "bytes": 3616
+          },
+          {
+            "path": ".primers/context_primer.txt",
+            "ext": ".txt",
+            "bytes": 7114
+          },
+          {
+            "path": "BUILD_PRIMER_2026-05-15.md",
+            "ext": ".md",
+            "bytes": 16731
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-05-04.txt",
+            "ext": ".txt",
+            "bytes": 1491
+          },
+          {
+            "path": "PRIMER_2026-05-14_bao_error_check.txt",
+            "ext": ".txt",
+            "bytes": 6055
+          },
+          {
+            "path": "PRIMER_2026-05-14_monad_build.txt",
+            "ext": ".txt",
+            "bytes": 15839
+          },
+          {
+            "path": "PRIMER_2026-05-14_synthesis_engine.txt",
+            "ext": ".txt",
+            "bytes": 15778
+          },
+          {
+            "path": "Philadelphos/PTOLEMY_ARCHITECTURE_PRIMER.txt",
+            "ext": ".txt",
+            "bytes": 14887
+          },
+          {
+            "path": "Philadelphos/indexing_context_briefing.txt",
+            "ext": ".txt",
+            "bytes": 22453
+          },
+          {
+            "path": "docs/submission/Clay_Research_Award_Primer.md",
+            "ext": ".md",
+            "bytes": 3458
+          },
+          {
+            "path": "docs/submission/Nature_Submission_Primer.md",
+            "ext": ".md",
+            "bytes": 5308
+          },
+          {
+            "path": "docs/submission/Second_Submission_Primer_PRL.md",
+            "ext": ".md",
+            "bytes": 4366
+          },
+          {
+            "path": "outreach/PTOLEMY_SESSION_PRIMER_20260418.txt",
+            "ext": ".txt",
+            "bytes": 2442
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_CATASTROPHIC_OUTPUT_PRIMER.txt",
+            "ext": ".txt",
+            "bytes": 9531
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_OUTPUT_CONTEXT_PRIMER_20260420.txt",
+            "ext": ".txt",
+            "bytes": 4266
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_SESSION_PRIMER_20260418b.txt",
+            "ext": ".txt",
+            "bytes": 18177
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_SESSION_PRIMER_20260420.txt",
+            "ext": ".txt",
+            "bytes": 13191
+          },
+          {
+            "path": "outreach/primers/PTOLEMY_SESSION_PRIMER_20260429.txt",
+            "ext": ".txt",
+            "bytes": 3673
+          }
+        ]
+      },
+      "RiemannHypothesisProof": {
+        "file_count": 2,
+        "by_ext": {
+          ".txt": 2
+        },
+        "files": [
+          {
+            "path": "Proof-context.txt",
+            "ext": ".txt",
+            "bytes": 1673
+          },
+          {
+            "path": "outreach/primers/CONTEXT_PRIMER_RH_2026-05-11.txt",
+            "ext": ".txt",
+            "bytes": 8286
+          }
+        ]
+      },
+      "VAPMIP": {
+        "file_count": 13,
+        "by_ext": {
+          ".txt": 8,
+          ".md": 5
+        },
+        "files": [
+          {
+            "path": "CONTEXT_PRIMER_2026-05-26_PRIME_DIRECTIVES.txt",
+            "ext": ".txt",
+            "bytes": 14956
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-05-26_SEDENION_ROKO.txt",
+            "ext": ".txt",
+            "bytes": 32338
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-07-31_TWO_TREES_FERMAT_ZETA_L_IO.txt",
+            "ext": ".txt",
+            "bytes": 26349
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-08-06_SCREW_BOXKITE_NEGATIVE_SPACE.txt",
+            "ext": ".txt",
+            "bytes": 44337
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-08-08_MATHEMATICAL_LINGUISTICS.txt",
+            "ext": ".txt",
+            "bytes": 25540
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-08-24_CURSES_UI_BOXKITE_HARNESS.txt",
+            "ext": ".txt",
+            "bytes": 35904
+          },
+          {
+            "path": "CONTEXT_PRIMER_2026-08-27_CONSTRUCTOR_BOXKITE_SEMANTIC_HASH.txt",
+            "ext": ".txt",
+            "bytes": 12887
+          },
+          {
+            "path": "PRIMER_2026-08-17_ENGLISH_AND_RSA.md",
+            "ext": ".md",
+            "bytes": 18002
+          },
+          {
+            "path": "PRIMER_2026-08-17_THE_THREE_TIERS.md",
+            "ext": ".md",
+            "bytes": 22703
+          },
+          {
+            "path": "PRIMER_2026-08-18_THREE_FACES_AND_EXECUTABLE_STRUCTURE.md",
+            "ext": ".md",
+            "bytes": 10404
+          },
+          {
+            "path": "checkpoints/clean/PRIMER.md",
+            "ext": ".md",
+            "bytes": 1769
+          },
+          {
+            "path": "checkpoints/dirty/PRIMER.md",
+            "ext": ".md",
+            "bytes": 3204
+          },
+          {
+            "path": "docs/primers/PRIMER_2026-05-29_Phase2_to_Phase5.txt",
+            "ext": ".txt",
+            "bytes": 11114
+          }
+        ]
+      },
+      "_root": {
+        "file_count": 2,
+        "by_ext": {
+          ".md": 2
+        },
+        "files": [
+          {
+            "path": "CONVERSATION_PRIMER.md",
+            "ext": ".md",
+            "bytes": 11215
+          },
+          {
+            "path": "session_primer_2026-06-26.md",
+            "ext": ".md",
+            "bytes": 5321
+          }
+        ]
+      },
+      "phone_pull_2026-06-06": {
+        "file_count": 21,
+        "by_ext": {
+          ".txt": 21
+        },
+        "files": [
+          {
+            "path": "CONTEXT_PRIMER_NEXT.txt",
+            "ext": ".txt",
+            "bytes": 3996
+          },
+          {
+            "path": "PRIMER_2026-04-17B_noether_ptolemy-1.txt",
+            "ext": ".txt",
+            "bytes": 5339
+          },
+          {
+            "path": "PRIMER_2026-04-17B_noether_ptolemy.txt",
+            "ext": ".txt",
+            "bytes": 5339
+          },
+          {
+            "path": "primers/primers/AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt",
+            "ext": ".txt",
+            "bytes": 41771
+          },
+          {
+            "path": "primers/primers/CONTEXT_PRIMER_SEMANTIC_ENGINE_2026-05-11.txt",
+            "ext": ".txt",
+            "bytes": 5975
+          },
+          {
+            "path": "primers/primers/PRIMER_2026-04-17_noether_ocr.txt",
+            "ext": ".txt",
+            "bytes": 8719
+          },
+          {
+            "path": "primers/primers/PRIMER_2026-05-03_four_phases.txt",
+            "ext": ".txt",
+            "bytes": 12070
+          },
+          {
+            "path": "primers/primers/PRIMER_2026-05-03_phase3_qt_viewer.txt",
+            "ext": ".txt",
+            "bytes": 12482
+          },
+          {
+            "path": "primers/primers/PRIMER_2026-05-14_genetic_genomic.txt",
+            "ext": ".txt",
+            "bytes": 11632
+          },
+          {
+            "path": "primers/primers/PRIMER_2026-05-16_second_age_conjecture_complete.txt",
+            "ext": ".txt",
+            "bytes": 11684
+          },
+          {
+            "path": "primers/primers/PRIMER_ARCHIVE_PRE_20260416.txt",
+            "ext": ".txt",
+            "bytes": 17100
+          },
+          {
+            "path": "primers/primers/PRIMER_BCE_ConformalHorizon_T_20260415.txt",
+            "ext": ".txt",
+            "bytes": 10216
+          },
+          {
+            "path": "primers/primers/PRIMER_FOR_CLAUDE_CODE_20260416.txt",
+            "ext": ".txt",
+            "bytes": 18035
+          },
+          {
+            "path": "primers/primers/PRIMER_HilbertLaplacian_T_Sonification_20260415.txt",
+            "ext": ".txt",
+            "bytes": 6337
+          },
+          {
+            "path": "primers/primers/PRIMER_MASTERS_TRIBUTE_NOETHER_20260417.txt",
+            "ext": ".txt",
+            "bytes": 13156
+          },
+          {
+            "path": "primers/primers/PRIMER_Millennium_Prize_Path.txt",
+            "ext": ".txt",
+            "bytes": 14432
+          },
+          {
+            "path": "primers/primers/PTOLEMY_SESSION_PRIMER_20260418b.txt",
+            "ext": ".txt",
+            "bytes": 18177
+          },
+          {
+            "path": "primers/primers/SESSION_PRIMER_2026-05-03.txt",
+            "ext": ".txt",
+            "bytes": 8196
+          },
+          {
+            "path": "primers/primers/SESSION_PRIMER_CONSTANTS_DECOHERENCE_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 6943
+          },
+          {
+            "path": "primers/primers/SESSION_PRIMER_DILATOR_CONTRACTOR_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 9575
+          },
+          {
+            "path": "primers/primers/SESSION_PRIMER_VOID_LATTICE_2026-04-16.txt",
+            "ext": ".txt",
+            "bytes": 8028
+          }
+        ]
+      }
+    }
+  },
+  "hist_todo": {
+    "root": "ContextPlease/claude/hist_todo",
+    "totals": {
+      "files": 20,
+      "txt": 0,
+      "md": 17,
+      "other": 3,
+      "bytes": 459083
+    },
+    "repos": {
+      "Ainulindale": {
+        "file_count": 3,
+        "by_ext": {
+          ".md": 3
+        },
+        "files": [
+          {
+            "path": "AgeThird/D-CS_Memory_Edit_TODO.md",
+            "ext": ".md",
+            "bytes": 58949
+          },
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 108813
+          },
+          {
+            "path": "archive/original_2026/TODO.md",
+            "ext": ".md",
+            "bytes": 12627
+          }
+        ]
+      },
+      "ArdaQuenta": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 8067
+          }
+        ]
+      },
+      "DeriveCancerDrugs": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 7181
+          }
+        ]
+      },
+      "FourthAgePapers": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 13326
+          }
+        ]
+      },
+      "MedicineIsAlwaysFree": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 5177
+          }
+        ]
+      },
+      "POE": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 13591
+          }
+        ]
+      },
+      "PTorrent": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 25458
+          }
+        ]
+      },
+      "PtolemyDesktop": {
+        "file_count": 2,
+        "by_ext": {
+          "(none)": 1,
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "PtolC/TODO",
+            "ext": "(none)",
+            "bytes": 444
+          },
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 11884
+          }
+        ]
+      },
+      "RiemannHypothesisProof": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 11261
+          }
+        ]
+      },
+      "TuringStack": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 4847
+          }
+        ]
+      },
+      "UniversalSynth": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 4163
+          }
+        ]
+      },
+      "VAPMIP": {
+        "file_count": 3,
+        "by_ext": {
+          "(none)": 2,
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "PtolC/TODO",
+            "ext": "(none)",
+            "bytes": 444
+          },
+          {
+            "path": "TODO",
+            "ext": "(none)",
+            "bytes": 22016
+          },
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 90071
+          }
+        ]
+      },
+      "ValaQuenta": {
+        "file_count": 1,
+        "by_ext": {
+          ".md": 1
+        },
+        "files": [
+          {
+            "path": "TODO.md",
+            "ext": ".md",
+            "bytes": 10317
+          }
+        ]
+      },
+      "_root": {
+        "file_count": 2,
+        "by_ext": {
+          ".md": 2
+        },
+        "files": [
+          {
+            "path": "Blender_TODO.md",
+            "ext": ".md",
+            "bytes": 2681
+          },
+          {
+            "path": "FLUID_DATA_TODO.md",
+            "ext": ".md",
+            "bytes": 47766
+          }
+        ]
+      }
+    }
+  }
+}

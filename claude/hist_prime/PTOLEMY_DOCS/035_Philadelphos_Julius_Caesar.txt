@@ -1,0 +1,18 @@
+ITEM: Philadelphos / Julius Caesar face config / LuthSpell BUS wiring
+=================================================================================================
+
+YOUR PROMPTS:
+
+"LLM model experimentation — Julius Caesar, Cicero, Cato corpus (Philadelphos / LSH)"
+
+"Philadelphos/philadelphos_console.py — Julius Caesar face config + LuthSpell BUS. JULIUS_CAESAR_CONFIG: persona, corpus, model, system_prompt. _init_bus(): LuthSpell instantiated as BUS controller per arch spec. PtolBus started, LuthSpell wired, halt events routed to _on_halt()"
+
+"The person plans to run the Julius Caesar corpus as the first ingestion test."
+
+"Philadelphos / Julius Caesar face config / LuthSpell BUS wiring" [v0.9 directive]
+
+"Philadelphos/CyclicContextBuffer wiring to Ainulindale (dependent on PtolBus)" [v0.9 directive]
+
+"Philadelphos boot chain successful" [confirmed in boot test]
+
+"MISSING: shell input→Philadelphos→collapse→Tongue→output NOT BUILT" [confirmed May 4 2026]

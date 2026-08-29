@@ -1,0 +1,12 @@
+ITEM: Aule sanitation: trust levels, 2FA/3FA escalation, Aule-risk 3FA
+=================================================================================================
+
+YOUR PROMPTS:
+
+"aule_sanitation.py is built: trust levels with OPERATOR and Archimedes getting raw unsanitized access; all other Faces sanitized; 2FA/3FA challenge escalation; automatic 3FA for anything touching Aule's own config ('Aule-risk')"
+
+"OPERATOR and Archimedes: raw unsanitized access. All other Faces: sanitized."
+
+"Automatic 3FA for anything touching Aule's own config — 'Aule-risk'"
+
+"Aule/aule_sanitation.py" [built and pushed]

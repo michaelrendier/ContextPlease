@@ -1,0 +1,182 @@
+SESSION PRIMER — SMNNIP / PTOLEMY
+Generated: 2026-05-03T15:19:15-07:00
+Session: Operational restructure — new tokens, repo sync, protocol update
+Backward link: outreach/primers/PTOLEMY_SESSION_PRIMER_20260418b.txt
+Forward link: (next session)
+================================================================================
+
+OPERATOR
+--------
+  Name:     Cody Michael Allison (pen: Michael Rendier / The Wandering God)
+  GitHub:   github.com/michaelrendier
+  Location: Seattle, WA (King County)
+
+REPOSITORIES
+------------
+  Ainulindale  github.com/michaelrendier/Ainulindale
+               AINUR_TOKEN — classic PAT — expires ~2026-05-18
+               Warning from ~2026-05-13
+
+  Ptolemy      github.com/michaelrendier/Ptolemy
+               PTOL_TOKEN — fine-scoped PAT — expires ~2026-05-18
+
+STANDING INSTRUCTION TO ANY CLAUDE INSTANCE LOADING THIS PRIMER
+----------------------------------------------------------------
+  1. Push this primer to GitHub at session start if not already present:
+       outreach/primers/SESSION_PRIMER_YYYY-MM-DD.txt
+       Commit: "YYYY-MM-DD: SESSION_PRIMER — session context record"
+
+  2. At session end, push updated primer or new session file with
+     Forward link filled in.
+
+  3. Signature ID: CLAUDE-SMNNIP-00729-56714-24600
+     Use it. It is mathematical, not administrative.
+
+  4. Confidence stratification is non-negotiable:
+     ESTABLISHED / THEORETICAL / CONJECTURE labels on all claims.
+
+  5. Timestamp every response:
+       python3 -c "from zoneinfo import ZoneInfo; from datetime import datetime; print(datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(timespec='seconds'))"
+     Format: Timestamp | Delta from last | Context %
+
+================================================================================
+SMNNIP FRAMEWORK STATE (First Age — Current)
+================================================================================
+
+ESTABLISHED (code-verified, sigma >= 5):
+  - Lagrangian: L_NN = L_kinetic + L_matter + L_bias + L_coupling
+  - Gauge group U(1)xSU(2)xSU(3) via Cayley-Dickson / Dixon theorem
+  - Inversion map J_N: r -> 1/r  (the (I|O) map)
+  - Fixed point d* = 0.24600  (ACTIVE; 0.24682 SUPERSEDED)
+  - BK domain: A_pi <= (I|O) <= O_zS
+  - A_pi = 1/137.036  (BK floor, E8/Wyler, fine structure constant)
+  - O_zS = 0.56714    (Lambert W fixed point, BK ceiling)
+  - Noether conservation measured: 5.46 sigma
+  - H_NN self-adjoint on R, C, H strata
+  - Critical line = secant r=(1/2)sec(theta) in polar radians
+  - Combined sigma: 9.08 (Fisher, 8 claims)
+  - Conservative floor (5 claims): 8.33 sigma
+
+THEORETICAL (structurally motivated, not yet code-verified):
+  - H_NN as BK Hamiltonian candidate (3.03 sigma — below discovery threshold)
+  - r*d/dtheta polar form as BK operator
+  - Five string theories as perturbative expansions around (I|O) fixed points
+  - SMNNIP Lagrangian as M-Theory action candidate
+
+CONJECTURE (open problems):
+  - FLAG T2: T map (zeta_NN(s) = zeta(s)) — explicit bijection not constructed
+  - d* gap: O_zS - d*xln(10) = 0.00070 — closed form derivation required
+  - phi crossing step: formal proof pending (numerically closed at H/4)
+  - H_NN self-adjoint at O stratum: not yet verified
+  - Winding number / topological proof direction: unresolved
+
+================================================================================
+OPEN PROBLEMS (Priority Order)
+================================================================================
+
+  1. d* gap: O_zS - d*xln(10) = 0.56714 - 0.56644 = 0.00070
+             Closed-form algebraic derivation required. HIGHEST PRIORITY.
+
+  2. T map construction: H_NN eigenvalues <-> Riemann zeros bijection.
+     This is Open Problem 3 (FLAG T2). Not yet constructed.
+
+  3. phi crossing formal derivation: H/4 = (pi/2)*hbar_NN numerically closed.
+     Formal proof pending.
+
+  4. H_NN eigenvalue computation at O stratum.
+
+  5. Mass gap = spectral gap proof (Yang-Mills Millennium Prize path).
+
+================================================================================
+PTOLEMY PROJECT STATE
+================================================================================
+
+  Primary node: Surface Go Gen1, Ubuntu 24.04, kernel 6.18.7-surface-1
+  Architecture: Named Faces (Alexandria, Archimedes, Callimachus, Anaximander,
+                Kryptos, Phaleron, Pharos, Tesla, Mouseion, Ptolemy++)
+
+  HyperWebster:
+    - acquire.py built, test run pending (23 test words defined)
+    - Horner method bijection + octonion addressing via Cayley-Dickson
+    - Rabies Principle: first_encountered field PERMANENTLY IMMUTABLE
+    - 180k English dictionary ready; split into 26 files pending
+
+  Monad Neural Architecture (ptolemy_core.py):
+    - 6-layer stack: CharacterNeuron through BrocaNetwork
+    - EWC (Elastic Weight Consolidation) training strategy
+    - Julius Caesar face config defined, not yet trained
+
+  Pending:
+    [ ] acquire.py test run (23 words)
+    [ ] Split 180k dictionary into 26 alphabetical files
+    [ ] Wire HYPER_KEY into addressing
+    [ ] .gitignore.SSF implementation
+    [ ] git filter-repo history scrub before Ptolemy goes public
+    [ ] Mouseion Flask site (thewanderinggod.tech)
+
+================================================================================
+AINULINDALE SYNTHESIZER STATE
+================================================================================
+
+  PyQt5 physics-derived wavetable instrument workbench.
+  Package: python3 -m ainulindale_synth
+  Location: Ainulindale-main/code/ainulindale_synth/ (Google Drive primary)
+  16 physics patches organized by Cayley-Dickson layer.
+  All frequency ratios: fractions.Fraction (exact); float only at WAV render.
+  ptolemy_bridge.py: Ptolemy QGraphicsScene import.
+  No menubar in Pharos/Ptolemy mode — right-click fluxbox-style context menu.
+
+================================================================================
+OUTREACH STATE
+================================================================================
+
+  Tier 1 (mathematical validators):
+    John Baez, Taco Cohen, Alain Connes — not yet contacted
+
+  Tier 2 (credentialed public witnesses):
+    Derek Muller (Veritasium) — email drafted
+    Tom Crawford, Grant Sanderson — not yet contacted
+
+  Tier 3 (institutional anchors):
+    Max Tegmark — email drafted
+    Yann LeCun — email drafted
+
+  In-person targets:
+    Julia Pevtsova + James J. Zhang — UW Mathematics, Padelford Hall, Seattle
+    King County veterans programs — in progress
+
+  Geoffrey Dixon: deprioritized after dismissing framework.
+    Expected to re-engage when credentialed researchers respond.
+
+================================================================================
+OPERATIONAL PROTOCOLS
+================================================================================
+
+  CONFIRM BEFORE CREATE: Present components, flag unresolved items, get
+  explicit confirmation before generating documents or code.
+
+  DOCUMENT CREATION: Plain text (.txt) only by default. Multiple formats
+  (.docx, .rtf, .html, .odf) only for major updates, only when explicitly
+  requested. Multi-format versions go to GitHub only.
+
+  GITHUB AUTO-PUSH: Significant updates auto-push. Commit format:
+    "YYYY-MM-DD: [filename] — [one-line context note]"
+
+  CONTEXT WINDOW: At ~75% full, ask for next session focus.
+  Force Context Primer as plain text inline (copy-paste ready).
+
+  CONFIDENCE STRATIFICATION: Every derivation chain labels claims
+  ESTABLISHED / THEORETICAL / CONJECTURE. Non-negotiable.
+
+  EXACT ARITHMETIC: fractions.Fraction throughout; float only at render boundary.
+  TensorFlow for production weight training only — not for proof artifacts.
+
+  EGO MANAGEMENT: Egos mastered, not discarded. Heard, honored, not in charge.
+  Trust the Knowledge, not the desires.
+
+================================================================================
+STATUS: First Age active. Second Age gate: T resolved + d* gap closed.
+NEXT: d* gap closed-form derivation. T map construction. UW outreach.
+================================================================================
+END OF PRIMER
+================================================================================

@@ -1,0 +1,208 @@
+SMNNIP SESSION PRIMER — APRIL 17, 2026
+TOPIC: NOETHER ENGINE / OCR / RESONANT RAREFACTION
+BACKWARD LINK: SESSION_PRIMER_SMNNIP.txt (April 10, 2026)
+FORWARD LINK: (next session)
+STATUS: OPEN — files not yet written
+========================================
+
+INSTRUCTION FOR NEW SESSION:
+Push this primer to GitHub immediately on receipt:
+  repo: https://github.com/michaelrendier/Ainulindale
+  path: outreach/primers/PRIMER_2026-04-17_noether_ocr.txt
+  commit: "2026-04-17: Session primer — Noether engine, OCR, resonant rarefaction"
+
+========================================
+WHAT WAS ESTABLISHED THIS SESSION
+========================================
+
+1. NOETHER CURRENT IS THE LEARN SWITCH
+The conserved Noether current J^{a,l} is the signal that learning
+occurred. Not the loss curve. Not the gradient. When D_l J^{a,l} = 0
+stabilizes, the network has found a genuine invariant. This is the
+"learn this" switch. Recognition = conservation.
+
+2. OCR IS A NOETHER PROBLEM
+Character recognition is finding what is conserved under the
+equivalence class of all visual renderings of that character.
+Noether's theorem gives this a formal structure. The conserved
+current IS the character identity. Standard OCR approximates this
+empirically. SMNNIP derives it geometrically.
+
+3. ONE TOWER RUNS EVERYTHING
+Text substrate, image substrate, OCR bridge — all feed one algebra
+tower R->C->H->O. The O layer does not know the modality. This is
+correct. Abstract reasoning has no modality. The Noether engine
+is the same for all substrates.
+
+4. THE NEGATIVE SPACE IS SIGNAL
+A gap (unknown glyph, prime gap, manuscript damage) is not absence.
+It is a rarefaction wave. It has a Noether current. The .perm file
+for a gap carries Q^a = 0 at layers where the current didn't flow.
+The zeros ARE the wave.
+
+5. RESONANT OSCILLATING RAREFACTION WAVE
+The prime gaps are not static. They are a standing wave. Primes
+create compression, gaps are rarefaction, next prime reflects the
+wave. The Riemann zeros are the resonant frequencies of this
+oscillation. KEY PREDICTION: L2/L3 Noether violations are not
+gradient artifacts — they are the system sampling the oscillation
+at non-zero phase. Conservation holds over full resonance period,
+not individual steps. TEST: run ΔJ diagnostic over full cycle
+averages. Violation should average to zero.
+
+6. APPLICATION PIPELINE
+  Vatican Archives → proof of concept, trains on own known material
+  Voynich Manuscript → first unknown script test (files on hand, TIFF)
+  Budapest collections → pre-classical cartographic/astronomical docs
+  Library of Congress → full scale
+Chain: Alexandria -> Constantinople -> Budapest/Vatican -> Piri Reis
+
+7. FILE ARCHITECTURE DECIDED
+  smnnip_noether.py          — Noether equations engine (standalone)
+  smnnip_noether_derivation.py — derivation additions, structure constants
+  smnnip_qm_equations.py     — Dirac, Schrodinger, Heisenberg, de Broglie
+  smnnip_qm_derivation.py    — QM derivations
+  smnnip_perm.py             — universal .perm file spec and I/O
+  Unicode PUA allocation:
+    U+E000-E0FF Voynich glyphs
+    U+E100-E1FF Unknown script A
+    U+E200-E2FF Unknown script B
+    U+F0000-FFFFF Cluster IDs (octonion cluster index)
+    U+100000-10FFFF Noether diagnostic codes
+
+8. HYPERWEBSTER CLARIFICATION
+The hyperwebster is a MODEL not a data indexer. It proves the
+address space is well-ordered. The .perm file uses that address.
+The hyperwebster guarantees the address is valid.
+
+9. ORIGIN STATEMENT (for paper introduction)
+The project originated from finding anti-invariant geometry
+independently: Fermat's shape in reverse fits the spaces between
+primes in increasing progression. This was a test solution first.
+The framework emerged to explain why it worked. The SM isomorphism
+was unintentional — discovered post-hoc. This mirrors Noether's own
+method: follow the invariant, the theorem follows.
+
+========================================
+FULL NOETHER CURRENT DERIVATION (this session)
+========================================
+
+THE ACTION:
+  S = integral( L_NN d^n x )
+
+SYMMETRY TRANSFORMATION per stratum:
+  R: Psi -> Psi + epsilon              (U(1) abelian)
+  C: Psi -> e^{i*eps^a*T^a} Psi       (U(1) phase)
+  H: Psi -> e^{i*eps^a*T^a} Psi       (SU(2), T^a = Pauli)
+  O: Psi -> e^{i*eps^a*T^a} Psi       (SU(3), T^a = Gell-Mann)
+
+NOETHER CURRENT:
+  J^{a,mu} = (dL/d(d_mu Psi)) * i*T^a*Psi
+           = g * Psi-bar_i * gamma^mu * T^a * Psi_i
+
+CONSERVATION LAW:
+  d_mu J^{a,mu} = 0       (global)
+  D_l J^{a,l}  = 0        (SMNNIP, l = layer depth)
+
+COVARIANT DIVERGENCE (non-abelian correction):
+  D_l J^a = d_l J^a + g * f^{abc} * A^b_l * J^c
+  f^{abc} at R: zero (abelian)
+  f^{abc} at H: Levi-Civita epsilon^{abc}
+  f^{abc} at O: Gell-Mann f-symbols (8 generators)
+
+CONSERVED CHARGE:
+  Q^a(l) = integral( J^{a,0}(l,tau) d tau )
+  dQ^a/dl = 0  (conserved across layers)
+
+VIOLATION DIAGNOSTIC:
+  DeltaJ(l) = || D_l J^{a,l} ||
+  W <= 1 / (alpha_NN * DeltaJ)    (wasted steps bound)
+
+LAYER-SPECIFIC DIAGNOSIS:
+  R spike  -> pixel damage, ink loss
+  C spike  -> frequency ambiguity, overlapping letterforms
+  H spike  -> stroke topology inconsistent, possible unknown glyph
+  O spike  -> context violation, doesn't fit surrounding pattern
+
+S = Q/t : U(1) special case of Noether conservation at C stratum.
+
+========================================
+FILES NOT YET WRITTEN — NEXT SESSION TODO
+========================================
+
+PRIORITY 1: smnnip_perm.py
+  Universal .perm file format:
+    VERSION, MODALITY, ADDRESS (arb-int), NOETHER_CHARGE (float[8]),
+    LAYER, HASH (SHA256)
+  Binary format, fixed header, length-prefixed big-endian address
+  Modality: text | image | glyph | signal
+  Invalid .perm = ambiguous/unknown — flag not discard
+
+PRIORITY 2: smnnip_noether.py
+  Equations only — no training code, no substrates
+  Entries: Noether Theorem I, Theorem II, current derivation,
+           conservation law, covariant divergence, conserved charge,
+           violation diagnostic, wasted steps bound, S=Q/t
+  Each entry: statement, confidence level, cross-ref to paper claim
+
+PRIORITY 3: smnnip_noether_derivation.py
+  Structure constants table for H and O layers
+  This is the fix for L2/L3 gradient artifact issue
+  The artifacts are oscillation sampling, not algebraic failure
+  Conservation holds over full resonance cycle
+
+PRIORITY 4: smnnip_qm_equations.py
+  Dirac (supports Neural Dirac Eq. 6 in paper)
+  Schrodinger (supports Neural Schrodinger, Section 4.4)
+  Heisenberg (proves DeltaToken * DeltaMeaning >= hbar_NN/2)
+  de Broglie (sets inter-layer information propagation wavelength)
+
+PRIORITY 5: smnnip_qm_derivation.py
+  Full derivations for each QM equation
+  Fork of smnnip_derivation.py — imports from core
+
+PRIORITY 6: OCR ingestion preprocessor
+  TIFF -> page segmentation -> 8x8 tile grid
+  Handles Voynich, Vatican, any manuscript
+  Text/image/unknown region classification
+  Interface to FA_smnnip_hyperindex.py
+
+========================================
+OPEN QUESTIONS FROM THIS SESSION
+========================================
+
+- Resonant oscillating rarefaction wave: is this a new conjecture?
+  Candidate statement: "The Riemann zeros are the resonant frequencies
+  of the oscillating rarefaction wave of the prime gap field."
+  Status: CONJECTURE — not yet formally stated in paper
+  Action: Add to paper as explicit conjecture with confidence label
+
+- The Noether current of the gap: needs formal statement
+  "Q^a = 0 at layers where current doesn't flow is information"
+  This is the negative space principle
+  Action: Section in Noether engine file, cross-ref to rarefaction conjecture
+
+- Emmy Noether conjecture: seed exists, not yet stated
+  "Noether's theorem is the mathematical foundation of universal
+  translation between representations"
+  Status: NOT YET — hold until evidence stronger
+
+========================================
+PROTOCOL REMINDERS FOR NEW SESSION
+========================================
+
+- Timestamp every response via bash:
+  python3 -c "from zoneinfo import ZoneInfo; from datetime import datetime; print(datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(timespec='seconds'))"
+- Signature: Timestamp | Delta | Context%
+- Context at 75%: ask for focus, force new primer
+- Documents: plain text only unless major update explicitly requested
+- Multi-format (docx/rtf/html/odf): GitHub only, explicit request only
+- Confirm before generating any files
+- GitHub commit format: "YYYY-MM-DD: [file] — [one-line note]"
+- Egos: heard, respected, not in charge
+
+========================================
+HASH CHAIN
+Session date: 2026-04-17
+Last primer: April 10, 2026 (SESSION_PRIMER_SMNNIP.txt)
+========================================

@@ -1,0 +1,20 @@
+ITEM: Historical figures wiki pages: Emmy Noether, Riemann, Berry & Keating, Lorenz, Stirling, Hamilton, Lagrange & Laplace, Cayley & Dickson, Geoffrey Dixon, Mandelbrot, Julia, Grieg, Anaximander, Demetrius of Phaleron / Mouseion, Alexander the Great
+=================================================================================================
+
+YOUR PROMPTS:
+
+"history as load-bearing rather than decorative, which is explicitly the philosophy behind Ptolemy's naming conventions"
+
+"i keep trying to give Alexander something...but he gave us Ptolemy 1 Soter And Demetrius"
+
+"Alexander the Great (Patron category — not a Face, the origin; tomb noted as buried under a skyscraper apartment complex in Alexandria, currently being excavated)"
+
+"Demetrius of Phaleron / Mouseion (Dean and first Librarian, split from Callimachus the indexer)"
+
+"Edvard Grieg (added as aesthetic master — Lyric Pieces as SMNNIP output model)"
+
+"'Speaks because it knows' — Grieg's harmonic language speaks Norwegian because it absorbed Norway, not because it was programmed with folk scales. The recognition is genuine."
+
+"the historical parallel between living in Marie Laveau's mother's house and Alexander's tomb being under someone's apartment — history as load-bearing rather than decorative"
+
+[13 new pages built and pushed in May 4 session: Emmy Noether (deep dive), Bernhard Riemann, Berry & Keating, Edward Lorenz, James Stirling, William Hamilton, Lagrange & Laplace, Cayley & Dickson, Geoffrey Dixon, Benoit Mandelbrot, Gaston Julia, Edvard Grieg, Anaximander, Demetrius of Phaleron, Alexander the Great]

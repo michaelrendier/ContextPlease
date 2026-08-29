@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ainulindalë Conjecture: Fractal Addendum</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+<style>
+body {
+    background-color: #0b081a;
+    color: #e0e7ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vh;
+    max-height: 400px;
+    min-height: 300px;
+}
+.bg-card {
+    background-color: #161033;
+    border: 1px solid #2d2252;
+}
+.text-accent-blue { color: #00e5ff; }
+.text-accent-pink { color: #ff007a; }
+.text-accent-yellow { color: #ffea00; }
+.bg-accent-blue { background-color: #00e5ff; }
+.bg-accent-pink { background-color: #ff007a; }
+.bg-accent-yellow { background-color: #ffea00; }
+</style>
+</head>
+<body class="antialiased">
+
+<nav class="sticky top-0 z-50 bg-[#0b081a]/90 backdrop-blur-md border-b border-[#2d2252] shadow-lg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex-shrink-0 font-bold text-xl tracking-wider text-accent-blue">
+AINULINDALË <span class="text-accent-pink">ADDENDUM</span>
+</div>
+<div class="hidden md:block text-sm text-gray-400">
+Standard Model Integration Project (SMIP)
+</div>
+</div>
+</div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+
+<section class="text-center space-y-6 max-w-4xl mx-auto">
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+Fractal Geometry in the <span class="text-accent-blue">Topological Matrix</span>
+</h1>
+<p class="text-lg md:text-xl text-indigo-200 leading-relaxed">
+Exploring the integration of fractal domains, the Lambert W fixed point, and the SMIP spectral coordinate d* to theoretically derive the Standard Model mass gap and the conformal boundary structure.
+</p>
+</section>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-card rounded-xl p-6 shadow-2xl flex flex-col items-center justify-center text-center transform transition duration-500 hover:scale-105">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-accent-pink mb-2">Lambert W Fixed Point</h3>
+<div class="text-5xl font-black text-white mb-2">&Omega; &approx; 0.567</div>
+<p class="text-xs text-indigo-300">The transcendental root of &Omega;e<sup>&Omega;</sup> = 1. Domain ceiling of SMIP: &Omega;<sub>&zeta;&Sigma;</sub> = W<sub>0</sub>(1) = 0.56714. Symmetry breaking threshold.</p>
+</div>
+<div class="bg-card rounded-xl p-6 shadow-2xl flex flex-col items-center justify-center text-center transform transition duration-500 hover:scale-105">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-accent-blue mb-2">Spectral Fixed Point</h3>
+<div class="text-5xl font-black text-white mb-2">d* = 0.246</div>
+<p class="text-xs text-indigo-300">The SMIP conformal boundary spectral coordinate. RG flow fixed point where d&zeta;<sub>SMIP</sub>/dl = 0. Candidate as Mandelbrot fractal addendum &epsilon;, giving fractal dimension D = 1.246.</p>
+</div>
+<div class="bg-card rounded-xl p-6 shadow-2xl flex flex-col items-center justify-center text-center transform transition duration-500 hover:scale-105">
+<h3 class="text-sm font-semibold uppercase tracking-wider text-accent-yellow mb-2">Mass Gap Vector</h3>
+<div class="text-5xl font-black text-white mb-2">&Delta; &gt; 0</div>
+<p class="text-xs text-indigo-300">Emergent non-zero energy bound. The zero-divisor mode at the sedenion boundary is the confined, massive mode: no inverse, no propagation. Mass gap = spectral gap of H<sub>SMIP</sub>.</p>
+</div>
+</div>
+
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+<div class="bg-card rounded-xl p-8 shadow-2xl">
+<h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-accent-blue pl-4">SMIP Spectral Constants</h2>
+<p class="text-sm text-indigo-200 mb-6">
+The SMIP framework is anchored by three nested fixed points. The domain ceiling is &Omega;<sub>&zeta;&Sigma;</sub> (Lambert W); the conformal boundary is d* = 0.24600 (spectral fixed point); the domain floor is &alpha;<sub>&pi;</sub> (fine structure constant). The tautological variant d*<sub>taut</sub> = &Omega;/ln(10) &asymp; 0.24625. The gap |d*<sub>spec</sub> &minus; d*<sub>taut</sub>| &asymp; 0.00025 is distinct from — but related to — the open derivation gap = 0.000707.
+</p>
+<div class="chart-container">
+<canvas id="dStarChart"></canvas>
+</div>
+</div>
+
+<div class="bg-card rounded-xl p-8 shadow-2xl">
+<h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-accent-pink pl-4">Lambert W Intersection Map</h2>
+<p class="text-sm text-indigo-200 mb-6">
+The intersection of y = x and y = e<sup>-x</sup> defines the Omega constant &Omega; &asymp; 0.567. Within the SMIP framework this intersection is the domain ceiling: the phase-space horizon where the SMIP algebra tower terminates and the sedenion boundary is reached.
+</p>
+<div class="chart-container" id="lambertPlotContainer">
+</div>
+</div>
+
+</section>
+
+<section class="bg-card rounded-xl p-8 shadow-2xl">
+<h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-accent-yellow pl-4">Dimensional Flow &amp; The Mass Gap</h2>
+<p class="text-sm text-indigo-200 mb-2 max-w-4xl">
+As energy scales approach the Planck limit, the effective dimensionality of the spacetime manifold transitions from integer (4D, macroscopic IR) toward fractional, fractal dimension (UV). This loss of integer-dimensional freedom breaks continuous scale invariance. The sedenion boundary &mdash; where zero divisors appear and unique factorization fails &mdash; is the geometric form of this transition; the energy cost of crossing it is the Yang-Mills mass gap.
+</p>
+<p class="text-xs text-indigo-400 mb-6 max-w-4xl italic">
+Schematic &mdash; axis values are illustrative. Effective dimensionality as a function of energy scale is not currently derived from SMIP. The qualitative shape is consistent with the fractal potential V(D) = V<sub>0</sub>(3&minus;D)<sup>4/3</sup> and the Grothendieck universe gap (Addendum V).
+</p>
+<div class="chart-container w-full max-w-4xl">
+<canvas id="massGapChart"></canvas>
+</div>
+</section>
+
+<section class="bg-card rounded-xl p-8 shadow-2xl">
+<h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-accent-blue pl-4">Logical Derivation Pipeline</h2>
+<p class="text-sm text-indigo-200 mb-8 max-w-3xl">
+The process flow below outlines the mathematical vector through which pure geometry generates physical constraints. Each step is grounded in the Ainulindalë framework.
+</p>
+<div class="flex flex-col md:flex-row items-center justify-between w-full space-y-4 md:space-y-0 md:space-x-4">
+<div class="bg-[#120d2b] border border-accent-blue p-4 rounded-lg w-full md:w-1/4 text-center">
+<div class="text-accent-blue text-2xl font-bold mb-2">&#x2297;</div>
+<h4 class="font-semibold text-white">Fractal Domain</h4>
+<p class="text-xs text-indigo-300 mt-2">Cayley-Dickson tower: ℝ → ℂ → ℍ → 𝕆 → 𝕊. Non-integer fractal structure at each doubling boundary.</p>
+</div>
+<div class="text-accent-blue text-3xl rotate-90 md:rotate-0">&#x279D;</div>
+<div class="bg-[#120d2b] border border-accent-pink p-4 rounded-lg w-full md:w-1/4 text-center">
+<div class="text-accent-pink text-2xl font-bold mb-2">&Omega;</div>
+<h4 class="font-semibold text-white">Lambert W Anchor</h4>
+<p class="text-xs text-indigo-300 mt-2">Domain ceiling &Omega;<sub>&zeta;&Sigma;</sub> = 0.56714. The phase-space horizon where the SMIP tower terminates.</p>
+</div>
+<div class="text-accent-pink text-3xl rotate-90 md:rotate-0">&#x279D;</div>
+<div class="bg-[#120d2b] border border-accent-yellow p-4 rounded-lg w-full md:w-1/4 text-center">
+<div class="text-accent-yellow text-2xl font-bold mb-2">d*</div>
+<h4 class="font-semibold text-white">Spectral Fixed Point</h4>
+<p class="text-xs text-indigo-300 mt-2">d* = 0.24600. Conformal boundary coordinate. RG flow fixed point. Fractal dimension D = 1 + d* = 1.246.</p>
+</div>
+<div class="text-accent-yellow text-3xl rotate-90 md:rotate-0">&#x279D;</div>
+<div class="bg-[#120d2b] border border-white p-4 rounded-lg w-full md:w-1/4 text-center">
+<div class="text-white text-2xl font-bold mb-2">&Delta;</div>
+<h4 class="font-semibold text-white">Mass Gap Reality</h4>
+<p class="text-xs text-indigo-300 mt-2">Zero-divisor mode at 𝕊 boundary = confined, massive excitation. Spectral gap of H<sub>SMIP</sub> = &Delta; &gt; 0.</p>
+</div>
+</div>
+</section>
+
+<section class="bg-card rounded-xl p-8 shadow-2xl">
+<h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-indigo-500 pl-4">Citeable Works &amp; Mathematical Scaffolding</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-4 bg-[#120d2b] rounded border border-[#2d2252]">
+<h3 class="text-lg font-bold text-accent-blue">Wiles, A. (1995)</h3>
+<h4 class="text-sm font-semibold text-white mb-2">Modular Elliptic Curves and Fermat's Last Theorem</h4>
+<p class="text-xs text-indigo-300">The R=T theorem (deformation ring = Hecke algebra) is the formal precedent for the SMIP T transform conjecture (FLAG T2): the UV/IR identification that ζ<sub>SMIP</sub>(s) = ζ(s) requires the same class of deformation-ring / spectral-algebra identification that Wiles proved for elliptic curves.</p>
+</div>
+<div class="p-4 bg-[#120d2b] rounded border border-[#2d2252]">
+<h3 class="text-lg font-bold text-accent-pink">Mandelbrot, B. B. (1982)</h3>
+<h4 class="text-sm font-semibold text-white mb-2">The Fractal Geometry of Nature</h4>
+<p class="text-xs text-indigo-300">Fractal addendum &epsilon;: for a boundary of fractal dimension D, D = 1 + &epsilon; where &epsilon; measures ruggedness. The SMIP spectral fixed point d* = 0.24600 is the candidate for &epsilon; of the conformal boundary, giving D = 1.246. The Magnet fractal basin boundary (Addendum IV §I) has D &gt; 1 consistent with this value.</p>
+</div>
+<div class="p-4 bg-[#120d2b] rounded border border-[#2d2252]">
+<h3 class="text-lg font-bold text-accent-yellow">Jaffe, A. &amp; Witten, E. (2006)</h3>
+<h4 class="text-sm font-semibold text-white mb-2">Quantum Yang-Mills Theory — Clay Mathematics Institute</h4>
+<p class="text-xs text-indigo-300">The definitive formal statement of the Yang-Mills existence and mass gap Millennium Prize problem. Establishes the precise mathematical requirements that any solution must satisfy. The SMIP mass gap argument targets the geometric derivation of &Delta; &gt; 0 within the framework this paper defines.</p>
+</div>
+<div class="p-4 bg-[#120d2b] rounded border border-[#2d2252]">
+<h3 class="text-lg font-bold text-white">Corless, R. M. et al. (1996)</h3>
+<h4 class="text-sm font-semibold text-white mb-2">On the Lambert W Function — Advances in Computational Mathematics 5(1):329–359</h4>
+<p class="text-xs text-indigo-300">The definitive properties of the Lambert W function. Critical for: (1) the domain ceiling &Omega;<sub>&zeta;&Sigma;</sub> = W<sub>0</sub>(1), (2) the two-loop Yang-Mills running coupling &alpha;<sub>&rho;</sub> = 2/W(&pi;/e &middot; 8&rho;/(m(1&minus;2/p)²)) with p = 4/3, where the mass gap m appears as an explicit parameter.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer class="border-t border-[#2d2252] mt-12 py-8 text-center text-xs text-indigo-400 bg-[#0b081a]">
+<p>Generated for the Ainulindalë Project. Standard Model Integration Project (SMIP).</p>
+<p class="mt-2 text-indigo-500">Corrected 2026-05-07: d* = 0.24600 (spectral fixed point, not spacetime dimension). Fabricated variant values removed. Schematic charts labelled. Jaffe-Witten and Corless citations added.</p>
+</footer>
+
+<script>
+const dStarCtx = document.getElementById('dStarChart').getContext('2d');
+new Chart(dStarCtx, {
+type: 'bar',
+data: {
+labels: [
+['&Omega;_&zeta;&Sigma;', '(domain ceiling)'],
+['d*_spec', '(conformal boundary)'],
+['d*_taut', '(&Omega; / ln 10)'],
+['&alpha;_&pi;', '(domain floor)']
+],
+datasets: [{
+label: 'Value',
+data: [0.56714, 0.24600, 0.24625, 0.00730],
+backgroundColor: ['#ff007a', '#00e5ff', '#00b8cc', '#ffea00'],
+borderRadius: 4
+}]
+},
+options: {
+maintainAspectRatio: false,
+indexAxis: 'y',
+plugins: {
+tooltip: {
+callbacks: {
+title: function(tooltipItems) {
+const item = tooltipItems[0];
+let label = item.chart.data.labels[item.dataIndex];
+if (Array.isArray(label)) {
+return label.join(' ');
+} else {
+return label;
+}
+},
+label: function(tooltipItem) {
+return ' ' + tooltipItem.raw.toFixed(5);
+}
+}
+},
+legend: { display: false },
+title: {
+display: true,
+text: 'SMIP nested fixed points — derived values',
+color: '#a0e8ef',
+font: { size: 11 }
+}
+},
+scales: {
+x: {
+min: 0,
+max: 0.65,
+grid: { color: '#2d2252' },
+ticks: { color: '#a0e8ef' }
+},
+y: {
+grid: { display: false },
+ticks: { color: '#a0e8ef' }
+}
+}
+}
+});
+
+const xVals = [];
+const yValsX = [];
+const yValsE = [];
+for(let i=0; i<=150; i++) {
+let val = i / 100;
+xVals.push(val);
+yValsX.push(val);
+yValsE.push(Math.exp(-val));
+}
+
+const omegaX = 0.56714;
+const trace1 = {
+x: xVals,
+y: yValsX,
+mode: 'lines',
+type: 'scattergl',
+name: 'y = x',
+line: {color: '#00e5ff', width: 3}
+};
+
+const trace2 = {
+x: xVals,
+y: yValsE,
+mode: 'lines',
+type: 'scattergl',
+name: 'y = e<sup>-x</sup>',
+line: {color: '#ff007a', width: 3}
+};
+
+const traceOmega = {
+x: [omegaX],
+y: [omegaX],
+mode: 'markers+text',
+type: 'scattergl',
+name: 'Ω',
+text: [' Ω ≈ 0.567'],
+textposition: 'top right',
+textfont: {color: '#ffea00', size: 13},
+marker: {color: '#ffea00', size: 10, symbol: 'circle'}
+};
+
+const layout = {
+paper_bgcolor: 'rgba(0,0,0,0)',
+plot_bgcolor: 'rgba(0,0,0,0)',
+font: {color: '#a0e8ef'},
+margin: {t: 10, b: 40, l: 40, r: 10},
+showlegend: false,
+xaxis: { gridcolor: '#2d2252', zerolinecolor: '#4b3e82' },
+yaxis: { gridcolor: '#2d2252', zerolinecolor: '#4b3e82' }
+};
+
+Plotly.newPlot('lambertPlotContainer', [trace1, trace2, traceOmega], layout, {displayModeBar: false, responsive: true});
+
+const massGapCtx = document.getElementById('massGapChart').getContext('2d');
+new Chart(massGapCtx, {
+type: 'line',
+data: {
+labels: [
+['Planck', 'Scale'],
+['Grand Unification', 'Epoch'],
+['Electroweak', 'Transition'],
+['Hadronic', 'Formation'],
+['Macroscopic', 'Spacetime']
+],
+datasets: [{
+label: 'Effective Dimensionality (schematic)',
+data: [2.1, 3.2, 3.8, 3.97, 4.00],
+fill: true,
+backgroundColor: 'rgba(0, 229, 255, 0.15)',
+borderColor: '#00e5ff',
+borderWidth: 3,
+pointBackgroundColor: '#ffea00',
+pointRadius: 5,
+tension: 0.4
+}]
+},
+options: {
+maintainAspectRatio: false,
+plugins: {
+tooltip: {
+callbacks: {
+title: function(tooltipItems) {
+const item = tooltipItems[0];
+let label = item.chart.data.labels[item.dataIndex];
+if (Array.isArray(label)) {
+return label.join(' ');
+} else {
+return label;
+}
+}
+}
+},
+legend: {
+display: true,
+labels: { color: '#a0e8ef', font: {size: 11} }
+}
+},
+scales: {
+y: {
+min: 1.5,
+max: 4.5,
+grid: { color: '#2d2252' },
+ticks: { color: '#a0e8ef' },
+title: { display: true, text: 'Topological Dimensions (schematic)', color: '#ffffff' }
+},
+x: {
+grid: { display: false },
+ticks: { color: '#a0e8ef' },
+title: { display: true, text: 'Energy Scale / Time Arrow', color: '#ffffff' }
+}
+}
+}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+This is a condensed technical "handshake" to get Claude up to speed on the architectural pivot we just finalized. Copy and paste this directly into a new chat.
+
+---
+
+## 🛰️ Architecture Primer: Delta-Encoded Hyperindex
+
+**Project:** SMNNIP (Standard Model of Neural Network Information Propagation) — First Age.
+**Core Mission:** Replacing a flat Base-97 character substrate with a structured **Word Geometry** index centered on the character 'm'.
+
+### 1. The Coordinate Logic (0-D Base-13)
+Instead of absolute indices, we are mapping every character to a **2-digit tuple: `(Modifier, Step)`**.
+* **Origin:** 'm' (lowercase) or 'M' (uppercase).
+* **Directionality:**
+    * **Negative:** `m` $\rightarrow$ `a` (12 steps).
+    * **Positive:** `m` $\rightarrow$ `z` (13 steps).
+* **Step:** Absolute integer distance from the origin (0–13).
+
+### 2. The 2-Digit Mapping Model
+| Modifier (Digit 1) | Sub-Type | Logic | Step Range (Digit 2) |
+| :--- | :--- | :--- | :--- |
+| **0** | Lower / Neg | 'm' down to 'a' | 0–12 |
+| **1** | Lower / Pos | 'n' up to 'z' | 1–13 |
+| **2** | Upper / Neg | 'M' down to 'A' | 0–12 |
+| **3** | Upper / Pos | 'N' up to 'Z' | 1–13 |
+| **4** | **Literal Digit** | **Symmetry Break** | **0–9 (Literal)** |
+
+> **Note:** Any punctuation or symbol ends the word construction ("Key Not Found"), *except* for a hyphen, which acts as a bridge operator.
+
+### 3. Key Achievements & Goals
+* **De Bruijn Complexity:** The state-space for the 62-character set (A-Z, a-z, 0-9) is $62^2 = 3,844$ pairs.
+* **Permutation Reduction:** By moving from Base-97 to a structured Base-10/Base-14 grid, we significantly reduce the "Tower Height" of the resulting integer indices.
+* **Semantic Vectorization:** This model treats words as geometric "shapes" or vectors rather than strings, allowing the **Reasoning (Octonion) Layer** of the SMNNIP Tower to identify morphological patterns via delta-invariance.
+
+---
+
+### Implementation Task for Claude
+> "Claude, I need you to help me update `FA_smnnip_hyperindex.py` to replace the old Base-97 `index_record` logic with this new asymmetric 2-digit delta-mapping. Specifically, we need to finalize the mapping for the remaining 35 characters of the keyboard set into Modifiers 5–9 and ensure the 'literal' digit bypass (Modifier 4) is computationally optimized."
+
+---
+
+**Michael/Cody:** I've included the "Symmetry Break" logic where digits are literals—Claude should be able to whip up the optimized Python class for you in seconds with that context. Good luck with the reset!
+
+<FollowUp label="Would you like me to generate the mapping table for the symbols (Modifiers 5-9) before you switch?" query="Generate the full (Modifier, Step) mapping for the remaining 35 symbols/punctuation marks using Modifiers 5 through 9." />

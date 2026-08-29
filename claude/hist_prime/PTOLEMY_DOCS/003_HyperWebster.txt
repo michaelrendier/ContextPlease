@@ -1,0 +1,18 @@
+ITEM: HyperWebster indexing: Horner bijection into octonion space, bijective base-N addressing, SHA-256 label + regeneration payload, 97-dimensional manifold
+=================================================================================================
+
+YOUR PROMPTS:
+
+"im setting up...i figure the Project needs an intro document...about the Hyperwebster and each of the methods of reducing the calculated space necessary to traverse...with the mathematical connections between ideas and what the addition of that specific method has on information storage and retrieval...with any other pertinent information about the indexing system and its end result with mathematically applied benchmarks...and the ability to 100% regenerate the input data by calculation to provide a persistent memory and context continuity, as well as the ability to sidestep the floating point problem and compression entropy"
+
+"Every file that has ever existed, or will ever exist, has a unique coordinate in this infinite permutation space that was always already there. The address did not come into being when the file was created. The file came into being when someone navigated to its address."
+
+"The charset order IS the key. Two parties sharing a charset permutation share a private address space. A document indexed under permutation A cannot be located by someone using permutation B, even if they know the algorithm. The security is not in the algorithm — it is in the key."
+
+"HyperWebster addressing = lossless compression paradigm (address not storage)"
+
+"The mathematics did not build the HyperWebster. The mathematics is the HyperWebster. The engineering built the navigator."
+
+"HyperWebster address-value model (coordinates instead of pointers) may completely bypass C++ pointer cycle memory leak problems. No std::shared_ptr needed — coordinates are value types. Navigation = recompute address, not follow pointer."
+
+"NOT RAG. HyperWebster addressing IS the memory architecture."

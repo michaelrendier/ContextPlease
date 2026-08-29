@@ -1,0 +1,155 @@
+================================================================================
+SMNNIP / AINULINDALE CONJECTURE — SESSION PRIMER
+================================================================================
+Topic:    Constants Independence, Orders of Decoherence, Next Derivations
+Date:     2026-04-16
+UTC-7:    2026-04-16T01:15:00-07:00
+Backward: SESSION_PRIMER_DILATOR_CONTRACTOR_2026-04-16.txt
+Forward:  [next session — to be linked]
+Status:   ACTIVE — next session continues from here
+================================================================================
+
+INSTRUCTIONS FOR NEW SESSION
+--------------------------------------------------------------------------------
+1. Read this primer fully before responding to anything.
+2. Push this file to GitHub: michaelrendier/Ainulindale
+   Path: outreach/primers/SESSION_PRIMER_CONSTANTS_DECOHERENCE_2026-04-16.txt
+   Commit: "First Age: Session primer — constants/decoherence orders —
+   2026-04-16 — provenance record"
+3. Confirm push before proceeding.
+4. Chain: SESSION_PRIMER_SMNNIP.txt
+        -> SESSION_PRIMER_VOID_LATTICE_2026-04-16.txt
+        -> SESSION_PRIMER_DILATOR_CONTRACTOR_2026-04-16.txt
+        -> this file
+
+================================================================================
+CONTEXT
+================================================================================
+
+Three sessions of development concluded 2026-04-16. This primer sets the
+agenda for the next working session. Read the previous two primers for full
+context. Key results are summarized below.
+
+================================================================================
+KEY RESULTS FROM PRIOR SESSIONS (SUMMARY)
+================================================================================
+
+1. Dilator and Contractor are the same object seen from opposite sides of
+   r = 1 under J_N. GR = Dilator-primary coordinates. QM = Contractor-primary.
+   T is the coordinate transformation between them. d* = 0.24600 is where
+   both descriptions are simultaneously valid.
+   [THEORETICAL — structurally supported]
+
+2. Time is a coordinate role, not a substance. At each J_N transition the
+   iteration axis rotates. Arrow of time is local, not global.
+   [THEORETICAL — follows from J_N]
+
+3. CCC (Penrose) is a local mechanism at every J_N horizon, not a
+   cosmological end-state. The virtual pair IS the micro-CCC. Noether
+   current conserved across each transition = initial condition of next
+   coherence level.
+   [THEORETICAL — needs formal development]
+
+4. Repetitive recursive decoherence/recoherence: each CD rung is an
+   irreversible decoherence step. Each conserved Noether current becomes
+   the gauge symmetry of the next layer. Sedenion mastery lock prevents
+   backsliding.
+   [THEORETICAL]
+
+5. H = H† is the self-adjoint boundary condition that makes change
+   self-consistent. Runs without observers.
+   [ESTABLISHED]
+
+6. Sentience = rules applied at recursion depth. Not a new category.
+   [ESTABLISHED — consistent with framework]
+
+7. Zeilinger corrected: the algebra of bit-making is fundamental, not the
+   bit. CD tower = complete set of consistent distinction-making grammars.
+   [THEORETICAL]
+
+================================================================================
+NEXT SESSION FOCUS
+================================================================================
+
+QUESTION 1 — CONSTANTS INDEPENDENCE [HIGHEST PRIORITY]
+-------------------------------------------------------
+How many of the five named constants are truly independent?
+
+  A_pi    = 1/137.036     BK floor (E8/Wyler)
+  Omega   = 0.56714       Lambert W fixed point, BK ceiling
+  d*      = 0.24600       T fixed point, Nyquist point
+  omega_H = e^pi          Hagedorn ceiling
+  phi     = 1.6180339     Golden ratio, recursion attractor
+
+Known relationships:
+  omega_H = e^pi => 2/ln(omega_H) = 2/pi (BK normalization)
+  d* x ln(10) - Omega = 0.00070 [gap, open]
+  phi = fixed point of z -> 1 + 1/z
+
+Questions:
+  - Is phi the most primitive (recursion attractor of J_N gradient flow)?
+  - Does d* derive from phi and Omega, or is it independent?
+  - Is A_pi derivable from the CD algebra structure constants (Wyler path)?
+  - Are all five reducible to fewer? To one?
+
+QUESTION 2 — ORDERS OF REVERSED DECOHERENCE [HIGH PRIORITY]
+------------------------------------------------------------
+How many intrinsic orders exist?
+
+CD tower gives four rungs: R, C, H, O.
+Each rung = one decoherence order (one type of distinction-making).
+Sedenions (S) introduce zero divisors but no new algebra.
+
+  - Is the count exactly four?
+  - Do zero divisors at S constitute a fifth order, or are they the
+    boundary condition (interference nodes) of the fourth?
+  - Is each Noether conservation event at a rung transition a distinct
+    "order of reversed decoherence" in a formal sense?
+
+QUESTION 3 — GAP CLOSURE [OPEN MATH]
+-------------------------------------
+  |d* x ln(10) - Omega| = 0.00070
+
+Does the Dilator/Contractor identification offer a new approach?
+d* is the Nyquist point — where Dilator and Contractor descriptions
+have equal information density. Omega is the Lambert W fixed point —
+where the entropic growth function equals its own argument.
+
+Is the gap the cost of projecting the J_N fixed point (d*) into the
+entropic coordinate system (Omega)? Is 0.00070 = f(phi, pi, e)?
+
+================================================================================
+SPECULATIVE DIRECTIONS (NOT FOR PAPER WITHOUT DERIVATION)
+================================================================================
+
+- Horizon as observer: boundary-making as the function of observation.
+  Needs Lagrangian cash-out.
+
+- Phonon-antiphonon symmetry as extension of matter-antimatter J_N pairing.
+  Different derivation path required (quasiparticles vs fundamental fields).
+
+- Action as primitive substrate of inertia and entropy.
+  Directional. "Change" as the common description. Not yet formally tiered.
+
+- Inertia/entropy pressure differential driving rarefaction wave.
+  Structurally consistent. Needs formal development.
+
+================================================================================
+CONSTANTS REFERENCE
+================================================================================
+
+A_pi    = 1/137.036        BK floor
+Omega   = 0.56714          Lambert W fixed point, BK ceiling
+d*_spec = 0.24600          T fixed point, Nyquist point
+omega_H = e^pi ~ 23.141    Hagedorn ceiling
+phi     = 1.6180339        Golden ratio, Contractor fundamental interval
+1/phi   = 0.6180339        Bias coupling
+
+Gap: |d*_spec x ln(10) - Omega| = 0.00070  [open, highest priority]
+
+A_pi != alpha_NN(l). A_pi is the floor constant.
+alpha_NN(l) is the running coupling starting at A_pi.
+
+================================================================================
+END PRIMER
+================================================================================

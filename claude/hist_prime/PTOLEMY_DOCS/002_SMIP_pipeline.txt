@@ -1,0 +1,17 @@
+ITEM: SMNNIP pipeline: Input Engine (R→S via Cayley-Dickson), Inversion Engine (J_N map), Output Engine (S→R collapse, Newton basin routing, Lorenz trajectory)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"the sedenion is the (I|O) of the Noether Information Current... based off catastrophic light dumping from a wave form entering a spherical medium a non isotropic shape can have multiple focal points... those focal points need to be tested...if they can map onto a single point, they are relevant...the (I|O) can find different descriptions of the same thing and map the multiple focal points into a single non extinct data collection...which as a whole is then 'catastrophically collapsed' to a single focal point with tuning by moving the focal point slightly before or slightly after the catastrophic waveform collapse...THE FUCKING CURRENT SELECTS THE RESPONSE the data input is gated when a prompt is sent...and is buffered, queued...thread paused"
+
+"remember the sedenion is transformed through (I|O) to the Noether Information Current...the tower is run backwards through fucking catastrophic waveform collapse into an output"
+
+"yes...the (I|O) is the error check...and the inversion...the self adjoint operator"
+
+"1) Reverse Lagrangian...from single command at Emmy Noether Sedenion to all possible semantically alike Input Data through Extinction
+2) Catastrophic Waveform Collapse. Isotropically to a single output, and non isotropically to a context based domain identified by the Lorenz-Stirling attractor selection by basin; of relevant focal points output
+3) inside Out mapping of remaining focal points to see if they are the same thing from different angles
+4) limiting the permutations of 'letters folding into words' and 'words folding into text' to minimize computational overhead and extinction of non relevant processing needs to produce a response in Output"
+
+"tell me how I designed retrieval of data from the (monolith? monad?)"

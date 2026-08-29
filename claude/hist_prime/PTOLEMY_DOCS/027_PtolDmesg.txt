@@ -1,0 +1,17 @@
+ITEM: PtolDmesg
+=================================================================================================
+
+YOUR PROMPTS:
+
+"The Forge is the writer"
+
+"Faces SUBMIT events. Aule (the Forge) is the SOLE WRITER to dmesg. Mirrors Linux kernel ring buffer — one file, all voices, timestamped."
+
+"Face → dmesg.submit(face, message) → Aule writes to disk"
+"No Face writes directly. All writes pass through Aule's forge queue."
+
+"Aule buffer initializes → daemon POSTs flow in → PtolBus comes up → Ptolemy C/O buffer[0] available → shell prompt appears"
+
+[PtolDmesg.py: module-level singleton. Every Face does: from Pharos.PtolDmesg import dmesg. Built and pushed.]
+
+"ALL_BUS_EVENTS_TO_DMESG: Aule watches dmesg only, never called directly"

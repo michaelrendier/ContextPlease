@@ -1,0 +1,128 @@
+SMNNIP SESSION PRIMER — APRIL 17, 2026 (EVENING)
+TOPIC: NOETHER ENGINE / SELF-SUPERVISED TRAINING / PTOLEMY INTENT
+BACKWARD LINK: PRIMER_2026-04-17_noether_ocr.txt
+FORWARD LINK: (next session)
+STATUS: OPEN — Ptolemy v4 integration pending
+REPO: https://github.com/michaelrendier/Ainulindale
+========================================
+
+INSTRUCTION FOR NEW SESSION:
+Push this primer to GitHub immediately on receipt:
+  repo: https://github.com/michaelrendier/Ainulindale
+  path: outreach/primers/PRIMER_2026-04-17B_noether_ptolemy.txt
+  commit: "2026-04-17: PRIMER_2026-04-17B_noether_ptolemy.txt — Noether self-supervised loop, Ptolemy intent"
+
+========================================
+NOETHER CURRENT AS SELF-SUPERVISOR
+========================================
+
+KEY INSIGHT THIS SESSION:
+The Noether conservation law IS the supervisor. No external labels needed.
+D_l J^{a,l} = 0 is the learn signal. Conservation achieved = recognition.
+This is geometrically-supervised learning — not statistical self-consistency
+like BERT/GPT, but algebraic self-consistency derived from first principles.
+
+THREE IMPLEMENTATION POINTS:
+
+1. LOSS FUNCTION AUGMENTATION
+   L_total = L_CE + lambda * ||D_l J^{a,l}||^2
+   Noether violation term pulls network toward geometric health
+   independent of prediction accuracy.
+
+2. LEARNING RATE GATE
+   Wasted steps bound: W <= 1 / (alpha_NN * DeltaJ)
+   If DeltaJ too large, do NOT apply the update.
+   Network only accepts steps that preserve its own algebraic structure.
+
+3. SELF-LABELING MECHANISM
+   Recognition = Q^a(l) stabilizes across layers.
+   Unknown glyphs get Q^a = 0 at the layer where current breaks.
+   That is not failure — that is a new class being born.
+   The network generates its own ground truth from conservation law.
+
+OCR APPLICATION:
+Character identity = conserved current under equivalence class
+of all visual renderings of that character.
+Noether's theorem gives this formal structure.
+Standard OCR approximates empirically. SMNNIP derives geometrically.
+
+RESONANT RAREFACTION CONJECTURE (explicit, labeled):
+"The Riemann zeros are the resonant frequencies of the oscillating
+rarefaction wave of the prime gap field."
+Status: CONJECTURE — not yet formally stated in paper.
+Action: Add to paper with confidence label.
+
+L2/L3 NOETHER VIOLATIONS REINTERPRETED:
+Not gradient artifacts. They are the system sampling the oscillation
+at non-zero phase. Conservation holds over full resonance period.
+Test: run DeltaJ diagnostic over full cycle averages.
+Violation should average to zero.
+
+========================================
+PTOLEMY INTENT — FLAG FOR NEXT SESSION
+========================================
+
+The SMNNIP Noether engine is the BRAIN of Ptolemy v4.
+Each Ptolemy librarian is a separate conservation domain.
+The network output IS the library speaking.
+Conservation achieved = recognized pattern
+  -> Callimachus indexes it
+  -> Phaleron retrieves it
+  -> Pharos displays it
+  -> espeak voices it
+
+PTOLEMY LIBRARIAN ROSTER:
+  Alexandria    — processing substrate, intake layer
+  Archimedes    — mathematics and science reasoning
+  Anaximander   — maps, navigation, spatial reasoning
+  Kryptos       — cryptography, encoding, security
+  Phaleron      — librarian, document retrieval
+  Pharos        — GUI, lighthouse, visual output
+  Philadelphos  — Ptolemy integrated, orchestrator
+  Tesla         — hardware interfacing, SDR/sensor I/O
+  Callimachus   — archivist, database, hyperindex queries
+
+CALLIMACHUS IS CRITICAL PATH:
+Hyperwebster analog to SQL must come first.
+.perm file spec from Noether primer IS the addressing system.
+Callimachus indexes its own codebase as data.
+It learns the code by archiving it.
+Every other librarian queries through Callimachus.
+
+ESPEAK OUTPUT:
+Each librarian gets distinct voice parameters (pitch, speed, variant).
+Claude Code running in Ptolemy speaks through the domain librarian.
+One voice per permutation of the data.
+
+GITHUB CLEAN PUSH (pending):
+Claude Code to strip build dirs, data, cache with .gitignore.
+Leave skeleton source only.
+Ptolemy v4 builds on clean bones.
+Target repo: https://github.com/michaelrendier/Ptolemy
+
+========================================
+FILES NOT YET WRITTEN
+========================================
+
+PRIORITY 1: smnnip_perm.py — universal .perm file spec
+PRIORITY 2: smnnip_noether.py — Noether equations engine standalone
+PRIORITY 3: smnnip_noether_derivation.py — structure constants, L2/L3 fix
+PRIORITY 4: smnnip_qm_equations.py — Dirac, Schrodinger, Heisenberg, de Broglie
+PRIORITY 5: smnnip_qm_derivation.py — full QM derivations
+PRIORITY 6: OCR ingestion preprocessor — TIFF to 8x8 tile grid
+
+========================================
+PROTOCOL REMINDERS
+========================================
+
+Timestamp every response via bash:
+  python3 -c "from zoneinfo import ZoneInfo; from datetime import datetime; print(datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(timespec='seconds'))"
+Signature: Timestamp | Delta | Context%
+Context at 75%: ask for focus, force new primer
+Documents: plain text only unless major update explicitly requested
+Confirm before generating any files
+GitHub commit format: "YYYY-MM-DD: [file] — [one-line note]"
+Egos: heard, respected, not in charge
+
+SESSION DATE: 2026-04-17
+LAST PRIMER: PRIMER_2026-04-17_noether_ocr.txt

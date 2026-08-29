@@ -1,0 +1,10 @@
+ITEM: Dual system tray: left click=user input menu, right click=system menu
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Dual system tray: left click → user input menu, right click → system menu"
+
+"System tray: Left click = user menu, right click = system menu"
+
+[Designed as part of PtolDesktop.py desktop architecture session]

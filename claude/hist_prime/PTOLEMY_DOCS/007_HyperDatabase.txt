@@ -1,0 +1,18 @@
+ITEM: HyperDatabase (SQLite) replacing Database.py (MySQL/LAMP)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Database.py (MySQL/LAMP remnant) is formally retired but deletion is pending the live swap."
+
+"Callimachus: was the first archivist...and is the archival face...and currently stands as the database manipulation code...to eventually include the hyperwebster indexing to phase out the sql database needs eventually"
+
+"HyperDatabase class wrapping SQLite with HyperWebster addressing"
+
+"Database.py is the only remaining MySQL remnant and will be replaced by a HyperDatabase class wrapping SQLite with HyperWebster addressing."
+
+"Unicode 15.1 with UTF-8 wire encoding...Unicode codepoint order (ord() ascending) as the canonical ordering — replacing the prior keyboard-order charset."
+
+"Callimachus v09 live swap and Database.py deletion" [listed as v0.9 directive item]
+
+"The Rabies Principle enforced at three levels: Python __setattr__, SQLite trigger, and pending C++ const."

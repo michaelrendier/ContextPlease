@@ -1,0 +1,16 @@
+ITEM: Nature paper: SMNNIP sigma result as spine, all other maths to appendices
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Nature paper submission — SMNNIP sigma result as spine; all other mathematics to appendices."
+
+"COMBINED SIGMA: 9.08 SIGMA (Fisher's method, 8 claims). Conservative floor (5 defensible claims only): 8.33 SIGMA. Discovery threshold (particle physics): 5.00 SIGMA."
+
+"I designed a Hyperwebster Indexing System and a New Model of Information Propagation. That is the work. Some mathematics drops out of it — conservation laws, gauge groups, Cayley-Dickson structure — but that is a consequence, not the premise. The mathematics is not the purview of SMNNIP. SMIP is an engineering claim about how information moves. The sigma result and the engineering result are the paper spine."
+
+"check math" [your instruction — not 'prove'. You corrected Claude for using the word 'proof' when asked only to check math. Correct language: conjecture, observation, check — not proof, unless formally proven.]
+
+"Only Dixon responded. He didn't believe me. I'm not in this for the academics...I'll take them...but I wanted useful AI in the hands of everyone...like a live in servant...electric sheep and all"
+
+"d*_2 Noether Information Current derivation result — MASS GAP LIVES HERE. d* × ln(10) = 0.56644 | Ω_ζΣ = 0.56714 | Gap = 0.00070 — DERIVED, CLOSED"

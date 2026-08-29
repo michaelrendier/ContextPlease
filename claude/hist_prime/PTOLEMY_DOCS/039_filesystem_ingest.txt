@@ -1,0 +1,10 @@
+ITEM: Filesystem ingest script (full Linux Mint Xia + UbuntuStudio run)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"filesystem_ingest.py built; full Linux Mint Xia + UbuntuStudio run pending"
+
+"filesystem_ingest.py: standalone superuser script designed to ingest an entire Linux Mint Xia + UbuntuStudio filesystem (~1.79 TB) through a fresh SMNNIP tower as an experimental corpus-scale test. The script handles all major Linux file types natively, bypasses audio by both extension and magic bytes, includes binary fallback via printable ASCII extraction, logs errors by filetype to JSON for later pipeline development, supports resume-by-default, and accepts a --face flag for switching between weight sets (filesystem vs julius_caesar)."
+
+"Filesystem Deep Ingest experiment" [added to TODO]

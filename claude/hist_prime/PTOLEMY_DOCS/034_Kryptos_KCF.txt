@@ -1,0 +1,16 @@
+ITEM: Kryptos deterministic key derivation (KCF)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Kryptos will handle the eventual encryptions, and may become a subset of Callimachus...but contains the program i start with any time i want to learn a new programming language, and that is The Code Book...and representing a text editor type GUI that allows the use of everything from the Caesar Cipher...to the Vigenère cipher and ultimately a graphical representation of both the 3 and 5 wheel Enigma Machines"
+
+".perm files reassigned from Callimachus to Kryptos"
+
+"Kryptos deterministic key derivation (KCF)" [listed as v0.9 directive]
+
+"Private permutation-based ordering for cryptographic purposes belongs to Kryptos, with the Unicode block declaration serving as a public key concept."
+
+"GlyphForge stub (Kryptos)" [listed as implemented]
+
+"Kryptos/kcf.py" [built and pushed]

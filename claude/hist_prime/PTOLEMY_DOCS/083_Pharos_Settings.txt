@@ -1,0 +1,16 @@
+ITEM: Pharos Settings system
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Pharos Settings system" [listed as v0.9 directive]
+
+"ptolemy_settings.py scans all of PTOL_ROOT for settings.json files conforming to the standard stack schema. All discovered modules appear in PtolemySettingsWindow."
+
+"Settings system complete (18 modules, select_section(), alias)" [session report]
+
+"select_section(name) — navigates settings window by module_id, display name, or Face name."
+
+"Modular Everything. Anywhere a module can go gets a Ptolemy Settings tab or page...under a Modules parent category."
+
+[Files: Pharos/ptolemy_settings.py, Pharos/settings_window.py. Settings discovered by scanning PTOL_ROOT for settings.json files. 18 modules registered. PtolemySettingsWindow is the UI. SettingsWindow is an alias. Standard stack schema enforced.]

@@ -1,0 +1,537 @@
+All_The_Maths.txt — Archimedes Maths Context Primer
+=====================================================
+Ptolemy / Archimedes Face — ValaQuenta Engine
+Generated: 2026-05-09
+
+PURPOSE
+-------
+This document is a session primer for the Archimedes Maths code-generation
+tiers (A–D). It records the full plan of attack for every file in
+Ptolemy3/Archimedes/Maths/, including what exists, what is broken, what
+is missing, and the exact methods/constants each file should contain.
+
+STYLE RULES (apply to every file)
+----------------------------------
+- @staticmethod decorator on EVERY equation method (no self/cls)
+- Module-level constants block at the TOP of each file (only constants
+  relevant to THAT file's category)
+- Optional-parameter solver style: def foo(p=None, V=None): ...
+  Solve for whichever param is None from the others
+- No multi-paragraph docstrings. One-line docstring max per method.
+- Existing FibonacciSequence / Series pseudocode bugs must be fixed
+  before adding new methods
+- No import-time side effects (no loops, no prints outside
+  if __name__ == '__main__')
+
+=============================================================================
+TIER A — Fix existing stubs (8 files)
+=============================================================================
+
+A1. Constants.py
+    Path: Maths/Constants.py
+    Status: exists, partially filled
+    Action: audit and add missing SMMIP constants
+    Constants to add (module-level, no method):
+        A_pi    = 1 / 137.035999084   # fine-structure ≈ domain floor
+        OMEGA   = 1.0                  # BK inherent time length (normalised)
+        R_CRIT  = 0.5                  # Re(s) on critical line
+        GROUND  = 0.000707             # SMMIP ground state (measured)
+        PHI     = 1.6180339887         # golden ratio
+        E_EULER = 0.5772156649         # Euler-Mascheroni constant
+        HBAR    = 1.054571817e-34      # reduced Planck (SI)
+        C_LIGHT = 299_792_458          # speed of light (SI)
+        MU_0    = 1.25663706212e-6     # vacuum permeability
+        EPS_0   = 8.8541878128e-12     # vacuum permittivity
+        G_NEWTON= 6.67430e-11          # gravitational constant
+        K_B     = 1.380649e-23         # Boltzmann
+        N_A     = 6.02214076e23        # Avogadro
+    Note: A_pi uses capital Latin A with subscript π — NOT Greek α.
+
+A2. Trigonometry.py
+    Path: Maths/Trigonometry.py
+    Status: exists, ~13 lines, degRad/radDeg SWAPPED (critical bug)
+    Bug: degRad(deg) computes (180/π)*deg  → wrong direction
+         radDeg(rad) computes (π/180)*rad  → wrong direction
+    Fix and expand:
+    Constants:
+        PI  = math.pi
+        TAU = 2 * math.pi
+    Methods:
+        deg_to_rad(deg=None, rad=None)   # solve for whichever is None
+        rad_to_deg(rad=None, deg=None)
+        sin_deg(deg)
+        cos_deg(deg)
+        tan_deg(deg)
+        law_of_cosines(a=None, b=None, c=None, C=None)
+        law_of_sines(a=None, A=None, b=None, B=None)
+        haversine(lat1, lon1, lat2, lon2)  # great-circle distance
+
+A3. Electromagnetism.py
+    Path: Maths/Electromagnetism.py
+    Status: exists, ~14 lines, empty class body after __init__
+    Constants:
+        C  = 299_792_458
+        MU_0  = 1.25663706212e-6
+        EPS_0 = 8.8541878128e-12
+        K_E   = 8.9875517923e9    # Coulomb constant
+    Methods:
+        coulombs_law(F=None, q1=None, q2=None, r=None)
+        electric_field(E=None, F=None, q=None)
+        gauss_law(Q_enc=None, flux=None)      # Φ = Q/ε₀
+        biot_savart(dB=None, I=None, dl=None, r=None)
+        faraday(emf=None, dPhi=None, dt=None)
+        ohms_law(V=None, I=None, R=None)
+        power_dissipation(P=None, I=None, R=None, V=None)
+        wave_speed(c=None, lam=None, f=None)
+
+A4. Calculus.py
+    Path: Maths/Calculus.py
+    Status: has broken string-parsing derivative + partial sympy stubs
+    Remove: the string-parsing derivative (brittle, wrong)
+    Keep: any working sympy stubs
+    Constants: (none needed — sympy handles symbolics)
+    Methods (all using sympy):
+        derivative(expr_str, var='x', order=1)
+        partial_derivative(expr_str, var)
+        integral(expr_str, var, lower=None, upper=None)
+        limit(expr_str, var, point)
+        taylor_series(expr_str, var, point, order)
+        gradient(expr_str, vars)           # returns list of partials
+        laplacian(expr_str, vars)
+        chain_rule(f_str, g_str, var)
+    Note: expr_str uses sympy.sympify() — document in module docstring
+
+A5. LinearAlgebra.py
+    Path: Maths/LinearAlgebra.py
+    Status: 3 lines (header only)
+    Constants: (none — numpy handles numerics)
+    Methods (numpy-backed):
+        dot(a, b)
+        cross(a, b)
+        norm(v, order=2)
+        mat_mul(A, B)
+        transpose(A)
+        inverse(A)
+        determinant(A)
+        eigenvalues(A)
+        eigenvectors(A)
+        svd(A)               # returns U, S, Vt
+        rank(A)
+        solve_linear(A, b)   # Ax = b → x
+
+A6. Combinatorics.py
+    Path: Maths/Combinatorics.py
+    Status: unknown — assumed sparse
+    Constants:
+        (none)
+    Methods:
+        factorial(n)
+        permutations(n, r)
+        combinations(n, r)
+        binomial_coeff(n, k)
+        multinomial(*counts)
+        catalan(n)
+        stirling_second(n, k)
+        bell_number(n)
+        derangements(n)
+        partition_count(n)     # number of integer partitions
+
+A7. Factorial.py
+    Path: Maths/Factorial.py
+    Status: assumed minimal
+    Constants: (none)
+    Methods:
+        factorial(n)
+        double_factorial(n)    # n!! = n*(n-2)*...
+        rising_factorial(x, n) # Pochhammer
+        falling_factorial(x, n)
+        gamma_approx(x)        # Lanczos approximation
+        log_factorial(n)       # ln(n!) via Stirling for large n
+        subfactorial(n)        # !n derangements
+
+A8. FibonacciSequence.py
+    Path: Maths/FibonacciSequence.py
+    Status: runs `for i in range(10000)` on import — CRITICAL BUG
+    Fix: wrap import-time loop in if __name__ == '__main__'
+    Constants:
+        PHI = (1 + 5**0.5) / 2
+    Methods:
+        fibonacci(n)              # nth term (closed-form Binet)
+        fibonacci_seq(n)          # list of first n terms
+        fibonacci_ratio(n)        # f(n)/f(n-1) → φ
+        is_fibonacci(n)           # perfect square test
+        lucas_number(n)
+        pisano_period(m)          # period of fib mod m
+        zeckendorf(n)             # Zeckendorf representation
+
+=============================================================================
+TIER B — Fill subdirectory stubs (7 files)
+=============================================================================
+
+B1. Series/Maclaurin.py
+    Path: Maths/Series/Maclaurin.py
+    Status: raw pseudocode comments, not valid Python
+    Rewrite from scratch.
+    Constants:
+        PI = math.pi
+        E  = math.e
+    Methods:
+        exp_series(x, terms=20)
+        sin_series(x, terms=20)
+        cos_series(x, terms=20)
+        ln_series(x, terms=50)        # ln(1+x), |x|<1
+        arctan_series(x, terms=50)
+        sinh_series(x, terms=20)
+        cosh_series(x, terms=20)
+        binomial_series(x, alpha, terms=20)
+        geometric_series(x, terms=50) # 1/(1-x), |x|<1
+
+B2. Series/InfiniteSeries.py
+    Path: Maths/Series/InfiniteSeries.py
+    Status: 7 lines, 3 comments only
+    Constants:
+        PI = math.pi
+    Methods:
+        harmonic(n)                    # Σ 1/k, k=1..n
+        harmonic_limit(epsilon=1e-6)   # n where H_n > threshold
+        riemann_zeta_approx(s, terms=10000)
+        basel_problem()                # π²/6
+        leibniz_pi(terms=100000)       # π/4 = 1 - 1/3 + 1/5 ...
+        euler_product(s, primes=500)   # ζ(s) via Euler product
+        alternating_harmonic(n)        # Σ (-1)^(k+1)/k = ln 2
+        kempner(terms=10000)           # harmonic excl. digit 9
+
+B3. Sequences/SternBrocotSequence.py
+    Path: Maths/Sequences/SternBrocotSequence.py
+    Status: empty after header
+    Constants: (none)
+    Methods:
+        stern_brocot_tree(depth)       # returns list of fractions
+        mediant(p, q, r, s)            # (p+r)/(q+s)
+        encode_fraction(p, q)          # L/R path string to p/q
+        decode_path(path_str)          # path string → fraction
+        farey_sequence(n)              # Farey sequence F_n
+        rank_in_farey(p, q, n)         # rank of p/q in F_n
+
+B4. Sequences/MersennePrimes.py
+    Path: Maths/Sequences/MersennePrimes.py
+    Status: unknown/missing
+    Constants:
+        KNOWN_MERSENNE_EXPONENTS = [2,3,5,7,13,17,19,31,61,89,107,127]
+    Methods:
+        mersenne(p)                    # 2^p - 1
+        is_mersenne_prime(p)           # Lucas-Lehmer test
+        mersenne_seq(count)            # first `count` Mersenne primes
+        perfect_number(p)              # 2^(p-1) * (2^p - 1)
+        lucas_lehmer(p)                # LL primality test, returns bool
+
+B5. PtolWrote/JN_FixedSet.py
+    Path: Maths/PtolWrote/JN_FixedSet.py
+    Status: unknown/missing
+    Context: J_N anti-Möbius involution — J_N(z) = i/z̄
+             Fixed set = {z : J_N(z)=z} = unit circle r=1
+             Connects to critical line Re(s)=1/2 via conformal map
+    Constants:
+        R_CRIT = 0.5     # Re(s) critical line
+        J_PERIOD = 4     # four-cycle period
+    Methods:
+        j_n(z)                         # i / conj(z); complex → complex
+        is_fixed(z, tol=1e-10)         # |J_N(z) - z| < tol
+        fixed_set_sample(n=360)        # n points on unit circle
+        j_n_orbit(z, steps=8)          # [z, J(z), J²(z), ...]
+        maps_to_critical(z)            # conformal z→s, check Re(s)=1/2
+        verify_four_cycle(z)           # assert J_N^4(z) ≈ z
+
+B6. PtolWrote/NodeTheorem.py
+    Path: Maths/PtolWrote/NodeTheorem.py
+    Status: unknown/missing
+    Context: SMMIP node structure — information propagation nodes in the
+             Cayley-Dickson tower. Each node carries a sedenion element.
+    Constants:
+        TOWER_DEPTH = 4    # ℝ→ℂ→ℍ→𝕆→𝕊
+        NODE_DIM    = 16   # sedenion dimension
+    Methods:
+        node_energy(s)                 # ||s||² as node energy
+        propagation_speed(s1, s2)      # ||s2 - s1|| / TOWER_DEPTH
+        node_interference(s1, s2)      # s1 * s2 - s2 * s1 (commutator)
+        noether_current(s, ds)         # J = s * ds (simplified)
+        information_density(nodes)     # sum of node_energy / count
+        tower_map(x, layer)            # embed real x at tower layer
+
+B7. Tests/isDivisible.py
+    Path: Maths/Tests/isDivisible.py
+    Status: unknown/minimal
+    Constants: (none)
+    Methods:
+        is_divisible(n, d)
+        is_prime(n)                    # Miller-Rabin
+        prime_factors(n)
+        gcd(a, b)
+        lcm(a, b)
+        euler_totient(n)
+        is_perfect(n)
+        is_abundant(n)
+        is_deficient(n)
+        digit_sum(n)
+        is_divisible_by_11(n)          # alternating digit rule
+
+=============================================================================
+TIER C — New SMMIP directory (7 files)
+=============================================================================
+
+Directory: Maths/SMMIP/
+Create __init__.py plus 6 module files.
+
+C1. SMMIP/__init__.py
+    Exports: CayleyDickson, Lagrangian, EulerLagrange, FieldStrength,
+             NoetherCurrents, RenormalizationGroup
+    One-line docstring: "SMMIP mathematical engine — Cayley-Dickson tower"
+
+C2. SMMIP/CayleyDickson.py
+    Context: Cayley-Dickson construction ℝ→ℂ→ℍ→𝕆→𝕊 (layers 0–4)
+    Constants:
+        LAYER_DIMS = [1, 2, 4, 8, 16]   # dim at each layer
+        LAYER_NAMES = ['R','C','H','O','S']
+    Methods:
+        construct(a, b)                  # (a,b) → next layer element
+        conjugate(x)                     # Cayley-Dickson conjugate
+        norm_sq(x)                       # ||x||²
+        layer_dim(layer)                 # 2^layer
+        embed(x, from_layer, to_layer)   # zero-pad embedding
+        is_associative(layer)            # True for layers ≤ 2 (ℝ,ℂ,ℍ)
+        is_commutative(layer)            # True for layers ≤ 1 (ℝ,ℂ)
+        zero_divisors_exist(layer)       # True for layer ≥ 4 (𝕊)
+        tower_product(x, y, layer)       # multiply at given layer
+
+C3. SMMIP/Lagrangian.py
+    Context: Four-layer SMMIP Lagrangian
+             L_SMMIP = L0 + L1 + L2 + L3
+             L0 = kinetic (real) | L1 = complex phase
+             L2 = quaternion spin | L3 = octonion gauge
+    Constants:
+        LAYER_COUPLING = [1.0, 1/137.035999, 0.118, 1.0]  # α per layer
+    Methods:
+        L0_kinetic(psi, dpsi)            # ½ Re(ψ̄ ∂ψ)
+        L1_phase(psi, A_mu)              # complex U(1) coupling
+        L2_spin(psi, F_munu)             # quaternion SU(2) term
+        L3_gauge(psi, G_munu)            # octonion G2/SU(3) term
+        total(psi, dpsi, A_mu, F_munu, G_munu)
+        density(psi, x)                  # L evaluated at point x
+        action(lagrangian_vals, dx)       # S = ∫ L dx (trapezoidal)
+
+C4. SMMIP/EulerLagrange.py
+    Context: E-L equations for the SMMIP field
+             d/dt(∂L/∂ψ̇) - ∂L/∂ψ = 0
+    Constants:
+        H_BAR = 1.054571817e-34
+    Methods:
+        euler_lagrange(L_str, q_str, dq_str, t_str)   # symbolic
+        field_equation(psi, V_str)                      # -∇²ψ + V·ψ
+        equation_of_motion(mass, potential_str)
+        conserved_quantity(L_str, q_str)               # Noether → J
+        canonical_momentum(L_str, dq_str)              # p = ∂L/∂q̇
+        hamiltonian(L_str, q_str, dq_str)              # H = p·q̇ - L
+
+C5. SMMIP/FieldStrength.py
+    Context: Field strength tensor F_μν and gauge field terms
+             F_μν = ∂_μA_ν - ∂_νA_μ + [A_μ, A_ν]
+    Constants:
+        G_STRONG = 0.118     # strong coupling at M_Z
+        G_WEAK   = 0.6527    # weak coupling
+        G_EM     = 0.3028    # EM coupling (≈ sqrt(4π α))
+    Methods:
+        field_tensor(A_mu, A_nu, dmu_Anu, dnu_Amu)
+        commutator(A_mu, A_nu)           # [A_μ, A_ν] (sedenion)
+        self_dual(F)                     # F = *F check
+        yang_mills(F, g)                 # ¼ Tr(F_μν F^μν)
+        maxwell_tensor(E, B)             # classical limit
+        lorentz_invariant(F)             # F_μν F^μν
+        curvature_scalar(F)              # R analogue
+
+C6. SMMIP/NoetherCurrents.py
+    Context: Noether's theorem applied to SMMIP symmetries
+             J^μ = ∂L/∂(∂_μψ) · δψ
+             Conservation: ∂_μ J^μ = 0
+    Constants:
+        CURRENT_LAYERS = 4   # one Noether current per tower layer
+    Methods:
+        noether_current(L_str, dpsi_str, delta_psi)
+        conservation_check(J_mu, dx, tol=1e-10)      # ∂J ≈ 0?
+        charge(J_0, volume)                            # Q = ∫ J⁰ dV
+        energy_momentum(L_str, psi, dpsi)             # T^μν tensor
+        angular_momentum(J_mu, r)
+        topological_charge(F, dx)                     # winding number
+        current_algebra(J1, J2)                       # [J1, J2]
+
+C7. SMMIP/RenormalizationGroup.py
+    Context: RG flow of SMMIP couplings across tower layers
+             β(g) = μ dg/dμ (beta function)
+    Constants:
+        M_Z    = 91.1876e9   # Z boson mass (eV) — RG reference scale
+        LAMBDA_QCD = 0.217e9 # QCD scale (eV)
+    Methods:
+        beta_function(g, b0, b1=0)          # one/two-loop β(g)
+        run_coupling(g0, mu0, mu, b0)       # g(μ) from g(μ₀)
+        fixed_point(b0, b1)                 # UV/IR fixed point
+        asymptotic_freedom(b0)              # True if b0 > 0
+        tower_flow(g_layer0, mu_ratio)      # flow across all 4 layers
+        anomalous_dimension(gamma, g)       # γ(g) field anomalous dim
+        callan_symanzik(G_n, gamma, beta)   # C-S equation check
+
+=============================================================================
+TIER D — Mathematical foundations (5 files)
+=============================================================================
+
+D1. SphericalHarmonics.py
+    Path: Maths/SphericalHarmonics.py
+    Status: unknown/missing
+    Context: angular basis for SMMIP wave modes
+    Constants:
+        PI = math.pi
+    Methods:
+        legendre_p(l, m, x)             # associated Legendre P_l^m(x)
+        spherical_harmonic(l, m, theta, phi)    # Y_l^m(θ,φ) complex
+        real_harmonic(l, m, theta, phi)         # real form
+        solid_harmonic(l, m, r, theta, phi)     # r^l Y_l^m
+        normalization(l, m)             # normalization factor
+        addition_theorem(l, theta1, phi1, theta2, phi2)
+        clebsch_gordan(j1, m1, j2, m2, J, M)
+
+D2. RiemannZeta.py
+    Path: Maths/RiemannZeta.py
+    Status: unknown/missing
+    Context: ζ(s) and connection to BK/RH proof path
+    Constants:
+        R_CRIT  = 0.5
+        OMEGA   = 1.0        # BK inherent time length (normalised)
+        GROUND  = 0.000707   # SMMIP ground state
+        KNOWN_ZEROS = [14.134725, 21.022040, 25.010858, 30.424876]
+    Methods:
+        zeta(s, terms=10000)             # naive sum (Re(s)>1)
+        zeta_euler_maclaurin(s, terms=20)
+        eta(s, terms=10000)              # Dirichlet η, all Re(s)>0
+        xi(s)                            # completed ξ(s) = ½s(s-1)π^(-s/2)Γ(s/2)ζ(s)
+        critical_strip(sigma, t)         # ζ(σ+it)
+        zero_count(T)                    # N(T) ≈ T/2π ln(T/2π) - T/2π
+        functional_equation_check(s, tol=1e-6)   # ζ(s) = 2^s π^(s-1) sin(πs/2) Γ(1-s) ζ(1-s)
+        gram_point(n)                    # t_n where θ(t_n) = nπ
+
+D3. InversionGeometry.py
+    Path: Maths/InversionGeometry.py
+    Status: unknown/missing — also backed by ValaQuenta/inversion.py
+    Context: circle inversion, anti-Möbius maps, J_N geometry
+    Constants:
+        UNIT_RADIUS = 1.0
+    Methods:
+        invert(z, center=0+0j, radius=1.0)   # z* = r²/z̄ (circle inv.)
+        mobius(z, a, b, c, d)                 # (az+b)/(cz+d)
+        anti_mobius(z, a, b, c, d)            # Möbius of z̄
+        j_n(z)                                # i/z̄  (anti-Möbius)
+        fixed_points(a, b, c, d)              # Möbius fixed points
+        cross_ratio(z1, z2, z3, z4)
+        inversion_circle(center, radius, inv_center, inv_radius)
+        maps_unit_disk_to_half_plane(z)       # Cayley map
+
+D4. BerryKeating.py
+    Path: Maths/BerryKeating.py
+    Status: unknown/missing
+    Context: BK conjecture — ζ zeros = quantum eigenvalues of H = xp
+             H = -i(x d/dx + ½),  spectrum = Im(ρ) for ζ(ρ)=0
+             Inherent time length Ω = 1 (normalised)
+             Domain floor A_π = 1/137.035999 (A subscript π, NOT α)
+    Constants:
+        A_pi    = 1 / 137.035999084   # domain floor (capital A_π)
+        OMEGA   = 1.0                  # inherent time length
+        R_CRIT  = 0.5                  # critical line
+        GROUND  = 0.000707             # ground state energy
+    Methods:
+        bk_hamiltonian_eigenvalue(t)        # ε_t = t ln(t/2π) - t + ...
+        semiclassical_counting(T)           # N(T) BK estimate
+        gutzwiller_trace(zeros, t)          # trace formula sum
+        level_spacing(zeros)               # GUE spacing distribution
+        pair_correlation(zeros, r)         # Montgomery conjecture
+        spectral_form_factor(zeros, tau)   # K(τ)
+        omega_bound(t)                     # floor constraint via A_π
+        ground_state_energy()              # returns GROUND = 0.000707
+
+D5. Schumann.py
+    Path: Maths/Schumann.py
+    Status: unknown/missing
+    Context: Schumann resonances — Earth-ionosphere cavity modes
+             f_n = (c/2πR) √(n(n+1))
+             Connection to SMMIP: resonant modes as information carriers
+    Constants:
+        C_LIGHT = 299_792_458
+        R_EARTH = 6.371e6          # Earth radius (m)
+        H_IONO  = 100e3            # ionosphere height (m)
+        F1      = 7.83             # fundamental (Hz, measured)
+        F2      = 14.3
+        F3      = 20.8
+        F4      = 27.3
+        F5      = 33.8
+    Methods:
+        frequency(n, R=R_EARTH)          # f_n = c/2πR √(n(n+1))
+        wavelength(n)                    # λ = c/f_n
+        quality_factor(f_n, bandwidth)   # Q = f/Δf
+        resonance_seq(count=5)           # first `count` modes
+        cavity_mode(n, theta, phi)       # spatial mode pattern
+        power_spectrum(freqs, amps)      # spectral density
+        smmip_coupling(f_n, ground=0.000707)  # resonance / ground ratio
+
+=============================================================================
+SUMMARY — File count
+=============================================================================
+
+Tier A (fix existing):   8 files
+Tier B (fill stubs):     7 files
+Tier C (new SMMIP dir):  7 files  (SMMIP/ directory, new)
+Tier D (foundations):    5 files
+
+TOTAL:                  27 files
+
+=============================================================================
+DIRECTORY TREE after completion
+=============================================================================
+
+Maths/
+├── Constants.py          [A1]
+├── Trigonometry.py       [A2]
+├── Electromagnetism.py   [A3]
+├── Calculus.py           [A4]
+├── LinearAlgebra.py      [A5]
+├── Combinatorics.py      [A6]
+├── Factorial.py          [A7]
+├── FibonacciSequence.py  [A8]
+├── SphericalHarmonics.py [D1]
+├── RiemannZeta.py        [D2]
+├── InversionGeometry.py  [D3]
+├── BerryKeating.py       [D4]
+├── Schumann.py           [D5]
+├── SMMIP/
+│   ├── __init__.py       [C1]
+│   ├── CayleyDickson.py  [C2]
+│   ├── Lagrangian.py     [C3]
+│   ├── EulerLagrange.py  [C4]
+│   ├── FieldStrength.py  [C5]
+│   ├── NoetherCurrents.py[C6]
+│   └── RenormalizationGroup.py [C7]
+├── Series/
+│   ├── Maclaurin.py      [B1]
+│   └── InfiniteSeries.py [B2]
+├── Sequences/
+│   ├── SternBrocotSequence.py [B3]
+│   └── MersennePrimes.py      [B4]
+├── PtolWrote/
+│   ├── JN_FixedSet.py    [B5]
+│   └── NodeTheorem.py    [B6]
+└── Tests/
+    └── isDivisible.py    [B7]
+
+(Existing files not in scope: ArchimedesShell.py, EverythingFormula.py,
+ Formula.py, GraphPlot.py, LorenzStirling.py, Matrix.py, MyMath.py,
+ StatisticsAndProbability.py, Thermodynamics.py, acquire.py, firs.py,
+ math2.py, math3.py, pydata.py, wikiformulas.py)
+
+=============================================================================
+END OF PRIMER
+=============================================================================

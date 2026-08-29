@@ -1,0 +1,10 @@
+ITEM: docs/INDEX.md
+=================================================================================================
+
+YOUR PROMPTS:
+
+"11 Face .md docs + docs/INDEX.md" [built and pushed in session]
+
+"docs/INDEX.md" [confirmed pushed]
+
+[docs/INDEX.md: top-level documentation index linking all Face docs, HYPERWEBSTER.md, ErrorCatalog.md, and other documentation. Acts as the navigation root for the docs/ directory.]

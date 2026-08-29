@@ -1,0 +1,16 @@
+ITEM: Alexandria FractalRenderer: Mandelbrot, BurningShip, Julia, NewtonCubic, LorenzProjection
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Alexandria directory...that is where my experiments with OpenGL have been...such as the visual representation of a process monitor using the idea from Tron's 'The Grid'...and is where i was learning how to use its surface level drawing functions to render the earth from a list of cities, and a 3D graphing calculator that takes a string of python code and graphs it in X, Y, Z coordinates...and even barely allows showing the inverse of quadratic equations...rather than discarding the negative results"
+
+"Alexandria is more for the City surrounding the Mouseion...so the operating system surrounding the Core of Ptolemy represented by Pharos"
+
+"Alexandria FractalRenderer.py — UF formulary fractal renderer. Formulas: Mandelbrot, BurningShip, Julia, NewtonCubic, LorenzProjection. Colormap: ptolemy, grayscale, fire. render() → raw RGB bytes; render_and_pipe() → Alexandria → Mouseion. Registered as 'fractal' engine in Alexandria registry."
+
+"Alexandria engine access" [listed as v0.9 directive]
+
+"UF formulary renderer" [listed as v0.9 directive]
+
+"Julia is fill and Mandelbrot is lattice"

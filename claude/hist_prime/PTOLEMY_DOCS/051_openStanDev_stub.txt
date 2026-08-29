@@ -1,0 +1,14 @@
+ITEM: openStanDev stub fix
+=================================================================================================
+
+YOUR PROMPTS:
+
+"rendier@rendier-HP-EliteBook-820-G3:~/Desktop/Ptolemy-main$ python3 Ptolemy3.py
+...
+AttributeError: 'Ptolemy' object has no attribute 'openStanDev'"
+
+"grab context...fix this while i pack my computer and find a new place to sit on internet all day...Seattle Public Library is the thoughts...giant glass structure downtown...:D"
+
+[Fix: Pharos/Interface.py line 825 binds the standard-deviation button's mouse handler to self.Ptolemy.openStanDev — but Ptolemy3.py never defined it. The other 8 sibling openX methods all exist. Stub added next to openGraphPlot with a comment showing the one-liner replacement when the real Archimedes.Maths.StandardDeviation face is built.]
+
+"it's more stephen king...it's not a heart...it's a uterus" [your comment on Seattle Central Library]

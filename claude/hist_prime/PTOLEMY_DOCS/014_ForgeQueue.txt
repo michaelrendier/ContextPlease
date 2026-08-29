@@ -1,0 +1,22 @@
+ITEM: ForgeQueue (Aule)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"The Forge is the writer"
+
+"Faces SUBMIT events. Aule (the Forge) is the SOLE WRITER to dmesg."
+"Face → dmesg.submit(face, message) → Aule writes to disk"
+"Aule → dmesg._write_line() → /var/ptolemy/dmesg.log"
+"No Face writes directly. All writes pass through Aule's forge queue."
+"Aule may annotate, repair, escalate, or hold entries before committing"
+
+"Aule watches dmesg only, never called directly"
+
+"THREAD_POOL_DYNAMIC: Ptolemy reserves 5 threads, Aule sizes the rest via dmesg"
+
+"Aule buffer initializes → daemon POSTs flow in → PtolBus comes up → Ptolemy C/O buffer[0] available → shell prompt appears"
+
+"EARLY_SYMPTOM_DETECTION: active prevention not just prediction — Aule as teachable monad learning system rhythm"
+
+"Aule/forge_queue.py" [built and pushed]

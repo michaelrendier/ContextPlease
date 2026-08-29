@@ -1,0 +1,16 @@
+ITEM: Mouseion (Flask)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Mouseion: Flask website at thewanderinggod.tech"
+
+"The TWG directory in Mouseion is my The Wandering God website flask code and aggregate media necessary to present the website...it's in very very beginning stages"
+
+"Mouseion — Flask web presence at thewanderinggod.tech"
+
+"render_and_pipe() → Alexandria → Mouseion" [FractalRenderer pipes to Mouseion]
+
+"domain www.thewanderinggod.tech reserved but unassociated pending server build"
+
+"Demetrius of Phaleron / Mouseion (Dean and first Librarian)" [historical Face naming]

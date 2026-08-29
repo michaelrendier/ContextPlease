@@ -1,0 +1,18 @@
+ITEM: LorenzStirling.py: Newton's method on degree-9 Stirling polynomial, 8 root basins
+=================================================================================================
+
+YOUR PROMPTS:
+
+"full Lorenz-Stirling basin attractor system (Newton's method on degree-9 Stirling polynomial, UF om.ufm V=10, eight root basins)"
+
+"complete SMNNIP pipeline with...Output Engine (S→R via catastrophic waveform collapse, Newton basin routing, Lorenz trajectory)"
+
+"Lorenz-Stirling basin attractor system: Newton's method on degree-9 Stirling polynomial, UF om.ufm V=10, eight root basins"
+
+"bifurcation order window detection via Lyapunov exponent sign changes"
+
+"Archimedes/Maths/LorenzStirling.py" [built and pushed]
+
+"Lorenz-Stirling topology" [listed as appendix math for Nature paper]
+
+"Lorenz-Stirling basin routing: BUILT (smnnip_derivation_pure.py §13-17) — needs wiring"

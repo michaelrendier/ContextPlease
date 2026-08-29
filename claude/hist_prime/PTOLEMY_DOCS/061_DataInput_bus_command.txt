@@ -1,0 +1,16 @@
+ITEM: /DataInput bus command
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Ptolemy's autonomous learning is total — every web page retrieved, every file ingested, every prompt received enters the /DataInput bus and trains the monad pool."
+
+"A /DataInput command was built in Philadelphos/data_input.py and wired into both Ainur._repl() and Agora._repl(). The command prompts for an absolute path to a directory of .txt files, loads the corpus via the existing load_corpus() function, starts the SMNNIP tower (R → C → H → O), trains it, saves weights to Philadelphos/weights/ as timestamped .pkl files, reports 'Data Consumed,' and stops the tower."
+
+"Thread 0 — I/O (always alive, never parked). /DataInput bus → ThalamicGate → output cycle. Heartbeat of the kernel."
+
+"All inputs = /DataInput Bus type. Tesla Face handles device interface. Thalamic Gate routes to appropriate pipeline stage."
+
+"/DataInput" [slash command, listed among PtolShell commands to emerge organically]
+
+"--DM (diagnostic mode) flag runs a 5-point focal collapse sweep at δ = -0.2, -0.1, 0.0, +0.1, +0.2"

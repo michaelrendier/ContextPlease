@@ -1,0 +1,249 @@
+================================================================================
+AINULINDALE ENGINE — FOUR PHASES PRIMER
+Topic:    Code Restructure — Phase Status + Ptolemy Migration
+Date:     2026-05-03T19:12:00-07:00
+Session:  CLAUDE-SMNNIP-00729-56714-24600
+Backward: PRIMER_2026-05-03_phase3_qt_viewer.txt
+Forward:  (next session primer)
+================================================================================
+
+FIRST ACTION FOR NEW CHAT:
+Push this primer to GitHub immediately on load:
+  repo:   github.com/michaelrendier/Ainulindale
+  token:  [TOKEN-AINULINDALE-SEE-MEMORY] (classic, expires ~2026-05-18)
+  path:   outreach/primers/PRIMER_2026-05-03_four_phases.txt
+  commit: "2026-05-03: Four Phases Primer — code restructure to Ptolemy"
+
+================================================================================
+DECISION — 2026-05-03
+================================================================================
+Code restructuring (ainulindale_engine package) is MOVING TO PTOLEMY.
+Ptolemy is the primary development node. Claude Code at Ptolemy handles
+the build. This session's Claude.ai work is the foundation and handoff.
+
+Ptolemy hardware: Surface Go Gen1, Ubuntu 24.04
+Ptolemy repo:     github.com/michaelrendier/Ptolemy
+Ptolemy token:    [TOKEN-PTOLEMY-SEE-MEMORY] (fine-scoped, expires ~2026-05-18)
+
+================================================================================
+PHASE 1 — COMPLETE ✓
+================================================================================
+Status:   DONE. Pushed to github.com/michaelrendier/Ainulindale
+
+What was built:
+  ainulindale_engine/               (new modular package)
+    __init__.py        v0.111       package root, version, SIGNATURE_ID
+    __main__.py        v0.111       single callable, routes GUI by args:
+                                    --qt / --curses / --headless / --info
+    .gitignore                      .archive/ excluded
+    engine/
+      __init__.py      v0.111
+      constants.py     v0.111       single source of truth, all constants,
+                                    derivation comments, confidence labels
+      units.py         v0.111       radian-primary transform, (I|O) in radians,
+                                    fractions.Fraction pipeline for sonification
+      registry.py      v0.111       EquationModule ABC contract, ModuleRegistry,
+                                    global register(), HOW TO ADD NEW MODULE docs
+    modules/
+      __init__.py      v0.111       module manifest + roadmap
+      inversion/
+        __init__.py    v0.111
+        maths.py       v0.111       InversionMap, RecursionAttractor,
+                                    GradientFlow, ObserverSingleton
+        tools.py       v0.111       InversionModule (registry contract impl)
+                                    6 equations, viewer_data(), shell_commands()
+
+Verified working:
+  python3 -m ainulindale_engine --info
+  Output: registry loads, 1 module, 6 equations, confidence tiers displayed
+
+Known issue (FLAG-4):
+  gradient_flow() step size too small — doesn't converge to phi
+  Fix: use phi-recursion r -> 1 + 1/r directly, or adaptive step
+  Becomes v0.112 in Ptolemy
+
+================================================================================
+PHASE 2 — NOT STARTED
+================================================================================
+Status:   DEFINED. To be built in Ptolemy.
+
+What to build:
+  ainulindale_engine/modules/lagrangian/
+    maths.py     L_NN four terms, polar integration (2/pi norm), running
+                 coupling alpha_NN(r), radian-primary form native
+    tools.py     LagrangianModule — registry contract, viewer data for
+                 complex_plane (running coupling plot), 3d_cartesian
+
+  ainulindale_engine/modules/noether/
+    maths.py     Emmy Noether conserved currents, symmetry -> conservation,
+                 violation measurement, cycle-averaged Delta_J
+    tools.py     NoetherModule — Delta_J diagnostics, resonance artifact
+                 identification, blockchain ledger interface
+
+  ainulindale_engine/modules/noether_information/
+    maths.py     Information current J_info, entropic arrow, I_information,
+                 Phi flux, t_e entropic time
+    tools.py     NoetherInformationModule — corpus measurement tools
+
+Source files to port from (in Ainulindale repo, pre-modular):
+  smnnip_lagrangian_pure.py         -> modules/lagrangian/maths.py
+  smnnip_derivation_pure_patched.py -> modules/noether/maths.py (Noether section)
+  FA_smnnip_NN_tower.py             -> modules/noether_information/maths.py
+  smnnip_proof_engine_console.py    -> reference for console GUI (Phase 3)
+
+================================================================================
+PHASE 3 — NOT STARTED
+================================================================================
+Status:   DEFINED. To be built in Ptolemy.
+
+What to build:
+  ainulindale_engine/engine/console_qt.py
+
+Architecture:
+  Single PyQt5 window, called by: python3 -m ainulindale_engine --qt
+  Auto-detected when PyQt5 available (falls back to curses, then headless)
+
+  Layout:
+    +-------------------------+------------------+
+    |  VisPy Canvas           |  MODULE LIST     |
+    |  [fano/C-plane/3D]      |  + equation sel  |
+    |                         |  + param controls|
+    +-------------------------+------------------+
+    |  QTermWidget shell      |  OUTPUT / INFO   |
+    |  (live Python console)  |                  |
+    +-------------------------+------------------+
+
+  Display modes (VisPy canvas):
+    'complex_plane'   polar plot (r, theta), inversion trajectory
+    '3d_cartesian'    3D flow, VisPy scatter/line
+    'fano'            Fano plane (G2/SU(3) octonion structure)
+    'text'            always available, structured output
+
+  Module viewer data is already prepared:
+    Each module provides viewer_data(equation, params, display_mode)
+    Returns renderer-ready dict. Viewer just renders.
+    Inversion module complex_plane and 3d_cartesian data: READY
+
+  Ptolemy integration:
+    --curses = /derivation shortcut in Ptolemy (no Qt needed)
+    --qt = full viewer
+    Same program, same modules, different skin
+
+  Dependencies:
+    PyQt5, vispy, qtermwidget (or jupyter_qtconsole as fallback)
+
+================================================================================
+PHASE 4 — DEFINED, NOT STARTED
+================================================================================
+Status:   ROADMAP. To be built in Ptolemy after Phase 3.
+
+Modules planned:
+  ainulindale_engine/modules/berry_keating/
+    H_NN candidate operator, d* gap workbench, T coordinate map scaffold
+    Open Problem 2 (d* gap) and Open Problem 3 (T map) live here
+
+  ainulindale_engine/modules/sonification/
+    Equation-derived audio. Every sound is a derivation.
+    omega (angular frequency) = pitch. Radian transform made audible.
+    fractions.Fraction throughout; float only at WAV render boundary.
+    Wavetables: Rydberg, confinement V(r)=kr+alpha_s/r, Higgs Mexican hat
+    Connects to Ainulindale Synthesizer (separate project)
+
+  ainulindale_engine/modules/hyperwebster/
+    HyperWebster hypergalley, Horner bijection, SemanticWord datatype
+    Monad: HyperWebster + Cayley-Dickson SMNNIP integrated
+    Source: FA_smnnip_hyperindex.py + Ptolemy HyperWebster codebase
+
+  ainulindale_engine/modules/jwst/
+    JWST spectral pixel module
+    Cayley-Dickson addressing of spectral data
+
+================================================================================
+VERSIONING CONVENTION
+================================================================================
+All files start at v0.111. Increment 0.001 per change.
+Patched file becomes primary. Previous version moves to .archive/
+.archive/ is git-ignored.
+Commit format: "YYYY-MM-DD: [file/description] — [one-line context note]"
+The commit message is the Arrow of Time for the codebase.
+
+================================================================================
+OLD FILES — TO ARCHIVE IN PTOLEMY
+================================================================================
+These pre-modular files are in the Ainulindale repo root.
+They are the SOURCE MATERIAL for Phase 2 modules.
+Once ported, they move to .archive/ in Ptolemy.
+DO NOT delete from Ainulindale repo until Ptolemy phases are complete.
+
+  smnnip_derivation_pure_patched.py    <- Phase 2 source: Noether
+  smnnip_lagrangian_pure.py            <- Phase 2 source: Lagrangian
+  smnnip_inversion_engine_patched.py   <- Phase 1 DONE (ported)
+  smnnip_proof_engine_console.py       <- Phase 3 source: curses console
+  FA_smnnip_hyperindex.py              <- Phase 4 source: HyperWebster
+  FA_smnnip_NN_tower.py                <- Phase 4 source: NN tower
+  smnnip_full_tower.py                 <- redundant with returned_ version
+  returned_smnnip_full_tower.py        <- check which is canonical
+  smnnip_derivation_pure.py            <- superseded by _patched version
+  smnnip_inversion_engine.py           <- superseded by _patched version
+  smnnip_test_pure.py                  <- consolidate into tests/
+  smnnip_test_tf.py                    <- consolidate into tests/
+  smnnt_substrate_pure.py              <- old name prefix, port or archive
+  smnnt_substrate_tf.py                <- old name prefix, port or archive
+  Gemini_Revised_EHS.py                <- external, 106 lines, keep standalone
+
+================================================================================
+FLAGS FROM 2026-05-03 SESSION (unresolved)
+================================================================================
+FLAG-1: Sedenion as hyper-modular form
+        Zero-divisors = algebraic shadow of modular transformation
+        irreversibility in Langlands correspondence.
+        Add to Open Problem 6 of paper.
+        Status: CONJECTURE
+
+FLAG-2: 2-stroke engine / (I|O) = compression + expansion
+        Dilator/Contractor (first session) = expansion/compression stroke.
+        Sedenion = top dead center, engine seized.
+        Add to §VIII and paper intro.
+        Status: THEORETICAL framing for paper
+
+FLAG-3: Modularity Theorem as limiting case of SMNNIP substrate
+        "SMNNIP describes the substrate from which both sides of
+        Taniyama-Shimura emerge as limiting cases."
+        Status: CONJECTURE, Second Age
+
+FLAG-4: gradient_flow() convergence fix
+        Use r -> 1 + 1/r (phi-recursion) or adaptive step.
+        Becomes v0.112 first thing in Ptolemy.
+        Status: CODE BUG
+
+FLAG-5: Provenance section for paper
+        Timeline: late 1980s hyperspace intuition -> 1996 Wiles BBC Horizon
+        ("i is important" = identification not discovery) -> 2026 formalism.
+        This is the anti-coincidence argument for post-hoc isomorphism.
+        Status: TO WRITE
+
+================================================================================
+PAPER STATE — 2026-05-03
+================================================================================
+Files pushed:
+  The_First_Age_Ainulindale_Conjecture_v2.txt  commit 137edd772109
+  The_First_Age_Ainulindale_Conjecture_v2.md   commit 3829ff0dea2d
+
+New framing (v2):
+  Engineering first. Ptolemy -> HyperWebster -> monad -> (I|O) falls out
+  -> Lagrangian falls out -> gauge group falls out -> OMG?WTF claims.
+  Index gets inversion first. Sigma propagates. Claims arrive last.
+
+Pending paper additions (FLAGS 1-3 above + provenance section).
+
+================================================================================
+STATUS SUMMARY
+================================================================================
+Phase 1:  COMPLETE ✓  Pushed to Ainulindale repo
+Phase 2:  DEFINED     Build in Ptolemy — Lagrangian + Noether modules
+Phase 3:  DEFINED     Build in Ptolemy — Qt viewer + VisPy + QTermWidget
+Phase 4:  ROADMAP     Build in Ptolemy — BK, Sonification, HyperWebster, JWST
+
+Code restructure: MOVING TO PTOLEMY
+Paper restructure: v2 complete, FLAGS 1-3+5 pending additions
+================================================================================

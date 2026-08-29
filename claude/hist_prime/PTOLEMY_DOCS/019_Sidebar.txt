@@ -1,0 +1,10 @@
+ITEM: Sidebar: 23px activation strip, 45-second auto-hide
+=================================================================================================
+
+YOUR PROMPTS:
+
+"23px activation strip at left edge of screen. Hover over strip → unhide sidebar (slides in). Auto-hides after 45 seconds of no interaction. Covers other objects (z-order above scene). Fixed — does NOT move with graph."
+
+"Sidebar: 23px activation strip, auto-hides after 45 seconds"
+
+"Everything moveable except the sidebar"

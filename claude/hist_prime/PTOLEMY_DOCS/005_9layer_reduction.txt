@@ -1,0 +1,21 @@
+ITEM: 9-layer reduction map: Banach-Tarski → Lexical → De Bruijn → Zipf → Horner → Octonion → Amplituhedron → File-type → HYPER_KEY
+=================================================================================================
+
+YOUR PROMPTS:
+
+"The mathematics did not build the HyperWebster. The mathematics is the HyperWebster. The engineering built the navigator."
+
+[The 9-layer reduction map was designed across multiple sessions as the full stack of space-reduction techniques applied to HyperWebster traversal. Each layer reduces the computational space needed:]
+Banach-Tarski: equivalence class reduction
+Lexical: word-level grouping
+De Bruijn: sequence compression
+Zipf: frequency-based ordering
+Horner: polynomial bijection (the core indexing method)
+Octonion: 8-dimensional address space
+Amplituhedron: geometric volume reduction
+File-type: permutation optimization per file type
+HYPER_KEY: the private charset permutation
+
+"with the mathematical connections between ideas and what the addition of that specific method has on information storage and retrieval"
+
+"the Readme seems awful short...this is a technical intro to Ptolemy...does not have to be proof level...but the maths next to what they are used for in a table for the Circus Ring Leader: Hyperwebster Indexing...it is the most, not even exaggerating, important part of the project...without it, there is no mill"

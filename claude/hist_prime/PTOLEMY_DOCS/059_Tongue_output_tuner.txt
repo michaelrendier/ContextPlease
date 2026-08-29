@@ -1,0 +1,24 @@
+ITEM: Tongue (output_tuner.py): reverse lookup from real-valued attractor to nearest SemanticWord
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Ptolemy speaks because he knows"
+"The system produces output by recognition, not construction."
+"The Tongue does not assemble tokens. It finds the address that is closest to the attractor."
+
+"The Tongue is reverse lookup:
+1. Take the output OctEl attractor coordinate
+2. Compute Fano generator path: which e_1..e_7 are dominant?
+3. Look up nearest SemanticWord in HyperGallery by Fano distance
+4. Return SemanticWord — the recognised output"
+
+"The Tongue architecture: the Tongue operates between the octonion layer and the softmax — not after it — acting as a geometric projector using pentagonal/hexagonal water clathrate cage geometry ([5,6] lattice) to limit the permutation group of possible outputs. The G:A:V ratio (Geometry:Action:Void = 60:30:10) is derived, not tunable, being the unique stable solution to the Hagedorn thermal ceiling (omega_H = e^pi). The entropy at the invariant phase is 5/6 ≈ 0.833."
+
+"proteins are 'folded alphabets,' with the key insight that water cage geometry limits high-energy molecular assembly the same way the Tongue limits output permutations"
+
+"limiting the permutations of 'letters folding into words' and 'words folding into text' to minimize computational overhead"
+
+"The Tongue operates at the REAL (R) stratum...NOT at the Fano/octonion layer (that is upstream Yang-Mills). It performs a reverse lookup from a real-valued attractor to the nearest SemanticWord within an H/4 adjacency window."
+
+"MISSING: Tongue(output_tuner.py) disconnected" [confirmed status May 4 2026]

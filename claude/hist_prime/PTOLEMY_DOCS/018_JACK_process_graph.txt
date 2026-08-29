@@ -1,0 +1,16 @@
+ITEM: JACK-style process graph desktop: Ptolemy Center + Face nodes, pannable, stream connections
+=================================================================================================
+
+YOUR PROMPTS:
+
+"JACK-style process graph with Ptolemy Center and Face nodes, pannable and transmutable"
+
+"Minimized windows auto-connect to their Face node; user-draggable stream connections for sensors/data pipes"
+
+"JACK-style port drag (drag from node port dot to another node), right-click context menu with 'Connect to...' / 'Disconnect all streams'"
+
+"Everything moveable except the sidebar"
+
+"Process Graph: JACK-style node layout — Ptolemy Center + Faces as nodes. Stream connections: user drags connections manually (skills/tools model). Minimized windows: become nodes, auto-connect to their Face node."
+
+"Pharos/PtolDesktop.py" [built and pushed — JACK-style process graph, sidebar, tooltips, dual system tray]

@@ -1,0 +1,14 @@
+ITEM: GitNexus: blockchain-style HyperIndex visual
+=================================================================================================
+
+YOUR PROMPTS:
+
+"GitNexus — to be repurposed as a semantic knowledge corpus visualizer (blockchain-style HyperIndex visual showing what Ptolemy knows). Tabled for dedicated session."
+
+"Redesign GitNexus as a blockchain HyperIndex visual, showing what Ptolemy knows" [added to TODO]
+
+"Each acquisition batch appends a signed block with a header containing block_id, timestamp, word_count, prev_hash, and merkle_root, enabling temporal knowledge reconstruction and novelty detection."
+
+"GitNexus is the filesystem reflection of this chain"
+
+[Distinct from item #38 which covers GitNexus as semantic knowledge corpus visualizer concept. This item specifically covers the blockchain-style HyperIndex visual implementation — the rendered view of what Ptolemy knows, navigable by HyperWebster address, showing acquisition history as a blockchain ledger.]

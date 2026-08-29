@@ -1,0 +1,18 @@
+ITEM: HyperGallery
+=================================================================================================
+
+YOUR PROMPTS:
+
+"also a short bit on the hypergallery and the hyperJWSTgallery to explore impossible photographs...for anyone who may join in the conversation"
+
+"HyperGallery uses a single parameterized Tupper Self-Referential Formula for all image addressing (no separate chunk vs. full-image formulas); images are tiled into 32x32 RGB chunks (chosen for personal-notebook-scale dedup rate and smooth Phaleron interlace display); chunk addresses are stored as bare uppercase hex strings (no 0x prefix) in HyperWebster's native text index, with the 0x decoration generated at regeneration time only; full-image Tupper integers are reserved for forensic/appraisal use and computed on demand, never stored; Phaleron regenerates images from HyperGallery chunk addresses into a local cache with GC eviction (no remote fetches post-ingest)"
+
+"Callimachus owns all indexing (VastRepository, HyperWebster, HyperGallery)"
+
+"The HyperWebster addressing principle extends naturally beyond text to any digital artifact. Two derived systems are planned for image and spectral data."
+
+"This is not image generation in the AI sense. There is no neural network inventing pixels. There is a mathematical space being navigated toward coordinates that correspond to real physical states, whether or not any instrument has yet arrived there."
+
+"Tongue reverse lookup...scaffolded...hyperwebster module" [Distribution engine depends on HyperGallery + Tongue]
+
+"Look up nearest SemanticWord in HyperGallery by Fano distance"

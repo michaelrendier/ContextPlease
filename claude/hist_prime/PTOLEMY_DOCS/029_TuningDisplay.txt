@@ -1,0 +1,10 @@
+ITEM: TuningDisplay
+=================================================================================================
+
+YOUR PROMPTS:
+
+"TuningDisplay — live PtolBus stream monitor widget. Subscribes to all channels: LUTHSPELL, PROMPT, INFERENCE, FACE_EVENT, SENSOR, LOG. Per-channel color coding, T0/T1 priority markers. Channel filter bar, pause/resume, auto-scroll. Thread-safe: dispatch thread → Qt signal → UI thread. openTuningDisplay() added to Ptolemy3"
+
+"Pharos/TuningDisplay.py" [built and pushed — live PtolBus stream monitor widget subscribing to all channels]
+
+"Live monitor widget subscribing to all PtolBus channels. Shows real-time event stream: CH_SENSOR, CH_LUTHSPELL, CH_ACQUIRE, etc. Launched from Ptolemy3.py desktop."

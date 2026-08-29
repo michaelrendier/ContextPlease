@@ -1,0 +1,20 @@
+ITEM: Ptolemy Wiki
+=================================================================================================
+
+YOUR PROMPTS:
+
+"where are the Wiki Pages? My Ptolemy wiki is still empty??"
+
+"i have had you generate over 100 pages for the wiki...i put a new token in your instructions...it expires May 11th"
+
+"i created the first page...and i have had you generate over 100 pages for the wiki"
+
+"Wiki added to TODO" [April 28 2026]
+
+"Ptolemy wiki is THE backbone. All other repos link back here."
+
+"Ainulindale wiki pages become stubs that link back to Ptolemy wiki."
+
+"you spent a whole weeks worth of resources making these pages...WTF?" [pages were lost — never successfully pushed to wiki git remote]
+
+[GitHub wiki requires first page created via web UI or wiki git remote push. The wiki remote is: https://github.com/michaelrendier/Ptolemy.wiki.git. Many pages were generated as chat artifacts and never persisted.]

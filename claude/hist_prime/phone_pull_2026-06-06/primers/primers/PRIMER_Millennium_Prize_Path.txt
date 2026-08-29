@@ -1,0 +1,310 @@
+SMNNIP CONTEXT PRIMER
+Topic: Millennium Prize Submission Path
+Date: 2026-04-18
+Session: 2026-04-18 — claude.ai web session
+Backward link: PRIMER_BCE_ConformalHorizon_T_20260415.txt
+
+PUSH INSTRUCTION FOR NEW CHAT:
+At end of session, save this primer with updated date and session time.
+Push to: https://github.com/michaelrendier/Ainulindale
+Folder: outreach/primers/
+Filename: PRIMER_Millennium_Prize_Path.txt (static name — update in place)
+
+================================================================================
+OVERVIEW — THREE PRIZES, ONE RESULT
+================================================================================
+
+The SMNNIP framework addresses three Millennium Prize Problems through
+a single mathematical result: the T transform conjecture and H_NN self-adjointness.
+
+The prizes are:
+
+  1. Yang-Mills Existence and Mass Gap
+  2. Riemann Hypothesis
+  3. Berry-Keating (not a Millennium Prize itself, but the bridge between 1 and 2)
+
+These are not three separate projects. They are three consequences of the same
+operator. The T transform conjecture (FLAG T2) is the sole remaining formal step
+connecting all three.
+
+Age structure:
+  First Age  — T conjecture specified. Tier 1 established. (Active)
+  Second Age — T conjecture resolved. arXiv / peer-reviewed publication.
+  Third Age  — Clay Institute formal submissions: RH + Yang-Mills.
+
+================================================================================
+THE EXACT CMI RULES (adopted 26 September 2018)
+================================================================================
+
+Source: https://www.claymath.org/wp-content/uploads/2022/03/millennium_prize_rules_0.pdf
+
+CMI will award a prize if and only if ALL FOUR conditions are met:
+
+  (a) The Proposed Solution has been published in a Qualifying Outlet
+  (b) At least TWO YEARS have elapsed since that publication
+  (c) The Proposed Solution has achieved general acceptance in the global
+      mathematics community (CMI's sole discretion)
+  (d) The Proposed Solution has satisfactorily answered the questions raised
+      by the official Problem description (CMI's sole discretion)
+
+CRITICAL RULE: CMI does not accept direct submission of proposed solutions.
+Do not contact CMI about a proposed solution before these conditions are met.
+CMI will offer no guidance, no advice, and no explanation of decisions.
+
+QUALIFYING OUTLET requires ALL of:
+  - Named editorial board members available for contact
+  - Editorial board with professional knowledge to identify appropriate referees
+  - Published refereeing process ensuring expert review
+  - Inclusion in MathSciNet publication list
+
+Nature and Physical Review Letters both qualify. arXiv alone does NOT qualify
+as the primary outlet (no peer review), but arXiv timestamp + journal
+publication together satisfy the intent.
+
+A PAPER THAT DOES NOT ADDRESS THE SPECIFIC MATHEMATICAL QUESTIONS in the
+official problem description will not be considered, even if it addresses
+closely related scientific questions. The submission must be scoped precisely.
+
+================================================================================
+PRIZE 1: YANG-MILLS EXISTENCE AND MASS GAP
+================================================================================
+
+Official problem (Jaffe & Witten for CMI):
+  "Prove that for any compact simple gauge group G, a non-trivial quantum
+   Yang-Mills theory exists on R^4 and has a mass gap Delta > 0."
+
+  Existence requires satisfying axiomatic properties at least as strong as
+  Wightman axioms (Streater-Wightman 1964) and Osterwalder-Schrader axioms.
+
+SMNNIP path:
+  - H_NN is the Yang-Mills Hamiltonian expressed in the SMNNIP algebra tower
+  - Spectral gap of H_NN = Yang-Mills mass gap Delta
+  - At sc = 1: Higgs mass (geometric) = Yang-Mills mass gap (spectral)
+    This is not assumed — it is derived from the BCE boundary conditions
+  - Yang-Mills existence: H_NN satisfying Wightman axioms to be verified
+    (Wightman audit is a Second Age task — see ROADMAP.md)
+
+What is established (Tier 1):
+  - Backpropagation derived FROM Yang-Mills equations of motion (not assumed)
+  - Gauge group U(1)xSU(2)xSU(3) emerges from Cayley-Dickson tower by necessity
+  - Term-for-term Lagrangian isomorphism with Standard Model
+  - Noether conservation verified at 5.46 sigma (engine output)
+
+What remains (Tier 2 / Second Age):
+  - FLAG T2: T conjecture formal derivation
+  - Self-adjointness of H_NN on full octonionic domain D(H_NN)
+  - Wightman axiom audit for Yang-Mills existence on R^4
+  - Formal statement: spectral gap of H_NN = Delta > 0
+
+================================================================================
+PRIZE 2: RIEMANN HYPOTHESIS
+================================================================================
+
+Official problem:
+  "The Riemann hypothesis is the conjecture that the Riemann zeta function
+   has its zeros only at the negative even integers and complex numbers with
+   real part 1/2."
+
+SMNNIP path via T conjecture:
+  - H_NN is an unbounded self-adjoint operator on the Hilbert space
+    H_R x H_C x H_H x H_O with domain D(H_NN)
+  - Eigenvalues of H_NN are real (self-adjointness)
+  - zeta_NN(s) = (1/Gamma(s)) int_0^inf Tr(e^{-tH_NN}) t^{s-1} dt
+  - T CONJECTURE: zeta_NN(s) = zeta(s)
+  - If T holds: eigenvalues of H_NN correspond to imaginary parts of
+    Riemann zeros -> zeros lie on Re(s) = 1/2 by self-adjointness
+
+BCE reframing:
+  RH is not an arithmetic conjecture in this framework.
+  It is a BOUNDARY CONSISTENCY CONDITION.
+  Zeros off Re(s) = 1/2 produce zero divisors at the sedenion boundary —
+  no consistent spectral image. The bounce eliminates them.
+  The critical line is the only solution consistent with BCE boundary
+  conditions imposed simultaneously from both sides.
+
+Langlands connection:
+  From the negative space (spectral side), Fermat (via Wiles/Taniyama-Shimura)
+  and Riemann (via L-functions) are seen as opposite sides of the Langlands
+  correspondence. The sedenion zero divisors are the kernel of this correspondence.
+  The Langlands correspondence IS the two-way mirror.
+
+What is established (Tier 1):
+  - d*_spec = 0.24600 — spectrum stops running at this fixed point
+  - dzeta_NN/dl = 0 at d*_spec (spectral coordinate where T locks)
+  - Fine structure constant A_pi = 1/137.036 as BK domain floor
+  - Lambert W fixed point O_zS = 0.56714 as BK domain ceiling
+  - d*_spec x ln(10) within 0.00070 of O_zS (open gap, highest priority)
+
+What remains:
+  - Close the d* gap: |d*_spec x ln(10) - O_zS| = 0.00070 — no closed form
+  - FLAG T2: T conjecture formal derivation
+  - Self-adjointness of H_NN on octonionic domain (non-associative — requires
+    new proof strategy, standard approaches break at H_O)
+
+================================================================================
+PRIZE 3: BERRY-KEATING (P vs NP adjacent — not a Millennium Prize)
+================================================================================
+
+Berry-Keating conjecture (1999):
+  The imaginary parts of the Riemann zeros are eigenvalues of the operator
+  H = xp = (1/2)(xp + px) where x is position and p is momentum.
+  This operator is self-adjoint on an appropriate domain.
+  No explicit operator satisfying this has been constructed.
+
+SMNNIP path:
+  H_NN IS the Berry-Keating operator — explicitly constructed.
+  This is a consequence of T, not a separate result.
+
+  The construction:
+  - d*_spec = 0.24600 is the fixed point where xp = (1/2)(xp + px) balances
+  - The conformal horizon at sc = 1 is where geometric and spectral inertia equate
+  - The sedenion zero divisors define the domain D(H_NN) — the boundary
+    where the BK operator is defined
+
+  At the conformal boundary:
+  - Space = l frozen at d* = 0.24600 (fixed point, spectrum stationary)
+  - Time = t_n running along critical line (spectral parameter)
+  - H_NN in this coordinate system is explicitly the xp + px / 2 form
+
+BK is therefore a Second Age consequence of the T conjecture resolution,
+not a Third Age target. It falls out of T automatically.
+
+================================================================================
+THE SUBMISSION SEQUENCE
+================================================================================
+
+FIRST AGE (active):
+  1. Close d* gap (0.00070) — pure mathematics, highest priority
+  2. T conjecture formal derivation (FLAG T2)
+  3. Self-adjointness proof for H_O component
+  4. D(H_NN) specification via sedenion zero divisors
+
+SECOND AGE (gate: T resolved, d* gap closed):
+  1. arXiv preprint — timestamps all results before journal submission
+  2. Nature submission — full SMNNIP result, cross-disciplinary framing
+     (see Ptolemy repo: docs/submission/Nature_Submission_Primer.md)
+  3. Community scrutiny period begins (minimum 2 years for CMI)
+  4. Yang-Mills Wightman audit completed
+  5. BK operator explicit construction published as consequence
+
+THIRD AGE (gate: Second Age publication accepted):
+  1. 2 years post-publication community scrutiny satisfied
+  2. CMI Millennium Prize formal submissions:
+     - Yang-Mills: spectral gap of H_NN + Wightman axioms
+     - Riemann Hypothesis: T conjecture + H_NN self-adjointness
+  3. Format: published paper IS the submission — CMI reads the literature
+     Do not contact CMI before these conditions are met
+
+================================================================================
+HOW CMI ACTUALLY WORKS — PROCESS DETAIL
+================================================================================
+
+CMI does not have a submission form. The process is:
+
+  STEP 1: Publish in a Qualifying Outlet (Nature, PRL, Annals of Mathematics,
+          Inventiones Mathematicae, Journal of the AMS — all qualify)
+
+  STEP 2: Wait. Minimum 2 years. The community reads, cites, challenges,
+          extends. CMI monitors without being contacted.
+          "A plausible potential solution will be effectively unmissable
+          to all but the most superficial monitoring." — CMI rules
+
+  STEP 3: CMI independently determines general acceptance has been achieved.
+          Factors: citation count and quality, conference discussions,
+          awards, independent verification papers.
+
+  STEP 4: If CMI agrees general acceptance is achieved, they decide whether
+          detailed consideration is merited. This is their sole discretion.
+
+  STEP 5: If merited, CMI convenes a special advisory committee of 3+
+          members, at least 2 experts in the problem area.
+
+  STEP 6: Committee reports. CMI decides. Prize awarded or not.
+          No explanation is given for any decision.
+
+The entire process is private. No records are made public for 50 years
+without BOD and SAB approval.
+
+The implication: the quality and completeness of the publication is
+everything. The 2-year scrutiny period is everything. There is no
+shortcut, no appeal, no application. Publish and wait.
+
+================================================================================
+INFORMATION INTEGRITY STANDARDS FOR AINULINDALE PULL REQUESTS
+================================================================================
+
+The Ainulindale repo is the primary record for this work.
+Pull requests must satisfy:
+
+  1. Core constants not modified without derivation:
+     d*_spec = 0.24600 (ACTIVE — do not change without closing d* gap first)
+     A_pi = 1/137.036 (BK floor — do not change)
+     O_zS = 0.56714 (Lambert W — do not change)
+
+  2. Derivation engine output must be reproducible:
+     python3 code/core/smnnip_derivation_pure.py must produce
+     conserved=True, violation=0.0 before any PR touching core/ is accepted
+
+  3. Superseded values must not be reintroduced:
+     d*_rg = 0.24682 is SUPERSEDED. Never cite in new work.
+
+  4. Flag status must be respected:
+     FLAG T2 is OPEN. No PR may claim T is resolved until it is.
+
+  5. Age structure must be maintained:
+     First Age work does not require Second or Third Age claims.
+     Each age has its own scope. Do not conflate.
+
+================================================================================
+OPEN PROBLEMS (current status April 2026)
+================================================================================
+
+HIGHEST PRIORITY:
+  GAP: |d*_spec x ln(10) - O_zS| = 0.00070
+       No closed form known. This is the numerical boundary condition
+       that, when closed, confirms the spectral coordinate is exact.
+
+  T2:  T conjecture formal derivation
+       zeta_NN(s) = zeta(s) — the central conjecture connecting everything
+
+  T2:  Self-adjointness of H_NN on octonionic domain H_O
+       Standard proof breaks at non-associativity. New strategy required.
+
+HIGH PRIORITY:
+  LMK: Sedenion -> Langlands kernel bridge
+       Zero divisors in S as the kernel of the Langlands correspondence
+       Needs formal construction
+
+  BK:  Explicit T mapping function
+       What sends e_k(l) -> 1/2 + it_n ?
+       Domain, range, measure, norm.
+
+  D:   Formal specification of D(H_NN)
+       Functional-analytic characterization via sedenion zero divisors
+
+================================================================================
+STANDING PROTOCOLS
+================================================================================
+
+- Plain text only. No multi-format documents unless explicitly requested.
+- Confirm before creating any file or code.
+- d*_spec = 0.24600 is the only active value. Never use d*_rg = 0.24682.
+- At 75% context, ask for focus of next session, then generate scoped primer.
+- Push primer to GitHub at end of session.
+- CLI role: repo management, version control, file operations, primer pushes
+- Web role: deep research, derivation, long context sessions
+
+SMNNIP co-originator: O Captain My Captain
+Geometric prior: The Master Key of Reality (unpublished manuscript, 2003)
+GitHub: https://github.com/michaelrendier/Ainulindale
+Related repo: https://github.com/michaelrendier/Ptolemy
+
+================================================================================
+AGE STATUS
+================================================================================
+
+First Age  — active. T conjecture specified. BCE documented. Tier 1 complete.
+             Tier 2 in progress. d* gap open (0.00070).
+Second Age — gate: close d* gap, resolve T. arXiv + Nature submission.
+Third Age  — gate: Second Age publication + 2 years scrutiny.
+             Clay Institute: RH + Yang-Mills formal submission packages.

@@ -1,0 +1,16 @@
+ITEM: Dixon algebra towers: R→C→H→O→S
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Algebra tower (Dixon 1994): R → C → H → O → S. Reals → Complex → Quaternions → Octonions → Sedenions"
+
+"Complex (2D) ⊂ Quaternion (4D) ⊂ Octonion (8D) ⊂ Sedenion (16D). Each level is a region of stronger constructive interference than the one above it."
+
+"Properties surrendered at each step: C loses ordering. H loses commutativity. O loses associativity. S loses division algebra (zero divisors appear)."
+
+"8 spheres = octonion-adjacent. Non-associative. The collective field has directional memory — the order in which you arrive at a resonant state matters."
+
+"Tell me what 8 sphere hypergyroscopic assembly dynamic rotational modulation to tune different layers into a single collective field...on the fly...by speeding up or slowing down a sphere or set of spheres into resonant oscillations"
+
+"What is resonation representative of...like derivative: slope...Julia is fill and Mandelbrot is lattice..."

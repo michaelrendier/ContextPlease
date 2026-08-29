@@ -1,0 +1,22 @@
+ITEM: PtolShell MetaPrompt: cyan/no prefix=Ptolemy C/O, green/>>>=Python3 pty, yellow/$=bash, red/#=root
+=================================================================================================
+
+YOUR PROMPTS:
+
+"MetaPrompt modes (commit on Enter):
+no prefix (cyan) → Ptolemy C/O — BBS-style buffered conversation, /slash commands. Own CyclicContextBuffer. Stateful. Not a pty.
+>>> (green) → Python3 REPL — python3 pty
+$ (yellow) → System C/O — bash pty
+# (red) → Root C/O — bash pty (root)"
+
+"Ptolemy C/O shell mode (no prefix) is not a Commandow passthrough but a BBS-style buffered conversation with slash commands (/derivation, /DataInput, more to emerge organically). This buffer is architecturally identical to buffer[0] in the CyclicContextBuffer — it IS buffer[0], providing the FIFO base layer."
+
+"They [slash commands] happen as we go...yes like /derivation /DataInput...there will be more"
+
+"this buffer IS layer 0 for cyclic context buffer...this provides the FIFO...savvy?"
+
+"QTermWidget owns ALL display, pty, ANSI, interactive programs. Mode detector intercepts only the input bar — QTermWidget is never replaced."
+
+"Faces are shell users. Daemons POST at boot."
+
+"TITO: Text In Text Out — the entire model operates on this principle. Analogous to I/O, 1 and 0."

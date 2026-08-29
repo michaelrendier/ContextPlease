@@ -1,0 +1,10 @@
+ITEM: SERVER_SPEC.md
+=================================================================================================
+
+YOUR PROMPTS:
+
+"SERVER_SPEC.md written and pushed; build deferred."
+
+"Server architecture — SERVER_SPEC.md written and pushed; build deferred pending Flutter client shape and HyperDatabase schema finalization."
+
+[SERVER_SPEC.md documents the deferred server architecture for the Ptolemy web/mobile backend. Build waits on Flutter client shape and HyperDatabase schema finalization.]

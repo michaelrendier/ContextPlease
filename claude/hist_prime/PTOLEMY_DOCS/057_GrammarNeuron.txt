@@ -1,0 +1,12 @@
+ITEM: GrammarNeuron (pronoun resolution)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"we start with a 'character' neural network that can look at an alphabet understand the letters and determine a language of those words to define the next level...'words' neural network uses as a neuron...words is defined by the alphabet and language...separate neural networks can be defined in the individual 'language Layer' which start from the alphabet up...which can also cross reference in the next layer to create connections between the languages...for translator purposes...as well as help in the understanding of the evolution of language over time"
+
+"GrammarNeuron layer (resolves 'it' pronoun structural problem)" [listed in TODO]
+
+"GrammarNeuron — KEEP: language-specific grammar rules. But add: pronoun resolution module for the 'it' problem. The 'it' problem solved structurally with code trace."
+
+[GrammarNeuron: resolves structural ambiguity of pronouns like 'it' by tracking referent through the WordMonad graph. Language-specific — English 'it' rules differ from German gendered pronouns differ from Japanese topic-comment structure. Lives in the language layer above WordMonadNetwork.]

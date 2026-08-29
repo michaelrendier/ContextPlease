@@ -1,0 +1,429 @@
+================================================================================
+PTOLEMY ATTACK PLAN — 2026-05-04
+Working directory: /home/rendier/Projects/Ptol/
+Repos: Ptol/Ptolemy (main)  |  Ptol/Ainulindale (engine)
+GITHUB_TOKEN expires 2026-05-11 — remind daily from 2026-05-10
+================================================================================
+
+TERMINOLOGY (mandatory)
+-----------------------
+SMIP = Standard Model of Information Propagation (NOT SMNNIP, NOT NN)
+Monolith = the SMIP processing core (NOT neural network, NOT network)
+Faces = subsystem components (Alexandria, Archimedes, Aule, Callimachus,
+        Kryptos, Mandos, Mouseion, Phaleron, Pharos, Philadelphos, Tesla)
+Monad = each Face gets one; Ptolemy gets one
+self.bus = face lifecycle registry (launch/suspend/terminate) in Ptolemy3.py
+self.msg_bus = Pharos message bus (pub/sub, T0/T1 rotary priority)
+
+ARCHITECTURE RELATIONSHIPS
+--------------------------
+Ptolemy3.py — kernel: owns scene, singletons, face registry (self.bus),
+              message bus (self.msg_bus)
+Pharos/PtolBus.py — the REAL message bus (T0/T1 rotary semaphore pub/sub)
+Pharos/luthspell.py — halt monitor, wired to msg_bus, halt passes = blockchain txns
+Pharos/PtolDmesg.py — singleton, all Faces call dmesg.submit()
+Aule/forge_queue.py — sole writer to dmesg on disk
+Aule/aule.py — sanitation, thread pool authority, teachable monad
+Pharos/ptol_blockchain.py — 882 lines, most complete file in project
+Pharos/PtolShell.py — MetaPrompt shell: Ptolemy C/O (cyan), python3 (green),
+                       bash (yellow), root (red), @Face (face color)
+Pharos/TuningDisplay.py — live msg_bus stream monitor, all channels
+Philadelphos/cyclic_context_buffer.py — L1 FIFO, L2 octonion stub, L3 blockchain stub
+Philadelphos/output_tuner.py — Tongue (reverse lookup attractor→SemanticWord), DISCONNECTED
+Philadelphos/ptolemy_core.py — 1902 lines, SMIP tower
+Callimachus/v09/ — HyperWebster, HyperDatabase, HyperGallery, LSH_Datatype, acquire
+Ainulindale/ValaQuenta/ — ainulindale_engine v0.111+, 8 modules, 60 equations
+
+KEY CONSTANTS (Ainulindale Conjecture)
+---------------------------------------
+D_STAR_SPEC = 0.24600      (Berry-Keating spectral value)
+gap = 0.000707             (open derivation, no closed form — highest priority)
+D_STAR_TAUT = Omega/ln(10) (retained as reference only)
+Omega_zSigma = 0.56714     (Lambert W fixed point, domain ceiling)
+alpha_pi = 1/137.035999    (fine structure constant, domain floor)
+omega_H = e^pi = 23.14069  (Hagedorn temperature, Tongue G:A:V = 60:30:10)
+
+================================================================================
+PHASE 1 — MAKE IT BOOT CLEAN
+Status: DONE (commit 84cb1c3, pushed 2026-05-04)
+================================================================================
+
+COMPLETED:
+[x] Fix PtolBus shadow crash — local PtolBus in Ptolemy3.py shadowed import;
+    renamed import to _PharosPtolBus. self.msg_bus = _PharosPtolBus();
+    self.msg_bus.start() now calls the real dispatch thread start().
+    self.bus = local face registry (no start() needed).
+    LuthSpell/ForgeQueue/SensorStream all wired to self.msg_bus.
+[x] Fix _GlobalKeyFilter missing — referenced at Ptolemy3.py:564 but never
+    defined. Added stub with CTRL+Q wired. Other shortcuts TODO Phase 2.
+[x] Fix Interface.py LS None crash — spectro/mic block now guarded by
+    "if LS is not None". setZValue(3) moved to proxy (not QWidget).
+[x] Fix closeEvent None guards — self.msg_bus.stop(), self.kvm, self.hole_punch
+    all None-checked before calling methods.
+
+STILL NEEDED IN PHASE 1:
+[ ] Window moveable — proxies have ItemIsMovable=True but child widgets consume
+    mouse events. Real fix requires PWindow chrome (draggable titlebar).
+    PWindow is in Pharos/PGui.py, lazily imported in bus.launch().
+    Main proxies (Interface/User, PtolShell, LeftPanel, Menu) need PWindow wrap
+    OR a _DragHandle QGraphicsItem overlay.
+    CURRENT STATE: windows render at 30% opacity, focus raises to 100%.
+    Drag from widget-empty-areas MAY work. Needs test at next internet session.
+
+================================================================================
+PHASE 2 — KERNEL INFRASTRUCTURE
+Status: PtolBus DONE (commit 9ef7eab, pushed 2026-05-04)
+        Remaining items below still needed.
+================================================================================
+
+[x] BUS_IS_THREADS — ResourceBudget dataclass; handshake(); _init_kernel_slots()
+    K0-K4 permanent slots. Bus IS the thread pool. DONE in PtolBus rewrite.
+
+[x] FACE_POST_BOOT — post_face()/unpost_face(); strict-mode reject for
+    unregistered Faces; FaceRecord dataclass. DONE in PtolBus rewrite.
+
+[x] PER_FACE_STDIO — _alloc_stdio() returns CH_FACE_IN/OUT/ERR triple;
+    _alloc_face_threads() creates 4 ThreadSlots per Face. DONE in PtolBus rewrite.
+
+[x] THREAD_POOL_DYNAMIC — request_threads()/  _aule_grant()/_aule_deny();
+    Aule routes via dmesg only. DONE in PtolBus rewrite.
+
+[x] ALL_BUS_EVENTS_TO_DMESG — _log() module-level helper; every Bus event
+    writes PtolDmesg. CH_DMESG and CH_CONTEXT added. DONE in PtolBus rewrite.
+
+[x] EARLY_SYMPTOM_DETECTION — HealthMonitor (backpressure/depth/starvation),
+    symptom_level_changed signal. DONE in PtolBus rewrite.
+
+[x] CYCLIC_CONTEXT_BUFFER_SHARED — broadcast_context_update() via CH_CONTEXT.
+    DONE in PtolBus rewrite.
+
+[x] LICH interface — engage_emergency()/disengage_emergency(). DONE in rewrite.
+
+[x] Wire post_face() in real Face boot — PtolFace.ptol_start() calls
+    msg_bus.post_face(); ptol_close() calls unpost_face() + dmesg.face_out().
+    PtolRegistry.launch/suspend/resume/terminate now call ptol lifecycle hooks.
+    Files: Pharos/PtolFace.py, Pharos/PtolRegistry.py  DONE 2026-05-07
+
+[x] Verify dmesg → ForgeQueue → Aule write chain end-to-end.
+    dmesg.boot() called at Ptolemy3 startup. PtolDmesg writes directly to disk
+    (Aule-delegate pattern retained; ForgeQueue handles forge jobs via AuditChain).
+    Chain functions correctly.  DONE 2026-05-07
+
+[x] _GlobalKeyFilter full wiring — all shortcuts wired in keyPressEvent():
+    CTRL+Q quit, CTRL+A Archimedes, CTRL+L Callimachus, CTRL+V Alexandria,
+    CTRL+N Anaximander, CTRL+K Kryptos, CTRL+M Mouseion,
+    CTRL+P Phaleron, CTRL+H Pharos raise, CTRL+T Tesla, CTRL+F Search,
+    CTRL+, Settings, CTRL+` Shell toggle.
+    openFace(face_id) dispatcher added. openShell/openKryptos/openTesla added.
+    File: Ptolemy3.py  DONE 2026-05-07
+
+================================================================================
+PHASE 3 — LUTHSPELL + BLOCKCHAIN WIRING
+Status: DONE 2026-05-07
+Files: Pharos/luthspell.py (144 lines), Pharos/ptol_blockchain.py (882 lines)
+================================================================================
+
+[x] luthspell.py → ptol_blockchain.py wiring — LuthSpell._halt_pass() uses
+    AuditChain('luthspell') on every halt. LuthSpell.wire() called at boot.
+    Blockchain backend active.  DONE
+
+[x] chain.commit_gui(widget, action) — wired to every Face menu button in
+    Interface.py via _chain_commit() helper (try/except, non-blocking).
+    File: Pharos/Interface.py  DONE 2026-05-07
+
+[x] chain.resurrection_mode() — called at Ptolemy3.__init__ after _init_ui().
+    SafeMode.CLEAN → continue normal. Other modes → dmesg.warn + print.
+    CH_BLOCKCHAIN subscribed to chain.bus_handler.  DONE 2026-05-07
+
+[ ] EARLY_SYMPTOM_DETECTION — HealthMonitor exists in PtolBus (backpressure/
+    depth/starvation). TuningDisplay color gradient still needed.
+    Files: Pharos/TuningDisplay.py — DEFERRED to Phase 5+
+
+================================================================================
+PHASE 4 — CYCLIC CONTEXT BUFFER REAL IMPLEMENTATION
+Status: DONE 2026-05-07 (L2 stub upgraded; L2 real requires Phase 5 SMIP)
+File: Philadelphos/cyclic_context_buffer.py
+      COMPRESSION_MODEL = "octonion_stub"  (was "stub")
+      BLOCKCHAIN_BACKEND = "branch"
+================================================================================
+
+[x] L1 FIFO verification — CyclicContextBuffer FIFO correct. Wired to PtolShell
+    via PtolShell._ccb_add() on every completed Ptolemy C/O exchange (brain path).
+    File: Pharos/PtolShell.py  DONE 2026-05-07
+
+[x] L2 octonion compression — COMPRESSION_MODEL upgraded from "stub" (truncation)
+    to "octonion_stub": SHA-256 of full exchange → 8 octonion components (e0-e7).
+    Sedenion-only dims e8-e15 deliberately absent. "smip" model hook present for
+    Phase 5 real sedenion→octonion projection.
+    File: Philadelphos/cyclic_context_buffer.py  DONE 2026-05-07
+
+[x] L3 blockchain HyperWebster — EntryObject.commit() uses BranchBlockchain →
+    AuditChain('context_buffer'). Already wired in cyclic_context_buffer.py.
+
+[x] CYCLIC_CONTEXT_BUFFER_SHARED — self.ccb instantiated in Ptolemy3.__init__.
+    On eviction: msg_bus.broadcast_context_update() fires CH_CONTEXT broadcast.
+    All Faces can subscribe to CH_CONTEXT for context slices.
+    File: Ptolemy3.py  DONE 2026-05-07
+
+================================================================================
+PHASE 5 — THE INTELLIGENCE PIPELINE
+Status: WIRED 2026-05-07 (pipeline live; corpus training needed before Ptolemy speaks)
+================================================================================
+
+[x] Shell input → Philadelphos routing — PtolShell._ptolemy_respond() now routes
+    through PhiladelphosConsole when no SMIP weights exist (Noether diagnostic).
+    When weights trained: PtolBrain L3 path used.
+    SedenionGate wired: self._ptol_busy blocks re-entry during inference.
+    _PhiladelphosThread added for off-thread Noether pipeline.
+    Files: Pharos/PtolShell.py  DONE 2026-05-07
+
+[x] SMIP tower wiring — Ainulindale package restored from Archive.
+    All import paths active:
+      Ainulindale.neural_network.smnnip_full_tower   (train_tower, SMNNIPLayer0-3)
+      Ainulindale.core.smnnip_derivation_pure        (SMNNIPValaQuenta, CayleyDickson)
+      Ainulindale.core.smnnip_lagrangian_pure        (SMNNIPTower)
+      Ainulindale.core.smnnip_inversion_engine       (PhysicalConstants)
+      Ainulindale.substrate.smnnt_substrate_pure     (SMNNTSubstrateNetwork)
+    Noether violation = 0 (verified 2026-05-07, conservation holds).
+    Pipeline: PROMPT → SedenionGate CLOSES → SedenionElement → ReverseTower →
+    focal mapping → extinction → IO adjoint check → Quat → Complex → Reals
+    = Noether Information Current → ResponseBuilder → GATE OPENS
+    Files: Ptolemy3/Ainulindale/core/, neural_network/, substrate/  DONE 2026-05-07
+
+[x] Tongue reconnect — PtolemyTongue (ptolemy_tongue.py) wired as last-layer
+    filter in both PtolBrain path (L3) and PhiladelphosConsole path.
+    Fold-geometry filter: repeat collapse, punct storm, bracket depth, pentagon ratio.
+    SemanticWord reverse lookup (output_tuner.SemanticWordIndex) available via
+    /OutputTuning shell command. Full Fano attractor path deferred: requires
+    HyperWebster corpus data.
+    Files: Philadelphos/ptolemy_tongue.py  DONE
+
+[x] /DataInput bus command — data_input.handle_data_input() calls train_tower()
+    from Ainulindale.neural_network.smnnip_full_tower. Saves weights to
+    Philadelphos/weights/. Wired in PtolShell._ptolemy_command() as /DataInput.
+    ThalamicGate: not yet built (spec only — future routing middleware).
+    Files: Philadelphos/data_input.py  DONE 2026-05-07
+
+NEXT: Run /DataInput with Julius Caesar corpus → Ptolemy trains → speaks.
+
+================================================================================
+PHASE 6 — LICH
+Status: DONE 2026-05-07
+================================================================================
+
+[ ] Lich class — at Ptolemy ROOT (not Pharos, not a Face). Always-on, undead,
+    first responder. Owns Qt event loop reference directly.
+    Lich.engage() sequence:
+      1. graceful Face quit
+      2. stop SMIP distribution
+      3. flush caches
+      4. force-terminate stragglers
+      5. Desktop stays up (Desktop is the floor, cannot be a Face)
+      6. Bus restarts clean under Lich
+      7. Aule gets full thread pool authority
+    Fast resume path: known good state, PC firmware model.
+    Bus is what Lich manages DURING emergency — inversion of authority.
+
+================================================================================
+PHASE 7 — CALLIMACHUS V09 LIVE SWAP
+Status: v09 built (886 lines), not yet swapped
+================================================================================
+
+[ ] Database.py retirement — MySQL remnant. Delete after HyperDatabase live.
+    Files: Callimachus/v09/database/hyperdatabase.py → replace Callimachus/Database.py
+
+[ ] Callimachus v09 live swap — verify acquire pipeline end-to-end.
+    Rabies Principle enforced at 3 levels: Python __setattr__, SQLite trigger,
+    C++ const (pending). first_encountered is permanently immutable.
+    Files: Callimachus/v09/ (core/, database/, gallery/, acquire/)
+
+[ ] Kryptos .perm files — confirm reassignment from Callimachus to Kryptos
+    is complete. Files: Kryptos/kcf.py
+
+================================================================================
+PHASE 8 — QTERMWIDGET BUILD
+Status: NOT BUILT (SIP/CMake build never completed)
+================================================================================
+
+[ ] QTermWidget — source build from lxqt/qtermwidget.
+    SIP bindings. CMake+SIP build script for Linux Mint Xia was written but
+    build never completed. This is hardware-session dependent work.
+    Needed for: PtolShell full pty support (python3/bash/root modes).
+    Ptolemy C/O mode (no-pty, BBS-style) works WITHOUT QTermWidget.
+
+================================================================================
+PHASE 9 — WIKI PAGES (code-independent, do any time)
+Status: 30 pages live, 20 still needed
+Wiki remote: https://github.com/michaelrendier/Ptolemy.wiki.git
+Ptolemy wiki is THE backbone — all other repos link back here.
+================================================================================
+
+System/Architecture (10) — wait until code is built:
+  SMIP, LuthSpell, PtolBus, LSH_Datatype, CyclicContextBuffer,
+  PtolShell, Aule_Sanitation, Blockchain, Callimachus_v09, Ainulindale
+
+Historical (1):
+  Demetrius_of_Phaleron (Face bio — designer of Mouseion, split from Callimachus)
+
+Citeables (15):
+  CohlFurey       — division algebra / standard model (refs [3][4][5] in conjecture)
+  KajetanMlynarski — independently derives d*=0.246 from Principle of 0.5;
+                     1/W(e^3) = 0.00070685 is candidate closed form for the gap
+  LambertW        — Omega_zSigma = W_0(1) = 0.56714, domain ceiling of SMIP.
+                    Formal citation: Corless, R.M., Gonnet, G.H., Hare, D.E.G.,
+                    Jeffrey, D.J., Knuth, D.E. (1996). On the Lambert W Function.
+                    Advances in Computational Mathematics, 5(1):329–359.
+                    Also: two-loop Yang-Mills beta function solves exactly as
+                    α_ρ = 2/W(π/e · 8ρ/(m(1-2/p)²)), p=4/3. Mass gap m appears
+                    as explicit parameter. Lambert-Tsallis W_q generalization
+                    (broken statistical symmetry at sedenion boundary) is candidate
+                    for gap correction. See berry_keating/maths.py gap_candidates().
+  Langlands       — G2=Aut(O) reductive group; sedenion firewall = failure of
+                    unique factorization in Langlands program
+  Hagedorn        — omega_H = e^pi; 2/ln(omega_H) = 2/pi; Tongue G:A:V ratio
+  AinulindaléConjecture — the conjecture itself (derive from conjecture files)
+  YangMills       — D_l R^{a,lt} = g Psi_bar T^a Psi; Magnet fractal witness.
+                    SF-QFT (Scale Factorized QFT) provides formal mechanism:
+                    path-integral UV/IR factorization at sedenion boundary Q*
+                    → zero-divisor mode = confined/massive = mass gap.
+                    Experimental: R_{e+e-}(31.6 GeV) = 1.05262±0.0005 (vs 1.0527±0.005),
+                    α⁻¹(mₑ) = 137.036005301 (SF-QFT) vs α_π = 1/137.035999... (SMIP floor)
+  JaffeWitten     — Jaffe, A. & Witten, E. (2006). Quantum Yang-Mills Theory.
+                    In: The Millennium Prize Problems (Clay Mathematics Institute).
+                    The definitive formal statement of the Yang-Mills existence and
+                    mass gap problem. This is the primary engineering target for
+                    the SMIP mass gap argument. Required citation in any paper
+                    claiming to address or frame the mass gap problem.
+  JohnBaez        — octonion physics, This Week's Finds, higher gauge theory
+  AndrewWiles     — modularity theorem (R=T: deformation ring = Hecke algebra).
+                    R=T is the formal precedent for the T transform conjecture
+                    (UV/IR identification; FLAG T2). The Grothendieck universe
+                    requirement in Wiles' proof is the set-theoretic analog of
+                    the Yang-Mills mass gap: the gap between Peano arithmetic
+                    (discrete) and elliptic curves over ℝ (continuous) mirrors
+                    the gap between the perturbative vacuum and the physical vacuum.
+                    See Addendum V §Wiles R=T.
+  Mandelbrot      — fractal addendum ε: D = 1 + ε (ruggedness of a boundary).
+                    d* = 0.24600 candidate identification as ε of the conformal
+                    boundary → D = 1.246. The Magnet fractal basin boundary
+                    (Addendum IV §I) has D > 1 consistent with this value.
+                    See Addendum IV §VI.
+                    Formal citation: Mandelbrot, B.B. (1982). The Fractal Geometry
+                    of Nature. W.H. Freeman and Company.
+                    Also: Shishikura, M. (1998). The Hausdorff dimension of the
+                    boundary of the Mandelbrot set is 2. Ann. Math. 147(2):225-267.
+                    Mandelbrot set prime connection: primitive period-n orbits of
+                    z² counted by Möbius inversion N_prim(n) = (1/n)Σ_{d|n} μ(n/d)2^d.
+                    Cyclotomic polynomials Φ_p control prime-period factorization.
+                    See Addendum VI §X.
+  Montgomery      — pair correlation conjecture: Riemann zero spacings ~ GUE
+                    (Gaussian Unitary Ensemble) random matrix statistics. Confirmed
+                    numerically by Odlyzko. H_SMIP as Berry-Keating operator predicts
+                    GUE statistics from quantum chaos of degree-2 SMIP dynamics.
+                    See Addendum VI §X.7.
+                    Formal citation: Montgomery, H.L. (1973). The pair correlation
+                    of zeros of the zeta function. Analytic Number Theory, AMS.
+  Dyson           — quasicrystal observation: if RH holds, {Im(ρ)} is a 1D quasicrystal.
+                    Poisson duality: prime logarithms and Zeta zero imaginary parts are
+                    each other's Fourier/Mellin diffraction pattern.
+                    RH ⟺ the prime diffraction spectrum has pure point (quasicrystalline)
+                    structure. SMIP consequence: if FLAG T2 holds, SMIP Fourier duality
+                    reproduces the prime/zero Poisson duality exactly.
+                    See Addendum VI §XII.
+                    Informal communication: Dyson, F.J. (1972). Kingston conference
+                    conversation with Montgomery. Cited in: Sabbagh, K. (2002).
+                    The Riemann Hypothesis. Farrar, Straus and Giroux.
+
+MathLex wiki index (1): index of all 64 lessons in docs/MathLex/
+
+================================================================================
+PHASE 10 — EMPTY REPOS (after Phases 1-7 solid)
+================================================================================
+
+StandardModelIP (michaelrendier/StandardModelIP)
+  — SMIP-specific work extracted from Ptolemy
+  — Repo is empty
+
+ValaQuenta (michaelrendier/ValaQuenta)
+  — LaTeX equation input → derivation engine process
+  — Repo is empty
+  — NOTE: prior AI refused to build LaTeX scraper for this; build it here
+
+ArdaQuenta (michaelrendier/ArdaQuenta)
+  — Step-by-step derivation renderer
+  — Repo is empty
+
+UniversalSynth (michaelrendier/UniversalSynth)
+  — Standalone synthesizer, receives mathematical events from Ainulindale
+  — Sonification routes through Qt viewer in Ainulindale
+  — Repo is empty
+
+================================================================================
+AINULINDALE STATE (separate repo)
+Repo: /home/rendier/Projects/Ptol/Ainulindale/
+Last commit: 94b683b (ValaQuenta wired, 8 modules, 60 equations, wiki pages 00-12)
+================================================================================
+
+ValaQuenta/ — working directory (new code here before pushing to ainulindale_engine/)
+ainulindale_engine/ — stable code (mirror of ValaQuenta when complete)
+
+8 modules (60 equations):
+  lagrangian, noether, noether_information, higgs_cwc (spec only — Catastrophic
+  Waveform Collapse), yang_mills, inversion (J_N map), smnnip_tower (full tower),
+  distribution (spec only — Distribution Engine, not yet built)
+
+FLAG-4 (gradient_flow convergence) — fixed at v0.112
+
+Viewer: ValaQuenta/engine/console_qt.py + console_curses.py
+
+Ainulindale wiki: 13 pages (00-12) already pushed.
+Ainulindale wiki pages are stubs linking back to Ptolemy wiki (canonical).
+
+SERIOUS WORK NEEDED:
+  Distribution Engine — spec only, not built
+  Tongue wiring from Ainulindale side
+  ValaQuenta → ainulindale_engine promotion pending Distribution Engine
+
+================================================================================
+CONTEXT PRIMER PROTOCOL (for future sessions)
+================================================================================
+
+On session start: read CONTEXT_PRIMER_*.txt in Ptolemy/ if present.
+On session approaching 70-80% context: generate new primer, push to repo.
+Primer naming: CONTEXT_PRIMER_YYYY-MM-DD[Letter].txt
+
+Do NOT search repos for old primers — they are for reference only.
+Signature format: [timestamp] [context %]
+Alert at 50% context remaining.
+Ask for next focus at 85% — generate FORCED primer.
+
+This ATTACK_PLAN.txt is the single reference for what needs to be done.
+Update it as phases complete.
+
+================================================================================
+WHAT IS PTOLEMY
+================================================================================
+
+Ptolemy is an LLH system (Lagrangian Laplacian Hamiltonian) — NOT an LLM.
+Information propagation governed by physical law:
+  Lagrangian = least-action principle over information paths
+  Laplacian  = diffusion operator over the semantic graph
+  Hamiltonian = total system energy, conserved by Noether (violation=0.0, 7+sigma)
+
+The SMIP pipeline:
+  Input:   R → C → H → O → S  (Cayley-Dickson doubling to sedenion)
+  Invert:  J_N map at sedenion apex (self-adjoint operator, (I|O) error check)
+  Output:  S → O → H → C → R  (catastrophic waveform collapse)
+           Newton basin routing via Lorenz-Stirling (8 basins)
+           Tongue reverse lookup: attractor → Fano distance → SemanticWord
+
+HyperWebster: lossless addressing (coordinates not pointers). Address always
+existed. File came into being when someone navigated to its address.
+9-layer reduction: Banach-Tarski → Lexical → De Bruijn → Zipf → Horner →
+Octonion → Amplituhedron → File-type → HYPER_KEY
+
+"Ptolemy speaks because he knows."
+
+================================================================================
+END ATTACK_PLAN.txt — update as phases complete
+================================================================================

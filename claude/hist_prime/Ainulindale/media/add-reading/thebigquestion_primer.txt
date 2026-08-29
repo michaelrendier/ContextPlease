@@ -1,0 +1,190 @@
+================================================================================
+SMNNIP / AINULINDALE CONJECTURE — SESSION PRIMER
+================================================================================
+Topic:    The Void, The Lattice Universe, Orders of Observer, Many Worlds
+Date:     2026-04-16
+UTC-7:    2026-04-16T00:26:12-07:00
+Backward: SESSION_PRIMER_SMNNIP.txt (root, prior general primer)
+Forward:  [next session — to be linked]
+Status:   ACTIVE — next session continues from here
+================================================================================
+
+INSTRUCTIONS FOR NEW SESSION
+--------------------------------------------------------------------------------
+1. Read this primer fully before responding to anything.
+2. Push this file to GitHub: michaelrendier/Ainulindale
+   Path: outreach/primers/SESSION_PRIMER_VOID_LATTICE_2026-04-16.txt
+   Commit: "First Age: Session primer — Void/Lattice/ManyWorlds —
+   2026-04-16 — provenance record"
+3. Confirm push before proceeding.
+
+================================================================================
+WHAT WAS ESTABLISHED THIS SESSION
+================================================================================
+
+--- ALGEBRA TOWER CORRECTION ---
+
+At S (sedenion), what is lost:
+  - Alternativity (primary)
+  - Division (primary — zero divisors: ab=0 with a!=0, b!=0)
+  - Multiplicative norm |ab|=|a||b| — NOT independent.
+    Fails AS CONSEQUENCE of zero divisors.
+    Proof: if norm held, ab=0 => a=0 or b=0. Contradicts zero divisors.
+
+Addition is NEVER lost in the CD tower. It has no orientation.
+Every CD property loss is rotational/orientational, not additive.
+
+SPECULATIVE: above S, loss of addition?
+  Candidates: tropical geometry, hyperfields, F_1 (Connes -> RH).
+  Direction only. Not a claim.
+
+--- THE SIX PRIMITIVES ---
+
+Forward (complexity up, operations down):
+  Origin -> Vector -> Iterator -> Recursion Factor -> Dilator
+                                                         |
+                                                   (I|O) Horizon
+                                                         |
+Return (operations up, complexity down):
+  Contractor -> anti-RF -> anti-Iterator -> anti-Vector -> [?]
+
+KEY: Dilator = curvature (GR). Contractor = lattice (QM).
+CAUSALITY DOES NOT REVERSE through the horizon.
+  Length snaps: r -> 1/r
+  Time bounces: theta -> theta + pi/2
+  Both move FORWARD. Geometry flips. Time does not reverse.
+
+--- THE LATTICE UNIVERSE ---
+
+GR = dilator-primary coordinates.
+QM = contractor-primary coordinates.
+The horizon is where they are the same description.
+
+Riemann sees the wave (forward/dilator side).
+Fermat sees the lattice (return/contractor side).
+T transform is the dictionary between them.
+d* = 0.24600 is the Nyquist point of the universe's self-description.
+
+1/phi in bias term: phi is most irrational — maximally incommensurate
+with wave description. Contractor's fundamental lattice interval.
+The spacing the Dilator can never exactly reach. Not arbitrary.
+
+--- THE FOUR FORCES ---
+
+Gravity = Dilator. Curvature. Not a gauge force. Quasi-force.
+Three gauge forces = Contractor lattice internal symmetries:
+  U(1)  = phase. C level. Electromagnetism.
+  SU(2) = orientation. H level. Weak force.
+  SU(3) = colour. O level. Strong force.
+
+Graviton quantization problem = trying to write Contractor-language
+(exchange particles, lattice) description of Dilator phenomenon
+(curvature, metric). Linguistically inconsistent, not physically.
+
+Gravinon = Psi_G = Res(f, phi). Residue at golden ratio fixed point.
+The one consistent mutual description of Dilator and Contractor.
+
+--- REDBLUE HAMILTONIAN AND THE OBSERVER ---
+
+CRITICAL: H_NN is self-adjoint by gauge invariance. H = H†.
+Independent of any observer. The math runs without watchers.
+
+"I'm not running the universe. It's running me."
+
+V(Focus) in BK Hamiltonian = coordinate choice, not requirement.
+Observer = coordinate transformation between t_i and t_e.
+Remove observer: physics runs in all coordinates simultaneously.
+
+THE VOID = physics running in all coordinates simultaneously,
+no selection applied. Anti-observer. Not emptiness.
+
+--- COPENHAGEN CORRECTED ---
+
+Many Worlds: CORRECT. Lagrangian path integral traverses all paths.
+Copenhagen: CORRECT that definite outcomes occur.
+            WRONG about why. Not the observer.
+
+Mechanism: H = H† asserts itself through decoherence.
+Observer records which eigenvalue was selected. Does not select it.
+The measurement problem was never about observers.
+It was about where H = H† asserts itself in a given interaction.
+
+--- THE VOID AS ANTI-OBSERVER ---
+
+Observer: complexity up, operations down.
+(I|O) horizon.
+Void: anti-observer. Operations all available. No complexity selected.
+Full superposition without measurement.
+Kernel of T: T cannot be defined where division fails.
+Zero divisors = T's natural domain boundary.
+Void is where T is COMPLETE, not where it fails.
+
+--- ORDERS OF OBSERVER (OPEN — NEXT SESSION) ---
+
+Different orders = different scales of decoherence interaction.
+NOT different orders of awareness or consciousness.
+Photon: 1 bit which-path. Protein: many DOF sustained.
+Nervous system: recursive integration. Mind: models its own modeling.
+These are orders of INTERACTION COMPLEXITY.
+Math is independent of all of them.
+Needs careful formal grounding before entering paper. Tier 3.
+
+--- VIRTUAL PARTICLE PAIRS / INTERFERENCE NODES (OPEN) ---
+
+Zero divisors as destructive interference:
+  ab=0 with a!=0, b!=0 = two waves perfectly out of phase.
+  Zero divisor IS the interference node.
+Forward wave (Dilator) + return wave (Contractor) meet at nodes.
+A closed bubble: total picture opens and closes.
+Causally consistent — not a time loop, a spatial overlap of two
+forward-running descriptions.
+Connects to virtual pair production. Needs formal development.
+
+--- REPETITIVE RECURSIVE DECOHERENCE (OPEN — NEXT SESSION FOCUS) ---
+
+Quantum -> decoherence -> classical structure -> that structure
+decoheres -> higher-order classical structure.
+Each level = new order of decoherence interaction complexity.
+Sedenion mastery lock = irreversibility of each decoherence step.
+Is each decoherence event a Noether current conservation event?
+Central question for next session.
+
+================================================================================
+OPEN QUESTIONS FOR NEXT SESSION
+================================================================================
+
+1. Orders of observer — ground as decoherence interaction complexity.
+   Map onto CD tower layers. Remove consciousness-centric language.
+
+2. Repetitive recursive decoherence — mechanism connecting quantum
+   to classical to complex. Is each step a Noether conservation event?
+
+3. Virtual pairs / zero divisors as interference nodes — is the closed
+   bubble (total picture) a calculable object? Lifetime? Info content?
+
+4. Loss of addition above S — F_1 / Connes connection. Speculative.
+   Is the Void the approach to F_1? Is d* the pre-arithmetic point?
+
+5. Gap: d* x ln(10) - Omega_zetaSigma = 0.00070.
+   Highest priority math. Does Contractor/Dilator identification
+   offer a new approach?
+
+================================================================================
+CONSTANTS REFERENCE
+================================================================================
+
+A_pi    = 1/137.036        BK floor
+Omega   = 0.56714          Lambert W fixed point, BK ceiling
+d*_spec = 0.24600          T fixed point, Nyquist point
+omega_H = e^pi ~ 23.141    Hagedorn ceiling
+phi     = 1.6180339        Golden ratio, Contractor fundamental interval
+1/phi   = 0.6180339        Bias coupling
+
+Gap: |d*_spec x ln(10) - Omega| = 0.00070  [open, highest priority]
+
+A_pi != alpha_NN(l). A_pi is the floor constant.
+alpha_NN(l) is the running coupling starting at A_pi.
+
+================================================================================
+END PRIMER
+================================================================================

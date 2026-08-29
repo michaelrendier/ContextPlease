@@ -1,0 +1,14 @@
+ITEM: FaceIdentity
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Daemons POST at boot (see FaceIdentity.py)"
+
+"Every Face imports [dmesg] and calls this on spawn."
+
+"FaceIdentity: Face identification and registration"
+
+[FaceIdentity.py provides the Face name, version, boot POST to dmesg, and registration with PtolBus. Built and pushed as Pharos/FaceIdentity.py]
+
+"FACE_POST_BOOT: NPC model — Faces respond, don't initiate"

@@ -1,0 +1,12 @@
+ITEM: Flutter universal client (design, deferred build)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Flutter universal client — confirmed as primary candidate for web/Android/iOS/desktop. Server build deferred pending Flutter client shape and HyperDatabase schema finalization."
+
+"domain www.thewanderinggod.tech reserved but unassociated"
+
+"LaTeX rendering was deferred to the Qt layer"
+
+[Flutter selected as universal client over alternatives. Server-side LaTeX-to-SVG rendering to sidestep platform LaTeX limitations.]

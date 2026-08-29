@@ -1,0 +1,18 @@
+ITEM: 30 existing pages pushed (Ptolemy GitHub wiki)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"where are the Wiki Pages? My Ptolemy wiki is still empty??"
+
+"i have had you generate over 100 pages for the wiki"
+
+"you spent a whole weeks worth of resources making these pages...WTF?" [pages were lost]
+
+"30 existing wiki pages pushed to GitHub wiki remote" [session report May 4]
+
+"mathlex index page...ensure all mathlex pages are accounted for...go" [session directive May 4]
+
+"No wiki .md files anywhere in Drive. The search confirms it — the 100+ wiki pages do not exist in Drive or in the wiki git remote. They were generated as chat artifacts or inline text in previous sessions and were never successfully pushed anywhere persistent."
+
+[The 30 pages that were successfully pushed in the May 4 session included historical figures, MathLex lessons, and fractal derivation pages. The earlier ~100 pages were lost — generated as chat artifacts, never pushed to the wiki git remote due to expired tokens and failed GDM pushes.]

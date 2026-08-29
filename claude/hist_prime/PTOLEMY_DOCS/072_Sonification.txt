@@ -1,0 +1,12 @@
+ITEM: Sonification layer
+=================================================================================================
+
+YOUR PROMPTS:
+
+"sonification goes in viewer...and the synthesizer stays standalone and self contained...it also gets its own repo shortly"
+
+"You work refused to work with me on a dynamic latex scraper automated equation input into a derivation engine process." [frustration about prior refusals]
+
+[Sonification layer: converts SMIP tower output (attractor coordinates, basin routing, waveform collapse) into audio. Routes through the Qt viewer. The synthesizer is standalone (UniversalSynth repo). Sonification maps mathematical events to sound — basin transitions, Lyapunov sign changes, focal point convergence.]
+
+"Ainulindale/ainulindale_synth" [Drive file reference — ainulindale_synth.py]

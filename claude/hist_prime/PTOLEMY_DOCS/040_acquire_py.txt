@@ -1,0 +1,22 @@
+ITEM: acquire.py: HyperWebster pipeline, 180K dictionary, 23-word test
+=================================================================================================
+
+YOUR PROMPTS:
+
+"i am very willing to have a single JSON file generated per word...because i'll be able to just run the script and identify the dictionary file...and sit back and wait for the script to finish."
+
+"i used to like Beautiful Soup...but its much slower than python3-lxml"
+
+"as far as Claude filling in the gaps...lets skip that part for now...just a web scraper to JSON file for each word in the dictionary file of my input"
+
+"there also needs to be a way to avoid my IP being flagged for 'bots' upon these sites...wikipedia is if i remember correctly, picky about what user agent is used...and i had to modify it to use a firefox user agent"
+
+"we will see what needs to be focused on after that...by having you choose 23 different words randomly from the dictionary and i can upload those 23 JSON files for your perusal"
+
+"I have a 180,000-word English dictionary file already available and plans to split it into 26 alphabetical files before running acquisition."
+
+"hiraeth is the deliberate trap — it should come back as an incomplete skeleton since Free Dict won't have it. That tells you the flag system is working. 'the' should be nearly empty by design."
+
+"Resume-by-default acquisition using an incomplete flag."
+
+"23 test words spanning word classes from structural ('the') to rare/untranslatable ('hiraeth')"

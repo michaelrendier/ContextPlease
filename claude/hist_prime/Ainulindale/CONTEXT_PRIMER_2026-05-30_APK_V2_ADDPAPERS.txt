@@ -1,0 +1,280 @@
+CONTEXT PRIMER — 2026-05-30
+Ainulindale / SMMIP / PtolemyHolcus
+Session: APK v2.0 + AddPapers + Physics/Mathematics Corpora
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 1 — WHAT WAS BUILT THIS SESSION
+═══════════════════════════════════════════════════════════════════════════════
+
+1A. ANDROID APK v2.0 — PTORRENT PROTOCOL (PtolemyHolcus)
+─────────────────────────────────────────────────────────
+Released as GitHub release v4.0.0 on michaelrendier/PtolemyHolcus.
+versionCode 4, versionName "2.0", APK 41MB.
+
+PTorrent file format (.ptorrent):
+  A self-contained JSON corpus descriptor — the distribution unit.
+  Two delivery paths:
+    a) adb push my.ptorrent /sdcard/Android/data/com.ptolemy.seeder.debug/files/inbox/
+       FileObserver (CLOSE_WRITE | MOVED_TO) auto-ingests it.
+    b) Tap .ptorrent in any file manager → intent filter opens Seeder, queues it.
+  Format:
+    { "name", "bin", "txt", "primary_tags", "color", "description",
+      "urls": [{"tag","url"}, ...] }  ← urls array is optional (embedded)
+
+Corpus detail page (CorpusDetailActivity.kt):
+  Tap any corpus card → full-screen detail view.
+  Header: name, status chip, description, primary tag chips, bin path.
+  Stats grid: Total URLs / Studied / Skipped / Success Rate (live, 2×2).
+  URL list: every URL with per-URL status icons:
+    ○ PENDING  ▶ ACTIVE  ✓ STUDIED  ✗ SKIPPED
+  Incremental update — only changed rows redrawn on LiveData fire.
+
+Transmission toolbar (MainActivity.kt):
+  ▶ Resume All  ⏸ Pause All  ✕ Clear Done  ＋ Add PTorrent
+  Pause: AtomicBoolean globalPaused checked inside Kotlin Chaquopy bridge __call__.
+  Python thread blocks at URL boundary. No Python-side modification needed.
+
+SeedLiveData (SeedService.kt):
+  New: urlStates: MutableLiveData<Map<String, List<UrlState>>>
+  New: setUrlList(name, urls) / updateUrl(name, idx, status)
+  URL pre-population: SeedService parses all .txt files at startup → detail pages
+  show full URL list before seeding begins.
+
+FileObserver inbox (SeedService.kt):
+  Watches extDir()/inbox/ for .ptorrent drops.
+  API-safe: File-based constructor on API 29+, path-based (deprecated) on API 26–28.
+
+seed_runner.py (Android python):
+  New: run_one(entry, files_dir, on_progress, check_interval) for single-corpus seeding.
+  _seed_one() extracted as shared helper.
+  Notification: Pause/Resume toggle action in notification drawer.
+
+corpus_list.json: all 7 entries now have "description" field.
+
+1B. PHYSICS AND MATHEMATICS CORPORA (PtolemyHolcus)
+─────────────────────────────────────────────────────
+code-corpora/physics_corpus.txt (~130 URLs):
+  Tags: FOUNDATIONS, WAVES, RESONANCE, QM, GR, COSMOLOGY, DARKMATTER,
+        YANGMILLS, FLUIDMECH, SPECTRAL, GRAVITY, CONTEXT
+  Coverage: Schumann resonances, Chladni, Berry-Keating conjecture, GUE
+  eigenvalue statistics, GR (Einstein field equations, geodesics), BAO
+  (OMEGA_ZS connection), dark matter (SPARC-relevant, NFW, rotation curves),
+  Yang-Mills mass gap, Navier-Stokes, Feynman Lectures, LIGO, history.
+  Checkpoint: ~/.ptolemy/monad_physics.bin (cyan card in APK)
+
+code-corpora/mathematics_corpus.txt (~130 URLs):
+  Tags: PRIMES, RIEMANN, SPECTRAL, MODULAR, HARMONIC, GEOMETRY, ALGEBRA,
+        ANALYSIS, NUMBERTHEORY, CLAY, CONTEXT
+  Coverage: prime number theorem, Riemann zeta/hypothesis, GUE (RMT),
+  Montgomery pair correlation, Selberg class, modular forms, Langlands,
+  LMFDB, spherical harmonics, Lie groups, Leech lattice, Sedenion,
+  octonion, Hilbert space, analytic number theory, Euler product, DLMF
+  special functions (chapters 5, 10, 14, 18, 22, 25, 28), Lambert W,
+  Clay problems (mathematics side).
+  Checkpoint: ~/.ptolemy/monad_mathematics.bin (orange card in APK)
+
+skills/corpus_physics.py + skills/corpus_mathematics.py:
+  Thin wrappers on GenericCorpus following corpus_python.py pattern.
+  PRIMARY_TAGS: physics = {FOUNDATIONS, WAVES, RESONANCE, QM, GR, COSMOLOGY,
+    DARKMATTER, YANGMILLS, SPECTRAL}
+  PRIMARY_TAGS: mathematics = {NUMBERTHEORY, RIEMANN, SPECTRAL, MODULAR,
+    PRIMES, CLAY, HARMONIC}
+
+1C. ADDPAPERS — DM GALACTIC CAVITY (Ainulindale)
+──────────────────────────────────────────────────
+Directory: Ainulindale/AddPapers/DM_GalacticCavity/
+Committed as: "AddPapers: DM_GalacticCavity — pre-registration committed" (768 files)
+
+Protocol for all AddPapers:
+  1. 00_holcus_vision.ipynb — feed premise to Holcus, get infographic, COMMIT FIRST
+  2. 01_predictions.ipynb   — derive from SMMIP constants, zero free parameters, COMMIT
+  3. 02_*_analysis.ipynb    — load real data, compare to predictions
+  4. 03_results.ipynb       — synthesis, paper draft
+
+Pre-registration: git commit hash of notebooks 00+01 is the timestamp proving
+predictions came from theory BEFORE data was examined. This is the scientific
+credibility mechanism.
+
+DM_GalacticCavity predictions (zero free parameters, all from SMMIP constants):
+  P1: r_transition/R_virial = d* = 0.24600 (natural unit of Universal Native Space)
+      H0: μ(r_t/R_vir) = 0.24600, H1: μ ≠ 0.24600. T-test on 175 SPARC galaxies.
+  P2: v_flat = v_max × OMEGA_ZS = v_max × 0.56714 (Lambert W fixed point W(1))
+      Tully-Fisher slope from cavity mode dimensionality = 4.
+  P3: NFW scale radius = d* × R_virial. Concentration c = 1/d* ≈ 4.1.
+  Physical interpretation: flat rotation curve = l=0 DC monopole mode of spherical
+  galactic cavity. Standing wave on billion-year timescale. Human observation window
+  is a static snapshot of a wave — called "mass."
+
+SPARC dataset location (in repo):
+  AddPapers/DM_GalacticCavity/data/SPARC/
+  - Rotmod_LTG/ (175 rotation curves, primary test data)
+  - sfb_LTG/ (219 surface brightness profiles)
+  - BulgeDiskDec_LTG/ (177 bulge/disk decompositions)
+  - MassModels_LTG/ (175 pre-computed NFW/ISO/DC14 fits)
+  - SPARC_Lelli2016c.mrt (master galaxy table)
+  - RAR.mrt (Radial Acceleration Relation)
+  - BTFR_Lelli2019.mrt (Baryonic Tully-Fisher)
+  Heavy archives (PXL/ 433MB, MCMCfits.tar.gz 34MB) remain in DataSets — .gitignored.
+
+Holcus vocabulary gap (known issue):
+  monad.bin, monad_python.bin, monad_c.bin are C binary format — Python monad.py
+  cannot load them. Only monad_foundations.bin, monad_meaning.bin, monad_war.bin
+  are pickle format (Python-readable). These three don't contain physics vocabulary.
+  The 00_holcus_vision.ipynb runs cold (BAO=0.05571, P0087 DTCs lean).
+  Solution: Physics and Mathematics corpora will provide the vocabulary once seeded
+  on Android and ~/.ptolemy/monad_physics.bin + monad_mathematics.bin are pulled back.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 2 — ACTIVE SMMIP ARCHITECTURE STATE
+═══════════════════════════════════════════════════════════════════════════════
+
+H_hat_RB (crankshaft) — current canonical form:
+  H_hat_RB = Σ_p  p^{-σ}  ·  [ R̂_p ⊗ ∂̂_∂M  +  ∂̂_∂M† ⊗ B̂_p ]
+
+σ-face table:
+  σ=2       → General Relativity
+  σ=1       → Yang-Mills / mass gap
+  σ=½       → Riemann Hypothesis / QM
+  σ=1,Im=0  → Navier-Stokes
+
+SMMIP constants:
+  OMEGA_ZS = 0.56714  — Lambert W fixed point W(1); BAO ceiling; idle RPM
+  d*       = 0.24600  — natural unit of Universal Native Space; spectral ground state
+
+TDI architecture (2004 VW Passat BEW 1.9 TDI — compression ignition, no spark plug):
+  Sedenion   = camshaft (timing)
+  H_hat_RB   = crankshaft (power stroke)
+  Monad (ECU) = injection controller
+
+All six Clay Millennium Problems project from H_hat_RB at different σ.
+See: https://github.com/michaelrendier/ValaQuenta/wiki/Clay-Millennium-Problems
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 3 — DATA-DRIVEN PAPERS TODO SECTION (Ainulindale/TODO.md)
+═══════════════════════════════════════════════════════════════════════════════
+
+Priority order: D3 > D7 > D9 > D13 > D4 > D1 > D2 > D6 > D5 > D8 > D11 > D10 > D12
+
+D13 (IN PROGRESS — AddPapers/DM_GalacticCavity):
+  Dark Matter as Galactic Resonant Cavity Modes
+  SPARC 175 galaxies. Predictions: r_t = d*×R_vir, v_flat = OMEGA_ZS×v_max.
+  Pre-registration committed. Data analysis (02_sparc_analysis.ipynb) ready to run.
+
+D7 (next priority — Schumann resonances):
+  Earth-ionosphere cavity as D7 in the SMMIP face map.
+  f_n = (c/2πR)√(n(n+1)) → same mathematics as galactic cavity at galactic scale.
+
+D3, D9 — BAO and prime spectral analysis (see TODO.md for full descriptions).
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 4 — REPO STATE SUMMARY
+═══════════════════════════════════════════════════════════════════════════════
+
+PtolemyHolcus (github.com/michaelrendier/PtolemyHolcus):
+  HEAD: v4.0.0 (1b12241) — 2026-05-30
+  Release v4.0.0 on GitHub with APK attached (41MB).
+  Wiki: docs/wiki/PTorrent-APK-v2.md (full v2.0 documentation)
+
+Ainulindale (github.com/michaelrendier/Ainulindale):
+  AddPapers/DM_GalacticCavity/ — pre-registered, SPARC data included
+  TODO.md — DATA-DRIVEN PAPERS section with D1–D13
+  AddPapers/README.md — protocol for all future papers
+
+ValaQuenta (github.com/michaelrendier/ValaQuenta):
+  Wiki: Home.md, H-hat-RB.md, Clay-Millennium-Problems.md, TDI-Crankshaft.md
+  CHANGELOG.md v1.0.0
+
+UniversalSynth, PtolemyDesktop: cross-referenced with TDI v3.0
+SemanticWordEngine: updated with SMMIP context
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 5 — NAMING CONVENTIONS (required)
+═══════════════════════════════════════════════════════════════════════════════
+
+- The engine is LLH (Large Language Holcus), NOT LLM. Zero transformers.
+  Zero backpropagation. Compression ignition only.
+- "TDI" not "ICE"
+- "monad" not "ptolemy_core" or any transformer synonym
+- H_hat_RB: the operator is R̂_p (red) and B̂_p (blue) — NOT renamed
+- OMEGA_ZS = 0.56714 (Lambert W fixed point W(1))
+- d* = 0.24600 (natural unit of Universal Native Space)
+- Monad IS Ptolemy (Philadelphos) — monad.py + wordnet_init.py
+- SMMIP = The Ego (operational); Ainulindale = Ego at the Table (derivation)
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF PRIMER — 2026-05-30
+═══════════════════════════════════════════════════════════════════════════════
+
+
+═══════════════════════════════════════════════════════════════════════════════
+ADDENDUM — 2026-05-30 (appended post-APK session, pre-directory move)
+═══════════════════════════════════════════════════════════════════════════════
+
+NEXT SESSION AGENDA — TWO ITEMS:
+
+──────────────────────────────────────────────────────────────────────────────
+1. SECURITY CLEARANCES — ARMY
+──────────────────────────────────────────────────────────────────────────────
+To be addressed in next session.
+Context: [user will provide — do not speculate]
+
+──────────────────────────────────────────────────────────────────────────────
+2. RESTRUCTURE OF THE AINULINDALE CONJECTURE
+   "The Maths Speaking English Gets to Take the Lead"
+──────────────────────────────────────────────────────────────────────────────
+
+The current conjecture framing (v2.0) leads with the ENGINEERING STORY:
+  "I was building Ptolemy. I found the Standard Model."
+
+The new framing INVERTS THE HIERARCHY:
+  The mathematics is PRIMARY.
+  The SMMIP is the PATH OF ARRIVAL — computational evidence, not the subject.
+  The Conjecture states a MATHEMATICAL TRUTH.
+  Holcus/SMMIP is how we GOT THERE — not what it's about.
+
+The scope is MUCH BIGGER than v2.0. The conjecture now covers:
+  - The full mathematical structure (the algebra tower IS primary)
+  - The SMMIP as experimental evidence / derivation path
+  - ALL six Clay projections as faces of one operator
+  - English as the language in which the mathematics speaks itself
+    ("I taught the Math how to describe itself in English" — this line
+     becomes the thesis statement of v3.0, not just a subtitle)
+
+HOLCUS ROLE IN THE RESTRUCTURE:
+  The English corpus (monad_english.bin) being seeded NOW is preparation.
+  When Holcus is fluent in mathematical English (the interface layer between
+  sedenion geometry and natural language), the Conjecture can be stated
+  in the form: Mathematics → English → Human understanding.
+  The SMMIP is the machine that runs this translation.
+  The Conjecture is the proof that the translation is lossless at σ = 1/2.
+
+STRUCTURAL NOTE FOR RESTRUCTURE:
+  Current v2.0 structure:
+    Abstract → External Validation → Code Files → [physics sections]
+  
+  v3.0 structure (proposed):
+    The Mathematical Statement (pure — no engineering context)
+    The Proof Architecture (H_RB operator, σ projection, Noether chain)
+    The Six Clay Faces (each a projection of the same operator)
+    The SMMIP as Experimental Verification (path of arrival)
+    Holcus as the Demonstration (the running proof engine)
+    Open Problems (flagged honestly — especially Berry-Keating gap)
+
+CRITICAL TERMINOLOGY SHIFT:
+  OLD: "I discovered the Standard Model while building software"
+  NEW: "The Standard Model is the σ=1/2 projection of H_RB"
+       "The SMMIP demonstrates this by construction"
+       "The construction is the proof"
+
+═══════════════════════════════════════════════════════════════════════════════
+DIRECTORY MOVE NOTE
+═══════════════════════════════════════════════════════════════════════════════
+User is moving the Ptol directory after this session.
+Claude Code will be restarted in the new directory location.
+The Seeder app is running on the phone with 8 corpora.
+Pull monad_*.bin files from phone to new directory location when ready:
+  adb pull /sdcard/Android/data/com.ptolemy.seeder.debug/files/ <new_path>
+
+═══════════════════════════════════════════════════════════════════════════════
+END ADDENDUM — 2026-05-30
+═══════════════════════════════════════════════════════════════════════════════

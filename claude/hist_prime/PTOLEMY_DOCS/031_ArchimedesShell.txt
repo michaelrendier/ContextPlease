@@ -1,0 +1,18 @@
+ITEM: ArchimedesShell
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Archimedes: for obvious reasons...will be the maths and scientific face"
+
+"/math command + Active (SymPy)" [listed as v0.9 directive]
+
+"Archimedes/Maths/ArchimedesShell.py" [built and pushed — ArchimedesShell with SymPy integration]
+
+"When user context is mathematical/scientific: Kernel raises Archimedes thread priority. Reduces overhead. Distributes workload to correct module."
+
+"PtolShell Commands: /math → Open Archimedes SymPy shell"
+
+"Archimedes Constants consolidation across four duplicate files" [v0.9 directive]
+
+"Archimedes untouched except for the new acquire.py you commissioned"

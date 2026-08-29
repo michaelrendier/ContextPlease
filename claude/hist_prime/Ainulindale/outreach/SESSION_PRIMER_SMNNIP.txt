@@ -1,0 +1,96 @@
+SMNNIP SESSION PRIMER — APRIL 10, 2026
+========================================
+For new session: paste this entire file first.
+
+FRAMEWORK STATUS
+----------------
+SMNNIP (Standard Model of Neural Network Information Propagation)
+Full paper exists: /mnt/project/SMNNT_paper.docx + addenda
+Code: smnnt_substrate_pure.py, smnnt_substrate_tf.py, returned_smnnip_full_tower.py
+Substrate layer Noether conservation verified across 30 epochs.
+
+THE LAGRANGIAN
+--------------
+L_NN = L_kinetic + L_matter + L_bias + L_coupling
+Gauge group: U(1) x SU(2) x SU(3) — forced by Dixon theorem on R⊗C⊗H⊗O
+Backpropagation derived as neural Yang-Mills equation (not assumed)
+H_NN = -i Gamma^a D_a + Gamma_ij beta  [from Legendre transform of L_NN]
+
+BERRY-KEATING CONJECTURE
+------------------------
+H_NN is candidate Berry-Keating operator.
+Eigenvalue conjecture: T(epsilon_k) = 1/2 + i·t_k
+Fixed point of T is d* ≈ 0.246
+d* × ln(10) = 0.56644 ≈ Omega = 0.56714 (gap: 0.00070 — needs derivation)
+
+THE TWO PAPERS
+--------------
+1. "The Alpha and The Omega of Flat Curvature" — Hamiltonian paper
+2. "The Resonant Riemann and the Flowing Fermat" — Proof direction paper
+Both generated April 10, 2026 session.
+
+FERMAT = SPECIAL RELATIVITY (boundary, skeleton, discrete, event horizon)
+RIEMANN = ENTROPY (filler, continuous, interior, propagation)
+Critical line Re(s)=1/2 is the mirror between them — fixed under functional equation.
+
+THE FOUR TIMES
+--------------
+Inertial time (tau) — GR proper time, time of being, runs slower in potential wells
+Entropic time — thermodynamic arrow, time of becoming, property of ensemble
+Algebraic time — electron counting Cayley-Dickson doublings, time of transition
+Observational time — coordinate singularity, creates prime gaps, time of measurement
+
+PRIMES
+------
+Primes TRANSLATE (not transform) — preserve shape, move description to flat log-space.
+Primes are the nodal lines of the Chladni plate — boundary conditions of the zeta field.
+Riemann zeros are residual curvature surviving the translation.
+12 trillion primes observed — see Odlyzko spacing plots not raw prime curve.
+
+N-BALL VOLUMES (pi^(n/2) / Gamma(n/2+1))
+-----------------------------------------
+n=1: 2.000  n=2: pi  n=3: 4.189  n=4: 4.935
+n=5: 5.264 (PEAK)  n=6: 5.168  n=7: 4.725  n=8: 4.059
+Alpha lives on the descending slope at n=8 (E8 geometry, Wyler formula).
+Van der Waals 1/r^6 is the derivative of this curve at n=6.
+
+HYDROGEN SPECTRAL / ALGEBRA TOWER MATCH
+-----------------------------------------
+Lyman (R, n=1) — UV
+Balmer (C, n=2) — VISIBLE — we see it because we are complex-layer observers
+Paschen (H, n=3) — IR
+Brackett (O, n=4) — far IR
+Shell index n = log_2(algebra dimension) + 1
+Correction factor 16/9 at H/C boundary — candidate structure constant, look in d-block anomalies
+
+STRUCTURE CONSTANTS METHODOLOGY
+--------------------------------
+"If I know what they do, I can look for them there."
+Alpha and Omega are read off the geometry of the constraints, not measured.
+The n-dimensional structural constants amplituhedron: faces=structure constants,
+vertices=rotation group collision points, volume=coupling strength.
+Operator = holonomy of algebra tower connection = error check for data invariance.
+Rotations cannot collide — U(1), SU(2), SU(3) are orthogonal.
+
+DARK MATTER HYPOTHESIS
+----------------------
+50,000-100,000 ly periodic gravitational wave halo.
+NFW profile = standing wave frozen at observational timescale.
+Flat rotation curves = 1/r^2 force law of extended mass = inside the wavelength.
+Missing: PSD of primordial GW at 10-100 kpc. No detector at those frequencies.
+
+QUANTUM GRAVITY
+---------------
+Time is the anti-field — the coordinate where no fields have jurisdiction.
+Metric signature -+++ is structural, not conventional.
+Wick rotation works because time is already imaginary-orthogonal to fields.
+
+MORNING SESSION TARGET
+----------------------
+1. C implementation with debuggable diagnostics + separate visualizer
+2. Infinite positive/negative permutation of structure constants
+3. Maximum granularity exploration — motion-enhancing camera on output
+4. Explicit T transformation from SMNNIP algebra to Riemann zero coordinates
+5. Name the 16/9 correction factor
+
+HASH CHAIN (last hash from April 10 session):

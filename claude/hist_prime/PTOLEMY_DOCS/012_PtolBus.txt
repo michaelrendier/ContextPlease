@@ -1,0 +1,22 @@
+ITEM: PtolBus: inter-Face communication bus, rotary semaphore (traffic circle, not gate), T0/T1 have right of way
+=================================================================================================
+
+YOUR PROMPTS:
+
+"the binary gate (threading.Event) is replaced by a traffic circle (weighted semaphore rotary) where T0/T1 have right of way and T2-T4 yield"
+
+"BUS_IS_THREADS: Bus owns and is the thread pool, fully isolated
+FACE_POST_BOOT: NPC model — Faces respond, don't initiate
+PER_FACE_STDIO: each Face gets stdin/stdout/stderr channel triple plus work thread
+THREAD_POOL_DYNAMIC: Ptolemy reserves 5 threads, Aule sizes the rest via dmesg
+ALL_BUS_EVENTS_TO_DMESG: Aule watches dmesg only, never called directly
+EARLY_SYMPTOM_DETECTION: active prevention not just prediction — Aule as teachable monad learning system rhythm
+CYCLIC_CONTEXT_BUFFER_SHARED: owned by Ptolemy kernel, all Faces read from it
+EMERGENCY_LICH: the always-on first responder kernel — cannot die, owns the Qt event loop directly
+IMPORT_PTOLEMY_FINAL: eventual single import Ptolemy with all structure in __init__.py chains"
+
+"Rotary semaphore queue (traffic circle — not binary gate). T0 priority (system/critical) always before T1 (user/normal). FIFO within each tier — ordering: (priority, timestamp). QThread dispatcher — non-blocking relative to UI"
+
+[CONFIRMED CRASH May 4 2026:] "AttributeError: 'PtolBus' object has no attribute 'start'"
+
+"All inter-Face communication routes through the kernel bus. No Face speaks directly to another."

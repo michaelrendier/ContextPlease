@@ -1,0 +1,26 @@
+ITEM: CyclicContextBuffer: L1 FIFO sliding window, L2 octonion-hyperindexed compression, L3 blockchain-backed HyperWebster persistent memory
+=================================================================================================
+
+YOUR PROMPTS:
+
+"the context buffer 3 layers
+layer 1: 2x Claude Context size...history of prompts without responses...FIFO cycle
+layer 2: the FO prompt from a full prompt buffer gets reduced in size to maintain proper context depth
+Layer 3: Indexing through hyperwebster to place in the json file along with the Vast Repository to be included as persistent memory of Ptolemy"
+
+"First in first out...each prompt automatically gets addended and once the whole context buffer is full...First In First Out...the out triggers compression and movement...a Blockchain could run this yeah? Using two objects"
+
+"this buffer IS layer 0 for cyclic context buffer...this provides the FIFO...savvy?"
+
+"Context Buffer Notes: Not continuous — it is a handler for every prompt. Prompt processed Everett Many Worlds style by Lagrangian of SMNNIP. Rotations happen in octonion layer by attempting to map multiple focal points into single focal point. Those that can't map are extinct. If multiple focal points remain after extinction mapping, (I|O) determines which are the same object from different angles."
+
+"L1 unit: token count, message count, or time-based? And eviction trigger: immediate or batched?"
+[Your answer:] "A1) prompts FIFO. A2) octonions...hyperindexed"
+
+"What gets written to the second-layer buffer on FIFO eviction is the octonion projection of the sedenion product. The stable, associative core of what that binding meant. The sedenion-only (order-sensitive) dimensions are the volatile working context — they don't consolidate because they can't consolidate without their specific ordering."
+
+"on prompt > GATE CLOSES. after response delivered in Philadelphos > GATE OPEN"
+
+"They [slash commands] happen as we go...yes like /derivation /DataInput...there will be more"
+
+"CYCLIC_CONTEXT_BUFFER_SHARED: owned by Ptolemy kernel, all Faces read from it"

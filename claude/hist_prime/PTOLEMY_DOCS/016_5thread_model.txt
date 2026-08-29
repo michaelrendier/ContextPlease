@@ -1,0 +1,21 @@
+ITEM: 5-thread model: T0 permanent I/O heartbeat, T1 user directive, T2–T4 autonomous nice+10
+=================================================================================================
+
+YOUR PROMPTS:
+
+"5 threads total.
+Thread 0 — I/O (always alive, never parked). /DataInput bus → ThalamicGate → output cycle. Heartbeat of the kernel.
+Thread 1 — User directive. Activates on user input. Immediately reclaims resources from autonomous threads.
+Threads 2-4 — Autonomous (nice+10). Self-directed queries from recent context buffer. Parked (not killed) on 'Full Attention Please.' Each thread maintains a journal of current work. On release: resume from journal, not fresh start."
+
+"'Full Attention Please': Threads 2-4 finish current atomic operation. Then park. Weights never left in inconsistent state. Waiting for kernel to assign to user directive."
+
+"GPU sits outside thread model. All threads share GPU via PyTorch CUDA stream manager. GPU is hardware resource, not a thread."
+
+"When user context is mathematical/scientific: Kernel raises Archimedes thread priority. Reduces overhead. Distributes workload to correct module. Human analog: 'focus on your mathematical knowledge.'"
+
+"THREAD_POOL_DYNAMIC: Ptolemy reserves 5 threads, Aule sizes the rest via dmesg"
+
+"Thread 0 = permanent I/O heartbeat (never parked)"
+
+"ThreadJournal — per autonomous thread, logs work state when parked, enables resume vs restart"

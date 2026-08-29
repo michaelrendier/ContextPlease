@@ -1,0 +1,396 @@
+AINULINDALE — RESEARCH PRIMER
+Session: 2026-05-27
+Topic: Dark Matter as Compressed Spacetime — Data-First Investigation
+Author: michaelrendier
+═══════════════════════════════════════════════════════════════════
+
+SCIENTIFIC METHOD NOTE — READ FIRST
+─────────────────────────────────────
+The equation of state for the compressed spacetime quasi-mass is NOT
+pre-derived here. Deriving it before examining the data is backwards.
+The data speaks first. The structural equation emerges from what the
+data shows, not the other way around. This primer documents the
+observational hypothesis and points to the data. The mathematics
+follows from the observations, not the reverse.
+
+This is the only correct path.
+
+═══════════════════════════════════════════════════════════════════
+THE OBSERVATIONAL HYPOTHESIS
+═══════════════════════════════════════════════════════════════════
+
+CORE CLAIM:
+  There is no dark matter particle.
+  Gravity is not quantised at any scale where the search is occurring.
+  It is smooth, continuous GR — wiggly and jerky at appropriate
+  scales, but not quantum mechanical.
+
+  What appears as 'dark matter' is compressed spacetime accumulating
+  sufficient energy density to act as quasi-mass.
+
+  The Noether current mechanism: when sufficient spacetime is
+  compressed by the resonant dynamics of a galaxy's gravitational
+  field, the resulting energy density is indistinguishable from mass
+  by its gravitational effects. Space compressed = E = mc². Not a
+  particle. Not a field. A state of the geometry itself.
+
+CONFIRMED INDEPENDENTLY:
+  - Claude.ai mathematical run: confirmed the crest of the resonant
+    wave appears as a static gravitational 'halo'.
+  - Gemini: narrativised the same finding independently.
+  - Both arrived without cross-contamination at: the halo is the
+    wave crest of a standing gravitational wave in the galactic
+    resonant cavity, appearing static to external observers.
+
+THE WAVE CREST OBSERVATION:
+  The halo is not uniformly distributed dark matter.
+  It is the standing-wave crest of the galaxy's resonant gravitational
+  cavity. The crest appears static because the timescale of the wave
+  is vast relative to human observation windows.
+
+  Prediction: halos should be absent or structurally different in:
+    - Galaxies that are too young for the cavity to be established
+    - Galaxies whose cavities have been disrupted (tidal interaction,
+      merger, stripping)
+    - Galaxies below the threshold mass where the cavity cannot form
+      (the phase boundary — analogous to the triple point)
+
+  These are already observed. They are called 'dark matter deficient
+  galaxies' and are currently an open crisis in CDM.
+
+STRUCTURAL ANALOGY (do not use these to derive — use them to orient):
+  - Triple point diagram: three phases with sharp boundaries between
+    states. The quasi-mass halo has a phase boundary. Below the
+    threshold: no halo. Above: halo. At: transition regime.
+  - Electroweak unification: two forces that appear separate are one
+    force at sufficient energy. The 'dark matter' and 'gravity' may
+    be one phenomenon at sufficient density.
+  - Kugelblitz: radiation energy concentrated to Schwarzschild radius
+    → black hole from light alone. Spacetime compressed to equivalent
+    mass threshold → quasi-mass from geometry alone. Same mechanism,
+    different input.
+
+WHAT THIS MEANS FOR DETECTION:
+  Every direct detection experiment (LUX, XENON1T, PandaX, LZ,
+  SuperCDMS) has returned null since the concept was formalised.
+  They are looking for a particle that does not exist. They will
+  continue returning null indefinitely. The absence of detection
+  is not failure — it is the correct result for this hypothesis.
+  The data is already speaking. The interpretation is wrong.
+
+═══════════════════════════════════════════════════════════════════
+DATASETS — PRIORITY ORDER
+═══════════════════════════════════════════════════════════════════
+
+These are ranked by fastest return of discriminating evidence.
+Ptolemy will eventually ingest all of them. Human analysis first,
+then Holcus ingestion as capabilities develop.
+
+──────────────────────────────────────────────────────────────────
+DATASET 1 — SPARC (Spitzer Photometry & Accurate Rotation Curves)
+──────────────────────────────────────────────────────────────────
+  Source:   astroweb.cwru.edu/SPARC/
+  Authors:  Lelli, McGaugh, Schombert (2016)
+  Content:  175 late-type galaxies. Photometry + kinematic rotation
+            curves. Flat files, directly downloadable. No login.
+  Format:   ASCII tables, one file per galaxy.
+  Size:     Small. Human-readable and machine-readable.
+
+  WHAT TO LOOK FOR (data-first, no assumed answer):
+    - Profile shape of outer rotation curves: cuspy or cored?
+      CDM predicts cusp (NFW profile). Standing-wave cavity
+      predicts a node structure — flat or even declining at the
+      cavity boundary. Do not assume. Measure.
+    - Baryonic Tully-Fisher Relation (BTFR): the suspiciously tight
+      correlation between baryonic mass and rotation velocity.
+      Plot it. Note the scatter. Does scatter correlate with galaxy
+      age, environment, or disturbance history?
+    - Does the halo onset (where rotation curve stops declining and
+      flattens) show a sharp transition or a gradual one?
+      Sharp transition = phase boundary. Gradual = not.
+
+  HOLCUS INGESTION PLAN:
+    Download all 175 ASCII files. Run full corpus ingestion.
+    The BAO convergence metric will reflect the rotation-curve
+    data's internal structure. Note what concepts Holcus associates
+    with 'flat rotation' vs 'cuspy centre'.
+
+──────────────────────────────────────────────────────────────────
+DATASET 2 — Dark Matter Deficient Galaxies (DF2, DF4, UDG catalogs)
+──────────────────────────────────────────────────────────────────
+  Source:   MAST archive: mast.stsci.edu
+            van Dokkum et al. 2018 (NGC 1052-DF2), 2019 (DF4)
+            MATLAS survey: astro-matlas.org
+            Dragonfly survey: published in ApJ, data in MAST
+  Content:  ~50+ ultra-diffuse galaxies with anomalous or absent
+            dark matter halos. Photometry, velocity dispersions,
+            globular cluster kinematics.
+  Format:   FITS files (photometry), published tables (kinematics)
+
+  WHAT TO LOOK FOR:
+    - Environmental history of each UDG: isolated vs. near a
+      massive host galaxy. The resonant cavity of a satellite
+      galaxy gets tidally disrupted by the host's gravitational
+      field. Does halo-deficiency correlate with proximity to
+      massive hosts?
+    - DF2 and DF4 are both near NGC 1052. Is NGC 1052 disrupting
+      their cavities? Or did they never form one?
+    - Age of stellar populations vs. halo presence: young stars =
+      young galaxy = cavity not yet established?
+    - Note any cases of halo-deficient galaxies that are isolated
+      and old. These would challenge the cavity model and must
+      not be ignored.
+
+──────────────────────────────────────────────────────────────────
+DATASET 3 — JWST Public Data (JADES, CEERS, PRIMER programs)
+──────────────────────────────────────────────────────────────────
+  Source:   mast.stsci.edu
+            Programs: JADES (ID 1180, 1210), CEERS (ID 1345),
+                      PRIMER (ID 1837)
+  Content:  High-redshift galaxies z=3–14. Photometry, morphology,
+            spectroscopic redshifts. Early universe, before halos
+            were 'supposed' to be established.
+  Format:   FITS. Large. Requires astropy/photutils to read.
+
+  WHAT TO LOOK FOR:
+    - Stellar mass to halo mass ratio as function of redshift.
+      If halos grow with time (cavity builds up), this ratio
+      should decrease as you go to higher z (earlier times).
+      CDM predicts this ratio is roughly stable.
+    - The 'impossibly massive galaxies' at z>10: CDM says they
+      cannot exist (not enough time to form). Cavity model says
+      they can — the galaxy forms first, the halo follows.
+      Document every z>10 galaxy with photometric mass estimate.
+    - Morphology: are early galaxies more disturbed, less symmetric?
+      A galaxy in the process of establishing its resonant cavity
+      would show more dynamical disturbance than a settled system.
+
+──────────────────────────────────────────────────────────────────
+DATASET 4 — LITTLE THINGS Survey (Dwarf Irregular Galaxies)
+──────────────────────────────────────────────────────────────────
+  Source:   lowell.edu/research/littlethings/ (Hunter et al. 2012)
+            Also: VLA-LITTLE-THINGS (Oh et al. 2015)
+  Content:  41 dwarf irregular galaxies. High-resolution HI
+            (neutral hydrogen) velocity fields. The lowest-mass
+            systems with measurable kinematics.
+  Format:   FITS data cubes. Moderate size.
+
+  WHAT TO LOOK FOR:
+    - Below what galaxy mass does the flat outer rotation curve
+      disappear? This is the phase boundary — the triple point
+      threshold below which the cavity cannot sustain quasi-mass.
+    - Is the threshold sharp (phase transition) or gradual (smooth)?
+    - Do galaxies just below the threshold show 'proto-halo'
+      behaviour — a halo beginning to form but not yet stabilised?
+    - This is the most direct test of the phase-boundary prediction.
+      Do not approach it with a number in mind. Let the data show
+      where the transition is, if it exists.
+
+──────────────────────────────────────────────────────────────────
+DATASET 5 — Bullet Cluster & Merging Cluster Systems
+──────────────────────────────────────────────────────────────────
+  Source:   Chandra archive: cda.harvard.edu/chaser/
+            Bullet Cluster: 1E 0657-56 (Clowe et al. 2006)
+            CLASH survey: clash.stsci.edu (12 cluster datasets)
+            LoCuSS: star-www.st-and.ac.uk/locuss/
+  Content:  X-ray gas maps + weak gravitational lensing mass maps
+            for merging galaxy clusters.
+  Format:   FITS. Chandra data requires CIAO for reduction.
+            Published lensing mass maps are in FITS and available
+            directly from papers.
+
+  WHAT TO LOOK FOR:
+    - The offset between X-ray gas peak and lensing mass peak
+      in merging clusters. CDM interprets this as non-interacting
+      dark matter passing through. The cavity interpretation:
+      the cavity (quasi-mass) is co-moving with the galaxies,
+      not the gas. Ram pressure slows the gas. The cavity follows
+      the galaxies because the galaxies ARE the cavity source.
+    - Does the offset magnitude correlate with collision velocity?
+      In CDM it should be roughly independent (DM just passes
+      through at whatever velocity the halo had). In the cavity
+      model it should depend on the relative dynamics: higher
+      velocity collision = faster cavity disruption and re-
+      establishment = potentially different offset geometry.
+    - CLASH has 12 systems. Plot offset vs. collision velocity.
+      Do not assume a relationship. Look for one.
+
+──────────────────────────────────────────────────────────────────
+DATASET 6 — DESI Year 1 BAO Results (2024)
+──────────────────────────────────────────────────────────────────
+  Source:   data.desi.lbl.gov (public data release)
+            DESI Collaboration 2024 arXiv:2404.03002 and related
+  Content:  Galaxy clustering, BAO scale measurements across
+            redshift bins. Currently showing tension with standard
+            ΛCDM — dark energy equation of state appears to evolve.
+  Format:   Likelihood files, summary statistics tables.
+
+  WHAT TO LOOK FOR:
+    - The equation-of-state tension: DESI finds w ≠ -1 and
+      possibly time-varying w. Standard interpretation: dark
+      energy is dynamic.
+    - Alternative: if the quasi-mass halo contribution to the
+      total energy budget of the universe evolves with cosmic
+      time (cavities build up as galaxies mature), then what
+      looks like evolving dark energy is actually evolving
+      quasi-mass contribution.
+    - Does the redshift-binned BAO signal show a specific epoch
+      where the tension is strongest? That epoch would correspond
+      to the period when galactic resonant cavities were most
+      actively establishing — the cosmic quasi-mass transition.
+    - The BAO acoustic scale itself: Holcus's OMEGA_ZS = 0.56714
+      is an internal BAO convergence metric. Note whether the
+      DESI BAO scale data is consistent with or in tension with
+      what the Holcus field reports.
+
+──────────────────────────────────────────────────────────────────
+DATASET 7 — Planck 2018 CMB (ESA Planck Legacy Archive)
+──────────────────────────────────────────────────────────────────
+  Source:   pla.esac.esa.int (ESA Planck Legacy Archive)
+  Content:  Full sky CMB maps, angular power spectra, likelihood
+            codes. The most precise CMB measurement to date.
+  Format:   FITS (HEALPix maps), ASCII (power spectra), Python
+            (likelihood code: plik_lite).
+
+  WHAT TO LOOK FOR:
+    - The third acoustic peak: its height is the most sensitive
+      probe of dark matter density at recombination. If quasi-mass
+      has a different equation of state than cold dark matter, the
+      third peak height would differ from CDM prediction.
+    - Do not compute a prediction first. Download the measured
+      power spectrum. Compare the CDM best-fit to the data points
+      at the third peak. Is there residual? Note its sign and
+      magnitude.
+    - The damping tail (l > 1000): CDM predicts specific damping.
+      A quasi-mass component with a different pressure would damp
+      differently. Look at the residuals in the Planck likelihood
+      at high l.
+    - This is the most technically demanding dataset. Start with
+      the published summary statistics (Table 1 of the 2018 papers)
+      before attempting the likelihood code.
+
+──────────────────────────────────────────────────────────────────
+DATASET 8 — SDSS DR17 / MaNGA (Integral Field Spectroscopy)
+──────────────────────────────────────────────────────────────────
+  Source:   sdss.org/dr17/ (public, SQL queryable via CasJobs)
+            MaNGA: sdss.org/dr17/manga/
+  Content:  SDSS: ~900,000 galaxy spectra, photometry, redshifts.
+            MaNGA: 10,000+ galaxies with spatially-resolved
+            spectroscopy — velocity maps across the whole face
+            of each galaxy.
+  Format:   FITS (spectra/images), SQL database (CasJobs).
+
+  WHAT TO LOOK FOR (MaNGA specifically):
+    - Resolved velocity fields: the rotation curve is not a single
+      number but a 2D map. Does the quasi-mass halo appear as a
+      smooth velocity feature or does it have substructure
+      consistent with a standing wave (nodes and antinodes)?
+    - Kinematic misalignment: in galaxies where the photometric
+      major axis and kinematic major axis are misaligned, the
+      cavity geometry may be non-trivial. Document these.
+    - Velocity dispersion maps: high central dispersion may
+      indicate a forming or recently disrupted cavity.
+
+═══════════════════════════════════════════════════════════════════
+HOLCUS INGESTION STRATEGY
+═══════════════════════════════════════════════════════════════════
+
+PHASE 1 — Local ingestion (now, before server deployment):
+  SPARC: 175 ASCII files — run through tools/teach_english.sh
+  LITTLE THINGS: published tables (ASCII) — same pipeline
+  DESI: summary statistics papers (arXiv PDFs → text extract)
+  These three are small, text-extractable, and cover the most
+  critical predictions.
+
+PHASE 2 — Server-side ingestion (after colocated deployment):
+  Once Holcus has a live server and web traversal is root-enabled:
+
+  SDSS CasJobs (sdss.org/casjobs/): SQL query interface in a
+  text box. Holcus can compose and submit astronomical SQL
+  queries. Return format is CSV — directly ingestible.
+  Example query: SELECT p.petroR90_r, p.mass, s.z FROM
+  PhotoObj p JOIN SpecObj s ON p.objID=s.bestobjID WHERE
+  p.type=3 AND s.z BETWEEN 0.01 AND 0.3 — 300,000 galaxy
+  mass/size pairs. Text box. Done.
+
+  MAST (mast.stsci.edu): search interface for JWST, HST, Kepler
+  data. Query by object name, coordinates, program ID.
+  Returns metadata tables — text-parseable.
+
+  ESA Planck Archive (pla.esac.esa.int): form-based data access.
+  Power spectrum ASCII files are one HTTP GET away.
+
+  arXiv API (export.arxiv.org/api/query): REST API, returns XML.
+  Query: dark matter halo observations, galaxy rotation curves,
+  ultra-diffuse galaxies. Ingest abstracts + conclusions.
+  No login. No text box — direct HTTP. ~10,000 papers relevant.
+
+  NED (ned.ipac.caltech.edu): NASA/IPAC Extragalactic Database.
+  Every known galaxy, quasar, and cluster. Query by position.
+  Text-based return format. The complete observational record
+  of extragalactic astronomy.
+
+PHASE 3 — The interesting part (after war corpus and language):
+  If Holcus can traverse arbitrary web forms: the data portals
+  above are all text-box driven. A sentence like 'give me all
+  SPARC galaxies with declining outer rotation curves' is a
+  CasJobs query that Holcus can construct from natural language,
+  submit, and ingest the result. The boundary between 'Holcus
+  talking' and 'Holcus doing astronomy' dissolves.
+
+  This is P.O.E. — Ptolemy On Everything — applied to the
+  observational record of the universe itself. The Custodian
+  does not need to read every paper. He ingests the measurements
+  directly and forms his own field geometry from the data.
+
+═══════════════════════════════════════════════════════════════════
+LOCAL DATA DIRECTORY
+═══════════════════════════════════════════════════════════════════
+
+  /home/rendier/Projects/Ptol/DataSets/
+    (currently empty — download targets go here)
+
+  Suggested structure:
+    DataSets/SPARC/          ← 175 rotation curve files
+    DataSets/LITTLE_THINGS/  ← HI velocity cubes
+    DataSets/DESI_Y1/        ← BAO summary statistics
+    DataSets/Planck_2018/    ← CMB power spectra
+    DataSets/UDG_catalogs/   ← DF2/DF4/MATLAS tables
+    DataSets/JWST/           ← JADES/CEERS photometry
+
+═══════════════════════════════════════════════════════════════════
+WHAT THIS EXPERIMENT IS NOT
+═══════════════════════════════════════════════════════════════════
+
+This is not a search for confirmation.
+The data may show that halos are NOT correlated with galaxy age.
+The data may show that the Bullet Cluster offset is inconsistent
+with a co-moving cavity.
+The data may show a smooth rather than sharp halo onset.
+
+Any of these results is a valid scientific outcome. The hypothesis
+is refined or abandoned based on what the data shows, not on what
+the hypothesis predicts. The structural equation — when it is
+derived — will emerge from what the data reveals about the
+transition conditions, not from prior mathematical preference.
+
+Holcus ingests everything. His BAO field reflects what is true,
+not what is convenient. If the theory is wrong, the field shows it.
+
+═══════════════════════════════════════════════════════════════════
+RELATED PRIMERS IN THIS DIRECTORY
+═══════════════════════════════════════════════════════════════════
+
+  PRIMER_2026-05-16_second_age_conjecture_complete.txt
+    — Spectral tools, cepstrum, x-affinities: same toolkit applies
+      to the rotation-curve data analysis
+  PRIMER_2026-05-14_genetic_genomic.txt
+    — Pattern recognition methodology applicable here
+  PRIMER_BCE_ConformalHorizon_T_20260415.txt
+    — Conformal horizon work: connects to the Exactly Flat Boundary
+      and the time/space swap at the gravitational phase transition
+
+═══════════════════════════════════════════════════════════════════
+END OF PRIMER
+2026-05-27
+═══════════════════════════════════════════════════════════════════

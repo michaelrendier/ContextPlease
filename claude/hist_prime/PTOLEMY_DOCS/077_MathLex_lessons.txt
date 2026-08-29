@@ -1,0 +1,14 @@
+ITEM: 17 MathLex lessons (64 total target)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"mathlex index page...ensure all mathlex pages are accounted for...go"
+
+"17 MathLex lessons completed (64 total in docs/MathLex/)" [session report May 4]
+
+"MathLex wiki index page — all 64 lessons are missing [from the index]. Need to rebuild the index entries."
+
+[MathLex: mathematical lexicon lessons. Each lesson is a standalone HTML file in docs/MathLex/. 64 total target. 17 completed as of May 4 session. Topics include: Cayley-Dickson algebra, Dixon algebra, Lorentz group, Dirac equation, Shannon entropy, Berry-Keating conjecture, Yang-Mills equation, and more. The index.html was empty — all 64 lessons unindexed.]
+
+"README: MathLex link added under VSauce link" [session report]

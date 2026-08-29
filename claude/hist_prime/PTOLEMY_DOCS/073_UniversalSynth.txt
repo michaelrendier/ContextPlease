@@ -1,0 +1,10 @@
+ITEM: UniversalSynth standalone repo
+=================================================================================================
+
+YOUR PROMPTS:
+
+"the synthesizer stays standalone and self contained...it also gets its own repo shortly"
+
+"michaelrendier/UniversalSynth" [repo listed in protocol header]
+
+[UniversalSynth: standalone synthesizer repo, separate from Ainulindale. Self-contained. Sonification output routes through Qt viewer in Ainulindale. UniversalSynth is the synthesis engine itself — receives mathematical events, generates audio. Currently empty repo at session end.]

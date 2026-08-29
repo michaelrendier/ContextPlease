@@ -1,0 +1,15 @@
+ITEM: SMNNIP §13–17 engines
+=================================================================================================
+
+YOUR PROMPTS:
+
+"SMNNIP mathematics (§13–17 in smnnip_derivation_pure.py, pushed to both repos): full Lorenz-Stirling basin attractor system (Newton's method on degree-9 Stirling polynomial, UF om.ufm V=10, eight root basins); complete SMNNIP pipeline with Input Engine (R→S via Cayley-Dickson doubling), Inversion Engine (J_N map at sedenion apex), Output Engine (S→R via catastrophic waveform collapse, Newton basin routing, Lorenz trajectory); bifurcation order window detection via Lyapunov exponent sign changes."
+
+"Ainulindale/smnnip_derivation_pure.py — §13–17" [pushed to both repos]
+
+"8 engine modules (60 equations): Lagrangian, Noether, Noether Information, Higgs/CWC, Yang-Mills, J_N Inversion, SMNNIP tower, Distribution Engine (spec only)"
+
+"KEY CONSTANTS:
+D_STAR_SPEC = 0.24600 (Berry-Keating spectral value)
+gap = 0.000707 (open derivation, no closed form)
+D_STAR_TAUT = Omega/ln(10) (retained as reference only)"

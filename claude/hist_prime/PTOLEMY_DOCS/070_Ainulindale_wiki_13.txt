@@ -1,0 +1,18 @@
+ITEM: 13 wiki pages (Ainulindale)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"wiki/ — 13 pages:
+00 index
+01 overview + philosophy
+02 registry contract (how to add a module)
+03–10 one page per engine
+11 viewer (Qt + curses)
+12 SMNNIP Distribution Engine — full architecture spec for the future inference engine"
+
+"Ainulindale wiki documents the complete design: how TextHyperIndex/ImageHyperIndex/JWST feed in, how the Inversion Engine governs layer propagation, how the Tongue does reverse lookup via Fano distance in HyperGallery, the Lorenz-Stirling basin routing for the output distribution, and all Ptolemy integration points."
+
+"94b683b. Done." [commit confirming 13 wiki pages pushed to Ainulindale]
+
+"Ptolemy wiki is THE backbone. All other repos link back here." [Ainulindale wiki pages become stubs linking back to Ptolemy wiki]

@@ -1,0 +1,16 @@
+ITEM: Window moveable fix
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Boot status: Desktop renders, Pharos responsive, sidebar present, Philadelphos boot chain successful — but window is not moveable and QTermWidget is not yet built."
+
+"Window moveable fix — QGraphicsScene drag" [listed as v0.9 item]
+
+"they bypassed Qt's event filter system entirely, using scene.itemAt() directly and calling mousePressEvent() manually — confirmed as correct architecture, not a hack"
+
+"all scene widgets made free-floating with ItemIsMovable, 70% opacity when unfocused via focusItemChanged"
+
+"The issue is Interface.py's UserDisplay and User classes which are QGraphicsItems but have ItemIsMovable commented out."
+
+"MISSING: Window not moveable" [confirmed status May 4 2026]

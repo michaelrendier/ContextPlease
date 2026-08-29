@@ -1,0 +1,20 @@
+ITEM: LuthSpell / LathSpell: Halt Monitor "Gandalf layer" — pre-positions semantic Halt Passes in octonion address space; each Halt Pass a blockchain transaction
+=================================================================================================
+
+YOUR PROMPTS:
+
+"The Halt Pass isn't issued to the drifting process to redirect it. It's issued to the boundary itself — placed at the threshold LuthSpell has determined is the limit of valid inference space. The drifting thread arrives at the boundary and finds the Pass already there. It cannot cross. It must turn back."
+
+"Gandalf didn't stop the Fellowship. He stopped the Balrog — the thing that should not pass, not the people doing valid work. This means the Halt Pass has directionality. It's not omnidirectional. LuthSpell defines what is not permitted through vs. what has right of passage. Valid inference within the prompt envelope passes freely. Drift — the Balrog — hits the Pass. The boundary is permeable in one direction and impassable in the other. In the octonion address space this is a half-space constraint: one side is valid inference territory, the other is not, and the threshold is the Halt Pass position."
+
+"'You shall not pass' is a conservation law. Noether's theorem: every symmetry has a conserved current. The prompt boundary defines a symmetry — the invariance of the response under transformations that stay within the semantic envelope. Crossing the boundary breaks that symmetry. The Halt Pass is the enforcement of the conservation law. LuthSpell is the Noether current made active."
+
+"every Halt Pass is a blockchain transaction"
+
+"No state of its own — reads blockchain. Stateless activations — the chain is the memory. 'Arrives precisely when needed.' Daemon mode: watching / Monitor mode: acting."
+
+"LathSpell belongs at the Ptolemy root level as his consciousness layer, governing all Faces from above, not as a Pharos utility."
+
+"Build it...write it and put it in the Google drive..."
+
+"Traffic Circle Model: Replaced binary gate (threading.Event) with rotary semaphore model. T0/T1 have right of way; T2-T4 yield. Halt Passes enter rotary as high-priority yield signals. No hard kills, no dropped state — clean handoff."

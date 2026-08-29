@@ -1,0 +1,18 @@
+ITEM: TODO.md (4 priority tiers)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"TODO.md — 4 priority tiers: blocking open problems, engineering blockers, paper flags, future features"
+
+[4 tiers:]
+Tier 1 — Blocking open problems (mathematical gaps, proof requirements)
+Tier 2 — Engineering blockers (PtolBus, wiring, integration)
+Tier 3 — Paper flags (FLAGS 1–5, sigma result, appendix items)
+Tier 4 — Future features (Flutter client, server, hardware)
+
+"Ainulindale/TODO.md" [built and pushed]
+
+"Active v0.9 directive list has 28 items." [Ptolemy-side TODO]
+
+"I need something relatively complete...v0.9 level before I Restructure Ainulindale"

@@ -1,0 +1,72 @@
+
+==========================================================================
+PART A  --  is stress_spec SPECTRAL (orthogonal modes, conjugate faces)?
+==========================================================================
+  loaded 123,455 words from monad_phonetic.bin
+
+  A1 heteronym conjugate-pair test:
+     stress-moved pairs found      : 140
+     equal-magnitude & phase-moved : 136  (97.1%)
+     mean magnitude-spectrum error : 1.20e-02
+       ababa            (0, 1, 0) <-> (1, 0, 0)
+       academicians     (2, 0, 0, 1, 0) <-> (0, 2, 0, 1, 0)
+       advertised       (1, 0, 2) <-> (2, 0, 1)
+       alcatraz         (2, 0, 1) <-> (1, 0, 2)
+       annotates        (2, 0, 1) <-> (1, 0, 2)
+       annotating       (2, 0, 1, 0) <-> (1, 0, 2, 0)
+       appointee        (0, 0, 1) <-> (0, 1, 0)
+       appointees       (0, 0, 1) <-> (0, 1, 0)
+
+  A2 syllable-position mode structure (fixed length L):
+     L=2: n=61219  eig(C)=[0.099 0.498]  partic.ratio=1.38  DFT off-diag frac=0.389
+     L=3: n=37143  eig(C)=[0.168 0.329 0.688]  partic.ratio=2.30  DFT off-diag frac=0.409
+     L=4: n=13537  eig(C)=[0.103 0.237 0.377 1.04 ]  partic.ratio=2.39  DFT off-diag frac=0.458
+
+  --> P-A  stress_spec spectral?  A1=YES  A2=no  ==>  NOT supported
+
+==========================================================================
+PART B  --  is context_vector RESIDUAL (overlaps), not an orthogonal basis?
+==========================================================================
+  2500 synsets x 19 relation dims
+
+  B1 component correlation (orthogonal basis => ~0):
+     mean |off-diag corr| = 0.046
+     max  |off-diag corr| = 0.611
+     frac |corr|>0.3      = 0.023
+
+  B2 spectrum of context_vector (flat => orthogonal/independent):
+     singular-value energy frac (top 8): [0.431 0.165 0.09  0.085 0.046 0.035 0.033 0.03 ]
+     participation ratio (eff. rank)   : 4.26  / 19
+
+  B3 overlap: related pairs vs random pairs (n_rel=97):
+     cosine   related=0.463   random=0.487
+     factor   related=0.859   random=0.698
+
+  --> P-B  context_vector residual?  B1=no B2=YES B3=no  ==>  NOT supported
+
+==========================================================================
+PART C  --  is the RESIDUAL the Smith diagram's 4D?
+==========================================================================
+  C1 effective dimension of the residual after removing top-k modes:
+     (participation ratio of the leftover singular spectrum)
+     k=0: residual particip.ratio= 4.26   Fisher(full)=0.341  Fisher(residual)=0.341  <== near 4
+     k=1: residual particip.ratio= 6.61   Fisher(full)=0.341  Fisher(residual)=0.619
+     k=2: residual particip.ratio= 7.48   Fisher(full)=0.341  Fisher(residual)=0.329
+     k=3: residual particip.ratio= 7.19   Fisher(full)=0.341  Fisher(residual)=0.241
+     k=4: residual particip.ratio= 8.09   Fisher(full)=0.341  Fisher(residual)=0.134
+     k=5: residual particip.ratio= 7.67   Fisher(full)=0.341  Fisher(residual)=0.128
+
+  C2 residual coords through mobius_fold (|Gamma| must not saturate):
+     |Gamma|  mean=0.819  std=0.212  min=0.058  max=1.000
+     frac |Gamma|>0.99 (saturated) = 0.204   frac in (0.05,0.95) = 0.592
+
+  --> P-C  residual ~ Smith 4D?  (read C1 for a participation ratio near 4; fold saturated/degenerate)
+
+==========================================================================
+SUMMARY
+==========================================================================
+  P-A  stress_spec is spectral (conjugate faces)   : NOT supported
+  P-B  semantic hash is residual (overlaps)         : NOT supported
+  P-C  residual dimensionality / Smith fold         :  see PART C
+
+  => the inference does NOT hold cleanly; see which P failed.

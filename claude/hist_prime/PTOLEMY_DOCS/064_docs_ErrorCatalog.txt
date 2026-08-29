@@ -1,0 +1,27 @@
+ITEM: docs/ErrorCatalog.md (55+ typed errors PTL_1xx–9xx)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Error Handler...First, did the reduction layer map make it into the README?"
+
+"Error Handler wiring" [session focus item]
+
+[Error catalog ranges designed by you:]
+PTL_1xx — BUS
+PTL_2xx — LuthSpell / Halting
+PTL_3xx — Cyclic Context Buffer
+PTL_4xx — Blockchain
+PTL_5xx — Acquisition / HyperWebster
+PTL_6xx — LSH Model
+PTL_7xx — Module / Settings
+PTL_9xx — System / Root
+
+"PTL_504 RabiesViolation — FATAL, no GC. first_encountered immutability breach. Audit only."
+
+"PTL_920–927 are live exceptions. PTL_928 and PTL_929 are committed as blocks, not raised — because if the safe mode entry itself throws, you've lost the ability to record anything."
+
+"docs/ErrorCatalog.md — header total corrected to 55" [pushed]
+
+"27 errors" [initial catalog count at luthspell_error_handler.py build]
+"55 errors" [count after blockchain error codes added]

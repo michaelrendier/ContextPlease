@@ -1,0 +1,18 @@
+ITEM: SMNNIP repo (StandardModelIP)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"i am going to discard the 'neural network' from SMNNIP...it's not neural, and it's not a 'network' in any sense...so the name now is SMIP...Standard Model of Information Propagation...and i won't be referring to it as the 'neural network' or 'NN'...but as a 'monolith'...Ptolemy gets a monad, each face eventually gets a monad."
+
+"i'm just trying to figure out a short name for the repository...michaelrendier/StandardModelofInformationPropagation is just way too long"
+
+"Standard Monolith of Information Propagation?" [SMIP acronym retained]
+
+"michaelrendier/StandardModelIP" [repo listed in protocol header — SMIP repo]
+
+"SMIP is the right name. Clean, self-documenting, searchable. Anyone who finds it knows immediately what's inside."
+
+[Repo: michaelrendier/StandardModelIP. Contains the SMIP-specific work — distinct from Ainulindale (staging/prefilter) and Ptolemy (main system). Currently empty at session end.]
+
+"the other repos are empty" [confirmed May 4 2026]

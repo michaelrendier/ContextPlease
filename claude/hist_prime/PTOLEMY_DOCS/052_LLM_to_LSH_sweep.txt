@@ -1,0 +1,14 @@
+ITEM: LLM→LSH terminology sweep across all files
+=================================================================================================
+
+YOUR PROMPTS:
+
+"all LLM references and all LLM methodologies should be removed from the Readme and all of Ptolemy. Replace with LSH, Lagrange Self-adjoint Hyper-indexing Model"
+
+"i am going to discard the 'neural network' from SMNNIP...it's not neural, and it's not a 'network' in any sense...so the name now is SMIP...Standard Model of Information Propagation...and i won't be referring to it as the 'neural network' or 'NN'...but as a 'monolith'"
+
+"LLM model experimentation — Julius Caesar, Cicero, Cato corpus (Philadelphos / LSH)" [README replacement line]
+
+"The datatype formerly called SemanticWord is to be named LSH_Datatype (not LLM_Datatype)"
+
+[Sweep covered: README.md, all .py files referencing SMNNIP as neural network, all LLM_Datatype references → LSH_Datatype, all "neural network" references → "monolith"]

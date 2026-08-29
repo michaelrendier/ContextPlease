@@ -1,0 +1,23 @@
+ITEM: 8 engine modules (60 equations): Lagrangian, Noether, Noether Information, Higgs/CWC, Yang-Mills, J_N Inversion, SMNNIP tower, Distribution Engine (spec only)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Copy all code from there to a working directory inside Ainulindale called ValaQuenta...only new code comes out of ValaQuenta...when finished engineering we will push to Ainulindale"
+
+"ainulindale_engine — fully wired: 8 modules, 60 equations, Qt viewer, curses console, FLAG-4 fix"
+
+[8 modules:]
+modules/lagrangian/ — L_NN four terms, polar integration, running coupling α_NN(r)
+modules/noether/ — conserved currents, symmetry→conservation, violation measurement, blockchain ledger interface
+modules/noether_information/ — information current J_info, entropic arrow, Φ flux, entropic time t_e
+modules/higgs_cwc/ — Catastrophic Waveform Collapse
+modules/yang_mills/ — rotations, gauge field
+modules/inversion/ — J_N map at sedenion apex
+modules/smnnip_tower/ — full tower ℝ→ℂ→ℍ→𝕆→𝕊
+modules/distribution/ — Distribution Engine (spec only, not yet built)
+
+"FLAG-4 (gradient_flow convergence) = first fix in Ptolemy at v0.112"
+
+"Phase 2 — Math Modules: three modules ported from pre-modular source files"
+"Phases 2–4 build in Ptolemy — Claude Code on Surface Go handles the builds"

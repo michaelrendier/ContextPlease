@@ -1,0 +1,13 @@
+ITEM: HolePunch + KVMClient refactors (Tesla)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"fix Tesla HolePunch and KVMClient...full refactoring"
+
+[From repo context: Tesla/HolePunch.py, Tesla/HolePunchClient.py, Tesla/HolePunchServer.py, Tesla/KVM.py, Tesla/GpsHolePunch.py, Tesla/GpsHolePunchServer.py — all part of Tesla face device interfacing]
+
+"Tesla/HolePunch.py (refactored)" [built and pushed]
+"Tesla/KVM.py (refactored)" [built and pushed]
+
+[HolePunch is a network hole-punching tool for peer-to-peer device connection. KVMClient handles keyboard/video/mouse pass-through. Both live in Tesla face as device interfacing modules. Menu files: Pharos/menus/tesla_HolePunch.menu, Pharos/menus/tesla_KVM.menu]

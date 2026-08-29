@@ -1,0 +1,15 @@
+ITEM: PtolDesktop.py
+=================================================================================================
+
+YOUR PROMPTS:
+
+"PtolDesktop.py — Ptolemy Desktop Architecture. Three systems:
+1. ProcessGraph — JACK-style node graph on QGraphicsScene. Ptolemy Center node (pannable, not fixed). Face nodes orbit Ptolemy Center. Minimized PWindows become graph nodes, auto-connect to their Face. Stream connections draggable (sensors, data pipes → projects). Graph pans and transmutes freely.
+2. SidebarPanel — auto-hiding sidebar. 23px activation strip at left edge. Hover over strip → unhide (slides in). Auto-hides after 45 seconds.
+3. TooltipShortcut — enhanced tooltips with keyboard shortcut display. Every interactive element: tooltip + shortcut key."
+
+"Pharos/PtolDesktop.py" [built and pushed]
+
+"QGraphicsView → QGraphicsScene → Pharos → QTermWidget, with non-Qt libs deferred until after Pharos loads"
+
+"they bypassed Qt's event filter system entirely, using scene.itemAt() directly and calling mousePressEvent() manually — confirmed as correct architecture, not a hack"

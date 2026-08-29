@@ -1,0 +1,18 @@
+ITEM: 8 fractal derivation path pages
+=================================================================================================
+
+YOUR PROMPTS:
+
+"8 fractal derivation path pages pushed (UF_Magnet, UF_Lyapunov, UF_Joukowsky, UF_AGM, UF_Lacunary, UF_NewtonBasins, UF_Bifurcation, UF_Baker)" [session report May 4]
+
+[8 fractal derivation path pages — UF (Universal Function) series:
+UF_Magnet — magnetic field fractal
+UF_Lyapunov — Lyapunov stability fractal
+UF_Joukowsky — conformal mapping / airfoil
+UF_AGM — Arithmetic-Geometric Mean
+UF_Lacunary — lacunary series
+UF_NewtonBasins — Newton basin attractor (directly connected to Lorenz-Stirling)
+UF_Bifurcation — bifurcation diagram
+UF_Baker — Baker's map]
+
+[These connect to the FractalRenderer in Alexandria and the Lorenz-Stirling Newton basin routing in the SMIP output engine.]

@@ -1,0 +1,18 @@
+ITEM: Callimachus v0.9 modular package
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Callimachus: was the first archivist...and is the archival face...and currently stands as the database manipulation code"
+
+"Callimachus v0.9 modular package" [built and pushed: core/charset.py, core/hyperwebster.py, core/lsh_datatype.py, database/hyperdatabase.py, gallery/hypergallery.py, acquire/acquire.py, unified __init__.py]
+
+"Callimachus v09 live swap and Database.py deletion" [v0.9 directive]
+
+"Callimachus owns all indexing (VastRepository, HyperWebster, HyperGallery); Phaleron owns search (delegating to Callimachus) and display"
+
+".perm files reassigned from Callimachus to Kryptos"
+
+"Noether Information Current...does not require .perm files since it operates on information content and is coordinate-invariant"
+
+"Unicode 15.1 / UTF-8 wire encoding; canonical ordering = Unicode codepoint order (ord() ascending)"

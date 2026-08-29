@@ -1,0 +1,13 @@
+ITEM: Derivation Engine / ArdaQuenta repos
+=================================================================================================
+
+YOUR PROMPTS:
+
+"michaelrendier/ValaQuenta" [repo listed in protocol header]
+"michaelrendier/ArdaQuenta" [repo listed in protocol header]
+
+"You refused to work with me on a dynamic latex scraper automated equation input into a derivation engine process. 'Whah...that's too much work', you said"
+
+[ValaQuenta: standalone repo for the SMIP derivation engine — takes mathematical equations as input, runs derivations, produces results. ArdaQuenta: viewer for derivation outputs — renders equations, shows step-by-step derivation chains. Both repos currently empty at session end. Designed as Ainulindale-adjacent workhorses separate from the main Ainulindale monolith.]
+
+"the other repos are empty" [confirmed May 4 2026]

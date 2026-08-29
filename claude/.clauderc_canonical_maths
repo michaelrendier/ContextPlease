@@ -1664,3 +1664,66 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
   the real axis sits in the channel that does not move. all work is imaginary.
   e_0 alone generates dim 1 (R). e_0 + one imaginary generates dim 2 (C).
 @END
+# (PW8) is not an analogy for the factoral-decomposition visualiser -- it IS the
+# design template. Gamma_N(a) = excursion/(excursion+2a0) folds the unbounded
+# Fermat search radius (PW5) into a bounded [0,1) chart; a0=ceil(sqrt(N)) (the
+# two-anchor midpoint) is the fixed-point anchor, Gamma_N=0. Bounded, monotone
+# under tuning, and the factor NODE's Gamma_N position is a DIFFICULTY GAUGE:
+# balanced N -> near the anchor; hard/unbalanced N -> near the horizon. This
+# resolves the visualiser's design: ONE bounded chart, fixed-anchor landmarks
+# (1, N, sqrt(N)), tuning-as-a-dial (the multiplier k, PW2) -- not five
+# side-by-side panels. decompose_number(N)['number_chart'] is the datum.
+# Engine: SedenionFactoralRelativity/engine/lineage.py, PW9.
+
+# ============================================================
+# ADD:SCALE:SIGN — the tier-0 datatype  (2026-08-28)
+# Engine: ValaQuenta/modules/add_scale_sign/  (ASS, ASSWord, AddScaleSignModule)
+# Canonical decomposition maths (four-question test, roll-down):
+#   VAPMIP/add_scale_sign.py  — NOT duplicated in the datatype module
+# ============================================================
+#
+# A Python value type for elements of the tier-0 floor
+#   Aff(1,R) = R ⋊ (R_{>0} × Z/2) = ADD ⋊ (SCALE × SIGN),   x ↦ sign·scale·x + add.
+# Like `str` carries split/strip/replace, ASS carries its own manipulation
+# surface: compose (@), invert (~), residual(without) [strip one generator,
+# keep the rest — the str.strip analogue], only(part), parts(), decompose to
+# an ASSWord, to_smith(), lineage(order=).
+#
+# EACH GENERATOR'S EQUATION PART (its contribution to the generalized-equation
+# word):
+#   ADD    x ↦ x + a     Δ_ADD   = a            (translation; flow/count; FREE)
+#   SCALE  x ↦ s·x        Δ_SCALE = ln s         (log-gain; the fold; the WORK)
+#   SIGN   x ↦ g·x        Δ_SIGN  = g ∈ {−1,+1}  (one bit; det ±1; FREE)
+#
+# THE GENERALIZED EQUATION (the whole session's spine, one line):
+#   u  =  Σ_k [ g_k·ln s_k + a_k ]          the signed ADD:SCALE:SIGN word-length
+#   Γ  =  tanh(u/2)                          the Smith/Joukowsky fold in word coords
+# The fold IS the generating function of Aff(1,R) acting on ln x.
+#   GROUND STATE:  a_k→0, s_k→1, g_k→+1  ⇒  u=0  ⇒  Γ=0  ⇒  x = anchor
+#     = the now / the viewport / SCALE at identity = "readiness = ground state
+#       = only ADD:SCALE:SIGN".
+#
+# FIRING ORDER — the three-phase camshaft (Monad valve order):
+#   CAMSHAFT = (SIGN, SCALE, ADD)   SIGN fires first / innermost:
+#     x ↦ ADD( SCALE( SIGN(x) ) )   ⇔   T = ASS.ADD(a) @ ASS.SCALE(s) @ ASS.SIGN(g)
+#   the one non-trivial bracket is  [SCALE, ADD] = ADD  — order matters at THIS
+#   tier; the sedenion does NOT enter.
+#   FIRING DEFECT:  u_total − Σ u_generators  =  (g − 1)·ln s
+#     zero iff g=+1 or s=1; else −2·ln s. Non-zero ⇔ SIGN flipped a non-trivial
+#     SCALE ⇔ "you defined it twice" — the same shape as the Bell composed-
+#     rotation defect (.claude/scratchpad/2026-08-28_bell-native-space/).
+#
+# TWO GENERATIONAL-LINEAGE ORDERINGS of a recorded word (ASSWord):
+#   chrono — application order (when each step fired; the record / Paper's Hands)
+#   zeta   — sorted by spectral weight |u_k| descending (how much each step moves
+#            the fold). The departure between the two IS this datatype's ψ(x)−x.
+#
+# ORTHOGONAL SMITH CHARTS (read-out in the language it was built on):
+#   Γ_SCALE = tanh(½·ln s)   (multiplicative / E–W ring)
+#   Γ_ADD   = tanh(½·a)      (additive / N–S ring)
+#   parity  = g              (which quadrant sheet)
+#   ground → (0, 0, +1) = the centre / the now.
+#
+# RECORD KEEPING built in: .steps (atomic generators, application order),
+# .record() (the immutable (a,s,g) log), ~ reverses & inverts the record —
+# forward / backward / the Long Path, one type.

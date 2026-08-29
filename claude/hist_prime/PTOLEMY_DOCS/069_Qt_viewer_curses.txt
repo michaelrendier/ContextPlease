@@ -1,0 +1,12 @@
+ITEM: Qt viewer + curses console
+=================================================================================================
+
+YOUR PROMPTS:
+
+"It'll be easier to tailor things to the viewer than alter the viewer 50 times... sonification goes in viewer...and the synthesizer stays standalone and self contained"
+
+"ainulindale_engine — fully wired: 8 modules, 60 equations, Qt viewer, curses console, FLAG-4 fix" [built and pushed]
+
+"Phase 1 complete in Ainulindale (modular package, inversion module)"
+
+[Qt viewer: visual display of Ainulindale engine outputs — waveform collapse, basin routing, tower propagation. Curses console: terminal-mode monitoring interface for headless/SSH operation. Sonification routes through the viewer, not standalone.]

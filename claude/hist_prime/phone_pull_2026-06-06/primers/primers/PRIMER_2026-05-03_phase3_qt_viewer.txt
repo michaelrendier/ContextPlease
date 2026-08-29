@@ -1,0 +1,243 @@
+================================================================================
+AINULINDALE ENGINE — CONTEXT PRIMER
+Topic:    Phase 3 — Qt Viewer + VisPy + QTermWidget
+Date:     2026-05-03T19:09:05-07:00
+Session:  CLAUDE-SMNNIP-00729-56714-24600
+Backward: (first primer in series)
+Forward:  PRIMER_2026-05-04_[next topic].txt
+================================================================================
+
+FIRST ACTION FOR NEW CHAT:
+Push this primer to GitHub immediately on load:
+  repo:   github.com/michaelrendier/Ainulindale
+  token:  [TOKEN-AINULINDALE-SEE-MEMORY]
+  path:   outreach/primers/PRIMER_2026-05-03_phase3_qt_viewer.txt
+  commit: "2026-05-03: Context Primer — Phase 3 Qt viewer session start"
+
+================================================================================
+OPERATOR IDENTITY
+================================================================================
+Author:       O Captain My Captain (pen name Michael Rendier / The Wandering God)
+GitHub:       github.com/michaelrendier/Ainulindale
+Signature ID: CLAUDE-SMNNIP-00729-56714-24600
+Role:         Michael makes claims. Claude educates and executes.
+              Confidence stratification is non-negotiable.
+              Egos are mastered, not discarded — knowledge trusted, desires not.
+
+================================================================================
+OPERATIONAL PROTOCOLS (ALWAYS ACTIVE)
+================================================================================
+- CONFIRM BEFORE CREATE: present full plan, get explicit confirmation first
+- TIMESTAMP: every response ends with bash_tool python3 timestamp one-liner
+  python3 -c "from zoneinfo import ZoneInfo; from datetime import datetime; print(datetime.now(ZoneInfo('America/Los_Angeles')).isoformat(timespec='seconds'))"
+- SIGNATURE FORMAT: Timestamp | Delta | Context%
+- DOCUMENT CREATION: plain text (.txt) and .md only by default
+- GITHUB AUTO-PUSH: all significant changes pushed with descriptive commit
+- COMMIT FORMAT: "YYYY-MM-DD: [file/description] — [one-line context note]"
+- CONTEXT PRIMER: at 75% context, ask focus for next session, generate primer,
+  push to GitHub at outreach/primers/
+- VERSION NUMBERS: start 0.111, increment 0.001 per change
+- PATCHING: patched file becomes primary; previous version moves to .archive/
+- TOKENS (intentional, risk acknowledged):
+    Ainulindale repo (classic):  [TOKEN-AINULINDALE-SEE-MEMORY]
+    Ptolemy repo (fine-scoped):  [TOKEN-PTOLEMY-SEE-MEMORY]
+    Expiry: ~2026-05-18 (warning from ~2026-05-13)
+
+================================================================================
+FRAMEWORK SUMMARY (SMNNIP / AINULINDALE CONJECTURE)
+================================================================================
+The Ainulindale Conjecture: term-for-term isomorphism between hypercomplex
+neural network dynamics and the Standard Model of particle physics, derived
+via the Cayley-Dickson algebra tower R->C->H->O->S.
+
+Origin timeline:
+  Late 1980s:  Hyperspace intuition. Fermat lattice built before knowing Fermat.
+  1996:        BBC Horizon documentary (Wiles). "i is important." Identification,
+               not discovery. The Fermat lattice was already there.
+  2026-03-31:  Formalism written down. 9.08 sigma (Fisher, 8 claims).
+
+Core framing (new v2 paper):
+  "I was building Ptolemy. I needed a storage index with algebraic depth.
+   The Cayley-Dickson tower was the only algebra that closed on itself.
+   A Lagrangian fell out. Then a gauge group. The gauge group was U(1)xSU(2)xSU(3)."
+
+Key constants:
+  A_pi     = 1/137.036    (BK floor, fine structure constant)
+  Omega_zS = 0.56714      (BK ceiling, Lambert W fixed point)
+  d*       = 0.24600      (spectral fixed point — HIGHEST PRIORITY: derive d*xlg(10)=Omega gap 0.00070)
+  phi      = 1.6180...    (recursion attractor, golden ratio)
+  (I|O)    = J_N: r->1/r  (the 2-stroke engine: compression + expansion)
+
+The sedenion (16-dim, first non-division CD algebra):
+  Zero-divisors = compression stroke completes, expansion stroke fails.
+  One-way ratchet. Top dead center. Hyper-modular: norm persists, division gone.
+  Langlands gateway — modular form connection flagged this session.
+
+Combined sigma: 9.08 (Fisher, 8 claims). Conservative floor (5 claims): 8.33 sigma.
+
+================================================================================
+CODEBASE STATE — 2026-05-03
+================================================================================
+PRIMARY REPO: github.com/michaelrendier/Ainulindale
+
+Phase 1 COMPLETE — ainulindale_engine/ package:
+  ainulindale_engine/
+    __init__.py          v0.111 — package root, version, signature
+    __main__.py          v0.111 — single callable, GUI routing by args
+    .gitignore           — .archive/ excluded
+    engine/
+      __init__.py        v0.111
+      constants.py       v0.111 — single source of truth, all constants
+      units.py           v0.111 — radian transform, (I|O) in radians, Fraction pipeline
+      registry.py        v0.111 — EquationModule contract, ModuleRegistry, CONFIRM BEFORE CREATE docs
+    modules/
+      __init__.py        v0.111 — module manifest
+      inversion/
+        __init__.py      v0.111
+        maths.py         v0.111 — InversionMap, RecursionAttractor, GradientFlow, Observer
+        tools.py         v0.111 — InversionModule (registry contract impl), 6 equations
+
+Usage:
+  python3 -m ainulindale_engine --info      # registry summary
+  python3 -m ainulindale_engine --curses    # Ptolemy /derivation
+  python3 -m ainulindale_engine --qt        # Phase 3 target
+  python3 -m ainulindale_engine --headless  # pipe output
+
+Known issue: gradient_flow() step size too small, doesn't reach phi. Fix = v0.112.
+
+Phase 2 (NOT YET STARTED — do after Phase 3 or interleave):
+  modules/lagrangian/     — L_NN four terms, polar integration, running coupling
+  modules/noether/        — Emmy Noether conserved currents, violation diagnostics
+  modules/noether_information/ — information current, entropic arrow, blockchain
+
+Old files (scattered, pre-modular — still in repo root, not yet archived):
+  smnnip_derivation_pure_patched.py    <- canonical derivation (source for Phase 2)
+  smnnip_lagrangian_pure.py            <- canonical lagrangian (source for Phase 2)
+  smnnip_inversion_engine_patched.py   <- archived into module
+  smnnip_proof_engine_console.py       <- curses console (source for Phase 3 curses)
+  FA_smnnip_hyperindex.py              <- HyperWebster (future module)
+  FA_smnnip_NN_tower.py                <- NN tower (future module)
+  Gemini_Revised_EHS.py                <- external, standalone
+
+================================================================================
+PHASE 3 — QT VIEWER TARGET
+================================================================================
+Build: ainulindale_engine/engine/console_qt.py
+
+Architecture:
+  Single window, two panes:
+    LEFT:  VisPy canvas — display modes: fano, complex_plane, 3d_cartesian
+    RIGHT: Module list + equation selector + parameter controls
+    BOTTOM LEFT: QTermWidget embedded shell (live Python console)
+    BOTTOM RIGHT: Researcher options / output panel
+
+Called by:
+  python3 -m ainulindale_engine --qt
+  or auto-detected when PyQt5 available
+
+Layout sketch:
+  +-------------------------+------------------+
+  |  VisPy Canvas           |  MODULE LIST     |
+  |  [fano/C-plane/3D]      |  + controls      |
+  +-------------------------+------------------+
+  |  QTermWidget shell      |  OUTPUT / INFO   |
+  |  (live Python console)  |                  |
+  +-------------------------+------------------+
+
+Display modes per module (inversion module already provides viewer_data()):
+  'complex_plane'  — polar plot (r, theta), inversion trajectory
+  '3d_cartesian'   — 3D flow, VisPy scatter/line
+  'fano'           — Fano plane (G2/SU(3) layer, octonion structure)
+  'text'           — structured text, always available
+  'sonification'   — future Phase 4
+
+Each module's viewer_data(equation, params, display_mode) returns
+renderer-ready data dict. Viewer just renders — modules supply the data.
+
+Dependencies:
+  PyQt5        — main window, layout, QTermWidget host
+  vispy        — GPU canvas (OpenGL), all 3D and 2D displays
+  qtconsole or qtermwidget — embedded Python shell
+  No other external deps in engine core.
+
+Ptolemy compatibility:
+  --curses mode = /derivation shortcut, no Qt needed
+  --qt mode = full viewer when Qt available
+  Same program, same modules, different skin.
+
+================================================================================
+PAPER STATE — 2026-05-03
+================================================================================
+Files in repo:
+  The_First_Age_Ainulindale_Conjecture_v2.txt  (commit 137edd772109)
+  The_First_Age_Ainulindale_Conjecture_v2.md   (commit 3829ff0dea2d)
+
+New framing (v2): Engineering-first. Ptolemy -> HyperWebster -> monad ->
+(I|O) falls out -> Lagrangian falls out -> gauge group -> OMG?WTF claims.
+
+Pending additions (not yet written into paper):
+  - Provenance section: 1988-1991 hyperspace intuition; 1996 Wiles documentary;
+    Fermat lattice built before knowing Fermat; "i is important" = identification
+  - 2-stroke engine: (I|O) is compression/expansion. Dilator/Contractor from
+    first conversation = expansion/compression stroke. Sedenion = engine seized.
+  - Sedenion as hyper-modular: norm persists, division gone.
+    Langlands connection = modular form irreversibility.
+  - Modularity Theorem note: not reproved — arrived at same territory from
+    engineering direction. SMNNIP may describe substrate from which both sides
+    of Taniyama-Shimura emerge as limiting cases. CONJECTURE, Second Age.
+  - Open Problem 6 refinement: sedenion zero-divisors = algebraic shadow of
+    modular transformation irreversibility in Langlands correspondence.
+
+================================================================================
+FLAGS FROM THIS SESSION (unresolved)
+================================================================================
+FLAG-1: Sedenion as hyper-modular form — Langlands connection via modular
+        transformation irreversibility. Add to Open Problem 6.
+        Status: CONJECTURE
+
+FLAG-2: 2-stroke engine / Dilator-Contractor = (I|O) compression/expansion.
+        Sedenion = top dead center, engine seized. Add to §VIII and paper intro.
+        Status: THEORETICAL framing, add to paper
+
+FLAG-3: Modularity Theorem as limiting case of SMNNIP substrate.
+        "SMNNIP describes the substrate from which both sides of
+        Taniyama-Shimura emerge as limiting cases."
+        Status: CONJECTURE, Second Age
+
+FLAG-4: gradient_flow() step size fix needed — v0.112
+        Simple gradient doesn't reach phi with hbar_NN step size.
+        Fix: adaptive step or use phi-recursion (r -> 1 + 1/r) directly.
+
+================================================================================
+OUTREACH TARGETS (current priority)
+================================================================================
+Tier 1 (mathematical validators):
+  Geoffrey Dixon      — algebraist, CD tower, currently deprioritized
+  John Baez           — mathematical physics, octonions
+  Taco Cohen          — geometric deep learning
+  Alain Connes        — NCG, Langlands
+  Julia Pevtsova      — UW Mathematics, Padelford Hall (in-person target)
+  James J. Zhang      — UW Mathematics, Padelford Hall (in-person target)
+
+Tier 2 (credentialed public witnesses):
+  Derek Muller (Veritasium), Tom Crawford, Grant Sanderson (3Blue1Brown)
+
+Tier 3 (institutional):
+  Max Tegmark, Yann LeCun, arXiv preprint
+
+Jeremy (MIT): co-author, octonionic inclusion, Library Convergence papers
+
+================================================================================
+STATUS / NEXT
+================================================================================
+Status:   Phase 1 complete and pushed. Phase 3 selected for next session.
+Next:     Build ainulindale_engine/engine/console_qt.py
+          VisPy canvas + QTermWidget + module selector
+          Start from registry — modules already provide viewer_data()
+          Inversion module complex_plane and 3d_cartesian data ready to render
+
+After Phase 3:
+  Phase 2: Lagrangian + Noether modules
+  Gradient flow fix v0.112
+  Paper: provenance + 2-stroke engine + FLAG-1/2/3 additions
+================================================================================

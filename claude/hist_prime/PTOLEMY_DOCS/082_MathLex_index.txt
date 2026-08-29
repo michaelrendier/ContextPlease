@@ -1,0 +1,14 @@
+ITEM: MathLex wiki index page (still needed)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"mathlex index page...ensure all mathlex pages are accounted for...go"
+
+"Index is empty — all 64 lessons are missing. Need to rebuild the index entries."
+
+"MathLex wiki index page (1): MathLex" [from primer — still needed]
+
+"README: MathLex link added under VSauce link" [done]
+
+[The MathLex index page is a wiki page linking all 64 MathLex lessons with their categories and difficulty levels. The index.html in docs/MathLex/ exists but is empty — no lessons are indexed. The wiki page MathLex should serve as the navigable entry point for all 64 lessons. As of May 4 2026, this page is documented as STILL NEEDED.]

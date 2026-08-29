@@ -1,0 +1,16 @@
+ITEM: CONTEXT_PRIMER system
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Session continuity via context primers — forced primer files (e.g., CONTEXT_PRIMER_2026-05-02C.txt) are pushed to the repo at ~70% context or session end; new sessions load these first to restore state."
+
+"new context primer in the repo...how much do i need to re-explain to you this time?"
+
+"repeating myself for 30% of every conversation while using context primers is bullshit"
+
+"do not search the Repos for context primers...those are pointless wastes of my fucking food." [your instruction this session]
+
+[Primer naming convention: CONTEXT_PRIMER_YYYY-MM-DD[Letter].txt. Letters A-F used in single days. Primers archived to .primers/ subdirectory after use. Forced primers pushed at ~70-85% context with next session focus declared.]
+
+"6) produce a signature for every response with timestamp and context window...alert me of 50% context remaining...ask if i want a new primer for a new chat... if i reach 85% full context, you will ask what focus for the next chat and notate that in a FORCED context primer, plain text and pushed to repo."

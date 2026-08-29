@@ -1,0 +1,16 @@
+ITEM: WordMonad isolation enforcement
+=================================================================================================
+
+YOUR PROMPTS:
+
+"WordMonad isolation enforcement" [listed in TODO]
+
+"monad isolation as the anti-forgetting mechanism"
+
+"The monad isolation argument: each WordMonad is isolated — it trains only on contexts where its word appears. No cross-contamination between monads during training. This is why Ptolemy doesn't forget — each monad is a sealed unit. EWC (Elastic Weight Consolidation) prevents catastrophic forgetting within a monad."
+
+"Thread safety: RLock per WordMonadNetwork instance. Read lock during inference. Write lock during training + consolidation."
+
+"SEMANTIC_DIM = 32 x 16 (32 sedenion units x 16 components) — THIS IS A BREAKING CHANGE ON ALL MONAD CHECKPOINTS. DO THIS BEFORE ANY CORPUS ACQUISITION RUNS."
+
+"WordMonad isolation enforcement" [v0.9 directive item — not yet implemented as of session end]

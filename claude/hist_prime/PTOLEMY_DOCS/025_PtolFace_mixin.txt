@@ -1,0 +1,12 @@
+ITEM: PtolFace mixin
+=================================================================================================
+
+YOUR PROMPTS:
+
+"PtolFace mixin wired to all active Faces"
+
+"Ptolemy is not an LLM. Not a transformer. Not a chatbot. He is a kernel. Faces are kernel modules. All inter-Face communication routes through the kernel bus. No Face speaks directly to another."
+
+"PtolemyFace — RENAME/EXPAND to PtolemyKernel. Add: thread pool management. Add: HippocampalBinder. Add: two-tier context buffer. Add: /DataInput bus"
+
+[PtolFace mixin: base class providing shared Face registration, bus subscription, dmesg submit methods, and identity to all Face windows]

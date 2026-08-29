@@ -1,0 +1,18 @@
+ITEM: SemanticWord / LSH_Datatype with Rabies Principle (first_encountered permanently immutable)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"all LLM references and all LLM methodologies should be removed from the Readme and all of Ptolemy. Replace with LSH, Lagrange Self-adjoint Hyper-indexing Model"
+
+"i'll need one for the LLM_Datatype...to act as the same type of file as the Zork sentence parser LISP vocabulary code...and it should define sections that are AI changeable for deeper understandings, following the model of what 'rabies' evokes in me...with each language receiving its own separate address containing the full context behind each word...similar to the full spectra behind each pixel in the JWST 'images'"
+
+"In fourth grade, a gopher bit him. He looked up the word 'rabies' and found that the classroom dictionary was useless. He needed medical information and got a one-line definition. He went elsewhere. He found case reports. He discovered the progression of the disease, the post-exposure prophylaxis protocol, the history of Pasteur's vaccine. The word 'rabies' expanded from a definition to an experience. Every word has a moment of first encounter. That moment shapes every subsequent encounter."
+
+"The Rabies Principle: the first_encountered entry in PersonalResonance.first_encountered is permanently preserved. No aggregation touches it. No statistical update overwrites it. It is the fixed point around which all later understanding of the word orbits."
+
+"'The' has no sensory content, no etymology that changes its meaning, no experiential resonance for any speaker. It is a structural pointer. It requires 200 bytes of storage and a deterministic grammatical rule. Nothing more. 'Petrichor' is a coined word (Wilson and Bear, 1964) for the scent of rain on dry earth. It has a Greek etymology. It activates olfactory, visual, and atmospheric memory simultaneously. Every person who knows it has a specific sensory context for their first encounter. It belongs to Class 3: experiential, never fully aggregated, every usage potentially novel."
+
+"12 spectral layers. _WRITABLE_MASK = 0x0FC0. Layers 0-5 acquisition-only. Layers 6-11 AI-writable."
+
+"In Demotic script — the administrative writing system of ancient Egypt — the leading character of a word signals its contextual register: sacred, administrative, vernacular. The SemanticWord system uses invisible Unicode Tag characters (U+E0020–U+E0029) as Demotic tone glyphs."

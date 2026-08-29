@@ -1,0 +1,97 @@
+ITEM: PGui — Pharos Window Manager Shim (WINE-style Qt intercept)
+=================================================================================================
+
+ARCHITECTURE:
+
+PGui.py is a WINE-style interception layer. Faces never import PyQt directly.
+They import from Pharos.PGui, which supplies P-prefixed aliases:
+
+    from Pharos.PGui import PMainWindow, PWidget, PButton, PLineEdit ...
+
+PHAROS_MODE = 0  →  P-classes are transparent aliases to real Qt.
+                     Any face runs standalone as a normal OS window. No change
+                     to face code required.
+
+PHAROS_MODE = 1  →  PMainWindow.show() is intercepted. Instead of opening an
+                     OS window, the widget is wrapped in a PWindow chrome item
+                     and placed on the Ptolemy QGraphicsScene. The face never
+                     opens a system window — it lives on the Pharos desktop.
+
+Set via environment:  PTOLEMY_PHAROS=0 python3 face.py    (standalone)
+                      PTOLEMY_PHAROS=1 python3 Ptolemy3.py (integrated)
+
+P-CLASS ALIAS TABLE (Pharos/PGui.py):
+
+    PMainWindow  = QMainWindow   (PHAROS_MODE=1: show() → PWindow on scene)
+    PWidget      = QWidget
+    PButton      = QPushButton
+    PLineEdit    = QLineEdit
+    PLabel       = QLabel
+    PComboBox    = QComboBox
+    PTabWidget   = QTabWidget
+    PDockWidget  = QDockWidget
+    PTextEdit    = QTextEdit
+    PListWidget  = QListWidget
+    PTableWidget = QTableWidget
+
+PWINDOW CHROME:
+
+    ┌─[PTOL]──[title]────────────[_][□][✕]─┐  ← title bar (draggable)
+    │  gradient bracket decorations         │  ← glyph-square corners
+    │                                       │
+    │   face QWidget (QGraphicsProxyWidget) │
+    │                                       │
+    └───────────────────────────────────────┘
+
+    Minimize → thread.quit() + timer.stop() for all face threads/timers
+    Restore  → thread.start() + timer.start()
+    Close    → delegates to PtolBus.terminate(face_id) if bus is wired
+
+FACES THAT NEED QMainWindow → PMainWindow MIGRATION
+(these inherit QMainWindow directly and will bypass the intercept):
+
+  ACTIVE FACES (QMainWindow + PtolFace — fully integrated):
+    Anaximander/Navigation.py            class Navigation(QMainWindow, PtolFace)
+    Callimachus/DBControlPanel.py        class DBControlPanel(QMainWindow, PtolFace)
+    Mouseion/Library.py                  class Library(QMainWindow, PtolFace)
+    Mouseion/WikiGroup.py                class WikiGroup(QMainWindow, PtolFace)
+    Phaleron/Notepad.py                  class Notepad(QMainWindow, PtolFace)
+    Phaleron/TreasureHunt/TreasureHunt.py  class TreasureHunt(QMainWindow, PtolFace)
+
+  FACES WITHOUT PtolFace YET (also need PtolFace wired):
+    Phaleron/APISniff/APISniff.py        class CodeBrowser(QMainWindow)
+    Phaleron/APISniff/APISniffCL.py      class CodeBrowser(QMainWindow)
+    Phaleron/APISniff/CodeBrowser.py     class CodeBrowser(QMainWindow)
+    Phaleron/PennyWatcher/PennyStockDataClasses.py  class PennyWatcher(QMainWindow)
+    Phaleron/PennyWatcher/PennyStock.py  class PennyWatch(QMainWindow)
+
+  KERNEL — intentionally stays as QMainWindow (it IS the shell):
+    Ptolemy3.py                          class Ptolemy(QMainWindow)
+
+  WORKING/LEGACY — no priority:
+    working/EquationData.py              class EquationData(QMainWindow)
+    working/opengl/main.py               class mainWindow(QMainWindow)
+    working/RFI-test.py                  class Login, Main(QMainWindow)
+    working/RFI-test_working.py          class Login, Main(QMainWindow)
+
+PYQT5 → PYQT6 MIGRATION NOTE:
+
+PGui.py is the single choke-point for the Qt binding version. Change the
+imports at the top of PGui.py from PyQt5 to PyQt6 and all faces that import
+through PGui get PyQt6 automatically. Faces that import PyQt5 directly still
+need individual migration (enum constants, removed APIs).
+
+FILES:
+  Pharos/PGui.py         — full implementation
+  Pharos/PtolFace.py     — PtolFace mixin (bus registration, identity)
+  Pharos/extract_menus.py — auto-extract .menu files from module AST
+  Pharos/menus/          — plain-text menu files consumed by PMenuBar
+
+MENU SYSTEM:
+  PMenuBar  — QMenuBar loaded from Pharos/menus/<name>.menu plain-text files
+  PContextMenu — QMenu loaded from a named section of a .menu file
+  extract_module_menu(module) — AST-parses a .py file, auto-generates .menu
+  Plain-text format:
+    # SectionHeader
+    method_name | docstring first line
+    ---

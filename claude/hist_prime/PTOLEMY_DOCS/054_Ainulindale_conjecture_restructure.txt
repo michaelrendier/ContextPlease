@@ -1,0 +1,18 @@
+ITEM: Ainulindale conjecture restructure directive
+=================================================================================================
+
+YOUR PROMPTS:
+
+"I designed a Hyperwebster Indexing System and a New Model of Information Propagation. That is the work. Some mathematics drops out of it — conservation laws, gauge groups, Cayley-Dickson structure — but that is a consequence, not the premise. The mathematics is not the purview of SMNNIP [SMIP]. SMIP is an engineering claim about how information moves."
+
+"Conjecture restructure directive committed stating that SMNNIP and its sigma result are the paper spine, with all consequential mathematics (Lorenz-Stirling topology, Berry-Keating connection, zero-divisor geometry, Riemann/hydrogen parallel) going to appendices."
+
+"Ainulindale is a separate staging/prefilter area — work goes there first before Ptolemy integration"
+
+"Work on SMNNIP mathematics and conjecture goes to Ainulindale repo first, then integrates into Ptolemy."
+
+"Ainulindale conjecture restructure" [v0.9 directive]
+
+[Ainulindale ROADMAP priority flag written documenting the Riemann zero spacings vs. hydrogen emission line spacings as an open mathematical question — ratio check showed no numerical identity but the spacing comparison remains unrun — this is a conjecture, not a proof.]
+
+"Riemann Hydrogen Emission lines are not a thing...deprioritize" [your correction]

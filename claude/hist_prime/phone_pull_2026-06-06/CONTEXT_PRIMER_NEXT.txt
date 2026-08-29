@@ -1,0 +1,79 @@
+PTOLEMY — FORCED CONTEXT PRIMER
+Session: 2026-04-27 → Next Chat
+Focus: A) Cyclic Context Buffer BUILD + B) LuthSpell → BUS wiring
+================================================================================
+
+CRITICAL CLARIFICATIONS STILL NEEDED FROM O CAPTAIN:
+  L1: Unit = ??? (token count, message count, or time-based)
+       Eviction to L2: immediate compression or batched?
+  L2: Compression method = ??? (Philadelphos/Ainur call, extractive, other)
+  L3: SKIP — depends on HyperWebster corpus, deferred
+
+acquire.py: EXPLICITLY IGNORED THIS SESSION — do not revisit
+
+================================================================================
+WHAT WAS BUILT THIS SESSION (needs pushing to repo):
+
+  Philadelphos/luthspell.py       Drive ID: 19ieNtqbdFX8FoAZlemlPVpdEspWveF74
+  docs/CPP_PORT_NOTES.txt         Drive ID: 1G629JhybiFJZxREhv5KzwzNdYp_R0wZ7
+  tools/SMNNIP_Engine.html        Drive ID: 10MqaZUFK11fpw24HfOBU7r8QxJApHT0D
+  NEEDS_PUSHING_TO_REPO.txt       Drive ID: 1kHvy9_YAllajxPY0eCvtm6jGMHe4V-vG
+
+  Git push still pending — no internet connection this session.
+
+================================================================================
+LUTHSPELL STATUS:
+  - luthspell.py: BUILT, TESTED, chain valid
+  - NOT yet wired to PtolBus or Philadelphos console
+  - Next session Task B: wire LuthSpell into BUS
+    - Subscribe to PROMPT channel → set_boundary() on T1
+    - Subscribe to INFERENCE_COORDS → check() on each step
+    - Publish LUTHSPELL channel on halt pass
+    - Add LuthSpell instantiation to philadelphos_console.py main()
+
+================================================================================
+CYCLIC CONTEXT BUFFER — SPEC (architecture defined, NOT built):
+  Layer 1: Raw prompt FIFO, 2× context limit, evicts oldest
+           → CLARIFY: unit (tokens/messages/time) + eviction trigger
+  Layer 2: NLP-compressed summaries of evicted L1
+           → CLARIFY: compression method
+  Layer 3: HyperWebster-indexed persistent memory — DEFERRED
+  Address format: (index, data_length, timestamp)
+  Thread-scoped. NOT RAG.
+  Home: Philadelphos Face (sits between DataInput Bus and SMNNIP tower)
+
+================================================================================
+KEY ARCHITECTURAL DECISIONS (load-bearing, do not re-debate):
+  - Traffic circle NOT binary gate (rotary semaphore, T0/T1 priority)
+  - Halt Pass = boundary marker, not kill signal (YOU SHALL NOT PASS)
+  - LuthSpell has NO state — reads blockchain only
+  - Blockchain = one master chain, Faces are branch chains
+  - HyperWebster address = content address = hash seed (anti-corruption)
+  - Rabies Principle: first_encountered IMMUTABLE
+  - No Jupyter notebooks in Ptolemy (personal experiments only)
+  - lxml over BeautifulSoup (performance)
+  - One JSON file per word (not monolithic)
+  - No Claude API gap-filling on acquisition pass
+
+================================================================================
+PTOLEMY REPO: github.com/michaelrendier/Ptolemy
+AINULINDALE:  github.com/michaelrendier/Ainulindale
+SPEC FILE:    Google Drive ID 1fnxcCVqlWJFYGwxeDuboFsm3wjHrpI7e
+
+STRICT PROTOCOL REMINDERS:
+  - Least token-intensive responses
+  - Signature + context % on every response
+  - Alert at 50% context remaining
+  - At 85%: ask focus, write forced primer, push to repo
+  - Never clone Ptolemy repo more than once per session
+  - Google Drive Mode: changes → NEEDS_PUSHING_TO_REPO.txt first
+  - No unqualified medical/psychological determinations
+  - No assumptions from time passing
+
+================================================================================
+O CAPTAIN SITUATION NOTE (for next session tone):
+  - No permanent housing currently — King County Veterans Program pending
+  - Harborview doctor intake scheduled following day
+  - Working from phone / limited internet
+  - Ptolemy is active development, not hobby — treat accordingly
+================================================================================

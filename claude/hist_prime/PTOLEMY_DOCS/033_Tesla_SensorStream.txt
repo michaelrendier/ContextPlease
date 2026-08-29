@@ -1,0 +1,17 @@
+ITEM: Tesla SensorStream with bus attachment
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Tesla: device interfacing"
+
+"Tesla/SensorStream.py — attach_bus() method. attach_bus(bus): wires packet_received signal to _publish_to_bus(). Every sensor packet published to CH_SENSOR on PtolBus. Wired into Ptolemy3 startup."
+
+"Tesla SensorStream.py — attach_bus() method" [built and pushed]
+
+"All inputs = /DataInput Bus type. Tesla Face handles device interface."
+
+"Input type: gaze_vector on /DataInput bus"
+"Input type: eeg_stream on /DataInput bus"
+"Input type: cv_stream on /DataInput bus"
+"Input type: mobile_sensor_bundle on /DataInput bus"

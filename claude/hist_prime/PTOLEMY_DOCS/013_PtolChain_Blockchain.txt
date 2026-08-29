@@ -1,0 +1,22 @@
+ITEM: PtolChain / Blockchain: one canonical chain covering all Ptolemy; HyperWebster addresses as hash seeds
+=================================================================================================
+
+YOUR PROMPTS:
+
+"a master blockchain covers all of Ptolemy with HyperWebster addresses as hash seeds (making semantic corruption detectable, stronger than Merkle); system state snapshots on each block are kept lean (pointers/cursors only, not content)"
+
+"a Blockchain could run this yeah? Using two objects"
+
+"every Halt Pass is a blockchain transaction"
+
+"HyperWebster address = semantic content address (Horner bijection). Corruption breaks the bijection — immediately detectable. Semantic corruption AND byte corruption both break the mapping. Stronger than Merkle tree: semantic drift is detectable, not just byte drift."
+
+"GitNexus: to be repurposed as a semantic knowledge corpus visualizer (blockchain-style HyperIndex visual showing what Ptolemy knows)"
+
+"Interface.py needs chain.commit_gui(widget, action) on every user interaction — that's the causal chain for crash diagnosis"
+
+"Ptolemy3.py / boot sequence needs to call chain.resurrection_mode() at startup and branch to console vs desktop accordingly"
+
+"Callimachus/BlockChain/PtolChain/__init__.py" [file built and pushed]
+
+"Noether violation events logged to the blockchain ledger"

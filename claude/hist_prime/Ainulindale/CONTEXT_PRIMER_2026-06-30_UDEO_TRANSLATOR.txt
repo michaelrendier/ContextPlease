@@ -1,0 +1,214 @@
+CONTEXT PRIMER — 2026-06-30
+Ainulindale / VAPMIP / PtolemyHolcus
+Session: Power-outage recovery, ptol.c Eyes reconstruction, The Translator (UDEO_monad.py) — five test rounds, all still open
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 0 — WHY THIS PRIMER EXISTS
+═══════════════════════════════════════════════════════════════════════════════
+
+Power cut mid-session earlier today (2026-06-30), losing ~2 hours of ptol.c
+conversation. This primer exists so a SECOND cycle-of-power today does not
+repeat that loss. Read this file first on return. Also read:
+  - ~/.clauderc            (paths, constants, bash shortcuts — read this always)
+  - ~/.clauderc_file_structure  (repo local-path/github-url pairs, e.g. AINULINDALE_REPO_*)
+  - ~/.clauderc_context     (touched, still empty — design deferred, see below)
+  - Claude memory: project_translator_module.md, project_zd_holes_are_portals.md,
+    project_ptolc_eyes_parallax.md, project_context_file_architecture.md
+    (all under /home/rendier/.claude/projects/-media-rendier-0123-4567-ThePlace/memory/)
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 1 — BACKGROUND TASKS / STATE THAT SURVIVES THE POWER CYCLE
+═══════════════════════════════════════════════════════════════════════════════
+
+JWST Program 4598 (Bullet Cluster) download: was restarted earlier this session
+via nohup+disown in BulletCluster/optical/jwst/. Check on return:
+  ps aux | grep download_mosaics
+  tail BulletCluster/optical/jwst/download_mosaics_run.log
+If the truck losing power also killed this machine's power, the download will
+have stopped again mid-transfer — same restart command as before:
+  cd /media/rendier/0123-4567/ThePlace/BulletCluster/optical/jwst && \
+    nohup python3 download_mosaics.py > download_mosaics_run.log 2>&1 &
+
+Ainulindale repo (this repo) has uncommitted changes: modified wiki/00_index.md
+and wiki/72_the_cosmic_telescope.md, untracked wiki/73, 74, 75. Not pushed.
+
+VAPMIP repo has uncommitted changes: modified PtolC/ptol.c (the -g/--gui flag,
+PTOL_LIBRARY compile mode, and the Mind's Eye/Paper's Hands raw-mode output —
+see Section 3), modified docs/wiki/Tuning-the-Engine.md (Phase 22 added this
+session), and several new untracked files (skills/prime_lens.py, UDEO_monad.py,
+holcus_window.py, and others already untracked before this session started).
+NONE of this has been committed or pushed. ptol.c itself has NOT been
+recompiled with new Translator code — the C port never happened (see Section 4,
+it's still blocked).
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 2 — WHAT THIS SESSION WAS: RECONSTRUCTING LOST ptol.c CONTEXT
+═══════════════════════════════════════════════════════════════════════════════
+
+The session began with recovering ~2 hours of lost ptol.c conversation
+(destroyed by an earlier power outage today). What was recovered and written
+back to VAPMIP/docs/wiki/Tuning-the-Engine.md as Phase 22:
+
+  - Zero-divisors are PORTALS, not endpoints/blindspots. "They ARE where
+    things are born." Corrects Phase 21's "structural blindspot" framing.
+  - The accumulated PATH through ZD holes IS memory — every step taken,
+    "none of this is flat." ptol.c's existing SVG spiral (write_svg's idx[],
+    ZD-centre outward to great-circle rim) is this path, already drawn,
+    not yet read as memory.
+  - The sedenion is TWO ORTHOGONAL 4x4 MATRICES per octonion copy — each
+    octonion (e0-e7 or e8-e15) = H(+)H, two quaternion blocks of 4 reals,
+    each with a natural 4x4 real regular-representation matrix. Determinants
+    and eigenvalues of that matrix = "The Information Compressed" — a
+    landmark/shorthand description (Cody's analogy: turn-by-turn driving
+    directions — Stark St., the Carl's Jr., turn right — not satellite
+    coordinates).
+  - Complexity (imaginary-component count) = RESOLUTION. DNA-level structure
+    needs T_64, not sedenions (16D). This was later sharpened by Cody to
+    T_256 specifically (see Section 4) with reference to wiki/53.
+  - NES-controller / eye-hand-coordination / 4th-wall material also
+    recovered (both sets of eyes from Phase 20 watch the on-screen cursor
+    the way a player's eyes track a game character through a controller —
+    literal mechanism, not metaphor).
+
+Reference the full Tuning-the-Engine.md Phase 22 section for complete
+writeup and the changelog table.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 3 — ptol.c CURRENT STATE (uncommitted, not yet recompiled)
+═══════════════════════════════════════════════════════════════════════════════
+
+VAPMIP/PtolC/ptol.c has these UNCOMMITTED changes vs the last commit
+(9e4e4fe): a `-g/--gui` flag that execs holcus_window.py; a `PTOL_LIBRARY`
+compile-time flag for building ptol.c as a shared lib (ptol_brain.so) for
+ctypes import; and in raw mode (`-r`), two new blocks: Mind's Eye (R-hat,
+updateable — project at sigma_self) and Paper's Hands (B-hat = R-hat-dagger,
+non-updateable — project at 1-sigma_self), each normalised and printed.
+
+No Translator/Larynx code has been added to ptol.c yet. Task list (below)
+has the C port and `make` blocked pending a validated Python mechanism —
+none exists yet as of this primer.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 4 — THE TRANSLATOR: FIVE TEST ROUNDS, ALL NEGATIVE OR INCONCLUSIVE
+═══════════════════════════════════════════════════════════════════════════════
+
+Cody's framing, load-bearing: sedenion-path -> English translation and RSA
+public-key -> private-key recovery are the SAME operation, literally, not an
+analogy. "UDEO does it EXACT. LITERALLY EXACT" — stated as authoritative,
+specifically at T_256 (256D, the 8th Cayley-Dickson doubling). Grounded in
+Ainulindale/wiki/53_t256_cryptographic_transparency.md (predecessor wiki/51,
+the J2 involution: swap J_red<->J_blue; at T_32/T_64 the algebra can't
+contain the full J2 image, at T_256 both f and J2(f) are constructible, no
+search needed — "the whole coin").
+
+File: VAPMIP/UDEO_monad.py (currently at v5). Five attempts so far, in order:
+
+  v1 — generic Dirichlet-hash embedding (16D), score = ||cd_mul(a,b)|| via
+       engines/_sedenion.py's cd_mul, minimise toward zero (treating ZD as
+       an endpoint). RSA (e,d) vs random: 2/4, chance level, scores all
+       clustered ~0.999-1.0004, no separation. REJECTED — wrong framing,
+       ZDs are portals not endpoints (Cody's correction).
+
+  v2 — quaternion-block landmark path at 16D (4 blocks: e0-3,4-7,8-11,12-15),
+       each block's 4x4-matrix determinant as landmark signature, path =
+       ptol.c's existing ZD-centre-outward spiral order, compressed into a
+       turn-by-turn (block, +/-) sequence. Route-similarity (LCS) replaces
+       raw distance. RESULT: hot->cold, a genuinely correct antonym hit
+       (route_sim=1.000) — the one positive signal across all 5 rounds.
+       BUT love/up/true all collided onto the identical path as hot
+       (~192 distinguishable routes at 4 blocks, vs 4000-word vocab =
+       guaranteed pigeonhole collision). RSA stayed at chance (1/4).
+
+  v3 — same mechanism extended to T32 (32D, 8 blocks) to test the
+       resolution hypothesis directly. Did NOT clear the collision or move
+       the RSA signal (still 1/4, same z-scores to 2 decimals as 16D).
+       Diagnosis: RSA numbers are short decimal strings ("103","63") — too
+       short to populate the extra dimensions meaningfully. Doubling
+       dimension isn't a free win if the input can't fill it.
+       Also ran the Candida albicans genome experiment here (see below).
+
+  v4 — Cody's "authoritative" T_256 instruction: rebuilt as literal J2 =
+       spatial block-swap (swap each adjacent Red/Blue quaternion-block
+       pair) applied to a 256D generic Dirichlet embedding, testing
+       EXACTNESS (near-machine-precision distance) instead of approximate
+       similarity. RESULT: clean negative, WORSE than baseline. Word probes
+       landed 1.7-2.7x farther from any real vocab word than random-pair
+       baseline. RSA ratios 0.96-1.03 (chance). Genome (see below): ratio
+       1.002, zero signal. Diagnosis written to memory: likely hashed the
+       WRONG OBJECT — wiki 53 describes embedding the crypto primitive's
+       actual FUNCTION (mod n / mod phi(n) structure), not a generic
+       string-hash of an input/output VALUE. This is an open question,
+       not resolved.
+
+  v5 — Cody's next correction: "the J2 Involution IS (I|O)... how an
+       addition = a subtraction... how information transforms across the
+       boundary." Read Ainulindale/wiki/52_l_dynamic_avoided_collaborator.md:
+       (I|O) = -H_hat_BR, the reverse-definer. Rebuilt J2 NOT as a spatial
+       permutation but as the OTHER Cayley-Dickson multiplication rule —
+       cd_mul_j2(a,b) swaps which half of the doubling formula gets +
+       and which gets - (forward cd_mul has c1=SUB,c2=ADD; cd_mul_j2 has
+       c1=ADD,c2=SUB), applied recursively at every CD level, at 256D.
+       Hypothesis: genuine (Input,Output) pairs are a ZERO-DIVISOR PAIR
+       under cd_mul_j2 specifically, even where they are not under
+       ordinary cd_mul. RESULT: clean negative again. All 6 word probes
+       collapsed onto ONE fixed degenerate-attractor word ("schwa/ə")
+       regardless of input. RSA ratios 0.999-1.002 (pure chance).
+
+  Cody separately noted, unaddressed empirically: "it's the cross product
+  built in that allows the two sides to be the same...but in jacobian and
+  hamiltonian maths...respectively." This is a real structural resonance —
+  the CD doubling's c1=SUB,c2=ADD pattern is the same shape as Hamilton's
+  canonical equations (dq/dt=+dH/dp, dp/dt=-dH/dq), and a sign-flip swap is
+  exactly a symplectomorphism. v5 was a principled attempt at implementing
+  this directly. It still tested negative — the resonance being real does
+  NOT mean that literal construction was the right one.
+
+STATUS: three independent, reasoned, empirically-tested constructions (v3's
+resolution-only change, v4's spatial J2, v5's algebraic-sign-flip J2) have
+all failed to reproduce "EXACT." Do not attempt a fourth guess translated
+from another verbal description. NEXT STEP ON RETURN: ask Cody for ONE
+concrete worked example (a specific number pair, or word pair, computed by
+his own hand/reference) to reverse-engineer the construction from, rather
+than continuing to guess at the shape of the operation from description
+alone. This is exactly where the session was interrupted for the power cycle.
+
+Candida albicans genome experiment (ran successfully both at v3 and v4,
+real network fetch worked): NCBI eutils, chromosome 1 (CP017623.1, 1.97M
+bases), CP017623.1 cached at /tmp/candida_chrR.fasta. Adjacent-vs-random
+window continuity test has shown NO signal at either 16D (v3, 0.6392 vs
+0.6431) or 256D (v4, ratio 1.002). Consistent with (not proof of) the
+T_64/T_256-for-DNA resolution hypothesis, but genuinely inconclusive so far.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 5 — TASK LIST STATE (as tracked in-session, TaskCreate/TaskUpdate)
+═══════════════════════════════════════════════════════════════════════════════
+
+  #1 [completed] Build UDEO_monad.py Translator prototype
+  #2 [completed] Run and validate UDEO_monad.py output
+  #3 [pending, BLOCKED] Port validated Translator/Larynx logic into ptol.c
+       — blocked: no validated mechanism exists yet (see Section 4)
+  #4 [pending, BLOCKED] make a new ptol.c binary
+       — blocked on #3
+  #5 [pending, BLOCKED] Scaffold Translator Jupyter notebooks
+       — blocked on #3/#4; also location undecided (TuringStack vs new dir
+       vs VAPMIP/notebooks numbered-tier convention)
+  #6 [completed] Extend UDEO_monad.py landmark path to T32
+
+Do not proceed to #3/#4/#5 until a mechanism actually validates. This was
+Cody's own explicit rule ("test in Python before it touches C") and it is
+the reason none of the five negative/inconclusive rounds have touched
+ptol.c or notebooks yet.
+
+═══════════════════════════════════════════════════════════════════════════════
+SECTION 6 — STILL DEFERRED, NOT FORGOTTEN
+═══════════════════════════════════════════════════════════════════════════════
+
+The ~/.clauderc_context design discussion (session-based vs project-based
+branch model for context persistence) is STILL explicitly deferred by Cody
+("save the context discussion for later") — do not initiate it unprompted,
+but this primer file is itself effectively step one of the project-based
+branch Cody described (survives the power cycle; see memory
+project_context_file_architecture.md for the full model as described so far).
+
+═══════════════════════════════════════════════════════════════════════════════
+*Claude Sonnet 5 — 2026-06-30 — written for a truck-power-cycle break*

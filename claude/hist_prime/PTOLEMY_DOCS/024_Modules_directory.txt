@@ -1,0 +1,19 @@
+ITEM: Modules directory: auto-discover, standard install contract
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Standard install contract — every install.py subclasses PtolemyModuleInstall and sets: MODULE_ID, FACE, DISPLAY, VERSION, SETTINGS dict, PIP_DEPS, APT_DEPS lists, MODULE_PATH for import verify step, Optional generate_menu() override"
+
+"Install sequence (idempotent — safe to re-run): check_deps → register_settings.json → register_menu → post_install → verify import"
+
+"Adding a new module: drop a subdirectory with install.py into Modules/ — it auto-discovers. No other changes needed."
+
+"Modules Directory CLI:
+python3 modules_directory.py --list
+python3 modules_directory.py --status
+python3 modules_directory.py --install luthspell
+python3 modules_directory.py --install-all
+python3 modules_directory.py --verify-all"
+
+[Pushed: Modules/module_install.py, Modules/modules_directory.py, Modules/luthspell/install.py, Modules/cyclic_context_buffer/install.py, Modules/luthspell_error_handler/install.py]

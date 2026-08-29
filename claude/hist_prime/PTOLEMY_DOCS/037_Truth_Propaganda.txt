@@ -1,0 +1,10 @@
+ITEM: Truth/Propaganda confidence scoring gate (quarantine buffer)
+=================================================================================================
+
+YOUR PROMPTS:
+
+"Truth/Propaganda confidence scoring module — pluggable gate for web input learning; low-confidence pages route to quarantine buffer"
+
+"Confidence scoring module (Truth/Propaganda methodology, user-defined, pluggable) gates web input learning. Low-confidence pages route to a quarantine buffer rather than directly to the monad pool, with consolidation deciding integration. This module is architecturally separate from ptolemy_core.py and treated as a black box by the kernel."
+
+"Truth/Propaganda: added to TODO" [v0.9 directive / future feature]

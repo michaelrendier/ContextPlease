@@ -1,0 +1,14 @@
+ITEM: acquire_inline.py: two-pass pipeline, LSH_Datatype_parser
+=================================================================================================
+
+YOUR PROMPTS:
+
+"acquire_inline.py two-pass pipeline" [built and pushed]
+
+"Philadelphos/LSH_Datatype_parser/acquire_inline.py — two-pass pipeline"
+
+"LSH_Datatype_parser rename canonical" [session directive]
+
+[acquire_inline.py: takes inline input rather than batch file. Lives in Philadelphos/LSH_Datatype_parser/. Two-pass: first pass acquires raw data, second pass processes into LSH_Datatype format.]
+
+"23-word corpus run complete" [session report]
