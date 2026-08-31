@@ -1,0 +1,42 @@
+N = 100,000   primes ≤ N: 9,592   composites: 90,407
+
+A  extinction low→high  rank_asc(spf)
+    generations used : [0 .. 64]  of 9592
+    entropy          : 2.4910 bits
+    pass-0 share     : 55.3%   (top pass strikes/births this fraction)
+
+B  extinction high→low  rank_desc(gpf)
+    generations used : [4459 .. 9591]  of 9592
+    entropy          : 9.6846 bits
+    pass-0 share     : 0.0%   (top pass strikes/births this fraction)
+
+C  birth      low→high  rank_asc(gpf)
+    generations used : [0 .. 5132]  of 9592
+    entropy          : 9.6846 bits
+    pass-0 share     : 0.0%   (top pass strikes/births this fraction)
+
+D  birth      high→low  rank_desc(spf)
+    generations used : [9527 .. 9591]  of 9592
+    entropy          : 2.4910 bits
+    pass-0 share     : 0.0%   (top pass strikes/births this fraction)
+
+D == reverse(A) exactly (birth high→low mirrors extinction low→high): True
+H(A) = H(D) = 2.4910 bits (mirror preserves entropy)
+
+C vs A — birth-by-gpf against death-by-spf (both low→high):
+    H(C) − H(A) = +7.1936 bits (the birth order spreads the same info wider)
+    largest residuals hC(g) − hA(g) over the first 80 generations:
+      gen   0 (prime    2) :  -49984
+      gen   1 (prime    3) :  -16583
+      gen   2 (prime    5) :   -6455
+      gen   3 (prime    7) :   -3428
+      gen   4 (prime   11) :   -1575
+      gen   5 (prime   13) :    -947
+      gen  14 (prime   47) :    +593
+      gen  17 (prime   61) :    +591
+
+boundary primes:
+    extinction completes at  p² ≤ N  →  p = 313  (π = 65) — the '313 Sieve'
+    birth      completes at  2p ≤ N  →  p = 49999  (π = 5133)
+    the sieve finishes KILLING at √N = 316, finishes BIRTHING at N/2 = 50000.
+    composites born after the extinction boundary (gpf > 313): 54,654  (60.5% of all composites) — the residual.
