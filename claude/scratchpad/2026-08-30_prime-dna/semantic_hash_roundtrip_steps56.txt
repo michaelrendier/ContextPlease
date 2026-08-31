@@ -1,0 +1,5 @@
+[5] spelling_code round trip, 30k sample
+    exact word recovery: 27382/28724 (95.328%)
+    <=20 chars: 28259  exact 27382 (96.897%)   >20 chars: 465 (lossy by cycle wrap)
+[6] combined = spelling_code*context_code, split at 71 -> recover BOTH: 800/800
+[x] stored 19-vec == context_vector(synsets(w)[0]) today: 372/400

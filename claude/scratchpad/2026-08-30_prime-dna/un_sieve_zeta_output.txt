@@ -1,0 +1,188 @@
+
+==========================================================================
+RANK-BASED  N = 100,000
+==========================================================================
+primes 9,592  composites 90,407  ext_boundary 313  birth_boundary 49999  born_after 54,654 (60.5%)
+  ordinal      head: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+  zeta_weight  head: [7, 11, 5, 13, 17, 19, 23, 3, 29, 31]
+  theta        head: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+--- order = ordinal ---
+  A: H=2.4910b  range=(0, 64)  span=65    top_share= 55.3%
+  B: H=9.6846b  range=(4459, 9591)  span=5133  top_share=  0.0%
+  C: H=9.6846b  range=(0, 5132)  span=5133  top_share=  0.0%
+  D: H=2.4910b  range=(9527, 9591)  span=65    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+7.1936b   resid|mass|=158,958
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      2    -49984
+      gen    1  prime      3    -16583
+      gen    2  prime      5     -6455
+      gen    3  prime      7     -3428
+      gen    4  prime     11     -1575
+      gen    5  prime     13      -947
+      gen   14  prime     47      +593
+      gen   17  prime     61      +591
+
+--- order = zeta_weight ---
+  A: H=2.4910b  range=(0, 64)  span=65    top_share=  4.2%
+  B: H=9.6846b  range=(4459, 9591)  span=5133  top_share=  0.0%
+  C: H=9.6846b  range=(0, 5132)  span=5133  top_share=  0.4%
+  D: H=2.4910b  range=(9527, 9591)  span=65    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+7.1936b   resid|mass|=158,958
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      7     -3428
+      gen    1  prime     11     -1575
+      gen    2  prime      5     -6455
+      gen    3  prime     13      -947
+      gen    7  prime      3    -16583
+      gen   13  prime     47      +593
+      gen   16  prime     61      +591
+      gen   21  prime      2    -49984
+
+--- order = theta ---
+  A: H=2.4910b  range=(0, 64)  span=65    top_share= 55.3%
+  B: H=9.6846b  range=(4459, 9591)  span=5133  top_share=  0.0%
+  C: H=9.6846b  range=(0, 5132)  span=5133  top_share=  0.0%
+  D: H=2.4910b  range=(9527, 9591)  span=65    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+7.1936b   resid|mass|=158,958
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      2    -49984
+      gen    1  prime      3    -16583
+      gen    2  prime      5     -6455
+      gen    3  prime      7     -3428
+      gen    4  prime     11     -1575
+      gen    5  prime     13      -947
+      gen   14  prime     47      +593
+      gen   17  prime     61      +591
+
+--------------------------------------------------------------------------
+INVARIANCE  (H(A), H(C), H(C)-H(A) identical across rank orderings)
+--------------------------------------------------------------------------
+order              H(A)       H(C)    H(C)-H(A)   A span   C span  resid|mass|
+ordinal         2.49101    9.68456     +7.19355       65     5133      158,958
+zeta_weight     2.49101    9.68456     +7.19355       65     5133      158,958
+theta           2.49101    9.68456     +7.19355       65     5133      158,958
+
+==========================================================================
+RANK-BASED  N = 12,000
+==========================================================================
+primes 1,438  composites 10,561  ext_boundary 109  birth_boundary 5987  born_after 5,920 (56.1%)
+    [siegelz x 1438: 65.6s  pos=672 neg=766]
+  ordinal      head: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+  zeta_weight  head: [7, 11, 5, 13, 17, 19, 23, 3, 29, 31]
+  theta        head: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+  Zsign        head: [3, 5, 11, 19, 29, 31, 59, 67, 71, 73]
+  spiral       head: [9337, 4153, 811, 11261, 3499, 5953, 11677, 7159, 6947, 7717]
+
+--- order = ordinal ---
+  A: H=2.2469b  range=(0, 28)  span=29    top_share= 56.8%
+  B: H=7.7583b  range=(655, 1437)  span=783   top_share=  0.0%
+  C: H=7.7583b  range=(0, 782)  span=783   top_share=  0.1%
+  D: H=2.2469b  range=(1409, 1437)  span=29    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+5.5114b   resid|mass|=17,896
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      2     -5987
+      gen    1  prime      3     -1945
+      gen    2  prime      5      -685
+      gen    3  prime      7      -282
+      gen    8  prime     23      +154
+      gen    9  prime     29      +151
+      gen   10  prime     31      +159
+      gen   11  prime     37      +151
+
+--- order = zeta_weight ---
+  A: H=2.2469b  range=(0, 28)  span=29    top_share=  4.3%
+  B: H=7.7583b  range=(655, 1437)  span=783   top_share=  0.0%
+  C: H=7.7583b  range=(0, 782)  span=783   top_share=  1.6%
+  D: H=2.2469b  range=(1409, 1437)  span=29    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+5.5114b   resid|mass|=17,896
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      7      -282
+      gen    2  prime      5      -685
+      gen    6  prime     23      +154
+      gen    7  prime      3     -1945
+      gen    8  prime     29      +151
+      gen    9  prime     31      +159
+      gen   10  prime     37      +151
+      gen   21  prime      2     -5987
+
+--- order = theta ---
+  A: H=2.2469b  range=(0, 28)  span=29    top_share= 56.8%
+  B: H=7.7583b  range=(655, 1437)  span=783   top_share=  0.0%
+  C: H=7.7583b  range=(0, 782)  span=783   top_share=  0.1%
+  D: H=2.2469b  range=(1409, 1437)  span=29    top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+5.5114b   resid|mass|=17,896
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      2     -5987
+      gen    1  prime      3     -1945
+      gen    2  prime      5      -685
+      gen    3  prime      7      -282
+      gen    8  prime     23      +154
+      gen    9  prime     29      +151
+      gen   10  prime     31      +159
+      gen   11  prime     37      +151
+
+--- order = Zsign ---
+  A: H=2.2469b  range=(0, 780)  span=781   top_share= 18.9%
+  B: H=7.7583b  range=(306, 1437)  span=1132  top_share=  0.0%
+  C: H=7.7583b  range=(0, 1131)  span=1132  top_share=  0.5%
+  D: H=2.2469b  range=(657, 1437)  span=781   top_share=  0.0%
+  D==reverse(A): True   H(C)-H(A)=+5.5114b   resid|mass|=17,896
+  residual head (gen, prime, hC-hA):
+      gen    0  prime      3     -1945
+      gen    1  prime      5      -685
+      gen    4  prime     29      +151
+      gen    5  prime     31      +159
+      gen  766  prime      2     -5987
+      gen  767  prime      7      -282
+      gen  770  prime     23      +154
+      gen  771  prime     37      +151
+
+--- order = spiral ---
+  A: H=2.2469b  range=(159, 1436)  span=1278  top_share=  0.9%
+  B: H=7.7583b  range=(0, 1436)  span=1437  top_share=  0.1%
+  C: H=7.7583b  range=(1, 1437)  span=1437  top_share=  0.0%
+  D: H=2.2469b  range=(1, 1278)  span=1278  top_share=  0.3%
+  D==reverse(A): True   H(C)-H(A)=+5.5114b   resid|mass|=17,896
+  residual head (gen, prime, hC-hA):
+      gen  159  prime     23      +154
+      gen  435  prime      3     -1945
+      gen  456  prime     29      +151
+      gen  730  prime     31      +159
+      gen  979  prime      5      -685
+      gen 1025  prime      2     -5987
+      gen 1122  prime     37      +151
+      gen 1128  prime      7      -282
+
+--------------------------------------------------------------------------
+INVARIANCE  (H(A), H(C), H(C)-H(A) identical across rank orderings)
+--------------------------------------------------------------------------
+order              H(A)       H(C)    H(C)-H(A)   A span   C span  resid|mass|
+ordinal         2.24690    7.75826     +5.51136       29      783       17,896
+zeta_weight     2.24690    7.75826     +5.51136       29      783       17,896
+theta           2.24690    7.75826     +5.51136       29      783       17,896
+Zsign           2.24690    7.75826     +5.51136      781     1132       17,896
+spiral          2.24690    7.75826     +5.51136     1278     1437       17,896
+
+==========================================================================
+TIME EMBEDDING (real Riemann zeros)  N = 8,000
+==========================================================================
+  fetching 1007 Riemann zeros ...
+    371.4s   gamma_1=14.1347  gamma_1007=1427.37
+
+  uniform-time bins: H(A)=0.4777  H(C)=4.7784  H(C)-H(A)=+4.3007
+  zero-time    bins: H(A)=1.7487  H(C)=5.4125  H(C)-H(A)=+3.6638
+  -> if the two H(C)-H(A) differ, the zero SPACING (not just order)
+     has entered the construction cost.
+
+  C-A residual autocorrelation (zero-time bins):
+    lag   1:  acf = +0.4066
+    lag   2:  acf = +0.0552
+    lag   3:  acf = -0.0412
+    lag   4:  acf = -0.0616
+    lag   5:  acf = -0.0599
+    lag   8:  acf = -0.0628
+    lag  12:  acf = -0.0403
+    lag  20:  acf = -0.0111
+
+  mean zero spacing = 1.4048  (uniform-time spacing == 1 by construction)

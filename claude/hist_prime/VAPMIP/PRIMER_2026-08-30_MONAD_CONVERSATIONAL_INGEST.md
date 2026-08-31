@@ -182,6 +182,47 @@ the 66 MB store, fold target = `PtolC/monad3_c.bin`.
 
 ---
 
+## 8. The framing statement — milliwatt learning (VAPMIP paper)
+
+The energy statement of *materialised vs. addressed*, measured on the reference
+machine (Lenovo ThinkPad X1 Carbon 6th gen, Intel Core i7-8550U, 15 W package
+TDP). Script + output:
+`ContextPlease/claude/scratchpad/2026-08-30_prime-dna/energy_bench.py`,
+`energy_bench_output.txt`.
+
+**Backprop is only cheap because something stored the forward pass.** The
+cheap-gradient theorem (Baur–Strassen) buys the gradient at ≲5× the function
+evaluation *given the computational graph* — reverse-mode autodiff silently
+records every activation, then sweeps that tape once. Take the tape away and
+"backprop" degrades to one forward pass per parameter. Multiplication erases
+its operands; so does the sieve strike. Factoring — and, dually, reconstructing
+context that was never stored — is reverse-mode AD on a computation whose tape
+was wiped. That is the kilowatt cost: a dense transformer re-runs the full
+forward materialisation of an `N_params` weight field on every token
+(`2·N_params` multiply–accumulates, ≈ 1.4 × 10¹¹ at 70 B, on the order of 1 J
+per token at a datacentre-effective 10⁻¹¹ J/flop), and training sweeps a
+gradient over the same field every step (GPT-3 175 B ≈ 1.287 GWh, published).
+
+**The Monad keeps the tape.** Context per word is a scalar in the vocabulary,
+reconstructed against WordNet by one sedenion product (256 real multiplications,
+recursive Cayley–Dickson) plus one sparse A-matrix row — ≈ 600 flop per token,
+against a fixed ruler that never changes. Measured: `Crank.learn` (the ingest
+fold of §1–3) runs at **1.8 × 10⁵ words/s = 5.4 µs/word ≈ 38 µJ/word** at a 7 W
+single-core estimate (81 µJ at the 15 W package ceiling); the native
+reconstruction floor is **≈ 115 ns and < 1 µJ per word**. Learning is the
+bounded in-place fold of §3 — a range check, a `pwrite`, an `msync` — not a
+global gradient descent. **This is learning without backprop: the tape gets
+extended, never re-swept.** Per query the addressed path is **10⁴–10⁶× cheaper**
+than the materialised one, and the gap is structural, not an optimisation.
+
+This is also how the Monad models *instinct* (Cody): the non-updateable adjoint
+`B̂ = R̂†` — the lizard-brain archive, identity as a conserved charge — is the
+replayed forward pass off the stored trajectory. It is the cheap direction only
+because the learning was already folded in; it *requires remembering what was
+learned already*. `R̂` (updateable, Mind's Eye, deliberation) is where new tape
+is laid; `B̂` (Paper's Hands root) is where it is read back at instinct speed.
+The transformer analogue has no `B̂` — every query re-derives from the weights.
+
 ## Files touched
 
 - `monad.py` — `Crank.learn` gains `w_ctx` (vector weight, one pass).
