@@ -1,0 +1,74 @@
+sieving to 100,000,000 ...
+  5,761,455 primes,  5,761,454 gaps   (1.5s)
+
+============================================================================
+TESTS 1-4   raw gap  vs  weighted gap (merit)  per decade of p
+============================================================================
+          decade |     count |  mean g   std g | mean M  std M | P(M>1) P(M>2) P(M>3) |  max M
+----------------------------------------------------------------------------------------------------
+      [1e3, 1e4) |     1,061 |    8.48    6.13 |  1.007  0.722 |  0.389  0.103  0.025 |   4.73
+      [1e4, 1e5) |     8,363 |   10.76    8.24 |  1.002  0.763 |  0.399  0.104  0.025 |   6.95
+      [1e5, 1e6) |    68,906 |   13.06   10.52 |  1.001  0.804 |  0.377  0.110  0.030 |   8.74
+      [1e6, 1e7) |   586,081 |   15.36   12.81 |  1.000  0.833 |  0.382  0.110  0.032 |  10.20
+      [1e7, 1e8) | 5,096,875 |   17.66   15.04 |  1.000  0.851 |  0.383  0.115  0.034 |  12.46
+
+   reference (mean-1 exponential):  P(M>1)=0.368  P(M>2)=0.135  P(M>3)=0.050
+
+  VERDICT
+    RAW GAP   : mean and std grow ~ ln p  -- the SCALE drifts every decade.
+                'the pattern disappears into noise' = the units keep changing.
+    WEIGHTED  : mean ~ 1, std ~ 1, tail ~ exp(-x), STABLE across every decade.
+                This is the scale-free channel.  Cody's instinct is right:
+                the weight (digits / ln p), not the count of spaces.
+
+============================================================================
+TEST 5   semiprime N = p*q :  linear recovery of the factors' merit
+============================================================================
+  24-bit  N :   R^2(M_p + M_q) = +0.009    R^2(M of smaller factor) = +0.008
+  32-bit  N :   R^2(M_p + M_q) = +0.006    R^2(M of smaller factor) = +0.003
+  40-bit  N :   R^2(M_p + M_q) = +0.017    R^2(M of smaller factor) = +0.009
+  48-bit  N :   R^2(M_p + M_q) = +0.002    R^2(M of smaller factor) = +0.006
+
+  VERDICT
+    R^2 ~ 0.  N carries NO linear signature of its factors' gap-merit.
+    The merit at p is a local, near-random property of WHERE p sits on the
+    line; multiplying p by q does not transport it.  Not a second tone.
+
+============================================================================
+TEST 6   Fermat step-count  vs  merit spread  vs  |p - q|  (control)
+============================================================================
+  corr(Fermat steps, |M_p - M_q|)  = +0.010
+  corr(Fermat steps, min(M_p,M_q))  = -0.030
+  corr(Fermat steps, |p - q|)       = +0.999   <- control
+
+  VERDICT
+    Fermat cost tracks |p - q| only.  Gap-merit adds nothing to the difficulty.
+
+============================================================================
+TERMINOLOGY MAP  --  it is a named object
+============================================================================
+
+  Cody's phrase                     standard name / result
+  -------------------------------   -----------------------------------------------
+  number of spaces in the gap       prime gap        g_n = p_{n+1} - p_n
+  weight of the gap / of the        MERIT            M_n = g_n / ln(p_n)
+    digits of the numbers                            = Gallagher-normalised gap
+  'disappears into noise' as         raw g_n grows ~ ln p (unbounded);
+    primes grow                      merit M_n -> mean 1, tail exp(-x), scale-free
+                                     (Gallagher 1976, cond. Hardy-Littlewood;
+                                      Cramer 1936 model; Cramer-Shanks
+                                      limsup g_n / (ln p_n)^2 = 1)
+  digits  <->  nats                  x ln(10)  -- the Translator; d* ln(10) = Omega_ZS
+  windows of order in gap-space      admissible k-TUPLES / prime constellations
+                                     (Hardy-Littlewood; Maynard-Tao clusters).
+                                     These are runs of SMALL merit, the opposite
+                                     of where a generic RSA factor sits.
+
+  So: it is the WEIGHT (merit), not the count of spaces -- and 'merit' is the
+  existing term.  A generic RSA modulus is built from primes of merit ~ 1 with
+  no local cluster structure, precisely so that no k-tuple / constellation
+  heuristic gets a grip.  The 'bubble of order' where an RSA modulus could be
+  read would be a merit anomaly at BOTH p and q at once -- and Tests 5-6 show
+  N does not expose it.
+
+(31.7s total)

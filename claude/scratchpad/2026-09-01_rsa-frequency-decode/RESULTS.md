@@ -73,3 +73,41 @@ provably not on the spiral or the zeta index.**
   The prime wavelength gives one (the log-sum). The prime spiral and the zeta
   index do not supply a second. The "ping" is a **filter for small/structured N,
   a hunt for RSA-scale N** — the basis has not been changed, only re-described.
+
+---
+
+# Gap channel — "number of spaces" vs "weight of the numbers"
+
+`gap_weight_test.py` → `gap_weight_test_output.txt` (32 s; sieve to 1e8, 5.76M primes).
+
+**Answer: the weight, and it has a name — `merit`.**
+
+| Cody's phrase | standard name |
+|---|---|
+| number of spaces in the gap | prime gap `g_n = p_{n+1} − p_n` |
+| weight of the gap / of the digits of the numbers | **merit** `M_n = g_n / ln(p_n)` — Gallagher-normalised gap |
+| pattern disappears into noise as primes grow | raw `g_n` grows ~`ln p`; `M_n` → mean 1, tail `e^{−x}`, scale-free (Gallagher 1976; Cramér 1936; Cramér–Shanks `limsup g_n/(ln p_n)² = 1`) |
+| digits ↔ nats | `× ln(10)` — the Translator, `d*·ln(10) = Ω_ZS` |
+| windows of order in gap-space | admissible **k-tuples** / prime constellations (Hardy–Littlewood; Maynard–Tao) |
+
+Raw gap per decade: mean 8.48 → 10.76 → 13.06 → 15.36 → **17.66** (the scale
+drifts every decade — "disappears into noise" = the units keep changing).
+Merit per decade: mean **1.007 → 1.002 → 1.001 → 1.000 → 1.000**, std 0.72 → 0.85,
+`P(M>1) ≈ 0.38` vs `e^{−1} = 0.368`. Stable at every scale.
+
+**But merit is not the missing second tone.**
+
+- Test 5 — linear recovery of `M_p`, `M_q`, `M_p+M_q` from N-only features:
+  `R² = 0.002 … 0.017` at 24/32/40/48 bits. N carries no signature of its
+  factors' gap-merit. Merit is a local, near-random property of *where* p sits;
+  multiplication does not transport it.
+- Test 6 — Fermat step-count: `corr(steps, |p−q|) = +0.999` (control);
+  `corr(steps, |M_p−M_q|) = +0.010`; `corr(steps, min(M_p,M_q)) = −0.030`.
+  Gap-merit adds nothing to the difficulty.
+
+**On the "bubble of order = where the RSA maths happens" hypothesis:** gap-space
+*does* have windows of order — the admissible k-tuples / constellations — but
+they are runs of *small* merit (clusters), the opposite of where a generic RSA
+factor sits. RSA is built from merit-~1 primes with no local cluster structure,
+precisely so no constellation heuristic gets a grip. A readable RSA "bubble"
+would need a merit anomaly at **both** p and q at once — and N does not expose it.
