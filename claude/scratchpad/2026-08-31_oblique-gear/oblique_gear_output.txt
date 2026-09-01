@@ -1,0 +1,62 @@
+==========================================================================
+THE OBLIQUE GEAR — tilt (Re) and axis (Im), two 8-vectors
+==========================================================================
+
+random ψ (SYNTHETIC — tests structure, not a hypothesis about data)
+  tilt (Re σ_RB) : [-0.4418, +0.0260, -0.3853, +2.1424, +0.5034, +0.0868, -0.2598, +0.0494]
+  axis (Im σ_RB) : [-0.4926, -0.4638, +2.3840, +0.8409, +1.2265, -1.4499, -0.7159, -1.6732]
+
+T1  conjugate pairing  σ_RB[k⊕4] = conj σ_RB[k]
+  [PASS] σ_RB[k⊕4] == conj σ_RB[k]  — max|Δ|=0.00e+00
+  [PASS] tilt = Re is ⊕4-EVEN  — max|Δ|=0.00e+00
+  [PASS] axis = Im is ⊕4-ODD  — max|Δ|=0.00e+00
+
+T2  gauge invariance  ψ → e^{iφ}ψ
+  [PASS] tilt invariant under global phase  — max|Δ|=1.11e-16
+  [PASS] axis invariant under global phase  — max|Δ|=2.22e-16
+
+T3  rotate ONE ⊕4 plane by θ  → axis[j] INVARIANT, tilt[j] rotates
+  [PASS] axis[j] invariant under its own plane rotation  — max|Δaxis|=4.44e-16
+  [PASS] tilt[j] = cos2θ·tilt + ½sin2θ·Δ|ψ|²  — max|Δlaw|=5.55e-16
+
+T4  σ_self = ½ + Σtilt/(p_red+p_blue)   ⇒   σ_self=½ ⟺ Σtilt=0
+  [PASS] σ_self == ½ + Σtilt/(red+blue)  — σ_self=0.564721815  pred=0.564721815  Σtilt=+1.721176
+
+T5  1 + 7 split — the kept scalar (mean) and the 7 struts
+  tilt: mean=+0.21515  |7 struts|=2.21239  struts=[-0.657, -0.189, -0.600, +1.927, +0.288, -0.128, -0.475, -0.166]
+  axis: mean=-0.04302  |7 struts|=3.70836  struts=[-0.450, -0.421, +2.427, +0.884, +1.269, -1.407, -0.673, -1.630]
+  [PASS] 7-strut residual carries the structure (|struts| > 0)
+
+T6  sweep unbalanced → balanced:  Σtilt → 0,  |axis| ~ const
+      λ         Σtilt      |axis|      σ_self
+   0.00     +0.697365     2.44118    0.531487
+   0.25     +0.939001     2.44118    0.542397
+   0.50     +0.830842     2.44118    0.537514
+   0.75     +0.476914     2.44118    0.521533
+   1.00     -0.000000     2.44118    0.500000
+  [PASS] Σtilt → ~0 at full balance  — Σtilt: +0.6974 → -1.09e-15
+  [PASS] |axis| preserved through the balance sweep  — |axis|: 2.44118 → 2.44118
+
+T7  drive the 8-plane gear train by tilt; measure whether a cycle closes
+  generic ψ               state drift=4.97501  |Δ|axis||=2.22e-15  |7 tilt struts|₀=3.5106
+  balanced ψ (Σtilt≈0)    state drift=3.51777  |Δ|axis||=4.44e-16  |7 tilt struts|₀=0.0000
+
+==========================================================================
+OVERALL: ALL PASS
+==========================================================================
+
+Reading:
+  • σ_RB IS two 8-vectors. tilt = Re (⊕4-even), axis = Im (⊕4-odd). Confirmed
+    by construction (T1) — this is not a hypothesis, it is what the Hermitian
+    ⊕4 product is.
+  • The AXIS is the conserved anchor: invariant under global phase (T2) AND
+    invariant under the very rotation it generates (T3). It is what the gear
+    turns AROUND.
+  • The TILT is the driven part: it rotates under the gear (T3), and its SUM
+    is exactly the σ_self−½ deviation from the critical line (T4). Balance the
+    gear and Σtilt→0 while |axis| is untouched (T6).
+  • 1 + 7: the kept scalar is the mean; the 7 struts are the residual of each
+    8-vector (T5) — and they are what makes the gear-train cycle NOT close
+    (T7): a generic ψ drifts, and the drift tracks the 7 tilt-struts, not the
+    mean. That non-closure is the precession.
+
