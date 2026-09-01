@@ -1,0 +1,72 @@
+
+======================================================================
+harness.load_monad('auto') — the report
+======================================================================
+monad_bus: backend = c:ptolemy-daemon (prefer=auto)
+harness: monad backend = c:ptolemy-daemon (prefer=auto); alive=True
+{
+  "chosen": "c:ptolemy-daemon",
+  "why": "prefer=auto",
+  "alive": true
+}
+backend.alive: True
+backend.learn('the quick brown fox jumps over the lazy dog') -> 9
+
+======================================================================
+harness.load_monad('c') and ('python') — explicit, must report either way
+======================================================================
+monad_bus: backend = c:ptolemy-daemon (prefer=c)
+harness: monad backend = c:ptolemy-daemon (prefer=c); alive=True
+  prefer=c       -> chosen=c:ptolemy-daemon  alive=True  (prefer=c)
+monad_bus: python monad unavailable (numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject)
+monad_bus: no Monad backend available — ingest is a no-op (warning, not a fault; boot continues)
+harness: monad backend = null (prefer=python, none reachable); alive=False
+  prefer=python  -> chosen=null  alive=False  (prefer=python, none reachable)
+
+======================================================================
+ResourceGovernor — the ceiling and live state
+======================================================================
+{
+  "ceiling_bytes": 12077539328,
+  "ceiling_gib": 11.25,
+  "mem_total_gib": 7.52,
+  "swap_total_gib": 3.73,
+  "live_headroom_gib": 4.47,
+  "max_slots": 8,
+  "running": 0,
+  "committed_ram_mib": 0.0,
+  "bw_cap_mibps": 50.0,
+  "bw_avail_mibps": 50.0,
+  "jobs": []
+}
+headroom_ok(1 MB): True
+headroom_ok(10 x CEILING): False
+
+======================================================================
+governor.guard — admission + slot accounting
+======================================================================
+inside guard A: 1 running
+inside guard B: 2 running | jobs: ['probe-A', 'probe-B']
+after guards: 0 running (gc'd)
+
+======================================================================
+harness.browse('http://example.com/') — real fetch, dedup on repeat
+======================================================================
+[browse] http://example.com/ — 559 B, 19 words → daemon.fifo
+first : FaceResult(ok=True, data={'url': 'http://example.com/', 'bytes': 559, 'words': 19, 'ingest': 'daemon.fifo', 'ingest_ok': True}, error=None, handled_by='harness.browse', center=None)
+repeat: FaceResult(ok=True, data='deduped', error=None, handled_by='harness.browse', center=None)   <- deduped
+
+======================================================================
+harness.search('sedenion box kite') — routes through browse
+======================================================================
+[browse] https://html.duckduckgo.com/html/?q=sedenion+box+kite — 35014 B, 651 words → daemon.fifo
+FaceResult(ok=True, data={'url': 'https://html.duckduckgo.com/html/?q=sedenion+box+kite', 'bytes': 35014, 'words': 651, 'ingest': 'daemon.fifo', 'ingest_ok': True}, error=None, handled_by='harness.browse', center=None)
+
+======================================================================
+bare RotaryBoxKiteMonad.browse_observe — no harness, learns into own field
+======================================================================
+bare monad path skipped: ValueError('numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject')
+
+======================================================================
+DONE
+======================================================================
