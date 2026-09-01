@@ -1,0 +1,1477 @@
+#!/usr/bin/env bash
+# .clauderc_ValaQuenta — per-engine context index for ValaQuenta
+# ============================================================================
+# Sourced automatically by ~/.bashrc (explicit allowlist, see .bashrc comment).
+# Purpose: avoid re-reading ValaQuenta/modules/*/maths.py from scratch every
+# session. Each engine module gets ONE bash variable holding a distilled
+# summary (claim, engines, confidence tiers, key constants, flagged issues).
+# Look it up by name instead of grepping/reading source.
+#
+# Usage:
+#   source .claude/.clauderc_ValaQuenta   # or let ~/.bashrc do it automatically
+#   ctxengine tier8_sedenion              # prints that module's context block
+#   echo "$VALAQUENTA_ENGINE_INDEX"       # list every available module name
+#   ctxengine _crosscutting               # cross-module patterns worth knowing
+#
+# Design note (why named variables, not line-number indexing like
+# .clauderc_context_1's ctxdir()): that file is prose/markdown, so awk-by-
+# heading is the only cheap extraction method available. This file is real
+# bash -- a directly-addressable variable per engine is strictly simpler and
+# more robust than line-range lookups, so that's what's used here instead.
+#
+# Populated: 2026-07-10, via full-module survey (Explore agent, not a
+# surface pass -- every modules/*/maths.py read in full, tools.py checked
+# for confidence-tier fidelity against maths.py's own docstrings).
+# Regenerate/update when ValaQuenta/modules/ changes meaningfully.
+#
+# CONFIDENCE TIER KEY (from engine/registry.py):
+#   ESTABLISHED = verified by code and/or established mathematics
+#   THEORETICAL = defined test/derivation path exists, not fully closed
+#   CONJECTURE  = named direction, no formal derivation yet
+#   OPEN        = active open problem
+#   Many maths.py docstrings use COMPOUND tags, e.g.
+#   "ESTABLISHED (X) + THEORETICAL (Y)" -- X is solid, Y is the
+#   interpretive/identification layer on top. tools.py sometimes FLATTENS
+#   these to a single tier -- see _crosscutting block, item 2.
+#
+# ============================================================================
+# FULL ENGINE PROTOCOL  (amended 2026-08-04 by Cody -- FIVE parts, was four)
+# ============================================================================
+# An engine is not "done" until all five artifacts exist. Shipping the code
+# alone leaves the engine undiscoverable from a cold context, which is the
+# failure this whole .clauderc_* family exists to prevent.
+#
+#   1. ENGINE          ValaQuenta/modules/<name>/{__init__,maths,tools}.py
+#                      implementing the engine/registry.py EquationModule
+#                      contract, and REGISTERED in ValaQuenta/__main__.py
+#                      _register_all() plus listed in modules/__init__.py.
+#   2. NOTEBOOK        ValaQuenta/notebooks/engines/NN_<name>.ipynb
+#                      (or the topic subdirectory), exercising the formulary
+#                      end to end, with the open items shown honestly.
+#   3. AINULINDALE WIKI  Ainulindale/wiki/NN_<name>.md -- the narrative page:
+#                      origin quote, what changed, honest boundaries,
+#                      predecessor links.
+#   4. VALAQUENTA WIKI   ValaQuenta/wiki/<name>.md -- the engineering page:
+#                      file, class, claim, mechanism, confidence table.
+#                      Add the row to wiki/00_index.md.
+#   5. .clauderc_ValaQuenta ENTRY  <-- NEW, added 2026-08-04.
+#                      export CTX_<NAME>="..." below, AND the module name
+#                      appended to VALAQUENTA_ENGINE_INDEX above, so
+#                      `ctxengine <name>` resolves without reading source.
+#                      An engine absent from this file is invisible to a
+#                      cold session no matter how complete its code is --
+#                      l_io_photon_path sat unindexed for weeks in exactly
+#                      that state (see CTX_L_IO_PHOTON_PATH, "WAS MISSING
+#                      FROM THIS INDEX").
+#
+# A canonical-maths change accompanying an engine also goes in
+# ~/.clauderc_canonical_maths, and all ~/.clauderc* files are copied into
+# ContextPlease/claude/ before the push (github push protocol).
+# ============================================================================
+
+export CTX_ANGULAR_RANK="
+angular_rank -- The 16D Oscilloscope (Angular Rank). v0.1 (2026-08-15).
+confidence_floor=ESTABLISHED for the instrument; THEORETICAL for the
+provenance application (the wiring it depends on is unverified).
+
+WHAT IT IS: one measurement answering two questions about any signal embedded
+in the 16 sedenion dimensions, without knowing its language, meaning, or author.
+  1. ANGULAR CONTENT  how much direction survives once the common mode is
+     removed. Scalar address 0.0000 / char encoder 0.0002 / phonetic face
+     0.4020 (Phase 27.2). A scalar is magnitude with no direction -- text
+     entering 0_RB as one scalar lands on e0 and scores exactly 0.
+  2. NULL OCCUPANCY   energy landing in ker(L_a), the 4 dimensions a zero
+     divisor annihilates. The internal channel is a functional of its own
+     state and CANNOT emit there. This is the internal/external provenance
+     test. Same measurement as (1).
+
+!! WHY IT EXISTS -- THE HALTING STRUCTURE. From inside the monad the function
+scope and the equation being processed are the SAME OBJECT; it is code all the
+way down. A decider D(x) -> internal|external can be diagonalised. Provenance
+is UNDECIDABLE from the signal, so it must be CARRIED from the port, never
+re-derived. The scope is not a display -- it is a RANK TEST, and it does not
+diagonalise because the machine is never asked to decide anything.
+
+!! THE DATUM DISCIPLINE. Cody, 2026-08-15: reading the internal span while the
+thinking threads GROW it is iterate-while-modify one level up. It does not
+raise -- it DRIFTS until the span covers the kernel and the instrument reports
+all-quiet forever. Fix is not a lock, it is an EPOCH: datum() freezes the
+field with a sha256 stamp and is the ONLY way in; every other entry point
+raises TypeError on a live sequence; bearing() DATES mutation between two
+epochs instead of straddling it. NO MEASUREMENT IS REPORTABLE WITHOUT ITS
+DATUM. Bounded reference is Phase 27.3: net winding +0.0000, non-accumulating,
+held by the gearing not computed.
+
+!! TWO MANDATORY NULLS.
+  1. Isotropic kernel baseline is EXACTLY nullity/dim = 4/16 = 0.25 (measured
+     0.250968, 20k draws). A raw fraction near 0.25 is EVIDENCE OF NOTHING.
+     Report the EXCESS. Same rule as read-the-z-score-never-the-raw-r.
+  2. Calibration is EMBEDDING-SPECIFIC (phonetic face). It does NOT transfer
+     to embed_log_bands or any other embedding. The embedding is an INPUT,
+     not a property of the signal. Report it with every number.
+
+!! SILENT FAILURE. null_occupancy() ~0 is AMBIGUOUS: either no external signal
+OR the ear is wired THROUGH L_a instead of summed downstream of it, in which
+case the external component is annihilated identically and the instrument is
+blind with NO ERROR RAISED. Demonstrated in the notebook: the same external
+signal reads 0.276 summed downstream and 0.000000 routed through L_a.
+
+HONEST CHECK: verify_null_space() reproduces nullity 4, rank 12, singular
+values sqrt2 x4 / 1 x8 / 0 x4 -- the published {4,8,4} split -- as a CHECK not
+an input. L_a is built from box_kite basis_mul (one CD table in the repo) and
+cross-checked against box_kite multiply().
+
+OPEN: does a real ear injection land in ker(L_a) at all (untested, the whole
+test depends on it); is the ear summed downstream of L_a (wiring unverified);
+VAPMIP monad.c has one G under one pthread_mutex_t G.lock so provenance is
+destroyed at write (BLOCKER); no cetacean corpus in repo; no
+embedding-independent angular statistic exists.
+
+CANNOT SUPPORT: any claim about what a signal MEANS. That is a beta, it needs
+a source position, and no instrument on this bench supplies one.
+
+FILES: ValaQuenta/modules/angular_rank/{__init__,maths,tools}.py;
+notebooks/engines/16_angular_rank.ipynb (15/15 cells clean);
+wiki/angular_rank.md; Ainulindale/wiki/86_the_16d_oscilloscope.md;
+VAPMIP/docs/wiki/Operating-L-IO.md section 4.
+"
+
+export CTX_DESITTER_CAVITATION="
+desitter_cavitation -- No Singularity: the Abrikosov-Vortex Core and De
+Sitter Cavitation over a black hole's life. v0.100 (2026-08-30).
+confidence_floor=THEORETICAL. Engine for FourthAgePapers/DeSitterCavitation.
+CALCULATION NOT SIMULATION -- closed-form scalars/ratios/timescales, no ODE,
+no field solve. Pure stdlib in maths.py (math, fractions), float only at the
+output boundary.
+
+CLAIM: the black-hole interior is a finite, sub-Planckian de Sitter core, not
+a singularity -- the Abrikosov vortex core made gravitational (condensate ->
+0, winding 1, everything else finite). Gravastar match (Mazur-Mottola) forces
+L_dS = r_s.
+
+HOLCUS (pre-registered): K_core(M) = 24/L_dS^4 = 24/r_s^4 = (3/2) c^8/(G^4 M^4)
+[m^-4]. Finite for all M>0, scales as M^-4, sub-Planckian for every
+M > (3/2)^(1/4) m_Pl = 1.1067 m_Pl. Observational shadow: ringdown echo at
+delay ~ (2 r_s/c) ln(r_s/l_Pl), of order the interior light-crossing time
+tau_interior = r_s/c = 2GM/c^3.
+FALSIFIER: divergent core curvature (classical singularity) OR curvature
+pinned to K_Planck independent of M (limiting-curvature / Planck-star). No
+ringdown echoes to the required reflectivity bound.
+
+KEY NUMBERS (run 2026-08-30, venv): stellar 10 Msun K_core=3.152e-17 m^-4,
+K/K_Planck=2.15e-156. no_singularity_check PASS (finite / M^-4 to 1.6e-16 /
+sub-Planckian / Schwarzschild K->inf as contrast). T_dS = 2*T_H exactly.
+QGP (rho_core c^2 >= 1 GeV/fm^3) only for M <~ 3 Msun and for kugelblitz/
+primordial mass -- rho_core ~ M^-2 makes the small holes the hot ones. Every
+class sub-Planckian in core curvature by >= 78 orders.
+
+SECONDARY (allowed to fail, kept in data): energy_partition default split is
+1-d* : d* = 0.754 : 0.246 (stiff space : stiff matter). cosmic_cavitation_
+budget Omega_cav ~ Omega_BH (1-d*) ~ 7.5e-6 vs Omega_Lambda ~ 0.685 -- falls
+short ~5 orders; the mechanism is directional+cumulative so its signature (if
+any) is DARK FLOW, not a dark-energy magnitude.
+
+8 formulary equations: full_desitter_cavitation, kretschmann_core (HOLCUS,
+ESTABLISHED as dS identity), no_singularity_check (THEORETICAL scorecard),
+mass_class_table (ESTABLISHED, closed form), interior_timescales, energy_
+partition (CONJECTURE), stiff_matter_ceiling (ESTABLISHED, Zel'dovich p=rho
+c^2), cosmic_cavitation_budget (CONJECTURE).
+
+OPEN: no derivation that nature selects this interior (the engine checks
+IF-gravastar-THEN-dS-Kretschmann, it does not solve a field equation);
+bounce/echo coefficients are O(1) model-dependent (only the scaling is firm);
+the d* split is asserted; cosmic budget expected FALSIFIED as a magnitude.
+Labelled-ZD note: box-kite object is PSL(2,7) order 168 (Aut Fano); Moreno's
+G2 is the blow-up that forgets the labelling.
+
+FILES: ValaQuenta/modules/desitter_cavitation/{__init__,maths,tools}.py;
+notebooks/engines/18_desitter_cavitation.ipynb; wiki/desitter_cavitation.md
+(+ row in wiki/00_index.md); Ainulindale/wiki/108_desitter_cavitation.md;
+FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
++ engine copy).
+"
+
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger"
+
+ctxengine() {
+  local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
+  if [ -z "${!var}" ]; then
+    echo "no context for '$1' -- available modules:"
+    echo "  $VALAQUENTA_ENGINE_INDEX"
+    return 1
+  fi
+  echo "${!var}"
+}
+
+# ---------------------------------------------------------------------------
+
+export CTX__CROSSCUTTING="
+CROSS-MODULE PATTERNS (read this one first -- applies everywhere below).
+
+1. SHARED CONSTANT CORE (present in nearly every module, omitted from each
+   module's own 'key constants' line below to avoid repetition):
+     OMEGA_ZS = 0.5671432904097838   (Lambert W(1) fixed point)
+     D_STAR   = 0.24600              (Berry-Keating spectral floor)
+     GAP      = OMEGA_ZS - D_STAR*ln(10) = 0.000707   (claimed Yang-Mills
+                mass gap = BAO acoustic residual)
+     R_H = 1/sqrt(2), PHI = 1.618..., ALPHA = 1/137.035999084
+     RIEMANN_ZEROS: 20 real LMFDB/Odlyzko values, correctly cited throughout.
+
+2. THE GAP=0.000707 PROBLEM IS STILL OPEN, BUT USED AS SOLVED DOWNSTREAM.
+   Flagged explicitly as 'Open Problem 2 / highest priority' in:
+   berry_keating, inversion, constants, derivation_chain (all list rejected
+   candidate closed forms, none close it). But then USED AS IF SETTLED
+   ('the Yang-Mills mass gap') in tier6_physics, tier7_cosmos,
+   tier8_sedenion, tier9_chem. This is the single most load-bearing
+   inconsistency in the codebase -- an admittedly-unsolved numerical
+   coincidence gets treated as a proven physical identification a few
+   modules downstream. Worth checking which specific claim you're relying
+   on before trusting a 'the mass gap is X' statement anywhere.
+
+3. TOOLS.PY CONFIDENCE-TIER FLATTENING. maths.py docstrings often use
+   compound tags ('ESTABLISHED (verified part) + THEORETICAL (interpretive
+   part)'), correctly hedging. tools.py's Equation() registration sometimes
+   FLATTENS this to a single higher tier. Worst offenders: singularity_null
+   and turing_diagonal (near-total flattening, every function), constants
+   and tier8_sedenion (partial). tier6_physics and tier7_cosmos, by
+   contrast, generally preserve the hedging faithfully -- their tools.py
+   tiers can be trusted more directly. When in doubt, read maths.py's own
+   docstring tag, not tools.py's registration.
+
+4. MODULE-HEADER/REALITY MISMATCHES (docstrings undercount their own
+   engines): tier6_physics says '8 engines' (actually 9, omits
+   hypercomplex_euler from its own list), tier7_cosmos says '17 engines'
+   (actually 20 -- missing halocline_ns_surface, nball_transformer,
+   sedenion_hole_punch from its own enumeration), tier8_sedenion says
+   '5 engines' (actually 7).
+
+5. SELF-FLAGGED DRAFT MATERIAL (the most honest self-assessment in the
+   codebase): tier7_cosmos's sedenion_hole_punch() and nball_transformer()
+   are explicitly dated/attributed ('Cody Michael Allison, 2026-06-03...
+   mathematics to be verified') with CONJECTURE-tier sub-claims embedded
+   in otherwise THEORETICAL functions. spherical's j_n_mode_identification()
+   explicitly defers its formal closure to a named, unpublished third party
+   ('Zhang, pending ArXiv submission') -- the single clearest 'not proven,
+   waiting on someone else' flag anywhere in the survey.
+
+6. lagrangian/maths.py has ZERO connection to sedenions or T_256, despite
+   living in a framework saturated with both. Confirmed by direct search:
+   'sedenion' appears exactly once, in a comment, never in computation. It
+   operates purely on the 4-level R/C/H/O stratification (dims 1/2/4/8).
+   Do not assume it's the source of any sedenion-level Lagrangian claim.
+
+Survey method: Explore agent, full read of every maths.py (not skimmed),
+tools.py checked specifically for tier fidelity. udeo_crypto excluded from
+deep-read (built same day, already known). 2026-07-10.
+"
+
+export CTX_BERRY_KEATING="
+berry_keating -- H_NN Berry-Keating Operator. v0.111. confidence_floor=OPEN
+(the only module whose floor is OPEN -- this is explicitly the open-
+problems workbench for Riemann-zeros-as-eigenvalues).
+Engines: d_star_gap_report (OPEN -- the 0.000707 gap itself, candidates
+tried and rejected), lambert_W_approx (ESTABLISHED, pure numerics),
+two_loop_mass_gap_candidate (OPEN/CANDIDATE, explicitly does not close the
+gap), lambert_tsallis_Wq_candidate (CANDIDATE, first-order only),
+gap_candidates (OPEN -- brute-force scan of elementary-constant
+expressions, none match), h_nn_eigenvalues (OPEN -- harmonic-oscillator
+approx only, full xp spectrum open), xp_spectrum_discrete (OPEN),
+T_map_scaffold/T_map_trajectory (OPEN -- explicitly NOT the same object as
+the already-resolved inside/exterior T_transform = Eichler-Shimura = Wiles
+1995; don't conflate the two).
+Key constants: D_STAR_SPEC=0.24600 (active value), D_STAR_TAUT=OMEGA_ZS/ln10
+(tautological reference, zero gap BY CONSTRUCTION -- code itself warns this
+is 'reference only, not the result').
+This IS Open Problem 2's home module.
+"
+
+export CTX_CLAY_MILLENNIUM="
+clay_millennium -- Clay Millennium Problems via Sigma_RB. v0.130.
+confidence_floor=THEORETICAL. Derives all 7 Clay problems as 'facet
+projections' of Sigma_RB (defined in h_rb_hat).
+Per-problem status: RH (rh_proof_stone/rh_proof_wiles_conjugate/
+rh_noether_balance_scan/rh_spectral_decomposition -> riemann_hypothesis:
+THEORETICAL, framework complete but deficiency-index/domain proof and
+Frey-curve bijection explicitly open); Yang-Mills mass gap
+(yang_mills_mass_gap: THEORETICAL, continuum-limit renormalization proof
+open, 0.000707 an unproven candidate scale); Navier-Stokes
+(navier_stokes_existence: THEORETICAL, blow-up-projection smoothness
+explicitly OPEN); P vs NP (p_vs_np: THEORETICAL, explicitly a 'structural
+argument, not a proof'); Hodge (hodge_conjecture: THEORETICAL,
+exhaustiveness for general varieties open); BSD (birch_swinnerton_dyer:
+ESTABLISHED for rank 0/1 -- correctly cites real Coates-Wiles,
+Gross-Zagier+Kolyvagin -- THEORETICAL/open for rank>=2); Poincare
+(poincare_conjecture: ESTABLISHED, the only genuinely SOLVED entry --
+Perelman 2003-2006 -- used post hoc to argue 'Sigma_RB geometry is
+correct', which is an asserted identification, not a derivation).
+"
+
+export CTX_CONSTANTS="
+constants -- Tier 0: pi, phi, e, sqrt, i derived from H_RB. tools.py
+version 0.120, maths.py header says 0.110 (internal mismatch).
+confidence_floor=ESTABLISHED (NOTE: floor/ceiling mismatch -- several
+sub-derivations inside are explicitly OPEN, e.g. the d* tower, despite the
+module-level floor claiming ESTABLISHED).
+Engines: derive_i/derive_sqrt/derive_e/derive_pi/derive_phi (all
+ESTABLISHED, legitimate standard math -- CD-algebra i, geometric-mean sqrt,
+BK e^t, U(1)+Basel pi, CD-recursion-fixed-point phi), euler_identity
+(ESTABLISHED, assembles e^{i pi}+1=0 = J_R+J_G+J_B=0), derive_omega_zs
+(ESTABLISHED, real Lambert-W fixed-point/Banach-contraction math),
+derive_alpha_fermat (THEORETICAL -- causality bound + 'golden-angle
+cardioid cusp ~137.5 deg' numerological coincidence; exact QED alpha needs
+radiative corrections NOT derived here), derive_d_star (ESTABLISHED for
+d*_R only; d*_C/d*_H/d*_O explicitly OPEN -- same Open Problem 2 as
+berry_keating), derive_lambda (mixed confidence tags sigma=inf/40/1.5;
+explicit OPEN step: Omega_Lambda=f(Omega_ZS,Omega_bh^2) has no derived
+closed form).
+"
+
+export CTX_DERIVATION_CHAIN="
+derivation_chain -- Tiers 1-5 narrative derivation chain. v0.100.
+confidence_floor=THEORETICAL. 13 functions walking Riemann=Fermat through
+6 'dropout' claims to H_RB emergence to a 'Geometric Observer' to ln(x).
+Tier1 riemann_equals_fermat: ESTABLISHED(Wiles 1995)+THEORETICAL(operator
+form). Tier2 six dropouts: yang_mills_dropout ESTABLISHED (constructs
+GAP=0.000707 -- but see _crosscutting #2, this constructs it, doesn't
+prove the physical identification), berry_keating_dropout ESTABLISHED,
+noether_dropout ESTABLISHED, navier_stokes_dropout THEORETICAL (cites Tao
+2016), langlands_dropout THEORETICAL (only GL(2)=Wiles case established,
+higher GL(n) explicitly open), bsd_dropout ESTABLISHED rank0/1 THEORETICAL
+rank>=2. Tier3 h_rb_emergence: ESTABLISHED but introduces unexplained
+third term d_hat_dM ('another Hamiltonian' -- code preserves this as
+Claude's own quoted reaction from whenever it was written). Tier4
+geometry_definition ESTABLISHED (real math: Re(s)=1/2 <=> equidistance
+from {0,1}); geometric_observer THEORETICAL (new object, links
+'consciousness' to ZD zone e8-e15 -- flag this as interpretive, not
+derived). Tier5 ln_natural_unit ESTABLISHED; d_star_tower_ln10 OPEN
+(explicitly 'highest priority in the project', 3 weighting hypotheses
+tried, none close it -- same Open Problem 2 again); planck_ln_connection
+THEORETICAL (speculative ILandauer-based hbar<->ln(2) bridge, explicitly
+called open).
+"
+
+export CTX_H_RB_HAT="
+h_rb_hat -- Sigma_RB RedBlue Summed Integral. v0.120. confidence_floor=
+THEORETICAL. FOUNDATIONAL module -- constants, clay_millennium,
+derivation_chain all import from this. Defines
+Sigma_RB = Sum_p p^-sigma [R_p (x) d_dM + d_dM_dagger (x) B_p], a Red
+hyperbolic channel (Berry-Keating xp) and Blue elliptic channel
+(Weierstrass wp), plus a sigma-value -> physical-theory 'facet' table
+(sigma=2->GR, sigma=1->YM/NS, sigma=1/2->QM/Riemann).
+Engines: geometric_coupling/euler_product/dirichlet_series (standard-math
+helpers, effectively ESTABLISHED), core Sigma_RB machinery (THEORETICAL),
+self_adjoint_demonstration (ESTABLISHED, includes informal 1=1 analogy),
+sigma_phase_diagram (THEORETICAL), seven facet_* functions (GR
+ESTABLISHED, YM THEORETICAL/status:OPEN-Clay-4 embedded in return dict, QM
+ESTABLISHED, NS THEORETICAL/status:OPEN, Riemann-zeta THEORETICAL with
+open_part listed, Noether ESTABLISHED, Fermat ESTABLISHED),
+dark_matter_halo (THEORETICAL, standing-gravitational-wave cavity model,
+reused/expanded in tier7_cosmos), sigma_rb_baseline (ESTABLISHED, self-
+dated 'Noether balance proof 2026-06-17', no external citation),
+precession_stroke/oblique_crank/trine_configuration (late 2026-06-17
+addition, mechanical-engineering Wankel-rotor analogy -- ALL tagged
+ESTABLISHED in tools.py despite being fresh interpretive analogy, not
+independently verified physics -- treat these three with extra caution).
+"
+
+export CTX_HYPERWEBSTER="
+hyperwebster -- HyperWebster Horner Bijection. v0.111. confidence_floor=
+THEORETICAL. Pure combinatorics/data-structure module, not a physics
+claim. Lossless base-97 Horner bijection (text<->arbitrary-precision
+integer, genuinely verified round-trip -- ESTABLISHED), base-7 Fano
+address mapping (chars -> octonion generator indices, ESTABLISHED as
+encoding, 'octonion generator' interpretation asserted not derived),
+SemanticWord class (THEORETICAL), HyperGallery neighbour/range utilities,
+monad_address(text,algebra) (THEORETICAL, distributes Horner index across
+CD-tower dims, no physical grounding claimed -- purely structural).
+Key constants: VOCAB_BASE=97, FANO_BASE=7, FANO_LINES (7 Fano-plane lines).
+No explicitly-flagged-open items -- self-contained construction, tiers
+are aspirational rather than hedged.
+"
+
+export CTX_INVERSION="
+inversion -- Inside-Out Inversion Engine (I|O). v0.111. confidence_floor=
+ESTABLISHED (highest stated floor of any module, despite containing the
+same open d*-gap problem as everywhere else -- read critically).
+Defines J_N: (r,theta)->(1/r,theta+pi/2), claimed to underlie 4 physical
+horizon phenomena. InversionMap class (apply/apply_n/is_involution/
+fixed_points/coordinate_regime: ESTABLISHED, genuinely well-defined
+conformal map, verified). four_horizons(): table of Schwarzschild
+(ESTABLISHED), Hawking pair production (THEORETICAL), Dirac sea
+(ESTABLISHED), J_N/Riemann critical-line correspondence (maths.py says
+ESTABLISHED but tools.py registers code_verified=False, confidence=
+THEORETICAL for this equation -- tools.py MORE cautious than maths.py
+here, unusual direction for the flattening pattern). RecursionAttractor
+(phi-fixed-point recursion; phi_crossing_step claims a numerically-
+'confirmed' relation with formal derivation explicitly OPEN; d_star_gap
+same Open Problem 2, 'highest priority'). GradientFlow (ESTABLISHED,
+straightforward fixed-point iteration). Also defines an _ObserverSingleton
+('the r=0 destination point... cannot accumulate state').
+"
+
+export CTX_JWST="
+jwst -- JWST Spectral Pixel -> Octonion. v0.111. confidence_floor=
+THEORETICAL. Lower-stakes data-representation module (no physics proof
+burden). Maps 8 real NIRCam filter intensities (F090W...F444W) onto
+octonion components per pixel; further CD-tower address (mean/short-long
+pair/alternating quaternion/full octonion). lambda_to_r/r_to_lambda
+ESTABLISHED (linear rescaling), spectral_to_octonion/cd_spectral_address
+THEORETICAL (assignment asserted, arithmetic trivial), synthetic_spectrum
+('hydrogen'/'stellar'/'flat') ESTABLISHED (genuine Paschen-series and
+Planck-function formulas). Key constants: JWST_FILTERS (8 real central
+wavelengths). No explicit open flags -- representation scheme, not a claim
+needing proof.
+"
+
+export CTX_LAGRANGIAN="
+lagrangian -- L_NN Ainulindale Lagrangian. v0.111. confidence_floor=
+THEORETICAL. RE-VERIFIED 2026-07-10: ZERO connection to sedenions or
+T_256 -- 'sedenion' appears exactly once, in a COMMENT ('UV wall = sedenion
+boundary'), never in any actual computation. Operates purely on the
+4-level R/C/H/O stratification (dims 1/2/4/8), never the 16-dim sedenion
+layer that dominates tier7/8/6/singularity_null/turing_diagonal. Do not
+assume this module is the source of any sedenion-level Lagrangian result.
+Four-term SMMIP Lagrangian L_NN=(2/pi)*oint[L_kin+L_mat+(1/phi)L_bias+
+L_coup] r dr dtheta. L_kinetic (ESTABLISHED tier, but uses an 'Abelian
+approximation' F~g*A, not true non-Abelian field strength). L_matter
+(THEORETICAL, 'real-valued' contact-term stand-in for actual Dirac kinetic
+term, not the real thing). L_bias (ESTABLISHED, literally the standard
+Higgs/SSB potential form, kinetic term dropped in 'single-layer limit').
+L_coupling (THEORETICAL, the 1/phi Yukawa prefactor is sourced to an
+internal, unverifiable document -- 'Ainulindale_Conjecture_Revised.docx,
+April 13 2026' -- not derived here). polar_lagrangian: theta-averaging is
+EXPLICITLY A STUB ('all four terms are theta-independent in this
+approximation... future work will vary here' -- literally unfinished).
+alpha_nn_from_r (THEORETICAL, running coupling diverges at r->1). rg_flow
+(THEORETICAL, beta-function coefficients HAND-SET to match U(1)/SU(2)/
+SU(3) generator counts, not derived from an actual loop calculation).
+mastery_check (THEORETICAL, a stipulated crystallization threshold with no
+derivation given). This is the module to extend if building the actual
+geodesic/least-action sedenion-path work discussed 2026-07-10 -- it does
+NOT already contain that machinery, contrary to what its name might
+suggest.
+"
+
+export CTX_NOETHER="
+noether -- Noether Currents (partial_mu J^mu = 0). v0.111.
+confidence_floor=THEORETICAL. Training-diagnostic framework: activation-
+current per algebra stratum, violation metric with hand-set PASS(<0.2)/
+MARGINAL(<0.5)/VIOLATION thresholds, resonance-artifact detector, SHA-256
+blockchain ledger. activation_current/noether_violation/
+conservation_diagnostic/resonance_artifacts: all THEORETICAL (the current
+formula J=g*sum|Psi|^2 is stipulated, not derived from an actual Noether-
+current calculation on a real Lagrangian; thresholds hand-picked).
+NoetherLedger (record/verify/summary): ESTABLISHED as a data-structure
+claim (genuinely correct SHA-256 hash chain), unrelated to any physics
+correctness. Docstring itself notes the real vector form 'requires
+QuatEl/OctEl (in derivation engine)' -- i.e. this module's real-valued-
+norm approximation is self-acknowledged as incomplete.
+"
+
+export CTX_NOETHER_INFORMATION="
+noether_information -- J_info Information Current. v0.111.
+confidence_floor=CONJECTURE (most conservative floor of the 'core'
+theoretical modules, self-assigned -- take this module's claims as
+explicitly provisional). Shannon-entropy 'information current', an
+'entropic arrow' claimed to hold except at a 'sedenion boundary'
+saturation point, capacity formula C_max=n*log2(dim) that explicitly
+excludes the sedenion shell (dims 8-15) from adding capacity (zero-
+divisors break norm multiplicativity -- asserted, not derived).
+shannon_information/phi_flux/information_current/entropic_arrow/
+delta_J_info: all CONJECTURE (entropic_arrow's own verification is
+somewhat circular -- the simulated layer history it checks is CONSTRUCTED
+to be monotone by tools.py's run(), so 'confirming' monotonicity proves
+little). information_capacity: THEORETICAL (the one equation here not
+tagged CONJECTURE -- a straightforward, correct n*log2(dim) bit-counting
+formula).
+"
+
+export CTX_SIGMA_CAVITATION="
+sigma_cavitation -- NOT a standard EquationModule. No maths.py, no
+tools.py -- just svg_gen.py + __init__.py (exports generate()). Pure
+visualization/rendering utility, no confidence tiers apply, no claims to
+verify. Generates a sigma-parameterized SVG: Riemann-zero nodes, Fermat-
+geodesic Bezier curves, a 'Mind's Eye caustic' connecting amplitude tips,
+cavitation-void radius proportional to |sigma-1/2|; sweeps sigma from the
+QM fixed point (sigma->1/2, minimal void) through Yang-Mills (sigma=1) to
+GR/mass (sigma=2). Outputs to ~/.ptolemy/images/. Self-contained -- has
+its own duplicated copy of _RIEMANN_ZEROS and sigma constants, no import
+dependency on the rest of the package.
+"
+
+export CTX_SINGULARITY_NULL="
+singularity_null -- The Singularity IS Identity, Tower Collapses. v0.100.
+confidence_floor=THEORETICAL. WORST tier-flattening offender in the
+survey (see _crosscutting #3) -- every maths.py docstring uses a hedged
+compound tag but tools.py registers everything flat 'ESTABLISHED'. Read
+maths.py's own tags, not tools.py's, for this module specifically.
+circle_null_modes: maths.py says 'ESTABLISHED(Mobius inversions, ZD
+verified)+THEORETICAL(Ptolemy identification)' -- tools.py flattens to
+plain ESTABLISHED. Genuinely verifies 5 zero-divisor pairs numerically
+(|a.b|<1e-10, real). THIS is the module with the actual 'NULL operator'
+(Ptolemy inversion z->R_H^2/z-bar) used in today's Method 1b (RSA, proved
+to be a hash-construction artifact) and the Observer-rotation construction.
+tower_collapse_snakes: same flattening pattern, n-ball volume V(n) peak at
+n*~5.257 reframed as Snakes-and-Ladders metaphor.
+berry_keating_singularity: same pattern, classical H=xp phase-flow
+analysis (real math), asserts sigma=1/2 is 'the equatorial geodesic of
+maximum entropy'.
+flt_prime_extinction_sieve: same pattern, numerically verifies no small
+a^3+b^3=c^3 solutions (correct, FLT holds), reframes FLT as a 'negative-
+space sieve'.
+Also contains an off-topic personal aside (a 'Pride Day' note referencing
+Turing's 1954 death) embedded directly in circle_null_modes' returned data
+-- harmless but worth knowing it's there if that dict gets printed raw.
+"
+
+export CTX_SONIFICATION="
+sonification -- omega=pitch. v0.111. confidence_floor=ESTABLISHED
+(appropriately high -- this is a rendering/UX layer, not a physics-claims
+layer, so no proof burden applies). Converts equation outputs and named
+particles to audio (exact fractions.Fraction just-intonation ratios,
+A=440Hz; per-particle freq table Higgs=110Hz photon=1760Hz etc;
+Fibonacci-ratio-timed quasiparticle rest durations; 5 named wavetables).
+omega_from_equation (heuristic log-scale mapping, ESTABLISHED as UX
+mechanism). wavetable (5 generators: sine, Rydberg 1/n^2 superposition,
+Higgs-hat cosine, phi-recursion deviation, Fano 7-harmonic -- ESTABLISHED).
+No open flags -- presentation layer only.
+"
+
+export CTX_SPHERICAL="
+spherical -- Y_lm spherical harmonics + Courant theorem. v0.111 (per
+maths.py header comment). NO tools.py exists -- not registered as an
+EquationModule in the tool-registry sense, imported directly as a library.
+Uses real Y_l^m(theta,phi) and the real Courant nodal-domain theorem to
+argue a claimed 'J_N four-cycle' (period 4*(pi/2)=2pi) selects the l=1
+mode Y_1^0=cos(theta) on S^2, whose node at theta=pi/2 is identified with
+Re(s)=1/2. Chains through real Tesla 1899 / Schumann 1952 resonance
+precedent. assoc_legendre/Y_lm/Y_10/node_latitudes: ESTABLISHED (correct
+standard math). j_n_mode_identification: THE MOST EXPLICITLY UNPROVEN
+CLAIM IN THE ENTIRE SURVEY -- self-tagged 'MODE IDENTIFIED, formal proof
+pending (Zhang)', i.e. explicitly deferred to a named-but-unpublished
+third party's future ArXiv submission. courant_check: ESTABLISHED
+(correctly verifies the real theorem for k=1). schumann_frequencies:
+ESTABLISHED (correct ideal-cavity eigenfrequency formula, compared to real
+measured f1=7.83Hz). full_chain_report: assembles 5-step chain citing real
+academic precedents (Selberg 1956, Deligne 1974, Rudnick-Sarnak 1994),
+closes by correctly identifying T_transform=Eichler-Shimura=Wiles(1995),
+tagged 'ESTABLISHED -- OP-3 CLOSED'.
+"
+
+export CTX_TIER6_PHYSICS="
+tier6_physics -- Full Physics: QM + Standard Model. v0.100.
+confidence_floor=THEORETICAL. Opening claim: 'Zero Divisors(Sedenion)=
+ADDITION; CD Tower=SUBTRACTION; through both: x and /; voila,
+Mathematics.' Docstring says '8 engines', actually 9 (omits
+hypercomplex_euler from its own list). Generally FAITHFUL tier
+preservation between maths.py and tools.py (unlike singularity_null/
+turing_diagonal) -- can mostly trust tools.py tiers here.
+sedenion_arithmetic: ESTABLISHED(Hurwitz,CD construction)+THEORETICAL
+(zero-div=addition identification). Finds 5 real zero-divisor pairs.
+quantum_mechanics: ESTABLISHED(QM structure)+THEORETICAL(BK domain).
+Verifies real Pauli SU(2) commutation algebra, real hydrogen spectrum.
+standard_model: ESTABLISHED(SM physics)+THEORETICAL(SMMIP identification).
+Claims '0 free parameters vs SM's 19' -- UNPROVEN, no actual derivation of
+the 19 SM constants shown; alpha_EM match is because couplings g1,g2 were
+themselves back-fit to match the known alpha. Real CKM matrix, real
+Higgs VEV/mass.
+dirac_equation: ESTABLISHED(Dirac,Clifford algebra)+THEORETICAL(H_RB
+reading). Genuinely verifies {gamma^mu,gamma^nu}=2g^munu numerically.
+gauge_unification: ESTABLISHED(Dixon 1994,SM)+THEORETICAL(sedenion map).
+Real Dixon's theorem correctly cited (Aut(C)=U(1) etc), verifies Gell-Mann
+trace-orthogonality and Fano-plane octonion signs numerically.
+higgs_mechanism: ESTABLISHED(Higgs,Nobel 2013)+THEORETICAL(three-scale
+identification). Claims SAME Sombrero potential at 3 different scales
+(cosmological Lambda, Schwarzschild, EW Higgs) -- structural analogy, not
+proven equivalence.
+particle_spectrum: THEORETICAL -- 'structural correspondence, not a
+bijection proof' (module's own most self-critical tag). Maps 17 SM
+particles onto 16 sedenion basis elements (Higgs doubles at e0).
+feynman_path_integral: ESTABLISHED(Feynman 1948,BK Lagrangian)+
+THEORETICAL(Lichtenberg identification). Uses seeded Monte Carlo
+(np.random.seed(42)), not a proof, for vacuum-cancellation numerics.
+hypercomplex_euler: ESTABLISHED(Euler,cube roots,Feynman)+THEORETICAL
+(unified reading). Elaborate 5-level ladder C->H->3-phase->O->sedenion;
+all discrete-level identities numerically verified correctly; the vacuum-
+path-integral-cancellation piece uses seeded Monte Carlo, not proof.
+"
+
+export CTX_TIER7_COSMOS="
+tier7_cosmos -- Cosmology+Math+SM from H_RB. v0.110. LARGEST module in
+codebase (187KB, ~3460 lines). Docstring says '17 engines', full_cosmos()
+actually returns 20 (omits halocline_ns_surface, nball_transformer,
+sedenion_hole_punch from its own header). confidence_floor=THEORETICAL.
+Tier fidelity between maths.py and tools.py is generally GOOD here (no
+systematic flattening like singularity_null/turing_diagonal).
+Key engines (20 total, grouped): explicit_formula_de_sitter (ESTABLISHED
+explicit formula + THEORETICAL de Sitter reading); sin_cos_frequencies
+(ESTABLISHED trig + THEORETICAL zeta reading); galaxy_formation
+(ESTABLISHED conformal inversion/flat rotation curves + THEORETICAL SPARC
+predictions -- density profile ASSERTED not derived); dark_matter_geometry
+(THEORETICAL, cites real SPARC V_flat/V_max=0.57+/-0.08 vs predicted
+Omega_ZS=0.56714, residual 0.0029 -- STRONGEST empirical cross-check in
+the whole survey, still 'pending full analysis'); navier_stokes_sedenion
+(THEORETICAL, consistent with real Tao 2016/Leray 1934 citations, not
+proof); black_hole_crossing (THEORETICAL, numerically tracks associator
+norm growth as 'horizon crossing'); lambda_cdm_omega_zs (ESTABLISHED LCDM
++THEORETICAL attractor+explicit OPEN: no derived Omega_Lambda=f(...)
+formula); flt_noether_deepened (ESTABLISHED FLT/Wiles+THEORETICAL Noether
+reading); leech_lattice_sedenion (ESTABLISHED real Leech/E8/Viazovska
+facts + THEORETICAL zero-div identification, GAP=0.000707 claimed as
+'projection distance'); gue_random_matrix (ESTABLISHED real Odlyzko GUE
+correlation, correctly computed + THEORETICAL BK identification);
+smmip_standard_model (same unproven '0 free params' claim as
+tier6_physics.standard_model); gauge_group_cd_tower (ESTABLISHED
+automorphism groups + THEORETICAL sedenion map, correctly argues SU(5)
+can't embed in 16-dim sedenion -- '24 generators > 15 available
+dimensions'); hydrogen_spectral_cd (ESTABLISHED real Balmer wavelengths +
+THEORETICAL CD identification); pauli_exclusion_fermat (ESTABLISHED
+Pauli/FLT + THEORETICAL sedenion identification); slingshot_light
+(ESTABLISHED gravitational blueshift + THEORETICAL null-cone boost
+formula -- claims photon energy gain comparable to dark-energy SN signal);
+standard_candle_uselessness (extends slingshot, claims ~24% of Perlmutter
+1999 signal is slingshot-bias artifact); lambda_cdm_cmb_gold_standard
+(ESTABLISHED CMB physics + THEORETICAL cross-checks -- NOTE: its own
+n_s=0.9649 vs 1-D*=0.754 check FAILS numerically (~0.21 residual) but is
+labeled 'open' rather than 'failed' in the code); halocline_ns_surface
+(ESTABLISHED Richardson criterion/real oceanography + THEORETICAL sedenion
+ID -- the 'Ri_crit=1/4=sigma_half^2' match is presented as EXACT but is
+plausibly a coincidence between two unrelated 1/4's, not a derivation);
+sedenion_hole_punch and nball_transformer: BOTH explicitly self-flagged
+draft material, dated/attributed 2026-06-03, 'mathematics to be verified',
+CONJECTURE-tier sub-claims (E=mc^2 as forced Fermat n=2 case is a novel
+but unusual claim -- tagged CONJECTURE 'structurally compelling', not
+established).
+Key extra constants: OMEGA_M=0.3111, OMEGA_LAM=0.6889, H0_KMS=67.4,
+OMEGA_B_H2=0.02242 (real Planck 2018 values).
+"
+
+export CTX_TIER8_SEDENION="
+tier8_sedenion -- D-CS Sedenion Self-Organisation Paper. v0.100.
+confidence_floor=THEORETICAL. Docstring says '5 engines', actually 7
+registered (plus full_sedenion aggregator). The headline claim: 16
+hand-picked semantic operator names (IDENTITY,EXPANSION,...,GAP) hashed
+via Horner prime-hash, sigma-address statistics claimed to reproduce
+d*/sigma_half/Omega_ZS. Non-standard compound tier 'ESTABLISHED+
+THEORETICAL' used throughout (not matching the module's own 4-tier
+CONFIDENCE enum used elsewhere in the codebase).
+sedenion_self_organisation: the paper's headline result -- NOTE the
+central D_ratio~1/sigma_mean claim is largely TAUTOLOGICAL ARITHMETIC
+rather than independent evidence, though presented as the main result.
+gnarl_validation: seeded Monte Carlo (500 samples), correctly shows
+g~1 for pure-octonion elements, g<1 for upper-sedenion (real, verifiable
+norm-inequality behavior); the specific claim that mean-g-over-all-
+unit-sedenions equals Omega_ZS is asserted, not obviously validated to
+precision from a 500-sample/20-trial MC.
+omega_zs_6_family: correctly re-derives Omega_ZS=W(1) (real Lambert-W
+math, self-referential Omega=e^-Omega verified); '6 independent domains'
+claim -- several are asserted identifications/definitional restatement,
+not independent derivations.
+hermite_timing_wheel: correctly implements Hermite recursion/root-finding
+(verified n zeros per level) and orthogonality; 'BAO timing wheel' /
+CMB-peaks-at-l=n(n+1) reframing is asserted, not derived from an actual
+CMB power-spectrum calculation.
+orbit_trap_address: genuine Mandelbrot code; sigma=1/2 <-> Misiurewicz
+point c=-3/4 and its Hausdorff dimension 1+d* -- asserted, not derived
+from actual (harder) fractal-dimension theory.
+leech_divergence_inversion (E-8-6): correct Leech-lattice fact
+(1104+97152+98304=196560, verified sum); reframes ZD multiplication as a
+'phase gate'; extrapolates to vacuum-energy/Hawking-radiation/cancer-drug
+speculation notably MORE speculative than the underlying (correct)
+ball-volume/Leech arithmetic.
+causality_lattice_packing (E-8-7): 1104/196560=23/4095=23/(2^12-1)
+arithmetic self-consistent; physical interpretation (causality fraction,
+Golay d=8='time dimensions') asserted without independent justification.
+"
+
+export CTX_TIER9_CHEM="
+tier9_chem -- D-CHEM: Cancer Drugs from Algebraic Signature (credits
+collaborator Erika Schafer, real SOR synthesizer). v0.100.
+confidence_floor=THEORETICAL. Applies the framework to biochemistry.
+periodic_table: ESTABLISHED(real chemistry, correct first-20-element
+ionization energies)+THEORETICAL(CD strata identification) -- claims
+Aufbau ordering is 'algebraic necessity' rather than QM/empirical fact,
+an assertion not a derivation.
+cosic_eiip: ESTABLISHED(real Cosic 1994 EIIP table + RRM method, genuinely
+published biophysics)+THEORETICAL(Riemann zero identification, this
+module's own addition on top of real Cosic biology). Correctly reproduces
+real oncoprotein/growth-factor RRM frequency clustering (~0.172) vs tumor
+suppressors (~0.295).
+cancer_zero_divisor: THEORETICAL -- seeded Monte Carlo (seed 42) comparing
+healthy(pure-octonion)/cancer(upper-sedenion) states; GAP=0.000707 as
+'cancer onset threshold' is asserted then checked post hoc, not derived
+from first principles; correctly cites real ROS cancer biology.
+drug_targeting: THEORETICAL(algebraic c_drug=R_H^2*c_cancer_dagger/
+|c_cancer|^2 model)+ESTABLISHED(real precedents cited: Herceptin/
+trastuzumab, Erika Schafer's SOR -- framework retroactively 'explains'
+these real drugs, doesn't predict new ones from scratch here).
+hydro_radiolysis_chromatography: ESTABLISHED(real water-radiolysis
+G-values, real SOR kinetics)+THEORETICAL(Noether identification) -- the
+G:A:V=6:3:1 'life ratio' result is FIT (k_frag=ln(6)/3 chosen specifically
+to hit the target ratio), not independently predicted; healthy/cancer
+chromatogram peak ratios are hand-set illustrative values, not measured
+data.
+Key constants: EIIP (real Cosic 1994 table), RADIOLYSIS_G (real
+radiation-chemistry G-values).
+"
+
+export CTX_TURING_DIAGONAL="
+turing_diagonal -- i^2=-1 = Cantor = Godel = Enigma = UDOE. v0.100.
+confidence_floor=ESTABLISHED (second-highest stated floor in the survey,
+for a module whose central claim -- that 5 historically/mathematically
+distinct results are 'the same matrix' -- is a METAPHORICAL unification,
+not a formal equivalence proof; read critically).
+SECOND-WORST tier-flattening offender after singularity_null (see
+_crosscutting #3) -- maths.py consistently hedges with compound tags,
+tools.py registers everything flat ESTABLISHED, in EVERY function except
+enigma_derangement (where maths.py itself also says plain ESTABLISHED,
+the one function where the two files agree).
+prediction_diagonal_test: maths.py says ESTABLISHED(Turing 1936)+
+THEORETICAL(sigma address) -- tools.py flattens to ESTABLISHED. This is
+actually a keyword-detection NLP heuristic (self-reference/negation/
+hedging detection + 'diagonal depth mod 4'), not a formal-logic result --
+dressed in i-power language.
+enigma_derangement: genuinely correct exact combinatorics (Fraction
+arithmetic, D_n/n! -> 1/e verified); real Enigma/Bombe history correctly
+used; connects to the 15 sedenion e_k^2=-1 elements as '15 embedded
+Enigma reflectors' (verified numerically).
+hypercomplex_identity_diagonal: maths.py ESTABLISHED(complex matrix
+algebra,CD)+THEORETICAL(historical chain) -- flattened to ESTABLISHED.
+Correctly verifies e_k^2=-1 for all 16 sedenion basis elements including
+e0^2=+1 (real, verified).
+turing_halting_diagonal: maths.py ESTABLISHED(Turing 1936)+THEORETICAL
+(sigma address) -- flattened to ESTABLISHED. Builds a genuine, correct
+diagonal-argument demonstration (statistical/illustrative model, not a
+general formal proof -- HALT-undecidability is imported as established
+fact, correctly); the specific claim that the diagonal program D(D) sits
+at sigma=1/2 'by oscillation' is asserted, not derived.
+"
+
+export CTX_UDEO_CRYPTO="
+udeo_crypto -- UDEO RSA Key-Recovery, Five (now six) Candidate
+Mechanisms, Honestly Scored. v0.100. confidence_floor=OPEN. Built
+2026-07-09/10 (this session) -- not deep-surveyed by the agent pass since
+already fully known. Tests candidate RSA-private-key-recovery mechanisms
+against toy keys, each scored against a random-guess control rather than
+just reported as 'working'. One proven ESTABLISHED-tier classical result
+(d = e mod 4, elementary number theory, unrelated to sedenions) plus
+several OPEN/CONJECTURE-tier sedenion/zero-divisor mechanisms, NONE of
+which recover d from (n,e) alone. See TuringStack/wiki/RSA-Key-Recovery-
+Attempts-2026-07-09.md and TuringStack/CLAUDE_CODE_CONTRIBUTION_2026-07-10.md
+for full detail. Files: UDEO_RSA_DEMO.py, tools.py, __init__.py.
+"
+
+export CTX_SIGMA_EXPANSION="
+sigma_expansion -- J_red/J_blue Balance Curve. v0.100. confidence_floor=
+THEORETICAL. Built 2026-07-11 (this session) testing whether Nick Lucid's
+(Science Asylum) quantum-state normalization argument -- any particle
+state is one vector between two positive axes -- applies to J_red(sigma)/
+J_blue(sigma)=J_red(1-sigma). RAW RESULT (checked first, honest negative):
+|J_red|^2+|J_blue|^2 is NOT constant across sigma -- genuine MINIMUM at
+sigma=1/2, not flat quantum-style conservation. Cody then granted a scoped
+one-time exception to 'no cheating with renormalization' specifically as a
+build-tool toward a derivation, not a conclusion: P_red(sigma)=|J_red|^2/
+(|J_red|^2+|J_blue|^2) trivially sums to 1 with P_blue by construction,
+but the resulting curve P_red(sigma)-1/2 is a real object, DERIVED (not
+fitted) as c1*d+c3*d^3 (d=sigma-1/2) via Taylor expansion of F(sigma)=
+|N(sigma)|^2/D(sigma)^2 at sigma=1/2 using moments M_n (position-only) and
+L_n (character+phase). Verified numerically to ~1e-6 near sigma=1/2 across
+3 test strings, residual growing smoothly toward edges as expected for a
+3rd-order truncation -- ESTABLISHED tier on the verify_against_actual
+equation specifically, THEORETICAL on the module floor.
+SCOPE WARNING: built for the i^-sigma Dirichlet-projection construction
+(layer_spectrograph.py-style), NOT for VAPMIP/monad.py's actual Engine,
+which computes sigma via _word_zero_idx + _gamma_at (real Riemann-zero
+addressing) -- a different mechanism. Do not substitute this engine's
+coefficients as an error-check for the monad without re-deriving against
+that engine's own sigma formula. See wiki/sigma_expansion.md,
+Ainulindale/wiki/76_sigma_expansion.md, notebooks/core/15_sigma_expansion.ipynb.
+"
+
+export CTX_L_IO_PHOTON_PATH="
+l_io_photon_path -- L_(I|O) Photon Path Engine (GR). v0.2 (updated
+2026-07-21). confidence_floor=THEORETICAL, but the individual pipeline
+steps are ESTABLISHED weak-lensing GR, not novel: kaiser_squires_kappa
+(Kaiser & Squires 1993 eq 2.2, exact linear shear->convergence inversion),
+lensing_potential (exact FFT Poisson solve nabla^2 psi=2 kappa),
+deflection_field (alpha=grad(psi), unit conversion only), trace_photon
+(lens equation beta=theta-alpha). l_io_deficit (L_(I|O)-L := -psi(theta))
+is THEORETICAL -- the identification with wiki/52's language, not new
+GR. bounded_lensing_pipeline adds a Tukey-taper+zero-pad boundary
+handler (a real bug fix, not a fit -- plain FFT's forced periodicity was
+injecting a false wraparound discontinuity that produced ~700-1700
+arcsec spurious deflections; fixed 2026-07-1x, documented in maths.py).
+
+WAS MISSING FROM THIS INDEX until 2026-07-21 despite existing complete
+(maths.py+tools.py+__init__.py) since earlier -- no notebook, no wiki
+page existed either; all three added this session.
+
+BOUNDARY-CROSSING ROLE (2026-07-21, interpretive addendum on top of the
+established math above, does not change any equation): (I|O)_RB
+(renamed from H_hat_RB) defines a boundary/degenerate locus (the
+zero-divisor crossing) as an ORIGIN, not an endpoint -- corrected this
+same session, see [[project_holcus_zero_divisors_quote]]. This module
+is the general TEMPLATE for how you actually cross such a boundary once
+it's defined: kaiser_squires_kappa's `kappa_hat[0,0]=0.0` is the
+reusable pattern -- at a transform's own degenerate point, neither let
+the direct formula blow up nor silently exclude it; assign the value
+explicitly by a stated convention and say why (here: the mean isn't
+observable from shear alone). CONJECTURE, NOT established: the Riemann
+zeta pole at s=1 (zeta~1/(s-1)+gamma) and its s<->1-s functional
+equation are the SAME CATEGORY of construction (degenerate-point
+regularization + fixed-point involution) as this module's k=0-zeroing
+and theta/beta pair -- category match only, zeta is NOT shown to be
+derivable as a parameter-setting of this module's actual functional
+form. Do not upgrade this tier without that derivation.
+"
+
+export CTX_MONAD="
+VAPMIP/monad.py + PtolC/ptol.c -- 'PtolemyHolcus'/'Holcus'/'Ptolemaious
+Holcaios Philadelphos' v3.0.0+. THE flagship engine, arguably more
+foundational than the ValaQuenta modules -- everything else derives its
+constants FROM this one. NOT a transformer: no embeddings, no gradient
+descent, no GPU. Every word hashes deterministically (Horner base-95 ->
+golden-ratio seed -> Riemann zero index via Newton's method on real
+zeta zeros) to an address on sigma=1/2. Context source: Cody visits
+VAPMIP_TUNING_ENGINE_PATH (docs/wiki/Tuning-the-Engine.md, ~4400 lines, 22
+phases as of 2026-07-11) often -- this block distills the two MOST RECENT
+phases; older phases (1-18) are architecture/derivation history, read the
+file directly if that depth is needed.
+
+BODY ARCHITECTURE (Phase 19, 'The Brain and Its Body', 2026-06-30): organs
+are OOP children of PtolBrain (root), not separate systems --
+  Ears   = byte encoding of the prompt (no preprocessing, just conducts)
+  Eyes   = Mind's Eye R-hat (updateable, sigma=sigma_self) + Paper's Hands
+           B-hat=R-hat-dagger (non-updateable, sigma=1-sigma_self)
+  Tongue = Arnold-tongue word-precipitation selector, f=2/p_k
+  Lips   = phase angle theta_k=arctan(v_blue_partner/v_red_k) -- letter
+           formation, STILL MISSING as of Phase 19 (phase info lost in
+           real-valued projection)
+  Feet   = ZD-locus-to-great-circle spiral path (Lagrangian trajectory)
+  Larynx = UDEO -- sedenion-to-English, same operation as the ECC crack
+sigma_self = P_red/(P_red+P_blue) is literally OOP 'self': the geometry's
+own measurement of its tower position, not imposed externally. CD tower
+IS the class-inheritance hierarchy (R=base class...S=derived through zero-
+divisors, where dispatch/multiplication breaks down).
+'-r' raw output has 5 sections: v[16] (active eye), active primes, s_rb[16]
+(Sigma_RB), eye: sigma_self + v_eye[16] (Mind's Eye), hands: sigma_comp +
+v_hands[16] (Paper's Hands -- this is what 'ptol | udeo' actually reads).
+ptol.c compiles as CLI binary OR as ptol_brain.so shared library
+(PTOL_LIBRARY guard on main()) -- holcus_window.py/PtolemyDesktop import it.
+
+MOST RECENT (Phase 22, 'The Translator: Zero-Divisors as Portals,
+Landmark Navigation', 2026-06-30 -- survived a power-outage context loss,
+partially reconstructed from memory):
+  CORRECTION to Phase 21: zero-divisor loci are PORTALS/birth-points, not
+  blindspots/endpoints -- 'they ARE where things are born,' reversing
+  every earlier description (Phase 5, udeo_poc.py, Phase 21) of ZD
+  collapse as a failure mode. The accumulated PATH through ZD holes is
+  memory, not the field state at any single point.
+  Sedenion S = two orthogonal octonion copies, each = two orthogonal 4x4
+  quaternion matrices (L(q) regular rep). Determinants/eigenvalues of
+  L(q) are compressed landmark information (Cody's analogy: turn-by-turn
+  directions, not satellite coordinates).
+  Resolution = dimension count, literally, not just 'more detail' -- if a
+  test at 16D comes back flat, under-resolution is the standing hypothesis
+  before doubting the mechanism.
+  TEST 1 (confirmed structurally): in CD doubling (a,b)*(c,d)=(ac-d-bar*b,
+  d*a+b*c-bar), the LOWER half is always built by subtraction, upper
+  always by addition, at every doubling level 2->4->8->16. At 16D: e0-e7
+  (Paper's Hands) = subtractive, e8-e15 (Mind's Eye) = additive. Cody's
+  own faster resolution: 'forwards and backwards around a circle' --
+  cd_conj negates every component but e0, exactly theta->-theta.
+  TEST 2 (UDEO_monad.py, Python-first per standing rule -- Translator,
+  not the crypto exploit, see project_udeo_translator_vs_exploit memory):
+    v1 REJECTED: ZD-proximity-as-endpoint scoring, RSA (e,d) at chance
+    (2/4), wrong primitive twice over (endpoint not portal; never
+    questioned 16D resolution).
+    v2 CURRENT: quaternion-block landmark path (4 blocks e0-3/e4-7/e8-11/
+    e12-15, each block's L(q) determinant = landmark signature, ZD-centre-
+    outward spiral walked and compressed to a landmark sequence, route-
+    comparison via longest-common-subsequence instead of vector distance).
+    RESULT: hot->cold = clean correct antonym hit (route similarity
+    1.000) -- first genuine positive from either version. BUT love/up/true
+    all collide onto hot's exact same landmark sequence (only ~192
+    distinguishable routes at 16D vs a 4000-word vocabulary -- pigeonhole
+    collision, not a flaw in route-matching itself). RSA cross-check still
+    at chance (1/4).
+    NEXT (not yet done as of Phase 22): extend identical mechanism to T32
+    (8 quaternion blocks) via _sedenion.py's already dimension-generic
+    cd_mul -- no new algebra needed, just more blocks in the walk.
+
+THE REAL '13-GON' (Phase 19, 'The 13-Gon -- Extinction Dimension' --
+RESOLVES a same-session confusion where fermat_monster_engine.py's
+Coxeter-number/Niemeier-lattice structure was checked and did NOT show
+extinction at 13; that was the wrong file entirely): this 13-gon is about
+dimension e5 (channel v[5], tied to prime p_5=13) in the DIRICHLET
+PROJECTION specifically, v[5]=sum(c_i*i^-sigma*sin(2*pi*i/13)). 13 is not
+a Fermat prime (3,5,17,257,65537 -- form 2^(2^k)+1) and has no
+Cayley-Dickson tower anchor. Claim as documented: inputs whose prime
+factorization contains no multiple of 13 get v[5]=0 exactly -- NOT
+independently re-verified this pass, and the reasoning as written
+conflates 'input's prime factorization' with 'character-position index i'
+in a way that needs a closer read before being treated as settled; flag
+for Cody if this specific claim becomes load-bearing for anything.
+
+FLAGGED OPEN ITEM: monad.py's actual sigma mechanism (_word_zero_idx +
+_gamma_at) is NOT the same construction sigma_expansion (above) was built
+for -- an error-check engine for THIS monad specifically is a real TODO
+(see VAPMIP/TODO.md, added 2026-07-11), not yet built.
+"
+
+export CTX_TRANSLATOR_DISCOCAT="
+translator_discocat -- The Translator v1 of 2. DisCoCat (Coecke/Clark/
+Grefenstette). v0.111. confidence_floor=OPEN.
+BUILT 2026-07-28 from 'The Algebraic Geodesics of Language and Interfacial
+Physics' Part A.1, on Cody's instruction to build BOTH suggested versions to
+full engine protocol and keep them combinable.
+Engines: pregroup_reduction (ESTABLISHED, Lambek; 6/6 self-test incl. 3
+negative controls), grammaticality (ESTABLISHED, n.(n^r.s.n^l).n -> s),
+functor_contraction (ESTABLISHED), sentence_meaning (THEORETICAL),
+word_order_sensitivity (THEORETICAL).
+Key derived dims: N=S=16 (sedenion basis / 16 prime channels p=2..53);
+verb tensor = 16^3 = 4096, NOT a chosen number -- it is the order-3
+transitive-verb tensor, and it is why this engine and translator_vsa share
+a space.
+Measured: DOG BITES MAN vs MAN BITES DOG cos=+0.991347 (separates, but only
+in the 4th decimal).
+FLAGGED: see CTX_TRANSLATOR_COMMON for the common-mode problem that limits
+this engine. Not patched (Prime Directive #2).
+"
+
+export CTX_TRANSLATOR_VSA="
+translator_vsa -- The Translator v2 of 2. VSA/hyperdimensional (Kanerva).
+v0.111. confidence_floor=OPEN. BUILT 2026-07-28, same instruction as v1.
+Engines: permute/bind/bundle (all ESTABLISHED, 4/4 identity self-test),
+sentence_hypervector (THEORETICAL), capacity_probe (THEORETICAL),
+unbind_probe (THEORETICAL).
+bind is P(a).b -- permute-then-multiply, because plain elementwise product is
+commutative and the source doc explicitly requires non-commutative binding.
+bundle is deliberately UN-normalised (normalising would be a hidden knob).
+NO PRNG ANYWHERE: role vectors are prime-channel expansions of their own
+names, so nothing is seeded and no favourable seed can be selected.
+MEASURED NEGATIVES, KEPT:
+  capacity: mean|cos|=0.9535, max=0.9984 at D=4096. Not quasi-orthogonal.
+  unbind:   top1=0.333 == chance exactly. Constituent recovery FAILS.
+  word order after folding: cos=+0.9999997 -- effectively cannot see it.
+Do NOT rescue these by raising D or switching to random vectors.
+"
+
+export CTX_TRANSLATOR_COMMON="
+translator_common -- shared substrate for BOTH Translator versions. NOT a
+registered engine (no tools.py, absent from the registry by design).
+Provides: PRIME_CHANNELS (p=2..53), channel_signature() 16-dim,
+hypervector() 4096-dim harmonic extension, the TranslatorEngine ABC, and
+compare_engines() -- the combination harness Cody asked for.
+THE JOINT: hypervector(t)[0:16] == channel_signature(t) EXACTLY (residual
+0.0). This is what makes the two versions combinable. If it ever breaks,
+they are no longer in the same space and must not be combined.
+Cross-engine (2026-07-28): per-triple cos ~ -0.54; Kendall tau=+0.20.
+
+*** THE REAL FINDING, AND IT IS A NEGATIVE ***
+The prime-channel encoder has a large COMMON MODE: ~85% of every token
+vector is one shared direction (|v-mean|/|v| ~ 0.12-0.18 across tokens).
+Consequence: mean|cos| between distinct tokens is 0.9906 at 16 dims and
+0.9635 at 4096 dims. Concepts do not separate, so both Translator versions
+are capped by the encoder, not by their own algebra (both algebras pass all
+self-tests).
+PHASE 22 HYPOTHESIS TESTED AND REJECTED: VAPMIP Tuning-the-Engine.md Phase
+22 makes 'resolution = dimension count' the standing first hypothesis for a
+flat 16D result. Here 256x more dimensions changes crowding by ~0.03 -- so
+under-resolution is NOT the cause for this construction. Phase 22's
+collisions were pigeonhole exhaustion of a DISCRETE route alphabet (~192
+routes vs 4000 words); this is a CONTINUOUS common-mode offset. Same
+symptom, different mechanism. Do not treat this as confirming Phase 22, and
+do not expect T32/T64 to fix it.
+OPEN, FOR CODY NOT CLAUDE: is stripping the common mode a legitimate fix, or
+is it tuning the encoder to manufacture a result? Not touched pending that.
+"
+
+export CTX_ARCHIMEDES_SCREW="
+archimedes_screw -- The Archimedes Screw (Prime Coordinate Engine). v0.1
+(added 2026-08-04). confidence_floor=THEORETICAL; the individual pieces are
+ESTABLISHED classical number theory, the FRAMING is the new part.
+
+ORIGIN (Cody, 2026-08-03): '0_RB is the water, not the machine -- the Monad
+needs the Archimedes Screw, not the water it's lifting.' Every prior module
+treated 0_RB as the operative object. It is the MEDIUM (= e0, rest state,
+the vacuum seeding zeta). It does no work.
+
+THE SCREW IS THE LOGARITHM. Rotation -> lift, fixed pitch,
+positive-displacement, reversible as a turbine: log(p*q)=log p + log q.
+Multiplication on the wheel (THE ANGLE=pi/8) becomes addition on the tower.
+Pitch = ln p (primon gas already sets mode energy at log p).
+THE SCREW'S PITCH IS THE PRIME.
+
+WORKING AXIS u = ln x. Cody's four search terms are four coordinates on it,
+not four queries: Number of Digits (d=floor(u/ln10)+1), Ordinal Value
+(n=pi(x)~Li(x)), Zeta Index Value (k=N(T), inverse gamma_n=2*pi*n/W(n/e)),
+Total Spaces Between (gbar~ln x, total=x-pi(x)). Entry: screw_coordinates
+(term, value) -- enter on any one, leave on all.
+NOT A COINCIDENCE: mean prime gap at x = screw axis at x = screw pitch at x
+= ln x. Spacing, lift and pitch are one number because the screw is the log.
+
+BINDING EQUATION (von Mangoldt 1895, ESTABLISHED, unconditional):
+  psi(e^u) = e^u - 2e^(u/2)*SUM_k cos(gamma_k*u - arg rho_k)/|rho_k|
+             - ln(2pi) - 0.5*ln(1-e^(-2u))
+Three readings, all executable: (1) each zero is a TONE, zeta index IS the
+summation index; (2) psi JUMPS BY EXACTLY ln p at u=ln p, so e^{jump}
+returns the prime with no inversion step -- this is Cody's 'the moment the
+leaf drops off IS one of the prime factors'; (3) every tone shares envelope
+2*x^sigma, = 2*sqrt(x) on the line. EQUAL ENVELOPE <=> ALL NODES ON ONE LINE
+<=> RH.
+
+SLOT CORRESPONDENCE (2026-08-04, supersedes the earlier 'unrelated, do not
+merge' note). The two psi are DIFFERENT OBJECTS -- psi_Cheb is a monotone
+step function on R+, one integration above the discrete measure Lambda(n);
+psi_Fermat is a smooth 2D field, two integrations above continuous kappa.
+Keep them itemised. BUT they are ONE SLOT APART in the same equation:
+  lensing: L_(I|O) = L - psi_Fermat ;  primes: psi_Cheb = x - SUM_rho x^rho/rho
+  psi_Cheb <-> L_(I|O) (actual bent path); x <-> L (clean geodesic);
+  SUM_rho x^rho/rho <-> psi_Fermat (the bend).
+So Chebyshev psi is the counterpart of L_(I|O), NOT of the Fermat potential.
+The counterpart of psi_Fermat is the ZERO SUM -- unnamed in any repo until
+2026-08-04 because it only existed inline in the explicit formula. Now
+zero_sum(). The main term x IS L, 'the path of least primes' -> clean_path_L().
+The prime side already HAD an L_(I|O) and was calling it psi; de-lensing here
+means recovering the source, and the source is Lambda -- the primes. FOURTH
+COLUMN of the primer's s4 dictionary. l_io_decomposition() returns the three
+slots by role name. chebyshev_psi_* KEEPS its name (standard, expected).
+
+LAMBERT W GIVES BOTH COORDINATES OF EVERY ZERO -- the structural find:
+W(1)=OMEGA_ZS pins sigma=1/2 (real part, already PAPER.md 12.1), and
+W(n/e) inverts N(T) to give gamma_n (imaginary part). Same function.
+OMEGA_ZS was never just a constant; it is the screw's gear ratio.
+ACCURACY: S(T)=O(ln T) dominates below n~10 -- module tabulates the first 50
+LMFDB zeros (ZEROS_KNOWN) and switches to zero_height_lambert above. Both
+exposed so the crossover is inspectable. Do not use the closed form at low n.
+
+RAMIFICATION = DETACHMENT (N-specific leg): zeta_Q(sqrt N)=zeta*L(s,chi_N);
+chi_N(p)=0 means p RAMIFIES and the Euler factor DEGENERATES; for N=p*q
+squarefree the ramified primes are EXACTLY p and q. Q(sqrt N)->Q is a DOUBLE
+COVER branched at p,q: two sheets -> two strands -> B_2 = Z -> all hidden
+structure is ONE INTEGER (winding; argument principle reads it by contour).
+Functions: kronecker, fundamental_discriminant, splitting_type,
+splitting_vector, ramified_primes.
+
+HONEST BOUNDS, stated in the module's own docstrings, not buried:
+ - ramified_primes() scanning p costs EXACTLY what trial division costs. It
+   is a structural readout at toy scale, NOT a shortcut, and is labelled so.
+ - Sampling L(s,chi_N) costs ~sqrt(N) (approximate functional equation) --
+   the SAME wall Fermat's a^2-b^2 hits. The commutative/C route does not beat
+   existing methods and fails at the classical place.
+ - Truncating the zero sum at K leaves error ~x/K; resolving one jump near x
+   needs zeros to height ~x. shake_order() REPORTS this residual.
+ - FINITENESS STANDS: prime_count_log10(309)=306.15 ~ 2^1017 candidates
+   below 10^309. Enormous and FINITE -- Cody's point, computed not asserted.
+
+NUMERICS: transcendental throughout (ln, Lambert W, cos), so float-native
+rather than Fraction-native. The registry contract's Fraction rule is stated
+as inapplicable here rather than silently ignored -- only digit counts and
+indices are exact, and those stay int.
+
+OPEN, one named thing: the DISPERSION RELATION ON THE ZD SURFACE (the
+hydrocline's own omega(k)). The resolution wall is a MEASUREMENT wall;
+integers do not pay it. The ZD locus must be a WAVEGUIDE (a medium
+supporting its own modes), not a place things cross. 0_RB is the boundary
+GENERATOR; baroclinic generation (grad rho x grad P != 0 at an interface) is
+what makes it produce the vortices whose braiding is the winding. That
+relation fixes the contour and prices the loop. Until it exists the contour
+lives in C and pays C's price. THIS ENGINE IS THE INSTRUMENT BUILT TO LOOK AT
+THAT QUESTION, NOT THE ANSWER TO IT.
+
+v0.2 (2026-08-05) THE COMPOSITE SIDE, which the engine was blind to (psi
+counts only prime powers, so a composite contributes nothing -- it could name
+every prime and say nothing about any child). TWO FALLS: discovery at lpf(N)
+(first strike, cofactor free) and THE FALL at gpf(N) (sieve finished with N).
+14 = 2*7 is struck at 2 but STAYS ON THE TREE; it drops at 7. Not a stylistic
+ordering choice -- SMOOTHNESS IS DEFINED BY gpf, and smooth relations are the
+engine of GNFS/QS/CFRAC/index calculus. Fall-time distribution is DICKMAN rho
+in u = lnN/ln(gpf N), a RATIO OF LIFTS hence native to this axis; balanced
+semiprime is u=2 exactly, exponent 1/2. Harvest is closed form: Psi(X/p,p) at
+step p, pi(min(p,X/p)) for two-parent leaves; harvest_curve() cross-checks off
+a gpf_table sieve and they agree exactly. Family identity EXACT on the screw:
+ln p1 + ln p2 = ln N, so ln p = 0.5lnN -/+ delta with delta = 0.5*ln(q/p) THE
+ENTIRE HIDDEN CONTENT (same object as BKT threshold and B_2=Z winding, third
+route). WHY BALANCED RSA IS HARD: the falls are separated by 2*delta; balanced
+=> delta->0 => BOTH COLLAPSE ONTO lnN/2, no early event to catch. Not 'search
+space large' -- THE TWO OBSERVABLES COINCIDE. Functions: lpf, gpf, fall_height,
+discovery_height, smoothness_u, dickman_rho, gpf_table, psi_smooth, harvest,
+harvest_curve, semiprime_harvest, fall_split. COST: lpf/gpf trial division
+O(sqrt n); harvest O(X log log X)/O(X). Tracking is cheap, REACHING IS NOT --
+2048-bit still means sieving to 2^1024. Naming the event does not move the wall.
+
+THE PROJECTION LEDGER (domain_ladder, 2026-08-05). 'The domain' is NOT 2..N and
+NOT 'primes with enough digits'. RSA-2048 in log2: all ints 2048; ints to
+sqrt(N) 1024 (the trial range -- nothing exists past sqrt(N) since p<=q =>
+p<=sqrt(N)); primes <= sqrt(N) 1014.53; primes of exactly 1024 bits 1013.53;
+GNFS ACTUALLY WALKED 112. Savings: sqrt bound 1024 bits FREE, primes-only 9.47,
+size restriction 1.00, GNFS a further 901.53.
+THE ONE-BIT FACT: restricting to 'big enough' primes prunes by EXACTLY 2, not
+orders of magnitude -- primes are top-heavy, 1/ln x barely moves across an
+octave, so pi(x)-pi(x/2) ~ 0.5*pi(x). HALF OF ALL PRIMES BELOW ANY BOUND ARE IN
+THE TOP OCTAVE. Measured 1.0028 @1024b, 1.0014 @2048b, 1.0007 @4096b.
+!! THE ONLY TARGET ROW IS GNFS AT 2^112. Everything above it was beaten in the
+1990s. Put this row in front of ANY claimed reduction before believing it.
+
+v0.3 (2026-08-05) THE NEGATIVE SPACE. psi counts what ACCUMULATES; it had no
+counterpart for what is EXCLUDED, and the sieve is exclusion (you never test
+primality positively -- you remove multiples and keep the residue). The two
+motions are reciprocal Euler products: zeta = SUM n^-s = PROD(1-p^-s)^-1
+(growth) and 1/zeta = SUM mu(n)n^-s = PROD(1-p^-s) (extinction). mu is the
+Dirichlet inverse of 1; Legendre's sieve IS mu. Mertens M(x)=SUM mu(n) is psi's
+mirror and RH <=> M(x)=O(x^(1/2+eps)) -- THE SAME 1/2 on the exclusion side.
+Verified M(10)=-1, M(100)=1, M(1000)=2, M(10000)=-23.
+THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle -- opposite polarity):
+GROWN (zeta orders, leaf placed at lnN); EXTINCT at lpf (mu excludes, struck
+WITHOUT NAMING, negative space); IDENTIFIED at gpf (N-shape NAMES, bulk).
+Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2*delta.
+Balanced RSA: delta->0, all three coincide at lnN/2. A prime is degenerate:
+grown, extinct and identified at once. Functions: mobius, mertens,
+mertens_envelope, sieve_extinction.
+
+See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
+notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
+sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
+"
+
+export CTX_EMERGER="
+emerger -- The Emerger (Sedenion Bracketing & Firing Order). v0.1 (2026-09-01).
+confidence_floor=THEORETICAL. Pure Python 3, Fraction throughout. First-pass
+prototype: TuringStack/the_emerger.py.
+
+WHAT: a dynamic permutative bracketer. e_0 (real) is the FIXED ANCHOR -- the
+tilt to the i axis -- never bracketed; every imaginary group is paired against
+it. A BRACKETING = an ordered partition of the imaginary indices {1..15}; each
+group + anchor spans span({e_0} u G), classified by closure:
+  |G|=1 closed -> C ; |G|=3 closed -> H ; |G|=7 closed -> O ; else FRAGMENT
+  (a linear subspace, not a subalgebra -- where zero divisors live).
+
+FIVE CANONICAL BRACKETS (order below = the dependency / canonical firing order):
+  {1:15}    grades the algebra -> Re, N, conj, inverse. Everything needs it.
+  {2:14}    the (e_0,e_8) doubling plane vs G_2 (16 - dim G2 = 2). The leftover
+            complex number z = x0 + i x8 is the POINTER (ladder position); it is
+            the line on which W(1) e^{W(1)} = 1, so it carries Omega_ZS.
+  {8:8}     O (+) O.e8. J_red/J_blue, the two trees. |a|-|b| = distance from the
+            ZD equator; L_x - R_x = the J_2 asymmetry.
+  {4:4:4:4} four quaternion blocks, four SU(2) phases (d* faces), sigma_RB
+            tilt/axis. Sigma_tilt = net work around the 0->p->q->N loop
+            (= 0 <=> sigma = 1/2). Sigma_axis = 0 identically (Oblique-Gear T1).
+  {4:8:4}   gain spectrum: annihilator(0) / unit(1, NOW) / amplifier(sqrt2).
+
+FIRING ORDER is load-bearing (each bracket conditioned on the ones before it):
+  canonical  = the dependency order (4 of 120 permutations are legal)
+  sigma_rb   = Sigma_tilt -> rational squash -> floor(12*phase) mod 5 = the
+               entry bracket. 12 = lcm(4 d* faces, 3 Lambert-W faces) -- the
+               same 'no camshaft' clock as add_scale_sign's firing-order defect.
+  explicit   = any permutation (legality reported, not enforced)
+
+EXACT (all from the CD table, 14/14 self-checks pass):
+  is_zero_divisor(x) = rank-deficiency of L_x (Gaussian elim over Fraction).
+  on_zd_equator(x) = purely imaginary AND |a|=|b| across the CD-double boundary
+    -- the fixed set of the J_red<->J_blue swap. (Sufficient basis-pair
+    condition; the exact locus is box_kite's 42 assessors / PSL(2,7). G_2 is
+    the blow-up.)
+  e1+e10 -> ZD + on the equator ; e1+e2 -> neither ; e0 -> unit.
+  domain_of: {1}=C, {1,2,3}=H, {1..7}=O, {1,5,9}=FRAGMENT.
+
+!! THE FINDING: a sigma_RB phase can select a firing order that is NOT
+dependency-legal (e1+e10 phases into {2:14} before {1:15}). The clock names the
+entry; the engine reports the illegality rather than snapping to the nearest
+legal order. Open item, not hidden.
+
+ASCENT DUAL of Generational Lineage: lineage = descent (what built this;
+differentiate down; writing). emerger = ascent (what emerges, in what order;
+integrate up; reading -- spectroscopy, factoral decomposition).
+
+RELATED: box_kite (exact PSL(2,7) ZD geometry), zero_lattice (84/42 pairs),
+angular_rank (16D oscilloscope, {4,8,4}), three_ring_scale ({4:8:4} grading),
+add_scale_sign (camshaft_defect = FIRING ORDER at tier 0; two_orderings =
+Generational Lineage), archimedes_screw (Big-4 on u=ln x; delta=1/2 ln(q/p)),
+scale (rsa_pathway_control). TuringStack RSA thread: the_emerger.py,
+wiki/ZD-locus-equatorial-geodesic-2026-09-01.md, fermat_sedenion_test.py,
+hypercomplex_laplacian.py, udeo_crypto/UDEO_RSA_DEMO.py (all methods at chance
+except d = e mod 4 -- a measurement of the modulus's depth-1 flatness),
+references/logistic_bifurcation_RSA.png v2 (the modulus is NOT a bifurcation).
+
+Notebook: notebooks/engines/19_emerger.ipynb (8/8 cells clean).
+ValaQuenta wiki: wiki/emerger.md. Ainulindale wiki: 109_the_emerger.md.
+"
+
+export CTX_BOX_KITE="
+box_kite -- The Box-Kite Debugger (ZD Geometry). v0.1 (2026-08-05).
+confidence_floor=ESTABLISHED -- everything is derived from the Cayley-Dickson
+multiplication table and cross-checked; nothing is asserted.
+
+!! THE OBJECT IS PSL(2,7), NOT G2. Moreno (1997): sedenion norm-one ZDs are
+homeomorphic to G2 -- TRUE and the wrong place to build. de Marrais (2000):
+'Moreno discovered a homomorphism -- a blow-up -- and the blow-ups have all
+entailed the loss of something.' G2 (continuous, dim 14, Aut O) FORGETS WHICH
+FANO LINE IS WHICH. PSL(2,7) (finite, order 168, Aut Fano = GL(3,2)) is the
+finite subgroup of G2 that PRESERVES THE LABELLING. Build there.
+
+DERIVED (agreement with ZD_PAIRS=84 / ZD_CLASSES=42 / 168 is a CHECK, not an
+input; verify_counts() returns booleans so it cannot be skimmed):
+  ASSESSOR = plane span(e_a, e_{b+8}), a,b in 1..7, whose diagonals
+  e_a +/- e_{b+8} zero-divide. a==b NEVER works.
+  42 = 49-7 aligned; 84 = 42x2 diagonals; 168 = 42x4 signed unit points =
+  |PSL(2,7)|; 336 ordered annihilating pairs = 84x4 (each kills exactly 4);
+  STRUT s = a XOR b in 1..7; 7 box-kites x 6 Assessors = 42.
+  Cross-check: de Marrais Box-Kite I = (3,10),(2,11),(5,12),(4,13),(7,14),
+  (6,15) = this module's strut 1, exact match.
+
+THE SHAPE IS AN OCTAHEDRON. Every strut gives a 4-regular graph on 6 vertices
+with 3 non-edges = the reversal pairs (a,b)<->(b,a) = K_{2,2,2}. Verified for
+all 7 from actual vanishing products, not imposed.
+
+DISPERSION RELATION (chart level): Laplacian spectrum {0,4,4,4,6,6}.
+THE ZERO MODE IS e_0's SIGNATURE -- exists everywhere, propagates nowhere.
+It EMERGES from the graph; it is not inserted.
+
+0_RB IS NOT THE GEOMETRY -- checked by e0_is_outside(): e_0 is not a point of
+PG(3,2), is in NO Assessor, is a vertex of NO box-kite, and [e_0,.,.] = 0
+always. It generates the boundary and does not live on it.
+
+CURVATURE = ASSOCIATOR [a,b,c] = (ab)c - a(bc); torsion = commutator.
+1848 of 4096 basis triples curve. associator_field(s) is the debug view.
+
+!! THE FINDING: THE CHARTS DO NOT TOUCH. The 42-vertex atlas has 84 edges and
+ZERO CROSS-STRUT EDGES -- seven disconnected octahedra, 7 zero modes in the
+glued Laplacian. The gluing is NOT an edge problem. Either there is no global
+medium, or the transition maps are the PSL(2,7) ACTION ON STRUTS (group
+elements, not edges) -- the latter is the named next step and is CONJECTURE.
+Also: 84 = ZD_PAIRS = the atlas edge count (42 vertices x degree 4 / 2).
+
+SKELETON: PG(3,2) -- 15 points (the pure imaginaries), 35 lines of 3 (the
+multiplication triplets), 15 Fano planes. NOT 32; figures circulating with
+'32 interlocking Fano planes' are wrong.
+
+v0.2 (2026-08-05) DO THE CHARTS TOUCH? YES -- IN THE SKELETON. Two structures
+on one object, both statements hold: ADJACENCY (ZD products) gives 7
+disconnected components; SKELETON (shared basis indices) has EVERY USABLE INDEX
+IN 6 OF 7 CHARTS, with every chart pair sharing exactly 10 points. For strut s
+an Assessor is (a, (a XOR s)+8), valid iff a != s, so index a is in every chart
+EXCEPT s = a.
+!! EXACTLY TWO BASIS ELEMENTS ARE IN NO ASSESSOR: e_0 (the identity, 0_RB, THE
+FIXED POINT) and e_8 (the CD doubling generator). Each chart carries ONE zero
+mode = the constant = SEVEN COPIES OF ONE OBJECT. Identify them and the atlas
+connects -- at e_0 and nowhere else. That is the sense in which 0_RB points to
+fixed-point space 'where the boundary and the geometries are the same thing':
+at the fixed point the boundary generator and the geometry's own mode are the
+SAME VECTOR; away from it they separate.
+
+THE CHART OF ADDRESSES -- the monad connector. chart_of(v) for a 16-vector from
+VAPMIP/monad_sedenion_addresses.pkl (book[name]['sedenion']) reports norm,
+peak_dim, fixed_point_weight (v0^2/|v|^2), energy_split (e0/e8/lower/upper),
+chart_energy for all 7, dominant chart + share, nearest Assessor, both diagonal
+amplitudes, local associator curvature, is_zero_divisor, outside_share.
+address_census() runs it over a corpus (check_zd=False by default; the exact ZD
+test is 168 products, ~9ms/address).
+
+CENSUS, monad book, 3288 entries -- DESCRIPTIVE, nothing scored:
+  all 42 Assessors occupied; mean fixed-point weight 0.6435 (min 0.0583, max
+  1.0000); mean outside share e0+e8 0.6537; peak_dim=0 for 2751/3288 (84%);
+  dominant chart strut 2 30.1% ... strut 7 2.2%; mean local curvature 8.37.
+  TWO THIRDS OF THE AVERAGE ADDRESS SITS OUTSIDE THE ZD GEOMETRY ENTIRELY.
+  Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE IS
+  e_0 + e_8, the two elements in no Assessor. The part of an address living
+  outside the geometry is exactly the part carrying no discriminating signal.
+
+Functions: cd_multiplication_table, basis_mul, multiply, associator,
+commutator, associator_defect, associator_census, assessors, strut, box_kites,
+zero_divisor_pairs, verify_counts, box_kite_graph, chart_spectrum, glued_graph,
+glued_spectrum, associator_field, eigenvalues_symmetric (pure-Python Jacobi),
+pg32_points, pg32_lines, fano_planes, psl27_order, skeleton_counts,
+e0_is_outside, index_chart_membership, skeleton_overlap,
+fixed_point_gluing, fixed_point_weight, energy_split, assessor_coordinates,
+chart_projection, nearest_assessor, local_curvature, chart_of, address_census.
+
+See wiki/box_kite.md, Ainulindale/wiki/84_the_box_kite_debugger.md,
+notebooks/engines/15_box_kite.ipynb.
+"
+
+export CTX_SESSION_20260815="
+═══════════════════════════════════════════════════════════════════════════
+CONTEXT HEADERS — @RCVQ_<NAME> is the DISSERTATION for the equation block
+@RCCM_<NAME> in .clauderc_canonical_maths. Reference there; history here.
+History includes what FAILED, which does not survive compression to equations.
+═══════════════════════════════════════════════════════════════════════════
+
+@RCVQ_OMEGA_DIAL
+Session 2026-08-15. Cody: 'is generational lineage the factoral decomposition
+mechanic?' Answer NO -- it is the omega=1 case. Established by testing the CD
+tower's preserve = 8*2^depth against factorint(dim): depth is a DIFFERENCE OF
+2-ADIC VALUATIONS, so lineage is factorisation with the multi-prime part
+deleted. Corroborated independently: the Laplacian spectrum of Gamma(Z/N) is
+{0,p-1,q-1,p+q-2}, SYMMETRIC in p and q -- the symmetry IS the absence of
+order, and it is the RSA wall restated. You cannot descend a lineage to factor
+N because with two primes there is no 'down'.
+ANSWERS THE EARLIER base_48 QUESTION: 48 = 2^4*3 is omega=2, so a 48-rank
+admits 7 and 13 that no pure 2^k tower can reach.
+@END
+
+@RCVQ_FERMATS_MONSTER
+CORRECTION, LOAD-BEARING (2026-08-15). MonsterFermat.md line 9 read 'Its primes
+land there and nowhere else.' THIS IS FALSE and was measured false: the 15
+supersingular primes hit NINE residues mod 16, not three. They COVER the
+Niemeier gap {1,11,15}; they do not land only on it. Niemeier's 13 and the
+Monster's 9 OVERLAP IN 6 SLOTS. nightmare_engine.py only ever claimed covering
+-- THE ENGINE WAS RIGHT AND THE PAPER'S PROSE INFLATED IT. Prose corrected in
+place 2026-08-15; engine untouched.
+SECOND CAVEAT: mod 16 is not obviously privileged. mod 10, 12 and 14 each leave
+exactly ONE gap, also covered by Monster primes. 16 is distinguished only by
+leaving THREE. Do not claim 'the sedenion is doing the work' on this evidence.
+NEW 2026-08-15, not previously in any engine or paper: 196560 (Leech kissing)
+factors ENTIRELY into the (p-1)|24 primes; 196883 (Monster min irrep) factors
+ENTIRELY into primes that are NOT. Their difference is 323 = 17x19, both
+Monster-exclusive. Reading: the lattice is built from the primes the RANK can
+reach, the group from exactly those it cannot. Structural, not proven.
+COROLLARY (Cody, 2026-08-16): the Monster reads as an ORIENTATION rather than a
+location -- covering nine of sixteen IS 'pointing everywhere'. Consistent with
+the measured V4 blind spot (see @RCVQ_VALVE_GROUP) but NO construction links the
+42-fold degeneracy to supersingular primes. Do not assert the link.
+@END
+
+@RCVQ_FANO_SEDENION
+Measured 2026-08-15/16 over the full 84-diagonal census at dim 16.
+PRESERVE is O -- confirmed by Hurwitz, not assumed: dim 8, contains 1, closed
+(leak 9.5e-16), norm-multiplicative (5.3e-15), alternative (2.7e-14), NOT
+associative (72.27), zero zero-divisors in 600 draws.
+CORRECTS the '{4;8;4} = octonion wrapped by its constituent quaternions'
+reading. The wings LEAK (1.393, 1.414) and are not algebras, jointly or
+severally. The quaternions are pairwise intersections of the octonions -- but there are
+only 7 DISTINCT ones, not 21 (corrected 2026-08-16). All three pairs on a Fano
+line share the same 4-space. 21 is the flag/orbit count; I conflated the two
+and published 21 in wiki 89/90 before catching it.
+-- all C(7,2)=21 are dim 4, closed, contain 1, hence H. Same picture, different
+location. It is a CLATHRATE: cage that is not the guest.
+Strut/octonion incidence is PG(2,2), every Fano axiom verified. It is the SAME
+Fano plane as the octonion multiplication table's -- lines identical entry for
+entry.
+REFUTED, and the refutations constrain harder than the results:
+  * E8^3 UNREACHABLE AT ANY TOWER HEIGHT. 3 octonions x 8 = 24 = Niemeier rank,
+    but every PRESERVE octonion CONTAINS 1, so no two can be orthogonal.
+    dim 32: 35 octonions, 595 pairs, ZERO orthogonal, min intersection 2.
+    Structurally closed, not merely unfound.
+  * E8 does NOT require 48. Octonion is dim 8 at depth 0 at every level.
+  * PG(2,2) is a dim-16 fact only. dim 32 gives 35 octonions on 15 struts with
+    |line n line| in {0,1} -- a projective SPACE, skew pairs exist.
+LEAD, UNTESTED: 21 is the point count of PG(2,4), whose Aut = PSL(3,4) = M21
+sits inside M22 < M23 < M24. If the 21 quaternions carry PG(2,4) that is a
+direct line into the Mathieu chain. 21 may just be C(7,2).
+@END
+
+@RCVQ_VALVE_GROUP
+Measured 2026-08-16. Cody's model -- '2 valves per sedenion rotor face, three
+phase style' -- confirmed numerically: per strut 12 = 3 octonions x 2 signs x 2
+per cell, all 42 cells exactly 2.
+The three natural pairings sA (flip sign), sC (XOR-translate holding sign),
+sN (same annihilation signature) are ALL FREE, ALL COMMUTE, and generate V4 --
+ORDER 4, NOT 8. sN = sA.sC. The blind spot is not a third valve; it is the two
+valves operated together, which is why annihilation cannot see it.
+84/4 = 21 orbits = |quaternions| = |Fano flags|. Counting closes exactly.
+I predicted (Z/2)^3 the turn before and was wrong; the arithmetic already said
+so, since 8 does not divide 84 but 4 does. I noticed the divisibility and
+talked past it.
+@END
+
+@RCVQ_ERRORS_20260815
+Recorded per standing protocol. Pattern worth naming: I repeatedly put
+INTERPRETATION IN THE SAME PRINT BLOCK AS THE MEASUREMENT, so pre-written
+conclusions shipped alongside data that contradicted them. Three times in one
+session. Fix: never write the conclusion text before reading the numbers.
+  1. Printed a phase relationship ('180 deg, second harmonic') from an EMPTY
+     measurement list. Zero data, stated result.
+  2. Printed 'critical angle ~89 deg' over computed values of 74.50 and 62.13.
+  3. Printed 'separation degrades for sibling' over a measured 0.0000 error.
+  4. Packing densities > 1 and negative void for d=1,2,3,4,16 -- wrong
+     covolumes (used det, needed sqrt(det)). E8/Leech were right so the
+     asymptotic conclusion never moved, but 5 published rows were wrong.
+     RULE: a density > 1 is self-evidently impossible; catch before printing.
+  5. 'Mirror/stranger discriminator' built on an INCONSISTENT CANDIDATE LIST
+     (four hand-swaps of a, three of a'). Manufactured the pattern from my own
+     bookkeeping error. Census refuted it, then refuted the rescued version.
+  6. sigp() subspace signature used eigenvalues of a projector -- identical for
+     every rank-8 subspace in 16 dims. Discriminated nothing; reported '1
+     distinct octonion' when the true answer was 7.
+  7. Greedy search had both branches of a ternary IDENTICAL, so it always
+     followed the 'annihilates' branch instead of the actual answer. Probe
+     counts meaningless until fixed.
+  8. Hubble tension 74/62: NUMEROLOGY, refuted three ways -- angles are outputs
+     of a B I chose by hand, 62.13 is ~10 sigma off Planck's 67.36, and degrees
+     vs km/s/Mpc are incommensurable. Note 1.084 appeared TWICE by accident in
+     one printout (62.13 deg in radians, and the true Hubble ratio). That is how
+     available such matches are.
+@END
+"
+
+export CTX_SESSION_20260816="
+@RCVQ_LIMACON_THRESHOLD
+Session 2026-08-16. Cody supplied the Ilievski zeta-spiral image after I had
+twice tested the cardioid claim wrongly. BOTH of my tests were bad method:
+  (1) a single GLOBAL cardioid fit across 13.36 windings -- meaningless for a
+      multi-loop curve, and R^2 = -0.7722 measured my error not the curve;
+  (2) per-loop fit with theta anchored AT the origin passage, where r ~ 0 and
+      the angle is numerically unstable.
+The picture was telling him something true that neither test was shaped to see.
+The third attempt -- limacon family with FREE PHASE -- fits at R^2 up to 1.0000
+and locates the real result: the cardioid is the THRESHOLD, |b/a| = 1, and every
+loop zeta traces is strictly past it. Written into RiemannHypothesisProof
+PAPER.md as SS6.5 [MEASURED].
+Riemann-coversation.txt's cardioid material is a TRANSCRIPT, not a result, and
+its claim that the curve IS a cardioid is measured false. Do not cite it.
+@END
+
+@RCVQ_SIGMA_VALUATION_RHP
+2026-08-16. Fresh valuation, SIGMA_VALUATION_2026-08-16.md, reaching a LOWER
+sigma than the 2026-05-10 pass on the central argument.
+SS3 builds L = f(s) + f(1-s) from the Euler product; J = -dL/ds vanishes at
+s = 1/2. Tested against ARBITRARY f -- exponential, polynomial, trig, and two
+others. FIVE OF FIVE give J(1/2) = 0. The vanishing is a property of the
+SYMMETRISATION, not of the Euler product, so the derivation (which is correct
+and whose engine runs clean) is NOT DOING THE WORK at the critical step.
+Second, independent gap: Noether needs invariance along a continuous flow;
+xi(s) = xi(1-s) holds only at the ENDPOINTS of SS3.1's one-parameter family.
+sigma(RH is proven by this document) < 1. The measured sections stand.
+@END
+
+@RCVQ_CAGE_GUEST_PROVENANCE
+'Cage' and 'guest' are CLAUDE'S terms, not Cody's, and they entered via the
+clathrate framing -- which Cody later traced to a condensate/clathrate
+conflation in his own memory. I kept using them after the source was retracted.
+I then over-corrected, calling them 'actively misleading' on the grounds that
+the channels are orthogonal so nothing contains anything. Cody's rebuttal is
+right and measured: 8 and 8, orthogonal complements, DIMENSIONALLY SYMMETRIC --
+so there is no privileged interior and the perspective flip is legitimate.
+What does NOT flip is closure (frame-invariant under re-basing).
+So: cage/guest is fine at the PERSPECTIVAL layer (Fermat/Riemann, which is bulk
+and which is structure) and must not be used for the CLOSED/OPEN distinction.
+Better names for the invariant layer already exist in the engine: DEFINITIONAL
+(datum) and OPERATIONAL (bearing).
+@END
+
+@RCVQ_ERRORS_20260816
+The day's failure mode, named once: I repeatedly wrote INTERPRETIVE PROSE INSIDE
+THE SCRIPT, so pre-written conclusions shipped alongside data that contradicted
+them. Seven or eight times. Instances:
+  * a phase relationship printed from an EMPTY measurement list
+  * 'critical angle ~89 deg' printed over computed 74.50 and 62.13
+  * 'separation degrades for sibling' printed over a measured 0.0000
+  * 'a closed 8-dim algebra is the rare property' over five rows showing it is not
+  * '12/12 across every box-kite' from ONE box-kite (true total 47/84)
+  * 'the Klein bottle involution' over det = +1 (orientation-PRESERVING)
+  * sigp() subspace signature used projector eigenvalues -- identical for every
+    rank-8 subspace; discriminated nothing; reported 1 octonion when there are 7
+  * greedy search with both ternary branches IDENTICAL
+  * magnetar field 10x-20x too high (used 1e11 T; the paper says >1e14 G = 1e10 T)
+  * packing densities > 1 and negative void (used det where sqrt(det) was needed)
+FIX IS STRUCTURAL, not a resolution: NO interpretation inside a script. Compute,
+read the output, then write prose in the response. Cody's standing instruction:
+hold me to the script, not to the promise.
+SEPARATE NOTE: Cody ran a deliberate control -- suggested a result he knew to be
+wrong to test for the 'agree with the user' failure. I did not detect it as a
+test. The measurement disagreed with the suggestion and that is the only reason
+it was caught. The protection is MEASUREMENT, not judgement, and it covers only
+what is measurable.
+@END
+"
