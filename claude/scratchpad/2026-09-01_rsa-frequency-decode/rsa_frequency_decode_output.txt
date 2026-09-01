@@ -1,0 +1,99 @@
+========================================================================
+TEST 1   small-semiprime two-tone frequency decode  (does it work at all)
+========================================================================
+  FFT resolution = 2.0 Hz     f(p) spacing near p: 100/p Hz per unit p
+     max prime < |   exact recovery
+             128 |     2/2     =  100%
+             256 |     7/8     =   88%
+             512 |    13/19    =   68%
+            1024 |    18/67    =   27%
+            2048 |    28/245   =   11%
+            4096 |    20/258   =    8%
+
+  VERDICT
+    CODE   : ran, deterministic
+    MATHS  : forward render exact; log map additive (Test 2)
+    METHOD : decode succeeds only while f(p), f(q) are separated by more
+             than the FFT bin. That needs TWO already-distinct tones --
+             the DTMF row+col. A semiprime hands you ONE sum tone.
+
+========================================================================
+TEST 2   which quantity linearises the product  N = p*q
+========================================================================
+  log-frequency   |f(N) - (f(p)+f(q))|   max = 4.55e-13      -> ADDITIVE (exact)
+  Sacks angle     residual mod 2pi       std = 1.828 rad   (U(0,2pi) std = 1.814)  -> NOT additive
+  zeta anchor     residual mod 2pi       std = 1.812 rad   (U(0,2pi) std = 1.814)  -> NOT additive
+
+  VERDICT
+    MATHS  : ln is the ONLY tested map with f(N) = f(p) + f(q).
+             2*pi*sqrt(.) and theta_RS(.) are non-linear in the factors:
+             they RE-CLOCK the schedule (cf. un-sieve) but add NO
+             independent linear constraint on {p, q}.
+    METHOD : one linear equation, two unknowns. No second filter tone.
+
+========================================================================
+TEST 3   'ping from the Ceiling down to 0'  --  swept resonance probe
+========================================================================
+  bits |            gap p-q |   steps ceiling->hit | recovered
+    24 |              1,176 |                  533 | True
+    24 |                  6 |                    2 | (close primes)
+    32 |              3,780 |                1,849 | True
+    32 |                  4 |                    1 | (close primes)
+    40 |            188,412 |               87,516 | True
+    40 |                  4 |                    1 | (close primes)
+    48 |          1,787,518 |              865,833 | True
+    48 |                  8 |                    3 | (close primes)
+
+  VERDICT
+    CODE   : ran; recovers p, q exactly for small N
+    MATHS  : resonance R(r) = [ r | N ].  Exact peaks at r in {p, q}.
+    METHOD : the downward sweep from sqrt(N) IS Fermat's method.
+             steps ~ (sqrt(N) - q) ~ |p - q| / (2 sqrt(N)) * sqrt(N).
+             CLOSE primes  -> a few steps  (this is why RSA forbids it).
+             BALANCED random primes -> ~sqrt(N) steps -> a HUNT.
+             'Ceiling down to 0' does not change O(pi(sqrt N)).
+
+========================================================================
+TEST 4   Cody's recipe:  ordinal = location, zeta = anchor, tension = weight
+========================================================================
+  best linear decode from N-only features:
+    ln p + ln q   (the SUM  / one tone) : R^2 = 1.0000
+    ln(min factor)(the SPLIT / 2nd tone): R^2 = 0.8786
+
+  VERDICT
+    CODE   : ran, deterministic (lstsq)
+    MATHS  : sum  ln p + ln q = ln N        -> R^2 = 1   (a filter)
+             split into the two addends     -> R^2 ~ 0   (a hunt)
+    METHOD : ordinal(N) is a function of N (no factor info); the zeta
+             anchor is non-linear; tension is an amplitude, not a
+             coordinate. The recipe delivers the SUM tone and no second
+             independent tone. RSA sets p ~ q, so the sum tone's two
+             halves are ~equal -> maximally degenerate. That degeneracy
+             IS the 'same bit length' rule.
+
+========================================================================
+SYNTHESIS
+========================================================================
+  The prime wavelength with f(p) = F0*ln(p) makes a semiprime an EXACT one-tone
+  sum:  f(N) = f(p) + f(q).  That single tone is a clean filter (R^2 = 1).
+
+  A filter decode of {p, q} needs a SECOND, independent linear constraint --
+  the DTMF column to that row.  The two candidates from the machinery:
+      * prime spiral angle   2*pi*sqrt(N)
+      * zeta / RS-theta index
+  are both non-linear in the factors.  Tested: they re-clock the schedule but
+  carry no independent linear constraint.  So the decode stays one equation in
+  two unknowns -- a hunt, O(pi(sqrt N)).
+
+  RSA's two documented weak spots fall straight out:
+      'far enough apart'  -> one tone near DC (q small) -> trial division reads it
+      'same bit length'   -> the two half-tones coincide -> nothing to separate
+  RSA lives exactly in the band where the one tone we DO get is maximally
+  degenerate.  The machinery explains WHY factoring is hard here; it does not
+  make it easy.
+
+  Where it IS a filter: small and structured N (Test 1 low band), where the
+  factor tones are already resolvable -- the same 8 tones the phone company
+  could afford.
+
+  (25.4s)
