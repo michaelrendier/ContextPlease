@@ -261,8 +261,69 @@ think about it again.
     Gemini API key. Same idea: it then works in the folder you started it in
     and can read the files there.
 
-  You can install both and try each. They use the same method from this
-  guide — the context files do not care which tool reads them.
+  ---- OPTION C: Codex CLI (OpenAI) ----
+
+    This is OpenAI's terminal tool. It is the equivalent of Options A and B —
+    it runs in a folder and reads/writes the files there — so if you prefer
+    OpenAI's models, use this, NOT the ChatGPT website. (The website cannot
+    reach the files on your computer; it can only see files you upload to a
+    chat one at a time. Codex CLI can.)
+
+    The npm package is  @openai/codex.
+
+    In the terminal, type:
+        npm install -g @openai/codex
+
+    Then, from inside your project folder:
+        codex
+
+    First run asks you to sign in with a ChatGPT account (a paid plan —
+    Plus, Pro or Team — includes it), or to paste an OpenAI API key
+    (set as the environment variable OPENAI_API_KEY).
+
+    ON WINDOWS, step by step:
+
+      1. Install Node.js — https://nodejs.org , the "LTS" download, run the
+         installer, click through. The installer also installs npm (the
+         command you type below) and it adds both to your PATH, so you do
+         not have to configure anything.
+
+      2. Open a terminal. Press the Windows key, type  Windows Terminal  (or
+         PowerShell ), press Enter. A blue or black typing window opens.
+
+      3. Check Node arrived:
+             node --version
+         A number like v20.11.0 or v22.x means you are good.
+
+      4. Install Codex:
+             npm install -g @openai/codex
+         (The  -g  means "install it for the whole machine, not just this
+         folder.") Wait for it to finish — a minute or two.
+
+      5. Go to your project folder. If your project lives at
+         C:\Users\Tak\my-product , type:
+             cd C:\Users\Tak\my-product
+         (You can also open the folder in File Explorer, then type  cmd  in
+         the address bar and press Enter — it opens a terminal already in
+         that folder.)
+
+      6. Start it:
+             codex
+         Sign in when it asks. From then on, run  codex  from inside the
+         project folder any time you want a session.
+
+      IF SOMETHING MISBEHAVES ON WINDOWS: install "WSL2" (Windows Subsystem
+      for Linux) — open Windows Terminal as Administrator and run
+      wsl --install , reboot, then do steps 1–6 again inside the Ubuntu
+      window it gives you. Most people never need this; it is the fallback.
+
+  You can install more than one and try each. They use the same method from
+  this guide — the context files do not care which tool reads them, and the
+  paste-in block in PART 7 is written to work with any of them.
+
+  (If Tak wants this on an Android phone instead: Cody can set that up with
+  you directly — it is Termux + proot-distro + Node from nvm, and he has
+  done it before.)
 
 --------------------------------------------------------------------------------
 PART 6 — STARTING A SESSION
