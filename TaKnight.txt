@@ -1,0 +1,344 @@
+================================================================================
+  TaKnight.txt  —  keeping an AI on the rails, for Tak
+================================================================================
+
+Written for Tak Knight by Cody (with Claude doing the typing), 2026-09-02.
+
+This is a plain-language guide to a working method: how to give an AI coding
+assistant a set of small text files so that it stays useful across days and
+weeks of a real project, instead of forgetting everything every time you open
+it — or, worse, confidently remembering the wrong thing.
+
+You do not need to be a programmer to use this. You need to be able to make
+folders, edit plain text files, and copy-paste. That is the whole skill floor.
+
+The tools this covers — Claude Code and Gemini CLI — both read the files on
+your own computer directly. That is the entire point of the method: the
+context lives in files you own and can see, not in a chat history you cannot.
+
+--------------------------------------------------------------------------------
+PART 1 — THE PROBLEM, IN THREE WORDS
+--------------------------------------------------------------------------------
+
+An AI assistant has no memory between sessions. Each time you start it, it
+knows nothing about yesterday. People "solve" this by pasting a wall of notes
+at the start. That fails in three specific ways, and it is worth naming them
+because the method below is built to prevent each one.
+
+  POISONING
+    One wrong statement gets written down, then quoted, then built on. A week
+    later three decisions rest on a fact that was never true. The AI is not
+    lying — it is faithfully repeating something it was handed.
+
+  DRIFT
+    A note that was true in March is still sitting in the file in June, and
+    nothing marks it as old. The AI treats a stale line and a fresh line as
+    equally trustworthy, because on the page they look the same.
+
+  APHASIA
+    (A word from neurology: the loss of the link between a name and its
+    meaning.) Halfway through a project you have a term — "the export step,"
+    "the client palette," "v2 of the layout" — and neither you nor the AI can
+    say precisely what it refers to any more. The word still gets used. It no
+    longer points at one thing.
+
+All three come from the same root cause: **everything in one undifferentiated
+pile.** The fix is to stop keeping one pile.
+
+--------------------------------------------------------------------------------
+PART 2 — THE IDEA: JURISDICTIONS
+--------------------------------------------------------------------------------
+
+Think of a courthouse. Different matters go to different courts. A traffic
+ticket does not go to the same room as a property dispute. Each court has its
+own rules about what it will hear and how a case moves through it. Nobody
+argues that this is bureaucracy for its own sake — it is what keeps the cases
+from contaminating each other.
+
+Do the same with your project's context. Instead of one notes file, keep a
+small set of files, and give **each file exactly one job**. That job is its
+jurisdiction. A fact only belongs in one file, and each file has its own rule
+for how it is allowed to change.
+
+Cody calls the whole set-up "redundant jurisdictional context." Redundant
+because the same project is described from several angles; jurisdictional
+because each angle has a fixed scope and a fixed maintenance rule. The
+redundancy is not waste — it is how you catch a mistake. If the "what is true
+now" file and the "history" file disagree, one of them is wrong, and you have
+just found it. In one big pile, that contradiction is invisible.
+
+Cody's own system for his mathematics has about ten of these files. You do not
+need ten. You need five, maybe six. Here they are.
+
+--------------------------------------------------------------------------------
+PART 3 — THE STARTER SET (five files)
+--------------------------------------------------------------------------------
+
+Make a folder in your project called  context/  and put these inside it. Use
+plain .txt or .md — it does not matter which, as long as it is plain text you
+can open in any editor.
+
+................................................................................
+  1.  environment.txt        —  WHERE things are, and WHAT the project is
+................................................................................
+
+  JOB: the orientation file. The AI reads this first, every session. It
+  answers "what am I working on and where does everything live."
+
+  CONTAINS:
+    - One paragraph: what the product is, who it is for, what stage it is at.
+    - The folder layout: which folder holds the artwork, which holds the
+      exported files, which holds the specs, etc. — a short list.
+    - Any fixed facts that never change: the client's name, the target
+      formats, the deadline, the software versions you are locked to.
+    - Nothing dated. Nothing that is "currently" true. Only things that are
+      true by definition of the project.
+
+  RULE FOR CHANGING IT: rarely. If you are editing this file often, something
+  that belongs in file 2 has leaked into it.
+
+................................................................................
+  2.  current.txt            —  what is TRUE RIGHT NOW
+................................................................................
+
+  JOB: the live state. Where the project actually is today. This is the file
+  that fights DRIFT.
+
+  CONTAINS:
+    - The current task and what "done" looks like for it.
+    - Decisions that are in force now: "we are using the warm palette, not the
+      cool one"; "logo goes bottom-right"; "the print version is on hold."
+    - Known problems that are still open.
+
+  RULE FOR CHANGING IT: **overwrite, do not append.** When a decision
+  changes, delete the old line and write the new one. This file must never
+  contain two versions of the same fact. If it does, the AI cannot tell which
+  one you mean — that is drift, exactly. Keep it short on purpose; if it grows
+  past a page, old material is hiding in it.
+
+  (Where does the deleted old decision go? File 3.)
+
+................................................................................
+  3.  history.txt            —  a DATED LOG, never edited
+................................................................................
+
+  JOB: the record of how you got here. Every meaningful decision, and why.
+  This is the file that lets you *undo* a poisoning: if a bad fact got in, you
+  can walk back through history and see when and on what basis.
+
+  CONTAINS, newest at the bottom, each entry stamped with the date:
+    - "2026-09-02 — Switched to the warm palette. Client said the cool one
+       read as 'corporate' in the mockup. Cool palette files archived in
+       old/."
+    - "2026-09-05 — Dropped the print version for now. Budget. May revisit
+       after launch."
+
+  RULE FOR CHANGING IT: **append only. Never rewrite an entry.** An entry is
+  a photograph of a moment, including moments you later decided were wrong —
+  those are the most useful ones, because they stop you re-trying a dead end.
+  If a past decision was reversed, you do not edit the old entry; you add a
+  new one saying it was reversed and why.
+
+................................................................................
+  4.  glossary.txt           —  every term, and what it POINTS AT
+................................................................................
+
+  JOB: kill APHASIA before it starts. Every name you and the AI use for a
+  thing gets a one-line definition here, and it is kept exact.
+
+  CONTAINS:
+    - "export step  =  the InDesign script that flattens layers and writes
+       the press-ready PDF to exports/. NOT the same as 'the handoff', which
+       is emailing that PDF to the printer."
+    - "client palette  =  the six hex colours in specs/palette.txt, warm
+       version, as of 2026-09-02."
+    - "v2 layout  =  the version with the sidebar on the left. v1 had it on
+       top. There is no v3."
+
+  RULE FOR CHANGING IT: update the moment a term's meaning shifts, and say so
+  in history.txt on the same day. A term should never mean two things. If you
+  need a second meaning, make a second term.
+
+................................................................................
+  5.  memory.txt             —  durable rules and preferences
+................................................................................
+
+  JOB: the things that should survive everything — a new computer, a lost
+  chat, a six-month gap. Standing instructions to the AI about *how you want
+  it to work*, not about the project's content.
+
+  CONTAINS:
+    - "Always show me the change before applying it. I will say yes or no."
+    - "Ask before deleting or overwriting any file I did not make in this
+       session."
+    - "Do not invent client feedback. If you do not have a quote from the
+       client, say so."
+    - "When a test or an export fails, tell me it failed and show the error.
+       Do not quietly work around it."
+    - Your name, your role, your working hours if that matters.
+
+  RULE FOR CHANGING IT: only when a rule genuinely changes. Prune dead rules
+  rather than letting them pile up.
+
+................................................................................
+  6.  (optional)  provenance.txt   —  mine vs. borrowed
+................................................................................
+
+  JOB: for a product you may license or sell, keep an honest ledger of which
+  ideas are your own invention and which came from somewhere else (a stock
+  asset, a tutorial, a client's brief, a typeface's licence). One line each,
+  with the source. It costs you an hour now and saves you a lawyer later.
+
+--------------------------------------------------------------------------------
+PART 4 — THE FOUR RULES THAT MAKE IT WORK
+--------------------------------------------------------------------------------
+
+  RULE 1 — One file, one job.
+    A fact lives in exactly one file. If you are not sure which, ask: is this
+    "what is true now" (file 2) or "how we got here" (file 3) or "what a word
+    means" (file 4)? The answer is always one of them.
+
+  RULE 2 — Overwrite the stale, log the change.
+    current.txt gets overwritten. history.txt gets appended. Every overwrite
+    of current.txt should leave a one-line footprint in history.txt. That
+    pairing is the whole anti-drift mechanism.
+
+  RULE 3 — Write it down when you decide it, not later.
+    The moment a decision is made in a chat, it goes into a file. A decision
+    that only exists in a chat window is already half-lost. Tell the AI:
+    "update current.txt and history.txt with what we just decided" — it will
+    do the typing.
+
+  RULE 4 — Context is earned, not inherited.
+    If the AI proposes a fact you did not verify, it is a proposal, not a
+    fact. Do not let it write proposals into current.txt as if they were
+    settled. This project method exists because AIs will state something
+    confidently, it will get recorded, and it will turn out to have been
+    wrong. The files are only as trustworthy as your review of them.
+
+--------------------------------------------------------------------------------
+PART 5 — INSTALLING THE AI TOOL
+--------------------------------------------------------------------------------
+
+Both tools run in a "terminal" — the plain typing window your operating system
+already has (on a Mac: Terminal; on Windows: PowerShell or "Windows
+Terminal"). You type a command, press Enter, read the reply. That is the
+whole interface.
+
+Both tools need Node.js first — a free runtime, one install, then you never
+think about it again.
+
+  STEP 0 — Install Node.js
+    Go to  https://nodejs.org  and download the "LTS" version for your
+    system. Run the installer, click through it. To check it worked, open the
+    terminal and type:
+        node --version
+    If it prints a number like v20.11.0, you are done with this step.
+
+  ---- OPTION A: Claude Code (Anthropic) ----
+
+    In the terminal, type:
+        npm install -g @anthropic-ai/claude-code
+
+    Wait for it to finish. Then, from inside your project folder, type:
+        claude
+
+    The first run asks you to log in — it opens a browser, you sign in to an
+    Anthropic account (you may need a paid plan or an API key; the sign-in
+    screen explains the options). After that, `claude` starts a session in
+    whatever folder you ran it from, and it can read every file in and below
+    that folder.
+
+  ---- OPTION B: Gemini CLI (Google) ----
+
+    In the terminal, type:
+        npm install -g @google/gemini-cli
+
+    Then, from inside your project folder:
+        gemini
+
+    First run asks you to sign in with a Google account, or to paste a
+    Gemini API key. Same idea: it then works in the folder you started it in
+    and can read the files there.
+
+  You can install both and try each. They use the same method from this
+  guide — the context files do not care which tool reads them.
+
+--------------------------------------------------------------------------------
+PART 6 — STARTING A SESSION
+--------------------------------------------------------------------------------
+
+  1. Open the terminal, go to your project folder, start the tool (`claude`
+     or `gemini`).
+
+  2. As your very first message, paste the block from PART 7 below. That
+     tells the AI the method and points it at your context/ folder.
+
+  3. Then say what you want to do today. The AI will already have read the
+     files and will know where the project stands.
+
+  4. Whenever a decision is made, say: "record that in current.txt and
+     history.txt." When a term gets coined, say: "add that to glossary.txt."
+
+  5. At the end of a session, a good habit: "summarise what changed today and
+     make sure current.txt and history.txt reflect it." Read what it wrote.
+     Fix anything wrong. That five minutes is what keeps the next session
+     honest.
+
+--------------------------------------------------------------------------------
+PART 7 — THE PASTE-IN INSTRUCTIONS (copy everything between the lines)
+--------------------------------------------------------------------------------
+----------------------------------------------------------------------
+You are my assistant on this project. Before anything else, read every
+file in the  context/  folder. They are, by job:
+
+  environment.txt  — what the project is and where files live. Orientation.
+  current.txt      — what is true RIGHT NOW. The live state.
+  history.txt      — a dated, append-only log of decisions and why.
+  glossary.txt     — every project term and exactly what it refers to.
+  memory.txt       — my standing rules for how you work.
+  provenance.txt   — (if present) which ideas are mine vs. borrowed.
+
+Treat these as separate jurisdictions. A fact belongs in exactly one of
+them. Follow these rules:
+
+  1. current.txt is overwritten, never appended. When a fact there
+     changes, replace the old line and add a one-line dated note to
+     history.txt saying what changed and why.
+  2. history.txt is append-only. Never edit or delete a past entry. If a
+     past decision was reversed, add a new entry recording the reversal.
+  3. glossary.txt terms have exactly one meaning each. If a term's meaning
+     shifts, update it here and note it in history.txt the same day.
+  4. Anything you tell me that I have not confirmed is a PROPOSAL, not a
+     fact. Do not write proposals into current.txt as settled. Ask me.
+  5. Obey memory.txt. In particular: show me changes before applying them;
+     ask before deleting or overwriting files I did not create this
+     session; never invent external feedback; when something fails, tell
+     me and show the error rather than working around it.
+  6. When I make a decision in our chat, offer to record it in the right
+     file(s) immediately.
+
+If current.txt and history.txt disagree, stop and tell me — one of them
+is wrong and I want to fix it before we continue.
+----------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+PART 8 — WHY THIS IS WORTH THE BOTHER
+--------------------------------------------------------------------------------
+
+The first week it feels like extra typing. By the third week the AI opens
+already knowing your project better than a new freelancer would after a month,
+and it stops making the same three mistakes, because the mistakes are
+structurally prevented rather than caught by luck.
+
+The deeper reason Cody built it this way: context behaves like a physical
+system with two directions. Throwing away a stale fact is free — you just
+delete the line. Establishing a new fact you can trust costs real work —
+verifying it, dating it, filing it in the right jurisdiction, noting where it
+came from. The files are shaped to make the free direction easy and the
+costly direction deliberate, so the cheap move (deleting stale context) never
+gets skipped and the expensive move (recording new context) never gets faked.
+
+Good luck with the product, Tak.
+
+— Cody
