@@ -288,7 +288,17 @@ Factor Wavelength (Fermat/ordinal side):
   claim, this is already the content of the Sieve of Eratosthenes and of
   Mertens'/Legendre's formula phi(x)/x ~ Pi_p(1 - 1/p), an inclusion-
   exclusion over exactly these periodic exclusion waves, only not
-  previously read as a wave equation.
+  usually read as a wave equation.
+  PRIOR ART for the wave reading: Torquato, Zhang & Martelli (2018),
+  "Uncovering multiscale order in the prime numbers via scattering" (the
+  primes' hyperuniform diffraction spectrum, dense Bragg peaks at rational
+  wavevectors -- the Fourier-space form); Dyson, "Birds and Frogs" (2009,
+  primes as a 1-D quasicrystal). lambda_factor(p)=p is the position-space
+  cousin. ORIGINATED HERE (2026-07-23): only the FRAMING (sieve as a wave
+  equation, cast as the Fermat-ordinal conjugate of lambda_prime, tied to
+  the Two Trees) and the orthogonality CONJECTURE below. lambda_prime (zero
+  spacing) is established -- Riemann-von Mangoldt; Montgomery 1973; Odlyzko
+  1987; GUE. See ~/.clauderc_user_provenance sec 1.18.
 
 CONJECTURE (Cody, 2026-07-23, not yet derived): lambda_prime and
 lambda_factor should be ORTHOGONAL, the way E and B are orthogonal in
@@ -301,6 +311,45 @@ already exhibit algebraically -- a structural echo, not yet a shown
 equivalence. Flag this as open until an actual orthogonality relation
 between the two wavelength quantities is derived or computed, not
 assumed from the algebraic parallel alone.
+
+═══════════════════════════════════════════════════════════════════════════
+PRIME RANGE-CHECK  (winding parity -- added 2026-09-05)
+═══════════════════════════════════════════════════════════════════════════
+
+A True/False on prime vs composite read off the WINDING, not a sieve.
+Conjugate of the PRIME/FACTOR WAVELENGTH orthogonality above.
+
+  z -> -z on R  IS  w -> 1/w on the Smith chart  (Cayley w = (z-1)/(z+1)):
+    (-z-1)/(-z+1) = (z+1)/(z-1) = 1/w  -- inversion in |w| = 1, which is the
+    Apollonian-gasket generator. So R+ and R- are Smith inverses, meeting
+    |w| = 1 orthogonally -- the Julia | Mandelbrot (dynamical | parameter)
+    seam. "The orthogonal Real Numbers" = the negative reals; a negative
+    prime -p is still irreducible (only the unit -1 . p).
+
+  On the Archimedean helix  pt(b) = (b cos b, b sin b),  b = accumulated arg:
+    n = a . b  positive composite.
+      +/+  route  (+a)(+b) :  arg 0            -- the landing.
+      -/-  route  (-a)(-b) :  arg pi + pi = 2pi -- SAME angle, ONE FULL
+                                                  winding further out.
+      -p   (negative associate of a prime):   arg pi -- HALF a winding out.
+
+  RANGE-CHECK:
+      half-turn partner only  (pi)   <=>  n prime      (unit sign only)
+      full-turn partner exists (2pi)  <=>  n composite  (a real factor route)
+
+  The flat circle GLUES the two sheets (Flattening Syndrome -> apparent
+  cyclicity); the helix (u = ln x, the anti-flattening coord) SEPARATES
+  them by winding count. This RESTATES "does n factor" -- a witness, not a
+  faster search. b->theta (compose, +winding) easy; theta->b (recover the
+  factors, -winding, reversed phase order) hard -- the RSA asymmetry.
+
+  Render:  AbrikosovTree/render/plane_0b_R_orthogonal.png  (two-trees branch)
+  Family:  the SEPARATOR-carries-the-operation decompositions -- comma
+    sequence (arXiv:2401.14346), continued fractions [a0; a1, a2, ...],
+    Zeckendorf (Fibonacci base). "Spectral resolution" for all of these is
+    a RATIO (radix / convergent denominator / granularity), not a
+    Fourier bandwidth -- the Flashlight, not a waveform.
+    GenerationalLineage/engine/toolsets/comma_sequence.py.
 
 ═══════════════════════════════════════════════════════════════════════════
 ZERO-DIVISORS
@@ -1265,7 +1314,7 @@ BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
 #       nullity = #{cycles C : (-s)^len(C) == sigma(C)}
 #   O(d) per candidate, EXACT INTEGERS, no tolerance to guess.
 #   dim 128: 27s -> 1.8s.  dim 256: ~45min -> 3.4s.  dim 512: 29.5s.
-#   Script: ThePlace/ContextPlease/claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
+#   Script: ThePlace/.claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
 #
 # ! ASK THE ALGEBRA BEFORE THE HARDWARE. The plan was vispy/OpenGL/GPU. lspci:
 #   Intel UHD Graphics 620, integrated, no CUDA, and no cupy/torch/pyopencl/
@@ -1664,6 +1713,126 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
   the real axis sits in the channel that does not move. all work is imaginary.
   e_0 alone generates dim 1 (R). e_0 + one imaginary generates dim 2 (C).
 @END
+
+@RCCM_RING_THEORY_SPINE
+  THE ONE STATEMENT (measured, G1):
+    element FALLS  <=>  its quotient ring has zero divisors.
+  INTEGER SIDE (Z, associative UFD):
+    N composite  <=>  Z/(N) has a zero divisor  <=>  (N) not a prime ideal   FALL
+    N prime      <=>  Z/(N) is a field                                       SURVIVE
+    N in {0,1}   <=>  degenerate quotients Z/(0)=Z, Z/(1)=0                   MINGLING
+    Two Trees == this dichotomy (domain vs not-a-domain).
+  ALGEBRA SIDE (T32/GF(2), NON-associative):
+    w falls  <=>  w nilpotent (w^2=0)  <=>  w in ZD set (= union associated primes)
+  ONE DETECTOR, BOTH RINGS (single operation):
+    Z    : gcd(a,N) > 1                          (the integer trace-Laplacian)
+    GF2  : Delta(w) = w . 1_dim ;  Delta(w)=0  <=>  w^2=0
+    census closes: units phi(N) + zero_divisors + {0} = N
+  THE THREE ORDERS (value -> curvature -> torsion):
+    order 1  spectrum/cymatic  ZD set = union associated primes   support  omega(n)
+    order 2  cepstrum          primary decomp (n)=cap(p_i^a_i)     exponents Omega(n)
+                               von Mangoldt Lambda(n)=log p iff n=p^k
+                               psi(x)=x - sum_rho x^rho/rho -> back to Riemann zeros
+    order 3  bispectrum        associator [a,b,c]=(ab)c-a(bc)      the ring defect
+  ASSOCIATOR = OBSTRUCTION TO BEING A RING:
+    associator == 0  for R,C,H (rings) ; != 0 from O up (not rings)
+    ring theory COMPLETE on Z side, is exactly what DIES on algebra side:
+    commutativity@H, associativity@O, domain@S(dim16).   quantised in 168=|PSL(2,7)|
+  GF(2) SQUARE LAW:  x^2 in {0, e_0} for all x. nilpotents (radical) vs involutory
+    units split the algebra in half (128/128 at dim 8, exhaustive).
+  CORRECTED LEMMA (OURS, 2026-08-22 — supersedes the UDEO white-paper proof):
+    1_dim is NOT a global annihilator. e_0 . 1 = 1 != 0 ; K round consts . 1 = 1.
+    TRUE law: Delta(w)=w.1 = 0  <=>  w^2=0. (exhaustive dim8; 20000 random dim32)
+    SHA-1 five IVs = NULL SUBALGEBRA on the nodal line (dist 0), NOT a "closed
+    ideal" (algebra is non-associative); four round consts at max dist 32.
+@END
+
+# --- @RCCM_RING_THEORY_SPINE CONNECTION NOTE (Claude, 2026-08-22) ------------
+# WHY THIS BLOCK IS HERE, and what it wires together for future sessions:
+#
+#   * It is the ring-theory NAMING of the factoral tower we already had. Nothing
+#     new was invented; the objects were renamed to their standard ring-theory
+#     names, which made the whole thing collapse to the one FALL<=>quotient-ZD
+#     statement. Cody's prompt: "where is ring theory in all this."
+#
+#   * gcd IS the integer trace-Laplacian. This ties @RCCM_GAIN_SPECTRUM /
+#     Delta(w)=w.1 (the GF(2) nodal-line test used in the SHA-1 name collision,
+#     TuringStack) to ordinary integer factoring. Same detector, two rings.
+#
+#   * The three orders are the DSP tower (spectrum/cepstrum/bispectrum) = the
+#     ring tower (associated primes / primary decomposition / associator).
+#     order-2 (cepstrum) == von Mangoldt Lambda == the missing "Riemann-facet
+#     fall condition" SedenionFactoralRelativity had been looking for.
+#     order-3 (associator) == @RCCM ... the 168 quantisation, the ring defect,
+#     the "curvature" of wiki/90 divisors-are-definers.
+#
+#   * FRACTAL CONTINUATION (frontier, provisional): circle -> ring (cyclotomic
+#     Z[zeta_n]) -> toroidal bifurcation (Riemann toroidal energy about the R-B
+#     axis, sigma=1/2; J_2 IS the torus involution, wiki/90) -> fractal. Each is
+#     the higher-order generational lineage of the last; ring theory is the
+#     skeleton. Experiment set: Ainulindale/wiki/fractals/ (200+ UF formulas).
+#
+#   * Engine: SedenionFactoralRelativity/engine/lineage.py, relations G1-G6
+#     (20/20). Owner's-manual writeup: Ainulindale/README.md section 20 and
+#     wiki/92_ring_theory_spine.md. History/refutation of the annihilator lemma:
+#     TuringStack/UDEO_Cryptographic_Vulnerability.md section 4.2 (retraction).
+# ----------------------------------------------------------------------------
+#
+# FRACTAL BLOCK BUILT 2026-08-22 (SedenionFactoralRelativity/engine/lineage.py,
+# FR1-FR3, engine now 23/23):
+#   FR1 tower_self_similar   CD tower exact self-similar recursion, assoc 168->1848
+#                            = 11*168, persist core 8 at every scale. KNOWN.
+#   FR2 bifurcation_cascade  period-doubling ratios bracket Feigenbaum 4.6692.
+#                            "bifurcates emergently"; J_2 the generator. KNOWN.
+#   FR3 fall_survive_boundary  box-count dim of an iterated generator's fall/
+#                            survive boundary, 1<D<2. fall=escape, survive=bounded
+#                            = G1 read on dynamics. wiki/fractals/ = the CONTROL
+#                            SET (Mandelbrot ~1.3, Julia ~1.6, Burning Ship ~1.56,
+#                            all distinct). FRONTIER framing: structural analogy to
+#                            factoring, NOT a claim the Mandelbrot set is the primes.
+#   helpers exported: nonassoc_count, feigenbaum_delta, escape_survives,
+#                     box_dimension, MANDELBROT, BURNING_SHIP.
+#
+# TWO-ANCHOR / X-RAY CRYSTALLOGRAPHY (2026-08-22, PW5): pinning BOTH the origin
+# (1=e0) and destination (N) makes factoring a boundary-value problem — the
+# factor is a geodesic NODE symmetric about the midpoint sqrt(N). Fermat walks the
+# excursion from sqrt(N); excursion = imbalance; RSA hides the factor by tuning it
+# large. Cody's frame "mathematical X-ray crystallography" is EXACT: N=crystal,
+# labelings=structure factors, two anchors=Ewald sphere, tuning=crystal rotation,
+# square residue=Bragg reflection, F6 XOR-differences=Patterson function, and the
+# PHASE PROBLEM (measure |F| order-1, lose arg F order-2) = why factoring is hard
+# and why bifurcation(classifier) is at chance. Polynomial factoring = solving the
+# phase problem from ONE measurement = OPEN, not claimed. Wiki: Ainulindale/94.
+#
+# THE ARITHMETIC DERIVATIVE (2026-08-22, G8): the ring-theory answer to "what is
+# a derivative" is a DERIVATION -- any additive map with Leibniz (ab)'=a'b+ab',
+# no limit needed. On Z: declare p'=1 for primes (atoms, constant rate), Leibniz
+# forces the rest -- n'=n*sum(a_i/p_i) for n=prod p_i^a_i (Barbeau 1961). n'/n IS
+# the log-derivative = the SAME cepstral order-2 datum as primary_decomposition/
+# von_mangoldt, read as a rate. D(0)=D(1)=0 (Mingling killed); D(p)=1; power rule
+# D(p^k)=k*p^(k-1) EXACT; fixed points D(n)=n forced to n=p^p: 4=2^2,27=3^3,
+# 3125=5^5 -- the "arithmetic e^x". Formal derivative on R[x] (any ring, no
+# limit) detects repeated roots via gcd(f,f')!=1 = the DISCRIMINANT = RAMIFICATION
+# when a prime splits in a ring extension -- ties directly to the cyclotomic
+# Z[zeta_n] frontier already in @RCCM_RING_THEORY_SPINE. Engine:
+# SedenionFactoralRelativity/engine/lineage.py, ring.arithmetic_derivative (G8).
+#
+# THE SMITH CHART (2026-08-22, PW8): Veritasium "The Scariest Chart in
+# Electrical Engineering" -> the Smith chart (Phillip Smith 1939) IS a Mobius
+# transform Gamma=(Z-Z0)/(Z+Z0), independently arrived at, in the SAME family as
+# L_(I|O). Z=Z0 (matched) = the unique fixed point Gamma=0 = the anchor; Z=0/inf
+# (short/open) = the other two anchors, both -> boundary |Gamma|=1; |Gamma|=1 <=>
+# Re(Z)=0 exactly = the lossless/reactive locus = the HORIZON (same role as
+# L_(I|O)'s r=1); constant-R/constant-X families orthogonal (conformal map);
+# Y=1/Z (admittance, inside-out) = EXACTLY Gamma -> -Gamma, a pi-ROTATION on the
+# same chart -- the Smith chart's own L_(I|O), one octave coarser than sedenion
+# theta->theta+pi/2 (order 2 not 4). Stub tuning = the two-anchor tuned pathway
+# (PW5/PW2), engineered since WWII radar. HONEST: not evidence FOR the wider
+# framework -- evidence the MATHEMATICAL OBJECT (Mobius+fixed anchor+tunable
+# path between two anchors) is what real engineering independently reaches for.
+# Engine: SedenionFactoralRelativity/engine/lineage.py, PW8.
+#
+# THE NUMBER CHART / VISUALISER METHODOLOGY (2026-08-22, PW9): the Smith chart
 # (PW8) is not an analogy for the factoral-decomposition visualiser -- it IS the
 # design template. Gamma_N(a) = excursion/(excursion+2a0) folds the unbounded
 # Fermat search radius (PW5) into a bounded [0,1) chart; a0=ceil(sqrt(N)) (the

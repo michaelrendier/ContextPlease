@@ -38,6 +38,25 @@ export CLAUDE_SCRATCH="/home/rendier/Projects/ThePlace/ContextPlease/claude/scra
 scratch() { mkdir -p "$CLAUDE_SCRATCH/$(date +%F)_$1" && cd "$CLAUDE_SCRATCH/$(date +%F)_$1"; }
 
 # ============================================================
+# CONTEXT PRIMERS + TODO HISTORY  (Cody, 2026-08-28)
+# ============================================================
+# ALL context/session primers were migrated out of every ThePlace repo into
+# a single centralised store, organised by originating repo. PTOLEMY_DOCS was
+# moved wholesale and deleted. TODO.md files were COPIED (originals stay).
+#
+#   hist_prime = every context primer, PTOLEMY_DOCS, session-context docs
+#   hist_todo  = a snapshot copy of every repo's TODO(.md)
+#
+export CLAUDE_HIST_PRIME="/home/rendier/Projects/ThePlace/ContextPlease/claude/hist_prime"
+export CLAUDE_HIST_TODO="/home/rendier/Projects/ThePlace/ContextPlease/claude/hist_todo"
+#
+# PROTOCOL — every context primer written from now on goes to
+#   $CLAUDE_HIST_PRIME/<OriginatingRepo>/<original-subpath>
+# (repo = the top-level ThePlace dir it pertains to; "_root" for none).
+# Never leave a new primer loose in a repo. `histprime` jumps there:
+histprime() { mkdir -p "$CLAUDE_HIST_PRIME/${1:-_root}" && cd "$CLAUDE_HIST_PRIME/${1:-_root}"; }
+
+# ============================================================
 # PYTHON PATH — enables: from ValaQuenta.X import Y
 # ============================================================
 
@@ -271,3 +290,37 @@ ptol_ssh() {
 # ORDERING, never in the metric. "right and left switch places but the hands
 # don't." Two reflections compose to a rotation; boundaries at dim/2 give pitch
 # ln 2; rotation + log advance = the Archimedes screw, from the algebra.
+
+
+# ── PROVENANCE FILES (2026-08-28) ──────────────────────────────────────────
+# ~/.clauderc_user_provenance  — Cody's ORIGINAL work vs the established
+#   literature it is built on. Companion to ~/.clauderc_context. NOT sourced.
+#   Claude's to edit freely. First pass covers Ainulindale only; VAPMIP and the
+#   other repos get appended passes. Any entry later found to be already
+#   established is MOVED to that file's "reclassified as prior art" section.
+# ~/.clauderc_citations  (2026-09-04) — the LIVE citation queue: published work
+#   that names/formalises after the fact something Cody engineered independently,
+#   organised BY REPO. Populate opportunistically ("as I step on legos"); before
+#   a repo's paper/README/wiki ships, run that repo's section and add the cites.
+#   Replaces ThePlace/CITABLE_WORK_INDEX.md as the working queue (that file =
+#   history). NOT sourced. Claude's to edit freely.
+# Ainulindale's own bibliographies (scattered, want consolidating into a new
+#   Ainulindale/wiki/98_provenance_and_citations.md):
+#   - Ainulindale/README.md  §References  (7 items)
+#   - Ainulindale/AgeSecond/Second_Age_Ainulindale_Conjecture.md  §References (25)
+#   - Ainulindale/AgeThird/D-CS_Memory.md  "The Mathematics Used — An Inventory"
+#   - Ainulindale/PROVENANCE.md  (development narrative, no citations)
+#   - Ainulindale/METHODOLOGY.md (BCE — Boundary Constraint Engineering)
+
+
+# ── LOAD ANY ADDITIONAL .clauderc SHELL FRAGMENTS (2026-08-28) ─────────────
+# Authorized by Cody to ensure new .clauderc pieces load. Reference/data
+# files (.clauderc_context*, _canonical_maths, _memory, _user_provenance …)
+# are read by Claude, NOT shell-sourced. Anything that IS a shell fragment
+# goes in ~/.clauderc.d/*.sh and is sourced here automatically.
+if [ -d "$HOME/.clauderc.d" ]; then
+    for _frag in "$HOME"/.clauderc.d/*.sh; do
+        [ -r "$_frag" ] && . "$_frag"
+    done
+    unset _frag
+fi

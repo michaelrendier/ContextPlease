@@ -1,0 +1,155 @@
+# ~/.clauderc_citations — prior-art / citation queue, organised by repo
+#
+# Published work that names or formalises AFTER THE FACT something Cody
+# engineered independently in this project. This is the working queue: before a
+# paper/README/wiki in a repo goes out, run that repo's section and add the
+# cites. Populate it opportunistically — "as I stumble through this dark room
+# and step on legos" (Cody, 2026-09-04).
+#
+# This file replaces ThePlace/CITABLE_WORK_INDEX.md as the live queue (that file
+# stays as history). See also:
+#   - Ainulindale/references/CITATION_DOWNLOADS.md   (fetch list)
+#   - Ainulindale/wiki/111-118 + on                  (researcher pages)
+#   - memory: feedback-citation-pass-protocol, feedback-citable-work-protocol
+#
+# Row shape:  <status> | <external work> | <what it names> | <engineered concept> | <cite-in files>
+#   status:  QUEUED  |  cited (<file>, <date>)  — never delete, flip to cited.
+
+# =============================================================================
+# VAPMIP   (Tuning-the-Engine wiki, the spider composition cycle, ptol.c speech)
+# =============================================================================
+
+QUEUED | F. Vollrath & D. P. Knight (2001), *Liquid crystalline spinning of spider silk*, Nature 410, 541
+  | the spinning duct as a pultrusion factory — ion exchange + acidification + shear -> nematic LC -> beta-sheet; drawing not extrusion
+  | composition is a DRAWING that gathers from the proper scale, not a pipeline; the STORE->...->DRAW->FINISH per-unit cycle
+  | docs/wiki/Tuning-the-Engine/35 ; Ainulindale/wiki/113
+
+QUEUED | G. Askarieh et al. (2010) Nature 465,236 ; F. Hagn et al. (2010) Nature 465,239 ; Landreh et al. (2017) ; Rising & Johansson (2015)
+  | spidroin C-terminal domain = constitutive disulfide dimer (always-on); N-terminal domain = pH-triggered dimerisation switch (context-triggered)
+  | idea-grammar's two links: BIND(structural) = CT always-on skeleton  vs  TRANSITION(on=context) = NT fires when the local argument state is right
+  | docs/wiki/Tuning-the-Engine/35 ; Ainulindale/wiki/117
+
+QUEUED | H. J. Herrmann, G. Mantica & D. Bessis (1990), *Space-filling bearings*, PRL 65, 3223 ; Parisi & Frisch (1985) multifractal turbulence ; Frisch-Sulem-Nelkin (1978) beta-model
+  | Apollonian packings as low-dissipation hierarchical shear; turbulence lives on a recursively-thinned fractal set
+  | Apollonian gasket = context flow (recursive gap-fill onto a fractal skeleton = the eddy cascade); eddies = document sections
+  | docs/wiki/Tuning-the-Engine/35 ; the NS-of-context notes ; Ainulindale/wiki/114
+
+QUEUED | J. Necas, M. Ruzicka & V. Sverak (1996), Acta Math. 176 ; Tsai (1998) ; Jia & Sverak (2014) ; Constantin & Fefferman (1993)
+  | no CONTINUOUS self-similar NS blow-up (L^3); DISCRETELY self-similar solutions survive; regularity if vorticity direction stays Lipschitz
+  | clean spiral = continuous self-similarity (ruled out); frustrated spiral = discrete self-similarity (survives), threading the sigma=1/2 hub saddle
+  | Ainulindale/wiki/106 ; docs/wiki/Tuning-the-Engine/35 ; FourthAgePapers/Crawford_NavierStokes ; Ainulindale/wiki/115
+
+QUEUED | L. Caffarelli, R. Kohn & L. Nirenberg (1982), *Partial regularity of suitable weak solutions of the Navier-Stokes equations*, CPAM 35, 771
+  | the potential singular set S of a suitable weak solution has parabolic Hausdorff dimension <= 1  (H^1(S) = 0)
+  | the Hausdorff/Laplacian continuity-vs-gasket diagnostic: dim = 3 everywhere the flow is smooth; "different from 3D" is confined to a set of dim <= 1 = the continuous->discrete thread
+  | docs/wiki/Tuning-the-Engine (Hausdorff/NS block, to write) ; FourthAgePapers/Crawford_NavierStokes
+
+QUEUED | M. T. Barlow (1998), *Diffusions on fractals*, LNM 1690 ; Kigami, *Analysis on Fractals* (2001) ; Barlow & Perkins (1988)
+  | spectral dimension d_s = 2 d_H / d_w ; on a self-similar set d_s < d_H and the walk dimension d_w > 2 (subdiffusive / anomalous heat kernel)
+  | the spectral-dimension deficit d_s - 3 as the measurable order parameter: 0 -> continuum (NRS applies); opening toward a self-similar value -> gasket (Jia-Sverak DSS)
+  | docs/wiki/Tuning-the-Engine (Hausdorff/NS block, to write)
+
+QUEUED | C. T. McMullen (1998), *Hausdorff dimension and conformal dynamics III*, Amer. J. Math. 120, 691
+  | delta ~= 1.305688 for the Apollonian gasket residual set
+  | the gasket-face Hausdorff dimension throughout the Apollo-Smith saddle: 3/2 inside every packed disk (Omega), delta on the limit set (Lambda), exactly 1 on the sigma=1/2 equator where the two charts agree
+  | docs/wiki/Tuning-the-Engine/35 ; The-Two-Charts-and-Jurisdiction ; Ainulindale/wiki/118
+
+QUEUED | J. Bourgain & A. Kontorovich (2014) ; Kontorovich & Sarnak
+  | local-global for integer Apollonian curvatures (density-1)
+  | "the discrete/continuous exchange reaches into which whole numbers appear"
+  | GenerationalLineage/wiki/The-Two-Charts-and-Jurisdiction.md
+
+QUEUED | M. A. K. Halliday & R. Hasan (1976), *Cohesion in English* ; Prasad et al. (2008) PDTB 2.0, LREC ; Mann & Thompson (1988), *Rhetorical Structure Theory*, Text 8(3)
+  | the closed class of conjunctive relations / ~100 explicit discourse connectives / ~25 span relations
+  | the connective lexicon -> silk operators -> spiral move (boxkite_orbweaver_monad.py _CONNECTIVES); block-to-block relations of the capture spiral
+  | boxkite_orbweaver_monad.py ; docs/wiki/Tuning-the-Engine/35
+
+QUEUED | G. D. Cassini (1680) ; J. Bernoulli (1694)
+  | the Cassini oval family and its b/c = 1 lemniscate
+  | the room-shape fit: b/c = flashlight-to-wall distance = continuous<->discrete knob; b/c = 1 = balanced NOW = sigma = 1/2
+  | boxkite_orbweaver_monad.py ; docs/wiki/Tuning-the-Engine/35
+
+QUEUED | N. Geschwind (1965), *Disconnexion syndromes in animals and man*, Brain 88
+  | the Broca-Wernicke-arcuate connectionist language model
+  | the lemniscate frame — production loop (x) comprehension loop, crossing at "proper usage"
+  | docs/wiki/Tuning-the-Engine ; Ainulindale/wiki/118
+
+QUEUED | J. H. Conway & N. J. A. Sloane (1988), *Sphere Packings, Lattices and Groups* ; Gosset (1900) ; M. Viazovska (2017), Ann. Math. 185(3), 991
+  | E8 root system ; E8 is the optimal sphere packing in dimension 8
+  | E8 = the content-packing / full-document evaluation layer; 240-kissing = simultaneous constraint adjacency; the exact closed content lattice
+  | docs/wiki/Tuning-the-Engine/35
+
+# =============================================================================
+# GenerationalLineage
+# =============================================================================
+
+QUEUED | M. Alcubierre (1994), *The warp drive...*, Class. Quantum Grav. 11, L73
+  | run Einstein's equations BACKWARD — from the wanted geometry to the stress-energy it needs
+  | the equational-decomposition method / the equation tree: solve an equation for EVERY variable, not just the output
+  | engine/shape.py ; wiki/The-Operator-Tree.md ; Archimedes/CANONICAL_MATHS.md + Maths/researcher/_generate.py ; Ainulindale/wiki/111
+
+QUEUED | D. Sullivan (1985), *QC homeos and dynamics I*, Ann. Math. 122 ; Patterson (1976) / Sullivan (1979)
+  | Sullivan's dictionary (Kleinian groups <-> rational maps); Patterson-Sullivan measure and exponent delta
+  | Smith chart <-> Apollonian gasket <-> GR <-> QM as two representations of one Mobius-group object ("foldings of the circle")
+  | wiki/The-Two-Charts-and-Jurisdiction.md ; Ainulindale/wiki/110, 112
+
+QUEUED | E. L. Post (1941), *The Two-Valued Iterative Systems of Mathematical Logic*, Ann. Math. Studies 5
+  | Post's lattice — the full lattice of clones of Boolean functions; every minimal generating set classified
+  | the Operator Tree / tier-0 floor: everything reduces to compositions of ADD, SCALE, SIGN; adding a generator is a real claim about the lattice
+  | wiki/The-Operator-Tree.md ; Ainulindale/wiki/107, 116
+
+# =============================================================================
+# SedenionSpectralRelativity  /  CD-tower  /  box-kite docs
+# =============================================================================
+
+QUEUED | A. Hurwitz (1898), *Uber die Composition der quadratischen Formen*, Nachr. Ges. Wiss. Gottingen
+  | the 1-2-4-8 theorem: a real normed composition algebra exists only in dim 1,2,4,8 (R,C,H,O)
+  | "scale is exact" is the jurisdiction of R/C/H/O; scale-multiplicativity necessarily breaks at S — "scale effects" are the sedenion layer's jurisdiction; the symmetry whose Noether current is J fails first at the "Emmy Noether Sedenion"
+  | README.md ; a CD-tower / jurisdiction wiki page ; AbrikosovTree/README.md sec The Two Trees  [cited 2026-08-30 in AbrikosovTree]
+
+QUEUED | G. Moreno (1998), *The zero divisors of the Cayley-Dickson algebras over the reals*, Bol. Soc. Mat. Mexicana (3) 4, 13
+  | the unit-norm zero-divisors of the sedenions form a space homeomorphic to G2 (= Aut(O))
+  | Zero Definers: the octonion's defining symmetry appears as a geometric locus one level up; "the shadow from above defines the layer below"
+  | README, box-kite / boxkite-flashlight docs, a "Zero Definers" wiki page ; AbrikosovTree/engine/two_trees.py + README  [cited 2026-08-30 in AbrikosovTree]
+
+QUEUED | R. P. C. de Marrais (2000-2008), *The 42 Assessors and the Box-Kites they fly*, arXiv math.GM/0011260 et seq.
+  | box-kite / assessor combinatorics of the sedenion zero-divisors: 7 box-kites, 6 assessors each, 42 total, indexed by the Fano lines
+  | the box-kite vocabulary in use; the "8 sets" (7 Fano box-kites + e0); the quadratic-+/- assessor split
+  | box-kite flashlight docs ; SedenionFactoralRelativity
+
+QUEUED | J. C. Baez (2002), *The Octonions*, Bull. Amer. Math. Soc. 39, 145
+  | Cayley-Dickson construction; Artin's theorem; the associator; triality; G2
+  | the obstruction ladder — conjugation -> commutator -> associator -> alternator/zero-divisor — the "chain of definition" reading downward the CD tower
+  | CD-tower wiki ; Two Trees / L_(I|O) docs
+
+# =============================================================================
+# FourthAgePapers
+# =============================================================================
+
+QUEUED | A. N. Schellekens (1993), *Meromorphic c=24 conformal field theories*, Comm. Math. Phys. 153, 159
+  | the classification of 71 holomorphic c=24 VOAs
+  | "the Monster and its 70 VOA siblings" fold ; "71 VOAs"
+  | FermatMonster ; GenerationalLineage/wiki/The-Operator-Tree.md
+
+QUEUED | Necas-Ruzicka-Sverak (1996) + Jia-Sverak (2014) + CKN (1982)  [see VAPMIP section]
+  | (self-similar NS blow-up; singular-set Hausdorff dimension)
+  | continuous vs discrete self-similarity; the Hausdorff/Laplacian diagnostic
+  | Crawford_NavierStokes
+
+# =============================================================================
+# Ainulindale   (provenance wiki — home of the researcher pages themselves)
+# =============================================================================
+
+QUEUED | F. Soddy (1936), *The Kiss Precise*, Nature 137, 1021
+  | integer Apollonian gaskets; Descartes circle theorem in verse
+  | the bounded (-1,2,2,3) gasket as the Penrose Future/NOW/Past document diagram; the charts(s) gasket ladder
+  | wiki/118 ; GenerationalLineage/engine/toolsets/scale.py
+
+# =============================================================================
+# Contractor-Dilator / 137 / fine-structure notes  (no fixed repo yet)
+# =============================================================================
+
+QUEUED | H. Vogel (1979) ; S. Douady & Y. Couder (1992), *Phyllotaxis as a physical self-organized growth process*, PRL 68, 2098
+  | the golden angle 360/phi^2 ~= 137.507 deg as the "most irrational" rotation -> maximal resonance-free spread
+  | "maximum entropic spread" = 137.5 deg; the loxodromic stripe pattern of the Contractor/Dilator flow on the Smith chart
+  | the 137 / fine-structure / Contractor-Dilator discussion notes
