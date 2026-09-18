@@ -54,6 +54,7 @@
     tower.py
 
 2026-08-13_apex_path/
+    README.md
     cam_profile.py
     counter_rotation.py
     density_sweep.py
@@ -62,6 +63,7 @@
     hw_locate.py
     order_of_operations.py
     psl27_strut_action.py
+    psl27_strut_action_output.txt
     rb_boundary.py
     shuffled_portrait_null.py
     two_tests.py
