@@ -1,0 +1,246 @@
+# .clauderc_scratchpad_contents — scratchpad file manifest, names + locations only
+#
+# Purpose: quick lookup of what exists in the persistent scratchpad, without
+# re-`find`-ing it every session. Names and locations ONLY — for what a
+# directory's work was actually about, see that directory's own README.md
+# (the point of the README convention, per scratchpad/README.md), or the
+# scratchpad's own "## Index" section for the (partial) curated summaries.
+#
+# Canonical root: ContextPlease/claude/scratchpad/ (versioned, pushed).
+# Staging root (pre-mirror, not versioned): ThePlace/.claude/scratchpad/ —
+# always mirror new work from there into the canonical root before it's
+# considered archived; this manifest reflects the canonical root only.
+#
+# Maintain this file going forward: regenerate the listing below whenever
+# scratchpad content changes, same as any other .clauderc* file, and keep it
+# included in every ContextPlease protocol sync pass.
+#
+# Regenerate with:
+#   cd ContextPlease/claude/scratchpad && find . -type f \
+#     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
+#
+# Last regenerated: 2026-09-17
+
+- README.md
+- migrate_datasets.sh
+
+2026-08-08_bracketing_and_null/
+    README.md
+    bracketing.py
+    lexical_matched_null.py
+    lexical_matched_null2.py
+    shuffled_null.py
+
+2026-08-08_hyperwebster_wall/
+    README.md
+    hyperwebster.py
+
+2026-08-08_residue_sieve_bounds/
+    README.md
+    digit_window.py
+    sieve_bounds.py
+
+2026-08-08_sedenion_igpu_benchmark/
+    README.md
+    det_check.py
+    sedbench.py
+    sedbench2.py
+    sedbench_gpu.py
+    sedmul
+    sedmul.c
+
+2026-08-08_tower_symmetries/
+    derivations.py
+    tower.py
+
+2026-08-13_apex_path/
+    cam_profile.py
+    counter_rotation.py
+    density_sweep.py
+    half_is_the_equator.py
+    half_radius_circle.py
+    hw_locate.py
+    order_of_operations.py
+    psl27_strut_action.py
+    rb_boundary.py
+    shuffled_portrait_null.py
+    two_tests.py
+
+2026-08-15_zd_asymptote/
+    address.py
+    conjugation_test.py
+    laplacian_holes.py
+    p6_dim256.log
+    parity_5_6_7.json
+    parity_8.json
+    parity_fast.json
+    parity_fast.py
+    parity_law.py
+    rsa_parents.py
+    zd_density.py
+
+2026-08-18_three_faces_and_identity_bin/
+    README.md
+    boxkite_prime_hash.py
+    c_sizes.txt
+    monad_identity.bin
+    sizecheck.c
+
+2026-08-19_nvme-transplant-repair/
+    purge-candidates.txt
+    repair.log
+    repair.sh
+    repair2.sh
+
+2026-08-19_prime_hash_calibration/
+    README.md
+    cal_01_ladder.out
+    cal_01_ladder.py
+    cal_02_composites.out
+    cal_02_composites.py
+    cal_03_context.out
+    cal_03_context.py
+    cal_04_channels.out
+    cal_04_channels.py
+    cal_05_fixed_reducer.out
+    cal_05_fixed_reducer.py
+    cal_06_zeno.out
+    cal_06_zeno.py
+
+2026-08-21_collatz_shift_conjugacy/
+    README.md
+    collatz_probe.py
+
+2026-08-22_fractal_decomp/
+    README.md
+    result.txt
+
+2026-08-22_i_precession/
+    README.md
+
+2026-08-22_julia_mandelbrot/
+    README.md
+    julia_mandelbrot_test.py
+
+2026-08-22_observer/
+    README.md
+    observer_test.py
+
+2026-08-22_parkour_orthogonal/
+    README.md
+
+2026-08-22_qm_gr_by_tree/
+    README.md
+    qm_gr_test.py
+    result.txt
+
+2026-08-22_ring_derivative/
+    README.md
+    ring_derivative_test.py
+
+2026-08-22_sedenion_lineage/
+    README.md
+
+2026-08-22_smith_chart/
+    README.md
+    smith_chart_test.py
+
+2026-08-27_sieve-is-lineage/
+    README.md
+    sieve_lineage.py
+
+2026-08-27_spectral-vs-residual-hash/
+    README.md
+    crt_context_and_covariance.py
+    csn_powerlaw.py
+    factorization_digit_hash.py
+    lineage_anomaly.py
+    mcculloch_fit.py
+    prime_digit_hash.py
+    recursion_step_factor.py
+    run_output.txt
+    specz_information_location.py
+    test_spectral_vs_residual.py
+    zd_gain_and_tower.py
+
+2026-08-28_add-scale-sign-datatype/
+    README.md
+    test.py
+
+2026-08-28_bell-native-space/
+    README.md
+    linear_actuators.py
+    pi_free.py
+    test.py
+
+2026-08-28_primer-corpus-ingest/
+    README.md
+    corpus_all.txt
+    corpus_repos.py
+    corpus_repos.txt
+    corpus_strip.py
+    corpus_war.txt
+    ingest.py
+    ingest_war.py
+    strip_all.log
+    strip_war.log
+
+2026-08-28_scale-chart-constants/
+    README.md
+    test.py
+
+2026-08-28_scale-selector-smith-charts/
+    README.md
+    test.py
+
+2026-08-28_temperature-decomposition/
+    README.md
+    test.py
+
+2026-08-28_valaquenta-calibration/
+    README.md
+    apply_blocks.py
+
+2026-08-30_monad-conversational-ingest/
+    README.md
+    doc_test.sh
+    fifo_test.sh
+    fold_test.sh
+    hook_chain_test.sh
+    owner_test.sh
+    repack_test.sh
+    rt_client.py
+    rt_run.sh
+
+2026-08-30_prime-dna/
+    README.md
+    energy_bench.py
+    energy_bench_output.txt
+    prime_dna.py
+    prime_dna_output.txt
+    semantic_hash_roundtrip.py
+    semantic_hash_roundtrip_RESULTS.md
+    semantic_hash_roundtrip_output.txt
+    semantic_hash_roundtrip_steps56.txt
+    un_sieve.py
+    un_sieve_output.txt
+    un_sieve_zeta.py
+    un_sieve_zeta_RESULTS.md
+    un_sieve_zeta_output.txt
+
+2026-08-31_monad-bus-browse/
+    README.md
+    smoke.py
+    smoke_output.txt
+
+2026-08-31_oblique-gear/
+    ANOMALY_CHASE.md
+    oblique_gear_output.txt
+    oblique_gear_test.py
+
+2026-09-01_rsa-frequency-decode/
+    RESULTS.md
+    gap_weight_test.py
+    gap_weight_test_output.txt
+    rsa_frequency_decode.py
+    rsa_frequency_decode_output.txt
