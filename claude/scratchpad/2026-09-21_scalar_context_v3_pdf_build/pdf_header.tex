@@ -1,0 +1,11 @@
+\directlua{
+  luaotfload.add_fallback(
+    "myfallback",
+    {
+      "Noto Sans CJK SC:mode=harf;",
+      "Noto Sans Arabic:mode=harf;",
+    }
+  )
+}
+\setmainfont{DejaVu Serif}[RawFeature={fallback=myfallback}]
+\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=myfallback}]
