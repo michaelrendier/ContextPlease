@@ -22,6 +22,12 @@ export POE_DIR="$PROJ/POE"
 export USYNTH="$PROJ/UniversalSynth"
 export DATASETS="$PROJ/DataSets"
 export ADDPAPERS="$AIN/AddPapers"
+# added 2026-09-22 -- these were missing despite being in active, heavy use
+export GLL="$PROJ/GenerationalLineage"
+export CTXPLZ="$PROJ/ContextPlease"
+export PTOLDESK="$PROJ/PtolemyDesktop"
+export SSR="$PROJ/SedenionSpectralRelativity"
+export MMA="$PROJ/MultiplicationMatrixAnimator"
 
 # ============================================================
 # MEMORY + SCRATCHPAD
@@ -36,6 +42,25 @@ export CLAUDE_MEMORY="/home/rendier/.claude/projects/-home-rendier-Projects-TheP
 # subdirectory per piece of work, each with a README.md.
 export CLAUDE_SCRATCH="/home/rendier/Projects/ThePlace/ContextPlease/claude/scratchpad"
 scratch() { mkdir -p "$CLAUDE_SCRATCH/$(date +%F)_$1" && cd "$CLAUDE_SCRATCH/$(date +%F)_$1"; }
+
+# ============================================================
+# CONTEXT PRIMERS + TODO HISTORY  (Cody, 2026-08-28)
+# ============================================================
+# ALL context/session primers were migrated out of every ThePlace repo into
+# a single centralised store, organised by originating repo. PTOLEMY_DOCS was
+# moved wholesale and deleted. TODO.md files were COPIED (originals stay).
+#
+#   hist_prime = every context primer, PTOLEMY_DOCS, session-context docs
+#   hist_todo  = a snapshot copy of every repo's TODO(.md)
+#
+export CLAUDE_HIST_PRIME="/home/rendier/Projects/ThePlace/ContextPlease/claude/hist_prime"
+export CLAUDE_HIST_TODO="/home/rendier/Projects/ThePlace/ContextPlease/claude/hist_todo"
+#
+# PROTOCOL — every context primer written from now on goes to
+#   $CLAUDE_HIST_PRIME/<OriginatingRepo>/<original-subpath>
+# (repo = the top-level ThePlace dir it pertains to; "_root" for none).
+# Never leave a new primer loose in a repo. `histprime` jumps there:
+histprime() { mkdir -p "$CLAUDE_HIST_PRIME/${1:-_root}" && cd "$CLAUDE_HIST_PRIME/${1:-_root}"; }
 
 # ============================================================
 # PYTHON PATH — enables: from ValaQuenta.X import Y
@@ -92,8 +117,18 @@ export PG32_PLANES="15"                      # Fano planes -- 15, NOT 32
 
 # ============================================================
 # GIT — push any repo using GITHUB_TOKEN
-# Usage: gpush                    (auto-detects repo name)
-#        gpush RepoName           (explicit)
+# Usage: gpush                    (auto-detects repo name + CURRENT branch)
+#        gpush RepoName           (explicit repo, still current branch)
+#
+# FIXED 2026-09-22 -- this used to hardcode `main` as the push/pull target,
+# which was silently wrong the moment FourthAgePapers became a legitimate
+# exception to main-only (see feedback_branch_policy memory, corrected same
+# day): PtolemyDesktop/PTorrent use device-arch branches, FourthAgePapers is
+# allowed genuine thematic work-in-progress branches, everything else (22+
+# repos) is still main-only by policy -- but the FUNCTION now follows
+# whatever branch you're actually on rather than assuming, so it can't push
+# a FourthAgePapers branch's work onto main by accident, and can't silently
+# no-op on the other three either.
 # ============================================================
 
 gpush() {
@@ -102,13 +137,23 @@ gpush() {
         echo "gpush: not in a git repo and no repo name given" >&2
         return 1
     fi
-    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpush: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
 }
 
 # Pull with token
 gpull() {
     local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
-    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpull: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
 }
 
 # ============================================================
@@ -116,7 +161,12 @@ gpull() {
 # ============================================================
 
 rstatus() {
-    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth; do
+    # updated 2026-09-22 -- added the repos that became active/heavily used
+    # since this list was last touched: GenerationalLineage, ContextPlease,
+    # PtolemyDesktop, SedenionSpectralRelativity, ArdaQuenta, MultiplicationMatrixAnimator
+    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth \
+                GenerationalLineage ContextPlease PtolemyDesktop SedenionSpectralRelativity ArdaQuenta \
+                MultiplicationMatrixAnimator; do
         local path="$PROJ/$repo"
         if [ -d "$path/.git" ]; then
             local branch count
@@ -235,6 +285,9 @@ ptol_s() { "$PTOL_BIN" "$@"; }   # default: SVG + English path
 # ============================================================
 # UDEO — Unified Dimensional Entropy Oracle (TuringStack)
 # Zero-divisor attack class; embargo ends 2026-11-25.
+# CLARIFIED 2026-09-19: embargo is CVE-disclosure only -- researchers/
+# general findings are OK to discuss/publish, just not the CVE-specific
+# exploit detail before the date above.
 # ============================================================
 
 export UDEO_POC="$TURING/udeo_poc.py"
@@ -271,3 +324,37 @@ ptol_ssh() {
 # ORDERING, never in the metric. "right and left switch places but the hands
 # don't." Two reflections compose to a rotation; boundaries at dim/2 give pitch
 # ln 2; rotation + log advance = the Archimedes screw, from the algebra.
+
+
+# ── PROVENANCE FILES (2026-08-28) ──────────────────────────────────────────
+# ~/.clauderc_user_provenance  — Cody's ORIGINAL work vs the established
+#   literature it is built on. Companion to ~/.clauderc_context. NOT sourced.
+#   Claude's to edit freely. First pass covers Ainulindale only; VAPMIP and the
+#   other repos get appended passes. Any entry later found to be already
+#   established is MOVED to that file's "reclassified as prior art" section.
+# ~/.clauderc_citations  (2026-09-04) — the LIVE citation queue: published work
+#   that names/formalises after the fact something Cody engineered independently,
+#   organised BY REPO. Populate opportunistically ("as I step on legos"); before
+#   a repo's paper/README/wiki ships, run that repo's section and add the cites.
+#   Replaces ThePlace/CITABLE_WORK_INDEX.md as the working queue (that file =
+#   history). NOT sourced. Claude's to edit freely.
+# Ainulindale's own bibliographies (scattered, want consolidating into a new
+#   Ainulindale/wiki/98_provenance_and_citations.md):
+#   - Ainulindale/README.md  §References  (7 items)
+#   - Ainulindale/AgeSecond/Second_Age_Ainulindale_Conjecture.md  §References (25)
+#   - Ainulindale/AgeThird/D-CS_Memory.md  "The Mathematics Used — An Inventory"
+#   - Ainulindale/PROVENANCE.md  (development narrative, no citations)
+#   - Ainulindale/METHODOLOGY.md (BCE — Boundary Constraint Engineering)
+
+
+# ── LOAD ANY ADDITIONAL .clauderc SHELL FRAGMENTS (2026-08-28) ─────────────
+# Authorized by Cody to ensure new .clauderc pieces load. Reference/data
+# files (.clauderc_context*, _canonical_maths, _memory, _user_provenance …)
+# are read by Claude, NOT shell-sourced. Anything that IS a shell fragment
+# goes in ~/.clauderc.d/*.sh and is sourced here automatically.
+if [ -d "$HOME/.clauderc.d" ]; then
+    for _frag in "$HOME"/.clauderc.d/*.sh; do
+        [ -r "$_frag" ] && . "$_frag"
+    done
+    unset _frag
+fi

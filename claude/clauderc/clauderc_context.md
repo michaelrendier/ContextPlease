@@ -1,6 +1,106 @@
 # .clauderc_context — session continuity (Claude's to edit freely; NOT sourced by .bashrc)
 # Purpose: what a cold session needs to resume, above what the repos already record.
 # Newest first.
+#
+# NOTE (2026-08-31): live per-turn context is now carried by the conversational
+# ingest daemon into monad3_c.bin (see hist_prime/VAPMIP/PRIMER_2026-08-30_
+# MONAD_CONVERSATIONAL_INGEST.md). This file is the coarse chronological
+# through-line only; the auto-memory index + hist_prime primers hold the detail.
+
+═══════════════════════════════════════════════════════════════════════════
+2026-09-22 — MultiplicationMatrixAnimator + addition-matrix skill, branch
+policy corrected, hook mirroring, ScalarContextPropagation paused for scaled boxkite
+═══════════════════════════════════════════════════════════════════════════
+
+NEW TOOL + SKILL. MultiplicationMatrixAnimator/ (new repo, not yet pushed --
+matrix_math.py exact/self-checking, render.py static PNG, mapper.py
+constructor+memory-safe streaming export, driver.py Tkinter odometer view,
+curses_ui.py live terminal view). Built from Cody's own explicit framing:
+"it's how i'm teaching you how to build my factoral decomposition tool... a
+spectral factoral decomposition / recombination tool." Core finding: fix
+num1 and there are exactly 10 possible rows (num1*0..9) ever; num2 only
+reshuffles which template lands where -- the actual lever for new structure
+is num1, not num2. Captured as skill ~/.claude/skills/addition-matrix/
+(mirrored to ContextPlease/claude/skills/ same pass). Real bugs found+fixed
+live: matrix was rendering backwards (units-left instead of MSB-left,
+rows staggering right instead of left) -- fixed in render.py + curses_ui.py;
+render_gif buffered all frames in RAM with no cap (real lockup risk, now
+hard-capped + a streaming PNG alternative added); missing shebangs.
+
+BRANCH POLICY CORRECTED (supersedes the 2026-09-01 version): PtolemyDesktop/
+PTorrent = device-arch branches; FourthAgePapers = ALSO allowed genuine
+thematic work-in-progress branches (Cody: "two other places you have well
+placed branch separability") -- scalar-context-propagation confirmed
+correct, pushed with upstream, NOT merged to main; every other repo (22+)
+stays strictly main-only. ~/.clauderc's gpush/gpull used to hardcode `main`
+-- fixed to follow the actual current branch (was silently wrong for
+FourthAgePapers the moment the exception was confirmed).
+
+SCALAR/SCALED NAMING (not a typo, deliberate). ScalarContextPropagation =
+word-level box kite ("scalar"). Next phase = sentence-level De Marrais box
+kite / A-Matrix Basin Windspeed, named "the scaled boxkite model" -- ties to
+this session's GaugeEye/GaugeHands continuous-operator work
+(VAPMIP/19D_boxkite_context_monad.py). ScalarContextPropagation itself is
+"pretty done," paused there deliberately, not abandoned.
+
+CONVERSATION-INGEST HOOK now version-controlled (was a loose dotfile
+outside any repo): VAPMIP/monad_bin/hooks/ + ContextPlease/claude/hooks/,
+both with READMEs documenting the external/internal weight split
+(human 1.5, Claude's own prose 0.9/0.6, flagged echo) from harness.py's
+INGEST_POLICY.
+
+Also this session: fluid-gravity correspondence (membrane paradigm +
+Bhattacharyya-Hubeny-Minwalla-Rangamani) added as FourthAgePapers/
+UmbrellaNoether's witches_hat notebook Part V, honestly flagged as new
+hypothesis-extension not inherited proof. Full technical detail across
+this whole session (gauge-theory checks, Soddy-Gosset generalization, CRT/
+mod-28-56, Blackjack subgroup, jurisdiction=ring-theory, black hole
+ringdown, etc.) lives in the conversation itself + auto-memory index, not
+duplicated here -- this entry is the coarse pointer only.
+
+Large reference files (.clauderc_canonical_maths, .clauderc_ValaQuenta,
+.clauderc_user_provenance, .clauderc_context_2) were NOT re-audited this
+pass -- flagged honestly rather than implying a full sweep happened.
+
+═══════════════════════════════════════════════════════════════════════════
+2026-08-28 → 08-31 — FourthAge CS trilogy, conversational ingest, un-sieve, RSA-ping
+═══════════════════════════════════════════════════════════════════════════
+
+CONVERSATIONAL INGEST (global protocol, live since 08-30). Every user prompt +
+assistant final prose, stripped, feeds the Monad's vocab/co-occurrence field in
+monad3_c.bin on the fly via a passive systemd --user daemon + Claude Code hooks;
+committed wiki/README/paper prose feeds the same way off a git post-commit hook.
+Weight is a vector (w_sem, w_ctx). In-place fold, no serializer. Learning without
+backprop. Files: VAPMIP/monad.py, harness.py, PtolC/daemon.c, monad_bin/service/.
+
+FOURTHAGE CS TRILOGY (branches in FourthAgePapers, pushed, not merged):
+  scalar-context-propagation  — box-kite context codec; one scalar w per token
+    (basin drift vs WordNet); Joukowsky Φ(w); the Flashlight = granularity not
+    context. + "The price, measured" energy §  + G1/G2 round-trip (100% on the
+    live 146k-word store; one lossy step = compress_count ~1%).
+  data-storage-no-location    — Hyperwebster (address,length) index; de Bruijn;
+    octonion fold to a 256-bit root; the CD-tower benchmark. "Cost and change,
+    not compression." LICENSE/COMMERCIAL_TERMS drafts still local/uncommitted.
+  minds-eye-papers-hands      — STT (Mind's Eye) required for LTM (Paper's Hands);
+    R̂ updateable / B̂=R̂† not; the Operator Stitch Board. GPL, no Ainulindale.
+
+UN-SIEVE (RiemannHypothesisProof + FactoralDecomposition + ValaQuenta + Abrikosov
++ Ainulindale). Birth order vs extinction order; D==reverse(A); H(C)−H(A)=+7.19 b
+existence penalty (a combinatorial invariant of ℕ — proven invariant under 5
+zeta orderings, §B.1); boundary primes 313 (√N) vs 49999 (N/2); "extinction is
+free, existence is not". Real-zero clock recovers ~15% (§D.1). PAPER.md §2.4
+Berry-Keating fleshed out; ζ = on-shell action of ∅_RB / L_(I|O).
+
+RSA-PING (this thread, 08-31). Can the pathway/UNS view factor an RSA modulus?
+No — every mechanism (ZD-anchored spiral, "tune per prime", Ulam spiral) reduces
+to a corollary of Fermat–Coppersmith or an analytic-resonance √N search. The
+log-polar screw (N one p-step past q) is real but the step size is ln p, the
+unknown. A c-factor reduction (Cody's ~97%) subtracts a fixed ~3.5 nats from
+ln L; orders of magnitude need an α-drop (different jurisdiction) or per-instance
+structure RSA designs out. Full: hist_prime/RiemannHypothesisProof/PRIMER_2026-
+08-31_RSA_PING.md. Standing rule: memory feedback-forward-propagating-maths.
+
+NEXT: PtolemyDesktop (Cody's call, 08-31).
 
 ═══════════════════════════════════════════════════════════════════════════
 2026-08-20 — NVMe transplant, context rebuild, the Generational Lineage engine

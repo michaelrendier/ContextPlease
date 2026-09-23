@@ -1,6 +1,7 @@
 # skills — part of ContextPlease's portable historical context
 
-**Created 2026-09-22, expanded same day to cover all 19.** `ContextPlease`
+**Created 2026-09-22, expanded same day to cover all 19, then 20 same day
+(addition-matrix).** `ContextPlease`
 exists to let someone else — or this user, on a different machine — drop
 the exact accumulated context of this project's repos and this
 conversation's own work straight into their own Claude Code, without
@@ -9,10 +10,11 @@ that: the custom skills below are behavior this project actually taught
 Claude, not generic tooling, and they're worth zero to a new setup until
 they're actually installed into it.
 
-## The 7 that matter for that purpose — install these
+## The 8 that matter for that purpose — install these
 
-`cs-paper-code-conventions`, `generational-lineage`, `imagemagick`,
-`nes-viewport`, `observer-position`, `scad-spatial`, `unit-management` —
+`addition-matrix`, `cs-paper-code-conventions`, `generational-lineage`,
+`imagemagick`, `nes-viewport`, `observer-position`, `scad-spatial`,
+`unit-management` —
 authored during this project's own sessions, each one real accumulated
 context (methodology, conventions, corrected mistakes) that would
 otherwise have to be re-derived from scratch in a new session. **To drop
@@ -58,6 +60,7 @@ content, not part of this project's own accumulated context.
 
 | skill | what it's for |
 |---|---|
+| `addition-matrix` | Exploring the addition-matrix space of two numbers' digit-by-digit multiplication (`MultiplicationMatrixAnimator/`) — periodicity under single-digit incrementing, exact zero/digit-count characterization, digit=color mapping. Training ground for `GenerationalLineage`'s factoral decomposition / spectral recombination work, not a standalone toy. |
 | `cs-paper-code-conventions` | When a CS paper should show a runnable code listing vs. describe an API in prose vs. use boxed pseudocode — captioning/numbering/citation conventions. For `FourthAgePapers` and similar. |
 | `generational-lineage` | Track the lineage of every operation in a derivation and watch for emergent geometries, decomposed against the Two Trees domain. Load for any mathematical/physical/structural derivation in this project. Also ships with the `GenerationalLineage` repo directly. |
 | `imagemagick` | Shell-based ImageMagick reference: crop/resize/DPI, draw overlays, annotate, colour/tone, composite, montage, pixel-probing, figure-annotation coordinate math. |
