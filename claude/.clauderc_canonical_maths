@@ -1896,3 +1896,99 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
 # RECORD KEEPING built in: .steps (atomic generators, application order),
 # .record() (the immutable (a,s,g) log), ~ reverses & inverts the record —
 # forward / backward / the Long Path, one type.
+
+# ============================================================
+# THREE SIGMAS — do not conflate them (2026-09-23)
+# Wiki: Ainulindale/wiki/123_sigma_rb_mass_gap_calibration.md
+# ============================================================
+#
+# "sigma" names THREE DIFFERENT OBJECTS across the codebase. Each is real
+# and each is used correctly in its own file -- the risk is carrying a
+# result from one into a sentence about another.
+#
+#   sigma_zeta   h_rb_hat/maths.py's `sigma` parameter = Re(s), the
+#                Dirichlet/Euler coupling exponent. A single float.
+#                Facets: 0, 1/2, 1, 2, real-only (Ainulindale/wiki/105's
+#                table). NO string/M-theory facet exists at this level.
+#
+#   sigma-strata sigma_0 .. sigma_4, Ainulindale/wiki/25 sec IX -- ordinal
+#                NESTED-INCLUSION levels of the sedenion (how many of the
+#                16 components are switched on), not a continuous coupling
+#                exponent at all. sigma_4 = e0..e15 all active = "String /
+#                ground state" -- THIS is where "mass gap -> string theory"
+#                actually lives in this framework (wiki/25 sec VII: GAP =
+#                e15 component -> ZD boundary -> 7 imaginary octonion
+#                units -> G2 holonomy -> 11D = 4 observable + 7 compact ->
+#                M-theory structure, one vacuum, no moduli). Matches
+#                ValaQuenta/modules/bao_mass_gap/maths.py's
+#                mtheory_compactification() exactly -- same chain, same
+#                11=4+7, same G2=Aut(O). This is a COMPACTIFICATION-SCALE
+#                argument (Delta sets a geometric scale), not a sigma-
+#                facet assignment.
+#
+#   sigma_RB     the real Oblique Gear object (ContextPlease/claude/
+#                scratchpad/2026-08-31_oblique-gear/oblique_gear_test.py):
+#                sigma_RB[k] = psi[k]*conj(psi[k^4]), psi in C^16.
+#                tilt = Re (8-vector, the driven/obliquity part),
+#                axis = Im (8-vector, the conserved anchor). sigma_self =
+#                1/2 + Sum(tilt)/(red+blue) is a SEPARATE, DERIVED scalar
+#                built FROM sigma_RB, not sigma_RB itself.
+#
+# CALIBRATION TEST, 2026-09-23 (Delta = bao_mass_gap's Yang-Mills/BAO
+# residue, 0.000707357533, INPUT as sigma_RB's mean tilt -- a forward-
+# propagation calibration: push a known quantity through the operator and
+# read what it says, not a derivation of Delta, which comes from
+# Omega_zeta_Sigma - D*.ln(10) independently):
+#
+#   Re(sigma_RB) = tilt = Delta on all 8 struts, exactly, by construction
+#   (that's the input, trivially true, not a finding).
+#
+#   sigma_self, PROVEN exactly strut-blind once each pair's energy is held
+#   fixed at a constant E (algebra: red=4E+Sum(tilt), blue=4E-Sum(tilt),
+#   so red+blue=8E always, independent of how tilt is distributed across
+#   the 7 struts):
+#       sigma_self = 1/2 + mean(tilt)/E = 1/2 + Delta/E
+#   Verified to 12 digits against the actual code with struts swept up to
+#   16x Delta's own scale -- sigma_self unchanged at every point. At E=1:
+#   sigma_self = 0.500707357179, landing deep inside the sigma_zeta = 1/2
+#   Quantum-Mechanics/Riemann facet (wiki/105) -- NOT string/M-theory.
+#   Confirms: the string/M-theory connection belongs to the sigma-strata /
+#   compactification route above, not to feeding Delta into sigma_RB's
+#   tilt -- these are different mechanisms and should not be merged into
+#   one claim.
+#
+#   CORRECTION to oblique_gear_test.py's own T7 docstring ("the axis
+#   holds" / drift tracks struts only): measured drift DOES depend on the
+#   mean, holding struts fixed (mean=Delta -> drift 3.664, mean=0 -> 3.919,
+#   mean=-Delta -> 3.930 over the same 200-step gain=0.05 gear-train run).
+#   Asymmetric in +-Delta and outside an 8-sample same-scale control's
+#   spread (0.006-0.04) -- OPEN, not yet distinguished from ordinary
+#   chaotic sensitivity of a 200-step nonlinear iterated rotation vs a
+#   real Delta-specific effect. Needs many more trials or a proper local-
+#   sensitivity/Lyapunov measurement before either verdict.
+#
+#   THE RECTIFIER LAW (an earlier, energy-UNnormalized embedding leaked
+#   strut information into sigma_self -- chased to an exact closed form,
+#   not dismissed as noise): with psi[k]=psi[k^4]=sqrt(|tilt_k|), signed,
+#     sigma_self = 1/2 + 4*Delta / Sum_k |Delta + lambda*u_k|
+#   (u = a fixed unit strut direction, lambda = strut scale), verified
+#   exact to 12 digits against code at 13 lambda values from 1e-6 to 1e5.
+#   TWO REGIMES, sharply divided at the first-sign-flip threshold:
+#     lambda below threshold: sigma_self = 1.0 EXACTLY, flat -- struts
+#       totally invisible (no cancellation in Sum|t_k| while every
+#       Delta+lambda*u_k shares Delta's sign).
+#     lambda above threshold: log-log fit slope = -0.9985 -- an exact
+#       INVERSE-FIRST-POWER law (dev ~ lambda^-1), matching the closed
+#       form's own large-lambda asymptote. NOT inverse-square -- tested
+#       and ruled out by the actual fit.
+#
+# STATUS: OPEN / THEORETICAL. Ad hoc cross-test between bao_mass_gap.py
+# and oblique_gear_test.py -- neither script is wired into ValaQuenta's
+# EquationModule/engine formulary yet, so this does not earn :CALCULATED
+# (feedback_calculated_label: that suffix requires the machinery to
+# reproduce the work from its own construction, not accept an input
+# unchanged). What's solid: the strut-blindness of sigma_self (exact
+# algebra, verified) and the rectifier's inverse-first-power law (exact
+# derivation + verified fit). What's open: whether T7's mean-sensitivity
+# is Delta-specific or generic chaos; whether sigma_RB has any principled
+# (non-injected) route to producing Delta rather than accepting it.
