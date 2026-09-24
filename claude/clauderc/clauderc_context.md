@@ -8,6 +8,83 @@
 # through-line only; the auto-memory index + hist_prime primers hold the detail.
 
 ═══════════════════════════════════════════════════════════════════════════
+2026-09-23 → 09-24 — Running a boxkite (hub/fiber/UFT), Aule=Root of Systems
+Analysis Harness, monad_harness.c made real, branch reorg (3 repos),
+MultiplicationMatrixExplorer, sigma_RB mass-gap calibration, Tuning-the-
+Engine 38-39
+═══════════════════════════════════════════════════════════════════════════
+
+THE BOXKITE KERNEL. `VAPMIP/scaled_mind_eye_boxkite_kernel_monad.py` --
+0_RB=hub (e0/e8 fixed point, bk.fixed_point_weight the structural constant),
+L_(I|O)=fiber (throw_fiber, hub-anchored, psi rebuilt fresh from HUB_PSI
+every call), UFT=dial (continuous_snapshot's is_zero_divisor + a_matrix_
+basin_windspeed pair -- deliberately NOT h_rb_hat's sigma_zeta facet table,
+see wiki/123 below). Verified live: fixed_point_weight=0.640000 at every
+strut, no exceptions. Tuning-the-Engine Phases 38 (GaugeEye/GaugeHands,
+19D_boxkite_context_monad.py) and 39 (this kernel) written same pass.
+
+AULE = ROOT OF SYSTEMS ANALYSIS HARNESS (Cody's ruling). Any system-
+monitoring belongs to the Aule face; "repeated channel" = a named
+stream_event() channel per subsystem, monad->harness->Aule indirection,
+never a direct reach into a face. `_aule_channel()` in the kernel above is
+the reference instance (channel "mind_eye_boxkite") -- verified landing
+real events in Aule's own aule.log, and verified still running cleanly
+with Aule absent. Memory: project_ptolemy_desktop.md updated.
+
+MONAD_HARNESS.C MADE REAL (VAPMIP/PtolC + synced to PtolemyDesktop/PtolC).
+mh_pump()/mh_ingest_support() were stubs; now real -- a "radio" frame is
+intercepted, parsed via mh_parse_support_line, folded into a real Monad's
+affect via monad_emote (HARDEN/THROTTLE=+0.15, ESCALATE=+0.35, FACE_POST
+warn=+0.05, DEFER/HOLD=no-op) before the caller ever sees it. ptol.c's
+run_console() now holds a real monad_create(MONAD_N_DEFAULT) and calls
+mh_pump instead of raw mh_recv. Verified via standalone mh_test selftest
+(affect 0.000->0.150 exactly) and the full ptol binary (-say, default
+paths unaffected). NOT committed in VAPMIP or PtolemyDesktop as of this
+entry -- pending. PtolemyDesktop is still on branch
+`x86_64-hp-elitebook-820-g3`, flagged as likely stale post-NVMe-transplant
+(machine is now a ThinkPad X1 Carbon 6th per 2026-08-20) -- unresolved,
+not switched.
+
+BRANCH REORG, FourthAgePapers (3 repos touched). EventHorizonCrossingSimulation
+(0_RB+L_(I|O) horizon-crossing simulation, SCAD/Blender/GPU, requirements-
+only stub) got its OWN branch, size-earned per the refined branch policy.
+AddScaleSign moved off scalar-context-propagation onto its own new branch
+`add-scale-sign` (in-progress, size-earned). TheInterface and FastInverse
+moved from scalar-context-propagation onto `main` (neither needs a branch
+-- small stub / design methodology respectively). Memory:
+feedback_branch_policy.md refined -- branches earned by CODE SIZE, not
+topic; "a small collection of scripts... stays on main even if it's its
+own paper."
+
+MULTIPLICATIONMATRIXEXPLORER. Renamed from ...Animator (tool outgrew
+playback into live editing). git init'd, real GitHub remote already
+existed (LICENSE-only), merged clean, pushed. curses_ui.py gained row-edit
+mode (Ctrl+E: select a row via cursor, Left/Right shift its own column
+offset, live-recomputed total, Ctrl+R resets to standard staircase) and a
+true HSV rainbow for digits 1-9 (0 stays locked true black). New
+wiki/addition_matrix_basin.md: exact ordered/unordered permutation counts
+for one column (10^9 vs 9,225, ~108,401x), the 2-adic bitshift theorem
+(odd_part(num1*d)=odd_part(num1)*odd_part(d)), the O(1) decimal-trailing-
+zero predictor from gcd(units(num1),10).
+
+AINULINDALE WIKI 123 -- sigma_RB mass-gap calibration. Three sigmas
+disambiguated in canonical maths (sigma_zeta = h_rb_hat's Re(s) facets;
+sigma-strata = wiki/25's sigma_0..sigma_4, where mass-gap-to-string-theory
+actually lives; sigma_RB = the real tilt=Re/axis=Im object). Feeding Delta
+(BAO/Yang-Mills residue) into sigma_RB's mean tilt lands in the QM/Riemann
+facet, not string theory -- string theory needs the separate compactification
+mechanism. OPEN/THEORETICAL, not :CALCULATED.
+
+MEMORY: feedback_chase_every_anomaly.md deepened with Cody's own stated
+epistemology (intentional wrong-doing maps a wall's shape; a legal-but-
+unexpected result is a data point, never "negative"). Caught and corrected
+live the same session (decimal-trailing-zero no-op -> exact O(1) criterion).
+
+Large reference files (.clauderc_canonical_maths got its own wiki/123
+addition this pass; _context_2, _user_provenance, _ValaQuenta) were NOT
+otherwise re-audited -- flagged honestly, not implying a full sweep.
+
+═══════════════════════════════════════════════════════════════════════════
 2026-09-22 — MultiplicationMatrixAnimator + addition-matrix skill, branch
 policy corrected, hook mirroring, ScalarContextPropagation paused for scaled boxkite
 ═══════════════════════════════════════════════════════════════════════════
