@@ -770,6 +770,29 @@ CURVATURE = THE ASSOCIATOR  [a,b,c] = (ab)c − a(bc).  Torsion = [a,b].
 SKELETON: PG(3,2) — 15 points (the pure imaginaries), 35 lines of 3
   (the multiplication triplets), 15 Fano planes. NOT 32.
 
+THE BLACKJACK SUBGROUP (named precisely 2026-09-25): the 21-element
+  subgroup of PSL(2,7) acting on the 7 struts (Boxkite-Catalog.txt §8) is
+  F_21 = 7:3, the normalizer of a Sylow-7 subgroup — forced by Sylow
+  counting (G simple ⇒ Sylow-7 count = 8 ⇒ 168/8 = 21), not chosen.
+  Abstract affine model (struts as ℤ/7): {x↦ax+b : a∈{1,2,4} (QR mod 7),
+  b∈ℤ/7}; point-stabilizer order 3, matches the catalog's already-recorded
+  number via a 2nd derivation. NOT yet reconciled with the catalog's own
+  GL(3,2)/XOR-triple cycles — same rep. relabeled, or a different
+  embedding: undetermined. Every element self-invertible ⇒ proposed
+  (untested) box-kite-native reversible indexer for
+  FourthAgePapers/HyperindexingSystem — base-21 vs plain-Horner base-97/33
+  (VAPMIP/README.md baseline) is an open cost comparison, not assumed.
+  Full derivation: ValaQuenta/wiki/box_kite.md §"The Blackjack subgroup",
+  VAPMIP/Boxkite-Catalog.txt §8, VAPMIP/TODO.md.
+  TESTED 2026-09-25 (VAPMIP/benchmarks/blackjack_vs_horner_bench.py):
+  does NOT work as a Horner replacement — composing a word collapses to
+  1 of 21 states (pigeonhole, concrete collision at length 2); the only
+  lossless form (keep the digit sequence) needs ~1.8-2x more digits and
+  runs 5-21x slower than base-97. Cody's reading: F_21's failure mode here
+  = the amygdala/"lizard brain" — fast, coarse, categorical, not exact
+  recall; candidate as a triage pre-classifier alongside the exact
+  indexer, not a replacement for it.
+
 # ------------------------------------------------------------
 # THE NEGATIVE SPACE — μ, Mertens, and the three motions
 # archimedes_screw v0.3, 2026-08-05
