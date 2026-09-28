@@ -28,3 +28,18 @@ Core: `27 ran / 27 passed / 1 skipped`; tests `151 passed, 2 skipped` (150/2 at 
 - README §§0–4.18 prose not audited line-by-line beyond counts and the code blocks; ValaQuenta/wiki/generational_lineage_map.md and
   other sibling-repo docs still cite the old FactoralDecomposition paths.
 - Other repos' licences (TuringStack MIT; ValaQuenta/Ainulindale/PtolemyDesktop none) untouched.
+
+## Follow-up: README older-prose consistency pass (d94ab90, same day)
+Line-by-line audit of README §§0–8 + appendices against the live engine. Found & fixed: §5 listed 40/44 relations (PW13–16 missing; all
+listed names were correct); `fermat_path(3233)` documented excursion 8 (actual 0); `pathway_residues(mult=1)` "often fails" on an example
+where it succeeds (now N=1451951 → multiplier 3, step 86); `decompose()` output missing `root`; pasted `report_emergence` had old field
+names; §4.6 "IoC not built here yet" (cipher builds it); Status enum members are HOLDS/FALSE/UNJUDGED (values print MATHS-FAULT/CODE-FAULT);
+GenerationalLineageEngine (base, R-series) vs FactoralLineageEngine (subclass, runs all); session-speak; sibling-repo / private-dotfile
+pointers unresolvable to outsiders; §4.8 out of order. NEW: tutorials 17 (pathway/tuning) and 18 (factoral spiral) → 43 tutorials.
+GENERATED now (build_docs): §5 tables (from run_lineage log; ids R/F/G/FR/PW map exactly onto the prose's R5, F3, G5, PW11–PW16),
+Emerger report, Appendix A (Clay), tutorial-index count. NEW TESTS: every README anchor + every relative link in README/wiki resolves.
+Measured (clean envs): Core 156 passed/2 skipped; Extended 158 passed. `build_docs --check` also passes on Core.
+Gotchas: `python3 engine/oscilloscope.py N` writes factorial_oscilloscope.svg into the REPO ROOT regardless of cwd (overwrote the tracked
+file during my check; restored via git checkout) — documented in §4.8, not changed. Calibration report figures verified (46/22/6/18, 0.957).
+FOR CODY: G5's claim string and README §7 mention "SHA-1 IVs are a null subalgebra" / the UDEO white paper's retracted lemma — already
+public, but your memory says SHA-1-specific UDEO detail is your call under the CVE embargo; I did not alter it.
