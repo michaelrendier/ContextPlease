@@ -1,0 +1,26 @@
+periodicity.descend                {'min_period': 13, 'periods': [13, 18, 20, 21], 'exponent': None} | free True cost 0
+periodicity.build_up(FW 5,8)       {'string': 'abaababaaba', 'periods': [5, 8, 10, 11]} | free False cost 11
+lyndon.descend banana              {'factors': ['b', 'an', 'an', 'a'], 'omega': 4, 'necklace_representative': 'abanan'} | free True cost 0
+lyndon.build_up(4,2)               {'count': 3, 'expected_count': 3, 'necklaces': 6} | free False cost 3
+berlekamp_massey.descend           {'linear_complexity': 5, 'period': 31, 'primitive': True, 'determined': True} | free True cost 0
+berlekamp_massey.build_up L=16     {'poly': 65581, 'period': 65535} | free False cost 23
+logperiodic.descend                {'omega': 5.999999999694001, 'scale_ratio_lambda': 2.8496539083785524, 'amplitude': 1.3000000000415022, 'r_squared': 1.0} | free True cost 0
+permutation.descend                {'cycle_type': (3, 2, 1), 'order': 6, 'sign': -1, 'factoradic_rank': 242} | free True cost 0
+permutation.build_up order 60      {'cycle_type': (5, 4, 3), 'degree': 12} | free False cost 12
+rejewski.descend QEV+plugs         {'characteristic': ((12, 12, 1, 1), (13, 13), (10, 10, 1, 1, 1, 1, 1, 1)), 'plugboard_independent': True} | free True cost 0
+jordan_chevalley.descend           {'nilpotency_index': 2, 'jordan_block_sizes_of_N': [2, 1], 'ok': True} | free True cost 0
+re_pair.descend                    {'n': 33, 'n_rules': 7, 'depth': 7, 'grammar_size': 17, 'minimal': None} | free True cost 0
+pohlig_hellman.descend             {'order_lineage': {2: 26, 7: 1}, 'largest_prime_factor': 7, 'predicted_cost_group_ops': 110} | free True cost 0
+pohlig_hellman.build_up            {'x': 987654, 'verified': True} | free False cost 1520
+unicity.descend enigma             {'key_entropy_bits': 67.10724886600143, 'U_upper_bound_rigorous': 127.8836894798162, 'U_shannon_estimate': 20.96813399909287} | free True cost 0
+unicity.build_up vigenere 7        {'characters_needed': 11} | free False cost 11
+refuses periodicity        owed: a root word and length, or a period pair {'p','q'}
+refuses lyndon             owed: {'n','k'} to enumerate, or {'factors': [...]} to assemble
+refuses berlekamp_massey   owed: {'poly','n'} to run, or {'degree'} to find a primitive polynomial
+refuses logperiodic        owed: {'omega': ω, 'amp', 'phase', 'const', 'trend', 'x_lo', 'x_hi', 'n'}
+refuses permutation        owed: {'rank','n'} | {'cycle_type': […]} | {'order': N}
+refuses rejewski           owed: {'characteristic': (type_AD, type_BE, type_CF)}
+refuses jordan_chevalley   owed: {'blocks': [(λ, size), …], 'basis': P}
+refuses re_pair            owed: {'grammar': <grammar from descend()['_grammar']>}
+refuses pohlig_hellman     owed: {'p': prime, 'g': base, 'h': target, 'budget': group-op cap}
+refuses unicity            owed: {'kind': …, 'max_spurious': ε, 'redundancy': 'shannon' | 'order0'}
