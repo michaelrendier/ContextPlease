@@ -43,3 +43,21 @@ Gotchas: `python3 engine/oscilloscope.py N` writes factorial_oscilloscope.svg in
 file during my check; restored via git checkout) — documented in §4.8, not changed. Calibration report figures verified (46/22/6/18, 0.957).
 FOR CODY: G5's claim string and README §7 mention "SHA-1 IVs are a null subalgebra" / the UDEO white paper's retracted lemma — already
 public, but your memory says SHA-1-specific UDEO detail is your call under the CVE embargo; I did not alter it.
+
+## Follow-up 2: UDEO decoupling + drop TuringStack (1512bc0)
+Cody corrections: (1) IV-nilpotency finding was NOT in service of UDEO -- it tested GL's own trace-Laplacian machinery, SHA-1 IVs
+were one real-world check case. (2) No formal embargo; informal ask = don't share until CVE assigned; eval still pending (after
+boxkite paper). (3) repo-root SVG write is fine, expected behaviour on the clone owner's own machine. (4) REJECTED my first phrasing
+"not work done for or as part of any other project" -- forensic-psychology point: denying involvement ("nothing to see here") reads
+as volunteering information and prompts forensic analysts into forward motion. Corrected wording everywhere to "work touching other
+projects not scoped here" (his exact suggested phrase, applied to all 4 instances: README §7, wiki session-origin, wiki G5 section,
+NEWS.md).
+Code fix: engine/maths.py dropped `from udeo_poc import CayleyDickson` (TuringStack) -- replaced with GL's own `engine.lineage.
+cd_mul_gf2`, checked BIT-IDENTICAL at dim 8..2048 and up to 8x faster. TuringStack is no longer a required sibling: Extended layer
+is now 3 repos (AbrikosovTree, ValaQuenta, FourthAgePapers), not 4. Updated everywhere: INSTALL.md, README.md (generated install
+block regenerates from INSTALL.md automatically), NEWS.md, CONTRIBUTING.md, wiki/Reproducibility.md, .github/ci-workflow.yml,
+engine/__init__.py comment, examples/90_extended_fermat_facet.py + transcript.
+Verified TWICE: (a) local real siblings, 28/28 0 skipped, 158 passed; (b) completely fresh `git clone` from GitHub of GL +
+AbrikosovTree + ValaQuenta + FourthAgePapers only (no TuringStack anywhere on disk) -- same result, transcripts/docs not stale.
+Also note: an earlier bash attempt (`rm -rf` on a SCRATCHPAD clone of TuringStack, not the real repo) was rejected by the user mid-
+turn; abandoned that approach and used a wholly fresh clone instead, which is cleaner anyway.
