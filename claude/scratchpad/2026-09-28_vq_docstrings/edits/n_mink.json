@@ -1,0 +1,30 @@
+{
+ "minkowski_metric_tensor": {
+  "params": {
+   "signature": "'mostly_minus' or 'mostly_plus'"
+  },
+  "returns": "the 4×4 metric η_μν",
+  "raises": {
+   "ValueError": "the signature is unknown"
+  }
+ },
+ "MinkowskiSpacetime.lower_index": {
+  "params": {
+   "vector": "components V^ν"
+  },
+  "returns": "V_μ = η_μν V^ν"
+ },
+ "MinkowskiSpacetime.raise_index": {
+  "params": {
+   "covector": "components V_ν"
+  },
+  "returns": "V^μ = η^μν V_ν"
+ },
+ "MinkowskiSpacetime.contract": {
+  "params": {
+   "A": "components A^ν",
+   "B": "components B^μ"
+  },
+  "returns": "A_μ B^μ = η_μν A^ν B^μ"
+ }
+}

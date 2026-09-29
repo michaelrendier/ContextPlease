@@ -1,0 +1,9 @@
+/home/rendier/Projects/ThePlace/ValaQuenta/engine/registry.py:docstring of ValaQuenta.engine.registry.Equation:10: WARNING: Inline emphasis start-string without end-string. [docutils]
+/home/rendier/Projects/ThePlace/ValaQuenta/engine/manifest.py:docstring of ValaQuenta.engine.manifest:27: WARNING: Title underline too short.
+
+SCHEMA  (schema id: "valaquenta.engine-manifest/1")
+-------------------------------------------------- [docutils]
+/home/rendier/Projects/ThePlace/ValaQuenta/modules/archimedes_screw/maths.py:docstring of ValaQuenta.modules.archimedes_screw.maths:123: ERROR: Unknown target name: "chebyshev_psi". [docutils]
+/home/rendier/Projects/ThePlace/ValaQuenta/modules/bracketing_firing_order/maths.py:docstring of ValaQuenta.modules.bracketing_firing_order.maths:41: ERROR: Unexpected indentation. [docutils]
+/home/rendier/Projects/ThePlace/ValaQuenta/modules/bracketing_firing_order/maths.py:docstring of ValaQuenta.modules.bracketing_firing_order.maths:44: WARNING: Block quote ends without a blank line; unexpected unindent. [docutils]
+/home/rendier/Projects/ThePlace/ValaQuenta/modules/spectral_primes/maths.py:docstring of ValaQuenta.modules.spectral_primes.maths:3: ERROR: Unknown target name: "addendum_toroidal". [docutils]

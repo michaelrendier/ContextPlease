@@ -1,0 +1,12 @@
+{
+ "dirac_gamma_matrices": {
+  "doc": "Not implemented: raises UnsupportedCombinationError.\n\nUse field_type 'real_scalar', 'complex_scalar' or 'algebra_valued' instead.",
+  "params": {
+   "args": "ignored",
+   "kwargs": "ignored"
+  },
+  "raises": {
+   "UnsupportedCombinationError": "always"
+  }
+ }
+}

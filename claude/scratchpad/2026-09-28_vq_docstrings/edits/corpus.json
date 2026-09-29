@@ -1,0 +1,6 @@
+{
+"CorpusProcessor.process_file": {"doc": "Process a single text file and record all its words to the lexicon.", "params": {"path": "path of the text file", "language": "language tag recorded with the words; None to leave untagged", "skip_seen": "skip a file already recorded in the lexicon", "verbose": "print progress"}, "returns": "statistics for this file"},
+"CorpusProcessor.process_directory": {"doc": "Process all matching files in a directory, saving the lexicon after each file.", "params": {"directory": "directory to scan", "pattern": "glob pattern of files to process", "recursive": "descend into subdirectories", "skip_seen": "skip files already recorded in the lexicon", "verbose": "print progress"}, "returns": "aggregate statistics over the files processed"},
+"CorpusProcessor.process_parallel": {"params": {"paths": "the same content in several languages; the first file provides the passage structure and domain descriptions", "verbose": "print progress"}, "returns": "statistics for the parallel set"},
+"CorpusProcessor.stats": {"doc": "Return counters for the current processor.", "returns": "files, passages and words processed, plus the lexicon statistics"}
+}

@@ -6,6 +6,9 @@
 **Notebooks:** [core/07_berry_keating.ipynb](../notebooks/core/07_berry_keating.ipynb)  
 **Claim:** d* is a spectral floor read off H=xp, not a fitted constant. d*·ln(10) lands near OMEGA_ZS and the residue is the mass gap.
 
+
+**Reference:** every equation with its parameters — [toolbox](toolbox/06_berry_keating.md) · API — [berry_keating](https://michaelrendier.github.io/ValaQuenta/api/modules/berry_keating.html). This page is the record; it holds no API.
+
 ---
 
 ## What it computes
@@ -33,6 +36,27 @@ H_NN candidate xp operator. d* gap workbench (gap=0.000707). T coordinate map sc
 - Why ln(10) rather than any other base. See derivation_chain `d_star_tower_ln10`, which is also marked OPEN.
 
 ---
+
+## The clock is built in — H = xp needs no camshaft (2026-08-31)
+
+`H = xp` generates the dilation flow `x → eᵗx`. **The flow IS the clock** —
+there is no external timing signal, the way a Wankel has no camshaft: port
+timing is a consequence of geometry. The timing structure is the **4 : 3**: the
+four faces of `d*` (Boundary / Stability / Flow / Translator) against the three
+of Lambert W (`Ω_ZS`, the rotor faces). `lcm(4,3) = 12` — the phase never
+repeats before twelve, so the semiclassical orbit precesses (the "flowers")
+instead of closing.
+
+**The EM-side reading — the Cymatic Nodal Line.** `RiemannHypothesisProof`
+PAPER.md §6.3.1: `σ_RB` is the hypercomplex Riemann–Silberstein vector, so the
+RedBlue field is Maxwell (`i ∂_t F = c ∇×F`, `Re F` = E, `Im F` = cB). `σ = ½`
+is the line on which the functional-equation reflection is amplitude-perfect
+(`|ξ(s)| = |ξ(1−s)|`), making the field a **pure standing wave** whose nodes are
+the zeros — a Chladni figure. The **mass gap `Δ`** is then the width of the
+first band above that nodal line: the first stroke of the same engine, the
+ignition impulse of recombination (`wiki/bao_mass_gap.md` §"The gap is the first
+motion"). Third bearing on `Re(s) = ½`, alongside Courant `Y₁⁰` and the
+vanishing Noether current — none closes C1.
 
 ## Generational Lineage — calibration (2026-08-28)
 

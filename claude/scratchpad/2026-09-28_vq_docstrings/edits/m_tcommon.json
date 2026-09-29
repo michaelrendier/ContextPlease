@@ -1,0 +1,72 @@
+{
+ "channel_signature": {
+  "params": {
+   "token": "the token; an empty token gives the zero vector"
+  },
+  "returns": "the 16 prime-channel values x_k"
+ },
+ "hypervector": {
+  "params": {
+   "token": "the token"
+  },
+  "returns": "the 4096 values x_j, j = h·16 + k"
+ },
+ "verify_harmonic_reduction": {
+  "params": {
+   "token": "the token to check",
+   "tol": "tolerance on the residual"
+  },
+  "returns": "dict with the residual and whether hypervector()[0:16] equals channel_signature(token); it does not raise"
+ },
+ "dot": {
+  "doc": "Return the dot product of two vectors.",
+  "params": {
+   "a": "first vector",
+   "b": "second vector, of the same length"
+  },
+  "returns": "Σ aᵢbᵢ"
+ },
+ "norm": {
+  "doc": "Return the Euclidean norm of a vector.",
+  "params": {
+   "a": "the vector"
+  },
+  "returns": "√(a·a)"
+ },
+ "cosine": {
+  "params": {
+   "a": "first vector",
+   "b": "second vector, of the same length"
+  },
+  "returns": "the cosine similarity, or 0.0 if either vector is zero"
+ },
+ "TranslatorEngine.encode": {
+  "params": {
+   "token": "the token"
+  },
+  "returns": "the token's native vector in this engine"
+ },
+ "TranslatorEngine.compose": {
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "the sentence vector in the 16-dim space S"
+ },
+ "TranslatorEngine.sentence_similarity": {
+  "params": {
+   "a": "(subject, verb, object) triple",
+   "b": "(subject, verb, object) triple"
+  },
+  "returns": "the cosine between the two composed triples"
+ },
+ "compare_engines": {
+  "params": {
+   "engine_a": "first Translator engine",
+   "engine_b": "second Translator engine",
+   "triples": "(subject, verb, object) triples to run through both"
+  },
+  "returns": "dict with the per-triple agreement of the two engines"
+ }
+}

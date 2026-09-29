@@ -1,0 +1,23 @@
+{
+ "verify_conservation": {
+  "params": {
+   "current": "the current to check",
+   "L": "the Lagrangian",
+   "use_equations_of_motion": "substitute the E-L equations before testing; False tests the raw divergence"
+  },
+  "returns": "dict with 'divergence_raw', 'divergence_on_shell' and 'conserved'"
+ },
+ "derive_first_theorem_current": {
+  "params": {
+   "L": "the Lagrangian",
+   "S": "the symmetry, with optional K^μ for Bessel-Hagen",
+   "variation_convention": "'vertical' or 'total'",
+   "invariance": "'strict', 'divergence' or 'bessel_hagen'",
+   "verify": "also check ∂_μ J^μ = 0 on-shell"
+  },
+  "returns": "the derivation result",
+  "raises": {
+   "ValueError": "a convention or invariance option is unknown"
+  }
+ }
+}

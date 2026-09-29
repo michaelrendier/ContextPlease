@@ -6,6 +6,9 @@
 **Ainulindale wiki:** `Ainulindale/wiki/84_the_box_kite_debugger.md`
 **Claim:** The sedenion zero-divisor geometry is exactly enumerable, and its object is **PSL(2,7)** (order 168, Aut(Fano) = GL(3,2)) — **not G₂**. Seven box-kites, each an **octahedron**, six Assessors apiece, 42 in all. Chart-level dispersion relation {0,4,4,4,6,6}. The associator is the curvature.
 
+
+**Reference:** every equation with its parameters — [toolbox](toolbox/28_box_kite.md) · API — [box_kite](https://michaelrendier.github.io/ValaQuenta/api/modules/box_kite.html). This page is the record; it holds no API.
+
 ---
 
 ## Where the object is, and where it is not
@@ -256,3 +259,13 @@ Decomposed by `SedenionFactoralRelativity/engine/valaquenta_calibration.py` (`py
 
 
 Calibration: this verdict agrees with the page's stated status (**ESTABLISHED**).
+
+## Provenance
+
+Moved from the module docstring: a docstring instructs the caller and holds no history; this section is the record.
+
+> "how do we 'debug' the geometries / how do we watch the geometries
+> 
+> ::
+> 
+>  interact"   -- Cody Michael Allison, 2026-08-05

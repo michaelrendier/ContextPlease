@@ -1,0 +1,12 @@
+{
+ "belinfante_rosenfeld_improvement": {
+  "doc": "Not implemented: raises UnsupportedCombinationError naming the switch combination.",
+  "params": {
+   "args": "ignored",
+   "kwargs": "ignored"
+  },
+  "raises": {
+   "UnsupportedCombinationError": "always"
+  }
+ }
+}

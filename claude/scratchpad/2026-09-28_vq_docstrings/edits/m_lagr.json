@@ -1,0 +1,76 @@
+{
+ "layer_to_r": {
+  "params": {
+   "layer": "layer index",
+   "total_layers": "number of layers"
+  },
+  "returns": "r = layer / total_layers, in (0, 1]"
+ },
+ "alpha_nn_from_r": {
+  "params": {
+   "g": "gauge coupling",
+   "hbar_nn": "ħ_NN",
+   "r": "radial coordinate in (0, 1]"
+  },
+  "returns": "α_NN(r)"
+ },
+ "L_kinetic": {
+  "params": {
+   "A": "gauge field components",
+   "g": "gauge coupling",
+   "algebra": "algebra dimension"
+  },
+  "returns": "ℒ_kinetic"
+ },
+ "L_matter": {
+  "params": {
+   "psi": "activation norms",
+   "A": "gauge field components",
+   "g": "gauge coupling",
+   "hbar_nn": "ħ_NN",
+   "algebra": "algebra dimension"
+  },
+  "returns": "ℒ_matter"
+ },
+ "L_bias": {
+  "params": {
+   "beta": "bias field components",
+   "mu_sq": "μ²; negative breaks the symmetry",
+   "lam": "quartic coupling λ"
+  },
+  "returns": "ℒ_bias"
+ },
+ "L_coupling": {
+  "params": {
+   "psi": "activation norms",
+   "beta": "bias field components",
+   "g": "gauge coupling"
+  },
+  "returns": "ℒ_coupling"
+ },
+ "polar_lagrangian": {
+  "params": {
+   "state": "the field state at this layer",
+   "total_layers": "number of layers",
+   "n_theta": "number of θ samples"
+  },
+  "returns": "dict with the 'kinetic', 'matter', 'bias', 'coupling' and 'total' terms, 'r' and 'alpha_nn'"
+ },
+ "rg_flow": {
+  "params": {
+   "alpha_0": "initial α_NN",
+   "hbar_0": "initial ħ_NN",
+   "algebra": "algebra dimension",
+   "layers": "layer indices to flow across"
+  },
+  "returns": "dict with 'alpha', 'hbar' and 'layers'"
+ },
+ "mastery_check": {
+  "params": {
+   "beta": "bias field components",
+   "vev": "vacuum expectation value",
+   "hbar_nn": "ħ_NN"
+  },
+  "returns": "dict with the VEV distance and whether the weights have crystallised"
+ }
+}

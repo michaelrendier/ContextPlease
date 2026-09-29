@@ -1,0 +1,9 @@
+{
+ "is_on_shell_zero": {
+  "params": {
+   "expr": "the expression to test",
+   "L": "the Lagrangian whose equations of motion apply"
+  },
+  "returns": "dict with 'original', 'simplified', 'after_eom', 'on_shell_zero' and 'method'"
+ }
+}

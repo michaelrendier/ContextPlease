@@ -1,0 +1,5 @@
+{
+ "EuclideanSpacetime": {
+  "doc": "Euclidean spacetime. Not implemented: constructing it raises UnsupportedCombinationError."
+ }
+}

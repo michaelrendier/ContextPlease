@@ -1,0 +1,16 @@
+{
+ "vertical_variation": {
+  "params": {
+   "L": "the Lagrangian",
+   "S": "the symmetry"
+  },
+  "returns": "δℒ_vert"
+ },
+ "total_variation": {
+  "params": {
+   "L": "the Lagrangian",
+   "S": "the symmetry"
+  },
+  "returns": "δ̂ℒ = δℒ_vert + ξ^μ ∂_μ ℒ"
+ }
+}

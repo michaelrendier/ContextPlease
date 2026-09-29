@@ -1,0 +1,31 @@
+{
+ "Symmetry.spacetime_translation": {
+  "params": {
+   "direction": "index of the translated coordinate",
+   "coords": "the spacetime coordinates",
+   "fields": "the fields that transform"
+  },
+  "returns": "the symmetry"
+ },
+ "Symmetry.global_u1_phase": {
+  "params": {
+   "field": "a complex or algebra-valued field",
+   "charge": "the charge q"
+  },
+  "returns": "the symmetry",
+  "raises": {
+   "ValueError": "the field has no U(1) phase to rotate"
+  }
+ },
+ "Symmetry.global_phase_non_abelian": {
+  "params": {
+   "field": "an algebra-valued field",
+   "generator": "Lie algebra generator matrix T",
+   "parameter_name": "name of the transformation parameter"
+  },
+  "returns": "the symmetry",
+  "raises": {
+   "ValueError": "the generator does not fit the field's representation"
+  }
+ }
+}

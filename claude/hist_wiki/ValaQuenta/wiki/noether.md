@@ -4,6 +4,9 @@
 **Class:** `NoetherCurrents`  
 **Claim:** The forward (Riemann) and backward (Fermat) Noether currents both derive from one symmetry. σ=½ is derived not assigned.
 
+
+**Reference:** API — [noether.py](https://michaelrendier.github.io/ValaQuenta/api/engines.html#module-ValaQuenta.noether) and [modules/noether](https://michaelrendier.github.io/ValaQuenta/api/modules/noether.html); every registry equation with its parameters — [toolbox](toolbox/09_noether.md). This page is the record; it holds no API.
+
 ---
 
 ## Results (re-run 2026-08-28 — the large-E defect is FIXED)
@@ -113,3 +116,10 @@ Decomposed by `SedenionFactoralRelativity/engine/valaquenta_calibration.py` (`py
 Calibration: this verdict agrees with the page's stated status (**ESTABLISHED**).
 *(Was FLAGGED against the recorded `forced_sigma` defect until it was fixed
 2026-08-28 — the flag did its job, and clears now that the deficit is gone.)*
+
+---
+
+**See also (2026-09-28):** [add_scale_sign.md](add_scale_sign.md) § *SIGN and the
+direction of the Noether currents* — what SIGN does and does not decide about
+the direction of `J_red` / `J_blue`: `ln F − ln B = E(1−2σ)` is an
+`ASS(0, 2E, −1)` word on `σ − ½`, and `backward = −forward` is a definition.

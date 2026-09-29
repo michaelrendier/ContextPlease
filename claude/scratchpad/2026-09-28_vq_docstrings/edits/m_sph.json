@@ -1,0 +1,46 @@
+{
+ "assoc_legendre": {
+  "params": {
+   "l": "degree",
+   "m": "order, m ≥ 0",
+   "x": "argument in [−1, 1]"
+  },
+  "returns": "P_l^m(x)"
+ },
+ "Y_lm": {
+  "params": {
+   "l": "degree",
+   "m": "order",
+   "theta": "polar angle in radians",
+   "phi": "azimuth in radians"
+  },
+  "returns": "the real spherical harmonic Y_l^m(θ, φ)"
+ },
+ "Y_10": {
+  "params": {
+   "theta": "polar angle in radians"
+  },
+  "returns": "Y₁⁰(θ)"
+ },
+ "node_latitudes": {
+  "params": {
+   "l": "degree",
+   "m": "order",
+   "n_samples": "number of bisection intervals"
+  },
+  "returns": "the θ values at which Y_l^m(θ, 0) = 0"
+ },
+ "courant_check": {
+  "params": {
+   "k": "eigenfunction index"
+  },
+  "returns": "dict with the node lines, nodal domains and whether the theorem is satisfied"
+ },
+ "schumann_frequencies": {
+  "params": {
+   "n_modes": "number of modes",
+   "radius_m": "cavity radius in metres"
+  },
+  "returns": "dict with the mode frequencies in Hz"
+ }
+}

@@ -1,0 +1,7 @@
+{
+"SemanticDomain.instruments": {"params": {"zeros": "the full ordered list of Riemann zero ordinates"}, "returns": "the zeros that fall inside this domain: the active instruments"},
+"SemanticDomain.snap": {"params": {"zeros": "the full ordered list of Riemann zero ordinates", "t": "the word's fractional position within the domain, in [0, 1]"}, "returns": "the Riemann zero at position t; the full set is used if none fall in the domain"},
+"SemanticDomain.contains": {"params": {"gamma": "a Riemann zero ordinate"}, "returns": "True if gamma falls within this semantic domain"},
+"SemanticDomain.coherence_time": {"params": {"zeros": "the full ordered list of Riemann zero ordinates"}, "returns": "τ, the number of active instruments"},
+"SemanticDomain.is_collapsed": {"params": {"zeros": "the full ordered list of Riemann zero ordinates"}, "returns": "True when at most one instrument remains"}
+}

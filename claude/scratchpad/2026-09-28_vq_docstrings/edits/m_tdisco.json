@@ -1,0 +1,75 @@
+{
+ "reduce_type": {
+  "params": {
+   "t": "the pregroup type to reduce"
+  },
+  "returns": "dict with the reduced type and the ordered cancellations (the reduction witness)"
+ },
+ "is_grammatical": {
+  "params": {
+   "subject_t": "pregroup type of the subject",
+   "verb_t": "pregroup type of the verb",
+   "object_t": "pregroup type of the object"
+  },
+  "returns": "dict with the verdict and the type the clause actually reduced to"
+ },
+ "MeaningSpace.noun": {
+  "params": {
+   "token": "the noun"
+  },
+  "returns": "the 16-dim prime-channel signature"
+ },
+ "MeaningSpace.verb_tensor": {
+  "params": {
+   "token": "the verb"
+  },
+  "returns": "the order-3 tensor T[i][j][k] over N⊗S⊗N"
+ },
+ "MeaningSpace.contract": {
+  "params": {
+   "subj": "subject vector in N",
+   "verb": "verb tensor over N⊗S⊗N",
+   "obj": "object vector in N"
+  },
+  "returns": "the sentence vector in S"
+ },
+ "DisCoCatTranslator.version_name": {
+  "doc": "Return the engine's version name.",
+  "returns": "'discocat'"
+ },
+ "DisCoCatTranslator.encode": {
+  "doc": "Encode a token as its noun meaning.",
+  "params": {
+   "token": "the token"
+  },
+  "returns": "the noun vector"
+ },
+ "DisCoCatTranslator.compose": {
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "the sentence vector in S",
+  "raises": {
+   "ValueError": "the clause's type does not reduce to s"
+  }
+ },
+ "DisCoCatTranslator.explain": {
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "dict with the types, the reduction witness and the sentence vector"
+ },
+ "word_order_sensitivity": {
+  "params": {
+   "engine": "the translator to measure",
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "dict with the cosine between the sentence and its subject/object swap"
+ }
+}

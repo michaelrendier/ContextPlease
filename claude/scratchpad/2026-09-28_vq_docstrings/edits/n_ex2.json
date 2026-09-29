@@ -1,0 +1,17 @@
+{
+ "build_free_scalar_example": {
+  "params": {
+   "signature": "'mostly_minus' or 'mostly_plus'"
+  },
+  "returns": "(Lagrangian, Symmetry, context dict)",
+  "raises": {
+   "ValueError": "the signature is unknown"
+  }
+ },
+ "run_free_scalar_example": {
+  "params": {
+   "signature": "'mostly_minus' or 'mostly_plus'"
+  },
+  "returns": "the derivation result with its verification"
+ }
+}

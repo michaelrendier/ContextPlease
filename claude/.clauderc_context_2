@@ -390,3 +390,59 @@ cell 0 = `# Engine: <Name>` markdown with a **Claim:** line, cell 1 =
 path-bootstrap + import + capability print, then alternating `## Section`
 markdown and code. All 50 notebooks are committed with outputs STRIPPED
 (0/50 carry stored outputs) — keep it that way.
+
+
+═════════════════════════════════════════════════════
+2026-09-28 — ValaQuenta public-release pass ("API: Code Reference"); GenerationalLineage CI
+═════════════════════════════════════════════════════
+WHAT HAPPENED (one long session; ValaQuenta main 6c86744 → 7674c18, 14 commits; GL 1512bc0 → 4892eaf).
+Cody's brief: bring ValaQuenta to public attendance in the API: Code Reference style per the
+cs-paper-code-conventions skill; order he set: manifests/structure → docstrings → README → Sphinx (host last),
+then later: clean-clone verification → listings → tests → docstring leftovers → wiki → provenance → hygiene.
+
+DECISIONS (Cody, verbatim intent): all code and mathematics are GNU GPL v3.0; only "The Monad: Maths Speaking English"
+and the P.O.E. Pendant are his in The Work context; other repos are mostly GNU, adjusted as revisited.
+Docstrings = Sphinx reST field lists ("I have had you documenting for Sphinx the whole time").
+No device branches for ValaQuenta (a Python code base): main only. JP Morgan Chase is watching TuringStack (his remark).
+
+BUILT (all ESTABLISHED — verified by running it, not by reading it):
+  LICENSE + pyproject.toml (GPL-3.0-only; version from ValaQuenta.__version__ = 0.159, the last package-level number
+  found; Cody has not confirmed it). 38 registered modules all manifested (was 23), all valaquenta.plugin/1 with license.
+  ~640 docstrings written/converted; 378 normalised to valid reST; Sphinx site LIVE (GitHub Pages, workflow-built,
+  warnings = errors): https://michaelrendier.github.io/ValaQuenta/  (docs/gen_api.py, docs/gen_listings.py).
+  README rewritten as Code Reference; results moved to wiki/results_at_a_glance.md; 3 new wiki pages
+  (oblique_gear, spectral_primes, udeo_crypto); Reference line on every wiki page; index repassed.
+  73 pytest checks in CI (registry, manifests, listings, docstrings, README doctest, wiki links, known results).
+  Five generated "Listings" (Convention B, extracted + run cold). Installers now `pip install -e .`.
+  GenerationalLineage: .github/ci-workflow.yml → .github/workflows/ci.yml; Core + Extended jobs green first run.
+
+BUGS FOUND BY DOING THE WORK (each recorded with its mechanism, per the failures-stay rule):
+  1. np.trapz removed in NumPy 2: tier6/7/8/9 crashed on 7 equations in the current venv. Shim added.
+  2. console_curses imported FactoralDecomposition.engine (repo renamed GenerationalLineage; import name is `engine`):
+     the spectral / lineage / calibrate lenses were silently "unavailable". Fixed via sibling-checkout path.
+  3. 19 tools.py modules were never registered in __main__._register_all (menus incomplete). Registered.
+  4. CLEAN CLONE: `bash install.sh` left `import ValaQuenta` failing from inside the clone (package root IS the repo,
+     only worked from the parent dir); README's own commands failed. Fixed: editable install in all 3 installers.
+  5. README `>>>` session printed 38 registry lines (registry printed unconditionally). Registry now quiet unless verbose.
+  6. Six modules' run() returned the raw computation, not the registry contract dict (turing_diagonal,
+     singularity_null, tier7/8/9, udeo_crypto). Fixed with viewer_data; a test enforces it.
+  7. 39 equations had composite confidence labels ("ESTABLISHED+THEORETICAL") → browser showed '?'. Equation now keeps
+     confidence_note (as authored) and exposes the WEAKEST tier in `confidence` (compound tags not flattened upward).
+  8. 11 manifests were the old engine-manifest/1 schema with no license key (upgraded).
+  9. CI caught: wiki links ../../Repo only resolved in Cody's tree → GitHub URLs.
+  10. Two of my own docstring edits garbled oblique_gear's docstring; and the provenance-move script dropped blank lines
+      at 12 junctions (caught by Sphinx + reading, repaired). Lesson: read the diff of any scripted docstring surgery.
+  11. venv holds a stale INSTALLED copy of valaquenta 0.159 in site-packages; tests import the checkout on purpose.
+  Also: my shell's $GITHUB_TOKEN was a STALE env copy of an old token (same variable name); ~/.bashrc had the new
+  one. Re-`source ~/.bashrc` after Cody rotates it. Token (ends JgP) now has repo + workflow scope.
+
+NOT DONE (recorded so the next agent does not assume otherwise):
+  - `code/sonification/*`, `code/Gemini_Revised_EHS.py`, `addenda/*`, and test files have no reST docstrings
+    (~70 functions missing, ~44 with params unconverted outside code/noether_engine, code/wiles_modularity).
+  - addenda/udeo_crypto/oops.py still hard-codes a path in Cody's home (his demo script; left).
+  - The 17 notebooks added after 2026-07-28 were not re-executed; only the README counts were reconciled.
+  - The per-component provenance labels (ESTABLISHED / OURS / FIRST STATED HERE) are NOT set: manifests carry
+    machine-drafted origin/created marked `_draft`; ValaQuenta/wiki/provenance_review.md is the sheet for Cody to fill.
+  - Equation.process= lines (all 321) are DERIVED from compute()'s docstring or the display text — a first draft, some
+    are fragments (e.g. box_kite.verify_counts). Not authored by Cody.
+  - Read the Docs config (.readthedocs.yaml) exists but no RTD project was created.

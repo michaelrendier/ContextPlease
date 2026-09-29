@@ -1,0 +1,4 @@
+{
+"Capacitor.charge": {"params": {"signal": "input sample the capacitor charges toward"}, "returns": "the new voltage V after one step V += (signal − V) / τ"},
+"Capacitor.dc": {"params": {"signals": "sequence of input samples"}, "returns": "the DC component of the sequence: the prime, the word"}
+}

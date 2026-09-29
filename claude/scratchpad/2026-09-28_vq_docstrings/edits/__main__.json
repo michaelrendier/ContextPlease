@@ -1,0 +1,1 @@
+{"main": {"doc": "Parse the command line, register the modules and launch the requested interface.\n\nFlags: --qt, --curses, --headless, --info, --manifests, --version. With no\nflag the best available interface is chosen automatically."}}

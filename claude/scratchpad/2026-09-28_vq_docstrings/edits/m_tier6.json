@@ -1,0 +1,31 @@
+{
+ "cd_conj": {
+  "doc": "Return the Cayley-Dickson conjugate: negate every component except e₀.",
+  "params": {
+   "x": "coefficient vector of length 2ⁿ"
+  },
+  "returns": "the conjugate, a new array"
+ },
+ "cd_mul": {
+  "params": {
+   "a": "coefficient vector of length 2ⁿ",
+   "b": "coefficient vector of the same length"
+  },
+  "returns": "the product, a vector of the same length"
+ },
+ "cd_basis": {
+  "doc": "Return the k-th basis element of the given dimension.",
+  "params": {
+   "k": "basis index",
+   "dim": "algebra dimension"
+  },
+  "returns": "the basis vector eₖ"
+ },
+ "build_multiplication_table": {
+  "doc": "Build the full dim×dim Cayley-Dickson multiplication table.",
+  "params": {
+   "dim": "algebra dimension"
+  },
+  "returns": "array T with T[i, j] the signed index of eᵢ·eⱼ"
+ }
+}

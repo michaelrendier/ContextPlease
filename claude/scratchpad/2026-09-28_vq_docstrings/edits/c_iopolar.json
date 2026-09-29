@@ -1,0 +1,43 @@
+{
+ "<module>": {
+  "doc": "J_N polar operator and the (I|O) zeta on the critical line.\n\nCompares ζ(½+it) with ζ applied after J_N (input side) and J_N applied after ζ (output side), with the plots."
+ },
+ "J_N": {
+  "params": {
+   "r": "radius; must be nonzero",
+   "theta": "angle in radians"
+  },
+  "returns": "(1/r, (θ + π/2) mod 2π)"
+ },
+ "J_N_complex": {
+  "params": {
+   "z": "complex number r·e^(iθ)"
+  },
+  "returns": "J_N(z) as a complex number"
+ },
+ "zeta_std": {
+  "doc": "Return ζ(½ + it) on the critical line.",
+  "params": {
+   "t": "height"
+  },
+  "returns": "the value"
+ },
+ "io_input": {
+  "params": {
+   "t": "height"
+  },
+  "returns": "J_N applied to s = ½ + it"
+ },
+ "zeta_io_input": {
+  "params": {
+   "t": "height"
+  },
+  "returns": "ζ(J_N(½ + it))"
+ },
+ "zeta_io_output": {
+  "params": {
+   "t": "height"
+  },
+  "returns": "J_N(ζ(½ + it))"
+ }
+}

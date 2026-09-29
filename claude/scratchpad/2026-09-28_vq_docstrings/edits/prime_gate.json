@@ -1,0 +1,9 @@
+{
+"sieve": {"doc": "Return the primes up to `limit` by the plain sieve of Eratosthenes. No dependencies.", "params": {"limit": "inclusive upper bound"}, "returns": "the primes ≤ limit, ascending"},
+"BoundaryAlarm.scan": {"doc": "Feed a whole sequence and record every crossing, in order.", "params": {"sequence": "the values to scan"}, "returns": "the (index, value) pairs at which the boundary function fired"},
+"BoundaryAlarm.count_at": {"doc": "Count the crossings that have fired by a position.", "params": {"sequence": "the values to scan", "upto": "position up to which crossings are counted"}, "returns": "the number of crossings"},
+"sigma_half_alarm": {"doc": "Fire when a σ trajectory crosses ½.\n\nDemonstrates that BoundaryAlarm is not prime-specific: this is the Holcus\nFIRING signal, wiki/44's halting reframe (\"does it stop HERE, at this\ndepth\"), on the same alarm primitive.", "params": {"trajectory": "σ values in order", "eps": "tolerance within which a value counts as ½"}, "returns": "the (index, σ) pairs at which the alarm fired"},
+"PrimeGateEngine.gate_alarm": {"doc": "Return π(x): how many primes have fired the alarm by x. Gap-blind.\n\nUses a bisection fast path for the equivalent, slower definition\nBoundaryAlarm(is_prime).count_at(range(2, x+1), x-1).", "params": {"x": "upper bound"}, "returns": "the number of primes ≤ x"},
+"PrimeGateEngine.is_prime": {"doc": "Return the boundary condition the alarm fires on.", "params": {"v": "integer to test"}, "returns": "True if v is prime"},
+"PrimeGateEngine.curvature_spiral": {"doc": "Return the spiral whose heading accumulates the curvature κₙ = ln(pₙ).\n\nThis is a side investigation, not an alarm function. The heading uses\nκₙ = ln(pₙ), not the raw gap gₙ, because summing gₙ telescopes back to pₙ.", "params": {"scale": "heading increment per unit of κ, in radians"}, "returns": "the (x, y) points of the spiral, starting at the origin"}
+}

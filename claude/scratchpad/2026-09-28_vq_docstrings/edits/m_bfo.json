@@ -1,0 +1,91 @@
+{
+ "bell_number": {
+  "params": {
+   "n": "number of distinct things"
+  },
+  "returns": "B(n), exact",
+  "raises": {
+   "ValueError": "n is negative"
+  }
+ },
+ "set_partitions": {
+  "params": {
+   "items": "the distinct things"
+  },
+  "returns": "every unordered partition into non-empty groups",
+  "raises": {
+   "ValueError": "len(items) exceeds ENUMERATION_CEILING_N"
+  }
+ },
+ "bracketing_report": {
+  "params": {
+   "items": "the distinct things"
+  },
+  "returns": "dict with the exact count, and the list when feasible"
+ },
+ "firing_order_count": {
+  "params": {
+   "n": "number of distinct things"
+  },
+  "returns": "n!",
+  "raises": {
+   "ValueError": "n is negative"
+  }
+ },
+ "apply_firing_order": {
+  "params": {
+   "written": "the items in written order",
+   "firing_order": "1-indexed original positions in firing order"
+  },
+  "returns": "the items resequenced",
+  "raises": {
+   "ValueError": "firing_order is not a permutation of the positions"
+  }
+ },
+ "all_firing_orders": {
+  "params": {
+   "items": "the distinct things; keep the count small, n! grows fast"
+  },
+  "returns": "every sequencing, as tuples"
+ },
+ "trajectory": {
+  "params": {
+   "steps": "callables x → x, fired in order",
+   "x0": "starting position"
+  },
+  "returns": "x0 followed by the position after each step"
+ },
+ "visited_positions": {
+  "params": {
+   "steps": "callables x → x, fired in order",
+   "x0": "starting position",
+   "tol": "tolerance for calling two positions equal"
+  },
+  "returns": "map from each repeated position to the step indices that reach it"
+ },
+ "collisions": {
+  "params": {
+   "steps": "callables x → x, fired in order",
+   "x0": "starting position",
+   "tol": "tolerance for calling two positions equal"
+  },
+  "returns": "(earlier_index, later_index, position) for each revisit"
+ },
+ "would_collide": {
+  "params": {
+   "steps_so_far": "callables already fired",
+   "candidate_next": "the step under test",
+   "x0": "starting position",
+   "tol": "tolerance for calling two positions equal"
+  },
+  "returns": "True if firing the candidate lands on a position already visited"
+ },
+ "jurisdiction_violation": {
+  "params": {
+   "object_name": "the object whose jurisdiction applies",
+   "requested_operation": "the operation requested",
+   "jurisdiction_map": "{object_name: {legal_operation, …}}, supplied by the caller"
+  },
+  "returns": "dict with the verdict; a violation is a failed set-membership test"
+ }
+}

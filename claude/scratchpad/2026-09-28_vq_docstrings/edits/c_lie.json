@@ -1,0 +1,36 @@
+{
+ "LieGeneratorConvention": {
+  "doc": "Normalisation of Lie generators.\n\n:cvar PHYSICS: Tr(T^a T^b) = ½ δ^{ab}\n:cvar MATH: Tr(T^a T^b) = 2 δ^{ab}"
+ },
+ "u1_generator": {
+  "params": {
+   "convention": "'physics' or 'math'"
+  },
+  "returns": "the 1×1 identity matrix"
+ },
+ "su2_generators": {
+  "params": {
+   "convention": "'physics' or 'math'"
+  },
+  "returns": "the three generators",
+  "raises": {
+   "ValueError": "the convention is unknown"
+  }
+ },
+ "su3_generators": {
+  "params": {
+   "convention": "'physics' or 'math'"
+  },
+  "returns": "the eight generators",
+  "raises": {
+   "ValueError": "the convention is unknown"
+  }
+ },
+ "commutator": {
+  "params": {
+   "A": "first matrix",
+   "B": "second matrix"
+  },
+  "returns": "AB − BA"
+ }
+}

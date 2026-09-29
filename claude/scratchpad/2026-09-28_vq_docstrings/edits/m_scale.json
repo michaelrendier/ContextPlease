@@ -1,0 +1,136 @@
+{
+ "polar_decompose": {
+  "params": {
+   "Z": "complex number"
+  },
+  "returns": "(r, θ)"
+ },
+ "polar_recompose": {
+  "params": {
+   "r": "modulus",
+   "theta": "argument in radians"
+  },
+  "returns": "Z = r·e^(iθ)"
+ },
+ "verify_polar_round_trip": {
+  "params": {
+   "samples": "points to test; None uses a default set"
+  },
+  "returns": "dict with the worst round-trip error"
+ },
+ "scale_invariance_under_self_rescale": {
+  "params": {
+   "Z": "complex number",
+   "lambdas": "positive real factors; None uses a default set"
+  },
+  "returns": "dict with θ at each rescaling and the spread"
+ },
+ "mobius_fold": {
+  "params": {
+   "Z": "complex impedance",
+   "Z0": "complex anchor; must be nonzero"
+  },
+  "returns": "Γ = (Z − Z0)/(Z + Z0)"
+ },
+ "scale_factor": {
+  "params": {
+   "Z": "complex point",
+   "Z0": "complex anchor"
+  },
+  "returns": "|dΓ/dZ| = |2·Z0/(Z + Z0)²|"
+ },
+ "verify_no_caustic": {
+  "params": {
+   "Z0": "complex anchor",
+   "test_points": "points to test; None uses a default spread of magnitudes"
+  },
+  "returns": "dict with the smallest derivative found and the verdict"
+ },
+ "cross_ratio": {
+  "params": {
+   "z1": "first point",
+   "z2": "second point",
+   "z3": "third point",
+   "z4": "fourth point"
+  },
+  "returns": "the cross-ratio (z1, z2; z3, z4)"
+ },
+ "verify_cross_ratio_is_scale_blind": {
+  "params": {
+   "points": "four points; None uses a default set",
+   "anchors": "anchors to fold at; None uses a default set"
+  },
+  "returns": "dict with the cross-ratio at each anchor and the spread"
+ },
+ "two_ring_point": {
+  "params": {
+   "ring1": "first ring value (real part)",
+   "ring2": "second ring value (imaginary part)",
+   "Z0": "complex anchor"
+  },
+  "returns": "dict with Z, Γ and the scale factor"
+ },
+ "custom_ring_chart": {
+  "doc": "Fold Z = ring1_fn(obj) + i·ring2_fn(obj).\n\nThis is the ONE entry point a user needs: define what the two rings mean\nfor the relationship, pass them in as plain functions, and get back the\nfold and everything derived from it. two_ring_point is the special case\nwhere the two numbers are already computed.",
+  "params": {
+   "obj": "the object under study",
+   "ring1_fn": "function obj → first ring value",
+   "ring2_fn": "function obj → second ring value",
+   "Z0": "complex anchor",
+   "ring1_name": "label for the first ring",
+   "ring2_name": "label for the second ring"
+  },
+  "returns": "dict with Z, Γ, the scale factor and the ring labels"
+ },
+ "custom_ring_chart_series": {
+  "doc": "Run custom_ring_chart over a whole collection.\n\nEach object gets its own Z, Γ and scale factor, plus the per-integer-cell\nbucketing (round(ring1), round(ring2)) that makes \"windows of order\"\nvisible.",
+  "params": {
+   "objs": "the objects",
+   "ring1_fn": "function obj → first ring value",
+   "ring2_fn": "function obj → second ring value",
+   "Z0": "complex anchor",
+   "ring1_name": "label for the first ring",
+   "ring2_name": "label for the second ring"
+  },
+  "returns": "dict with the per-object charts and the cell buckets"
+ },
+ "fold_is_log_tanh": {
+  "params": {
+   "Z": "complex point",
+   "Z0": "complex anchor"
+  },
+  "returns": "dict comparing mobius_fold(Z, Z0) with tanh(½·ln(Z/Z0))"
+ },
+ "unfold_is_arctanh_exp": {
+  "params": {
+   "G": "folded value Γ",
+   "Z0": "complex anchor"
+  },
+  "returns": "dict with Z = Z0·exp(2·arctanh Γ) and the round-trip check"
+ },
+ "verify_fold_unfold_round_trip": {
+  "params": {
+   "samples": "(Z, Z0) pairs; None uses a default set"
+  },
+  "returns": "dict with the worst error of the log/exp round trip"
+ },
+ "verify_locally_square": {
+  "params": {
+   "Z": "complex point",
+   "Z0": "complex anchor",
+   "h": "central-difference step"
+  },
+  "returns": "dict with the two tangent magnitudes and the angle between them"
+ },
+ "pathway_decompose": {
+  "params": {
+   "input_value": "the value fed to the operators",
+   "operators": "the named process operators forming the DAG",
+   "output_name": "name of the operator whose output is wanted"
+  },
+  "returns": "dict with the resolved order, each operator's output and the minimum tool-set needed",
+  "raises": {
+   "ValueError": "the DAG has a missing dependency or a cycle"
+  }
+ }
+}

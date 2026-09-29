@@ -22,6 +22,12 @@ export POE_DIR="$PROJ/POE"
 export USYNTH="$PROJ/UniversalSynth"
 export DATASETS="$PROJ/DataSets"
 export ADDPAPERS="$AIN/AddPapers"
+# added 2026-09-22 -- these were missing despite being in active, heavy use
+export GLL="$PROJ/GenerationalLineage"
+export CTXPLZ="$PROJ/ContextPlease"
+export PTOLDESK="$PROJ/PtolemyDesktop"
+export SSR="$PROJ/SedenionSpectralRelativity"
+export MMA="$PROJ/MultiplicationMatrixAnimator"
 
 # ============================================================
 # MEMORY + SCRATCHPAD
@@ -111,8 +117,18 @@ export PG32_PLANES="15"                      # Fano planes -- 15, NOT 32
 
 # ============================================================
 # GIT — push any repo using GITHUB_TOKEN
-# Usage: gpush                    (auto-detects repo name)
-#        gpush RepoName           (explicit)
+# Usage: gpush                    (auto-detects repo name + CURRENT branch)
+#        gpush RepoName           (explicit repo, still current branch)
+#
+# FIXED 2026-09-22 -- this used to hardcode `main` as the push/pull target,
+# which was silently wrong the moment FourthAgePapers became a legitimate
+# exception to main-only (see feedback_branch_policy memory, corrected same
+# day): PtolemyDesktop/PTorrent use device-arch branches, FourthAgePapers is
+# allowed genuine thematic work-in-progress branches, everything else (22+
+# repos) is still main-only by policy -- but the FUNCTION now follows
+# whatever branch you're actually on rather than assuming, so it can't push
+# a FourthAgePapers branch's work onto main by accident, and can't silently
+# no-op on the other three either.
 # ============================================================
 
 gpush() {
@@ -121,13 +137,23 @@ gpush() {
         echo "gpush: not in a git repo and no repo name given" >&2
         return 1
     fi
-    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpush: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
 }
 
 # Pull with token
 gpull() {
     local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
-    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpull: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
 }
 
 # ============================================================
@@ -135,7 +161,12 @@ gpull() {
 # ============================================================
 
 rstatus() {
-    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth; do
+    # updated 2026-09-22 -- added the repos that became active/heavily used
+    # since this list was last touched: GenerationalLineage, ContextPlease,
+    # PtolemyDesktop, SedenionSpectralRelativity, ArdaQuenta, MultiplicationMatrixAnimator
+    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth \
+                GenerationalLineage ContextPlease PtolemyDesktop SedenionSpectralRelativity ArdaQuenta \
+                MultiplicationMatrixAnimator; do
         local path="$PROJ/$repo"
         if [ -d "$path/.git" ]; then
             local branch count
@@ -254,6 +285,9 @@ ptol_s() { "$PTOL_BIN" "$@"; }   # default: SVG + English path
 # ============================================================
 # UDEO — Unified Dimensional Entropy Oracle (TuringStack)
 # Zero-divisor attack class; embargo ends 2026-11-25.
+# CLARIFIED 2026-09-19: embargo is CVE-disclosure only -- researchers/
+# general findings are OK to discuss/publish, just not the CVE-specific
+# exploit detail before the date above.
 # ============================================================
 
 export UDEO_POC="$TURING/udeo_poc.py"
@@ -324,3 +358,17 @@ if [ -d "$HOME/.clauderc.d" ]; then
     done
     unset _frag
 fi
+
+# ── VALAQUENTA PUBLIC RELEASE (2026-09-28) ──────────────────────────────────
+# ValaQuenta is GPL-3.0-only, main-only, packaged (pip install -e . from the repo root; the repo root IS the
+# `ValaQuenta` package). Published API docs (GitHub Pages, workflow-built): https://michaelrendier.github.io/ValaQuenta/
+# Detail: ~/.clauderc_context_2 (2026-09-28), ~/.clauderc_ValaQuenta CTX_SESSION_20260928, memory
+# project_valaquenta_public_release.
+export VQ_DOCS_URL="https://michaelrendier.github.io/ValaQuenta/"
+vq_test()  { ( cd "$VALE" && .venv/bin/python -m pytest -q "$@" ); }          # 73 tests, ~55 s
+vq_docs()  { ( cd "$VALE" && .venv/bin/python docs/gen_api.py && .venv/bin/python docs/gen_listings.py \
+               && .venv/bin/sphinx-build -W --keep-going -b html -q docs docs/_build/html ); }
+# TOKEN HYGIENE (2026-09-28): a shell's exported $GITHUB_TOKEN can be a STALE copy from before Cody rotated it in
+# ~/.bashrc (same variable name, different value). If GitHub says 401, `source ~/.bashrc` and retry BEFORE diagnosing.
+# The current GITHUB_TOKEN (ends JgP) has repo + workflow scope, so Actions workflows and Pages can be pushed/enabled.
+# Never touch PTOL_SEED_TOKEN.

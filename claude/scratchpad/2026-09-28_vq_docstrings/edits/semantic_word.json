@@ -1,0 +1,1 @@
+{"SemanticWord.add_projection": {"doc": "Add a face: another way of saying this word.", "params": {"context": "name of the context the face belongs to", "value": "the face's value in that context"}}}

@@ -1,0 +1,6 @@
+{
+"v_nball": {"params": {"n": "dimension; any real value"}, "returns": "V(n) = π^(n/2) / Γ(n/2 + 1)"},
+"transformer_profile": {"params": {"n_max": "largest dimension to include"}, "returns": "V(n) from n = 0 to n_max with the landmark values"},
+"FixedPoint": {"doc": "A fixed point of the Cayley-Dickson tower.\n\n:ivar name: label of the fixed point\n:ivar k: CD tower level (−∞ for The Unit, 8 for T_256)\n:ivar dim: algebra dimension\n:ivar n_ball_n: the n-ball dimension that describes it\n:ivar V: V(n_ball_n)\n:ivar sigma: σ position in the tower\n:ivar angular_q: angular quantum at this level\n:ivar n_imaginaries: number of imaginary units\n:ivar n_fano: number of embedded Fano planes\n:ivar character: 'trivial' or 'maximal'\n:ivar description: one-line description"},
+"roots_of_unity_collapse": {"params": {"k": "CD tower level"}, "returns": "the angular spacing and the resolving-power collapse at level k"}
+}

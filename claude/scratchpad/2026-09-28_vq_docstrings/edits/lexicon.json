@@ -1,0 +1,12 @@
+{
+"Lexicon.record": {"doc": "Record that a surface form points at a Riemann zero, optionally within a semantic domain.", "params": {"gamma": "the Riemann zero ordinate", "surface": "the surface form seen", "domain": "semantic domain name; None records globally only", "weight": "count added for this sighting"}},
+"Lexicon.record_file": {"doc": "Mark a file as processed so already_seen() reports it.", "params": {"path": "path of the processed file"}},
+"Lexicon.already_seen": {"doc": "Report whether a file has been recorded by record_file().", "params": {"path": "path to test"}, "returns": "True if the file was already processed"},
+"Lexicon.faces": {"doc": "Return the top surface forms for a Riemann zero.\n\nIf a domain is given, restrict to it first and fall back to the global set.", "params": {"gamma": "the Riemann zero ordinate", "domain": "semantic domain name; None uses the global set", "n": "number of faces to return"}, "returns": "[(surface_form, count), ...] sorted by count, descending"},
+"Lexicon.best_face": {"doc": "Return the single most-seen surface form for a prime: the engine's best answer to \"what word is this?\"", "params": {"gamma": "the Riemann zero ordinate", "domain": "semantic domain name; None uses the global set", "language_hint": "preferred language when several faces tie"}, "returns": "the best surface form, or None if the zero has no faces"},
+"Lexicon.face_count": {"params": {"gamma": "the Riemann zero ordinate"}, "returns": "the number of distinct surface forms pointing at this zero"},
+"Lexicon.save": {"doc": "Save the lexicon to disk as JSON.", "params": {"path": "destination file; None uses the lexicon's own path"}},
+"Lexicon.load": {"doc": "Load the lexicon from a JSON file on disk.", "params": {"path": "source file; None uses the lexicon's own path"}},
+"Lexicon.merge": {"doc": "Merge another lexicon into this one.", "params": {"other": "the lexicon whose faces, domains and seen-files are added"}},
+"Lexicon.stats": {"doc": "Return counters for the lexicon.", "returns": "unique primes, unique faces, total tokens, files seen and domains indexed"}
+}

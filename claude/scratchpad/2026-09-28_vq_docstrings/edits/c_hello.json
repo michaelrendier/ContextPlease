@@ -1,0 +1,12 @@
+{
+ "HelloLens": {
+  "doc": "Reference lens: summarise the numbers found in any target.\n\nCopy this class as the starting point of a `lens` plugin and replace\n`analyse()` with real work."
+ },
+ "HelloLens.analyse": {
+  "doc": "Summarise the numbers found in `target`.",
+  "params": {
+   "target": "any object; numbers are collected from it"
+  },
+  "returns": "dict with the lens name, the input type, the count of numbers and their sum, min and max"
+ }
+}

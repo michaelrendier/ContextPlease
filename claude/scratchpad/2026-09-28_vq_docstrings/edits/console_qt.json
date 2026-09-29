@@ -1,0 +1,10 @@
+{
+"<module>": {"sub": [["Qt viewer — Phase 3.", "Qt viewer for the registry: a VisPy canvas, a module list and a shell."]]},
+"VispyCanvas.render": {"params": {"display_mode": "one of 'complex_plane', '3d_cartesian', 'fano', 'sonification', 'text'", "data": "viewer-ready data from EquationModule.viewer_data()"}},
+"SonificationPanel.set_data": {"doc": "Show the angular frequency of the current result and reveal the panel.", "params": {"data": "viewer data; its 'omega' key is the angular frequency in rad/s"}},
+"OutputPanel": {"doc": "Read-only text panel that collects the run output."},
+"OutputPanel.write": {"doc": "Append a line to the output panel.", "params": {"text": "the line to append"}},
+"OutputPanel.clear": {"doc": "Empty the output panel."},
+"AinulindalWindow": {"doc": "Main window: VisPy canvas, module list, output panel and shell.\n\n:param registry: the populated module registry"},
+"run_qt": {"doc": "Open the Qt viewer and run its event loop.", "params": {"registry": "the populated module registry"}, "raises": {"ImportError": "PyQt5 is not installed"}}
+}

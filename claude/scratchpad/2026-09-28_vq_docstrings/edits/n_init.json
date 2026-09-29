@@ -1,0 +1,12 @@
+{
+ "NoetherEngine.derive_current": {
+  "doc": "Apply Noether's theorem and return the full result.",
+  "params": {
+   "verify": "compute ∂_μ J^μ and check that it vanishes on-shell"
+  },
+  "returns": "a NoetherResult with the current, the charge and LaTeX (if the output settings include them), the metadata and the verification",
+  "raises": {
+   "UnsupportedCombinationError": "the switch combination is not implemented"
+  }
+ }
+}

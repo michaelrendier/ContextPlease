@@ -259,3 +259,22 @@ the seam.
   2013, Miller 1995, Elhage 2022) — checked directly for §5's pattern;
   none carry a multi-listing code narrative, noted honestly rather than
   forced to fit.
+
+## 6. Applying it to an API reference, not a paper (ValaQuenta, 2026-09-28)
+
+The same conventions worked for an API reference site (Sphinx). Worked example:
+`ValaQuenta/docs/gen_listings.py` builds `docs/listings.rst`.
+
+- **A** for everything: the API pages name each function and point at its file;
+  the README's Code Reference is an index (import path, one line, links), never a listing.
+- **B** for five short OURS mechanisms, but *generated*, not pasted: the generator
+  extracts each unit from source by name (docstrings removed, statements verbatim), joins
+  it with exactly the constants and imports it needs so it is ONE self-contained unit,
+  executes it cold in an empty namespace, and records the REPL output it printed. The
+  page says "extracted", the line count and the source path. `tests/test_listings.py`
+  re-runs the extraction and compares it to the real module, so a listing that stops
+  running fails CI — the "perpetual now" rule (§5) enforced by machine, not by reading.
+- **D** for the README's `>>>` session, which `tests/test_readme.py` runs as a doctest.
+  Running it found a real bug the first time (registering 38 modules printed 38 lines).
+- A listing that needs a class shell (a method) is shown inside a minimal `class X:` wrapper
+  and labelled as extracted.

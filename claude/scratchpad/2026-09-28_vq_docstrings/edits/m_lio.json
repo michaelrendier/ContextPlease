@@ -1,0 +1,66 @@
+{
+ "apodize_and_pad": {
+  "doc": "Taper a real (non-periodic) field to zero at its edges, then zero-pad it.",
+  "params": {
+   "field": "the 2-D field",
+   "taper_frac": "fraction of each edge tapered",
+   "pad_factor": "padded size as a multiple of the original"
+  },
+  "returns": "(padded_field, pad) where pad is the padding added on each axis"
+ },
+ "crop_padding": {
+  "doc": "Undo the zero-padding of apodize_and_pad.",
+  "params": {
+   "padded_field": "the padded field",
+   "pad": "the padding returned by apodize_and_pad",
+   "orig_shape": "shape of the original field"
+  },
+  "returns": "the field cropped back to orig_shape"
+ },
+ "bounded_lensing_pipeline": {
+  "params": {
+   "gamma1": "shear component γ₁",
+   "gamma2": "shear component γ₂",
+   "pixel_scale_arcsec": "pixel scale in arcsec",
+   "taper_frac": "fraction of each edge tapered",
+   "pad_factor": "padded size as a multiple of the original"
+  },
+  "returns": "dict of the convergence, lensing potential, deflection and source-plane fields, each in the original frame"
+ },
+ "kaiser_squires_kappa": {
+  "params": {
+   "gamma1": "shear component γ₁",
+   "gamma2": "shear component γ₂"
+  },
+  "returns": "the convergence κ"
+ },
+ "lensing_potential": {
+  "params": {
+   "kappa": "convergence field"
+  },
+  "returns": "the lensing potential ψ"
+ },
+ "deflection_field": {
+  "params": {
+   "psi": "lensing potential",
+   "pixel_scale_arcsec": "pixel scale in arcsec"
+  },
+  "returns": "(alpha1, alpha2), the deflection in arcsec"
+ },
+ "trace_photon": {
+  "params": {
+   "theta1": "apparent position, first axis",
+   "theta2": "apparent position, second axis",
+   "alpha1": "deflection, first axis",
+   "alpha2": "deflection, second axis"
+  },
+  "returns": "dict with the apparent positions θ and the source positions β = θ − α"
+ },
+ "l_io_deficit": {
+  "doc": "Report raw statistics of L_(I|O) − L := −ψ(θ), the Fermat potential term of standard GR lensing.\n\nThe field is reported as computed: no rescaling, no clipping to a typical\nrange, no fit to a target. Shot noise from the discrete background\ngalaxies shows up directly in these numbers.",
+  "params": {
+   "psi": "lensing potential"
+  },
+  "returns": "dict of statistics of the deficit field"
+ }
+}

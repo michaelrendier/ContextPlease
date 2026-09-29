@@ -1,0 +1,45 @@
+{
+ "shannon_information": {
+  "params": {
+   "psi_norms": "activation norms |Ψᵢ|"
+  },
+  "returns": "the Shannon entropy in bits"
+ },
+ "phi_flux": {
+  "params": {
+   "psi_norms": "activation norms |Ψᵢ|",
+   "algebra": "algebra dimension of the stratum"
+  },
+  "returns": "Φ_flux"
+ },
+ "information_current": {
+  "params": {
+   "psi_norms": "activation norms |Ψᵢ|",
+   "algebra": "algebra dimension of the stratum",
+   "layer": "index of the layer",
+   "total_layers": "number of layers"
+  },
+  "returns": "dict with J⁰, J¹, I_info and t_e"
+ },
+ "entropic_arrow": {
+  "params": {
+   "psi_history": "activation norms, one list per layer step",
+   "algebra": "algebra dimension of the stratum"
+  },
+  "returns": "dict with I_values, J0_values, arrow_violations and t_e_max"
+ },
+ "delta_J_info": {
+  "params": {
+   "J_curr": "information current of the current cycle",
+   "J_prev": "information current of the previous cycle; None for the first cycle"
+  },
+  "returns": "|J⁰_curr − J⁰_prev|"
+ },
+ "information_capacity": {
+  "params": {
+   "algebra": "algebra dimension of the stratum",
+   "n_neurons": "neurons in the layer"
+  },
+  "returns": "dict with the capacity C_max in bits"
+ }
+}

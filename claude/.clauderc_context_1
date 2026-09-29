@@ -1556,8 +1556,11 @@ not modifying existing functionality.
 
 ## ValaQuenta
 
-source_files: README.md
-source_hash (2026-07-07): README.md 30f5d007c89a9af7319b6d7169733121da3a44bd1c1b4aa4e6ec74090bc8a28f
+source_files: README.md, wiki/00_index.md, docs/index.rst
+source_hash (2026-09-28):
+  README.md            8bef6e57f225ea7c9aa831caecdda340f608c7af39dc5da161a1f8fe60530811
+  wiki/00_index.md     027c95bd5295f0c9b273695ef41f8872e14cce3d6911422a80660d0ff55e273b
+  docs/index.rst       93c210aaa2a7c4338c3ead4d70d32b5c2550a5be158f668f9308349c546a95ac
 
 ### Identity — THE CANONICAL ENGINE CODE, referenced by nearly every other entry in this file
 
@@ -1590,9 +1593,11 @@ hamiltonian.py      — H=xp (Berry-Keating): trajectory(1,1,t=1) -> E=xp=1.0 ex
                       FermatEllipticHamiltonian (lemniscatic): discriminant=1.0 (valid
                       elliptic curve). RedBlueHamiltonian: Red(σ=½)=Blue(σ=½)=0.707
                       (balance confirmed at the critical line).
-noether.py          — forced_sigma(E, any σ0) converges to 0.500000000000 (12 decimal
-                      places) always. Currents are ORIENTED (up = toward next CD
-                      shadow, down = toward ZD).
+noether.py          — forced_sigma(E, any σ0) returns exactly 0.5 for any real σ0 and any E
+                      (one Newton step on the LINEAR log-balance E(1−2σ)=0; the earlier
+                      softmax iteration failed for E≳10 and overflowed for σ0<0 — fixed
+                      2026-08-28). Currents are ORIENTED (up = toward next CD shadow,
+                      down = toward ZD).
 galactic_cavity.py  — dark-matter-as-pilot-wave: r_t=0.738 kpc, v_flat=220.0 km/s,
                       period=22.7 Gyr (exceeds universe age 13.8 Gyr, i.e. "frozen").
                       P1 (r_t = d* * r_max_bar) stated "confirmed against SPARC
@@ -1620,34 +1625,47 @@ committed fix in VAPMIP's git log ("README: fix GAP formula
 in more than one repo. Worth double-checking this formula specifically if
 it's ever transcribed again.
 
-### Module tree (domain engines, one per Millennium problem / research tier)
+### Module tree (2026-09-28 — 41 module dirs: 38 registered EquationModules + 3 maths-only libraries)
 
-```
-modules/berry_keating/     — Riemann zeros, d*, Witches Hat, prime gaps
-modules/clay_millennium/   — Yang-Mills, Navier-Stokes, P vs NP
-modules/constants/         — OMEGA_ZS, d*, GAP, φ, π
-modules/derivation_chain/  — Tier 0 -> Tier 9 derivation registry
-modules/h_rb_hat/          — general SIGMA_RB baseline engine
-modules/hyperwebster/      — Zipf = Prime Number Theorem
-modules/inversion/         — circle inversion / L_(I|O) geometry
-modules/jwst/               — BAO, CMB, cosmological engines
-modules/lagrangian/         — the VAPMIP Lagrangian, L_NN (rename pending per README)
-modules/noether/, noether_information/  — currents, conservation, information distillation
-modules/sigma_cavitation/   — Bang = phase transition, BEC medium
-modules/singularity_null/   — ZD lattice, exact counts 42/84/168
-modules/sonification/       — Schumann resonances, sound from primes
-modules/spherical/          — n-ball transformer V(n), n* peak
-modules/tier6_physics/      — pilot wave, Bohmian mechanics
-modules/tier7_cosmos/       — galactic cavity, dark energy, BEC
-modules/tier8_sedenion/     — 16 operators, ZD structure
-modules/tier9_chem/         — cancer=ZD, drug=adjoint (feeds DeriveCancerDrugs)
-modules/turing_diagonal/    — halting problem geometry
-notebooks/, code/{noether_engine,sonification,wiles_modularity}/, wiki/ (one page per engine)
-```
+Layout of every registered module: modules/<name>/{__init__,maths,tools}.py + manifest.json (valaquenta.plugin/1,
+license GPL-3.0-only). maths.py = plain functions; tools.py = the EquationModule (formulary/run/viewer_data);
+run() MUST return {'equation','params','result','module'}. Registered in __main__._register_all().
+Maths-only libraries (no tools.py, no manifest, by design): spherical, sigma_cavitation, translator_common.
+Registered (38): add_scale_sign, angular_rank, archimedes_screw, bao_mass_gap, berry_keating, box_kite,
+  bracketing_firing_order, clay_millennium, constants, derivation_chain, desitter_cavitation, emerger, h_rb_hat,
+  hypergon_constructibility, hyperwebster, inversion, jwst, l_io_photon_path, lagrangian, noether, noether_information,
+  oblique_gear, prime_gauge_field, scale, sigma_expansion, singularity_null, sonification, spectral_primes,
+  t32_nilpotency, tier6_physics, tier7_cosmos, tier8_sedenion, tier9_chem, translator_discocat, translator_vsa,
+  turing_diagonal, udeo_crypto (file udeo_crypto/UDEO_RSA_DEMO.py was renamed maths.py 2026-09-28), units.
+Also: engine/ (registry, manifest, format, units, constants, console_curses/qt), schema/, examples/hello_lens (a `lens`
+plugin), notebooks/ (87), wiki/ (61 pages + toolbox/ 39), docs/ (Sphinx), tests/ (73), code/{noether_engine,
+sonification,wiles_modularity} (standalone; NOT autodoc'd), addenda/udeo_crypto.
 
-### Current state (2026-07-07)
+### Documentation architecture (the "API: Code Reference" style)
 
-Clean working tree, nothing uncommitted.
+README.md = index only (import path + one line + links). Results/record = wiki/ (each engine page carries a
+**Reference:** line → toolbox page + published API; results_at_a_glance.md holds the engine outputs). Per-function
+reference = Sphinx from reST docstrings (docs/gen_api.py → docs/api/*.rst; docs/gen_listings.py → docs/listings.rst;
+docs/locations.rst points at code/, addenda/, notebooks, wiki by location). Live: https://michaelrendier.github.io/ValaQuenta/
+CI: .github/workflows/docs.yml (tests → generated-docs-not-stale check → sphinx -W → Pages deploy on main).
+.readthedocs.yaml exists (no RTD project created). Docstrings instruct the caller and hold NO history (Cody's
+datum/bearing rule); history lives in the wiki (13 provenance passages were moved there 2026-09-28).
+
+### Working rules specific to this repo
+
+Run tests from a checkout dir literally named `ValaQuenta` (tests/conftest.py insists). ValaQuenta/.venv holds a STALE
+installed copy in site-packages; the tests deliberately import the checkout, never that copy. `python -m pytest` = 73 tests (~55 s). After any change to a module:
+`python3 docs/gen_api.py; python3 docs/gen_listings.py` and rebuild with `sphinx-build -W`. Registry is quiet unless
+`get_registry().verbose = True` (the CLI sets it). Equation.confidence is the WEAKEST tier named; the authored
+label is Equation.confidence_note. Every Equation must have process= (a test enforces it; current lines are derived
+from docstrings, not authored). Main-only branch policy. The ASS engine naming is locked (never rename).
+
+### Current state (2026-09-28)
+
+main 7674c18 pushed; CI green; clean-clone verified (fresh clone → install.sh exit 0 → README commands from another
+directory → 73 tests → docs build with no diff). OPEN (Cody's call): per-component provenance labels
+(wiki/provenance_review.md; manifests carry `_draft` origin/created), version 0.159, RTD project, docstrings for
+code/{sonification,noether_engine tests,...}/addenda, re-execution of the 17 notebooks added after 2026-07-28.
 
 ## AbrikosovTree
 
@@ -1858,3 +1876,15 @@ Lattice §13). If this repo is worked on again, check whether
 `RiemannHypothesisProof.txt` needs a sync pass before treating it as the
 authoritative proof text — README.md/PAPER.md are the current source right
 now, not the .txt file.
+
+## GenerationalLineage
+
+source_files: README.md, INSTALL.md, .github/workflows/ci.yml
+### State (2026-09-28)
+
+Repo + directory renamed 2026-09-02 (was the Factoral Decomposition tool); GPL v3; v1.0.0 RELEASED.
+Import name is `engine` (NOT GenerationalLineage) — ValaQuenta's curses lenses import it via the sibling checkout.
+CI ENABLED 2026-09-28: .github/ci-workflow.yml moved to .github/workflows/ci.yml (commit 4892eaf); Core (numpy only) and
+Extended (clones AbrikosovTree, ValaQuenta, FourthAgePapers beside) jobs both green on the first run (they had been run
+by hand only before). Verify: `python3 -m engine --verify` (Core: 27 toolsets ran, 27 passed, 1 skipped) and
+`python3 -m pytest` (Core 156 passed, 2 skipped). Detail: memory project_gl_public_release.

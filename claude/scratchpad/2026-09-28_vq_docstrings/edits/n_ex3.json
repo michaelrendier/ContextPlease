@@ -1,0 +1,26 @@
+{
+ "build_smnnip_gauge_example": {
+  "params": {
+   "stratum": "'C' or 'H'; 'O' builds one G₂ generator (run it once per generator for the full 7-component current)"
+  },
+  "returns": "(Lagrangian, Symmetry, context dict)",
+  "raises": {
+   "ValueError": "the stratum is unknown"
+  }
+ },
+ "build_smnnip_gauge_example_O_stratum": {
+  "params": {
+   "generator_index": "which octonion imaginary generator, 1..7"
+  },
+  "returns": "(Lagrangian, Symmetry, context dict)",
+  "raises": {
+   "ValueError": "generator_index is outside 1..7"
+  }
+ },
+ "run_smnnip_gauge_example": {
+  "params": {
+   "stratum": "'C' or 'H'"
+  },
+  "returns": "the derivation result with its verification"
+ }
+}

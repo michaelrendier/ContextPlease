@@ -1,0 +1,11 @@
+{
+"Understand.read": {"params": {"text": "surface form, in any language or script", "domain": "optional domain restricting which instruments (zeros) are available; None lets all play"}, "returns": "the word mapped to a Riemann zero in semantic space"},
+"Understand.describe": {"params": {"description": "text saying where meaning starts and stops; its token count sets the width of the zero window"}, "returns": "the semantic domain centred on the description's zero"},
+"Understand.listen": {"params": {"signal": "acoustic samples of a speech waveform", "sample_rate": "samples per second"}, "returns": "the word whose semantic prime the formant structure points at"},
+"Understand.ponder": {"params": {"word": "the word to evolve", "t": "evolution time under H = xp"}, "returns": "the word carrying its conserved prime E"},
+"Understand.calculate": {"params": {"word": "the pondered word", "operations": "functions SemanticWord → SemanticWord to apply; None uses the registered default stack"}, "returns": "the word with the operations' projections attached"},
+"Understand.register_operation": {"params": {"op": "function SemanticWord → SemanticWord"}},
+"Understand.understand": {"params": {"word": "the calculated word"}, "returns": "the word reduced to its DC component: the prime"},
+"Understand.process": {"doc": "Run the full pipeline in one call: Read → Ponder → Calculate → Understand.\n\nInput is any surface form in any language or script; output is the\nsemantic prime as multidimensional context.", "params": {"text": "surface form to process", "operations": "operations for the calculate step; None uses the default stack", "t": "evolution time for the ponder step", "domain": "optional SemanticDomain from describe() constraining the semantic space"}, "returns": "the understood word"},
+"Understand.tune": {"params": {"domain": "domain whose coherence time sets the Capacitor time constant"}}
+}

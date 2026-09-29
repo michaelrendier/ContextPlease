@@ -1,0 +1,108 @@
+{
+ "char_to_idx": {
+  "doc": "Return a character's index in the 97-character keyboard map; an unknown character maps to 0.",
+  "params": {
+   "c": "one character"
+  },
+  "returns": "the index, 0..96"
+ },
+ "idx_to_char": {
+  "doc": "Return the character at an index of the keyboard map, taken mod 97.",
+  "params": {
+   "i": "index"
+  },
+  "returns": "the character"
+ },
+ "horner_encode": {
+  "params": {
+   "sequence": "text drawn from the keyboard map"
+  },
+  "returns": "the base-97 Horner index, an arbitrary-precision int"
+ },
+ "horner_decode": {
+  "params": {
+   "idx": "Horner index",
+   "length": "number of characters to recover"
+  },
+  "returns": "the original text"
+ },
+ "fano_encode": {
+  "params": {
+   "sequence": "text drawn from the keyboard map"
+  },
+  "returns": "the base-7 path index"
+ },
+ "fano_decode": {
+  "params": {
+   "idx": "Fano path index",
+   "length": "number of generators"
+  },
+  "returns": "generator indices, each 0..6"
+ },
+ "fano_path_to_word": {
+  "params": {
+   "generator_indices": "generator indices, each 0..6"
+  },
+  "returns": "the canonical word for the path"
+ },
+ "SemanticWord.from_horner": {
+  "doc": "Build a word from its Horner address.",
+  "params": {
+   "idx": "Horner index",
+   "length": "number of characters"
+  },
+  "returns": "the word at that address"
+ },
+ "SemanticWord.fano_generators": {
+  "doc": "Return the word's octonion generator path.",
+  "returns": "generator indices, each 0..6"
+ },
+ "SemanticWord.verify": {
+  "doc": "Check that decoding the word's Horner address returns its text.",
+  "returns": "True if the round trip holds"
+ },
+ "SemanticWord.to_dict": {
+  "doc": "Return the word as plain data.",
+  "returns": "dict with the text, length and addresses"
+ },
+ "HyperGallery.add": {
+  "doc": "Add a word to the gallery, keyed by its Horner address.",
+  "params": {
+   "text": "the word's text"
+  },
+  "returns": "the stored word"
+ },
+ "HyperGallery.lookup_horner": {
+  "doc": "Find a word by Horner address; an address not stored is reconstructed from the address itself.",
+  "params": {
+   "idx": "Horner index",
+   "length": "number of characters"
+  },
+  "returns": "the word, or None if it cannot be reconstructed"
+ },
+ "HyperGallery.fano_neighbours": {
+  "params": {
+   "word": "the word to find neighbours of",
+   "n": "number of neighbours"
+  },
+  "returns": "the n words whose Fano index is nearest"
+ },
+ "HyperGallery.address_range": {
+  "params": {
+   "start_text": "text whose Horner index starts the range",
+   "n": "number of addresses"
+  },
+  "returns": "the n consecutive words"
+ },
+ "HyperGallery.summary": {
+  "doc": "Summarise the gallery.",
+  "returns": "dict with the word count and the smallest and largest Horner address"
+ },
+ "monad_address": {
+  "params": {
+   "text": "the word",
+   "algebra": "algebra dimension of the layer"
+  },
+  "returns": "dict with the word's coordinates in the ℝ, ℂ, ℍ and 𝕆 layers"
+ }
+}

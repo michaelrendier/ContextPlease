@@ -1,0 +1,33 @@
+{
+ "minkowski_metric": {
+  "params": {
+   "signature": "'mostly_minus' or 'mostly_plus'"
+  },
+  "returns": "the 4×4 metric",
+  "raises": {
+   "ValueError": "the signature is unknown"
+  }
+ },
+ "Lagrangian.dL_dphi": {
+  "params": {
+   "field": "the field",
+   "component_index": "which component of a multi-component field"
+  },
+  "returns": "∂ℒ/∂φ"
+ },
+ "Lagrangian.dL_ddphi": {
+  "params": {
+   "field": "the field",
+   "mu": "coordinate index",
+   "component_index": "which component of a multi-component field"
+  },
+  "returns": "∂ℒ/∂(∂_μ φ)"
+ },
+ "Lagrangian.euler_lagrange": {
+  "params": {
+   "field": "the field",
+   "component_index": "which component of a multi-component field"
+  },
+  "returns": "the left side of the Euler-Lagrange equation; zero on-shell"
+ }
+}

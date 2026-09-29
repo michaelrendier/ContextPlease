@@ -1,0 +1,50 @@
+{
+ "unit_vector": {
+  "params": {
+   "exponents": "the 7 SI base-dimension exponents",
+   "name": "optional name of the unit",
+   "lineage": "(parent_name, power) pairs the unit is built from"
+  },
+  "returns": "the unit as a dict with its exponent vector",
+  "raises": {
+   "ValueError": "the exponent vector is not of length 7"
+  }
+ },
+ "unit_mul": {
+  "doc": "Multiply two units: add their exponent vectors.",
+  "params": {
+   "a": "first unit",
+   "b": "second unit"
+  },
+  "returns": "the product unit"
+ },
+ "unit_div": {
+  "doc": "Divide two units: subtract their exponent vectors.",
+  "params": {
+   "a": "numerator unit",
+   "b": "denominator unit"
+  },
+  "returns": "the quotient unit"
+ },
+ "unit_pow": {
+  "doc": "Raise a unit to a power: scale its exponent vector.",
+  "params": {
+   "a": "the unit",
+   "n": "the power"
+  },
+  "returns": "the powered unit"
+ },
+ "unit_lineage_decompose": {
+  "params": {
+   "u": "a named composite unit",
+   "table": "named units keyed by name"
+  },
+  "returns": "dict with the trace to the 7 SI leaves and whether it recombines to the declared exponent vector"
+ },
+ "equation_index_lookup": {
+  "params": {
+   "exponents": "the dimension signature, 7 integers"
+  },
+  "returns": "names of the candidate equations with that signature"
+ }
+}

@@ -1,0 +1,25 @@
+{
+ "omega_from_equation": {
+  "params": {
+   "equation_name": "name of the equation that produced the result",
+   "result": "the equation's result: a float, or a dict with known keys"
+  },
+  "returns": "dict carrying ω in rad/s and how it was derived"
+ },
+ "wavetable": {
+  "params": {
+   "name": "'sine', 'rydberg', 'higgs_hat', 'phi_recursion' or 'fano'",
+   "n_samples": "number of samples"
+  },
+  "returns": "dict with the wavetable samples"
+ },
+ "sonification_data": {
+  "params": {
+   "equation_name": "name of the equation",
+   "params": "its parameter values",
+   "result": "its result",
+   "wavetable_name": "wavetable to render the result on"
+  },
+  "returns": "the viewer_data dict for the sonification display"
+ }
+}

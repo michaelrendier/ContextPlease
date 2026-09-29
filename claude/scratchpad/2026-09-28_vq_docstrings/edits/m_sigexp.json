@@ -1,0 +1,42 @@
+{
+ "project_at_sigma": {
+  "params": {
+   "text": "input string",
+   "sigma": "σ at which to project"
+  },
+  "returns": "J_red(σ) per prime channel, as complex values"
+ },
+ "actual_P_red": {
+  "params": {
+   "text": "input string",
+   "sigma": "σ at which to evaluate"
+  },
+  "returns": "P_red(σ)"
+ },
+ "moments": {
+  "params": {
+   "text": "input string"
+  },
+  "returns": "dict with M₀..M₃ and the per-channel L₀..L₃ at σ = ½"
+ },
+ "taylor_coefficients": {
+  "params": {
+   "text": "input string"
+  },
+  "returns": "dict with the derived coefficients c1 and c3"
+ },
+ "predict_P_red": {
+  "params": {
+   "text": "input string",
+   "sigma": "σ at which to predict"
+  },
+  "returns": "1/2 + c1·d + c3·d³ with d = σ − 1/2"
+ },
+ "verify_against_actual": {
+  "params": {
+   "text": "input string",
+   "sigmas": "σ values to compare at; None uses a default grid"
+  },
+  "returns": "dict with the predicted and actual values and their residuals"
+ }
+}

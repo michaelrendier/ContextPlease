@@ -1,0 +1,96 @@
+{
+ "geometric_coupling": {
+  "params": {
+   "p": "prime",
+   "sigma": "coupling exponent σ"
+  },
+  "returns": "G_p(σ) = p^(−σ)"
+ },
+ "euler_product": {
+  "params": {
+   "sigma": "real part σ of s",
+   "t": "imaginary part t of s",
+   "n_primes": "number of primes in the product"
+  },
+  "returns": "the truncated product Π (1 − p^(−s))^(−1)"
+ },
+ "dirichlet_series": {
+  "params": {
+   "sigma": "real part σ of s",
+   "t": "imaginary part t of s",
+   "n_terms": "number of terms"
+  },
+  "returns": "the partial sum Σ n^(−s)"
+ },
+ "red_energy": {
+  "params": {
+   "x": "position",
+   "p_momentum": "momentum"
+  },
+  "returns": "E_Red = x·p"
+ },
+ "blue_energy_weierstrass": {
+  "params": {
+   "x": "position; must not sit on a pole",
+   "g2": "Weierstrass invariant g₂",
+   "g3": "Weierstrass invariant g₃"
+  },
+  "returns": "℘(x; g₂, g₃)"
+ },
+ "blue_energy": {
+  "params": {
+   "x": "position",
+   "p_momentum": "momentum",
+   "g2": "Weierstrass invariant g₂",
+   "g3": "Weierstrass invariant g₃"
+  },
+  "returns": "E_Blue = ½p² + ℘(x)"
+ },
+ "sigma_rb_term": {
+  "params": {
+   "prime": "the prime p",
+   "sigma": "coupling exponent σ",
+   "x": "position",
+   "p_momentum": "momentum",
+   "g2": "Weierstrass invariant g₂",
+   "g3": "Weierstrass invariant g₃"
+  },
+  "returns": "dict with the term p^(−σ)·[E_Red + E_Blue] and its parts"
+ },
+ "sigma_rb_evaluate": {
+  "params": {
+   "sigma": "coupling exponent σ",
+   "x": "position",
+   "p_momentum": "momentum",
+   "n_primes": "number of primes summed",
+   "g2": "Weierstrass invariant g₂",
+   "g3": "Weierstrass invariant g₃"
+  },
+  "returns": "dict with the total and the per-prime terms"
+ },
+ "sigma_to_theory": {
+  "params": {
+   "sigma": "coupling exponent σ"
+  },
+  "returns": "the name of the theory at that coupling"
+ },
+ "sigma_phase_diagram": {
+  "params": {
+   "n_points": "number of σ values"
+  },
+  "returns": "dict mapping σ to theory with the Euler-product magnitude at each"
+ },
+ "facet_general_relativity": {
+  "params": {
+   "kappa": "gravitational coupling constant κ"
+  },
+  "returns": "dict describing the GR facet of Σ_RB"
+ },
+ "dark_matter_halo": {
+  "params": {
+   "galaxy_size_ly": "galaxy size in light-years",
+   "observation_yr": "observation span in years"
+  },
+  "returns": "dict with the standing-wave period and the apparent-mass argument"
+ }
+}

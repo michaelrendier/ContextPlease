@@ -1,0 +1,24 @@
+{
+ "charge_from_current": {
+  "sub": [
+   [
+    "Session 1 returns a symbolic",
+    "Returns a symbolic"
+   ]
+  ],
+  "params": {
+   "current": "the Noether current",
+   "L": "the Lagrangian the current came from",
+   "time_coord_index": "index of the time coordinate",
+   "spatial_volume_symbol": "symbol for the spatial volume"
+  },
+  "returns": "Q(t) as an unevaluated sp.Integral"
+ },
+ "form_from_current": {
+  "params": {
+   "current": "the Noether current",
+   "L": "the Lagrangian; its signature fixes the Hodge dual"
+  },
+  "returns": "the symbolic (d−1)-form ⋆J"
+ }
+}

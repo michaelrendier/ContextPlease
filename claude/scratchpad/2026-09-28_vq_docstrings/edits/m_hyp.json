@@ -1,0 +1,6 @@
+{
+"is_fermat_prime": {"doc": "Report whether p is a known Fermat prime, 2^(2^n)+1.\n\nWhether more exist beyond the five known is a genuine open problem in\nnumber theory. This checks against the known set; it is not a generative\ntest.", "params": {"p": "integer to test"}, "returns": "True if p is one of the known Fermat primes"},
+"is_power_of_two": {"doc": "Report whether n is a positive power of two.", "params": {"n": "integer to test"}, "returns": "True if n = 2^k for some k ≥ 0"},
+"is_constructible": {"doc": "Gauss-Wantzel: report whether the regular n-gon is constructible.\n\nTrue iff n is 2^k times a product of DISTINCT Fermat primes (k ≥ 0). For a\nsingle prime p this reduces to: p == 2, or p is itself a Fermat prime.", "params": {"n": "number of sides"}, "returns": "True if the regular n-gon is constructible"},
+"verify_nilpotent_split_conjecture": {"params": {"seed": "random seed for the control pairs"}, "returns": "nilpotency rates for the close, far-apart and random-control datasets, and the verdict"}
+}

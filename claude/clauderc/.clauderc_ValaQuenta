@@ -191,7 +191,7 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign session_20260928"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -758,7 +758,7 @@ just reported as 'working'. One proven ESTABLISHED-tier classical result
 several OPEN/CONJECTURE-tier sedenion/zero-divisor mechanisms, NONE of
 which recover d from (n,e) alone. See TuringStack/wiki/RSA-Key-Recovery-
 Attempts-2026-07-09.md and TuringStack/CLAUDE_CODE_CONTRIBUTION_2026-07-10.md
-for full detail. Files: UDEO_RSA_DEMO.py, tools.py, __init__.py.
+for full detail. Files: maths.py (renamed from UDEO_RSA_DEMO.py 2026-09-28), tools.py, __init__.py.
 "
 
 export CTX_SIGMA_EXPANSION="
@@ -1473,5 +1473,93 @@ wrong to test for the 'agree with the user' failure. I did not detect it as a
 test. The measurement disagreed with the suggestion and that is the only reason
 it was caught. The protection is MEASUREMENT, not judgement, and it covers only
 what is measurable.
+@END
+"
+
+
+# ── Added 2026-09-28 (ValaQuenta public-release pass). Facts below were read from the manifests/wiki/code and run.
+export CTX_OBLIQUE_GEAR="
+oblique_gear -- The Oblique Gear across scale (black hole / galaxy). v0.1. confidence_floor=OPEN, label
+OPEN:CALCULATED. Tests whether the crank angle arctan(d*)=13.8203 deg (h_rb_hat) equals the tangent angle of the galaxy
+Stokes-drift curve (2/pi)atan(r/r_t) at r=r_t (17.6568 deg). REFUTED as stated: 3.8364 deg gap. Matching radius
+x=sqrt(2/(pi d*)-1)=1.26011 (nearest cbrt(2)=1.25992, not significant). Survives: shared d*, shared arctan kinship.
+6 equations. Wiki page created 2026-09-28. Born 2026-09-26 from FourthAgePapers/ChiralityBlackHole (claim 2).
+"
+export CTX_SPECTRAL_PRIMES="
+spectral_primes -- Spin / wobble decomposition of the Riemann-Siegel theta-spiral. v0.1. confidence_floor=OPEN.
+Spin theta'(t) is monotone (0 non-monotone steps over 59 zeros): ESTABLISHED. Wobble carries the primes
+(psi(x) explicit-formula reconstruction, classical von Mangoldt/Weil): ESTABLISHED. Tilt==wobble by minimum-information
+identification: REFUTED AS TESTED, correlation 0.0367 (n=59); the pointwise-vs-interval sampling gap is a named,
+NOT-DONE follow-up. The Real-Tilt/Axis crossing is pinned at sigma=0.500000 to machine precision at every zero tested.
+5 equations; tilt_vs_wobble_correlation takes ~19 s at 60 zeros. Wiki page created 2026-09-28.
+"
+export CTX_BRACKETING_FIRING_ORDER="
+bracketing_firing_order -- Bracketing (Bell numbers, exact count always, list only when feasible), Firing Order (n!,
+apply_firing_order is a literal permutation: (3,1,2) on [Scale,Sign,Add] -> [Add,Scale,Sign]), Set Membership
+(trajectory/visited_positions/collisions/would_collide: Recaman's rule generalised to any sequence of callables;
+jurisdiction_violation takes the caller's map). B(16)=10480142147. confidence_floor=ESTABLISHED. 7 equations.
+add_scale_sign and the Emerger bracket are CONSUMERS. Listing 4 in the Sphinx Listings page is collisions().
+"
+export CTX_PRIME_GAUGE_FIELD="
+prime_gauge_field -- Weyl-shaped local-scale connection from Smith map Gamma(s)=(s-1)/(s+1). A=grad log|Gamma| is flat
+for any holomorphic scalar (Poincare lemma); A=(Re Gamma, Im Gamma) read as an R^2-valued 1-form carries curvature
+F(s)=2 Im(dGamma/ds), zero on the real axis AND on sigma=-1 (the pole line — NOT predicted, reported as new).
+confidence_floor=THEORETICAL. 5 equations. Origin: 2026-09-21 gauge-field experiment (moved to wiki Provenance).
+"
+export CTX_SCALE="
+scale -- THE SCALE: decompositional analysis forwards and backwards. v0.1. ESTABLISHED. polar decompose/recompose exact
+round trip; the raw angle does NOT survive the Mobius fold (rejected candidate kept), the cross-ratio of four points
+IS invariant under every anchor; no true caustic (one isolated pole); pathway_decompose runs a process DAG (RSA CRT
+decrypt as control). 10 equations.
+"
+export CTX_UNITS="
+units -- Dimensional exponent vectors (7 SI leaves) as a fourth domain of the factoral-decomposition discipline. v0.1.
+ESTABLISHED. 11 named compounds (N,J,W,Pa,C,V,ohm,F,Wb,T,H) trace exactly to the leaves; cancellation is exact vector
+arithmetic; EQUATION_INDEX narrows a dimension signature to candidate laws. 4 equations.
+"
+export CTX_ADD_SCALE_SIGN="
+add_scale_sign -- the tier-0 datatype ASS(add,scale,sign): x -> sign*scale*x + add, an element of Aff(1,R)=ADD x| (SCALE x
+SIGN). Word u = g ln s + a, fold Gamma = tanh(u/2). ASS/ASSWord naming is LOCKED (Cody) — never rename. Firing defect
+(g-1) ln s is nonzero iff SIGN flips a non-trivial SCALE. 6 equations. Long Path memory: trajectory/visited/collisions/
+would_collide (built on bracketing_firing_order's set-membership idea).
+"
+export CTX_SESSION_20260928="
+Session 2026-09-28 — ValaQuenta made public-ready. main 6c86744 -> 7674c18 (14 commits), pushed, CI green, docs live
+at https://michaelrendier.github.io/ValaQuenta/. GPL-3.0-only. 38 registered modules all manifested; reST docstrings;
+73 tests; generated Listings; README = API: Code Reference. Clean clone verified end to end.
+BUGS FOUND (mechanism recorded in .clauderc_context_2 2026-09-28): np.trapz on NumPy 2; FactoralDecomposition import
+after the rename (3 dead analysis lenses); 19 unregistered modules; install left the package unimportable from the
+clone; registry printed 38 lines per import; six run() methods off-contract; 39 composite confidence labels shown as
+question marks; 11 old-schema manifests; wiki links only valid in Cody's tree.
+METHOD LESSON: scripted docstring surgery needs the diff read (two of my substitutions garbled oblique_gear's docstring;
+a move script dropped blank lines at 12 junctions; Sphinx and reading caught both).
+OPEN for Cody: provenance labels (wiki/provenance_review.md), version 0.159, RTD project, code/ + addenda docstrings,
+17 notebooks unexecuted since 2026-07-28. Equation.process= lines are derived, not authored.
+"
+
+export CTX_HISTORY_20260928="
+@RCVQ_FORCED_SIGMA
+noether.forced_sigma history. The ORIGINAL was a softmax-weighted-average iteration: sigma_new = (F s + B (1-s))/(F+B).
+s=1/2 is a fixed point but the dynamics are bad — for large E and s<1/2, F >> B so sigma_new -> sigma, the step fell below
+the 1e-12 tolerance on iteration 1 and the loop RETURNED sigma0 UNCHANGED (E>~10); for sigma0<0 and large E exp(-sE)
+OVERFLOWED. It failed silently and its trailing comment 'always 0.5' was false as written. FIX 2026-08-28: work in logs —
+the balance F=B is E(1-2s)=0, LINEAR — so one Newton step reaches 1/2 exactly with no exponential evaluated away from
+the balance point. The old scheme and both failure modes are recorded in notebooks/engines/03_noether.ipynb.
+@END
+@RCVQ_OBLIQUE_GEAR_ANGLES
+Born 2026-09-26 from FourthAgePapers/ChiralityBlackHole README claim 2 (Cody: witches hat vs galaxy, dependent
+structure = oblique gearing). The paper's own rule: a claim is shown running in code or the paper is not done. Result:
+the equality is REFUTED as stated (13.8203 vs 17.6568 deg). The temptation recorded here: cbrt(2) is 1.9e-4 from the
+matching radius 1.26011 — inside the noise of d*'s 5 significant figures, so it is reported as an unremarkable root and
+NOT as a second hidden constant. d* is already claimed universal across the framework; a shared constant alone is
+expected and is not new evidence.
+@END
+@RCVQ_MOD4_ED
+d = e (mod 4) surfaced via the Zero Lattice path test only because that geometry's angle encodes x mod 4; the theorem
+itself is elementary. Six UDEO mechanisms scored vs 200 random valid wrong d per key (mean percentile, 50 = chance):
+zero-divisor shadow 38.5; NULL operator (1b) 18.8 (GENERIC HASH ARTIFACT — replacing e by an unrelated exponent gave 17.8,
+so the bias is the hash construction, not the key); J2/T256 33.3 weak; spectral relativity 38.8; Content+Public+Private=Hash
+0.0 (exact but needs Hash exposed and is not unique); Zero Lattice public-only 50.45; emergent rotation 52.59 on 40 keys
+(the 6-key sample showed 31.2 and did not survive scale-up). No mechanism recovers d from (n,e).
 @END
 "

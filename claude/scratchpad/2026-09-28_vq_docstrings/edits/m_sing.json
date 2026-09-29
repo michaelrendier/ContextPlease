@@ -1,0 +1,20 @@
+{
+ "tower_collapse_snakes": {
+  "params": {
+   "n_max": "largest dimension stepped to"
+  },
+  "returns": "dict with V(n), the ladders below n*, the snakes above it and the peak"
+ },
+ "berry_keating_singularity": {
+  "params": {
+   "max_t": "largest time integrated"
+  },
+  "returns": "dict describing the repulsive fixed point and the phase-space flow"
+ },
+ "flt_prime_extinction_sieve": {
+  "params": {
+   "N": "largest integer sieved"
+  },
+  "returns": "dict with the surviving primes and the extinction bookkeeping"
+ }
+}

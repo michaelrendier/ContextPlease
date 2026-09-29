@@ -1,0 +1,41 @@
+{
+ "lambda_to_r": {
+  "params": {
+   "wavelength_nm": "wavelength in nm"
+  },
+  "returns": "r = (λ − λ_min) / (λ_max − λ_min), in (0, 1)"
+ },
+ "r_to_lambda": {
+  "doc": "Invert lambda_to_r: map a radial coordinate to a wavelength.",
+  "params": {
+   "r": "radial coordinate in (0, 1)"
+  },
+  "returns": "wavelength in nm"
+ },
+ "spectral_to_octonion": {
+  "params": {
+   "intensities": "up to 8 intensities, one per NIRCam filter in filter order; missing components are 0"
+  },
+  "returns": "dict with the octonion components, the norm |Ψ| = √ΣI² and the radial address of each filter"
+ },
+ "octonion_to_spectral": {
+  "params": {
+   "components": "the 8 octonion components"
+  },
+  "returns": "dict of spectral intensities at the filter wavelengths"
+ },
+ "cd_spectral_address": {
+  "params": {
+   "intensities": "the 8 filter intensities",
+   "pixel_x": "pixel column",
+   "pixel_y": "pixel row"
+  },
+  "returns": "dict with the ℝ, ℂ, ℍ and 𝕆 layers and the pixel coordinates as a base-100 pair"
+ },
+ "synthetic_spectrum": {
+  "params": {
+   "emission_type": "'hydrogen', 'flat' or 'stellar'"
+  },
+  "returns": "dict with the filter intensities of the synthetic spectrum"
+ }
+}

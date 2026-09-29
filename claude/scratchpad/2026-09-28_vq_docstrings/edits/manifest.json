@@ -1,0 +1,11 @@
+{
+"<module>": {"sub": [["engine data (Cody,\n2026-09-01).  One", "engine data.  One"]]},
+"load": {"doc": "Load the manifest for `engine`, or None if it hasn't been written yet.", "params": {"engine": "engine name, the module directory under modules/"}, "returns": "the manifest dict, cached; None if there is no manifest.json"},
+"clear_cache": {"doc": "Drop every cached manifest so the next load() re-reads from disk."},
+"scaffold": {"params": {"engine": "engine name", "module": "the registered EquationModule instance"}, "returns": "a manifest dict marked `_scaffolded`"},
+"entry_for": {"params": {"engine": "engine name", "module": "the registered EquationModule instance"}, "returns": "the written manifest, else a live scaffold"},
+"menu_tree": {"params": {"registry": "the populated module registry"}, "returns": "the grouped menu (see above)"},
+"validate": {"params": {"engine": "engine name", "module": "the registered module for cross-checks; None skips them"}, "returns": "the problems found; an empty list means clean"},
+"write_scaffold": {"doc": "Write a scaffolded manifest.json for one engine.", "params": {"engine": "engine name", "module": "the registered EquationModule instance", "overwrite": "replace an existing manifest"}, "returns": "a one-line status: 'wrote …' or 'skip …'"},
+"scaffold_all": {"doc": "Write a scaffolded manifest.json for every registered engine that lacks one.", "params": {"registry": "the populated module registry", "overwrite": "replace existing manifests"}, "returns": "one status line per engine"}
+}

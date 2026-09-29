@@ -1,0 +1,114 @@
+{
+ "r_schwarzschild": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "r_s in metres"
+ },
+ "L_desitter": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "L_dS = r_s in metres"
+ },
+ "H_desitter": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "H in 1/s"
+ },
+ "tau_interior": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "τ in seconds"
+ },
+ "kretschmann_core": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "K_core in m⁻⁴"
+ },
+ "kretschmann_core_closed": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "K_core in m⁻⁴, by the closed form"
+ },
+ "kretschmann_schwarzschild": {
+  "params": {
+   "M": "mass in kg",
+   "r": "radius in metres"
+  },
+  "returns": "K(r) in m⁻⁴"
+ },
+ "kretschmann_ratio_planck": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "K_core / K_Planck"
+ },
+ "core_energy_density": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "ρ_dS c² in J/m³"
+ },
+ "reheating_reaches_qgp": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "True if the core's energy density reaches the deconfinement threshold"
+ },
+ "energy_partition": {
+  "params": {
+   "M": "mass in kg",
+   "space_fraction": "fraction of Mc² in the stiff-space channel; None uses 1 − d*"
+  },
+  "returns": "dict with E_space, E_matter and their fractions"
+ },
+ "T_hawking": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "T_H in kelvin"
+ },
+ "T_desitter": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "T_dS in kelvin"
+ },
+ "t_evaporation": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "t_evap in seconds"
+ },
+ "t_bounce_exterior": {
+  "params": {
+   "M": "mass in kg",
+   "exponent": "the n in (M/m_Pl)ⁿ t_Pl"
+  },
+  "returns": "the exterior-frame bounce delay in seconds"
+ },
+ "echo_delay": {
+  "params": {
+   "M": "mass in kg"
+  },
+  "returns": "Δt_echo in seconds"
+ },
+ "no_singularity_check": {
+  "params": {
+   "masses_kg": "masses to sweep; None uses a default sweep"
+  },
+  "returns": "dict with the result of checks (a) to (d)"
+ },
+ "cosmic_cavitation_budget": {
+  "params": {
+   "omega_bh": "black-hole mass density as a fraction of critical",
+   "space_fraction": "fraction released into the stiff-space channel; None uses 1 − d*"
+  },
+  "returns": "dict with Ω_cav and its comparison with the observed Ω_Λ"
+ }
+}

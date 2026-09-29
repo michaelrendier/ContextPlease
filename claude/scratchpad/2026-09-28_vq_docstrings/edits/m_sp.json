@@ -1,0 +1,84 @@
+{
+ "get_zeros": {
+  "params": {
+   "n": "number of zeros"
+  },
+  "returns": "the imaginary parts of the first n nontrivial Riemann zeros"
+ },
+ "spin_series": {
+  "params": {
+   "t_values": "zero heights"
+  },
+  "returns": "θ'(t) at each height"
+ },
+ "spin_is_monotonic": {
+  "params": {
+   "theta_primes": "the spin series"
+  },
+  "returns": "dict with the count of non-monotonic steps; zero means no resonance in the spin"
+ },
+ "wobble_series": {
+  "params": {
+   "t_values": "zero heights",
+   "theta_primes": "the spin series at those heights"
+  },
+  "returns": "spacing − 2π/θ'(t) at each zero"
+ },
+ "true_psi": {
+  "params": {
+   "x": "upper bound"
+  },
+  "returns": "ψ(x), the sum of ln p over prime powers pᵏ ≤ x"
+ },
+ "psi_explicit_formula": {
+  "params": {
+   "x": "evaluation point",
+   "zero_imag_parts": "ordinates γ of the zeros ρ = ½ + iγ"
+  },
+  "returns": "(reconstructed, smooth_part, oscillatory_part)"
+ },
+ "wobble_carries_primes_demo": {
+  "params": {
+   "zero_imag_parts": "ordinates γ of the zeros ρ = ½ + iγ",
+   "test_points": "points at which to reconstruct ψ; None uses a default set near and away from primes"
+  },
+  "returns": "dict comparing the wobble-only reconstruction with the exact step function"
+ },
+ "tilt_residual_series": {
+  "params": {
+   "t_values": "zero heights",
+   "sigma": "the off-critical σ at which the rotation is applied"
+  },
+  "returns": "the imaginary residual at each height"
+ },
+ "tilt_vs_wobble_correlation": {
+  "doc": "Return the Pearson correlation between the tilt residual and the wobble deviation.\n\nREFUTED AS TESTED: it correlates at about 0.037, essentially zero, so\nthe \"minimum information → tilt = wobble\" argument does not survive this\ntest at this alignment.",
+  "params": {
+   "tilt": "the tilt residual series",
+   "wobble": "the wobble series"
+  },
+  "returns": "dict with the correlation"
+ },
+ "crossing_shape_at": {
+  "params": {
+   "gamma_n": "zero height t = γₙ",
+   "sigma_range": "σ values to scan near ½"
+  },
+  "returns": "(σ, Re, Im, |value|) for each sample: the crossing of the Real Tilt against the Axis"
+ },
+ "crossing_does_not_drift": {
+  "doc": "Test whether the crossing's σ-location drifts across zero heights.\n\nCONFIRMED: it is pinned at σ = 0.500000 to machine precision at every\nzero tested. The crossing moves UP the t-axis, a new one at each γₙ,\nand never sideways in σ.",
+  "params": {
+   "zero_imag_parts": "ordinates γ of the zeros",
+   "n_test": "number of zeros tested"
+  },
+  "returns": "dict with the σ found at each zero and the maximum drift"
+ },
+ "full_report": {
+  "doc": "Run the whole module on the first n zeros.",
+  "params": {
+   "n_zeros": "number of zeros"
+  },
+  "returns": "dict with the spin, wobble and tilt results, the explicit-formula demonstration and the crossing tests"
+ }
+}

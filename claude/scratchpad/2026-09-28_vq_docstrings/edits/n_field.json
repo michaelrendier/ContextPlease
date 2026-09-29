@@ -1,0 +1,8 @@
+{
+ "Field.d": {
+  "params": {
+   "mu": "coordinate index"
+  },
+  "returns": "∂_μ φ, or a list of ∂_μ φᵢ for a multi-component field"
+ }
+}

@@ -1,0 +1,18 @@
+{
+ "check_quasi_invariance": {
+  "params": {
+   "v": "the variation",
+   "L": "the Lagrangian",
+   "expected_K": "the supplied K^μ; None demands strict invariance (K^μ = 0)"
+  },
+  "returns": "dict with 'delta_L_simplified', 'divK_simplified', 'residual' and 'is_symmetry'"
+ },
+ "find_K_mu_symbolically": {
+  "doc": "Return None: no general K^μ finder is implemented.\n\nSupply K^μ together with the symmetry. A general finder is a hard symbolic\nproblem (Hodge decomposition / de Rham on the jet bundle); packages such as\nFieldsX and Olver's Maple implementation exist.",
+  "params": {
+   "v": "the variation",
+   "L": "the Lagrangian"
+  },
+  "returns": "None"
+ }
+}

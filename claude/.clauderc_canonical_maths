@@ -2015,3 +2015,45 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
 # derivation + verified fit). What's open: whether T7's mean-sensitivity
 # is Delta-specific or generic chaos; whether sigma_RB has any principled
 # (non-injected) route to producing Delta rather than accepting it.
+
+# ── Added 2026-09-28 (ValaQuenta public-release pass). Equations only; history is in .clauderc_ValaQuenta (same tags).
+@RCCM_FORCED_SIGMA
+  F(s) = exp(-s E)   forward current          B(s) = exp(-(1-s) E)   backward current      (E real, s real)
+  h(s) := ln F - ln B = E (1 - 2s)            LINEAR in s;   h'(s) = -2E
+  Newton:  s <- s - h/h' = s + (1 - 2s)/2 = 1/2        one step, any real s0, any E != 0   (E cancels)
+  E = 0: F = B = 1 for every s (balanced everywhere); the symmetric meeting point is still 1/2.
+  ESTABLISHED (elementary algebra; ValaQuenta.noether.NoetherCurrents.forced_sigma == 0.5 exactly for
+  E in {0, 0.5, 10, 100, 1e3, 1e4, 745}, s0 in {-3, -1, 0, 0.25, 0.3}; tests/test_known_results.py).
+@END
+@RCCM_MOD4_ED
+  RSA, odd primes p,q:  4 | phi(n) = (p-1)(q-1)   =>   e d = 1 (mod phi(n))  =>  e d = 1 (mod 4)
+  (Z/4Z)* = {1,3} has exponent 2, every element self-inverse   =>   d = e (mod 4).
+  Removes exactly 1 bit of the private-exponent search space. ESTABLISHED (classical number theory; 2000/2000
+  random keys). It needs no sedenion machinery.
+@END
+@RCCM_HORNER_ADDRESS
+  TWO distinct Horner constructions — do not conflate the bases:
+  HYPERWEBSTER (modules/hyperwebster):  alphabet of 97 keyboard characters, c_i = index(char_i) in 0..96,
+      idx(text) = sum_i c_i 97^(k-1-i)        bijective on text of known length k;  decode: repeated mod/div 97.
+  P1 HASH (modules/udeo_crypto, from VAPMIP monad.py):  v = sum_i (ord(ch_i) - 32) 95^(k-1-i)  (Horner, base 95),
+      p = next prime >= max(2, v mod 65537) (cap 65536),  zero index = pi(p) in [1, 6542]   (pi(65536) = 6542).
+  ESTABLISHED (definitions; runnable as docs/listings.rst Listings 1 and 2 in ValaQuenta).
+@END
+@RCCM_OBLIQUE_GEAR_ANGLES
+  crank angle (black-hole side):  theta_crank = arctan(d*) = 13.820340 deg        (d* = 0.246; h_rb_hat, ESTABLISHED)
+  galaxy side:  y(x) = (2/pi) arctan(x),  x = r/r_t,    y'(x) = (2/pi)/(1+x^2)
+      tangent angle at x = 1:  arctan(1/pi) = 17.656787 deg
+  difference = 3.836448 deg   ==>  crank == galaxy tangent at r_t   is REFUTED as stated.  (OPEN:CALCULATED)
+  tangent angle equals theta_crank at   x = sqrt(2/(pi d*) - 1) = 1.260113    (cbrt(2) = 1.259921, gap 1.9e-4:
+  NOT significant at d*'s own input precision).
+  What survives: both sides keyed to the same d*, both use arctan to bound an unbounded ratio — kinship, not proof
+  of one mechanism.
+@END
+@RCCM_CONFIDENCE_TIERS
+  ESTABLISHED > THEORETICAL > CONJECTURE > OPEN        (strongest first; the tiers of the engine registry)
+  A compound label names several tiers ("ESTABLISHED+THEORETICAL"). In code: Equation.confidence = the WEAKEST
+  tier named; Equation.confidence_note = the label as authored. Never flatten a compound tag to its upper half.
+  COMPUTATIONAL is a fifth label used once (clay_millennium.rh_noether_balance_scan): a scan run in code, no claim
+  beyond the scan. Suffix :CALCULATED — see feedback_calculated_label.
+@END
+

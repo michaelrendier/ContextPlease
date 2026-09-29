@@ -1,0 +1,91 @@
+{
+ "permute": {
+  "params": {
+   "v": "the vector",
+   "shift": "cyclic shift"
+  },
+  "returns": "the shifted vector"
+ },
+ "bind": {
+  "params": {
+   "a": "role vector",
+   "b": "filler vector, of the same length"
+  },
+  "returns": "P(a)·b, elementwise",
+  "raises": {
+   "ValueError": "the vectors differ in length"
+  }
+ },
+ "role_vector": {
+  "params": {
+   "role_name": "the role's name"
+  },
+  "returns": "the prime-channel expansion of the name"
+ },
+ "fold_to_channels": {
+  "params": {
+   "v": "a 4096-dim hypervector"
+  },
+  "returns": "the 16 channel sums s_k",
+  "raises": {
+   "ValueError": "v is not of length 4096"
+  }
+ },
+ "VSATranslator.version_name": {
+  "doc": "Return the engine's version name.",
+  "returns": "'vsa'"
+ },
+ "VSATranslator.encode": {
+  "params": {
+   "token": "the token"
+  },
+  "returns": "the filler hypervector, 4096-dim"
+ },
+ "VSATranslator.sentence_hypervector": {
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "the 4096-dim bound-and-bundled sentence"
+ },
+ "VSATranslator.compose": {
+  "doc": "Compose a sentence and fold it into the 16-dim space S.",
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "the folded sentence vector"
+ },
+ "VSATranslator.explain": {
+  "doc": "Trace a composition.",
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "dict with the tokens, the sentence hypervector and the folded vector"
+ },
+ "verify_vsa_identities": {
+  "params": {
+   "tokens": "three tokens to test the identities on",
+   "tol": "tolerance"
+  },
+  "returns": "dict with the result of each identity"
+ },
+ "capacity_probe": {
+  "params": {
+   "tokens": "distinct tokens to compare pairwise"
+  },
+  "returns": "dict with the distribution of pairwise cosines"
+ },
+ "unbind_probe": {
+  "params": {
+   "subject": "subject token",
+   "verb": "verb token",
+   "obj": "object token"
+  },
+  "returns": "dict with the rank of the correct filler for each role"
+ }
+}

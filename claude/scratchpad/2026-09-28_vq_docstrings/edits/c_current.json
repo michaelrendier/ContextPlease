@@ -1,0 +1,20 @@
+{
+ "Current.divergence": {
+  "params": {
+   "L": "the Lagrangian"
+  },
+  "returns": "∂_μ J^μ"
+ },
+ "Current.as_dict": {
+  "doc": "Return the components keyed by index.",
+  "returns": "{'J^0': …, 'J^1': …, …}"
+ },
+ "derive_canonical_current": {
+  "params": {
+   "L": "the Lagrangian",
+   "S": "the symmetry",
+   "convention": "'vertical', or 'total' to add ξ^μ ℒ"
+  },
+  "returns": "the Noether current"
+ }
+}

@@ -1,0 +1,5 @@
+{
+ "ADMSpacetime": {
+  "doc": "ADM spacetime. Not implemented: constructing it raises UnsupportedCombinationError."
+ }
+}

@@ -7,6 +7,20 @@
 # MONAD_CONVERSATIONAL_INGEST.md). This file is the coarse chronological
 # through-line only; the auto-memory index + hist_prime primers hold the detail.
 
+═════════════════════════════════════════════════════
+2026-09-28 — ValaQuenta made public-ready (Code Reference / Sphinx / CI / tests), GL CI on
+═════════════════════════════════════════════════════
+
+STATE (ESTABLISHED, run and pushed): ValaQuenta main 7674c18 is GPL-3.0-only, packaged (pyproject, editable install in
+all installers), 38 registered modules each with manifest.json + maths.py/tools.py, reST docstrings, 73 tests in CI,
+Sphinx docs live at https://michaelrendier.github.io/ValaQuenta/. README = API: Code Reference (index only; results
+live in wiki/results_at_a_glance.md; per-function reference is Sphinx). GenerationalLineage CI enabled (4892eaf).
+DETAIL: .clauderc_context_2 2026-09-28 entry (bugs found + not-done list), .clauderc_ValaQuenta CTX_SESSION_20260928,
+memory project_valaquenta_public_release. OPEN for Cody: provenance labels (wiki/provenance_review.md), version
+number 0.159, RTD project, code/ + addenda/ docstrings, 17 unexecuted notebooks.
+TOKEN NOTE: GITHUB_TOKEN (ends JgP) has repo+workflow scope; a running shell's env copy can be STALE — re-source
+~/.bashrc. Never touch PTOL_SEED_TOKEN.
+
 ═══════════════════════════════════════════════════════════════════════════
 2026-09-23 → 09-24 — Running a boxkite (hub/fiber/UFT), Aule=Root of Systems
 Analysis Harness, monad_harness.c made real, branch reorg (3 repos),

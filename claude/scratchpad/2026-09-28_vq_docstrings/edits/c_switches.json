@@ -1,0 +1,41 @@
+{
+ "UnsupportedCombinationError": {
+  "sub": [
+   [
+    "within the declared switch space but not yet implemented.",
+    "within the declared switch space but not implemented."
+   ]
+  ]
+ },
+ "Switch.validate": {
+  "params": {
+   "value": "the value to check"
+  },
+  "raises": {
+   "InvalidSwitchValueError": "`value` is not one of the declared choices"
+  }
+ },
+ "SwitchSettings.get": {
+  "doc": "Return the value of a switch.",
+  "params": {
+   "name": "the switch name"
+  },
+  "returns": "the switch's current value"
+ },
+ "SwitchSettings.is_default": {
+  "doc": "Report whether a switch was left at its default.",
+  "params": {
+   "name": "the switch name"
+  },
+  "returns": "True if the user did not supply it"
+ },
+ "validate_combination": {
+  "params": {
+   "settings": "the settings to check"
+  },
+  "raises": {
+   "UnsupportedCombinationError": "the combination is deferred",
+   "InconsistentCombinationError": "the combination is mathematically invalid"
+  }
+ }
+}

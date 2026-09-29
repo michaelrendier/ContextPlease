@@ -3,7 +3,7 @@
 **Module:** `ValaQuenta/modules/bao_mass_gap` — `maths.py` + `tools.py`
 **Registry name:** `bao_mass_gap` **Version:** 0.131 **Equations:** 7
 **Notebook:** [notebooks/core/19_bao_mass_gap.ipynb](../notebooks/core/19_bao_mass_gap.ipynb)
-**Ainulindale wiki:** [50_bao_mass_gap_engine.md](../../Ainulindale/wiki/50_bao_mass_gap_engine.md)
+**Ainulindale wiki:** [50_bao_mass_gap_engine.md](https://github.com/michaelrendier/Ainulindale/blob/main/wiki/50_bao_mass_gap_engine.md)
 
 **Claim:** The mass gap is the residue of the BAO spectral decomposition — the
 band between the acoustic ground state and the thermal information ceiling that
@@ -16,6 +16,9 @@ no standing wave absorbs.
 Zero free parameters. 7/7 checks pass.
 
 Supersedes the standalone script `ValaQuenta/bao_mass_gap.py`.
+
+
+**Reference:** API — [bao_mass_gap.py](https://michaelrendier.github.io/ValaQuenta/api/engines.html#module-ValaQuenta.bao_mass_gap) and [modules/bao_mass_gap](https://michaelrendier.github.io/ValaQuenta/api/modules/bao_mass_gap.html); every registry equation with its parameters — [toolbox](toolbox/11_bao_mass_gap.md). This page is the record; it holds no API.
 
 ---
 
@@ -235,6 +238,30 @@ are **not** — the identity is a 3-sig-fig coincidence and the "residue" is the
 same subtraction renamed. The generational-lineage FLAG (below) is correct; the
 page's **ESTABLISHED** label overstates the identity and should read
 ESTABLISHED on `Δ > 0` / THEORETICAL on the closed form.
+
+## The gap is the first motion (2026-08-31)
+
+Addendum VIII already reads `Δ` as "the first acoustic mode above the ground
+state." Sharpened: **`Δ` is the first *motion* of recombination — the ignition
+impulse of the hydrogen engine** (`FourthAgePapers/RecombinationMisfires`,
+"hydrogen IS the engine"). Below `Δ` nothing moves — that is the `d*` boundary,
+"no algebraic definition can occur." At `Δ` the first stroke fires. It is the
+**quantum of Perfect Perturbation** — the smallest `Re σ_RB` (tilt) the field
+can carry, the smallest real-power packet (`project_oblique_gear`: the Oblique
+Gear is Maxwell; `Re σ_RB` = Poynting).
+
+**One `Δ`, every rung.** The same gap sets the first perturbation from the
+quark–gluon plasma (`t < 1 µs`, `T ~ 10¹² K` — the deconfined RPM of the same
+engine block) through recombination (`z ≈ 1100`, 380 kyr) to the
+spectral/semantic scale (`d*`). That scale invariance is `d*_RG`'s dimensional
+fixed point at work — the gap at every Cayley–Dickson scale (`DStarRG`).
+
+**Timing is built in — the 4 : 3.** The four faces of `d*` (Boundary /
+Stability / Flow / Translator) and the three of Lambert W (`Ω_ZS` — the Wankel
+rotor faces) are the port timing: a **4 : 3 geometric ratio, no camshaft**.
+`gcd(4,3) = 1`, `lcm(4,3) = 12` — the phase does not repeat until twelve, which
+is why the orbit precesses into flowers rather than closing. The engine times
+itself by its shape (`project_oblique_gear`, the rotary-no-timing thread).
 
 ## Generational Lineage — calibration (2026-08-28)
 

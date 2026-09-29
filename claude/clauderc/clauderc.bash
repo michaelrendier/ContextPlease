@@ -358,3 +358,17 @@ if [ -d "$HOME/.clauderc.d" ]; then
     done
     unset _frag
 fi
+
+# ── VALAQUENTA PUBLIC RELEASE (2026-09-28) ──────────────────────────────────
+# ValaQuenta is GPL-3.0-only, main-only, packaged (pip install -e . from the repo root; the repo root IS the
+# `ValaQuenta` package). Published API docs (GitHub Pages, workflow-built): https://michaelrendier.github.io/ValaQuenta/
+# Detail: ~/.clauderc_context_2 (2026-09-28), ~/.clauderc_ValaQuenta CTX_SESSION_20260928, memory
+# project_valaquenta_public_release.
+export VQ_DOCS_URL="https://michaelrendier.github.io/ValaQuenta/"
+vq_test()  { ( cd "$VALE" && .venv/bin/python -m pytest -q "$@" ); }          # 73 tests, ~55 s
+vq_docs()  { ( cd "$VALE" && .venv/bin/python docs/gen_api.py && .venv/bin/python docs/gen_listings.py \
+               && .venv/bin/sphinx-build -W --keep-going -b html -q docs docs/_build/html ); }
+# TOKEN HYGIENE (2026-09-28): a shell's exported $GITHUB_TOKEN can be a STALE copy from before Cody rotated it in
+# ~/.bashrc (same variable name, different value). If GitHub says 401, `source ~/.bashrc` and retry BEFORE diagnosing.
+# The current GITHUB_TOKEN (ends JgP) has repo + workflow scope, so Actions workflows and Pages can be pushed/enabled.
+# Never touch PTOL_SEED_TOKEN.

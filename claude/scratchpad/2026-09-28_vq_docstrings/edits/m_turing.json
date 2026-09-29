@@ -1,0 +1,29 @@
+{
+ "prediction_diagonal_test": {
+  "params": {
+   "prediction": "the prediction, as text"
+  },
+  "returns": "dict with the self-reference and diagonal-status verdict"
+ },
+ "enigma_derangement": {
+  "params": {
+   "n": "alphabet size"
+  },
+  "returns": "dict with the derangement properties of the reflector permutation"
+ },
+ "hypercomplex_identity_diagonal": {
+  "returns": "dict showing the diagonal flip as i² = −1 across Cantor, Gödel, Turing and Enigma"
+ },
+ "turing_halting_diagonal": {
+  "params": {
+   "n_programs": "number of programs in the model table"
+  },
+  "returns": "dict with the halting table and its diagonal"
+ },
+ "full_turing_diagonal": {
+  "params": {
+   "prediction": "the prediction passed to the prediction test"
+  },
+  "returns": "dict with the result of each of the four engines"
+ }
+}

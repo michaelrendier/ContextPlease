@@ -1,0 +1,60 @@
+{
+ "conservation_status": {
+  "doc": "Classify a violation magnitude against THRESHOLDS.",
+  "params": {
+   "violation": "violation magnitude |∂_μJ^μ|"
+  },
+  "returns": "'PASS', 'MARGINAL' or 'VIOLATION'"
+ },
+ "activation_current": {
+  "params": {
+   "psi_norms": "activation norms |Ψᵢ|",
+   "g": "gauge coupling",
+   "algebra": "algebra dimension (1, 2, 4 or 8)"
+  },
+  "returns": "the current components, one per generator"
+ },
+ "noether_violation": {
+  "params": {
+   "J_curr": "current at this layer",
+   "J_prev": "current at the previous layer; None for the first layer"
+  },
+  "returns": "the violation magnitude, mean |J_curr − J_prev|"
+ },
+ "conservation_diagnostic": {
+  "params": {
+   "psi_norms": "activation norms |Ψᵢ|",
+   "g": "gauge coupling",
+   "algebra": "algebra dimension",
+   "psi_prev": "activation norms of the previous layer; None for the first layer"
+  },
+  "returns": "the diagnostic dict"
+ },
+ "resonance_artifacts": {
+  "params": {
+   "J_history": "current vectors, one per layer step"
+  },
+  "returns": "dict with the dominant period, amplitude, detection flag and zero-crossing count"
+ },
+ "NoetherLedger.record": {
+  "params": {
+   "algebra": "algebra dimension of the event",
+   "violation": "violation magnitude",
+   "J": "the current vector",
+   "metadata": "extra fields stored with the block"
+  },
+  "returns": "the block appended to the chain"
+ },
+ "NoetherLedger.summary": {
+  "doc": "Summarise the chain.",
+  "returns": "dict with total blocks, violation and pass counts, chain validity and the last hash"
+ },
+ "NoetherLedger.chain": {
+  "doc": "Return a copy of the chain.",
+  "returns": "the blocks, oldest first"
+ },
+ "get_ledger": {
+  "doc": "Return the module-level singleton ledger.",
+  "returns": "the shared NoetherLedger"
+ }
+}

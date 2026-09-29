@@ -1,0 +1,14 @@
+{
+ "stokes_dimensionless": {
+  "params": {
+   "x": "r / r_t"
+  },
+  "returns": "(2/π)·atan(x)"
+ },
+ "stokes_tangent_angle_deg": {
+  "params": {
+   "x": "r / r_t"
+  },
+  "returns": "the tangent angle, in degrees"
+ }
+}

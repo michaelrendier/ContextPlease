@@ -4,6 +4,9 @@
 **Class:** `SigmaExpansionModule`
 **Claim:** `P_red(sigma) - 1/2 ≈ c1·d + c3·d³` (d=sigma-1/2) is derivable in closed form — not fitted — from moments of the underlying Dirichlet-style projection. The raw `|J_red(sigma)|² + |J_blue(sigma)|²` is NOT constant across sigma; it has a genuine minimum at sigma=1/2, not a flat quantum-probability-style conservation.
 
+
+**Reference:** every equation with its parameters — [toolbox](toolbox/36_sigma_expansion.md) · API — [sigma_expansion](https://michaelrendier.github.io/ValaQuenta/api/modules/sigma_expansion.html). This page is the record; it holds no API.
+
 ---
 
 ## Origin (2026-07-11)
@@ -76,3 +79,16 @@ Verified numerically against direct computation (not assumed correct from the al
 **Isn't:** directly applicable to `VAPMIP/monad.py`'s Engine, which computes σ via `_word_zero_idx` (prime hash → address) and `_gamma_at` (Newton's method on the real Riemann zeta function's zeros) — a genuinely different mechanism from the simple power-law projection this derivation assumes. Using this engine to error-check the monad specifically would require re-deriving the same Taylor-expansion method against *that* engine's actual sigma formula, not substituting this one in as-is.
 
 See also: `Ainulindale/wiki/76_sigma_expansion.md` (cross-repo companion page), `notebooks/core/15_sigma_expansion.ipynb`.
+
+## Provenance
+
+Moved from the module docstring: a docstring instructs the caller and holds no history; this section is the record.
+
+> Origin: derived 2026-07-11, in the course of testing whether a quantum-
+> state normalization argument (Science Asylum / Nick Lucid's "Quantum
+> Superposition, Explained Without Woo Woo") applies to J_red(sigma),
+> J_blue(sigma)=J_red(1-sigma). It does not normalize to a constant across
+> sigma -- \|J_red(sigma)\|^2 + \|J_blue(sigma)\|^2 has a genuine minimum at
+> sigma=1/2, not a flat quantum-probability-style conservation. That raw
+> result is real and reported honestly; this module is what came out of
+> asking a sharper question of the normalized version instead.

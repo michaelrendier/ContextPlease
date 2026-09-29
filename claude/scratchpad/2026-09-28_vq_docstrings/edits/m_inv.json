@@ -1,0 +1,69 @@
+{
+ "derive_horizon_rotation": {
+  "params": {
+   "n_terms": "number of Basel-series terms used for π"
+  },
+  "returns": "dict with the derived φ = π/2 and its derivation"
+ },
+ "get_observer": {
+  "doc": "Return the observer singleton.",
+  "returns": "the shared observer"
+ },
+ "InversionMap.apply": {
+  "doc": "Apply one compression stroke: (r, θ) → (1/r, θ + π/2).",
+  "params": {
+   "r": "radius; must be nonzero",
+   "theta": "angle in radians"
+  },
+  "returns": "(r_new, theta_new)"
+ },
+ "InversionMap.apply_n": {
+  "doc": "Apply J_N n times.",
+  "params": {
+   "r": "starting radius",
+   "theta": "starting angle in radians",
+   "n": "number of applications"
+  },
+  "returns": "the trajectory [(r₀, θ₀), …, (rₙ, θₙ)]"
+ },
+ "InversionMap.is_involution": {
+  "doc": "Check that applying J_N twice returns r to its start. θ shifts by π per double application; a full cycle takes four.",
+  "params": {
+   "r": "starting radius",
+   "theta": "starting angle in radians",
+   "tol": "tolerance on r"
+  },
+  "returns": "(r_closes, r_after_2, theta_after_2)"
+ },
+ "InversionMap.coordinate_regime": {
+  "params": {
+   "r": "radius"
+  },
+  "returns": "which side of the horizon r is on"
+ },
+ "RecursionAttractor.iterate": {
+  "doc": "Iterate r → 1 + 1/r from r0. Converges to φ from any r0 > 0.",
+  "params": {
+   "r0": "starting value; must be positive",
+   "steps": "number of iterations"
+  },
+  "returns": "the sequence of values, r0 first"
+ },
+ "GradientFlow.step": {
+  "doc": "Step toward φ by the recursion r → 1 + 1/r.\n\nThe fixed point r* = 1 + 1/r* is φ exactly, reached from any r > 0 in\nO(log(1/ε)) steps.",
+  "params": {
+   "r": "current value; must be positive",
+   "hbar": "unused; accepted for interface symmetry"
+  },
+  "returns": "the next value"
+ },
+ "GradientFlow.flow": {
+  "doc": "Run the gradient flow from r0 to the φ attractor.",
+  "params": {
+   "r0": "starting value",
+   "max_steps": "iteration limit",
+   "tol": "convergence tolerance"
+  },
+  "returns": "dict with the trajectory and convergence information"
+ }
+}

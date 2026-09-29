@@ -1,0 +1,14 @@
+{
+"<module>": {"sub": [["(2026-05-30)", ""], ["high-quality sample ", "high-quality sample"]]},
+"CavityMode.amplitude": {"params": {"r_kpc": "galactocentric radius, in kpc"}, "returns": "Ψ(r)"},
+"CavityMode.dm_density": {"params": {"r_kpc": "galactocentric radius, in kpc"}, "returns": "ρ_DM(r), normalised to 1.0 at r = 0"},
+"CavityMode.quantum_potential": {"params": {"r_kpc": "galactocentric radius, in kpc", "c_eff_kms": "effective wave speed in km/s; None uses the cavity's own"}, "returns": "the Bohmian quantum potential Q(r)"},
+"CavityMode.quantum_force": {"params": {"r_kpc": "galactocentric radius, in kpc", "c_eff_kms": "effective wave speed in km/s; None uses the cavity's own"}, "returns": "F_Q(r) in m/s² per unit mass; positive is outward"},
+"CavityMode.stokes_velocity": {"params": {"r_kpc": "galactocentric radius, in kpc"}, "returns": "the orbital speed v_orbit(r) in km/s"},
+"CavityMode.rotation_curve": {"params": {"r_kpc_array": "radii in kpc"}, "returns": "the Stokes-drift orbital speed at each radius, in km/s"},
+"CavityMode.jeans_ratio": {"params": {"c_s_kms": "sound speed in km/s; None uses the cavity's own"}, "returns": "λ_J / R_cavity"},
+"CavityMode.wave_period_gyr": {"params": {"c_eff_kms": "effective wave speed in km/s; None uses the cavity's own"}, "returns": "the standing-wave period T in Gyr"},
+"CavityMode.galactic_planck": {"params": {"M_galaxy_Msun": "galaxy mass in solar masses"}, "returns": "ℏ_galactic in kg·m²/s"},
+"CavityMode.report": {"params": {"M_galaxy_Msun": "galaxy mass in solar masses"}, "returns": "the multi-line derivation report"},
+"CosmologicalSMIG.hubble_drift": {"params": {"r_Mpc": "distance in Mpc"}, "returns": "v_Hubble = H0 × r, in km/s"}
+}

@@ -1,0 +1,194 @@
+{
+ "cd_multiplication_table": {
+  "params": {
+   "levels": "number of doublings from the reals; the algebra has dimension 2^levels"
+  },
+  "returns": "(table, dim) where table[(i, j)] = (sign, index) means e_i·e_j = sign·e_index",
+  "raises": {
+   "ValueError": "levels is not a positive integer"
+  }
+ },
+ "basis_mul": {
+  "doc": "Return the product of two sedenion basis elements: e_i·e_j = sign·e_index.",
+  "params": {
+   "i": "index of the left element, 0..15",
+   "j": "index of the right element, 0..15"
+  },
+  "returns": "(sign, index)"
+ },
+ "multiply": {
+  "params": {
+   "x": "16-vector",
+   "y": "16-vector"
+  },
+  "returns": "the sedenion product x·y",
+  "raises": {
+   "ValueError": "either vector is not of length 16"
+  }
+ },
+ "is_zero": {
+  "params": {
+   "v": "vector",
+   "tol": "absolute tolerance"
+  },
+  "returns": "True if every component has magnitude below tol"
+ },
+ "associator": {
+  "params": {
+   "i": "basis index",
+   "j": "basis index",
+   "k": "basis index"
+  },
+  "returns": "the 16-vector [e_i, e_j, e_k]"
+ },
+ "commutator": {
+  "params": {
+   "i": "basis index",
+   "j": "basis index"
+  },
+  "returns": "the 16-vector [e_i, e_j]"
+ },
+ "associator_defect": {
+  "params": {
+   "i": "basis index",
+   "j": "basis index",
+   "k": "basis index"
+  },
+  "returns": "‖[e_i, e_j, e_k]‖"
+ },
+ "diagonals": {
+  "params": {
+   "a": "lower index of the Assessor",
+   "b": "upper index of the Assessor, offset by 8"
+  },
+  "returns": "the two diagonal 16-vectors of span(e_a, e_{b+8})"
+ },
+ "is_assessor": {
+  "params": {
+   "a": "lower index",
+   "b": "upper index, offset by 8"
+  },
+  "returns": "True if the plane contains zero-dividing diagonals"
+ },
+ "strut": {
+  "params": {
+   "a": "lower index of the Assessor",
+   "b": "upper index of the Assessor"
+  },
+  "returns": "a XOR b, in 1..7"
+ },
+ "assessors_adjacent": {
+  "params": {
+   "A": "first Assessor as (a, b)",
+   "B": "second Assessor as (a, b)"
+  },
+  "returns": "True if some diagonal of A annihilates some diagonal of B"
+ },
+ "box_kite_graph": {
+  "params": {
+   "s": "strut, 1..7"
+  },
+  "returns": "dict with the 6 vertices, the edges and 'is_octahedron'",
+  "raises": {
+   "ValueError": "s is outside 1..7"
+  }
+ },
+ "eigenvalues_symmetric": {
+  "params": {
+   "M": "real symmetric matrix as rows of floats",
+   "tol": "off-diagonal tolerance",
+   "max_sweeps": "limit on Jacobi sweeps"
+  },
+  "returns": "the eigenvalues, ascending"
+ },
+ "chart_spectrum": {
+  "params": {
+   "s": "strut, 1..7"
+  },
+  "returns": "the octahedral Laplacian spectrum ω²(k)"
+ },
+ "associator_field": {
+  "params": {
+   "s": "strut, 1..7"
+  },
+  "returns": "dict with the associator defect at each vertex and edge of box-kite s"
+ },
+ "norm": {
+  "params": {
+   "v": "16-vector"
+  },
+  "returns": "the Euclidean norm"
+ },
+ "fixed_point_weight": {
+  "params": {
+   "v": "16-vector address"
+  },
+  "returns": "the share of energy on e₀, in [0, 1]"
+ },
+ "energy_split": {
+  "params": {
+   "v": "16-vector address"
+  },
+  "returns": "the shares on e₀, e₈, the lower imaginaries and the upper imaginaries; they sum to 1"
+ },
+ "diagonal_amplitudes": {
+  "params": {
+   "v": "16-vector address",
+   "a": "lower index of the Assessor",
+   "b": "upper index of the Assessor"
+  },
+  "returns": "(d+, d−)"
+ },
+ "assessor_coordinates": {
+  "params": {
+   "v": "16-vector address"
+  },
+  "returns": "for each of the 42 Assessors (a, b): the in-plane energy, both diagonal amplitudes and the dominant diagonal"
+ },
+ "chart_projection": {
+  "params": {
+   "v": "16-vector address"
+  },
+  "returns": "the energy in each of the 7 charts, keyed by strut"
+ },
+ "nearest_assessor": {
+  "params": {
+   "v": "16-vector address"
+  },
+  "returns": "((a, b), energy) for the Assessor carrying the most energy"
+ },
+ "local_curvature": {
+  "params": {
+   "v": "16-vector address",
+   "top": "number of largest components used"
+  },
+  "returns": "the summed associator defect over their triples"
+ },
+ "chart_of": {
+  "params": {
+   "v": "16-vector address",
+   "check_zd": "also test the address against the zero-divisor structure"
+  },
+  "returns": "the atlas report described above",
+  "raises": {
+   "ValueError": "v is not of length 16"
+  }
+ },
+ "address_census": {
+  "params": {
+   "addresses": "{name: 16-vector}",
+   "limit": "stop after this many addresses; None takes all",
+   "check_zd": "also test each address against the zero-divisor structure"
+  },
+  "returns": "dict with the distributions over charts, Assessors, peak dimensions and fixed-point weight"
+ },
+ "pencil": {
+  "params": {
+   "r": "relation index, 1..15"
+  },
+  "returns": "the 7 factor pairs (a, a XOR r)",
+  "raises": {
+   "ValueError": "r is outside 1..15"
+  }
+ }
+}

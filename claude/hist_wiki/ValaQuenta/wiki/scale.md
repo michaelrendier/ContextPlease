@@ -9,6 +9,9 @@ This module pulls it out of a quantity and names what is left over —
 both directions, at three different levels, with three different
 answers.
 
+
+**Reference:** every equation with its parameters — [toolbox](toolbox/31_scale.md) · API — [scale](https://michaelrendier.github.io/ValaQuenta/api/modules/scale.html). This page is the record; it holds no API.
+
 ---
 
 ## What it computes
@@ -216,3 +219,14 @@ proven first in that engine; this module is an independent port, not an
 import, per this project's per-repo self-containment convention.
 `PtolemyDesktop/Kryptos/Ciphers/{Vigenere,Enigma,RSA}.py` — the real
 ciphers this instrument was built against.
+
+## Provenance
+
+Moved from the module docstring: a docstring instructs the caller and holds no history; this section is the record.
+
+> Cody, 2026-08-25: "this is why it's the primary forensic tool of the
+> generational lineage engine...it's the most complicated part of the three
+> roots of Add, Scale and Sign. This is The Scale...i want to see that
+> object...the scale invariant/scale blind version of the maths."
+> Then: "the purpose of this engine is for decompositional analysis...so
+> forwards and backwards."

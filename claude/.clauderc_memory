@@ -134,3 +134,21 @@ The rest of the repo is still prose -- convert opportunistically when editing
 a file, do not do a mass rewrite.
 ! Watch for PARAMETER SHADOWING when renaming: a param named `datum` shadows
   the module function datum(). Renamed those params to `ref`.
+
+═════════════════════════════════════════════════════
+CROSS-CUTTING ADDITIONS 2026-09-28 (ValaQuenta public release; state and decisions, not maths)
+═════════════════════════════════════════════════════
+LICENSE POSITION (Cody, 2026-09-28): all code and mathematics are GNU GPL v3.0. Only "The Monad: Maths Speaking English"
+and the P.O.E. Pendant are his in The Work context; other repos are mostly GNU, adjusted as revisited. ValaQuenta is
+GPL-3.0-only (LICENSE, pyproject, every manifest). Older "private plugin layer / paid commercial" text is historical.
+BRANCH POLICY: ValaQuenta is a Python code base — main only, no device branches.
+GIT/CREDENTIALS: use GITHUB_TOKEN only (ends JgP; repo + workflow). A running shell's env copy can be stale — re-source
+~/.bashrc on a 401. Push over HTTPS with the token as an http.extraheader (Basic x-access-token:TOKEN) so nothing is stored.
+DOCS STANDARD: docstrings are Sphinx reST field lists (:param/:returns/:raises), types from annotations, imperative,
+NO history in a docstring (history goes to the wiki). README = index; wiki = record; Sphinx = per-function reference.
+CLEAN-CLONE RULE HELD: a fresh clone → install.sh → README commands from another directory → tests → docs build was run
+and found real bugs (see .clauderc_context_2 2026-09-28). Do it again before any tag.
+CI NOW POSSIBLE on every repo (workflow scope): ValaQuenta docs+tests+Pages (.github/workflows/docs.yml);
+GenerationalLineage ci.yml (Core + Extended). Pages was enabled via the API for ValaQuenta only.
+NOT DONE / NOT ASSUMED: provenance labels unset (wiki/provenance_review.md); Equation.process= lines are derived drafts;
+17 notebooks unexecuted since 2026-07-28; code/ and addenda/ docstrings incomplete; no Read the Docs project exists.

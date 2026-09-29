@@ -1,0 +1,169 @@
+{
+ "cd_conj": {
+  "params": {
+   "a": "coefficient list",
+   "dim": "algebra dimension"
+  },
+  "returns": "the conjugate"
+ },
+ "cd_mul": {
+  "params": {
+   "a": "coefficient list",
+   "b": "coefficient list",
+   "dim": "algebra dimension; a power of 2"
+  },
+  "returns": "the product a·b"
+ },
+ "cd_add": {
+  "doc": "Add two coefficient lists componentwise.",
+  "params": {
+   "a": "coefficient list",
+   "b": "coefficient list of the same length"
+  },
+  "returns": "a + b"
+ },
+ "cd_scale": {
+  "doc": "Scale a coefficient list by a real number.",
+  "params": {
+   "a": "coefficient list",
+   "c": "real factor"
+  },
+  "returns": "c·a"
+ },
+ "cd_norm2": {
+  "doc": "Return the squared norm of a coefficient list.",
+  "params": {
+   "a": "coefficient list"
+  },
+  "returns": "Σ aₖ²"
+ },
+ "cd_norm": {
+  "doc": "Return the norm of a coefficient list.",
+  "params": {
+   "a": "coefficient list"
+  },
+  "returns": "√(Σ aₖ²)"
+ },
+ "cd_inv": {
+  "params": {
+   "a": "coefficient list",
+   "dim": "algebra dimension"
+  },
+  "returns": "the inverse, or None for a zero divisor or the zero element"
+ },
+ "cd_zero": {
+  "doc": "Return the zero element.",
+  "params": {
+   "dim": "algebra dimension"
+  },
+  "returns": "a list of dim zeros"
+ },
+ "cd_one": {
+  "doc": "Return the multiplicative identity.",
+  "params": {
+   "dim": "algebra dimension"
+  },
+  "returns": "the list with 1 at index 0"
+ },
+ "cd_exp": {
+  "params": {
+   "s": "coefficient list",
+   "dim": "algebra dimension",
+   "terms": "number of series terms"
+  },
+  "returns": "exp(s)"
+ },
+ "cd_pow_real": {
+  "params": {
+   "s": "hypercomplex exponent",
+   "t": "real base, t > 0",
+   "dim": "algebra dimension"
+  },
+  "returns": "t^s"
+ },
+ "theta_rs": {
+  "params": {
+   "t": "height, t > 2"
+  },
+  "returns": "the Riemann-Siegel theta θ(t)"
+ },
+ "z_function_complex": {
+  "params": {
+   "t": "height",
+   "N": "number of terms; 0 uses floor(√(t/2π))"
+  },
+  "returns": "the Hardy Z-function Z(t), a real number"
+ },
+ "z_function_hypercomplex": {
+  "params": {
+   "t": "height",
+   "dim": "algebra dimension",
+   "N": "number of terms; 0 uses the Riemann-Siegel truncation",
+   "s": "the point s as coefficients; None uses ½ + it"
+  },
+  "returns": "dict with Z_L, Z_R and their difference"
+ },
+ "j_red": {
+  "params": {
+   "s": "exponent as coefficients",
+   "dim": "algebra dimension",
+   "N": "number of terms"
+  },
+  "returns": "J_red(s, N)"
+ },
+ "j_blue": {
+  "params": {
+   "s": "exponent as coefficients",
+   "dim": "algebra dimension",
+   "N": "number of terms"
+  },
+  "returns": "J_blue(s, N)"
+ },
+ "euler_product": {
+  "params": {
+   "s": "exponent as coefficients",
+   "dim": "algebra dimension",
+   "n_primes": "number of primes"
+  },
+  "returns": "(product, stalled_primes)"
+ },
+ "scan_zeros": {
+  "params": {
+   "dim": "algebra dimension",
+   "sigma_z": "real part σ_z of s",
+   "t_min": "lower end of the t range",
+   "t_max": "upper end of the t range",
+   "t_steps": "number of t samples",
+   "N_series": "number of series terms",
+   "n_primes": "number of primes in the Euler-product test",
+   "eps": "unused; accepted for interface compatibility",
+   "perturb": "value placed in e₂..e_{dim−1}; zero is the pure ℂ embedding, nonzero activates the ZD-sensitive directions"
+  },
+  "returns": "dict with the series, ordering and definer zeros found"
+ },
+ "report": {
+  "doc": "Print a scan_zeros result.",
+  "params": {
+   "results": "the dict returned by scan_zeros"
+  }
+ },
+ "scan_zd_aligned": {
+  "params": {
+   "t_min": "lower end of the t range",
+   "t_max": "upper end of the t range",
+   "t_steps": "number of t samples",
+   "eps_dir": "perturbation size ε along each ZD direction",
+   "N_series": "number of series terms"
+  },
+  "returns": "one dict per ZD direction, with its ordering-minimum t and the nearest known zero"
+ },
+ "report_zd_aligned": {
+  "doc": "Print a scan_zd_aligned result.",
+  "params": {
+   "results": "the list returned by scan_zd_aligned"
+  }
+ },
+ "main": {
+  "doc": "Command-line entry point: run the hypercomplex zeta scan for the chosen dimension."
+ }
+}

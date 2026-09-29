@@ -1,0 +1,124 @@
+{
+ "zero_vec": {
+  "doc": "Return the zero vector of the given dimension, as Fractions.",
+  "params": {
+   "dim": "dimension"
+  },
+  "returns": "a tuple of dim zeros"
+ },
+ "basis": {
+  "doc": "Return the basis vector eₖ, as Fractions.",
+  "params": {
+   "k": "basis index",
+   "dim": "dimension"
+  },
+  "returns": "a tuple with a 1 at index k"
+ },
+ "cd_conj": {
+  "doc": "Return the Cayley-Dickson conjugate: negate every component except e₀.",
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "the conjugate"
+ },
+ "cd_mul": {
+  "doc": "Multiply two Cayley-Dickson elements exactly, over Fractions.",
+  "params": {
+   "a": "coefficient vector",
+   "b": "coefficient vector of the same length"
+  },
+  "returns": "the product a·b"
+ },
+ "coerce_vec": {
+  "params": {
+   "v": "a length-dim sequence of numbers, or a name such as 'e1+e10', 'e0', '2*e3-e11' or '1.5+e2'",
+   "dim": "dimension"
+  },
+  "returns": "the vector as a tuple of Fraction"
+ },
+ "norm_sq": {
+  "doc": "Return the exact squared norm of a vector.",
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "Σ xₖ², as a Fraction"
+ },
+ "left_matrix": {
+  "params": {
+   "a": "coefficient vector"
+  },
+  "returns": "the matrix L_a as rows of Fractions"
+ },
+ "mat_rank": {
+  "params": {
+   "M": "matrix as rows of Fractions"
+  },
+  "returns": "the rank"
+ },
+ "is_zero_divisor": {
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "True if x has a nonzero partner y with x·y = 0"
+ },
+ "on_zd_equator": {
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "True if x is purely imaginary and norm-balanced across the CD-double boundary"
+ },
+ "sigma_rb": {
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "dict with ψ, the tilt and axis series and Sigma_tilt"
+ },
+ "firing_phase": {
+  "params": {
+   "sigma_tilt": "Σ_tilt of the vector"
+  },
+  "returns": "(step12, entry_bracket)"
+ },
+ "domain_of": {
+  "params": {
+   "group": "imaginary indices forming the group",
+   "dim": "dimension"
+  },
+  "returns": "'C', 'H', 'O' or 'FRAGMENT', by closure of span({e₀} ∪ group)"
+ },
+ "gain_class": {
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "the dominant {4:8:4} block: 'G0', 'G1' or 'Gr2'"
+ },
+ "firing_order": {
+  "doc": "Return the order in which the five brackets fire for a vector.",
+  "params": {
+   "x": "coefficient vector or name",
+   "mode": "'sigma_rb' to phase the order by Σ_tilt, anything else for the canonical order"
+  },
+  "returns": "dict with Σ_tilt, the phase, the entry bracket and the order"
+ },
+ "emerge": {
+  "params": {
+   "x": "coefficient vector or name",
+   "mode": "'sigma_rb' or 'canonical', as for firing_order"
+  },
+  "returns": "dict with, per bracket, its groups, domain types, equator membership, gain class and emergent scalar"
+ },
+ "scale_partitions": {
+  "params": {
+   "dim": "dimension"
+  },
+  "returns": "dict with the partition counts, all-subalgebra and containing a FRAGMENT"
+ },
+ "verify": {
+  "doc": "Run the module's self-checks.",
+  "returns": "dict with 'all_pass' and each check's result"
+ },
+ "lineage_report": {
+  "doc": "Report each bracket's tier and lineage.",
+  "returns": "one dict per bracket, in canonical order, with its tier, parent and emergent"
+ }
+}

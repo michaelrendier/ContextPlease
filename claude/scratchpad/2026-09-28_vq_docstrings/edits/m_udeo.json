@@ -1,0 +1,242 @@
+{
+ "cd_conj": {
+  "params": {
+   "x": "coefficient vector"
+  },
+  "returns": "the conjugate"
+ },
+ "cd_mul": {
+  "params": {
+   "a": "coefficient vector",
+   "b": "coefficient vector of the same power-of-2 length"
+  },
+  "returns": "the product a·b"
+ },
+ "e_k": {
+  "doc": "Return the basis element eₖ as a coefficient vector.",
+  "params": {
+   "k": "basis index",
+   "dim": "algebra dimension"
+  },
+  "returns": "the vector with a 1 at index k"
+ },
+ "left_mult_matrix": {
+  "params": {
+   "a": "coefficient vector",
+   "dim": "algebra dimension"
+  },
+  "returns": "the matrix L_a"
+ },
+ "right_mult_matrix": {
+  "params": {
+   "a": "coefficient vector",
+   "dim": "algebra dimension"
+  },
+  "returns": "the matrix R_a"
+ },
+ "normalize": {
+  "doc": "Scale a vector to unit norm; a vector of norm below 1e-15 is returned unchanged.",
+  "params": {
+   "v": "the vector"
+  },
+  "returns": "v / ‖v‖"
+ },
+ "map_int_to_hypercomplex_placeholder": {
+  "params": {
+   "x": "integer to embed",
+   "dim": "algebra dimension"
+  },
+  "returns": "the embedding vector"
+ },
+ "map_int_to_hypercomplex": {
+  "params": {
+   "x": "integer to embed",
+   "dim": "algebra dimension"
+  },
+  "returns": "the two-term embedding vector"
+ },
+ "horner_prime_hash": {
+  "params": {
+   "s": "string to hash, typically an integer's decimal digits",
+   "modulus": "modulus of the hash"
+  },
+  "returns": "the hash in [0, modulus)"
+ },
+ "hash_to_sigma_placeholder": {
+  "doc": "Map a hash to σ = h / modulus. Placeholder; see sigma_of_int for the P1 mechanism.",
+  "params": {
+   "h": "hash integer",
+   "modulus": "the modulus of the hash"
+  },
+  "returns": "σ in [0, 1)"
+ },
+ "p1_next_prime": {
+  "doc": "Return the next prime at or above v, with v reduced into the P1 prime cap.",
+  "params": {
+   "v": "starting integer"
+  },
+  "returns": "the prime"
+ },
+ "p1_horner_hash": {
+  "doc": "Return the Horner hash of a word in the given base.",
+  "params": {
+   "w": "the word",
+   "base": "Horner base",
+   "offset": "character-code offset"
+  },
+  "returns": "the non-negative hash integer"
+ },
+ "p1_zero_index": {
+  "params": {
+   "w": "the word"
+  },
+  "returns": "the zero index π(p) in [1, 6542]"
+ },
+ "sigma_of_int": {
+  "params": {
+   "x": "integer"
+  },
+  "returns": "σ in (0, 1]"
+ },
+ "rsa_keygen": {
+  "doc": "Build an RSA key from primes and a public exponent.",
+  "params": {
+   "p": "first prime",
+   "q": "second prime",
+   "e": "public exponent; must be coprime to φ(n)"
+  },
+  "returns": "dict with p, q, n, phi_n, e and the private exponent d"
+ },
+ "random_wrong_d_candidates": {
+  "params": {
+   "phi_n": "φ(n)",
+   "true_d": "the true private exponent, excluded",
+   "e": "public exponent",
+   "count": "number of candidates",
+   "seed": "random seed"
+  },
+  "returns": "valid private exponents other than the true d"
+ },
+ "percentile_rank": {
+  "params": {
+   "true_value": "the true key's score",
+   "control_values": "the control population's scores"
+  },
+  "returns": "the fraction of the control population the true value beats"
+ },
+ "method1_zero_divisor_shadow": {
+  "params": {
+   "dim": "algebra dimension"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "ptolemy_null_partner": {
+  "params": {
+   "x_s": "the embedded vector"
+  },
+  "returns": "the conformal-inverse partner in x_s's dominant 2-D subspace"
+ },
+ "method1b_ptolemy_null_operator": {
+  "params": {
+   "dim": "algebra dimension",
+   "n_verification_keys": "independent random keys tested after the toy keys"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "method2_j2_involution_t256": {
+  "params": {
+   "dim": "algebra dimension; 256 for T_256"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "sigma_face_metric": {
+  "params": {
+   "sigma": "σ value"
+  },
+  "returns": "g(σ)"
+ },
+ "geodesic_distance": {
+  "params": {
+   "sigma_a": "start σ",
+   "sigma_b": "end σ",
+   "steps": "integration steps"
+  },
+  "returns": "∫ g(σ) dσ along the straight path"
+ },
+ "method3_spectral_relativity": {
+  "params": {
+   "dim": "algebra dimension"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "method4_content_public_private_hash": {
+  "params": {
+   "dim": "algebra dimension",
+   "search_pool": "number of candidate d′ values searched"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "tower_level_geometry": {
+  "doc": "Return the geometry of CD tower level k.",
+  "params": {
+   "k": "tower level, 0..8"
+  },
+  "returns": "dict with σ = 1 − k/4, θ = kπ/8 and the red/blue flags"
+ },
+ "variable_tower_path": {
+  "params": {
+   "x": "integer standing in for an RSA quantity",
+   "label": "name of the quantity"
+  },
+  "returns": "dict with the integer's position at each of the 9 tower levels"
+ },
+ "path_angular_distance": {
+  "params": {
+   "path_a": "path from variable_tower_path",
+   "path_b": "path from variable_tower_path"
+  },
+  "returns": "mean absolute angular difference in degrees"
+ },
+ "method5_zero_lattice_paths": {
+  "params": {
+   "search_pool": "number of candidate d′ values searched"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ },
+ "level_dim": {
+  "doc": "Return the algebra dimension at tower level k.",
+  "params": {
+   "k": "tower level"
+  },
+  "returns": "max(1, 2^k)"
+ },
+ "raw_shell_angles": {
+  "params": {
+   "x": "integer to embed",
+   "k": "tower level"
+  },
+  "returns": "(theta, phi) in radians"
+ },
+ "emergent_rotation_information": {
+  "params": {
+   "x": "integer",
+   "label": "name of the quantity"
+  },
+  "returns": "dict with the raw angles, the straight-line target and the per-level correction at each level 0..8"
+ },
+ "signature_distance": {
+  "doc": "Return the Euclidean distance between two rotation signatures.",
+  "params": {
+   "sig_a": "first signature",
+   "sig_b": "second signature, of the same length"
+  },
+  "returns": "the distance"
+ },
+ "method6_emergent_rotation_signature": {
+  "params": {
+   "search_pool": "number of candidate d′ values searched",
+   "n_verification_keys": "independent random keys tested after the toy keys"
+  },
+  "returns": "dict with the method's scores, the random-guess control and the verdict"
+ }
+}

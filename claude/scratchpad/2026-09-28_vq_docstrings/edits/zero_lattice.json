@@ -1,0 +1,14 @@
+{
+"multiply": {"params": {"a": "sedenion vector in ℝ¹⁶", "b": "sedenion vector in ℝ¹⁶"}, "returns": "the sedenion product a·b"},
+"norm_sq": {"doc": "Return the squared Euclidean norm of a sedenion vector.", "params": {"a": "sedenion vector in ℝ¹⁶"}, "returns": "a·a"},
+"e_k": {"params": {"k": "basis index, 0..15"}, "returns": "the 16-vector with a 1 at index k"},
+"classify_zd_pairs": {"params": {"pairs": "zero-divisor pairs as ((i, j), (k, l)) index tuples"}, "returns": "the pairs grouped under 'odd_sector', 'mixed' and 'even_sector', with counts"},
+"basis_to_cell": {"params": {"k": "basis index, 0..15"}, "returns": "dict with shell, sigma, angle_deg, j_type and is_monster_gap"},
+"sphere_coordinates": {"params": {"k": "basis index, 0..15"}, "returns": "(r, theta, phi)"},
+"zd_path_coordinates": {"params": {"constellation": "(a, b, c, d) with (eₐ + e_b) × (e_c + e_d) = 0"}, "returns": "the Sedenion Point Mapping coordinates of each stop on the path"},
+"view_tree": {"params": {"tree": "the lattice tree; None builds the default", "zd_pairs": "known zero-divisor pairs; None uses the default set", "computed_pairs": "pairs found by computation, shown alongside"}, "returns": "the rendered views of the tree, including the ASCII spoke wheel"},
+"zeta_geometric": {"params": {"s": "complex argument", "scale_level": "CD tower level; accepted for interface symmetry and not used by the computation", "pairs": "ZD pairs to weight; None uses the default 84"}, "returns": "the Euler-product value ζ_T(s)"},
+"zeta_dirichlet": {"params": {"s": "complex argument", "pairs": "ZD pairs to weight; None uses the default 84"}, "returns": "the Dirichlet-series value ζ_T^D(s)"},
+"critical_line_samples": {"params": {"gamma_min": "lower end of the γ range", "gamma_max": "upper end of the γ range", "n_points": "number of samples"}, "returns": "dict with the γ values, |ζ_T| values and identified zeros"},
+"switch_scale": {"params": {"sigma": "current σ", "direction": "'up' toward the ℝ leaf or 'down' toward the t_256 root"}, "returns": "the adjacent level's σ and its ZD structure"}
+}

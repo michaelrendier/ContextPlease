@@ -1,0 +1,49 @@
+{
+ "hw_address": {
+  "params": {
+   "n": "integer whose decimal string is encoded"
+  },
+  "returns": "the base-97 Horner address of str(n)"
+ },
+ "hw_to_t32": {
+  "params": {
+   "n": "integer to map"
+  },
+  "returns": "the T32 word: the Hyperwebster address mod 2³²"
+ },
+ "t32_mul": {
+  "params": {
+   "a": "T32 word",
+   "b": "T32 word",
+   "dim": "algebra dimension; a power of 2"
+  },
+  "returns": "the product a·b as a T32 word"
+ },
+ "is_zero_divisor_pair": {
+  "doc": "Report whether a and b are nonzero words whose T32 product is zero.",
+  "params": {
+   "a": "T32 word",
+   "b": "T32 word"
+  },
+  "returns": "True if a ≠ 0, b ≠ 0 and a·b = 0"
+ },
+ "is_nilpotent": {
+  "params": {
+   "a": "T32 word"
+  },
+  "returns": "True if a ≠ 0 and a·a = 0"
+ },
+ "sieve": {
+  "doc": "Return the primes up to `limit` by the sieve of Eratosthenes.",
+  "params": {
+   "limit": "inclusive upper bound"
+  },
+  "returns": "the primes ≤ limit, ascending"
+ },
+ "prime_nilpotency_report": {
+  "params": {
+   "primes": "the primes to report on"
+  },
+  "returns": "dict giving each prime's T32 word and nilpotency status"
+ }
+}

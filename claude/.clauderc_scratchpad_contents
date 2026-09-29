@@ -19,7 +19,7 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-09-17
+# Last regenerated: 2026-09-28
 
 - README.md
 - migrate_datasets.sh
@@ -113,6 +113,8 @@
     README.md
     collatz_probe.py
 
+2026-08-22_barycenter_sigma/
+
 2026-08-22_fractal_decomp/
     README.md
     result.txt
@@ -130,6 +132,10 @@
 
 2026-08-22_parkour_orthogonal/
     README.md
+
+2026-08-22_pathway/
+
+2026-08-22_pathway_equals_i/
 
 2026-08-22_qm_gr_by_tree/
     README.md
@@ -246,3 +252,153 @@
     gap_weight_test_output.txt
     rsa_frequency_decode.py
     rsa_frequency_decode_output.txt
+
+2026-09-21_scalar_context_v3_pdf_build/
+    README.md
+    pdf_header.tex
+
+2026-09-21_smith_apollonian_uft_probe/
+    01_complex_smith_chart.py
+    02_apollonian_own_half.py
+    03_gasket_generation_address.py
+    04_orthogonality_at_the_half.py
+    05_curvature_vs_potential.py
+    README.md
+    gasket_addresses_lib.py
+
+2026-09-21_zd_focal_point_precession/
+    01_zd_eigenstructure.py
+    02_null_space_vs_e0.py
+    03_wobble_across_struts.py
+    04_wobble_verified.py
+    README.md
+
+2026-09-26_addition_matrix_sudoku/
+    README.md
+    factor_search.py
+
+2026-09-26_spectral_primes/
+    README.md
+    build_and_test.py
+
+2026-09-28_gl_1.0_release/
+    README.md
+
+2026-09-28_gl_move_catalogue/
+    README.md
+    dispatch_smoke.log
+
+2026-09-28_scp_readme_update/
+    README.md
+
+2026-09-28_sign_noether_direction/
+    sign_noether_direction.log
+    sign_noether_direction.py
+
+2026-09-28_vq_docstrings/
+    README.before.md
+    README.md
+    add_process.py
+    audit.py
+    check_raises.py
+    docedit.py
+    edits/__main__.json
+    edits/bao_mass_gap.json
+    edits/c_cd.json
+    edits/c_clifford.json
+    edits/c_current.json
+    edits/c_hcz.json
+    edits/c_hello.json
+    edits/c_iopolar.json
+    edits/c_lie.json
+    edits/c_switches.json
+    edits/capacitor.json
+    edits/console_curses.json
+    edits/console_qt.json
+    edits/corpus.json
+    edits/equation.json
+    edits/fixed_point.json
+    edits/format.json
+    edits/galactic_cavity.json
+    edits/hamiltonian.json
+    edits/lexicon.json
+    edits/m_arch.json
+    edits/m_arch_fix.json
+    edits/m_ass.json
+    edits/m_bao.json
+    edits/m_bfo.json
+    edits/m_bk.json
+    edits/m_bk2.json
+    edits/m_dsc.json
+    edits/m_emerger.json
+    edits/m_hrb.json
+    edits/m_hw.json
+    edits/m_hyp.json
+    edits/m_inv.json
+    edits/m_invtools.json
+    edits/m_jwst.json
+    edits/m_lagr.json
+    edits/m_lio.json
+    edits/m_ninfo.json
+    edits/m_noether.json
+    edits/m_oblique.json
+    edits/m_pgf.json
+    edits/m_scale.json
+    edits/m_sigexp.json
+    edits/m_sing.json
+    edits/m_sonif.json
+    edits/m_sp.json
+    edits/m_sph.json
+    edits/m_t32.json
+    edits/m_tcommon.json
+    edits/m_tdisco.json
+    edits/m_tier6.json
+    edits/m_tier7.json
+    edits/m_tier8.json
+    edits/m_tier9.json
+    edits/m_turing.json
+    edits/m_tvsa.json
+    edits/m_udeo.json
+    edits/m_units.json
+    edits/manifest.json
+    edits/n_adm.json
+    edits/n_an.json
+    edits/n_bh.json
+    edits/n_br.json
+    edits/n_ccj.json
+    edits/n_charge.json
+    edits/n_curved.json
+    edits/n_cus.json
+    edits/n_eucl.json
+    edits/n_ex1.json
+    edits/n_ex2.json
+    edits/n_ex3.json
+    edits/n_field.json
+    edits/n_ft.json
+    edits/n_init.json
+    edits/n_lag.json
+    edits/n_mink.json
+    edits/n_shell.json
+    edits/n_st.json
+    edits/n_sym.json
+    edits/n_var.json
+    edits/n_ward.json
+    edits/noether.json
+    edits/prime_gate.json
+    edits/registry.json
+    edits/semantic_domain.json
+    edits/semantic_word.json
+    edits/telperion.json
+    edits/understand.json
+    edits/units.json
+    edits/verify_install.json
+    edits/w_wiles.json
+    edits/zero_lattice.json
+    gen_class_docs.py
+    modules_todo.txt
+    noether_tools.before
+    rows.json
+    rstfix.py
+    sphinx2.log
+    sphinx3.log
+    stale.py

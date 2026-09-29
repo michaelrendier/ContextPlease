@@ -1,0 +1,1 @@
+{"spectral_residue": {"params": {"n_zeros": "number of Riemann zeros summed"}, "returns": "dict with the partial sums over the zeros, the residue and the gap"}}

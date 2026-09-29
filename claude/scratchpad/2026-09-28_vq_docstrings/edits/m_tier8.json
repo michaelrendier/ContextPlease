@@ -1,0 +1,59 @@
+{
+ "cd_conj": {
+  "doc": "Return the Cayley-Dickson conjugate: negate every component except e₀.",
+  "params": {
+   "x": "coefficient vector of length 2ⁿ"
+  },
+  "types": {
+   "x": "numpy.ndarray"
+  },
+  "returns": "the conjugate, a new array",
+  "rtype": "numpy.ndarray"
+ },
+ "cd_mul": {
+  "doc": "Multiply two Cayley-Dickson elements by the doubling rule\n(a₁, a₂)(b₁, b₂) = (a₁b₁ − conj(b₂)a₂,  b₂a₁ + a₂conj(b₁)).",
+  "params": {
+   "a": "coefficient vector of length 2ⁿ",
+   "b": "coefficient vector of the same length"
+  },
+  "types": {
+   "a": "numpy.ndarray",
+   "b": "numpy.ndarray"
+  },
+  "returns": "the product, a vector of the same length",
+  "rtype": "numpy.ndarray"
+ },
+ "e_k": {
+  "doc": "Return the basis element eₖ as a coefficient vector.",
+  "params": {
+   "k": "basis index",
+   "dim": "algebra dimension"
+  },
+  "types": {
+   "k": "int",
+   "dim": "int"
+  },
+  "returns": "the vector with a 1 at index k and zeros elsewhere",
+  "rtype": "numpy.ndarray"
+ },
+ "horner_prime_hash": {
+  "params": {
+   "s": "string to hash",
+   "modulus": "modulus of the hash"
+  },
+  "returns": "the hash, an integer in [0, modulus)"
+ },
+ "hash_to_sigma": {
+  "params": {
+   "h": "hash integer",
+   "modulus": "the modulus the hash was taken under"
+  },
+  "returns": "σ = h / modulus"
+ },
+ "hash_to_sedenion_address": {
+  "params": {
+   "s": "string to address"
+  },
+  "returns": "(σ_address, dimension_index)"
+ }
+}

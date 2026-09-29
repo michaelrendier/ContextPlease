@@ -1,0 +1,79 @@
+{
+ "is_quadratic_residue": {
+  "params": {
+   "a": "integer",
+   "p": "odd prime"
+  },
+  "returns": "the Legendre symbol (a/p): 1, −1 or 0"
+ },
+ "tonelli_shanks": {
+  "params": {
+   "n": "the residue",
+   "p": "odd prime"
+  },
+  "returns": "a square root of n mod p, or None if none exists"
+ },
+ "modinv": {
+  "params": {
+   "a": "integer coprime to p",
+   "p": "prime modulus"
+  },
+  "returns": "a⁻¹ mod p"
+ },
+ "EllipticCurve.count_points_Fp": {
+  "params": {
+   "p": "prime"
+  },
+  "returns": "#E(𝔽_p), including the point at infinity"
+ },
+ "EllipticCurve.ap": {
+  "params": {
+   "p": "prime"
+  },
+  "returns": "a_p(E) = p + 1 − #E(𝔽_p)"
+ },
+ "EllipticCurve.ap_sequence": {
+  "params": {
+   "primes": "list of primes"
+  },
+  "returns": "{p: a_p(E)}"
+ },
+ "ModularForm.ap": {
+  "params": {
+   "p": "prime"
+  },
+  "returns": "a_p(f)",
+  "raises": {
+   "ValueError": "a_p(f) is neither known nor computable from the eta product"
+  }
+ },
+ "ModularForm.ap_sequence": {
+  "params": {
+   "primes": "list of primes"
+  },
+  "returns": "{p: a_p(f)}",
+  "raises": {
+   "ValueError": "some a_p(f) is neither known nor computable"
+  }
+ },
+ "WilesConjugate.verify": {
+  "params": {
+   "primes": "list of primes to compare at",
+   "verbose": "print the comparison"
+  },
+  "returns": "dict with 'matches', 'ap_E', 'ap_f', 'discrepancies' and 'sigma'"
+ },
+ "WilesConjugate.redblue_coordinates": {
+  "params": {
+   "p": "prime"
+  },
+  "returns": "dict with a_p(E) and a_p(f) in H_hat_RB coordinates at σ = 1"
+ },
+ "primes_up_to": {
+  "doc": "Return the primes up to n by the sieve of Eratosthenes.",
+  "params": {
+   "n": "inclusive upper bound"
+  },
+  "returns": "the primes ≤ n"
+ }
+}

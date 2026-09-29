@@ -1,0 +1,5 @@
+{
+ "CurvedSpacetime": {
+  "doc": "Curved spacetime. Not implemented: constructing it raises UnsupportedCombinationError."
+ }
+}

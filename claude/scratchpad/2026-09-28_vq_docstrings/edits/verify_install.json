@@ -1,0 +1,5 @@
+{
+"ok": {"doc": "Print a PASS line.", "params": {"msg": "what passed"}},
+"bad": {"doc": "Print a FAIL line and record the failure.", "params": {"msg": "what failed", "detail": "extra text printed under the failure"}},
+"warn": {"doc": "Print a SKIP line and record the warning.", "params": {"msg": "what was skipped", "detail": "extra text printed under the skip"}}
+}

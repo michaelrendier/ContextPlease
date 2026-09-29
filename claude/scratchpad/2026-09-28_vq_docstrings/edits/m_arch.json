@@ -1,0 +1,414 @@
+{
+ "lambert_w": {
+  "params": {
+   "x": "argument, x ≥ −1/e",
+   "tol": "convergence tolerance",
+   "max_iter": "iteration limit"
+  },
+  "returns": "W₀(x)",
+  "raises": {
+   "ValueError": "x < −1/e"
+  }
+ },
+ "screw_pitch": {
+  "params": {
+   "p": "prime"
+  },
+  "returns": "ln p",
+  "raises": {
+   "ValueError": "p < 2"
+  }
+ },
+ "u_axis": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "u = ln x",
+  "raises": {
+   "ValueError": "x is outside the function's domain"
+  }
+ },
+ "digits_of": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "floor(log10 x) + 1",
+  "raises": {
+   "ValueError": "x is outside the function's domain"
+  }
+ },
+ "u_from_digits": {
+  "params": {
+   "d": "decimal digit count"
+  },
+  "returns": "(d − 1)·ln 10"
+ },
+ "li": {
+  "params": {
+   "x": "argument, x > 1"
+  },
+  "returns": "Li(x)",
+  "raises": {
+   "ValueError": "x ≤ 1"
+  }
+ },
+ "prime_count_log10": {
+  "params": {
+   "digits": "decimal digit count of the bound"
+  },
+  "returns": "log10 π(10^digits)",
+  "raises": {
+   "ValueError": "digits < 1"
+  }
+ },
+ "nth_prime_estimate": {
+  "params": {
+   "n": "prime ordinal"
+  },
+  "returns": "the estimate of the n-th prime; exact for n < 6",
+  "raises": {
+   "ValueError": "n < 1"
+  }
+ },
+ "zero_count_smooth": {
+  "params": {
+   "T": "height"
+  },
+  "returns": "the smooth zero count N(T)",
+  "raises": {
+   "ValueError": "T ≤ 2π"
+  }
+ },
+ "zero_height_lambert": {
+  "params": {
+   "n": "zero index"
+  },
+  "returns": "γₙ ≈ 2πn / W(n/e)",
+  "raises": {
+   "ValueError": "n < 1"
+  }
+ },
+ "zero_height": {
+  "params": {
+   "n": "zero index"
+  },
+  "returns": "the height γₙ",
+  "raises": {
+   "ValueError": "n < 1"
+  }
+ },
+ "zero_index": {
+  "params": {
+   "gamma": "height"
+  },
+  "returns": "the smooth count N(γ)"
+ },
+ "zeros_upto": {
+  "params": {
+   "count": "number of zeros"
+  },
+  "returns": "the first `count` zero heights, ascending"
+ },
+ "mean_gap": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "ln x"
+ },
+ "total_spaces": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "x − Li(x)"
+ },
+ "gap_at_zero_scale": {
+  "params": {
+   "n": "zero index"
+  },
+  "returns": "2π / ln(γₙ / 2π)"
+ },
+ "von_mangoldt": {
+  "params": {
+   "n": "positive integer"
+  },
+  "returns": "Λ(n)"
+ },
+ "chebyshev_psi_exact": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "ψ(x)"
+ },
+ "leaf_drops": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "(n, ln p) for each prime power n ≤ x"
+ },
+ "tone": {
+  "params": {
+   "u": "screw height ln x",
+   "gamma": "height of the zero",
+   "sigma": "real part of the zero"
+  },
+  "returns": "the tone value"
+ },
+ "tone_sum": {
+  "params": {
+   "u": "screw height ln x",
+   "zeros": "zero heights; None uses the tabulated set",
+   "sigma": "real part of every zero"
+  },
+  "returns": "the sum of tones"
+ },
+ "clean_path_L": {
+  "params": {
+   "x": "positive real"
+  },
+  "returns": "L(x) = x",
+  "raises": {
+   "ValueError": "x is outside the function's domain"
+  }
+ },
+ "zero_sum": {
+  "params": {
+   "x": "positive real",
+   "zeros": "zero heights; None uses the tabulated set",
+   "sigma": "real part of every zero"
+  },
+  "returns": "Σ_ρ x^ρ/ρ"
+ },
+ "l_io_decomposition": {
+  "params": {
+   "x": "positive real",
+   "zeros": "zero heights; None uses the tabulated set"
+  },
+  "returns": "dict with the terms 'L', 'psi_bend' and 'L_IO'"
+ },
+ "chebyshev_psi_explicit": {
+  "params": {
+   "x": "real, x > 1",
+   "zeros": "zero heights; None uses the tabulated set",
+   "sigma": "real part of every zero"
+  },
+  "returns": "ψ(x) from the explicit formula",
+  "raises": {
+   "ValueError": "x ≤ 1"
+  }
+ },
+ "interference_profile": {
+  "params": {
+   "x": "positive real",
+   "zeros": "zero heights; None uses the tabulated set"
+  },
+  "returns": "[(γₖ, toneₖ)] for each zero"
+ },
+ "amplitude_envelope": {
+  "params": {
+   "x": "positive real",
+   "sigma": "real part of the zero"
+  },
+  "returns": "2·x^σ"
+ },
+ "envelope_ratio": {
+  "params": {
+   "x": "positive real",
+   "sigma_off": "real part of the hypothetical off-line zero"
+  },
+  "returns": "x^(σ_off − ½)"
+ },
+ "kronecker": {
+  "params": {
+   "a": "integer",
+   "n": "integer"
+  },
+  "returns": "the Kronecker symbol (a/n)"
+ },
+ "fundamental_discriminant": {
+  "params": {
+   "N": "squarefree integer"
+  },
+  "returns": "D = N if N ≡ 1 mod 4, else 4N"
+ },
+ "splitting_type": {
+  "params": {
+   "p": "rational prime",
+   "N": "squarefree integer"
+  },
+  "returns": "'split', 'inert' or 'ramified'"
+ },
+ "splitting_vector": {
+  "params": {
+   "N": "squarefree integer",
+   "limit": "largest prime scanned"
+  },
+  "returns": "[(p, χ_N(p))] for the primes ≤ limit"
+ },
+ "ramified_primes": {
+  "params": {
+   "N": "squarefree integer",
+   "limit": "largest prime scanned"
+  },
+  "returns": "the primes ≤ limit that divide the discriminant"
+ },
+ "screw_coordinates": {
+  "params": {
+   "term": "'magnitude', 'digits', 'ordinal' or 'zeta_index'",
+   "value": "the value of that coordinate"
+  },
+  "returns": "dict with all four coordinates",
+  "raises": {
+   "ValueError": "term is not one of the four"
+  }
+ },
+ "shake_order": {
+  "params": {
+   "x": "positive real",
+   "zeros": "zero heights; None uses the tabulated set"
+  },
+  "returns": "dict with the drops, psi_exact, psi_tones and the residual"
+ },
+ "lpf": {
+  "params": {
+   "n": "integer ≥ 2"
+  },
+  "returns": "the least prime factor",
+  "raises": {
+   "ValueError": "n < 2"
+  }
+ },
+ "gpf": {
+  "params": {
+   "n": "integer ≥ 2"
+  },
+  "returns": "the greatest prime factor",
+  "raises": {
+   "ValueError": "n < 2"
+  }
+ },
+ "fall_height": {
+  "params": {
+   "n": "integer ≥ 2"
+  },
+  "returns": "ln(gpf n)"
+ },
+ "discovery_height": {
+  "params": {
+   "n": "integer ≥ 2"
+  },
+  "returns": "ln(lpf n)"
+ },
+ "smoothness_u": {
+  "params": {
+   "n": "integer ≥ 2"
+  },
+  "returns": "u = ln n / ln(gpf n)",
+  "raises": {
+   "ValueError": "n < 2"
+  }
+ },
+ "dickman_rho": {
+  "params": {
+   "u": "real, u ≥ 0"
+  },
+  "returns": "ρ(u)",
+  "raises": {
+   "ValueError": "u < 0"
+  }
+ },
+ "gpf_table": {
+  "params": {
+   "X": "upper bound"
+  },
+  "returns": "list g with g[n] = gpf(n) for n ≤ X, and 0 at n = 0, 1",
+  "raises": {
+   "ValueError": "X < 1"
+  }
+ },
+ "psi_smooth": {
+  "params": {
+   "x": "upper bound",
+   "y": "smoothness bound"
+  },
+  "returns": "Ψ(x, y)"
+ },
+ "harvest": {
+  "params": {
+   "X": "upper bound",
+   "p": "prime"
+  },
+  "returns": "the number of n ≤ X with gpf(n) = p",
+  "raises": {
+   "ValueError": "p is not prime"
+  }
+ },
+ "harvest_curve": {
+  "params": {
+   "X": "upper bound"
+  },
+  "returns": "{p: leaves falling at step p} for every prime p ≤ X"
+ },
+ "semiprime_harvest": {
+  "params": {
+   "X": "upper bound",
+   "p": "prime"
+  },
+  "returns": "π(min(p, X/p))",
+  "raises": {
+   "ValueError": "p is not prime"
+  }
+ },
+ "fall_split": {
+  "params": {
+   "N": "semiprime"
+  },
+  "returns": "dict with the discovery and fall heights, their sum ln N and δ",
+  "raises": {
+   "ValueError": "N is not a semiprime"
+  }
+ },
+ "domain_ladder": {
+  "params": {
+   "modulus_bits": "bit length of the modulus",
+   "gnfs_bits": "bit cost of GNFS at that size"
+  },
+  "returns": "dict of counts as base-2 logarithms",
+  "raises": {
+   "ValueError": "modulus_bits < 4"
+  }
+ },
+ "mobius": {
+  "params": {
+   "n": "positive integer"
+  },
+  "returns": "μ(n)",
+  "raises": {
+   "ValueError": "n < 1"
+  }
+ },
+ "mertens": {
+  "params": {
+   "x": "upper bound"
+  },
+  "returns": "M(x)"
+ },
+ "mertens_envelope": {
+  "params": {
+   "x": "positive real",
+   "eps": "ε in the exponent"
+  },
+  "returns": "x^(½ + ε)",
+  "raises": {
+   "ValueError": "x is outside the function's domain"
+  }
+ },
+ "sieve_extinction": {
+  "params": {
+   "N": "composite integer"
+  },
+  "returns": "dict with the grown, extinct and identified heights and 'dead_but_unnamed'",
+  "raises": {
+   "ValueError": "N is not composite"
+  }
+ }
+}

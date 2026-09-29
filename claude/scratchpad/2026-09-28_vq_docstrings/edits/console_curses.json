@@ -1,0 +1,4 @@
+{
+"DerivationBrowser.run": {"doc": "Run the browser's event loop until the user quits with q or Esc."},
+"run_curses": {"doc": "Run the curses derivation browser. Entry point called by __main__.", "params": {"registry": "the populated module registry"}}
+}

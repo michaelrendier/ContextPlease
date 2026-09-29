@@ -1,0 +1,62 @@
+{
+ "lambert_W_approx": {
+  "doc": "Approximate the Lambert W function W(x), the solution of W·e^W = x, by Newton iteration.",
+  "params": {
+   "x": "argument; non-positive x returns 0.0"
+  },
+  "returns": "W(x)"
+ },
+ "two_loop_mass_gap_candidate": {
+  "params": {
+   "alpha_floor": "α at the SMIP domain floor",
+   "omega": "Ω_ζΣ, the domain ceiling",
+   "p": "holographic/unification exponent"
+  },
+  "returns": "dict with the candidate mass gap m and how far it sits from the target"
+ },
+ "lambert_tsallis_Wq_candidate": {
+  "params": {
+   "q": "Tsallis index; q → 1 recovers the standard Lambert W",
+   "z": "argument; None uses Ω_ζΣ"
+  },
+  "returns": "dict with W_q(z) and the comparison with the target gap"
+ },
+ "gap_candidates": {
+  "params": {
+   "d_star": "the d* the candidates are compared against"
+  },
+  "returns": "one dict per candidate expression, with its value and its distance from Ω"
+ },
+ "h_nn_eigenvalues": {
+  "params": {
+   "hbar_nn": "ħ_NN",
+   "n_max": "number of levels"
+  },
+  "returns": "dict with E_n = ħ_NN·(n + ½) for n < n_max"
+ },
+ "xp_spectrum_discrete": {
+  "params": {
+   "hbar_nn": "ħ_NN",
+   "x_min": "lower end of the x range",
+   "x_max": "upper end of the x range",
+   "n_pts": "number of sample points"
+  },
+  "returns": "dict with the sampled xp landscape"
+ },
+ "T_map_scaffold": {
+  "params": {
+   "x": "point at which to evaluate T",
+   "d_star": "the d* in the exponent"
+  },
+  "returns": "dict with T_re and T_im"
+ },
+ "T_map_trajectory": {
+  "params": {
+   "x_min": "lower end of the x range",
+   "x_max": "upper end of the x range",
+   "n_pts": "number of sample points",
+   "d_star": "the d* in the exponent"
+  },
+  "returns": "dict with the trajectory arrays for rendering"
+ }
+}

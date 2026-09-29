@@ -1,0 +1,60 @@
+{
+ "real_multiplication": {
+  "params": {
+   "a": "one component",
+   "b": "one component"
+  },
+  "returns": "the product"
+ },
+ "complex_multiplication": {
+  "params": {
+   "a": "components (a0, a1)",
+   "b": "components (b0, b1)"
+  },
+  "returns": "the product's components"
+ },
+ "quaternion_multiplication": {
+  "params": {
+   "a": "components (a0..a3)",
+   "b": "components (b0..b3)"
+  },
+  "returns": "the product's components"
+ },
+ "octonion_multiplication": {
+  "params": {
+   "a": "components (a0..a7)",
+   "b": "components (b0..b7)"
+  },
+  "returns": "the product's components"
+ },
+ "CayleyDicksonAlgebra.multiply": {
+  "doc": "Multiply two elements of this algebra.",
+  "params": {
+   "a": "components of the left element",
+   "b": "components of the right element"
+  },
+  "returns": "the product's components",
+  "raises": {
+   "ValueError": "the algebra label is not R, C, H or O"
+  }
+ },
+ "CayleyDicksonAlgebra.conjugate": {
+  "params": {
+   "a": "components of the element"
+  },
+  "returns": "the conjugate's components"
+ },
+ "CayleyDicksonAlgebra.norm_squared": {
+  "params": {
+   "a": "components of the element"
+  },
+  "returns": "|a|²"
+ },
+ "left_multiplication_matrix": {
+  "params": {
+   "algebra_label": "'C', 'H' or 'O'",
+   "imag_unit_index": "1-based index of the imaginary unit"
+  },
+  "returns": "the matrix L_{e_k}"
+ }
+}

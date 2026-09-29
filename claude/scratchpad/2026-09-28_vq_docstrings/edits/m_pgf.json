@@ -1,0 +1,69 @@
+{
+ "gamma": {
+  "doc": "Smith's map Γ(s) = (s−1)/(s+1). ESTABLISHED; the same map as GenerationalLineage/engine/toolsets/scale.py.",
+  "params": {
+   "s": "complex argument"
+  },
+  "returns": "Γ(s)"
+ },
+ "dgamma": {
+  "doc": "Return dΓ/ds = 2/(s+1)², exact. It equals the local scale factor |dΓ/ds| of scale.py.",
+  "params": {
+   "s": "complex argument"
+  },
+  "returns": "dΓ/ds"
+ },
+ "log_potential_curvature": {
+  "doc": "Return the curl of A = grad log|Γ|, which is zero for any scalar potential.\n\nThe function makes that structural fact checkable in code; a nonzero\nresult is not possible.",
+  "params": {
+   "s": "complex argument",
+   "h": "finite-difference step"
+  },
+  "returns": "the curl, zero to rounding"
+ },
+ "connection": {
+  "doc": "Return A(s) = (Re Γ(s), Im Γ(s)): Γ read as an ℝ²-valued connection, the reading that can carry curvature.",
+  "params": {
+   "s": "complex argument"
+  },
+  "returns": "(A_x, A_y)"
+ },
+ "curvature": {
+  "doc": "Return F(s) = ∂A_y/∂x − ∂A_x/∂y for A = connection(s).\n\nBy Cauchy-Riemann (u_y = −v_x) this is F = 2·v_x = 2·Im(dΓ/ds), exact.\nverify() checks it against curvature_numeric().",
+  "params": {
+   "s": "complex argument"
+  },
+  "returns": "F(s)"
+ },
+ "curvature_numeric": {
+  "doc": "Return a finite-difference estimate of curvature(): the cross-check, never the production path.",
+  "params": {
+   "s": "complex argument",
+   "h": "finite-difference step"
+  },
+  "returns": "the numeric F(s)"
+ },
+ "zero_locus_predicate": {
+  "doc": "Compare the closed-form zero locus of curvature() with the measured one at a point.\n\nThe predicted locus is the real axis (t = 0) or the vertical line σ = −1,\nthrough Γ's pole.",
+  "params": {
+   "s": "complex point",
+   "tol": "tolerance for calling a value zero"
+  },
+  "returns": "dict with the predicted and measured zero flags and whether they agree"
+ },
+ "prediction_check": {
+  "doc": "Test the closed-form zero locus at random points, not only at the two loci.\n\nThis is the check of whether the locus is complete.",
+  "params": {
+   "n_samples": "number of random points",
+   "seed": "random seed"
+  },
+  "returns": "dict with the agreement counts and any counterexamples"
+ },
+ "report": {
+  "doc": "Give one point's full readout: Γ, its connection, both curvatures and the zero-locus check.",
+  "params": {
+   "s": "complex point"
+  },
+  "returns": "the readout dict"
+ }
+}

@@ -29,3 +29,5 @@ parts, and this is one of them:
 A Monad built from all four speaks the project's own language literally. The
 `monad_bin/` builder (`../monad_bin/`, and `VAPMIP/monad_bin/`) turns the prose
 parts into the `.bin` vocabulary + knowledge store.
+
+**Re-copied 2026-09-28:** ValaQuenta/wiki (incl. toolbox/) refreshed after the public-release pass — 104 files under hist_wiki/ValaQuenta/. The page counts above are the 2026-08-29 snapshot.
