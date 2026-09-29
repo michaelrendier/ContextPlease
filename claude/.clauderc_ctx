@@ -13,7 +13,7 @@
 #   rcboth FANO_SEDENION   both, reference first
 #   rcls                   list every block in both tiers
 #
-# Source from ~/.bashrc:   [ -f ~/.clauderc_ctx ] && . ~/.clauderc_ctx
+# Not currently in ~/.bashrc (checked 2026-09-28). To enable:   [ -f ~/.clauderc_ctx ] && . ~/.clauderc_ctx   -- or source it by name
 
 _rc_block() {
     local file="$1" tag="$2"

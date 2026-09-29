@@ -1,5 +1,11 @@
 # ContextPlease — read this first
 
+**Manual Transmission Context Continuity.**
+
+Nothing here shifts itself. No file in this repository is auto-loaded into a session: the human or the agent
+chooses which file to read, in which order, and when — the way a driver chooses the gear. What continues from
+one session to the next is exactly what someone deliberately carried across, and nothing else.
+
 **You are an AI agent working in ThePlace.** This file is addressed to you.
 It exists so you do not have to rediscover the project, the environment, or
 the working rules by brute force. Read it before you touch anything.
@@ -8,6 +14,13 @@ The human you are working with is Cody. He builds mathematical engines —
 sedenion algebra, Riemann zeros, a semantic field engine called the monad —
 across a set of sibling repositories. The work is real research. It is not a
 demo, and the results are not decorative.
+
+
+> **Status note, 2026-09-28.** Directive #4 (the `/storage/emulated/0` root) and the Android environment notes in
+> §3 describe the phone era. The working root moved on 2026-07-31 to `/home/rendier/Projects/ThePlace` on the laptop
+> (NVMe, no exFAT limits); the `/storage/emulated/0` form applies only when a session is actually on the phone. The
+> rest of §1, §4 and §5 is unaffected. §6 (layout) and §7 (onboarding) were rewritten on this date to match what is
+> on disk.
 
 ---
 
@@ -70,7 +83,10 @@ restating a path that a traceback or a shell printed on its own. Showing the
 5. Then, scoped to what you are actually doing:
    - `…rc_context_1` — one *current-state* entry per repo, keyed `## RepoName`
    - `…rc_context_2` — **append-only** dated log; what happened, in order
-   - `…rc_ValaQuenta` — per-engine index
+   - `…rc_context` — the coarse, newest-first chronological through-line
+   - `…rc_ValaQuenta` — per-engine index and the history behind the canonical maths (`rccm` / `rcvq` in `…rc_ctx`)
+   - `…rc_user_provenance` and `…rc_citations` — before a paper, README or wiki ships (see §6)
+   - `skills/` — install the custom skills into your own Claude Code (see `claude/skills/README.md`)
 
 Do not read everything. Context purity matters here more than coverage —
 overloading a session with unrelated material has caused real problems, and
@@ -84,20 +100,21 @@ and stopping halfway is worse than not reading it.
 
 ## 3. Traps that have already cost real time
 
-### The allowlist — only two files are shell code
+### The allowlist — only four files are shell code
 
-`…rc` and `…rc_ValaQuenta` are bash. The rest are not.
+`…rc`, `…rc_ValaQuenta`, `…rc_ctx` and `…rc_context_hub` are bash (checked 2026-09-28 with `bash -n`). The rest are
+prose or JSON. Of the four, **only `…rc` is sourced by `~/.bashrc`**; `…rc_ctx` (the `rccm` / `rcvq` / `rcls` lookups)
+and `…rc_ValaQuenta` (`ctxengine`) are sourced by name when wanted, and `…rc_context_hub` is a policy-and-repo-map file
+whose exports you read rather than need. The headers of those three say "sourced automatically by ~/.bashrc"; that is a
+stale claim in the files themselves — trust `grep clauderc ~/.bashrc`.
 
-`…rc_file_structure` is a `tree -J` dump — a large JSON document beginning
-`[{"type":"directory",...`. **It passes `bash -n`.** A syntax check will not
-save you. `for f in .agentrc*; do source $f; done` would execute a
-quarter-million lines of JSON as shell commands.
+`…rc_file_structure` (which lives in `ThePlace/.claude/`, not here) is a `tree -J` dump — a large JSON document
+beginning `[{"type":"directory",...`. **It passes `bash -n`.** A syntax check will not save you. `for f in .agentrc*;
+do source $f; done` would execute a quarter-million lines of JSON as shell commands.
 
-And do not invert the test: an all-comment prose skeleton *also* passes
-`bash -n`, and a populated one fails it. **Whether a file parses tells you
-nothing about whether it should be sourced.** The rule is the allowlist, not
-the syntax check: source `…rc` and `…rc_ValaQuenta` by explicit name, and
-nothing else, ever, under any circumstances.
+And do not invert the test: an all-comment prose skeleton *also* passes `bash -n`, and a populated one fails it.
+**Whether a file parses tells you nothing about whether it should be sourced.** The rule is the allowlist, not the
+syntax check: source the four named files by explicit name, and nothing else, ever, under any circumstances.
 
 ### The environment (proot-distro Ubuntu on Android, running as root)
 
@@ -180,39 +197,70 @@ agent.
 
 ## 6. The layout
 
+**A snapshot taken 2026-09-28. Additional stubs — new files, directories, or whole per-agent sets — may appear
+later.** An entry on disk that is not listed here is not an error; add a row when you create one, and keep the table
+below to what actually exists.
+
 ```
 ContextPlease/
-├── README.md      this file
-├── claude/        .clauderc*      live, in use
-└── gemini/        .geminirc*      skeleton + USAGE.md
+├── README.md        this file
+├── TaKnight.txt     a standalone guide for keeping an AI on the rails, written for one person (2026-09-02)
+├── claude/          Claude's set — live, in use (below)
+└── gemini/          gemini-cli's set — a skeleton: .geminirc, _canonical_maths, _context_1, _context_2, _memory,
+                     _ValaQuenta, plus USAGE.md
 ```
 
-One directory per agent, same seven-file scheme under that agent's prefix:
+### `claude/` — the twelve `.clauderc*` files
 
-| File | Format | Purpose |
+Live copies are `~/.clauderc*`; these are the versioned mirrors and are copied over after every change
+(`cmp ~/.clauderc_X claude/.clauderc_X`). Claude edits all of them freely; none is auto-loaded.
+
+| File | Format | Write discipline | Purpose |
+|---|---|---|---|
+| `.clauderc` | **bash** (sourced by `~/.bashrc`) | edited in place | repo paths and URLs, helper functions (`gpush`, `rstatus`, `canon`, `vq_test` …), canonical-constant exports, the credential rule |
+| `.clauderc_memory` | prose | dated entries, prune the stale | cross-cutting state: standing feedback, git/credential hygiene, decisions with no single repo |
+| `.clauderc_canonical_maths` | prose, `@RCCM_<NAME> … @END` blocks | edited in place | authoritative equations and notation — **start any derivation here** |
+| `.clauderc_ValaQuenta` | **bash** | append new `CTX_*` variables and `@RCVQ_*` history blocks | per-engine context (`ctxengine <module>`), plus the history tier that pairs with the canonical maths |
+| `.clauderc_ctx` | **bash** | rarely changes | the lookup functions `rccm`, `rcvq`, `rcboth`, `rcls` over the two tiers above |
+| `.clauderc_context_1` | prose | **overwritten** as things change | one current-state entry per repo, `## RepoName` |
+| `.clauderc_context_2` | prose | **append-only** | dated log of what happened, in order; the end matters most |
+| `.clauderc_context` | prose | newest entry first | coarse chronological session through-line |
+| `.clauderc_context_hub` | **bash** | edited by hand | where context lives and the rules for keeping it there; a `git remote`-derived repo map |
+| `.clauderc_scratchpad_contents` | prose | regenerated | names and locations of everything in `scratchpad/`, nothing else |
+| `.clauderc_citations` | prose | append, by repo | the live queue of published work that names something Cody engineered independently |
+| `.clauderc_user_provenance` | prose | append; reclassify, never delete | Cody's original work versus the literature it stands on, each entry with a candid prior-art note |
+
+`context_1` answers *what is true now*; `context_2` answers *what happened*; `context` is the short version of the
+second. `canonical_maths` and the `@RCVQ` blocks in `…rc_ValaQuenta` are two tiers of one thing: what is true, and how
+it was established, refuted or left open.
+
+### `claude/` — the directories
+
+| Directory | What it holds | Notes |
 |---|---|---|
-| `…rc` | **bash** | repo paths/URLs, helpers, environment |
-| `…rc_memory` | prose | cross-cutting state, standing feedback |
-| `…rc_canonical_maths` | prose | authoritative equations and notation |
-| `…rc_context_1` | prose | live, one current-state entry per repo |
-| `…rc_context_2` | prose | **append-only** dated log |
-| `…rc_ValaQuenta` | **bash** | per-engine index, one variable per module |
-| `…rc_file_structure` | **JSON** | `tree -J -I '.git'` snapshot — never source |
+| `skills/` | 21 entries: the **8 custom skills** authored for this project (`addition-matrix`, `cs-paper-code-conventions`, `generational-lineage`, `imagemagick`, `nes-viewport`, `observer-position`, `scad-spatial`, `unit-management`) plus 12 reference copies of Anthropic's built-in skills, plus its own `README.md` | The custom eight are the payload: copy one into `~/.claude/skills/<name>` (or `<repo>/.claude/skills/`) and it takes effect. `skills/README.md` has the index and the install commands. Live originals are `~/.claude/skills/`; the mirror is not kept in sync automatically |
+| `scratchpad/` | 49 entries: one dated subdirectory per piece of work, each with a `README.md`, plus `README.md` and a script | Canonical, versioned. `ThePlace/.claude/scratchpad/` is the staging area and must be mirrored in. Manifest: `.clauderc_scratchpad_contents` |
+| `hist_prime/` | every context primer, organised by originating repo (`_root` for none), plus `MANIFEST.json` | A copy, not the original; migrated 2026-08-28 |
+| `hist_todo/` | a snapshot copy of each repo's `TODO.md` | originals stay in their repos |
+| `hist_wiki/` | a copy of every repo's `wiki/` pages, by originating repo | point-in-time; ValaQuenta re-copied 2026-09-28 |
+| `monad_bin/` | the Monad's builder, its corpuses and the manifest — the bin is rebuilt on-box | ~22 MB; `README.md` explains `bootstrap.py` |
+| `hooks/` | `monad_observe.py`, the conversation-ingest hook, a documentation-of-record copy | the live hook is `~/.claude/hooks/monad_observe.py`; not the executing copy |
+| `archive/` | superseded files: `.clauderc_ValaQuenta.pre-2026-08-25` and `bin-2026-08-18/` | history only |
+| `clauderc/` | `clauderc.bash`, `clauderc_context.md`, `.clauderc_ValaQuenta` | an older mirror layout, kept in sync with the twelve files above; redundant with them |
 
-`context_1` is overwritten as things change; `context_2` never is. One answers
-*what is true now*, the other *what happened*.
+Each `hist_*`, `monad_bin` and `scratchpad` directory carries its own `README.md`; read that one, not this table, for
+the details.
 
-**None of this is auto-loaded.** Claude Code reads `CLAUDE.md`; gemini-cli
-reads `GEMINI.md`. The `*rc` set is a read-on-demand library — an agent is
-pointed at it, or a shell sources the two files that are genuinely shell code.
-If you did not read a file, it did not take effect. Do not assume otherwise,
-and do not tell Cody a file is "loaded" when it is merely present.
+**None of this is auto-loaded.** Claude Code reads `CLAUDE.md`; gemini-cli reads `GEMINI.md`. The `*rc` set is a
+read-on-demand library — an agent is pointed at it, or a shell sources the files that are genuinely shell code. If you
+did not read a file, it did not take effect. Do not assume otherwise, and do not tell Cody a file is "loaded" when it
+is merely present.
 
 ---
 
 ## 7. Onboarding yourself as a new agent
 
-1. `cp -r gemini/ <youragent>/`, rename the prefix.
+1. `cp -r gemini/ <youragent>/`, rename the prefix. The skeleton has six files; the fuller set in `claude/` (§6) grew from use, and your set may grow the same way.
 2. Fill `…rc` with repo paths — those are stable and shared across agents.
 3. **Leave `context_1` and `context_2` empty.** They are earned, not copied.
    Inheriting another agent's conclusions means inheriting its mistakes with

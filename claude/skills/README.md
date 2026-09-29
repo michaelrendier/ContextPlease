@@ -49,6 +49,13 @@ here and a live one disagree, this is the one to reconcile against.
 Point-in-time snapshot, not kept in sync automatically; re-copy when a
 skill changes.
 
+**Reconciled 2026-09-28.** Three of the eight had drifted apart, in different directions, and were brought to the
+newest copy: `addition-matrix` (this mirror was newer than the live one — it gained §6, the RSA-factoring bridge),
+`generational-lineage` (the copy inside the `GenerationalLineage` repo was newest and is now the reference: it adds
+§8b, the factor moves, and §10, the spin/wobble worked example), and `cs-paper-code-conventions` (gained §6, applying
+the conventions to an API reference rather than a paper, with generated cold-run listings). When copies disagree,
+compare `wc -c` and modification times before copying anything: "which one is newest" was not the same answer twice.
+
 Not included: the Claude Code plugin-marketplace skills (`~/.claude/
 plugins/marketplaces/.../skills/*/SKILL.md` — Discord/iMessage/Telegram
 integrations, plugin-dev tooling, etc.). Third-party/opt-in plugin
@@ -61,7 +68,7 @@ content, not part of this project's own accumulated context.
 | skill | what it's for |
 |---|---|
 | `addition-matrix` | Exploring the addition-matrix space of two numbers' digit-by-digit multiplication (`MultiplicationMatrixAnimator/`) — periodicity under single-digit incrementing, exact zero/digit-count characterization, digit=color mapping. Training ground for `GenerationalLineage`'s factoral decomposition / spectral recombination work, not a standalone toy. |
-| `cs-paper-code-conventions` | When a CS paper should show a runnable code listing vs. describe an API in prose vs. use boxed pseudocode — captioning/numbering/citation conventions. For `FourthAgePapers` and similar. |
+| `cs-paper-code-conventions` | When a CS paper should show a runnable code listing vs. describe an API in prose vs. use boxed pseudocode vs. a literal REPL transcript — captioning/numbering/citation conventions, the "perpetual now" rule, and (§6) how the same conventions build an API reference with generated, cold-run listings. For `FourthAgePapers`, `ValaQuenta`'s docs and similar. |
 | `generational-lineage` | Track the lineage of every operation in a derivation and watch for emergent geometries, decomposed against the Two Trees domain. Load for any mathematical/physical/structural derivation in this project. Also ships with the `GenerationalLineage` repo directly. |
 | `imagemagick` | Shell-based ImageMagick reference: crop/resize/DPI, draw overlays, annotate, colour/tone, composite, montage, pixel-probing, figure-annotation coordinate math. |
 | `nes-viewport` | Methodology for a 2D viewport onto content larger than itself — offset/clamp math, layered compositing, D-pad navigation, a reusable "sweeps the whole content" acceptance test for scrollbars. |

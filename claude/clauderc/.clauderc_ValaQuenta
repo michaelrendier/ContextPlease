@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # .clauderc_ValaQuenta — per-engine context index for ValaQuenta
 # ============================================================================
-# Sourced automatically by ~/.bashrc (explicit allowlist, see .bashrc comment).
+# NOT currently sourced by ~/.bashrc (checked 2026-09-28: only ~/.clauderc is). Source it by name when wanted:  . ~/.clauderc_ValaQuenta
 # Purpose: avoid re-reading ValaQuenta/modules/*/maths.py from scratch every
 # session. Each engine module gets ONE bash variable holding a distilled
 # summary (claim, engines, confidence tiers, key constants, flagged issues).
