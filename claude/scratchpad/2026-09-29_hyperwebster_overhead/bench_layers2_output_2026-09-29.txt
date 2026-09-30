@@ -1,0 +1,17 @@
+minimal-charset layering  |  2026-09-29  |  Python 3.12.3
+============================================================================================================
+corpus 4000 chars = 32000 raw bits | chunk 200 | 4 chunks/day | 5 days/month
+  mode                 |charset| | address bits x raw: chunk/day/month | top ptr   +cs list  growth    | exact       secs    
+  M0 shipped 97        97/97/97  | 0.824 / 1.480 / 2.472            | 2.472     2.472     1.732     | True        4.8     
+  A freq-ordered 97    97/97/97  | 0.823 / 1.479 / 2.470            | 2.470     2.543     1.732     | True        4.6     
+  B restricted         65/27/27  | 0.752 / 0.981 / 1.188            | 1.188     1.218     1.257     | True        1.0     
+  A+B restricted+freq  65/27/27  | 0.751 / 0.980 / 1.187            | 1.187     1.216     1.257     | True        1.0     
+  A+B compact (hex,;)  65/18/18  | 0.751 / 0.803 / 0.842            | 0.842     0.868     1.059     | True        0.5     
+============================================================================================================
+corpus 8000 chars = 64000 raw bits | chunk 400 | 4 chunks/day | 5 days/month
+  mode                 |charset| | address bits x raw: chunk/day/month | top ptr   +cs list  growth    | exact       secs    
+  M0 shipped 97        97/97/97  | 0.825 / 1.420 / 2.359            | 2.359     2.359     1.691     | True        24.7    
+  A freq-ordered 97    97/97/97  | 0.824 / 1.420 / 2.357            | 2.357     2.394     1.691     | True        24.6    
+  B restricted         81/27/27  | 0.792 / 0.985 / 1.181            | 1.181     1.198     1.221     | True        6.0     
+  A+B restricted+freq  81/27/27  | 0.792 / 0.984 / 1.181            | 1.181     1.198     1.221     | True        5.9     
+  A+B compact (hex,;)  81/18/18  | 0.792 / 0.835 / 0.873            | 0.873     0.888     1.050     | True        3.2     

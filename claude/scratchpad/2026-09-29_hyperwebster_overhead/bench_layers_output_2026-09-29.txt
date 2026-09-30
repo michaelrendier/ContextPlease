@@ -1,0 +1,15 @@
+layered calendrical hyperindex  |  2026-09-29  |  Python 3.12.3
+================================================================================================
+corpus 4000 chars = 32000 raw bits | chunk 200 | 4 chunks/day | 5 days/month | build 4.5s restore 0.3s | exact: True
+  layer    entries  sum address bits       = x raw corpus   chars indexed 
+  chunks   20       26379                  0.824            4000          
+  day      5        47480                  1.484            7195          
+  month    1        79976                  2.499            12118         
+  TOP pointer(s): 1 entries, 79976 address bits total = 2.50x the raw corpus; one 256-bit pointer would need <= 38 chars
+================================================================================================
+corpus 8000 chars = 64000 raw bits | chunk 400 | 4 chunks/day | 5 days/month | build 23.8s restore 1.1s | exact: True
+  layer    entries  sum address bits       = x raw corpus   chars indexed 
+  chunks   20       52777                  0.825            8000          
+  day      5        91040                  1.423            13795         
+  month    1        151849                 2.373            23008         
+  TOP pointer(s): 1 entries, 151849 address bits total = 2.37x the raw corpus; one 256-bit pointer would need <= 38 chars

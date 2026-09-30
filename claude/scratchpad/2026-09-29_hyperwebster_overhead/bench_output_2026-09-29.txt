@@ -1,0 +1,51 @@
+HyperWebster overhead benchmark  |  2026-09-29  |  Python 3.12.3
+charset N = 97  ->  6.600 bits/char  (raw = 8 bits/char)
+
+B. capacity: a 256-bit address holds strings up to 38 chars at N=97  (N^38 <= 2^256: True; N^39 <= 2^256: False)
+
+====================================================================================================
+english_corpus.txt (prose)   kept 24944 chars (cap 40000); 1807 chars outside the 97-symbol set dropped from the whole file
+   raw 199552 bits | order-0 entropy 5.201 bits/char (=129741 bits) | distinct symbols 83
+   chunk    addr_var   addr_256+  min-cset   zlib      lzma      var/raw   fix/raw  enc_ms   ok    
+   32       163872     199680     231438     244304    549024    0.821     1.001    9.2      True  
+   38       163979     168192     228469     235264    504352    0.822     0.843    9.1      True  
+   64       164231     164231     213608     210984    374496    0.823     0.823    11.9     True  
+   128      164432     164432     183165     156648    251968    0.824     0.824    15.6     True  
+   256      164539     164539     166391     119544    169920    0.825     0.825    24.8     True  
+   500      164577     164577     158188     94312     123328    0.825     0.825    45.5     True  
+   1000     164605     164605     155213     78656     95488     0.825     0.825    111.4    True  
+   4000     164623     164623     155636     63256     67936     0.825     0.825    942.9    True  
+   whole 4000-char doc as one address: 26399 bits (raw 32000) -> 0.825 of raw
+   D. 38-char chunk -> address 250 bits -> 8 limbs x 32 bits -> recombine exact: True ; text round-trip: True
+====================================================================================================
+PROVENANCE.md (prose)   kept 40000 chars (cap 40000); 50 chars outside the 97-symbol set dropped from the whole file
+   raw 320000 bits | order-0 entropy 5.029 bits/char (=201171 bits) | distinct symbols 82
+   chunk    addr_var   addr_256+  min-cset   zlib      lzma      var/raw   fix/raw  enc_ms   ok    
+   32       262482     320000     349439     385208    881504    0.820     1.000    13.1     True  
+   38       262712     269568     342114     369432    808352    0.821     0.842    16.2     True  
+   64       263260     263260     322746     329432    600672    0.823     0.823    18.7     True  
+   128      263613     263613     294365     268240    419392    0.824     0.824    26.0     True  
+   256      263808     263808     265765     182584    260256    0.824     0.824    39.0     True  
+   500      263910     263910     248702     123416    165056    0.825     0.825    72.1     True  
+   1000     263956     263956     240855     89744     111808    0.825     0.825    169.7    True  
+   4000     263988     263988     239912     61152     67072     0.825     0.825    1541.4   True  
+   whole 4000-char doc as one address: 26399 bits (raw 32000) -> 0.825 of raw
+   D. 38-char chunk -> address 250 bits -> 8 limbs x 32 bits -> recombine exact: True ; text round-trip: True
+====================================================================================================
+hyperwebster.py (python)   kept 7644 chars (cap 40000); 12 chars outside the 97-symbol set dropped from the whole file
+   raw 61152 bits | order-0 entropy 4.558 bits/char (=34845 bits) | distinct symbols 96
+   chunk    addr_var   addr_256+  min-cset   zlib      lzma      var/raw   fix/raw  enc_ms   ok    
+   32       50188      61184      55912      63064     164416    0.821     1.001    2.3      True  
+   38       50199      51712      56256      60552     148800    0.821     0.846    4.9      True  
+   64       50310      50381      54431      52872     106752    0.823     0.824    4.3      True  
+   128      50387      50387      52536      44808     74080     0.824     0.824    5.1      True  
+   256      50417      50417      50907      37696     53216     0.824     0.824    7.6      True  
+   500      50432      50432      49777      32328     41440     0.825     0.825    15.0     True  
+   1000     50443      50443      49313      27728     32832     0.825     0.825    34.3     True  
+   4000     50448      50448      50781      22512     23648     0.825     0.825    280.8    True  
+   whole 4000-char doc as one address: 26399 bits (raw 32000) -> 0.825 of raw
+   D. 38-char chunk -> address 250 bits -> 8 limbs x 32 bits -> recombine exact: True ; text round-trip: True
+====================================================================================================
+F. 263 distinct-position 8-letter words: mean decimal digits of the address
+   keyboard-order N=97: 16.00 | frequency-sorted N=97: 15.35 | frequency-sorted letters-only N=23: 10.85
+   wiki claim: frequency sorting saves ~5-6 digits at length 8 (compare col 1 vs col 2, and vs col 3)
