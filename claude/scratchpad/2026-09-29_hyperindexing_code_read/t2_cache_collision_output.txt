@@ -1,0 +1,2 @@
+labels equal: True
+regenerate(b) == b: False ; regenerate(b) == a: True

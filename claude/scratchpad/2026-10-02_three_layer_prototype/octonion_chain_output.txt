@@ -1,0 +1,9 @@
+norm multiplicative mod 2^32 on 2000 random pairs: True
+non-commutative: True | non-associative: True
+fraction of random labels with ODD norm (units): 0.5023
+chain of 200 labels, force_odd=False: composite norm is even at 197 of 200 steps | composite all-zero: True | lowest set bit of the final norm: norm = 0
+chain of 200 labels, force_odd=True : composite norm is even at   0 of 200 steps | composite all-zero: False | lowest set bit of the final norm: 0
+swap two adjacent ingests changes the composite: True
+one bit changed in one ingest changes 8 of 8 components; bits differing in the 256-bit composite: 114
+last ingest label recoverable from (previous composite, top): True
+20000 random 5-ingest histories: duplicate composites: 0

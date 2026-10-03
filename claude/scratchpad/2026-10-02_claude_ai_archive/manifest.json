@@ -1,0 +1,364 @@
+{
+ "title": "SMNNIP Project Archive",
+ "generated": "2026-10-02",
+ "count": 51,
+ "files": [
+  {
+   "path": "files/docs/Gemini_Deep_Report.txt",
+   "group": "docs",
+   "bytes": 19754,
+   "description": "Gemini Deep Research on d* x ln(10) vs Omega",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/Gemini_Deep_SMNNIP_Report.txt",
+   "group": "docs",
+   "bytes": 22147,
+   "description": "Gemini Deep Research literature evaluation of the conjecture",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/Gemini_Deep_SMNNIP_Thoughts.txt",
+   "group": "docs",
+   "bytes": 17953,
+   "description": "Gemini research trace for the SMNNIP report",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/Gemini_Deep_SMNNIP_Web_Page.html",
+   "group": "docs",
+   "bytes": 24232,
+   "description": "Gemini interactive explorer page (conjecture)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/Gemini_Deep_Thoughts.txt",
+   "group": "docs",
+   "bytes": 56665,
+   "description": "Gemini research trace for the d* report",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/Gemini_Deep_Web_Page.html",
+   "group": "docs",
+   "bytes": 21818,
+   "description": "Gemini interactive explorer page (d* near-identity)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/SESSION_PRIMER_SMNNIP.txt",
+   "group": "docs",
+   "bytes": 4301,
+   "description": "Session primer 2026-04-10: framework status, four times, n-ball volumes",
+   "source": "Transcribed from the Project doc (not in any repo)"
+  },
+  {
+   "path": "files/docs/SMNNIP_Ainulindale_Conclusion.txt",
+   "group": "docs",
+   "bytes": 32065,
+   "description": "Claude conclusion (Apr 12): derivation path, full sigma working",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/SMNNIP_TODO.txt",
+   "group": "docs",
+   "bytes": 19859,
+   "description": "Master TODO: delta encoding, code patches, notation, (I|O) integration, outreach",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/SMNNT_complete.txt",
+   "group": "docs",
+   "bytes": 117634,
+   "description": "SMNNT preprint plus Addendum I (UFT direction) and Addendum II (Library Convergence)",
+   "source": "Rebuilt from SMNNT_paper + SMNNT_addendum + SMNNT_addendum2 (.docx in repo)"
+  },
+  {
+   "path": "files/docs/SMNNT_conversation_starter.md",
+   "group": "docs",
+   "bytes": 19178,
+   "description": "Original March 31 conversation starter for the SMNNT paper",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/TheMasterKeyOfReality.txt",
+   "group": "docs",
+   "bytes": 140436,
+   "description": "Early philosophical writings by Cody Allison / Michael Rendier",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/The_First_Age_Ainulindale_Conjecture.html",
+   "group": "docs",
+   "bytes": 39726,
+   "description": "Primary First Age paper: derivation chain, eight sections, sigma table, open problems",
+   "source": "Ainulindale repo, AgeFirst/original_2026 snapshot"
+  },
+  {
+   "path": "files/docs/The_First_Age_Ainulindale_Conjecture.txt",
+   "group": "docs",
+   "bytes": 32893,
+   "description": "Primary First Age paper: derivation chain, eight sections, sigma table, open problems",
+   "source": "Ainulindale repo, AgeFirst/original_2026 snapshot"
+  },
+  {
+   "path": "files/docs/outreach_challenges.txt",
+   "group": "docs",
+   "bytes": 18706,
+   "description": "Outreach subject lines and challenge register",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/proposed-analogous-UFT.txt",
+   "group": "docs",
+   "bytes": 10281,
+   "description": "Combined UFT action, neural Einstein equations, 19-parameter conjecture",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/docs/thebigquestion.txt",
+   "group": "docs",
+   "bytes": 8028,
+   "description": "Session primer 2026-04-16: Void, Lattice Universe, orders of observer",
+   "source": "Transcribed from the Project doc (not in any repo)"
+  },
+  {
+   "path": "files/code/FA_smnnip_NN_tower.py",
+   "group": "code",
+   "bytes": 24053,
+   "description": "First Age NN tower, pure Python, two substrates",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/FA_smnnip_NN_tower_tf.py",
+   "group": "code",
+   "bytes": 28404,
+   "description": "First Age NN tower, TensorFlow",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/FA_smnnip_hyperindex.py",
+   "group": "code",
+   "bytes": 38734,
+   "description": "First Age hyperindex: text/image indices, Tupper, blockchain ledger",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/Gemini_Revised_EHS.py",
+   "group": "code",
+   "bytes": 3642,
+   "description": "Gemini event-horizon simulation (matplotlib)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/returned_smnnip_full_tower.py",
+   "group": "code",
+   "bytes": 49452,
+   "description": "Earlier returned copy of the full tower",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_derivation_pure.py",
+   "group": "code",
+   "bytes": 69646,
+   "description": "Derivation engine, pure Python (pre-patch, d*=0.24682)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_derivation_pure_patched.py",
+   "group": "code",
+   "bytes": 71386,
+   "description": "Derivation engine, pure Python, patched (d*_spec=0.24600)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_derivation_tf.py",
+   "group": "code",
+   "bytes": 42485,
+   "description": "Derivation engine, TensorFlow autodiff, Hessian, gradient flow",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_full_tower.py",
+   "group": "code",
+   "bytes": 49459,
+   "description": "Full R-C-H-O tower with statistical validation report",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_inversion_engine.py",
+   "group": "code",
+   "bytes": 37308,
+   "description": "Inside-Out Inversion engine (pre-patch, tautological D_STAR)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_inversion_engine_patched.py",
+   "group": "code",
+   "bytes": 39501,
+   "description": "Inside-Out Inversion engine, patched gap display",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_lagrangian_pure.py",
+   "group": "code",
+   "bytes": 44061,
+   "description": "Lagrangian core engine, pure Python (proof artifact)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_lagrangian_tf.py",
+   "group": "code",
+   "bytes": 24389,
+   "description": "Lagrangian core engine, TensorFlow (production)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_proof_engine_console.py",
+   "group": "code",
+   "bytes": 74383,
+   "description": "Curses + SymPy console proof engine",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_test_pure.py",
+   "group": "code",
+   "bytes": 25989,
+   "description": "Test harness for the pure engine (BREAK_MODE experiments)",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnip_test_tf.py",
+   "group": "code",
+   "bytes": 26392,
+   "description": "Test harness for the TF engine, physics agreement check",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnt_substrate_pure.py",
+   "group": "code",
+   "bytes": 31836,
+   "description": "SMNNT substrate layer, pure Python",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/code/smnnt_substrate_tf.py",
+   "group": "code",
+   "bytes": 21014,
+   "description": "SMNNT substrate layer, TensorFlow",
+   "source": "GitHub repo copy matching the Project version"
+  },
+  {
+   "path": "files/converted/Ainulindale_Conjecture_Revised.docx.txt",
+   "group": "converted",
+   "bytes": 23556,
+   "description": "Revised conjecture (Apr 11), LaTeX pathways",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/Ainulindale_Conjecture_original.docx.txt",
+   "group": "converted",
+   "bytes": 8159,
+   "description": "Original Ainulindale Conjecture (equations were images, lost in text)",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/Cover_Page.docx.txt",
+   "group": "converted",
+   "bytes": 3690,
+   "description": "Cover page v1 with abstract",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/Masters_Tribute.docx.txt",
+   "group": "converted",
+   "bytes": 6760,
+   "description": "Tribute page: Tesla, Ramanujan, Faraday",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/SMNNIP_equations.docx.txt",
+   "group": "converted",
+   "bytes": 17386,
+   "description": "Equations and identifiers reference sheet",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/SMNNT_addendum.docx.txt",
+   "group": "converted",
+   "bytes": 18528,
+   "description": "SMNNT Addendum I (text of .docx)",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/SMNNT_addendum2.docx.txt",
+   "group": "converted",
+   "bytes": 28227,
+   "description": "SMNNT Addendum II (text of .docx)",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/SMNNT_paper.docx.txt",
+   "group": "converted",
+   "bytes": 70875,
+   "description": "SMNNT paper (text of .docx)",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/The_First_Age_Ainulindale_Conjecture.docx.txt",
+   "group": "converted",
+   "bytes": 27996,
+   "description": "Primary First Age paper: derivation chain, eight sections, sigma table, open problems",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/The_First_Age_Ainulindale_Conjecture.odt.txt",
+   "group": "converted",
+   "bytes": 27996,
+   "description": "Primary First Age paper: derivation chain, eight sections, sigma table, open problems",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/addendum_III_inversion.docx.txt",
+   "group": "converted",
+   "bytes": 11497,
+   "description": "Addendum III: The Inside-Out Inversion",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/alpha_omega_flat_curvature.docx.txt",
+   "group": "converted",
+   "bytes": 5946,
+   "description": "Paper: The Alpha and The Omega of Flat Curvature",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/cover_v2.docx.txt",
+   "group": "converted",
+   "bytes": 2201,
+   "description": "Cover page v2",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/outreach_challenges.docx.txt",
+   "group": "converted",
+   "bytes": 22321,
+   "description": "Outreach subject lines and challenge register",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/converted/resonant_riemann_flowing_fermat.docx.txt",
+   "group": "converted",
+   "bytes": 8397,
+   "description": "Paper: The Resonant Riemann and the Flowing Fermat",
+   "source": "Converted with pandoc from the original in the Ainulindale repo"
+  },
+  {
+   "path": "files/image/Gemini_Generated_Image_SMNNIP.png",
+   "group": "image",
+   "bytes": 1732459,
+   "description": "",
+   "source": "Project file upload"
+  }
+ ]
+}

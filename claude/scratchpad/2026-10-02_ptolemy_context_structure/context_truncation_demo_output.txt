@@ -1,0 +1,3 @@
+before: ['_hyperwebster', 'identity', 'ptolemy_knowledge', 'smnnip_knowledge', 'session_memory', 'io_log', 'metadata'] 3794 bytes
+load_context() after truncation -> {}
+after one save_context(): ['metadata', 'session_memory', 'smnnip_knowledge'] 291 bytes

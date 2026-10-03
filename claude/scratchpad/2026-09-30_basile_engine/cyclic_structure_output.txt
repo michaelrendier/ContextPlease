@@ -1,0 +1,21 @@
+== T1: offset between a location and its sibling, for the same flipped bit, at three different locations ==
+bit   399360: offset identical across the 3 locations: False | offsets as signed residues (bits): [3194895, 3194895, 3194895]
+bit  3194888: offset identical across the 3 locations: False | offsets as signed residues (bits): [3194895, 3194893, 3194895]
+bit  3194890: offset identical across the 3 locations: False | offsets as signed residues (bits): [3194894, 3194890, 3194895]
+
+== T1b: do offsets add?  offset(bit a ^ bit b) == offset(a) + offset(b) (mod m) at one location ==
+additive: True
+
+== T2: cycle structure of the toy scrambler (Listing 2) on [0, N), N = 29^3 ==
+scrambler : cycles 11 | longest 9943 | shortest 1 | fixed points 1 | lcm of cycle lengths has 19 digits
+pure LCG mod 2^15 : cycles 1 | longest 32768  (Hull-Dobell: one full cycle of 32768)
+xorshift part alone (a permutation of [0,2^15)): cycles 2198 | longest 16
+scrambler cycle-length histogram (top 8): [(9943, 1), (6700, 1), (6387, 1), (770, 1), (479, 1), (34, 1), (32, 1), (28, 1)]
+scrambler cycle-length histogram (top 8): [(9943, 1), (6700, 1), (6387, 1), (770, 1), (479, 1), (34, 1), (32, 1), (28, 1)]
+
+== T1c: additivity of the sibling offsets over ALL pairs and the full set of the 16 valid unread bits, at two locations ==
+valid unread bits: 16
+location 126370863182...: all 120 pairs additive: True | all 16 flipped together == sum of the 16 offsets: True
+   the 16 single-flip offsets are distinct mod m: True
+location 707017057486...: all 120 pairs additive: True | all 16 flipped together == sum of the 16 offsets: True
+   the 16 single-flip offsets are distinct mod m: True

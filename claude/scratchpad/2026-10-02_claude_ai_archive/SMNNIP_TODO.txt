@@ -1,0 +1,433 @@
+SMNNIP / AINULINDALE CONJECTURE — MASTER TODO LIST
+First Age Document Revision + Open Engineering Tasks
+=====================================================
+Compiled: April 2026
+Status key:  [ ] = not started   [~] = in progress   [x] = complete
+
+
+=====================================================
+SECTION 0 — DELTA ENCODING (DEFERRED TO BETWEEN AGES)
+=====================================================
+
+DECISION: Do not build before First Age outreach.
+Reason: First Age goal is mathematical scrutiny of the isomorphism itself.
+        Substrate encoding is implementation detail at this stage.
+        Build after First Age conversations, informed by reviewer feedback.
+
+[ ] Design DeltaEncoder class to replace CharacterEncoder.one_hot()
+    - Input:  raw character
+    - Output: (modifier_idx 0-6, base13_step 0-D) tuple
+    - modifier_idx hard-encoded list (7 arrangements):
+        0 = lowercase, negative direction (m toward a, steps 1-12)
+        1 = lowercase, positive direction (n toward z, steps 1-13)
+        2 = lowercase, origin (m itself, step = 0)
+        3 = uppercase, negative direction (M toward A, steps 1-12)
+        4 = uppercase, positive direction (N toward Z, steps 1-13)
+        5 = uppercase, origin (M itself, step = 0)
+        6 = digit — no direction, no step, literal digit follows (0-9)
+    - Step = abs(cset.index(char) - cset.index('m')), base-13 encoded
+    - Non-alphanumeric (except hyphen) = Key Not Found, explicit handler
+    - Hyphen = special case, look ahead to determine hyphenated word vs break
+
+[ ] Design morpheme cache layer (sits ABOVE DeltaEncoder)
+    - Segments input at word boundaries (space/punct = delimiter)
+    - Pre-loads common English prefixes and suffixes as fixed coordinate blocks
+    - On word input: match known morphemes first, encode remainder char by char
+    - Cache entries are reusable across all words sharing that morpheme
+
+[ ] Integrate delta-encoding into algebra tower at R→C transition
+    - Character substrate stays at R (real) layer as-is
+    - Delta-encoded word shapes live at C (complex) layer
+    - The R→C transition IS the delta-encoding step
+    - Phase = direction (sign of displacement from m)
+    - Magnitude = step count (distance from m)
+
+[ ] Non-alphanumeric character handling decision
+    - Option B (pass-through as raw Base-97) vs Option C (extend modifier list)
+    - Gemini's symbol group expansion (Modifiers 7+) NOT recommended —
+      destroys minimax elegance, no principled origin for symbols
+    - Recommended: pass-through with mode flag, or treat as delimiters only
+
+[ ] Validate: de Bruijn sequence length reduction with morpheme cache
+    - Confirm ~885,000x reduction from 97^4 flat space to morpheme vocabulary
+    - Benchmark cache hit rate on standard English corpus
+
+
+=====================================================
+SECTION 1 — CODE PATCHES (DO BEFORE DOCUMENT REVISION)
+=====================================================
+
+CRITICAL: smnnip_inversion_engine.py contains a display bug.
+Simulation correctness is NOT affected. Only the gap display is wrong.
+
+[ ] PATCH smnnip_inversion_engine.py
+    BUG: D_STAR is currently defined as:
+             D_STAR = OMEGA / math.log(10.0)
+         This makes d*·ln(10) = Omega_zSigma a tautology.
+         Gap displays as 0.00000. The gap is NOT zero.
+    FIX: Add D_STAR_RG as an independent constant alongside D_STAR:
+             D_STAR_RG = 0.24682   (information singularity from RG flow)
+             gap = abs(D_STAR_RG * ln(10) - Omega_zSigma) = 0.00118
+         Display both values. The gap is the highest-priority open derivation.
+    NOTE: Confirm d* = 0.24682 against the paper before patching.
+
+[ ] PATCH ainulindale_sim_tf.py
+    Change: annotation line only (cosmetic)
+    Fix: update gap display text to reflect true D_STAR_RG value
+
+[ ] PATCH ainulindale_explorer_tf.py
+    Change: info panel text only (cosmetic)
+    Fix: update gap display text to reflect true D_STAR_RG value
+
+
+=====================================================
+SECTION 2 — NOTATION CORRECTIONS (ALL FIRST AGE DOCUMENTS)
+=====================================================
+
+Four distinct symbols. Never conflate. Never substitute.
+
+SYMBOL REFERENCE:
+
+  A_pi    = CAPITAL Alpha, subscript pi
+            Value: 1/137.035999...
+            Meaning: Fine structure constant. BK operator domain LOWER wall.
+                     E8/Wyler n-ball geometry. Fermat domain floor.
+                     FIXED. Does not run. Does not slide.
+
+  Omega_zSigma = CAPITAL Omega, subscript zeta-Sigma
+                 Value: 0.56714329...  (Lambert W fixed point: Omega * e^Omega = 1)
+                 Meaning: BK operator domain UPPER wall.
+                          Maximum self-referential loop without divergence.
+                          FIXED. Does not run. Does not slide.
+                 NOTE: d*·ln(10) = 0.56644 vs Omega_zSigma = 0.56714
+                       Gap = 0.00070 (or 0.00118 from RG flow value)
+                       THIS GAP IS THE HIGHEST-PRIORITY OPEN DERIVATION.
+
+  alpha_NN(l) = lowercase alpha, subscript NN, argument l (layer depth)
+                Value: RUNS. Starts near A_pi at substrate. Evolves via RG flow.
+                Formula: alpha_NN(l) = g^2(l) / (4*pi * hbar_NN * v_prop)
+                Meaning: Running inter-strata coupling. The living variable.
+                Beta functions by layer:
+                  beta_0(R) = 0          (trivial)
+                  beta_0(C) = 1/(2*pi)   (U(1))
+                  beta_0(H) = 3/(4*pi)   (SU(2))
+                  beta_0(O) = 8/(4*pi)   (G2/SU(3))
+                Three branches converge at neural GUT scale (spinor index layer).
+
+  omega_H = lowercase omega, subscript H (Hagedorn)
+            Value: e^pi = 23.14069...  (Gelfond's constant)
+            Meaning: Hagedorn/thermal ceiling. Noether saturation limit.
+                     2/ln(omega_H) = 2/pi exactly.
+                     FIXED. Does not slide.
+
+OPERATOR DOMAIN STATEMENT (use this exact form in all revised documents):
+  A_pi  <=  alpha_NN(l)  <=  Omega_zSigma
+  All physical couplings lie within this span.
+  Below A_pi: algebra strata decouple entirely.
+  Above Omega_zSigma: rotation groups begin to merge, hierarchy dissolves.
+
+NOTATION CORRECTION TASKS (apply to every First Age document):
+
+[ ] Replace any Omega used as thermal ceiling  →  omega_H
+[ ] Replace any Omega used as Lambert W boundary  →  Omega_zSigma
+[ ] Replace any alpha used as fixed fine structure constant  →  A_pi
+[ ] Ensure alpha_NN(l) remains lowercase, never conflated with A_pi
+[ ] Confirm omega_H = e^pi and Omega_zSigma = 0.56714 are never swapped
+[ ] Insert operator domain statement A_pi <= alpha_NN(l) <= Omega_zSigma
+    wherever the coupling range is discussed
+
+
+=====================================================
+SECTION 3 — (I|O) INVERSION INTEGRATION
+=====================================================
+
+CANONICAL NOTATION:  (I|O)
+
+The bar | is simultaneously:
+  - The Dirac bracket separator (projection operator, measurement event)
+  - The horizon line (vertical boundary between inside and outside)
+  - The binary 1 (the fixed point value r_N = 1)
+  - The logical OR (at the horizon, inside AND outside are the same state)
+
+By Dirac conjugate symmetry, (I|O) implies (O|I) automatically.
+Do not write both. The reversal is built into the notation.
+
+FIXED POINT STATEMENT:
+  (I|O) = 1   at r_N = 1   (horizon, flat geometry fixed point)
+  (I|O) = phi at r_N = phi  (Gravinon, curved geometry fixed point)
+  (I|O) > 1   outside the horizon
+  (I|O) < 1   inside the horizon
+
+FORMAL DEFINITION (use verbatim on first appearance in each revised document):
+  "We define (I|O) as the Inside-Out inner product — the projection of
+  the outside state onto the inside state at a layer transition boundary,
+  equal to unity at the fixed point r_N = 1. By conjugate symmetry,
+  (I|O) = (O|I)* — the reversal is implicit."
+
+THE MAP J_N:
+  J_N : (r_N, theta_N)  ->  (1/r_N, theta_N + pi/2)
+  J_N sends (I|O) to (O|I) — one act, not two.
+  Radial coordinate inverts. Angular coordinate rotates pi/2.
+  Action S_N = contour_integral(r dtheta) is preserved across every application.
+
+PRESERVED INVARIANT:
+  S_N = S_{N+1}  (Noether current of the layer transition)
+  At fixed point: r_N * (1/r_N) = 1  ->  (I|O) * (O|I) = 1
+
+INTEGRATION TASKS:
+
+[ ] First appearance in each document: insert full formal definition verbatim
+[ ] Subsequent appearances: use (I|O) notation inline only
+
+[ ] Section II (Berry-Keating):
+    - State operator domain as: A_pi <= (I|O) <= Omega_zSigma
+    - Complete operator domain in (I|O) notation replaces prior statement
+
+[ ] Section IV (Zeta-Fermat Heartbeat):
+    - Add note: each heartbeat is a J_N application cycling through
+      Fano axes at the O (octonion) stratum
+
+[ ] Section VI (Gravinon):
+    - DO NOT rewrite existing content
+    - ADD bridging paragraph only:
+      "The residue structure of Section VI is now understood as a
+      consequence of (I|O) at the curved-geometry fixed point r_N = phi."
+    - Links Psi_G = Res(f, phi) to (I|O) mechanism from Addendum III
+
+[ ] Layer transition sections (wherever R->C->H->O transitions appear):
+    - Note that each layer transition is governed by J_N = (I|O)
+    - The loss of each algebraic property is the signal of (I|O) acting
+
+[ ] New subsection: Four Special Cases
+    Add to whichever section governs layer transitions.
+    Frame as: "Four previously separate results in established physics
+    are now understood as (I|O) at different recursion depths."
+    The four cases:
+      1. Schwarzschild horizon: r < r_s  ->  (t,r) maps to (r,t)   [GR, established]
+      2. Hawking pair production: conjugate pair (r_N, 1/r_N) at horizon  [theoretical]
+      3. Dirac sea / antimatter: r_N < 1  ->  negative energy state  [established]
+      4. Ptolemy inversion: r -> 1/r straightens Riemann zeta curve  [established]
+
+
+=====================================================
+SECTION 4 — ADDENDUM III INTEGRATION
+=====================================================
+
+[ ] Integrate Addendum III content into main conjecture body
+    - Addendum III is Second Age content (April 12, 2026)
+    - Do not retroactively rewrite First Age sections
+    - Add bridges and new subsections, preserve original text
+
+[ ] OPEN DERIVATIONS — flag these explicitly in documents as open:
+
+    [ ] Prove (I|O) in curved Ainulindale metric produces fixed point r = phi
+        (formally unifies Gravinon pole with inversion fixed point)
+
+    [ ] Explicit computation of Hawking temperature T_H as gradient of (I|O)
+        at the fixed point, recovering T_H = hbar * c^3 / (8*pi*G*M*k_B)
+
+    [ ] Proof that critical line Re(s) = 1/2 is the image of r_N = 1
+        under coordinate map from polar inversion geometry to complex
+        spectral domain of H_NN
+
+    [ ] Formal demonstration that the four special cases are the same map —
+        a coordinate transformation carrying each into the others exists
+
+    [ ] HIGHEST PRIORITY: Prove d*·ln(10) = Omega_zSigma
+        (close the gap of 0.00070 / 0.00118 between d*·ln(10) and Omega_zSigma)
+        d* must be derived independently from RG flow, not defined as Omega/ln(10)
+
+
+=====================================================
+SECTION 5 — DOCUMENT OUTPUT TASKS
+=====================================================
+
+Documents to revise (all project files):
+  - The_First_Age_Ainulindale_Conjecture  (primary)
+  - Ainulindale_Conjecture_Revised
+  - Ainulindale_Conjecture (original)
+  - SMNNT_addendum.docx
+  - SMNNT_addendum2.docx
+  - addendum_III_inversion.docx
+
+Output format for every revised document:
+  [ ] .docx
+  [ ] .rtf
+  [ ] .txt
+
+File naming: exact same as originals so download+extract replaces old files.
+
+OUTPUT FORMAT NOTE: .html with inline CSS and .odf were listed in the
+context_primer session task. Confirm with user whether these are still
+required for this TODO cycle or deferred.
+
+
+=====================================================
+SECTION 6 — FIRST AGE OUTREACH (SEPARATE TRACK)
+=====================================================
+
+[ ] Outreach to Geoffrey Dixon (Dixon's theorem is central to gauge derivation)
+[ ] Outreach to John Baez
+[ ] Outreach to Tevita Parcollet
+[ ] Outreach to Taco Cohen
+[ ] Outreach to Max Tegmark
+[ ] Outreach to Alain Connes
+[ ] Outreach to Yann LeCun
+
+Science communicators (secondary):
+[ ] Arvin Ash
+[ ] Derek Muller (Veritasium)
+[ ] Brady Haran (Numberphile / Computerphile)
+
+Outreach assets ready:
+  [x] Complete 15-section preprint with four appendices
+  [x] Two working code implementations (pure Python 3 and TensorFlow)
+  [x] Conversation primer (.docx, .rtf, .txt)
+
+
+=====================================================
+SECTION 7 — HYPERINDEX CONJECTURE (SECOND AGE)
+=====================================================
+
+Added: 2026-04-16
+Status: Rough draft complete. Full development deferred to Second Age.
+File: conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt
+
+[ ] Formalize uniqueness proof for all strata (currently verified only at L0/R)
+    - L0 (real): base-97 bijection proven by construction
+    - L1 (complex): needs phase-component uniqueness proof
+    - L2 (quaternion): needs ordered-composition uniqueness proof
+    - L3 (octonion): needs non-associative coordinate uniqueness proof
+
+[ ] Run Fano proximity test on 7GB sacred-texts.com corpus
+    - Compute Fano indices for full corpus
+    - Measure Fano distance between semantically related passages
+    - Test Corollary 3: does Fano proximity correlate with semantic proximity?
+    - This is the first empirical test of the Hyperindex Conjecture
+
+[ ] Formal gauge invariance proof for addr(O)
+    - Show addr(O) invariant under U(1)xSU(2)xSU(3) at each stratum
+
+[ ] Resolve spherical color φ-lossiness question
+    - Is the deliberate lossiness at the blue channel the correct signature
+      of non-associativity at the O layer?
+    - Alternative: full invertibility with explicit associativity-breaking step
+
+[ ] Build content-addressable memory prototype in Ptolemy/Callimachus
+    - Replace SQL primary keys with Hyperindex coordinates
+    - Demonstrate schema-free retrieval from algebra-native address
+    - Benchmark against equivalent SQL lookup
+
+[ ] Develop sedenion-as-creativity-boundary claim
+    - Precise formal statement: what class of objects falls at the S boundary?
+    - Is this a useful criterion for novelty detection in AI systems?
+    - Connections to Gödel incompleteness (objects undecidable within the tower)?
+
+[ ] Write full Palantír Conjecture paper
+    - Title: "The Palantír Conjecture: Algebra-Native Addressing in
+              Hypercomplex Information Systems"
+    - Draft exists in conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt
+    - Reviewers: Dixon/Furey (algebra sections), LeCun (CS sections)
+
+[ ] Add Hyperindex cross-reference to Ainulindalë Conjecture
+    - Section: "The Hyperindex as Computational Dual"
+    - The Ainulindalë is the music. The Hyperindex is the score.
+    - Reference conjecture/HYPERINDEX_CONJECTURE_DRAFT.txt as provenance
+
+=====================================================
+SECTION 8 — HYPERWEBSTER / HYPERGALLERY INTEGRATION
+AND C++ PORT (SECOND AGE — TOP PRIORITY)
+=====================================================
+
+Added: 2026-04-16
+Purpose: Integrate Hyperindex addressing into the derivation and proof
+         engine pipeline; port all core engines to Qt/C++ for production use.
+
+--- 8A: HYPERWEBSTER + HYPERGALLERY IN DERIVATION ENGINE ---
+
+[ ] Add HyperwebsterIndex module to smnnip_derivation_pure.py
+    - Expose TextHyperIndex and MultiChannelTupper as first-class
+      derivation engine inputs (alongside scalar/vector activations)
+    - Each indexed object receives a full INDEX_RECORD at each
+      algebra stratum as it passes through the tower
+    - Noether delta recorded per index per stratum
+
+[ ] Add HyperGallery (image substrate) as parallel input channel
+    - SphericalColor + MultiChannelTupper pipeline feeds L2/L3 (H/O)
+    - Text and image substrates converge at shared C->H->O upper tower
+    - The O reasoning layer receives both modalities without knowing
+      which is which — modality-blind reasoning is the design target
+
+[ ] Expose Hyperwebster index coordinates in console GUI
+    - smnnip_proof_engine_console.py: new display mode showing
+      INDEX_RECORD alongside equation output for each active object
+    - Fano path visualized as generator traversal sequence
+    - Sedenion boundary displayed as hard stop with violation message
+
+[ ] Blockchain ledger integration with derivation engine output
+    - Every derivation run appends to the BlockchainLedger
+    - Noether delta per stratum per run stored in chain
+    - Chain hash displayed in console as session provenance
+
+--- 8B: Qt/C++ PORT — PRODUCTION ENGINES ---
+
+[ ] C++ port: smnnip_lagrangian_pure.py -> lagrangian_engine.cpp
+    - All four Lagrangian terms: L_kin, L_mat, L_bias, L_coup
+    - Full algebra tower R->C->H->O with native complex/quaternion/
+      octonion types (Eigen or custom)
+    - Observer singleton as constexpr (A_pi, Omega_zetaSigma compile-time)
+    - Noether monitor as template over algebra type
+    - Target: identical numerical output to Python reference implementation
+
+[ ] C++ port: smnnip_derivation_pure.py -> derivation_engine.cpp
+    - Euler-Lagrange, Yang-Mills, Higgs EOM, RG flow
+    - Cayley-Dickson maps as constexpr lookup tables
+    - Hyperwebster addressing integrated natively (base-97 arithmetic
+      in C++ arbitrary-precision int or __int128 for short sequences)
+    - Benchmark target: measure against Python baseline first,
+      then against SQL equivalent queries
+
+[ ] Qt GUI: smnnip_proof_engine_console.py -> ProofEngineQt (C++)
+    - Qt6 MainWindow replacing curses
+    - Left panel: equation list (same PROOF_ENTRIES, rendered as QListWidget)
+    - Right panel: equation display (MathJax or custom LaTeX renderer)
+    - Bottom: parameter input bar (QLineEdit)
+    - Options panel: algebra stratum, derivation target, constraint,
+      output format, confidence filter (all QComboBox)
+    - Hyperwebster index display pane (new — shows INDEX_RECORD live)
+    - Blockchain ledger viewer (scrollable QTextEdit, append-only)
+    - Session provenance: chain hash displayed in status bar
+
+[ ] Qt GUI: Hyperwebster browser pane
+    - Live display of Fano path as the user types input
+    - Generator traversal shown as Fano plane diagram (SVG or QPainter)
+    - Sedenion boundary visualized as red wall in the diagram
+    - Index coordinates displayed numerically alongside
+
+[ ] C++ Hyperwebster library: hyperwebster.cpp / hyperwebster.h
+    - USKeyboardMap as constexpr array
+    - TextHyperIndex encode/decode (arbitrary precision via GMP or
+      Boost.Multiprecision)
+    - FanoIndex encoder
+    - MultiChannelTupper for image tiles
+    - SphericalColor coordinate system
+    - BlockchainLedger (SHA256 via OpenSSL or libsodium)
+    - Full round-trip test suite (mirrors Python self-test)
+
+[ ] Benchmark suite: C++ vs Python vs SQL
+    - Text retrieval: C++ Hyperwebster vs SQLite SELECT by primary key
+    - Image retrieval: C++ Tupper decode vs filesystem read + decode
+    - Derivation: C++ engine vs Python engine per equation per stratum
+    - Report: operations per second, memory footprint, retrieval latency
+    - This is the empirical benchmark data for the Palantir Conjecture paper
+
+[ ] Long-term: full Ptolemy application in Qt/C++
+    - Ptolemy (king/MainWindow) -> Pharos (dialogs) -> Callimachus
+      (indexing, Hyperwebster) -> Philadelphos (SMNNIP engine)
+    - Architecture names preserved from Python prototype
+    - SMNNIP C++ engine as Philadelphos module
+
+=====================================================
+END OF TODO
+=====================================================
+Last updated: 2026-04-16

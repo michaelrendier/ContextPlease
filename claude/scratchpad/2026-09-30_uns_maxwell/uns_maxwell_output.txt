@@ -1,0 +1,22 @@
+== T1  integers per unit area in the Sacks plane ==
+R= 100  integers inside 10000  area pi R^2 = 31416  density*pi = 1.0000
+R= 300  integers inside 90000  area pi R^2 = 282743  density*pi = 1.0000
+R=1000  integers inside 1000000  area pi R^2 = 3141593  density*pi = 1.0000
+
+== T2  Gauss: mean E_r on the ring == pi(R^2)/R   (charges up to 2R^2, exterior charges average to zero on the ring) ==
+   R     pi(R^2)   mean E_r   pi/R      li(R^2)/R   (pi-li)/R   RH bound ln(R)/(4 pi)
+  100      1229    12.2959   12.2900    12.4614     -0.1714         0.3665
+  316      9580    30.3026   30.3165    30.4345     -0.1180         0.4580
+ 1000     78498    78.4972   78.4980    78.6275     -0.1295         0.5497
+
+== T3  multipole moments |M_m| / sqrt(pi(N)) for primes, and the random (Cramer) model, N = R^2 ==
+R= 316 pi=  9580 |  m=1 primes 0.28 random 0.59  m=2 primes 0.86 random 1.09  m=3 primes 0.34 random 1.16  m=5 primes 0.30 random 1.02
+R=1000 pi= 78498 |  m=1 primes 0.44 random 0.87  m=2 primes 0.74 random 0.43  m=3 primes 0.42 random 0.81  m=5 primes 0.31 random 1.02
+R=2000 pi=283146 |  m=1 primes 0.70 random 0.75  m=2 primes 0.53 random 1.18  m=3 primes 0.63 random 1.12  m=5 primes 0.59 random 1.07
+
+== T4  angular structure of E_r on the ring: rms(E_r - mean)/mean ==
+R= 316  primes 0.022 | random same density 0.025 +- 0.002 | composites(thinned to same count) 0.023
+R=1000  primes 0.008 | random same density 0.015 +- 0.012 | composites(thinned to same count) 0.016
+
+== T5  counter-twist: primes rotate +Theta, composites -Theta (one plane, Theta = 22.5 deg per k): net magnetic moment of rotating charge ==
+sum r^2 primes/2 = 1.878e+10 | composites/2 = 2.312e+11 | net (primes - composites) = -2.124e+11  ->  net moment sign NEGATIVE, composites dominate by factor 12.3

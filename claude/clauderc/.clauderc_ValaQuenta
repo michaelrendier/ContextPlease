@@ -35,7 +35,7 @@
 #   these to a single tier -- see _crosscutting block, item 2.
 #
 # ============================================================================
-# FULL ENGINE PROTOCOL  (amended 2026-08-04 by Cody -- FIVE parts, was four)
+# FULL ENGINE PROTOCOL  (amended 2026-09-30 -- SIX parts: TOOLBOX added; was FIVE from 2026-08-04)
 # ============================================================================
 # An engine is not "done" until all five artifacts exist. Shipping the code
 # alone leaves the engine undiscoverable from a cold context, which is the
@@ -63,6 +63,21 @@
 #                      l_io_photon_path sat unindexed for weeks in exactly
 #                      that state (see CTX_L_IO_PHOTON_PATH, "WAS MISSING
 #                      FROM THIS INDEX").
+#
+#   6. TOOLBOX         ValaQuenta/wiki/toolbox/NN_<name>.md + the row in
+#                      wiki/toolbox/00_index.md, with the index repass. REQUIRED
+#                      for every NEW TOOL: a new engine, and any new equation added
+#                      to an existing engine's formulary(). Generate the page from
+#                      the registry so it cannot drift from the code.  (2026-09-30)
+#
+# DOCUMENTATION SCOPE (Cody, 2026-09-30): ValaQuenta is STRICTLY API CODE REFERENCE
+# documentation. Narrative/origin/story -> Ainulindale/wiki. Paper listings -> the
+# paper, inline where the paper discusses them (not ValaQuenta docs/listings).
+# VERSIONING (forward only): every NEW engine starts at v1.0; increment each time an
+# engine is touched. Existing engines keep their numbers until next touched.
+# LICENSING: all code and maths GPL-3.0-only (GNU); third-party material only as its
+# licence allows. Incompatible licences (e.g. CC BY-SA-NC) are never vendored: fetch to
+# a local cache at run time and .gitignore the copy.
 #
 # A canonical-maths change accompanying an engine also goes in
 # ~/.clauderc_canonical_maths, and all ~/.clauderc* files are copied into
@@ -191,7 +206,7 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign session_20260928"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile session_20260928"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -1493,6 +1508,26 @@ identification: REFUTED AS TESTED, correlation 0.0367 (n=59); the pointwise-vs-i
 NOT-DONE follow-up. The Real-Tilt/Axis crossing is pinned at sigma=0.500000 to machine precision at every zero tested.
 5 equations; tilt_vs_wobble_correlation takes ~19 s at 60 zeros. Wiki page created 2026-09-28.
 "
+export CTX_BASILE="
+basile -- Invertible location <-> content maps of the Library of Babel family (J. Basile). v1.3. confidence_floor=ESTABLISHED. (empty word at address -1)
+Built 2026-09-30 for FourthAgePapers/HyperindexingSystem (paper opening §1-§3; paper/listings/L2 = power_of_two_scrambler).
+PUBLISHED (checked 2026-09-30): librarianofbabel/libraryofbabel.info-algo (CC BY-SA-NC, 2019-01-02) = the IMAGE library
+(Babelia): PRNG(=babelia.cpp) location->640x416x12-bit image, imagesearch.cpp image->location, 'Euclid's Extended' template
+(m(\"\"), a(\"\"), qarray[25] = 23 divisions). README recipe: LCG (a p + c) mod m, then R>>1098239, L(maskone)<<698879,
+L(masktwo)<<1497599, R>>1797118; inverse = undo reversed then ainverse (p - c) mod m. LoB-API = CC0 licence file only, no code.
+LobThis = 5 small JS files (fork), one POST to resourcelocator.cgi (reproduced as data, never sent). The TEXT library's own
+algorithm is NOT published. LICENCE: never vendor the published files (GPL-3.0-only package); fetch_published() ->
+\$VALAQUENTA_BASILE_CACHE (default ~/.cache/valaquenta/basile); Published() parses constants at run time.
+MEASURED on the published constants: m = 3^2,015,755 EXACTLY (prime power) -> Hull-Dobell holds -> LCG alone = one cycle of length m (3-adic odometer); m 3,194,897 bits vs image 3,194,880; a*ainverse==1 mod m; maskone/masktwo/divver are exact
+powers of two; palette '#%03X'; 17 unread bit positions (8 dropped chunk bits + 9 top) -> 16 give a second location with the
+SAME image; mean locations per image 69,544; search(image) returns one of them. Forward 0.04 s / inverse 0.05 s with gmpy2,
+7.7 s / 15.2 s pure Python (identical digest). CYCLIC: pure LCG mod 2^15 = one full cycle; the toy scrambler = 11 cycles (longest 9,943);
+sibling offsets are ADDITIVE within a location (2^16-point box in Z_m) but location-dependent. 17 equations; the 5 published_* need the cache.
+FILES: ValaQuenta/modules/basile/{__init__,maths,tools}.py + manifest.json; notebooks/basile/01-04; wiki/basile.md;
+wiki/toolbox/39_basile.md; tests/test_basile.py (2 skipped without cache); Ainulindale/wiki/124_basile_invertible_location_maps.md;
+local copy of published files: Ainulindale/references/babel/ (NOT for redistribution).
+"
+
 export CTX_BRACKETING_FIRING_ORDER="
 bracketing_firing_order -- Bracketing (Bell numbers, exact count always, list only when feasible), Firing Order (n!,
 apply_firing_order is a literal permutation: (3,1,2) on [Scale,Sign,Add] -> [Add,Scale,Sign]), Set Membership

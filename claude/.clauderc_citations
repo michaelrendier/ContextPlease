@@ -164,3 +164,32 @@ independent re-discoveries.
 Pattern worth a later look (unverified, not researched this pass): the generated, cold-run listing (extract → exec → record
 output → test) resembles doctest-driven literate documentation; the skill's Convention B already cites The Annotated
 Transformer for the paper-side analogue.
+
+# =============================================================================
+# FourthAgePapers/HyperindexingSystem — citation pass 2026-09-29 (full table: FourthAgePapers/HyperindexingSystem/citations.md)
+# =============================================================================
+
+QUEUED | W. Myrvold & F. Ruskey (2001), *Ranking and unranking permutations in linear time*, IPL 79, 281 (read) ; Durstenfeld (1964) ; Sedgewick (1977)
+  | bijective rank of a permutation in [0,n!-1], O(n), driven by Fisher-Yates
+  | the PRIVATE charset "permutation index in [0,N!-1]" promised in Callimachus/v09/core/charset.py
+  | FourthAgePapers/HyperindexingSystem
+
+QUEUED | T. M. Cover (1973), *Enumerative source encoding*, IEEE Trans IT 19 (metadata only)
+  | exact rank of a sequence within its composition class
+  | (count vector, rank) address; hyperwebster_manifold.py position sub-addresses (audit T7)
+  | FourthAgePapers/HyperindexingSystem
+
+QUEUED | M. Burrows & D. J. Wheeler (1994), SRC-RR-124 (read) ; Manber & Myers (1993) ; Ferragina & Manzini (2000)
+  | sorted cyclic rotations of a string as a reversible permutation index
+  | the Vigenere tabula recta as a data structure; MidlineIndex
+  | FourthAgePapers/HyperindexingSystem
+
+QUEUED | Chavez, Figueroa & Navarro (2008) TPAMI ; Amato & Savino (2008) (read) ; Fagin, Kumar & Sivakumar (2003)
+  | permutation-based indexing and permutation distances
+  | address-as-permutation; charset order as the only variable
+  | FourthAgePapers/HyperindexingSystem
+
+QUEUED | J. Basile, libraryofbabel.info-algo (2019, CC BY-SA-NC) ; "Grains of Sand" (libraryofbabel.info/theory4.html) -- Post-Hoc: Basile learned of 2026-09-29; the SITE libraryofbabel.info is the progenitor (built against, no tag)
+  | an invertible pseudo-random number generator (LCG + shift/XOR) joins a numeric location to a page/image, nothing stored
+  | the scrambled member of the hyperindex family; ordered address = the Hyperwebster
+  | FourthAgePapers/HyperindexingSystem (paper §1) ; ValaQuenta modules/basile ; Ainulindale/wiki/124

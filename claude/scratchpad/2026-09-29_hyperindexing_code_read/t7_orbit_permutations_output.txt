@@ -1,0 +1,5 @@
+transposition offset identity holds: True
+    L   naive  multinomial  +counts(97-vector)   total  ratio roundtrip
+  140     924          565                 226     791  0.856 True
+ 1000    6600         4718                 465    5183  0.785 True
+ 4000   26400        20279                 652   20931  0.793 True

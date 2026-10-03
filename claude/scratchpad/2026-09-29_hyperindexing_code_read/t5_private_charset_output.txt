@@ -1,0 +1,3 @@
+addr_priv(s) == addr_pub(pi(s)): True
+attacker sees text of length 3000 (true length 3000 )
+rank-matching alone: 9/84 symbols right, 44.7% of positions recovered; keyspace 97! = 2^505

@@ -1,0 +1,5 @@
+range 47802 48314 width 513
+images satisfying constraint: 4096
+satisfying images INSIDE range: 129
+images in range: 513 of which satisfy: 129
+satisfying set spans addresses 39320 .. 69903 ; count of maximal contiguous runs: 512

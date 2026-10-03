@@ -1,0 +1,5 @@
+   R      x=R^2   pi(x)   R(x)-pi   after 20 zeros   after 50   after 200      (errors pi - approx, in prime counts; divide by R for the field)
+  100     10000    1229      2.09         -0.68      -0.63      -0.38
+  316     99856    9580      5.07          1.29       3.35       0.78
+ 1000   1000000   78498    -29.39        -18.07      -5.86      -2.84
+amplitude of one zero's contribution to E_r: about 1/(2*gamma*ln R): gamma_1 = 14.1347 -> at R=1000: 0.0051

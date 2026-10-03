@@ -1,0 +1,10 @@
+corpus: 220182 chars, 65 symbols (normalised Longfellow Inferno)
+chunking     rows    ROWS B  TABLES B ptolemy B  x corpus ingest s recon s
+whole           1    437540    705745   1138302      5.17     2.7     2.9
+canto          35    440468    710467   1145917      5.20     2.5     2.6
+stanza       1635    576235    929430   1499057      6.81     3.2     3.8
+line         6565    981770   1583470   2553883     11.60     6.6     8.2
+fixed1000     221    456445    736235   1187475      5.39     2.4     2.6
+chain of 4 ingests: file bytes identical across two runs; ptolemy.json = 4970490 B; all 4 tops distinct: True
+reconstructed 4 documents from ptolemy.json alone: all equal to corpus
+prefix (first 2 of 4 TABLES entries) re-addressed: 2284044 digits, equals a recorded past TOP: True

@@ -1,0 +1,7 @@
+m bits 3194897
+forward 0.03s | p bits 3194896
+inverse 0.05s | inverse(forward(L)) == L: True
+search location == L: False | forward(search location) image == image: True
+dropped bit of chunk 0   -> inverse gives a location: True | forward(location) == that value: True | distinct from L: True | same image: True
+dropped bit of chunk 3   -> inverse gives a location: True | forward(location) == that value: True | distinct from L: True | same image: True
+top bit 3194890          -> inverse gives a location: True | forward(location) == that value: True | distinct from L: True | same image: True

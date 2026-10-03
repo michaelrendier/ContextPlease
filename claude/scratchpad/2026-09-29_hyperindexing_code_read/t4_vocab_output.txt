@@ -1,0 +1,4 @@
+L=47: round-trip True; reported reduction 13.0x; naive 311 bits; token-address 24; +vocab 271 +punct 116 = 411 => real ratio 0.76x
+L=1000: round-trip True; reported reduction 6.6x; naive 6600 bits; token-address 1001; +vocab 4798 +punct 2826 = 8625 => real ratio 0.77x
+L=4000: round-trip True; reported reduction 5.6x; naive 26400 bits; token-address 4675; +vocab 14896 +punct 14307 = 33878 => real ratio 0.78x
+L=20000: round-trip True; reported reduction 4.6x; naive 131999 bits; token-address 28487; +vocab 54819 +punct 80755 = 164061 => real ratio 0.80x

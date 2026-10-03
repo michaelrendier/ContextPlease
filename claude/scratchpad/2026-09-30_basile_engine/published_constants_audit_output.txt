@@ -1,0 +1,14 @@
+parsed in 0.3s
+bit lengths: m 3194897 | a 1597519 | c 1628205 | ainverse 3194897 | maskone 2496010 | masktwo 1697290 | divver 399362
+image bits: 640*416 px * 12 = 3194880 ; per quarter 33280*12 = 399360 ; shifts used: 399361 per quarter (8 quarters = 3194888 bits)
+a < m: True | c < m: True | ainverse < m: True | a/m ~ 2^-1597378 | c/m ~ 2^-1566692
+a * ainverse mod m == 1: True
+gcd(a, m) = 1 | gcd(c, m) = 1
+m parity: odd | m mod 4 = 3 | a mod 4 = 3 | c mod 2 = 1
+maskone  popcount 1 of 2496010 bits; power of two: True; 2^k-1: False
+masktwo  popcount 1 of 1697290 bits; power of two: True; 2^k-1: False
+divver   popcount 1 of 399362 bits; power of two: True; 2^k-1: False
+divver bits - 399360 = 2 | divver - 2^399360 sign: greater
+prime factors of m below 200000: [3] | count 1
+for those, (a-1) divisible: [(3, True)]
+is m prime (probable): False

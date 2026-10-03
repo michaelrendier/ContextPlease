@@ -1,0 +1,48 @@
+== integers and primes in base π (greedy expansion, digits 0..3) ==
+  1        1.000000000000000000000000   (remainder < π^-24: True)
+  2 prime  2.000000000000000000000000   (remainder < π^-24: True)
+  3 prime  3.000000000000000000000000   (remainder < π^-24: True)
+  4        10.220122021121110301000010   (remainder < π^-24: True)
+  5 prime  11.220122021121110301000010   (remainder < π^-24: True)
+  6        12.220122021121110301000010   (remainder < π^-24: True)
+  7 prime  20.202112002100000030020121   (remainder < π^-24: True)
+  8        21.202112002100000030020121   (remainder < π^-24: True)
+  9        22.202112002100000030020121   (remainder < π^-24: True)
+ 10        100.010221222211211220011112   (remainder < π^-24: True)
+ 11 prime  101.010221222211211220011112   (remainder < π^-24: True)
+ 12        102.010221222211211220011112   (remainder < π^-24: True)
+ 17 prime  120.220021101020230020003001   (remainder < π^-24: True)
+ 19 prime  122.220021101020230020003001   (remainder < π^-24: True)
+ 23 prime  210.010121001001300211201300   (remainder < π^-24: True)
+ 29 prime  222.300202001222002022021123   (remainder < π^-24: True)
+ 31 prime  301.102021210222021002030002   (remainder < π^-24: True)
+
+== do integers >= 4 terminate? (a terminating expansion is a polynomial in π; π is transcendental) ==
+4 nonzero digits in the last 20 of 60 fractional places: 12
+5 nonzero digits in the last 20 of 60 fractional places: 12
+7 nonzero digits in the last 20 of 60 fractional places: 10
+100 nonzero digits in the last 20 of 60 fractional places: 13
+
+== digit statistics of the first 24 fractional digits: primes vs all integers in [4, 400] ==
+all integers (397): [0.366, 0.3023, 0.2863, 0.0454]
+primes       (76): [0.386, 0.2917, 0.2747, 0.0477]
+
+== how many admissible n-digit words? (cylinders of the β-transformation) ==
+n= 1 words=4 ratio=4.000000
+n= 2 words=13 ratio=3.250000
+n= 3 words=41 ratio=3.153846
+n= 5 words=405 ratio=3.139535
+n=10 words=123905 ratio=3.141608
+n=20 words=11603454909 ratio=3.141593
+n=30 words=1086640896182970 ratio=3.141593
+n=40 words=101761798235196018115 ratio=3.141593
+π = 3.141592653589793 | 4^n would be all 2-bit strings; log2(π) = 1.6515 bits/digit; log2(3) = 1.585
+
+== the log-base view: d*_b = Ω / ln b ==
+b = 2   d*_b = 0.81821   ln10/ln b = 3.32193
+b = e   d*_b = 0.56714   ln10/ln b = 2.30259
+b = 3   d*_b = 0.51624   ln10/ln b = 2.09590
+b = π   d*_b = 0.49544   ln10/ln b = 2.01147
+b = 10  d*_b = 0.24631   ln10/ln b = 1.00000
+base with d*_b = 1/2 exactly: b = e^(2Ω) = 3.10895 ; π = 3.14159 ; relative difference 1.039%
+Ω = 0.5671432904097838

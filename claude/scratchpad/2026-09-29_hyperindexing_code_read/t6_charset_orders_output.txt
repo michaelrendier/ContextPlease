@@ -1,0 +1,7 @@
+ 97 symbols, distinct 97, same alphabet as Unicode: True : keyboard-row (Data-Storage/manifold/archimedes/gallery/layer3)
+ 97 symbols, distinct 97, same alphabet as Unicode: True : Unicode ord (Callimachus v09 PUBLIC, kcf)
+ 97 symbols, distinct 97, same alphabet as Unicode: True : ValaQuenta US_KEYBOARD_CHARS
+hello {'keyboard-row': 2937323952, 'Unicode': 6706159586, 'ValaQuenta': 712911699}
+Ptolemy {'keyboard-row': 60972185018825, 'Unicode': 43236003041246, 'ValaQuenta': 35157909951779}
+keyboard->Unicode permutation cycle type: [92, 3, 2] ... fixed points: 0 order (lcm): 276
+97! = 2^504.9;  257-bit? fits in 64 bytes: 505 bits

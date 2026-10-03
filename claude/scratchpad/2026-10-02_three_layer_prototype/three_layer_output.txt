@@ -1,0 +1,12 @@
+alphabet N = 67 | cantos: 34 | categories: ['Eighth Circle', 'First Circle', 'Fourth Circle', 'Ninth Circle', 'Prologue', 'Second Circle', 'Seventh Circle', 'Sixth Circle', 'Third Circle']
+ingest of all 34 cantos: 1.9 s | file sizes: {'ROWS': 327902, 'TABLES': 5140, 'TOP': 4411} | corpus 215207 chars
+top label changes at every ingest (34 distinct): True | last top: ['068ab67c', '1ec8dd63', '60d1498e', 'af43d772', 'd5f7580e', '85d90b09', '43552ad7', '5231f36a']
+every canto reconstructs from ROWS.jsonl alone: True
+past top #10 matches the label of the TABLES prefix of its recorded length: True
+   TABLES line #10 matches the label of the ROWS prefix: True
+   rows recoverable at that past state: 10 of 10
+exact address of ROWS   file: 327902 chars over 27 symbols = 1559 kbit (0.59 x its bytes)
+exact address of TABLES file: 5140 chars over 44 symbols = 28 kbit (0.68 x its bytes)
+ROWS file vs corpus: 327902 bytes vs 215207 chars = 1.52 x (hex text of exact addresses)
+exact corpus address at N=67: 1305 kbit = 0.76 x corpus bytes
+TOP line: {"a":[109753980,516480355,1624328590,2940458866,3589756942,2245593865,1129654999,1379005290],"n":5140,"t":"2026-11-05T00:00:00Z"}
