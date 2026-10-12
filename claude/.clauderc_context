@@ -8,6 +8,24 @@
 # through-line only; the auto-memory index + hist_prime primers hold the detail.
 
 ═════════════════════════════════════════════════════
+2026-10-06 → 10-12 — HyperindexingSystem re-engineer: JSON entry fields, .perm files, Midline T S DD code
+═════════════════════════════════════════════════════
+
+STATE (ESTABLISHED, run): FourthAgePapers/HyperindexingSystem/reengineer/ holds Ptolemy/Year/Month/Day.json (+ read-only
+.json.conf originals; entries = core{index,len,perm,seen,title} + navigation{kind,category,source,tags,note} +
+relations stub{up,ref}; Ptolemy.json core only; index = 64 zeros placeholder), hyperindex_spec.md (draft), four .perm
+files as plain characters (ascii 97, json 34 grammar chars, index 15 `(),0-9[]`, index_hex 21), Jupiter.html +
+Pythagorean_theorem.html (raw Wikipedia mirrors: LaTeX in annotation/alttext, navboxes, catlinks all present) and
+pg1001.txt (Dante). Measured 2026-10-06: .perm ORDER moves an address by <= log2(N) bits total (leading digits only);
+N and variable-length coding are what matter (scratchpad 2026-10-06_perm_ordering).
+Midline (Archimedes/Maths/MidlineIndex.py + Kryptos/Ciphers/Midline.py, v19 wiki/notebooks regenerated): code
+T S DD = type*1000+sign*100+step; Upper/Lower/Digit/Punct; digits sign-less; punct = LF, space + 32 symbols, even 17/17
+split; tab = four spaces; 96 valid codes; base-96 Horner (6.585 bits/char). Memory: project_midline_4digit_code.
+OPEN: .json entry key style (flat vs nested, short vs readable), json.perm cannot hold key/title letters (grammar chars
+only), roll-up fields for Year/Month, CR handling in normalise, no test covers Midline (Kryptos tests: 65 cases / 27
+functions), pathway/monad.bin still experimental. Hyperindex width (64 hex) is a placeholder.
+
+═════════════════════════════════════════════════════
 2026-09-28 — ValaQuenta made public-ready (Code Reference / Sphinx / CI / tests), GL CI on
 ═════════════════════════════════════════════════════
 

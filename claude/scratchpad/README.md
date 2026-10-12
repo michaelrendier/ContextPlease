@@ -51,3 +51,7 @@ regenerated rather than stored.
   retraction**: the module signal is lexical, not semantic.
 - `2026-08-08_hyperwebster_wall/` — lossless address vs semantic neighbourhood
   proved incompatible; Hyperwebster compression ratio exactly 1.0000.
+- `2026-10-06_perm_ordering/` — does a .perm's character order change a hyperindex address? Only by ≤ log2(N) bits
+  (leading digits); N and variable-length coding are what matter.
+- `2026-10-12_midline4/` — Midline cipher final rules: 4-digit T S DD code, 96 valid codes (space + LF in punctuation,
+  even 17/17 split, tab = 4 spaces), base-96 Horner; engine + Kryptos wrapper + notebook builders.

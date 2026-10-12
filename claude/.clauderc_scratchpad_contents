@@ -19,7 +19,7 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-09-28
+# Last regenerated: 2026-10-12
 
 - README.md
 - migrate_datasets.sh
@@ -288,6 +288,10 @@
     README.md
     dispatch_smoke.log
 
+2026-09-28_lvap_audit/
+    OUTLINE_D-CS_Memory_revision.md
+    README.md
+
 2026-09-28_scp_readme_update/
     README.md
 
@@ -402,3 +406,102 @@
     sphinx2.log
     sphinx3.log
     stale.py
+
+2026-09-29_hyperindexing_code_read/
+    README.md
+    t1_spectral_range.py
+    t1_spectral_range_output.txt
+    t2_cache_collision.py
+    t2_cache_collision_output.txt
+    t3_manifold.py
+    t3_manifold_output.txt
+    t4_vocab.py
+    t4_vocab_output.txt
+    t5_private_charset.py
+    t5_private_charset_output.txt
+    t6_charset_orders.py
+    t6_charset_orders_output.txt
+    t7_orbit_permutations.py
+    t7_orbit_permutations_output.txt
+    t8_rabies_trigger.py
+    t8_rabies_trigger_output.txt
+
+2026-09-29_hyperwebster_overhead/
+    README.md
+    bench.py
+    bench_layers.py
+    bench_layers2.py
+    bench_layers2_output_2026-09-29.txt
+    bench_layers_output_2026-09-29.txt
+    bench_output_2026-09-29.txt
+    install_abstract.py
+
+2026-09-30_base_pi/
+    base_pi.py
+    base_pi_output.txt
+
+2026-09-30_basile_engine/
+    build_vq_notebooks.py
+    cyclic_structure.py
+    cyclic_structure_output.txt
+    published_constants_audit.py
+    published_constants_audit_output.txt
+    published_roundtrip.py
+    published_roundtrip_output.txt
+
+2026-09-30_uns_maxwell/
+    gauss_zeros.py
+    gauss_zeros_output.txt
+    uns_maxwell.py
+    uns_maxwell_output.txt
+
+2026-10-02_claude_ai_archive/
+    SESSION_PRIMER_SMNNIP.txt
+    SMNNIP_TODO.txt
+    artifact_FA_smnnip_hyperindex.py
+    manifest.json
+
+2026-10-02_hyperindex_clean/
+    ascii.perm
+    json.perm
+    json_freq.tsv
+    measure.out
+    measure_json_freq.py
+
+2026-10-02_ptolemy_context_structure/
+    context_truncation_demo.py
+    context_truncation_demo_output.txt
+
+2026-10-02_ptolemy_json_poc/
+    README.md
+    hyperindex.py
+    make_json_perm.py
+    out/run1.txt
+    perm/ascii.perm
+    perm/json.perm
+    ptolemy_poc.py
+    run_poc.py
+
+2026-10-02_three_layer_prototype/
+    octonion_chain.py
+    octonion_chain_output.txt
+    three_layer.py
+    three_layer_output.txt
+
+2026-10-06_perm_ordering/
+    README.md
+    ord.py
+
+2026-10-12_midline4/
+    Midline.py
+    MidlineIndex.py
+    README.md
+    _build_d.py
+    _build_e.py
+    midline4.py
+
+addition_matrix_sudoku/
+    factor_search.py
+
+spectral_primes/
+    build_and_test.py
