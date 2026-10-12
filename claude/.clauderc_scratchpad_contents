@@ -499,6 +499,7 @@
     _build_d.py
     _build_e.py
     midline4.py
+    test_midline.py
 
 addition_matrix_sudoku/
     factor_search.py

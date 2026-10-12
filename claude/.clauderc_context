@@ -22,8 +22,7 @@ Midline (Archimedes/Maths/MidlineIndex.py + Kryptos/Ciphers/Midline.py, v19 wiki
 T S DD = type*1000+sign*100+step; Upper/Lower/Digit/Punct; digits sign-less; punct = LF, space + 32 symbols, even 17/17
 split; tab = four spaces; 96 valid codes; base-96 Horner (6.585 bits/char). Memory: project_midline_4digit_code.
 OPEN: .json entry key style (flat vs nested, short vs readable), json.perm cannot hold key/title letters (grammar chars
-only), roll-up fields for Year/Month, CR handling in normalise, no test covers Midline (Kryptos tests: 65 cases / 27
-functions), pathway/monad.bin still experimental. Hyperindex width (64 hex) is a placeholder.
+only), roll-up fields for Year/Month, CR handling in normalise, (Midline tests ADDED 2026-10-12: Kryptos/tests/test_midline.py, 39 cases; Kryptos suite 104), pathway/monad.bin still experimental. Hyperindex width (64 hex) is a placeholder.
 
 ═════════════════════════════════════════════════════
 2026-09-28 — ValaQuenta made public-ready (Code Reference / Sphinx / CI / tests), GL CI on
