@@ -1,0 +1,20 @@
+T1 dim4 pairs: 42  of which the +/- diagonals of ONE Assessor: 0
+T1 dim2 pairs: 168  distinct kernel supports (basis indices touched): 21
+   support (np.int64(5), np.int64(6), np.int64(13), np.int64(14)) x 8
+   support (np.int64(4), np.int64(7), np.int64(12), np.int64(15)) x 8
+   support (np.int64(5), np.int64(7), np.int64(13), np.int64(15)) x 8
+   support (np.int64(4), np.int64(6), np.int64(12), np.int64(14)) x 8
+T1 dim2 pairs that are same-strut, different, non-reversed Assessors (= kite edge rule): 168 / 168
+
+T2 normalised sv of x->xy: [1.4142 1.4142 1.4142 1.4142 1.     1.     1.     1.     1.     1.
+ 1.     1.     0.     0.     0.     0.    ]  => contract x4, neutral x8, dilate x4
+   forward many-to-one: every x in z+N(y) maps to the same z (max err 3.4e-15); inverse one-to-many: z has a 4-dim coset of preimages
+
+T3 residual carrying y0 onto focus y1 by exp(sum t_i D_i): 1.7752985127605294e-09   |t|=6.171
+   g automorphism err: 2.433649641969595e-14
+   g N(y0) annihilates g y0: max |x*(g y0)| = 3.815147430912584e-15
+   pair 0 1 common-kernel dim before 0 after flow 0
+   pair 0 2 common-kernel dim before 0 after flow 0
+   pair 5 17 common-kernel dim before 0 after flow 0
+   pair 3 60 common-kernel dim before 0 after flow 0
+   flowed reference diagonal off the lattice (non-zero entries): 3 (lattice diagonal has 2)
