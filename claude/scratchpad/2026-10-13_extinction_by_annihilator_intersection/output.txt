@@ -1,0 +1,5 @@
+single N(y) dims: Counter({4: 84})
+pairs (3486): {0: 3276, 4: 42, 2: 168}
+ pairs same strut: {0: 252, 4: 42, 2: 168}  different strut: {0: 3024}
+triples (95284): {0: 95116, 2: 168}
+pairs with nonempty common kernel: 210  containing a basis vector e_i: 0
