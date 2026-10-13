@@ -1597,4 +1597,14 @@ so the bias is the hash construction, not the key); J2/T256 33.3 weak; spectral 
 0.0 (exact but needs Hash exposed and is not unique); Zero Lattice public-only 50.45; emergent rotation 52.59 on 40 keys
 (the 6-key sample showed 31.2 and did not survive scale-up). No mechanism recovers d from (n,e).
 @END
+@RCVQ_SCALED_KITE_ENGLISH
+STATUS 2026-10-13. Context page: VAPMIP/docs/wiki/Scaled-Kite-English-Thought-Center-Context.md. Goal: De Marrais kite as the Monad thought centre for
+English; document planner = the EXISTING spider-web/orb-weaver cycle (Tuning-the-Engine/35, boxkite_orbweaver_monad.py), Kings-Maille rings, engine/grammar
+sails (7 clause patterns around e0 = finite verb). NOT a fresh design; Reiter-Dale planner was proposed in error. Orb-weaver monad SHELVED because the granular
+.bin files were poisoned (never worked with before); granular bins attach per turn as temporary weight, basin(seeds) pools read-only, poison-check test
+required (VAPMIP/TODO.md). Scalar boxkite (7 ordered pairs, discrete, tension law) is NOT the scaled kite; scaled kite moves by G2 (Der dim 14) relative to
+fixed sigma_RB. Records: Boxkite-Deformation-Record-2026-10-12.md, Boxkite-Relational-Atlas.md. Context Flow spec = historic tooling; reuse metrics only.
+All clause-as-octonion / response-in-N(prompt) / HUB-as-G2-element mappings are HYP. Hook note: SessionStart injects ThePlace/.claude/.clauderc_canonical_maths
+(57 KB, Aug 8), STALE vs ~/.clauderc_canonical_maths (maintained); reported to Cody, unchanged.
+@END
 "

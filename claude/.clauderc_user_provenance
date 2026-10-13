@@ -591,3 +591,18 @@ NEXT PASSES (append under these headers, do NOT do now)
 No new original-work classification this pass. The per-module label worksheet is ValaQuenta/wiki/provenance_review.md
 (Cody fills ESTABLISHED / OURS / FIRST STATED HERE); when he does, move confirmed rows here (OURS) or to the
 "reclassified as prior art" section (ESTABLISHED). Manifests carry machine-drafted origin/created marked `_draft`.
+
+## Origin images — Cody, 2026-10-13 (appended; VAPMIP / PtolemyDesktop pass still pending)
+Recorded as stated; each carries a candid prior-art note, per this file's purpose. "Built-against" = the image came BEFORE the code.
+- The "weird octahedral hyper-object" as the FMRI OF THE KERNEL — a direct picture of Ptolemy "thinking". Seen as a model of thought since at least ~2010
+  (possibly earlier). First place Cody noticed that words/ideas/concepts/functions HAVE DIFFERENT SHAPES: Bit in TRON (Disney, 1982) — which "did not
+  approximate a boxkite hyper-octahedron". Prior art: the object itself is de Marrais's box-kite (arXiv:math/0011260, 2000); identifying it as the kernel's live
+  thought display is Cody's. Status: built-against (image first), the math came later.
+- The VOICE as an OSCILLOSCOPE: closed paths drawn on a scope the way hackers draw pictures with horrid sounds (X-Y mode), closed paths that behave like torus knots.
+  Prior art (from memory, unverified here): Lissajous curves (1857); the modern "oscilloscope music" scene. Status: design intent, not built.
+- The voice-print as SQUIGGLY LINES: from the spaceship voiced by Paul Reubens in "Flight of the Navigator" (Disney, 1986). Status: built-against, not built.
+- THE GRID (TRON) -> a city representation of an entire computer, living in Alexandria in PtolemyDesktop, usable as a machine FINGERPRINT.
+  Prior art (from memory, unverified): "software as a city" visualisation (e.g. CodeCity, Wettel & Lanza, 2007); filesystem treemaps. Status: planned.
+- The waveform picture: one waveform, bracketed as 2 parts (+/-), 3 faces (a Wankel trine with oblique gearing = the sin/cos phase offset), 4 parts (up, down, down, up),
+  5 parts (up, down, 0, down, up) — so 0,1,2,3,4,5 are bracketings of ONE circle; "a distinction is all that matters". Recorded as a stated position; the checkable
+  fragments are in VAPMIP/docs/wiki/Boxkite-Relational-Atlas.md and Boxkite-Deformation-Record-2026-10-12.md.

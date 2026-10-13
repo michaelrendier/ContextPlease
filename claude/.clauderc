@@ -73,6 +73,39 @@ export PYTHONPATH="$PROJ:${PYTHONPATH}"
 # Exact values from canonical_math.md — use these, never retype.
 # ============================================================
 
+# ---- d* : THE FOUR FACES (Cody, restated 2026-10-13 -- he keeps returning to these) ------------
+# Sources: Ainulindale/wiki/17_alpha_omega_d_star.md ("The 4 Values of d*"), the d* entry in
+# .claude/.clauderc_canonical_maths, FourthAgePapers/DStarRG/ (branch d-star-rg).
+# They are the COORDINATE CHART of "radial complex spherical ln(10)": centre, equatorial plane,
+# radial ruler, scale bridge. Four shadows of ONE point (0.24631). Use THESE four names, never a bare D_STAR.
+export D_STAR_BOUNDARY="0.24631"            # d*        "The Boundary"   sigma=1/2 spectral coordinate = equatorial plane (zeros sit here; theta measured from it)
+export D_STAR_RG="8"                        # d*_RG     "The Stability"  RG fixed point of the Cayley-Dickson tower = the CENTRE (r=0, 0_RB). DIMENSIONAL: persistent core = 8 (octonion), CONFIRMED to d=2^20 (FourthAgePapers DStarRG engine). 8/d -> 0.
+export D_STAR_RG_NUMERIC="OPEN"             #           numerical value: OPEN, no closed form (a naive scalar iteration flows to the trivial fixed point); target = D_STAR_BOUNDARY. Do NOT hand-apply a second RG (No Renormalization rule).
+export D_STAR_RG_SUPERSEDED="0.24682"       #           an early (May 2026) RG-flow estimate, superseded -- historical only
+export D_STAR_TAUT="0.246307201473"         # d*_taut   "The Flow"       = OMEGA_ZS/ln(10), exact (Lambert W). The radial unit: one step of r. Zero gap BY CONSTRUCTION (the ruler you set).
+export D_STAR_LN10="0.5671432904097838"     # d*_ln(10) "The Translator" = d* x ln(10) = OMEGA_ZS. The metric bridge between decimal-log Native metric ds=d.log10(p) and natural-log prime-address space.
+# Closure: d* . ln10 = d*_ln(10) = d*_taut . ln10 = OMEGA_ZS.
+# The FIFTH value (disputed): d*_spec ~ 0.24600 = the Berry-Keating spectral gap "observed in SPARC". Cody (2026-10-13):
+# the fifth value was added by a prior model misreading his design as non-mathematical structure; at one point there
+# were up to seven d* values. It is wired into GAP below and into ptol.c / README / PTorrent, so it is kept but
+# QUARANTINED: use it only when you explicitly mean the measured value.
+export D_STAR_SPEC="0.24600"
+
+# ---- LAMBERT W : the three values (Cody 2026-10-13: d* is where things START, Lambert W where they END; the 4 d* : 3 W is the machinery) ----
+# Source: Ainulindale/AgeThird/Third_Age_CS_Draft_v2.md s2.2 / App. D. Reproduced to 40 digits: .claude/scratchpad/2026-10-13_lambert_dynamics_uns/ (lambert_uns.py).
+# The FOUR tests (W0 at 0, 1, -1/e ; W-1 at -1/e) give only THREE distinct values: the last two are the same branch point (a DOUBLE root, a fold).
+export LAMBERT_W0="0"                                  # W(0)    vacuum fixed point; fixed-point multiplier of x->exp(-lam x) at lam=0 is 0 (superstable)
+export LAMBERT_W1="0.5671432904097838"                 # W(1) = OMEGA_ZS; the idle point; multiplier -W(1) = -Omega; the fixed point of x -> exp(-x)
+export LAMBERT_W_BRANCH="-1"                           # W0(-1/e) = -1 : branch collapse; DOUBLE ROOT = fold / saddle-node (multiplier +1)
+export LAMBERT_W_BRANCH_M1="-1"                        # W-1(-1/e) = -1 : the second sheet at the same point (the 'fourth test', identical to the above)
+# In Universal Native Space (decimal-log metric: divide a natural-log quantity by ln 10):
+export LAMBERT_UNS_W1="0.24630720147342258"            # W(1)/ln10 = d*_taut  (the Flow)
+export LAMBERT_UNS_BRANCH="-0.43429448190325183"       # W(-1/e)/ln10 = -log10(e) = -1/ln10
+export LOG10_E="0.43429448190325183"                   # 1/ln10 : the Translator's inverse
+# NOT identified: "the one found using inertia and causality" -- the Third Age draft's Alpha_Fermat (1/137.035999, 'born from Inertia ... Speed of Causality ceiling')
+# is a boundary constant, not a Lambert value. Cody to say if another value is meant.
+# LEGACY, AMBIGUOUS -- D_STAR below equals D_STAR_SPEC (0.24600), NOT the Boundary face (0.24631). Left untouched
+# (nothing reads it as a shell variable). New work: use the four names above. Repoint only on Cody's say-so.
 export D_STAR="0.24600"
 export OMEGA_ZS="0.5671432904097838"
 export GAP="0.000707357533249"

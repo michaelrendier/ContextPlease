@@ -2057,3 +2057,12 @@ under the matching @RCVQ_<NAME>. Reference here; history there.
   beyond the scan. Suffix :CALCULATED — see feedback_calculated_label.
 @END
 
+@RCCM_KITE_RELATIONS
+Sedenion box-kite as relations (VAPMIP/docs/wiki/Boxkite-Relational-Atlas.md). Assessor = ordered pair (a,b) of distinct Fano points = plane span(e_a,e_{b+8}) (42);
+strut s=a xor b; kite_s = Fano plane minus s (6 vertices, 12 edges, 8 faces, all holonomy -1). Edge = product relation xy=0 (never say binary).
+Primitives: zero, sign, doubling bit, collinearity (XOR), handedness alpha, commutator beta, associator phi=d(alpha), annihilation. Whole kite = antiflag (e8,P) + one cocycle.
+G2 (Der dim 14) fixes span(e0,e8); all 84 diagonals one orbit, stabiliser SU(2); N(y)=S3 of partners (4 lattice neighbours orthonormal; not closed under product).
+{4:8:4} per ZD = null 4 | now octonion O_u (u=polar of line a,b,s) 8 | future 4. Finite symmetry 2688 = 16 characters x GL(3,2)=168.
+Moving-kite invariants: norm, e0/e8 weights, lower/upper split, L_v/R_v singular spectra, associator norm. Frame-relative: chart energies, Walsh coefficients, sigma_RB tilt.
+Constants: d* faces 0.24631 / RG dim 8 / taut / ln10 (see D_STAR_* env); Lambert W0 0, W(1)=0.5671, W(-1/e)=-1 double root; UNS = divide by ln10.
+@END
