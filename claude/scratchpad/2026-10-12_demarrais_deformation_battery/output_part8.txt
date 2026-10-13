@@ -1,0 +1,19 @@
+Lambert W values (mpmath):  W(0) = 0.0000000000000000   W(1) = 0.5671432904097838   W(-1/e) principal = -1.0000000000000000   W_-1(-1/e) = -1.0000000000000000
+   W(1)*exp(W(1)) = 1.0000000000000000 (the fixed point of x -> exp(-x): 0.5671432904097838)
+   d*_taut = W(1)/ln10 = 0.246307201473 ; d*_ln10 = d* x ln10 = 0.5671432904097838 = W(1): True
+
+THE THREE LAMBERT-W VALUES as the doubling parameter mu4 (mu1..3 = -1):
+   mu4 = W(0) = 0                                 pairs=1764  degree=[42]   within-chart=252  kappa=[]
+   mu4 = W(1) = +0.5671 (as the value itself)     pairs=84    degree=[2]    within-chart=84   kappa=[1.3279, -1.3279]
+   mu4 = -W(1) = -0.5671                          pairs=168   degree=[4]    within-chart=168  kappa=[1.3279, -1.3279]
+   mu4 = W(-1/e) = -1                             pairs=168   degree=[4]    within-chart=168  kappa=[1.0, -1.0]
+
+THE FOUR d* FACES as mu4 = -d  (tilt of the standard kite):
+   d*  (Boundary) = 0.24631                       pairs=168   degree=[4]    within-chart=168  kappa=[2.0149, -2.0149]
+   d*_taut (Flow) = W(1)/ln10                     pairs=168   degree=[4]    within-chart=168  kappa=[2.0149, -2.0149]
+   d*_ln(10) (Translator) = W(1)                  pairs=168   degree=[4]    within-chart=168  kappa=[1.3279, -1.3279]
+   d*_RG (Stability): dimension 8 as -8           pairs=168   degree=[4]    within-chart=168  kappa=[0.3536, -0.3536]
+   d*_RG target value 0.24631 (same as d*)        pairs=168   degree=[4]    within-chart=168  kappa=[2.0149, -2.0149]
+   ln(10)  (the thing being built)                pairs=168   degree=[4]    within-chart=168  kappa=[0.659, -0.659]
+
+THE 4 x 3 TABLE: mu4 = -(d*_face x W_value) is NOT used (no defined interaction); see record §6 for what is and is not established.

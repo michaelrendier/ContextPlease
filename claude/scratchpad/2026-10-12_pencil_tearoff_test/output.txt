@@ -1,0 +1,35 @@
+A. Joukowsky as written, one vertex z = 0.7+0.4j  (|z|^2 = 0.650)
+          w     c=H/q(w)         |z'-z| note
+       0.01        20000        24806.9 
+        0.1          200        248.069 
+          1            2        2.48069 
+          2          0.5       0.620174 
+          3      0.22222       0.275633 
+         10         0.02      0.0248069 
+        100       0.0002    0.000248069 
+       1000        2e-06    2.48069e-06 
+      10000        2e-08    2.48069e-08 
+
+B. single zero divisor = diagonal of Assessor (2, 3) in strut 1
+   start (d+ diagonal): is_ZD=True outside=0
+     w=0.01    is_ZD=True  outside_share=0  norm=2e+04
+     w=0.3     is_ZD=True  outside_share=0  norm=23.22
+     w=1       is_ZD=True  outside_share=0  norm=3
+     w=3       is_ZD=True  outside_share=0  norm=1.222
+     w=30      is_ZD=True  outside_share=0  norm=1.002
+     w=1000    is_ZD=True  outside_share=0  norm=1
+   start (d- diagonal): is_ZD=True outside=0
+     w=0.01    is_ZD=True  outside_share=0  norm=2e+04
+     w=0.3     is_ZD=True  outside_share=0  norm=21.22
+     w=1       is_ZD=True  outside_share=0  norm=1
+     w=3       is_ZD=True  outside_share=0  norm=0.7778
+     w=30      is_ZD=True  outside_share=0  norm=0.9978
+     w=1000    is_ZD=True  outside_share=0  norm=1
+   control: a MIXED vector in the same plane (both diagonals occupied)
+   start: is_ZD=False outside=0
+
+C. six-vertex kite vector in strut 1: sum of one diagonal per Assessor,
+   all 4^6 = 4096 diagonal/sign choices; which are zero divisors at w=baseline?
+   baseline zero-divisor kite vectors found: 0 of 4096
+   e0/e8 are never populated by any assessor-plane map (indices 0 and 8 belong to no Assessor),
+   so outside_share = 0 for every candidate and for every deformation of it, by construction.

@@ -1,0 +1,150 @@
+{
+ "DM-00": {
+  "assessors": 42,
+  "diagonals": 84,
+  "ordered_zd_pairs": 336,
+  "kills_per_diagonal": [
+   4
+  ],
+  "diagonals_with_a_partner": 84
+ },
+ "DM-01": {
+  "characters": 16,
+  "max_homomorphism_error": 0.0
+ },
+ "DM-02": {
+  "sign_operators": 65536,
+  "automorphisms": 16
+ },
+ "DM-03": {
+  "GL42": 20160,
+  "rank_of_cocycle_system": 11,
+  "characters": 16,
+  "A_admitting_a_sign_lift": 168,
+  "monomial_automorphism_group_order": 2688,
+  "frame_preserving_A": 168,
+  "frame_preserving_order": 2688,
+  "frame_preserving_fixing_e8": 168
+ },
+ "DM-04": {
+  "dim_derivation_algebra": 14,
+  "orbit_tangent_dims_of_84_diagonals": [
+   "11"
+  ],
+  "stabiliser_dims": [
+   "3"
+  ],
+  "derivations_preserving_every_diagonal_line": 0
+ },
+ "DM-05": {
+  "pair_tangent_nullity": [
+   "16"
+  ],
+  "derivation_orbit_rank": [
+   "14"
+  ]
+ },
+ "DM-06": {
+  "right_annihilator_dim": [
+   4
+  ],
+  "distinct_nonzero_singular_value_sets": [
+   [
+    1.4142,
+    1.4142,
+    1.4142,
+    1.4142,
+    1.4142,
+    1.4142,
+    1.4142,
+    1.4142,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+   ]
+  ],
+  "walsh_probe_min_mean_max": [
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ],
+   [
+    1.4142,
+    1.4142,
+    1.4142
+   ]
+  ]
+ }
+}

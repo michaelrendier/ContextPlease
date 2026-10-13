@@ -1,0 +1,8 @@
+derivations found: 14 ; max |D + D^T| (skew-symmetry) = 4.996003610813204e-16
+FIXED subspace of all 14 derivations: dim 2 ; spanned by indices [0, 8]
+Casimir (-sum D^2) eigenvalues with multiplicities: {np.float64(-0.0): 2, np.float64(1.0): 14}
+max |off-diagonal block| (lower<->upper) of the derivations: 1.9e-16, 3.6e-16  -> halves preserved: True
+derivation matrices touching e0 or e8 at all: 2.2e-16
+commutant of the 14 derivations (matrices commuting with all): dim 8
+intertwiners from the lower 7 to the upper 7: dim 1
+the 14 derivations restricted to the lower 7 span a space of dimension 14 (so0(7) would be 21; g2 is 14)

@@ -1,0 +1,66 @@
+=== SCALAR CONSTRUCT (pencil hyperstring proxy) vs the maths ===
+
+CS-01  are the stations Assessor planes?  (De Marrais Assessor planes of strut s have index XOR s+8)
+   stations of pencil(r) that are Assessor planes:  r=1..8: 0 of 7 ; r=9..15 (= strut s+8): 6 of 7 (+ the plane {s,e8})
+   => the paper's pencil(strut r<=7) never sits in the Assessor planes; pencil(s+8) does, and its H depends on 4-5 phase combinations for s=2..7 (rank 1 only for s=1)
+
+CS-02  is the product Pi(phi) ever a zero divisor?  (chart_of exact test; 12 phase vectors + the Noether path per pencil)
+   pencil( 1): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+   pencil( 4): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+   pencil( 9): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+   pencil(10): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+   pencil(12): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+   pencil(15): zero divisor at 0 of 13 points ; smallest ||Pi d||/(|Pi||d|) against the 84 diagonals = 1.0000
+
+CS-03  the construct's deformation at an Assessor-plane station:  rotate d+ -> d-  (phi: pi/4 -> pi/4+delta)
+   first-order tear rate of a diagonal x(phi) against its best partner (DM-11):  |d||x y|/d phi| at pi/4
+   delta=0.0001 : defect 0.000200  -> rate 2.0000 per radian   (exactly 2: the station flow is TRANSVERSAL to the zero-divisor set)
+   delta=0.001 : defect 0.002000  -> rate 2.0000 per radian   (exactly 2: the station flow is TRANSVERSAL to the zero-divisor set)
+
+CS-04  functions of the pair z = d+ + i d-  applied to a diagonal x:  does the image stay a zero divisor (annihilate one of the 84 diagonals)?
+   f                                            x = d+ diagonal (z real)     x = d- diagonal (z imaginary)
+   identity                                     14/14 stay zero divisors     14/14 stay zero divisors    
+   scale by 2.5                                 14/14 stay zero divisors     14/14 stay zero divisors    
+   Joukowsky z + c/z, c=Omega_ZS                14/14 stay zero divisors     14/14 stay zero divisors    
+   Joukowsky z + c/z, c=0.3                     14/14 stay zero divisors     14/14 stay zero divisors    
+   Moebius (z-z0)/(z+z0), z0=1 (Smith fold)     14/14 stay zero divisors     14/14 stay zero divisors    
+   exp(z)                                       14/14 stay zero divisors     0/14 stay zero divisors     
+   z^2                                          14/14 stay zero divisors     14/14 stay zero divisors    
+   tanh(z/2)                                    14/14 stay zero divisors     14/14 stay zero divisors    
+   rotate z by 0.3 rad (in-plane)               0/14 stay zero divisors      0/14 stay zero divisors     
+   rotate z by pi/2 (swap d+ -> d-)             14/14 stay zero divisors     14/14 stay zero divisors    
+   complex conjugate (d- -> -d-)                14/14 stay zero divisors     14/14 stay zero divisors    
+   1/z (inversion)                              14/14 stay zero divisors     14/14 stay zero divisors    
+
+=== SCALED CONSTRUCT (live address) vs the maths ===
+
+SC-01  ptol.c's Gamma = a Walsh coefficient of the energy distribution?   chi_4(k) = (-1)^(bit2 of k)  == the J_red/J_blue partition
+   neutron generation           Gamma(ptol)=-0.8763784555   W_4=sum chi_4 v^2/|v|^2=-0.8763784555   |diff|=2.1e-11   other W_u: [-0.032, 0.032, 0.001, -0.011, -0.093, 0.065]
+   pressurized water reactor    Gamma(ptol)=-0.8613638337   W_4=sum chi_4 v^2/|v|^2=-0.8613638336   |diff|=5.5e-11   other W_u: [-0.015, -0.161, 0.043, 0.053, 0.238, 0.002]
+   the cat sat on the mat       Gamma(ptol)=-0.8828607305   W_4=sum chi_4 v^2/|v|^2=-0.8828607304   |diff|=5.8e-11   other W_u: [-0.016, -0.089, 0.0, 0.034, 0.124, 0.057]
+   neutron                      Gamma(ptol)=-0.0886422526   W_4=sum chi_4 v^2/|v|^2=-0.0886422526   |diff|=5.0e-11   other W_u: [-0.087, -0.157, -0.046, -0.039, -0.007, 0.027]
+
+SC-02  covariance of the lens readings under the maths' symmetry group  (apply the signed monomial automorphism T to the address)
+   frame-preserving index maps found (fixing e8): 168  (expected 168 = |GL(3,2)|; signs lift in 16 ways each)
+   neutron generation           over 168 automorphic maps: local_curvature invariant 168, outside_share 168, fixed_point_weight 168, chart_energy permutes by s->A(s): 168
+   pressurized water reactor    over 168 automorphic maps: local_curvature invariant 168, outside_share 168, fixed_point_weight 168, chart_energy permutes by s->A(s): 168
+   the cat sat on the mat       over 168 automorphic maps: local_curvature invariant 168, outside_share 168, fixed_point_weight 168, chart_energy permutes by s->A(s): 168
+   neutron                      over 168 automorphic maps: local_curvature invariant 168, outside_share 168, fixed_point_weight 168, chart_energy permutes by s->A(s): 168
+   control: 300 RANDOM index permutations of the 16 slots (not automorphisms):
+   neutron generation           curvature AND outside_share both unchanged in 0 / 300
+   pressurized water reactor    curvature AND outside_share both unchanged in 1 / 300
+
+SC-03  the kernel's fiber (scaled_mind_eye_boxkite_kernel_monad.throw_fiber):  psi = sqrt(1-d^2) e0 + d/sqrt2 (e_a + e_b), (a,b)=first Assessor of the strut
+   as written (indices a and b directly)  vs  the Assessor plane (a, b+8)
+   strut 1 depth 0.6  as written e_a+e_b     dominant chart=1 (intended 1)  nearest assessor=(2, 1)  is_zero_divisor=False
+   strut 1 depth 0.6  Assessor e_a+e_(b+8)   dominant chart=1 (intended 1)  nearest assessor=(2, 3)  is_zero_divisor=False
+   strut 1 depth 1.0  as written e_a+e_b     dominant chart=1 (intended 1)  nearest assessor=(2, 1)  is_zero_divisor=False
+   strut 1 depth 1.0  Assessor e_a+e_(b+8)   dominant chart=1 (intended 1)  nearest assessor=(2, 3)  is_zero_divisor=True
+   strut 2 depth 0.6  as written e_a+e_b     dominant chart=2 (intended 2)  nearest assessor=(1, 2)  is_zero_divisor=False
+   strut 2 depth 0.6  Assessor e_a+e_(b+8)   dominant chart=2 (intended 2)  nearest assessor=(1, 3)  is_zero_divisor=False
+   strut 2 depth 1.0  as written e_a+e_b     dominant chart=2 (intended 2)  nearest assessor=(1, 2)  is_zero_divisor=False
+   strut 2 depth 1.0  Assessor e_a+e_(b+8)   dominant chart=2 (intended 2)  nearest assessor=(1, 3)  is_zero_divisor=True
+   strut 5 depth 0.6  as written e_a+e_b     dominant chart=2 (intended 5)  nearest assessor=(1, 2)  is_zero_divisor=False
+   strut 5 depth 0.6  Assessor e_a+e_(b+8)   dominant chart=2 (intended 5)  nearest assessor=(1, 4)  is_zero_divisor=False
+   strut 5 depth 1.0  as written e_a+e_b     dominant chart=2 (intended 5)  nearest assessor=(1, 2)  is_zero_divisor=False
+   strut 5 depth 1.0  Assessor e_a+e_(b+8)   dominant chart=2 (intended 5)  nearest assessor=(1, 4)  is_zero_divisor=True

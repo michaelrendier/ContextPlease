@@ -1,0 +1,20 @@
+CS-04b  same test, magnitudes lam in {0.3, 1.0, 2.5}: fraction of (plane, diagonal) cases still zero divisors, d+ line / d- line
+   f                              lam=0.3 (d+ | d-)        lam=1.0 (d+ | d-)        lam=2.5 (d+ | d-)       
+   Joukowsky z+c/z, c=Omega_ZS    14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   Moebius (z-1)/(z+1)            14/14 | 0/14             0/0 | 14/14              14/14 | 0/14            
+   exp(z)                         14/14 | 0/14             14/14 | 0/14             14/14 | 0/14            
+   z^2                            14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   tanh(z/2)                      14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   rotate z by pi/2               14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   conj                           14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   1/z                            14/14 | 14/14            14/14 | 14/14            14/14 | 14/14           
+   z * e^{0.3 i}                  0/14 | 0/14              0/14 | 0/14              0/14 | 0/14             
+   z + 0.3 (shift, real)          14/14 | 0/14             14/14 | 0/14             14/14 | 0/14            
+   z + 0.3 i (shift, imag)        0/14 | 14/14             0/14 | 14/14             0/14 | 14/14            
+
+SC-04  which live reading of the address carries topic?  16 prompts, 4 subjects (chance 1-NN = 0.25)
+   feature of the projected address   inter/intra dist   leave-one-out 1-NN
+   7 chart energies (box-kite lens)   0.946              0.188
+   15 Walsh coefficients of v^2 (chi_1..15) 0.941              0.062
+   16 raw energies v_k^2              0.941              0.062
+   16 raw |v_k|                       0.949              0.125

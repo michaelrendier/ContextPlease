@@ -1,0 +1,44 @@
+1. BASELINE  H(t) along the Noether path, every strut  (tension swing = max-min)
+   strut  swing(H)   H(0)     H(1)     |Im Pi|(t=0.5)
+   1      0.000000  -1.00000  -1.00000  0.00000
+   2      1.222521  -1.00000  +0.22252  0.78183
+   3      0.000000  -1.00000  -1.00000  0.00000
+   4      2.000000  -1.00000  -1.00000  0.00000
+   5      0.376510  -1.00000  -0.62349  0.43388
+   6      0.000000  -1.00000  -1.00000  0.00000
+   7      1.222521  -1.00000  +0.22252  0.78183
+
+2. RESPONSE OF EACH STATION  |dH/dphi_k| at t=0.5 on the Noether path (central difference)
+   strut | st1    st2    st3    st4    st5    st6    st7  
+   1     | 0.000  0.000  0.000  0.000  0.000  0.000  0.000
+   2     | 0.782  0.782  0.782  0.782  0.782  0.782  0.782
+   3     | 0.000  0.000  0.000  0.000  0.000  0.000  0.000
+   4     | 0.000  0.000  0.000  0.000  0.000  0.000  0.000
+   5     | 0.434  0.434  0.434  0.434  0.434  0.434  0.434
+   6     | 0.000  0.000  0.000  0.000  0.000  0.000  0.000
+   7     | 0.782  0.782  0.782  0.782  0.782  0.782  0.782
+
+3. NON-UNIFORM WIND  rates r_k = (k+1)/7 * (1 + d*u_k), u_k random in [-1,1], 60 draws/strut
+   mean tension swing of H over t in [0,1]; d=0 is the Noether path
+   strut | d=0      d=0.05   d=0.15   d=0.4  
+   1     | 0.0000   0.0032   0.0287   0.1874 
+   2     | 1.2225   1.2346   1.2537   1.2652 
+   3     | 0.0000   0.0032   0.0287   0.1874 
+   4     | 2.0000   1.9989   1.9907   1.9810 
+   5     | 0.3765   0.3892   0.4242   0.5599 
+   6     | 0.0000   0.0032   0.0287   0.1874 
+   7     | 1.2225   1.2346   1.2537   1.2652 
+
+4. SCALAR WIND, TIME-VARYING  (gusts): t(tau) = tau + 0.2*sin(2*pi*tau)/(2*pi)  vs steady t=tau
+   strut 1: max|H_gust(tau) - H_steady(tau)| = 0.0000   range gust=[-1.0000,-1.0000] steady=[-1.0000,-1.0000]
+   strut 2: max|H_gust(tau) - H_steady(tau)| = 0.0536   range gust=[-1.0000,0.2225] steady=[-1.0000,0.2225]
+
+5. IS H A FUNCTION OF ONE SIGNED PHASE?  fit H = -cos(sum_k eps_k*phi_k), best of 128 sign patterns,
+   200 random phi vectors per strut; also the signed rate sum on the Noether path
+   strut 1: max|H + cos(sum eps*phi)| = 4.44e-16   eps=++--++-   signed Noether rate sum = +0.00000 rad
+   strut 2: max|H + cos(sum eps*phi)| = 3.89e-16   eps=+--++--   signed Noether rate sum = -1.79520 rad
+   strut 3: max|H + cos(sum eps*phi)| = 4.44e-16   eps=++--++-   signed Noether rate sum = +0.00000 rad
+   strut 4: max|H + cos(sum eps*phi)| = 7.63e-16   eps=+++++++   signed Noether rate sum = +6.28319 rad
+   strut 5: max|H + cos(sum eps*phi)| = 3.33e-16   eps=+-+-+-+   signed Noether rate sum = +0.89760 rad
+   strut 6: max|H + cos(sum eps*phi)| = 4.44e-16   eps=++--++-   signed Noether rate sum = +0.00000 rad
+   strut 7: max|H + cos(sum eps*phi)| = 3.89e-16   eps=+--++--   signed Noether rate sum = -1.79520 rad

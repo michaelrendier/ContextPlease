@@ -1,0 +1,29 @@
+DM-00 baseline: {'assessors': 42, 'diagonals': 84, 'ordered_zd_pairs': 336, 'kills_per_diagonal': [4], 'diagonals_with_a_partner': 84}
+DM-01 all 16 Hadamard-row sign flips are automorphisms: max error 0.00e+00
+DM-02 of 65536 diagonal sign operators, automorphisms: 16 (expected 16 = the characters)
+DM-03 |GL(4,2)|=20160 ; A that lift to an automorphism: 168 ; each lifts in 16 sign ways -> monomial Aut order 2688
+      of those, preserving the set of 42 Assessor planes: 168  (x16 characters = 2688)
+      frame-preserving AND fixing e8: 168
+DM-04 dimension of Der(sedenions) = 14  (g2 would be 14)
+      tangent dim of the Der-orbit through each diagonal: [np.int64(11)] ; stabiliser dims [np.int64(3)]
+      derivations that keep ALL 84 diagonal lines invariant: 0  (0 => every continuous exact deformation moves the kite off its lattice)
+DM-05 tangent space (all directions preserving xy=0 to 1st order) of the pair, per ordered ZD pair: dims [np.int64(16)] ; of which derivation (G2) directions: [np.int64(14)]
+      => on the unit spheres: variety dim >= [np.int64(14)] ; scaling x,y accounts for 2
+DM-06 dim of {x : x y = 0} for each of the 84 diagonals y: [4] ; nonzero singular values of x->xy: [(np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(1.4142), np.float64(2.0), np.float64(2.0), np.float64(2.0), np.float64(2.0))]
+      Walsh-row perturbations of x: response ||R_y chi_u||/||chi_u||  (min / mean / max over the 84 y):
+        u= 0  1.4142  1.4142  1.4142
+        u= 1  1.4142  1.4142  1.4142
+        u= 2  1.4142  1.4142  1.4142
+        u= 3  1.4142  1.4142  1.4142
+        u= 4  1.4142  1.4142  1.4142
+        u= 5  1.4142  1.4142  1.4142
+        u= 6  1.4142  1.4142  1.4142
+        u= 7  1.4142  1.4142  1.4142
+        u= 8  1.4142  1.4142  1.4142
+        u= 9  1.4142  1.4142  1.4142
+        u=10  1.4142  1.4142  1.4142
+        u=11  1.4142  1.4142  1.4142
+        u=12  1.4142  1.4142  1.4142
+        u=13  1.4142  1.4142  1.4142
+        u=14  1.4142  1.4142  1.4142
+        u=15  1.4142  1.4142  1.4142

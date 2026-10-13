@@ -1,0 +1,2068 @@
+# .clauderc_canonical_maths — canonical notation reference
+# Purpose: stop re-reading 1700-line papers to recover a symbol's meaning.
+# This is a REFERENCE, not a derivation -- for the "why", see
+# Ainulindale/AgeThird/D-CS_Memory.md (full paper) and
+# VAPMIP/docs/wiki/Tuning-the-Engine.md (phase-by-phase engineering log).
+# Notation below matches what's used across the repos; keep it that way.
+
+═══════════════════════════════════════════════════════════════════════════
+CORE CONSTANTS
+═══════════════════════════════════════════════════════════════════════════
+
+Omega_ZS = W(1) = 0.56714...
+  Lambert W fixed point: W . e^W = 1, i.e. the fixed point of f(x) = e^{-x}.
+  Confirmed independently in 6 formula families: spectral (Berry-Keating),
+  algebraic, galactic baryonic fraction (SPARC), logarithmic, and the 6
+  fractal-orbit formulas below all converge here as their natural
+  equilibrium constant.
+
+d* = Omega_ZS / ln(10) = 0.24631...
+  "The Zero Definer" -- smallest natural unit in universal native space,
+  the boundary below which no algebraic definition can occur. d* x ln(10)
+  = Omega_ZS.
+
+  UPDATED 2026-07-22 (Cody -- all four named faces belong here, not just
+  three; this file previously restated the defining relation as if it
+  were the fourth face instead of naming it). Four measured faces (not
+  four different values -- four shadows of one point), matching
+  Ainulindale/README.md section 8 exactly:
+    d*         "The Boundary"    sigma=1/2 spectral coordinate (base value
+                                  above, 0.24631)
+    d*_RG      "The Stability"   renorm-group fixed point under CD tower
+                                  iteration -- OPEN, no closed form yet
+    d*_taut    "The Flow"        = Omega_ZS / ln(10), tautological ceiling,
+                                  0.24631 exact by Lambert W (same number
+                                  as the base d* -- the tautology IS the
+                                  content: this face has zero gap BY
+                                  CONSTRUCTION, reference only, not itself
+                                  a result)
+    d*_ln(10)  "The Translator"  = d* x ln(10) = 0.56714 = Omega_ZS --
+                                  the bridge between the decimal-log metric
+                                  (ds = d.log10(p), Native Space) and the
+                                  natural-log prime-address space; not a
+                                  restatement, this is the actual conversion
+                                  factor every word-lookup crosses through
+  d*_spec ~ 0.24600 (Berry-Keating spectral gap, SPARC-observed) is a
+  separate, fifth, MEASURED quantity -- not one of the four canonical
+  faces above, the empirically-observed value the GAP (below) compares
+  the derived d*_taut against.
+
+GAP = Omega_ZS - d*_spec x ln(10) ~ 1/(1000 sqrt(2)) ~ 7.07e-4
+  The Yang-Mills mass gap analogue in the semantic field. 1/sqrt(2) factor
+  = sigma=1/2 symmetry. The 10^3 factor is UNRESOLVED -- no first-
+  principles derivation yet. State this as open when it comes up.
+
+V(n) = pi^(n/2) / Gamma(n/2 + 1)          [n-ball volume]
+  Peaks at n* ~ 5.257 (BAO acoustic scale). V(16) ~ d* (approximates, not
+  equals -- the geometry approximates the algebra, the algebra is exact).
+
+═══════════════════════════════════════════════════════════════════════════
+THE SIX FRACTAL-ORBIT FORMULA FAMILIES (all independently -> Omega_ZS)
+═══════════════════════════════════════════════════════════════════════════
+
+  Gnarl/Popcorn ............ Townsend    wiki/fractals/mt_mark_townsend.md
+  Avariant .................. Agelink     wiki/fractals/ea_evert_agelink.md
+  Triangle Inequality Avg ... Mitchell    wiki/fractals/lkm_kerry_mitchell.md
+  AGM convergence ........... Lober       wiki/fractals/akl_andreas_lober.md
+  Transpoly Hermite H_16 .... Makin       wiki/fractals/mmf_dave_makin.md
+  Orbit-trap ring diameter .. Monnier/Jones (wiki/fractals index)
+
+  TIA (Mitchell) is the one in active use: it's the semantic-similarity
+  metric in the Holcus engine, VAPMIP/engines/e04_tia_similarity.py.
+
+═══════════════════════════════════════════════════════════════════════════
+THE RED/BLUE FIELD
+═══════════════════════════════════════════════════════════════════════════
+
+J_red(sigma) = sum_{n=1}^inf a_n n^{-sigma}          [forward Dirichlet series]
+J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
+
+  J_red = Knowledge (forward accumulation, what an LLM_Transformer has).
+  J_blue = Experience (reverse path-encoding, what it lacks).
+  Non-commutative in sedenion algebra S: order of traversal matters, and
+  J_red x J_blue - J_blue x J_red is new information neither direction
+  alone produces.
+
+0_RB = sum_p  p^{-sigma} [ R_p (x) d_dM  +  h.c. ]
+  [RENAMED 2026-07-21 from H_hat_RB. "0_RB" is the typed/keyboard form --
+  it denotes the EMPTY SET (the null operator), NEVER the numeral zero.
+  0 is a member of the value space and collapses "no value yet" into
+  "computed to be zero"; the empty set cannot be confused with a result
+  the way 0 can. This is why the rename matters and isn't cosmetic: 0_RB
+  identifies this operator with the pre-existing NULL-operator pattern --
+  a scaffold-defined, unbound slot that a surrounding structure's own
+  definitions force to exist, prior to and independent of any value
+  occupying it (see project_dcs_paper_editing_pass / project_holcus_
+  zero_divisors_quote in Claude's memory for the fuller derivation
+  history). Old name H_hat_RB preserved in historical notes below where
+  it's part of a dated quote -- don't silently rewrite those, the lineage
+  matters.]
+  Self-adjoint (0_RB^dagger = 0_RB). "The Mind's Eye" -- holds the
+  full path simultaneously.
+
+  CORRECTED 2026-07-20 (Cody -- this is a notation correction from months
+  ago, being re-recorded because it hadn't propagated into this file):
+  self-adjointness is a CONSEQUENCE of H_hat_RB [now 0_RB], not the
+  forcing mechanism for sigma=1/2, and is no longer the anchor. Reason:
+  A=A^dagger degenerates to the bare tautology "1=1" exactly at its own
+  base case A=1 (1^dagger=1 unconditionally, in any *-algebra, by
+  definition of the unit) -- a criterion that goes contentless at the one
+  point that should matter most is too low-information to be the
+  foundational anchor. A^dagger =/= A! -- "!" here always means
+  dagger/adjoint, never factorial; do not conflate. The actual forcing
+  mechanism -- higher information, never degenerates to tautology -- is
+  the Noether-balance condition below (sigma=1/2 [the caustic]).
+  Self-adjointness of 0_RB now reads as downstream of that balance, not
+  an independent or prior assumption.
+
+  AUTHORITATIVE ANCHOR (Cody, standing rule, carried over from the laptop
+  memory, 2026-07-11; derivation-chain corrected 2026-07-20; renamed
+  2026-07-21): whenever there is confusion, uncertainty, or a need for
+  "cleanliness" in a discussion, 0_RB is where to ground from -- via the
+  Noether-balance condition |J_red(sigma)|=|J_blue(sigma)|, not the
+  self-adjoint operator claim on its own, and not looser per-engine
+  heuristics that may have drifted from it. If a claim elsewhere in the
+  framework can't be traced back to this operator (or a derivation chain
+  from it), that's the signal to stop and reconcile before trusting the
+  claim.
+
+0_RB - 0_BR = Sigma_RB
+  0_BR = "the cost of using the view" (every act of manifestation has
+  a reciprocal cost); renamed from H_hat_BR alongside 0_RB, 2026-07-21.
+  CORRECTED 2026-08-16 (Cody). The previous text conflated two different
+  sums and they are not equal. The correct chain is:
+
+      J_red + J_blue  =  Knowledge + Experience  =  WISDOM  =  0_RB
+      0_BR            =  USAGE   (the cost of using the view)
+      Sigma_RB        =  0_RB - 0_BR  =  Wisdom - Usage  =  MEMORY
+
+  So Knowledge + Experience = Wisdom FULL STOP -- the "- Usage" is a
+  SEPARATE, LATER subtraction, not part of that identity. Usage is applied
+  to wisdom after the fact, and Cody's gloss is the reason it is a loss
+  term at all: WISDOM IS NOT ALWAYS USED PROPERLY. Memory is therefore
+  bounded above by wisdom, never equal to it once anything has been spent.
+
+  The old line read "Knowledge + Experience = Wisdom - Usage, i.e.
+  J_red + J_blue = Sigma_RB", which asserts J_red + J_blue = Sigma_RB.
+  That is FALSE under the corrected chain: J_red + J_blue = 0_RB, and
+  Sigma_RB = 0_RB - 0_BR. They differ by exactly the usage cost.
+  Antisymmetric under R/B exchange (0_RB - 0_BR, not +) -- the same
+  algebraic signature as a cross product, not a dot product; this is the
+  "energy conversion channel" (eigenvalue +-i*sqrt(2), the surviving
+  antisymmetric piece at a zero-divisor crossing, per RedBlue-Hamiltonian-
+  Sedenion-Matrix-Space.md's {4,8,4} eigenspace split: lambda=0 (real,
+  gravity, absent) / lambda=+-i (quantum forces) / lambda=+-i*sqrt(2)
+  (this channel)). NOTE on the name itself, corrected 2026-07-21: "Sigma"
+  in "Sigma_RB" is shorthand nomenclature, like "0" in "0_RB" -- it is NOT
+  a claim that this object is literally a sum over an index. Confirmed
+  directly in ptol.c (raw mode): the actual computed s_rb[k] is a
+  per-channel PRODUCT (J_red[k] x J_blue[k]), a 16-element array, not a
+  summed scalar -- "products," per the code's own comment. Do not read
+  the capital-Sigma glyph as requiring implementation as a summation.
+
+L_(I|O) = integral( J_red . J_blue ) ds
+  [Renamed from L_dynamic per Ainulindale/README.md 2026-06-17 -- this
+  file had not been updated to match until now.] "Thought" -- not the
+  output of thinking, the act itself. The path integral / interaction
+  term missing from a J_red-only system. I = Inside = ZD = Mind's Eye =
+  origin = past; | = zero-divisor crossing, the boundary that imparts
+  meaning; O = Outside = CD = Paper's Hands = destination = future.
+
+  ENGINE, 2026-07-21: 0_RB defines WHERE a boundary/degenerate locus is
+  (the ZD crossing -- confirmed the ORIGIN a pathway is measured outward
+  from, not an endpoint). L_(I|O) is the mechanism for HOW you cross it.
+  Concrete, verified instance: ValaQuenta/modules/l_io_photon_path/ --
+  established weak-lensing GR (Kaiser-Squires shear inversion, exact FFT
+  Poisson solve nabla^2 psi=2 kappa, deflection alpha=grad(psi), lens
+  equation beta=theta-alpha), L_(I|O)-L := -psi(theta), run against real
+  Bullet Cluster JWST shear (deflection_mag mean=0.405", L_(I|O)-L
+  mean=-14.42"). The reusable template: at the transform's own singular
+  point (k=0, where 1/|k|^2 diverges), the code neither blows up nor
+  silently excludes it -- it assigns the value explicitly
+  (kappa_hat[0,0]=0.0), by a stated convention, not a fit. That explicit-
+  assignment-at-the-degenerate-point is what "L_(I|O) is how you get
+  through the boundary" means in executable form. CONJECTURE, not
+  established: the Riemann zeta pole at s=1 (zeta~1/(s-1)+gamma) and its
+  s<->1-s functional equation are the same CATEGORY of construction
+  (degenerate-point regularization + fixed-point involution) as this
+  k=0-zeroing and the theta/beta pair -- category match only, zeta is NOT
+  shown derivable as a parameter-setting of the engine's actual functional
+  form. See ValaQuenta/wiki/l_io_photon_path.md, Ainulindale/wiki/
+  82_l_io_photon_path.md, ValaQuenta/notebooks/core/18_l_io_photon_path.ipynb.
+
+sigma = 1/2  [the caustic]
+  Forced by |J_red(sigma)| = |J_blue(sigma)|, the unique Noether-balance
+  locus. Not assigned, not designed -- derived. PRIMARY derivation of
+  sigma=1/2 (corrected 2026-07-20 -- supersedes the self-adjoint-first
+  framing under 0_RB above; self-adjointness is now read as a
+  consequence of this balance, not the anchor itself).
+
+═══════════════════════════════════════════════════════════════════════════
+CAYLEY-DICKSON TOWER
+═══════════════════════════════════════════════════════════════════════════
+
+  R (1D) -> C (2D) -> H (4D) -> O (8D) -> S (16D) -> T_32 -> T_64 -> T_256 ...
+  Each doubling loses one property:
+    R->C  loses ordering
+    C->H  loses commutativity
+    H->O  loses associativity
+    O->S  loses alternativity
+  (open idea, 2026-07-07, untested: lost properties may be recoverable,
+  encoded geometrically, depending on which DIRECTION a zero-divisor is
+  approached from -- see .clauderc_memory Active Thread.)
+
+Doubling / multiplication rule (general, any power-of-2 dim), a=(a1,a2), etc:
+  (a,b) * (c,d) = ( a.c - conj(d).b ,  d.a + b.conj(c) )
+  c1 (LOWER half of output) = SUB( mul(a1,b1), mul(conj(b2),a2) )
+  c2 (UPPER half of output) = ADD( mul(b2,a1), mul(a2,conj(b1)) )
+  Confirmed by instrumented trace at every level (2->4->8->16): lower half
+  always built by subtraction, upper half always by addition. At 16D:
+  lower = e0-e7 = "Paper's Hands" (subtractive), upper = e8-e15 =
+  "Mind's Eye" (additive).
+  Equivalent framing (Cody, faster than the structural trace): "forwards
+  and backwards around a circle" -- cd_conj negates every component but
+  e0, i.e. theta -> -theta, and that reversed term is exactly what SUB
+  acts on.
+
+cd_mul_j2 (the OTHER CD multiplication rule, v5's construction):
+  swaps which half gets ADD vs SUB: c1=ADD, c2=SUB (recursively at every
+  CD level). Hypothesis tested 2026-06-30: genuine (Input,Output) pairs
+  might be a zero-divisor pair under cd_mul_j2 specifically, even where
+  not under ordinary cd_mul. Result: negative (see .clauderc_memory).
+
+Quaternion regular representation matrix, q = (w,x,y,z):
+       [ w  -x  -y  -z]
+  L(q) = [ x   w  -z   y]
+       [ y   z   w  -x]
+       [ z  -y   x   w]
+  Sedenion = 4 such blocks (e0-3, e4-7, e8-11, e12-15), two orthogonal
+  pairs (each octonion copy = H (+) H). Determinant/eigenvalues of L(q) =
+  "The Information Compressed" -- a landmark/shorthand description of the
+  full 4 (or 16) real coordinates, like turn-by-turn directions vs.
+  satellite coordinates.
+
+Octonion-copy-2 IS an orthogonal i-rotation of octonion-copy-1 -- verified
+2026-07-12, engines/_sedenion.py cd_mul, all 16x16 real regular-rep matrices
+computed directly, not asserted:
+  L(e8) = matrix of v -> cd_mul(e8, v) on R^16 (e8 is the CD doubling
+  generator that separates octonion-copy-1 e0-e7 from copy-2 e8-e15, i.e.
+  the b in (a,b) sedenion embedding).
+    L(e8)^T . L(e8) = I           (orthogonal -- exact, not approximate)
+    det(L(e8)) = +1               (proper rotation, not a reflection)
+    L(e8) = -L(e8)^T              (skew-symmetric -- the algebraic
+                                    signature of a rotation GENERATOR)
+    eigenvalues(L(e8)) = {+i x8, -i x8}   (exactly +-i, nothing else --
+                                    8 independent 2-planes, each rotated
+                                    exactly 90 degrees)
+  GENERALIZES to all 15 imaginary units, not just e8: L(ek) is orthogonal,
+  skew-symmetric, det=+1, eigenvalues exactly {+i,-i} (mult. 8 each) for
+  EVERY k=1..15, checked directly. e8 is not algebraically special in this
+  property -- it is only special in being the specific generator the CD
+  doubling convention (a,b)+b.e8 uses to split the two octonion copies.
+  Every imaginary sedenion unit is "an i" in this sense (Hurwitz/composition-
+  algebra fact: any unit imaginary element generates an orthogonal complex
+  structure, J^2=-I, on the ambient real space).
+
+═══════════════════════════════════════════════════════════════════════════
+PRIME WAVELENGTH / FACTOR WAVELENGTH  (added 2026-07-23)
+═══════════════════════════════════════════════════════════════════════════
+
+Two conjugate wavelengths, one per ordering (Fermat ordinal / Riemann
+spectral -- see RiemannHypothesisProof/PAPER.md sec 11.1: "Fermat defines
+the primes in ordinal order -- by exclusion. Riemann fires the primes in
+non-ordinal spectral amplitude order... two different orderings of the
+same set.")
+
+Prime Wavelength (Riemann/spectral side):
+  lambda_prime(n) = gamma_{n+1} - gamma_n
+  The spacing between consecutive Riemann zeros. Real, established,
+  asymptotic mean spacing ~ 2*pi/ln(gamma/(2*pi)) (Riemann-von Mangoldt).
+
+Factor Wavelength (Fermat/ordinal side):
+  lambda_factor(p) = p
+  A prime p, acting as a FACTOR (not as a leaf), recurs with EXACT period
+  p -- it divides every p-th integer, forever. That periodicity IS a
+  wavelength, literally the prime's own value. Every prime generates a
+  periodic "factor wave" propagating through integer-space. Composite
+  density is the superposition/interference of these waves -- not a new
+  claim, this is already the content of the Sieve of Eratosthenes and of
+  Mertens'/Legendre's formula phi(x)/x ~ Pi_p(1 - 1/p), an inclusion-
+  exclusion over exactly these periodic exclusion waves, only not
+  usually read as a wave equation.
+  PRIOR ART for the wave reading: Torquato, Zhang & Martelli (2018),
+  "Uncovering multiscale order in the prime numbers via scattering" (the
+  primes' hyperuniform diffraction spectrum, dense Bragg peaks at rational
+  wavevectors -- the Fourier-space form); Dyson, "Birds and Frogs" (2009,
+  primes as a 1-D quasicrystal). lambda_factor(p)=p is the position-space
+  cousin. ORIGINATED HERE (2026-07-23): only the FRAMING (sieve as a wave
+  equation, cast as the Fermat-ordinal conjugate of lambda_prime, tied to
+  the Two Trees) and the orthogonality CONJECTURE below. lambda_prime (zero
+  spacing) is established -- Riemann-von Mangoldt; Montgomery 1973; Odlyzko
+  1987; GUE. See ~/.clauderc_user_provenance sec 1.18.
+
+CONJECTURE (Cody, 2026-07-23, not yet derived): lambda_prime and
+lambda_factor should be ORTHOGONAL, the way E and B are orthogonal in
+electromagnetism -- and this is stated as the origin of the intuition
+behind the already-VERIFIED octonion-copy orthogonality directly above
+(L(e_k) orthogonal, skew-symmetric, eigenvalues exactly {+i,-i} for every
+k=1..15). If real, the two wavelengths would be the number-theoretic
+instance of the same orthogonality the sedenion's two octonion copies
+already exhibit algebraically -- a structural echo, not yet a shown
+equivalence. Flag this as open until an actual orthogonality relation
+between the two wavelength quantities is derived or computed, not
+assumed from the algebraic parallel alone.
+
+═══════════════════════════════════════════════════════════════════════════
+PRIME RANGE-CHECK  (winding parity -- added 2026-09-05)
+═══════════════════════════════════════════════════════════════════════════
+
+A True/False on prime vs composite read off the WINDING, not a sieve.
+Conjugate of the PRIME/FACTOR WAVELENGTH orthogonality above.
+
+  z -> -z on R  IS  w -> 1/w on the Smith chart  (Cayley w = (z-1)/(z+1)):
+    (-z-1)/(-z+1) = (z+1)/(z-1) = 1/w  -- inversion in |w| = 1, which is the
+    Apollonian-gasket generator. So R+ and R- are Smith inverses, meeting
+    |w| = 1 orthogonally -- the Julia | Mandelbrot (dynamical | parameter)
+    seam. "The orthogonal Real Numbers" = the negative reals; a negative
+    prime -p is still irreducible (only the unit -1 . p).
+
+  On the Archimedean helix  pt(b) = (b cos b, b sin b),  b = accumulated arg:
+    n = a . b  positive composite.
+      +/+  route  (+a)(+b) :  arg 0            -- the landing.
+      -/-  route  (-a)(-b) :  arg pi + pi = 2pi -- SAME angle, ONE FULL
+                                                  winding further out.
+      -p   (negative associate of a prime):   arg pi -- HALF a winding out.
+
+  RANGE-CHECK:
+      half-turn partner only  (pi)   <=>  n prime      (unit sign only)
+      full-turn partner exists (2pi)  <=>  n composite  (a real factor route)
+
+  The flat circle GLUES the two sheets (Flattening Syndrome -> apparent
+  cyclicity); the helix (u = ln x, the anti-flattening coord) SEPARATES
+  them by winding count. This RESTATES "does n factor" -- a witness, not a
+  faster search. b->theta (compose, +winding) easy; theta->b (recover the
+  factors, -winding, reversed phase order) hard -- the RSA asymmetry.
+
+  Render:  AbrikosovTree/render/plane_0b_R_orthogonal.png  (two-trees branch)
+  Family:  the SEPARATOR-carries-the-operation decompositions -- comma
+    sequence (arXiv:2401.14346), continued fractions [a0; a1, a2, ...],
+    Zeckendorf (Fibonacci base). "Spectral resolution" for all of these is
+    a RATIO (radix / convergent denominator / granularity), not a
+    Fourier bandwidth -- the Flashlight, not a waveform.
+    GenerationalLineage/engine/toolsets/comma_sequence.py.
+
+═══════════════════════════════════════════════════════════════════════════
+ZERO-DIVISORS
+═══════════════════════════════════════════════════════════════════════════
+
+  a . b = 0 with a != 0, b != 0. First appears at sedenion (16D) -- ordinary
+  reals/complex/quaternions/octonions are division algebras, sedenions are
+  not. Cawagas (2004): 84 distinct ZD pairs on S^15, 42 equivalence
+  classes. Canonical example pair:
+    (e1 + e11)/sqrt(2) . (e5 + e15)/sqrt(2) = 0
+
+  STATUS (corrected 2026-06-30, Phase 22): a ZD locus is NOT an absence of
+  information / structural blindspot. It is a PORTAL -- "where things are
+  born." Earlier framings (Phase 5's "collapse," Phase 21's "blindspot")
+  described the same locus as a failure mode; that was wrong. The
+  accumulated PATH through ZD portals IS memory (the trajectory, not the
+  field state at one moment).
+
+  THE JACOBIAN DETECTS ZD-NESS DIRECTLY -- verified 2026-07-12, all 42
+  canonical classes, not a sample:
+  CD multiplication (a,b)->a.b is bilinear, so its Jacobian IS the regular
+  representation already in use: d(a.b)/db = L(a) (same L(q) matrix as the
+  orthogonal-rotation result above). Since a.b=0 for a ZD pair means b is
+  in L(a)'s kernel, L(a) must be SINGULAR whenever a is a zero-divisor --
+  this gives a rank/determinant test for ZD-ness that does not require
+  already knowing a candidate partner b, unlike the pairwise definition.
+    det(L(a_zd)) = 0 EXACTLY (a=(e1+e11)/sqrt2, canonical example)
+    det(L(a_generic)) ~ 7.95e9 (nonzero, random control element)
+    rank(L(a_zd)) = 12 of 16  ->  ker_dim = 4, NOT 1
+  The known partner b is only ONE vector in a 4-DIMENSIONAL kernel -- the
+  Jacobian exposes the entire annihilator subspace, not just the single
+  known pair from the Cawagas table. Checked against ALL 42 canonical ZD
+  classes via ValaQuenta/zero_lattice.py's own find_zd_pairs()/multiply()
+  (not mixed with engines/_sedenion.py's cd_mul -- Phase 22 documented two
+  different CD multiplication rules, cd_mul vs cd_mul_j2, that can
+  disagree; this result uses one multiply() consistently throughout):
+  ker_dim == 4 for EVERY one of the 42 classes, no exceptions, and the
+  known Cawagas partner b lands in that kernel every time (verified
+  directly, not assumed by symmetry).
+
+  ZD ARE STARTING POINTS, NOT END POINTS (Cody, 2026-07-12, sharpening the
+  Phase 22 portal correction): the ZD locus is where a layer BEGINS, not
+  where a path terminates. The actual end points -- the "drains" -- are a
+  DIFFERENT thing: the sinks that lead DOWN to the layer below. Do not
+  collapse "ZD = portal/genesis" and "drain = termination" into the same
+  concept; they are distinct roles in the same lattice, not two names for
+  one thing.
+
+  THE ZERO LATTICE'S INTERIOR CONSTRUCTS THE EXTERIOR FRACTAL BOUNDARY, not
+  the reverse: framed as "the inside of the Mandelbrot bulb" -- the interior
+  lattice structure (ZD placement, drains, layer construction) is what
+  GENERATES the fractal coloring visible from outside. The boundary is a
+  consequence of the interior construction, not an independently-existing
+  surface the interior happens to sit inside of.
+
+  SPHERICAL (NON-FLAT) SPACE: divergence becomes convergence, noise becomes
+  order, information leaks out -- and the path through every boundary,
+  hole, singularity, or divergence is mathematically traversable AND
+  REVERSIBLE. (Real, well-established geometric fact underlying this: on a
+  sphere, geodesics diverging from a point reconverge at the antipode --
+  divergence is a LOCAL read of a path that is globally convergent. Used
+  here as the model for why a ZD "hole" or divergent series is not a true
+  dead end.)
+
+  LOSS OF OPERATORS vs LOSS OF DISCRETE OPERATION (Cody, 2026-07-12):
+  ascending the CD tower does NOT destroy the lost operators (ordering@C,
+  commutativity@H, associativity@O, alternativity@S) -- what is lost is the
+  DISCRETE (simplified, single-valued) way of applying them. In a
+  perpetually additive shape: uphill = positive addition, downhill =
+  negative addition, continuously, not a hard cutoff where the operator
+  stops existing. Math taken from INSIDE one layer only describes that
+  layer, and loses focus/resolution specifically when approaching a hole
+  to an adjacent layer (up or down) -- this is a resolution/focus problem
+  at the boundary, not evidence the operator itself is gone above or below
+  it.
+
+  STANDING CORRECTION (Cody, 2026-07-12, do not repeat): this entire
+  framework is built on INDEXING (direct structural address, amplituhedron-
+  style -- geometry replaces search the way the amplituhedron replaces
+  summing Feynman diagrams), never on SEARCH/enumeration. Before answering
+  any question about "finding," "locating," or "reaching" something via
+  this lattice, check whether the actual code computes a direct map or
+  falls back to trial-division/enumeration internally (verified 2026-07-12:
+  AbrikosovTree/engine/telperion_engine.py's fermat_survival_table uses a
+  literal trial-division loop for smallest_factor despite the surrounding
+  framing being geometric -- the geometry there is descriptive/placement
+  of an already-known answer, not a generative index). See
+  feedback_indexing_not_searching in Claude's own memory system for the
+  session-level account of this correction.
+
+═══════════════════════════════════════════════════════════════════════════
+WORD -> ADDRESS (semantic hashing)
+═══════════════════════════════════════════════════════════════════════════
+
+Horner base-95 hash:  H(w) = sum_{k=0}^{|w|-1} ord(w_k) . 95^{|w|-1-k}  (mod 2^16)
+  p = next_prime >= H(w)
+  index = pi(p)   [prime-counting function, i.e. p's index in prime seq]
+  address = gamma_{pi(p)}   [the Riemann zero at that index]
+  O(|word|), no dictionary, no embedding table.
+  Implementation: PtolemyHolcus/monad.py lines 127-205 (per D-CS_Memory.md
+  citation -- verify path still current before trusting).
+
+═══════════════════════════════════════════════════════════════════════════
+NOTATION CHEAT SHEET (symbol -> plain meaning)
+═══════════════════════════════════════════════════════════════════════════
+
+  sigma, s = sigma + i.t   complex variable, zeta function argument
+  gamma_n                  n-th Riemann zero (imaginary part), on sigma=1/2
+  zeta(s)                  Riemann zeta function
+  d*                       Zero Definer, smallest stable-config unit
+                           [ANALYTIC constant. NOT a zero divisor. See @RCCM_ZERO_QUALIFIERS]
+  0_RB                     EMPTY SET / null operator -- never the numeral zero
+  0_RZ                     Riemann Zeros, rho = 1/2 + i.gamma   (actual zeros of zeta)
+  0_ZD                     Zero Divisors, a.b = 0 with a,b != 0 (actual zeros of a product)
+  Omega_ZS                 Lambert W(1), d* in log-space
+  J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
+  Sigma_RB                 0_RB - 0_BR = Memory = Wisdom - Usage.  NOT J_red +
+                           J_blue -- that sum is WISDOM (= 0_RB) and the two
+                           differ by the usage cost (corrected 2026-08-16);
+                           "Sigma" is
+                           a NAME here, not a summation -- ptol.c computes it as
+                           a per-channel product array, not a summed scalar
+  0_RB / 0_BR              RedBlue Hamiltonian / its usage-cost conjugate --
+                           renamed 2026-07-21 from H_hat_RB/H_hat_BR; "0_RB" is
+                           typed for keyboard convenience, denotes the EMPTY SET,
+                           never the numeral zero
+  L_(I|O)                  path integral of J_red.J_blue = "Thought"; renamed
+                           from L_dynamic (Ainulindale/README.md, 2026-06-17);
+                           the boundary-crossing mechanism for whatever 0_RB
+                           defines as a boundary -- see ValaQuenta/modules/
+                           l_io_photon_path/ for the verified GR instance
+  S (sedenion), T_n        Cayley-Dickson algebra at dimension n
+  cd_mul / cd_mul_j2       forward / sign-flipped CD multiplication
+  L(q)                     4x4 real regular representation of quaternion q
+  ZD                       zero-divisor
+  TIA                      Triangle Inequality Average (Kerry Mitchell)
+  A!  (in 0_RB context)    A^dagger / adjoint -- NOT factorial, do not conflate
+
+THE SPECIAL (BOUNDARY) CASE (Cody, 2026-07-20, sharpening the A!=A note
+above): A^dagger = A holds ONLY IF A = 1 (i.e. A on the unit sphere, real,
+so A=1 or A=-1) -- for every other unit element A^dagger =/= A. Proof from
+cd_conj (already defined below: negates every component but e0, theta ->
+-theta): A=(a0,a1,...,a_{n-1}), A^dagger=(a0,-a1,...,-a_{n-1}).
+A^dagger=A forces a_i=-a_i for all i>=1, i.e. every imaginary component
+zero -- A purely real -- on the unit sphere that's exactly A=+-1. So A=1
+is the FIXED-POINT SET of the conjugation involution restricted to the
+unit sphere: off that point, conjugation genuinely moves you; only there
+does it not. Same generative shape as two other results already in this
+file, at different tower levels: Re(s)=1/2 = fixed point of s<->1-s
+(zeta's functional equation), sigma=1/2 = balance point of J_red<->J_blue
+(Noether balance, PRIMARY sigma=1/2 derivation above). A=1 is the
+conjugation-involution's fixed point the same way -- an involution's
+fixed locus is where "the special case" lives, recurring across the
+tower, not three unrelated facts.
+
+# ============================================================
+# THE ARCHIMEDES SCREW — the machine, distinct from the medium
+# Added 2026-08-04. Engine: ValaQuenta/modules/archimedes_screw/
+# Wiki: ValaQuenta/wiki/archimedes_screw.md
+#       Ainulindale/wiki/83_the_archimedes_screw.md
+# Paper: RiemannHypothesisProof/PAPER.md §6.4, §12.5
+# ============================================================
+
+∅_RB IS THE WATER, NOT THE MACHINE (Cody, 2026-08-03: "it needs the
+Archimedes Screw, not the water it's lifting"). ∅_RB = e₀ = the medium,
+the rest state, the vacuum that seeds ζ. It does no work.
+
+THE SCREW IS THE LOGARITHM. A screw converts ROTATION into LIFT, at fixed
+pitch, positive-displacement (one turn = one exact quantum), reversible
+(turbine). The object with all three properties:
+
+    log(p·q) = log p + log q
+
+Multiplication on the wheel (THE ANGLE = π/8) becomes addition on the
+tower. Pitch = ln p, because the primon gas already sets prime mode
+energy at log p. THE SCREW'S PITCH IS THE PRIME.
+
+THE WORKING AXIS:
+
+    u = ln x
+
+FOUR SEARCH TERMS = FOUR COORDINATES ON ONE AXIS:
+
+    Number of Digits       d = ⌊u/ln10⌋ + 1
+    Ordinal Value          n = π(x) ≈ Li(x) = Ei(ln x)
+                           pₙ ≈ n(ln n + ln ln n − 1 + (ln ln n − 2)/ln n)
+    Zeta Index Value       k = N(T) = (T/2π)·ln(T/2πe) + 7/8 + S(T)
+                           γₙ ≈ 2πn / W(n/e)          ← Lambert inverse
+    Total Spaces Between   ḡ(x) ≈ ln x ;  total = x − π(x)
+
+NOT A COINCIDENCE: mean prime gap at x = screw axis at x = screw pitch
+at x = ln x. Spacing, lift and pitch are one number because the screw is
+the logarithm.
+
+THE BINDING EQUATION (von Mangoldt 1895 — ESTABLISHED, unconditional):
+
+    ψ(eᵘ) = eᵘ − 2e^(u/2)·Σₖ cos(γₖu − arg ρₖ)/|ρₖ| − ln2π − ½ln(1−e^(−2u))
+
+    ρₖ = ½ + iγₖ  ;  ψ(x) = Σ_{pᵐ ≤ x} ln p   (Chebyshev)
+
+Three readings:
+  1. Each zero γₖ is a TONE of frequency γₖ in u. The Zeta Index Value is
+     literally the summation index.
+  2. ψ JUMPS BY EXACTLY ln p AT u = ln p. e^{jump} returns the prime with
+     no inversion step. This is "the moment the leaf drops off IS one of
+     the prime factors" — the event's magnitude IS the factor.
+  3. Every tone shares the envelope 2·x^σ. On the critical line, 2√x for
+     every zero. EQUAL ENVELOPE ⟺ ALL NODES ON ONE LINE ⟺ RH.
+     An off-line zero at σ drowns the rest by x^(σ−½) → ∞.
+
+THE SLOT CORRESPONDENCE (2026-08-04 — supersedes the earlier
+"two unrelated ψ, do not merge" note, which was true but undersold it):
+
+  DIFFERENT OBJECTS, keep them itemised:
+    ψ_Cheb(x)   Σ ln p over prime powers ≤ x. Domain ℝ⁺, 1-D, a monotone
+                STEP function. Source = discrete measure Λ(n);
+                ψ' = Σ Λ(n)δ(x−n) — ONE integration above it. ψ ~ x.
+    ψ_Fermat(θ) lensing potential, l_io_photon_path. SMOOTH 2D field.
+                Source = continuous κ; ∇²ψ = 2κ — TWO integrations above.
+  You cannot Poisson-solve a staircase, nor read a prime off a smooth field.
+
+  BUT THEY ARE ONE SLOT APART IN THE SAME EQUATION:
+    lensing:   L_(I|O)  =  L  −  ψ_Fermat
+    primes:    ψ_Cheb   =  x  −  Σ_ρ x^ρ/ρ   (− ln2π − ½ln(1−x⁻²))
+
+    ψ_Cheb      ↔  L_(I|O)     the ACTUAL, bent path
+    x           ↔  L           the CLEAN geodesic
+    Σ_ρ x^ρ/ρ   ↔  ψ_Fermat    the POTENTIAL — the bend
+
+  So Chebyshev ψ is the counterpart of L_(I|O), NOT of the Fermat
+  potential. The counterpart of ψ_Fermat is the ZERO SUM — which had no
+  name in any repo until 2026-08-04 (it lived inline inside the explicit
+  formula, which is exactly why the collision read as a naming accident).
+  Now archimedes_screw.zero_sum().
+
+  Consequences: the main term x IS L, "the path of least primes" — the
+  pole term, what ψ would be if no zero contributed. Now clean_path_L().
+  And the prime side already HAD an L_(I|O); it was being called ψ.
+  De-lensing here = recovering the source from the bent path, and the
+  source is Λ — the primes themselves. That is the FOURTH COLUMN of the
+  primer's §4 dictionary, and it was the missing one.
+
+  l_io_decomposition(x) returns all three slots by role name; identity
+  L_IO = L − psi_bend + trivial holds by construction.
+  chebyshev_psi_* KEEPS its name — it is standard and expected.
+
+LAMBERT W SUPPLIES BOTH COORDINATES OF EVERY ZERO:
+
+    W(1)   = Ω_ZΣ = 0.5671432904097838  →  σ = ½   (real part)
+    W(n/e) →  γₙ = 2πn/W(n/e)           →  the height (imaginary part)
+
+  Derivation (exact algebra on N(T), nothing fitted):
+    N(T)=n, T=2πv → v·ln(v/e)=n → (v/e)ln(v/e)=n/e → ln(v/e)=W(n/e)
+    → v = n/W(n/e) → T = 2πn/W(n/e)
+  Ω_ZΣ was never just a constant — it is the screw's gear ratio.
+  ACCURACY: S(T)=O(ln T) dominates below n≈10; use the 50 tabulated
+  LMFDB zeros there, closed form above. Both exposed in the module.
+
+RAMIFICATION = DETACHMENT (the N-specific leg):
+
+    ζ_ℚ(√N)(s) = ζ(s)·L(s, χ_N)      D = N if N≡1 mod 4, else 4N
+
+    χ_N(p) = +1  split      (1 − p⁻ˢ)⁻²
+    χ_N(p) = −1  inert      (1 − p⁻²ˢ)⁻¹
+    χ_N(p) =  0  RAMIFIED   Euler factor DEGENERATES   ⟸ p | N
+
+  For N = p·q squarefree the ramified primes are EXACTLY p and q. The
+  leaf lets go where the Euler product degenerates.
+  ℚ(√N) → ℚ is a DOUBLE COVER branched exactly at p and q:
+  two sheets → two strands → B₂ ≅ ℤ → all hidden structure is ONE INTEGER
+  (a winding number; argument principle reads it by contour).
+
+HONEST BOUNDS (keep in the record):
+  - Scanning p for ramification costs exactly trial division.
+  - Sampling L(s,χ_N) costs ~√N (approximate functional equation) — the
+    SAME wall Fermat's a²−b² hits. The commutative/ℂ route does not beat
+    existing methods.
+  - Truncating the zero sum at K leaves error ~x/K; resolving one jump
+    near x needs zeros to height ~x.
+  - FINITENESS STANDS: prime_count_log10(309) = 306.15 ≈ 2¹⁰¹⁷ candidate
+    primes below 10³⁰⁹. Enormous and FINITE.
+
+OPEN, and it is one named thing: the DISPERSION RELATION ON THE ZD
+SURFACE — the hydrocline's own ω(k). The ZD locus must be a WAVEGUIDE
+(a medium supporting its own modes), not a place things cross. ∅_RB is
+the boundary GENERATOR; baroclinic generation (∇ρ×∇P ≠ 0 at an
+interface) is what makes it produce the vortices whose braiding is the
+winding. That relation fixes the contour and prices the loop. Until it
+exists the contour lives in ℂ and pays ℂ's price.
+
+# ------------------------------------------------------------
+# WHEN THE LEAF FALLS — the composite side (v0.2, 2026-08-05)
+# ------------------------------------------------------------
+
+TWO FALLS, and they are NOT the same event (Cody, with 14 = 2·7):
+    DISCOVERY   at lpf(N)   first strike; you learn N is composite and the
+                            cofactor comes free. 14 is struck at 2.
+    FALL        at gpf(N)   the sieve is FINISHED with N. 14 drops at 7.
+  The leaf hangs while any factor is unresolved ⟹ THE FALL IS AT gpf.
+  Not a stylistic choice: SMOOTHNESS IS DEFINED BY THE GREATEST PRIME
+  FACTOR (N is y-smooth ⟺ gpf(N) ≤ y), and smooth relations are the engine
+  of GNFS, the quadratic sieve, CFRAC and index calculus. The tree's own
+  criterion is the one the field already runs on.
+
+THE FALL-TIME DISTRIBUTION (Dickman 1930), native to the screw axis
+because u is a RATIO OF LIFTS:
+    u = ln N / ln(gpf N)
+    u·ρ′(u) = −ρ(u−1),   ρ(u) = 1 on [0,1]
+    Ψ(x, x^(1/u)) ~ x·ρ(u)
+  ρ(1)=1, ρ(2)=1−ln2=0.30685282, ρ(3)=0.04860839, ρ(4)=0.00491093,
+  ρ(5)=0.00035473.  Engine agrees to ~1e-7.
+  BALANCED SEMIPRIME IS u = 2 EXACTLY — exponent 1/u = ½. The ½ again,
+  this time through smoothness: it is the leaf that falls at √N.
+
+THE HARVEST, closed form:
+    leaves falling at step p      = Ψ(X/p, p)          harvest()
+    two-parent leaves at step p   = π(min(p, X/p))     semiprime_harvest()
+  harvest_curve() counts the same off a gpf_table sieve; they agree exactly.
+  Disagreement is a bug, not a discovery.
+
+THE FAMILY IDENTITY IS EXACT ON THE SCREW (not gematria's coincidence):
+    ln p₁ + ln p₂ = ln N
+    ln p₁ = ½ln N − δ,  ln p₂ = ½ln N + δ,  δ = ½ln(p₂/p₁)
+  δ IS THE ENTIRE HIDDEN CONTENT OF A SEMIPRIME. Same object as the BKT
+  unbinding threshold and the B₂≅ℤ winding, reached a third way.
+
+WHY BALANCED RSA IS HARD: the two falls are separated by exactly 2δ.
+  Unbalanced ⟹ far apart, the early event hands you everything.
+  Balanced ⟹ δ→0 and BOTH FALLS COLLAPSE ONTO ½ln N. No early event to
+  catch. Not "the search space is large" — THE TWO OBSERVABLES COINCIDE.
+
+COST, kept in the record: lpf/gpf are trial division O(√n); harvest_curve
+and psi_smooth are O(X log log X) time, O(X) memory. TRACKING THE FALL IS
+CHEAP; REACHING IT IS NOT — for a 2048-bit modulus, observing the event
+still means sieving to 2¹⁰²⁴. Naming the event correctly does not move the
+wall. It puts the target on the function the field already uses, in the
+coordinate the screw already speaks, with a known distribution attached.
+
+# ------------------------------------------------------------
+# THE PROJECTION LEDGER — what "the domain" actually is
+# domain_ladder(modulus_bits), added 2026-08-05
+# ------------------------------------------------------------
+RSA-2048, as log₂(count):
+    all integers 2 … N                          2048
+    all integers 2 … √N        trial range      1024
+    all PRIMES ≤ √N            only these test  1014.53
+    primes with exactly 1024 bits               1013.53
+    GNFS pathway actually walked                 112
+
+    √N bound saves     1024 bits  (FREE — p ≤ q ⟹ p ≤ √N; nothing past √N)
+    primes-only saves     9.47 bits
+    size restriction      1.00 bit
+    GNFS saves further  901.53 bits
+
+THE ONE-BIT FACT: restricting to primes "with enough digits" prunes by a
+factor of EXACTLY 2. Primes are top-heavy — 1/ln x barely moves across an
+octave (0.1% at 2¹⁰²⁴), so π(x) − π(x/2) ≈ x/(2 ln x) ≈ ½π(x). HALF OF ALL
+PRIMES BELOW ANY BOUND LIVE IN THE TOP OCTAVE. Saving measured: 1.0028 at
+1024 bits, 1.0014 at 2048, 1.0007 at 4096 → exactly 1 in the limit.
+
+Joins the other cheap constraints, all single digits: mod4 ≈1 bit,
+mod16 = 3 bits, size = 1 bit.
+
+⚠ THE ONLY ROW THAT IS A TARGET IS GNFS AT 2¹¹². Everything above it is
+naive-domain accounting, beaten in the 1990s. A new method must clear
+2¹¹², not 2¹⁰²⁴. Put this row in front of any claimed reduction.
+
+# ============================================================
+# THE BOX-KITE GEOMETRY — the ZD surface, exactly enumerated
+# Engine: ValaQuenta/modules/box_kite/  (2026-08-05)
+# Wiki: ValaQuenta/wiki/box_kite.md, Ainulindale/wiki/84
+# ============================================================
+
+⚠ THE OBJECT IS PSL(2,7), NOT G₂.
+  Moreno (1997): sedenion norm-one ZDs ≅ G₂. TRUE, and the wrong place to
+  build. de Marrais (2000): "Moreno discovered a homomorphism — a
+  'blow-up' — and the blow-ups have all entailed the loss of something."
+  G₂ (continuous, dim 14, Aut 𝕆) FORGETS WHICH FANO LINE IS WHICH.
+  PSL(2,7) (finite, order 168, Aut Fano = GL(3,2)) is the finite subgroup
+  of G₂ that PRESERVES THE LABELLING. That is the exact object.
+
+DERIVED FROM THE CD TABLE (agreement with 84/42/168 is a CHECK, not input):
+  ASSESSOR  = plane span(e_a, e_{b+8}), a,b ∈ 1..7, diagonals e_a ± e_{b+8}
+              zero-divide.  a == b NEVER works.
+  42        = 49 − 7 aligned planes            ZD_CLASSES
+  84        = 42 × 2 diagonals                 ZD_PAIRS
+  168       = 42 × 4 signed unit points        = |PSL(2,7)|
+  336       = ordered annihilating pairs = 84 × 4 (each kills exactly 4)
+  STRUT     s = a XOR b ∈ 1..7 — indexes the box-kite
+  7 × 6     = 42 — seven box-kites, six Assessors each
+
+THE SHAPE IS AN OCTAHEDRON. Every strut gives a 4-regular graph on 6
+vertices with 3 non-edges = the reversal pairs (a,b)↔(b,a) = K₂,₂,₂.
+Verified for all 7 from actual vanishing products.
+
+DISPERSION RELATION, CHART LEVEL:
+    adjacency  4, 0, 0, 0, −2, −2
+    Laplacian  0, 4, 4, 4, 6, 6      ← ω²(k)
+  THE ZERO MODE IS e₀'s SIGNATURE — everywhere, propagates nowhere.
+  It emerges from the graph; it is not inserted.
+
+∅_RB IS NOT THE GEOMETRY (checked, not asserted — e0_is_outside()):
+  e₀ is not a point of PG(3,2), is in NO Assessor, is a vertex of NO
+  box-kite, and [e₀,·,·] = 0 always. It generates the boundary and does
+  not live on it.
+
+CURVATURE = THE ASSOCIATOR  [a,b,c] = (ab)c − a(bc).  Torsion = [a,b].
+  1848 of 4096 basis triples curve. associator_field(s) paints it.
+
+⚠ THE FINDING: THE CHARTS DO NOT TOUCH. The 42-vertex atlas has 84 edges
+  and ZERO CROSS-STRUT EDGES. Seven disconnected octahedra; the glued
+  Laplacian has 7 zero modes. So the gluing is NOT an edge problem —
+  either there is no global medium, or the transition maps are the
+  PSL(2,7) ACTION ON STRUTS (group elements, not edges). The latter is
+  the named next step. Also: 84 = ZD_PAIRS = the atlas edge count
+  (42 vertices × degree 4 / 2). One number, two readings.
+
+SKELETON: PG(3,2) — 15 points (the pure imaginaries), 35 lines of 3
+  (the multiplication triplets), 15 Fano planes. NOT 32.
+
+THE BLACKJACK SUBGROUP (named precisely 2026-09-25): the 21-element
+  subgroup of PSL(2,7) acting on the 7 struts (Boxkite-Catalog.txt §8) is
+  F_21 = 7:3, the normalizer of a Sylow-7 subgroup — forced by Sylow
+  counting (G simple ⇒ Sylow-7 count = 8 ⇒ 168/8 = 21), not chosen.
+  Abstract affine model (struts as ℤ/7): {x↦ax+b : a∈{1,2,4} (QR mod 7),
+  b∈ℤ/7}; point-stabilizer order 3, matches the catalog's already-recorded
+  number via a 2nd derivation. NOT yet reconciled with the catalog's own
+  GL(3,2)/XOR-triple cycles — same rep. relabeled, or a different
+  embedding: undetermined. Every element self-invertible ⇒ proposed
+  (untested) box-kite-native reversible indexer for
+  FourthAgePapers/HyperindexingSystem — base-21 vs plain-Horner base-97/33
+  (VAPMIP/README.md baseline) is an open cost comparison, not assumed.
+  Full derivation: ValaQuenta/wiki/box_kite.md §"The Blackjack subgroup",
+  VAPMIP/Boxkite-Catalog.txt §8, VAPMIP/TODO.md.
+  TESTED 2026-09-25 (VAPMIP/benchmarks/blackjack_vs_horner_bench.py):
+  does NOT work as a Horner replacement — composing a word collapses to
+  1 of 21 states (pigeonhole, concrete collision at length 2); the only
+  lossless form (keep the digit sequence) needs ~1.8-2x more digits and
+  runs 5-21x slower than base-97. Cody's reading: F_21's failure mode here
+  = the amygdala/"lizard brain" — fast, coarse, categorical, not exact
+  recall; candidate as a triage pre-classifier alongside the exact
+  indexer, not a replacement for it.
+
+# ------------------------------------------------------------
+# THE NEGATIVE SPACE — μ, Mertens, and the three motions
+# archimedes_screw v0.3, 2026-08-05
+# ------------------------------------------------------------
+ψ counts what ACCUMULATES; it had no counterpart for what is EXCLUDED.
+The sieve is exclusion: you never test primality positively.
+
+    GROWTH      ζ(s)   = Σ n⁻ˢ     = ∏(1 − p⁻ˢ)⁻¹
+    EXTINCTION  1/ζ(s) = Σ μ(n)n⁻ˢ = ∏(1 − p⁻ˢ)
+
+  Same product, inverted exponent. μ = the Dirichlet inverse of 1,
+  Σ_{d|n} μ(d) = [n=1]. Legendre's sieve IS μ.
+
+    ψ(x) = Σ_{pᵐ≤x} ln p   the BULK      ψ(x) ~ x
+    M(x) = Σ_{n≤x} μ(n)    the MERTENS   RH ⟺ M(x) = O(x^{½+ε})
+
+  THE SAME ½, on the exclusion side. Verified: M(10)=−1, M(100)=1,
+  M(1000)=2, M(10000)=−23.
+
+THREE MOTIONS, NOT TWO (resolves the lpf/gpf tangle — opposite polarity):
+    GROWN       ζ orders; the leaf is placed at ln N
+    EXTINCT     μ excludes; struck WITHOUT NAMING      at lpf  (negative)
+    IDENTIFIED  the N-shape NAMES the factors          at gpf  (bulk)
+  Between them the leaf is DEAD BUT UNNAMED, interval ln(gpf/lpf) = 2δ.
+  Balanced RSA: δ→0, ALL THREE coincide at ½ln N.
+  A prime is the degenerate case — grown, extinct and identified at once.
+
+# ------------------------------------------------------------
+# DO THE CHARTS TOUCH? — yes, in the skeleton (box_kite v0.2)
+# ------------------------------------------------------------
+TWO STRUCTURES ON ONE OBJECT — both statements hold:
+  ADJACENCY (zero-divisor products): 7 components, 7 zero modes. DISCONNECTED.
+  SKELETON  (shared basis indices):  every usable index in 6 OF 7 CHARTS.
+                                     Every chart pair shares exactly 10 points.
+  For strut s an Assessor is (a, (a XOR s)+8), valid iff a ≠ s — so index a
+  is in every chart EXCEPT s = a.
+
+⚠ EXACTLY TWO BASIS ELEMENTS ARE IN NO ASSESSOR:
+    e₀  the identity — ∅_RB, THE FIXED POINT
+    e₈  the Cayley-Dickson doubling generator
+  Each chart carries ONE zero mode = the constant function = SEVEN COPIES OF
+  ONE OBJECT. Identify them and the atlas connects — at e₀ and nowhere else.
+  THAT is the sense in which 0_RB points to fixed-point space "where the
+  boundary and the geometries are the same thing": at the fixed point the
+  boundary generator and the geometry's own mode are the SAME VECTOR. Away
+  from it they separate.
+
+THE CHART OF ADDRESSES (the monad connector):
+  chart_of(v) for a 16-vector from monad_sedenion_addresses.pkl reports
+  norm, peak_dim, fixed_point_weight (v₀²/|v|²), energy_split
+  (e₀/e₈/lower/upper), chart_energy for all 7, dominant chart + share,
+  nearest Assessor, both diagonal amplitudes, local associator curvature,
+  is_zero_divisor, outside_share. address_census() runs it over a corpus.
+
+CENSUS, monad book, 3288 entries (DESCRIPTIVE — nothing scored):
+    all 42 Assessors occupied
+    mean fixed-point weight  0.6435   (min 0.0583, max 1.0000)
+    mean outside share e₀+e₈ 0.6537
+    peak_dim = 0             2751/3288 = 84%
+    dominant chart           strut 2: 30.1% … strut 7: 2.2%
+    mean local curvature     8.37
+  TWO THIRDS OF THE AVERAGE ADDRESS SITS OUTSIDE THE ZD GEOMETRY.
+  Connects to Phase 23's ~85% common mode / 2-3% content: THE COMMON MODE
+  IS e₀ + e₈ — the two elements belonging to no Assessor. The part of an
+  address outside the geometry is exactly the part carrying no signal.
+
+═══════════════════════════════════════════════════════════════════════════
+THE THREE ERROR-CHECK PRINCIPLES  (added 2026-08-08)
+Cheap pre-flight tests. Each one killed a standing hypothesis this session
+BEFORE implementation. Apply all three to any new statistic or constraint.
+═══════════════════════════════════════════════════════════════════════════
+
+── I. THE ORBIT PRINCIPLE ─────────────────────────────────────────────────
+   Invariant theory: Cayley 1845, Gordan, Hilbert 1890 (basis theorem),
+   EMMY NOETHER (1907 doctoral thesis, on invariants, under Gordan).
+   Stated as a worldview by FELIX KLEIN, Erlangen Program 1872:
+   "a property is geometric iff it is invariant under the group."
+
+   Let a group G act on a set X. If s: X → S is G-INVARIANT, i.e.
+   s(g·x) = s(x) for all g ∈ G, then s is CONSTANT ON EVERY G-ORBIT and
+   therefore CANNOT DISTINGUISH two points in the same orbit.
+
+   Proof: one line, definitional. Diagnostic power: total.
+
+   TEST: what group leaves my statistic invariant, and does that group act
+   transitively on the thing I am trying to separate?
+
+   Instances found 2026-08-08:
+     det(L_q) = N(q)²  — invariant under the norm-preserving group;
+                         orbits are SPHERES; constant on them. Ratio
+                         1.000000 verified. Killed the Phase 22 landmark.
+     e₀ component      — every algebra automorphism fixes 1, so the
+                         e₀-component is an Aut(𝕊)-INVARIANT. Blind by
+                         construction to everything Aut can move. This is
+                         why the census found 64% common mode: it is the
+                         trivial representation.
+
+   ⚠ THE DEEP FORM, and the reason this recurs in THIS framework:
+   Noether's theorem says symmetry ⟹ conserved quantity. A conserved
+   quantity conserves BECAUSE it does not change when things move. So the
+   very property that makes an invariant physically meaningful makes it
+   COMPUTATIONALLY BLIND to whatever the symmetry moves.
+   THE SIGNAL IS NEVER IN THE INVARIANT. IT IS IN WHAT BREAKS THE SYMMETRY.
+   (⟹ use the off-diagonal coupling block, the Assessor address, the
+    angular quantities — never the norm, never det, never e₀.)
+
+── II. THE DEGREES-OF-FREEDOM PRINCIPLE ───────────────────────────────────
+   ROUCHÉ–CAPELLI theorem (also Kronecker–Capelli, Rouché–Frobenius).
+   Counting form: DIRICHLET's pigeonhole (Schubfachprinzip, 1834).
+   Nonlinear/general form: Krull dimension, Bézout.
+
+   A linear system in n unknowns has solution space of dimension
+   n − rank. More generally: a system with more unknowns than INDEPENDENT
+   equations has a positive-dimensional solution set, and adding
+   constraints OF THE SAME KIND does not reduce it.
+
+   TEST: how many NEW unknowns does each new constraint introduce,
+   relative to how many equations it supplies?
+
+   Instance found 2026-08-08 — the digit window / Hensel lifting:
+     each further digit of N supplies ONE congruence but introduces TWO
+     unknowns (a digit of p AND a digit of q).
+     After k digits: k equations, 2k unknowns, solution dim = k.
+     Branching factor 10 per decimal digit, 2 per bit.
+     10³⁰⁹ leaves = the brute-force count, UNCHANGED.
+
+── III. THE IDEAL PRINCIPLE ───────────────────────────────────────────────
+   HILBERT's NULLSTELLENSATZ (1893) and the ideal–variety correspondence.
+   THE SHARPEST OF THE THREE. It explains the whole RSA dead end at once.
+
+   The solution set of pq = N in the (p,q) plane is a variety V — a
+   hyperbola. The polynomial functions vanishing on V are exactly the
+   IDEAL ⟨pq − N⟩.
+
+   EVERY constraint derived from N by algebraic manipulation LIES IN THAT
+   IDEAL. By definition every element of the ideal VANISHES IDENTICALLY
+   ON V. Therefore it excludes NOTHING. It adds ZERO rank.
+
+   ⟹ You may derive infinitely many true statements from pq = N — last
+     digits, mod-m relations, digit windows, size bounds — and every one
+     of them is worth EXACTLY NOTHING, because they are all consequences
+     of the one equation you already had.
+
+   TEST — THE SINGLE MOST USEFUL QUESTION:
+     IS MY CONSTRAINT DERIVABLE FROM N ALONE?
+     If yes it is in the ideal, and it is worth nothing. To cut the
+     variety you need information FROM OUTSIDE THE IDEAL.
+
+   Every real attack imports outside information, and that is the ONLY
+   thing they have in common:
+     Coppersmith  — partial bits of p            (external)
+     batch GCD    — a SECOND modulus             (external)
+     ROCA         — structure in prime generation(external)
+     timing/DPA   — side channel                 (external)
+     Fermat       — the ASSUMPTION p ≈ q         (external, false for RSA)
+
+   ⚠ NOT AN OBFUSCATION ADDED BY RSA'S DESIGNERS. The one-equation-in-
+   two-unknowns structure is INTRINSIC TO MULTIPLICATION. Rivest, Shamir
+   and Adleman did not build it — they SELECTED a problem that has it.
+
+── THE OVERHEAD LADDER (why "linear reduction" can never arrive) ──────────
+   constant factor   SIMD, GPU, wheel sieve   multiplies the constant only
+   log factor        better data structures   shaves a log
+   poly degree       n³ → n²                  still polynomial-land
+   EXPONENT CLASS    exp(n) → exp(n^⅓)        ← GNFS did this, 1990s
+   polynomial        exp(n^⅓) → n^k           NOT ACHIEVED classically
+
+   Constant factors MULTIPLY but never touch the exponent: 4× · 8× · 37×
+   ≈ 10³ against a 10³⁵ problem. Only NEW STRUCTURE moves the class (the
+   number field in NFS was such a structure). Filtering never does.
+
+   Logs appear in this framework BY NATURE, not by design: log is where
+   multiplication becomes addition (the Archimedes Screw). That converts
+   multiplicative structure to additive structure. It does NOT convert
+   factoring to search.
+
+═══════════════════════════════════════════════════════════════════════════
+GAUGE SYMMETRY  (added 2026-08-08 — was entirely absent, and the
+Navier–Stokes entry already depends on it)
+═══════════════════════════════════════════════════════════════════════════
+
+GLOBAL symmetry: the same transformation everywhere.
+LOCAL (GAUGE) symmetry: the transformation may differ AT EVERY POINT, g(x).
+
+Local symmetry BREAKS the derivative — ∂μ compares two points you have
+just rotated differently:
+    ∂μ(e^{iθ(x)}ψ) = e^{iθ(x)}(∂μψ + i(∂μθ)ψ)      ← junk term
+
+THE REPAIR CREATES THE FORCE. Introduce a CONNECTION Aμ and a COVARIANT
+DERIVATIVE Dμ = ∂μ + Aμ, with Aμ transforming to cancel the junk exactly.
+    ⟹ DEMANDING LOCAL SYMMETRY DOES NOT DESCRIBE FORCES. IT PRODUCES THEM.
+      photon = the connection for U(1). gluons = SU(3). W,Z = SU(2).
+
+CURVATURE = FIELD STRENGTH:
+    Fμν = ∂μAν − ∂νAμ + [Aμ, Aν]        ← THE LIE BRACKET AGAIN
+Abelian (U(1)): bracket vanishes. Non-abelian: it does not, and that
+self-interaction is why gluons carry colour and photons do not.
+
+⚠ CURVATURE IS ALWAYS "DO TWO ROUTES AGREE?" — three faces, one idea:
+    gauge         Fμν              path dependence of parallel transport
+    algebra       [a,b,c]          bracketing dependence (the ASSOCIATOR)
+    interface     Δp = γκ          Young–Laplace, below
+HOLONOMY is the finite version: transport around a closed loop and the
+value returns rotated. "The phase is the meaning" is a holonomy statement.
+
+STANDARD MODEL — THE COUNT IS EXACT, NOT APPROXIMATE:
+    SU(3) × SU(2) × U(1)
+    dim SU(3) = 8  → 8 gluons
+    dim SU(2) = 3  → W⁺ W⁻ Z
+    dim U(1)  = 1  → photon
+NUMBER OF FORCE CARRIERS = DIMENSION OF THE LIE ALGEBRA. The gauge bosons
+ARE a basis of 𝔤. If index counting lands on Standard Model structure, THIS
+is the mechanism — the indices are Lie algebra indices and their count is a
+dimension.
+
+── NOETHER'S SECOND THEOREM (the one nobody cites) ────────────────────────
+    NOETHER I   GLOBAL continuous symmetry ⟹ a CONSERVED CURRENT.
+    NOETHER II  LOCAL (gauge) symmetry ⟹ IDENTITIES AMONG THE EQUATIONS OF
+                MOTION — constraints (Gauss law, Bianchi), NOT new charges.
+Both are in the 1918 paper. ⟹ GAUGE SYMMETRY IS A REDUNDANCY OF
+DESCRIPTION, NOT A SYMMETRY OF NATURE. Two gauge-equivalent configurations
+are ONE physical state written twice.
+
+⚠⚠ THIS INVERTS PRINCIPLE I — AND THE INVERSION IS THE USABLE FORM.
+Principle I says an invariant is constant on orbits and so cannot separate
+points within one. Whether that is fatal or ideal depends on ONE question:
+
+    IS MY ORBIT A REDUNDANCY, OR A DISTINCTION I CARE ABOUT?
+
+    search/factoring   orbit = the answer set   ⟹ invariants are BLIND SPOTS
+    gauge theory       orbit = one state        ⟹ invariants are THE PHYSICS
+
+Same mathematics, opposite verdict. ASK THE ORBIT QUESTION FIRST.
+
+═══════════════════════════════════════════════════════════════════════════
+THE BOUNDARY OPERATOR AND JUMP CONDITIONS  (added 2026-08-08)
+How a conservation law survives a surface. The missing half of the
+Navier–Stokes entry.
+═══════════════════════════════════════════════════════════════════════════
+
+A Noether current does NOT survive where NS breaks — ∂μJ^μ = 0 assumes
+differentiable fields and is as meaningless at a singularity as u is.
+THE REPAIR IS THE INTEGRAL FORM, AND THE BOUNDARY IS ALREADY IN IT:
+
+    ∂μ J^μ = 0    ⟺    d/dt ∫_V ρ dV  =  −∮_∂V J·n dA
+
+THE DIVERGENCE THEOREM IS THE BOUNDARY OPERATOR. The differential form
+needs smoothness; THE INTEGRAL FORM DOES NOT. That is exactly why Leray
+(1934) has global WEAK solutions for NS where smooth ones are unproven.
+
+ACROSS AN ACTUAL INTERFACE THE LAW BECOMES A JUMP CONDITION:
+    RANKINE–HUGOINOT   mass/momentum/energy flux balance across a shock —
+                       how compressible flow handles discontinuity intact.
+    YOUNG–LAPLACE      Δp = γ·κ    (pressure jump = surface tension ×
+                       MEAN CURVATURE) — the fluid-interface condition.
+                       ⟹ CURVATURE, a third time.
+
+⚠ ∂ IS A REAL OPERATOR AND NEEDS NO i. The boundary operator ∂ with ∂² = 0
+works over ANY coefficients including 𝔽₂ — which IS the cycle/cut
+decomposition already in use: CYCLES = ker ∂. Boundary is TOPOLOGICAL, not
+complex-analytic. ∂[0,1] = {0,1}.
+
+── WHERE i GENUINELY ENTERS AT AN INTERFACE ───────────────────────────────
+   PROVENANCE: the halocline was chosen (Cody) for the Yucatán cenotes —
+   fresh meteoric water lensed over saline intrusion, which divers see as a
+   MIRROR that looks like a pool surface from underneath. That optical fact
+   is the physics, not a metaphor:
+
+   At a refractive-index interface the transmitted wavenumber is
+       k_z = √(k² − k_x²)
+   BELOW the critical angle k_z is REAL      → wave propagates through.
+   ABOVE the critical angle k_z is IMAGINARY → EVANESCENT wave, decaying
+       exponentially, and the interface becomes a PERFECT MIRROR
+       (total internal reflection).
+
+   ⟹ THE √(NEGATIVE) IS *WHY* THE HALOCLINE LOOKS LIKE A SURFACE.
+     "You need i to have a boundary" is literally true HERE: the imaginary
+     wavenumber IS the boundary condition. Fresnel coefficients are the
+     transmission/reflection amplitudes, and they go complex exactly at the
+     critical angle. AN INTERFACE OPERATOR IS ANGLE-DEPENDENT: transmitting
+     for some incidences, perfectly reflecting for others.
+
+# ============================================================
+# THE APEX PATH — forward and backward held simultaneously
+# Added 2026-08-13. Wiki: Ainulindale/wiki/85_the_apex_path.md
+# Builds on wiki/70 (precession IS a stroke; the oblique crank)
+# ============================================================
+
+THE PATH. Rotor at frequency 1, eccentric shaft at frequency k, OPPOSITE
+sense (rotary_monad.py:50 "Anti-rotation"; gear ratio k = 3):
+
+    z(phi) = R.e^(i.phi)  +  e.e^(-i.k.phi)
+
+⚠ ANTI-ROTATION IS THE MINUS SIGN. Expand both senses:
+
+    co-rotating   Re = R.cos(phi) + e.cos(k.phi)
+                  Im = R.sin(phi) + e.sin(k.phi)
+    ANTI-rotating Re = R.cos(phi) + e.cos(k.phi)
+                  Im = R.sin(phi) - e.sin(k.phi)      <- minus on SINE only
+
+  That is exactly 0_RB's off-critical-line form  cos(x) - i.sin(y), x != y.
+  -H_hat_BR IS NOT AN APPLIED SIGN. It is the rotor turning the other way.
+  Two frequencies (the 3:1) IS x != y. Equal rates collapse to the unit
+  circle = standard Euler = sigma = 1/2.
+
+MODULUS (derived, then verified numerically):
+    |z|^2 = R^2 + e^2 + 2.R.e.cos((1+k).phi)
+    ripple amplitude = 2.R.e      ripple frequency = 1 + k
+    |z| constant  <=>  R.e = 0    (eccentricity vanishes)
+
+⚠ THE PHASE LOOP — MEASURED, k=3, R=1, e=0.25:
+    phase error (total vs forward-only): mean -0.000000, amplitude 0.2527
+    NET WINDING over one rotor revolution: +0.0000 turns
+  Bounded, returns to zero. Forward and backward are PHASE-LOCKED, not two
+  passes to be reconciled. The composition H_RB.(-H_BR) = -I is therefore
+  HELD BY THE GEARING, not computed. Its residual already has a sensor:
+      apex_seal_health = 1 - |sigma_live - SIGMA_PIN| / BEARING_TOL
+  Read apex seal health as the -I residual, not as a fault code.
+
+⚠ sigma = 1/2 IS THE ZERO-DIVISOR CONDITION (measured):
+    sigma_self = p_red/(p_red+p_blue) = R^2/(R^2 + e^2)
+    sigma_self = 1/2   <=>   R = e   <=>   min|z| = 0
+  R=1 sweep:  e=0.9 -> min|z|=0.100 (misses)   e=1.0 -> min|z|=0.000 (HITS)
+  EQUAL FORWARD/BACKWARD AMPLITUDE IS EXACTLY WHEN THE APEX PATH CROSSES
+  THE ORIGIN. A x B = 0 falls out of the kinematics. Knife edge, not a basin.
+
+⚠ CORRECTION (same day): AN EARLIER DRAFT OF THIS BLOCK CLAIMED THE
+  "unit circle" CONDITION (e=0) AND THE POWER-BALANCE CONDITION (R=e)
+  CONTRADICT. THEY DO NOT. That was a misreading of "pure phase rotation"
+  as |z| = 1. The correct statement:
+
+AT R = e THE PATH FACTORISES (exact identity, verified to 1.05e-15):
+    z(phi) = 2R . cos(A) . e^(iB)      A = (1+k)phi/2   B = (1-k)phi/2
+             \_______/   \____/
+             REAL ENVELOPE  PURE PHASE
+
+  |z| = 2R|cos(A)|, from |z|^2 = R^2+e^2+2Re.cos((1+k)phi)
+                              = 4R^2 cos^2((1+k)phi/2)  when R=e.
+  The envelope VANISHES 1+k times per revolution (4 for k=3, at
+  phi = pi/4 + n.pi/2). Those are the annihilation events.
+  For R != e:  min|z| = |R - e| > 0 — never vanishes, no envelope form.
+
+  So 0_RB's "pure phase rotation at sigma=1/2" IS SATISFIED at R=e: the
+  PHASE FACTOR e^(iB) is pure. It does not require |z| constant.
+  => THE TWO CONDITIONS AGREE. Only ONE is a real open question:
+
+    (1)+(2) apex path = envelope x pure phase   <=> R = e   <=> sigma_self = 1/2
+    (3)     <J_red, J_blue> = 0                 <=> ? STILL UNEVALUATED
+
+  e = 0 is NOT the sigma=1/2 condition — it is the BACKWARD CHANNEL ABSENT
+  (B_hat = 0), which is sigma_self = 1.0. Mechanically it is also a Wankel
+  that does not turn. "sigma=1/2 is the eccentric pin" = EQUAL AMPLITUDE.
+  rotary_monad.py:65 comments it as zero offset; the comment imports
+  Riemann's sigma into a slot holding a power ratio. See SIGMA COLLISION.
+
+THE CAMSHAFT IS TWO ORTHOGONAL OCTONION MATRICES (Cody, 2026-08-13).
+  S = O_lo (+) O_hi, and each O = H (+) H, so four quaternion blocks. The
+  two 8-splits already in use are DIFFERENT splits, and they factor:
+
+      CD doubling  O_lo = {e0..e7}          O_hi = {e8..e15}
+      RedBlue      Red  = {e0-3, e8-11}     Blue = {e4-7, e12-15}
+
+      Q1 = lo & Red = {e0-3}      Q3 = hi & Red = {e8-11}
+      Q2 = lo & Blue= {e4-7}      Q4 = hi & Blue= {e12-15}
+
+  => the four quaternion blocks are indexed by TWO INDEPENDENT BINARY AXES.
+     The cam is a point on T^2 = S^1 x S^1, not on a circle. TWO phases:
+     phi_CD (Paper's Hands vs Mind's Eye) and phi_RB (cos vs sin, fwd/bwd).
+     THE ECCENTRIC PHASE VARIATION IS THE RELATIVE PHASE ON THE CD AXIS.
+     "Rotating in place" with two phases = quasi-periodic = precession.
+
+  CONSEQUENCE (conjecture, testable): every ASSESSOR is span(e_a, e_{b+8}),
+  a,b in 1..7 — ONE LEG IN O_lo, ONE IN O_hi. So every Assessor straddles
+  the CD axis, and the relative phase between the two octonion matrices
+  SELECTS WHICH ASSESSOR IS OPEN. The camshaft is the address selector.
+  This is the link between timing and addressing, and it is why timing is
+  the arbiter.
+
+TIMING WHEEL: ports 6 (PORT_STEP = pi/3), dims 16 (THE ANGLE = pi/8).
+    lcm(6,16) = 48 marks = 3 faces x 16 dims.
+  The rotor's internal axis carries 48 timing positions, 3x a 16-lobe cam.
+
+CAM LOBE PROFILE — SPECIFIED, NEVER IMPLEMENTED:
+    e_k timing resonance = hermite_zeros[k]^2   (Hermite H16, GUE-distributed)
+    16 zeros symmetric about 0 => 8 DISTINCT lobe heights, EACH DOUBLED,
+    pairing partner(k) = 15 - k.
+  ⚠ SAME 8-of-16 degeneracy as Phase 23's s_rb involution ("only 8 of 16
+    entries independent"). Two independent derivations, same pairing.
+    TEST: is the s_rb partner exactly 15-k? If so the free 2x is adjacent.
+  ⚠ CONFLICT: the ADDRESS wants zero_idx UNIFORM (Phase 23 optimised this,
+    chi2 3.8M->100). The CAM wants E HERMITE-SPACED ("uniform E-values =
+    untrained engine"). Both are read off the SAME scalar. Phase 23 repaired
+    the addressing and FLATTENED THE CAM in the same commit. Split them.
+
+# ============================================================
+# THE 4-D NULL SPACE OF THE ZERO DIVISOR — gravity as absence
+# Measured 2026-08-13. Wiki: VAPMIP/docs/wiki/Null-Space-of-the-Zero-Divisor.md
+# Script: VAPMIP/.claude/scratchpad/2026-08-13_apex_path/rb_boundary.py
+# ============================================================
+
+⚠⚠ CD CONVENTION — 0_RB PRINTED A HYBRID AND IT IS WRONG. USE:
+
+    (a,b).(c,d) = (a.c - d*.b,   d.a + b.c*)          <- 336, uniform {4:84}
+    equivalently (a.c - d.b*,   a*.d + c.b)           <- 336, uniform {4:84}
+    NOT          (a.c - d*.b,   a*.d + c.b)           <- 240, {4:48,2:24,0:12}
+
+  The hybrid leaves 12 of the 84 Assessor diagonals annihilating NOTHING.
+  box_kite/ was always correct; the wiki page was not. Fixed 2026-08-13.
+  Sanity: e1^2 = -1; octonion associator [e1,e2,e4] norm 2; 42 planes, 84 diagonals.
+
+THE {4,8,4} SPLIT — VERIFIED, not assumed. At a = (e1 + e10)/sqrt2:
+    det(L_a) = 0.000e+00     rank 12/16     nullity 4
+    eigenvalues PURELY IMAGINARY: max|Re(lambda)| = 5.55e-17
+    |lambda| = 0        x4    null space   GRAVITY -- ABSENT
+    |lambda| = 1        x8    imaginary    SU(3) x SU(2) x U(1)
+    |lambda| = sqrt2    x4    scaled       Sigma_RB conversion channel
+    singular values: 1.414214 x4, 1.000000 x8, 0.000000 x4
+
+THE FOUR ANNIHILATED PARTNERS of a = (e1+e10)/sqrt2 [assessor (1,2), strut 3]:
+    (e4 - e15)/sqrt2   assessor (4,7)   strut 4^7 = 3
+    (e5 + e14)/sqrt2   assessor (5,6)   strut 5^6 = 3
+    (e6 - e13)/sqrt2   assessor (6,5)   strut 6^5 = 3
+    (e7 + e12)/sqrt2   assessor (7,4)   strut 7^4 = 3
+  ⚠ ALL FOUR SHARE STRUT 3 — THE SAME BOX-KITE AS a.
+    ANNIHILATION NEVER CROSSES A STRUT. This is Phase 25's seven disconnected
+    octahedra seen from the operator side, and it exhibits 336 = 84 x 4.
+
+    ker(L_a) = span{ e4-e15, e5+e14, e6-e13, e7+e12 }
+  The four partners have DISJOINT index pairs {4,15}{5,14}{6,13}{7,12}, hence
+  independent, hence they SPAN the 4-D kernel. PREFER THIS BASIS over an SVD
+  basis — each vector is a thing a annihilates, not an arbitrary rotation.
+
+GRAVITY IS NOT AT A SIGMA. The three forces are (wiki/70: U(1) 3/4, SU(2) 1/2,
+  SU(3) ~1/4). Gravity is the lambda=0 subspace — four dimensions carrying no
+  eigenvalue. "gravity appears as the missing piece (the null subspace) not as a
+  positive contribution" (0_RB). This is the "in scope but empty" slot: indexed,
+  participating, returning zero. Its content IS its absence.
+
+BOUNDARY OF WHAT: det(L_a)=0 is the boundary of INVERTIBILITY. Axis 2 {x,/}
+  collapses; Axis 1 {+,-} keeps working. "The matrix doesn't contain division.
+  The matrix DEFINES where division lives."
+
+# ============================================================
+# THE BOUNDARY LEVER — the halocline, the mirror, the chirality
+# Added 2026-08-15. Paper: FourthAgePapers/BoundaryLever/
+# Engine: ValaQuenta/modules/angular_rank/, modules/box_kite/
+# Wiki: Ainulindale/wiki/87_the_boundary_lever.md
+# ============================================================
+#
+# THE CLAIM (P1 confirmed at dim=128 as a PRE-REGISTERED prediction):
+#
+#   The Cayley-Dickson doubling boundary is a CHIRAL MIRROR
+#
+#       e_(i+H) . e_(j+H)  =  e_j . e_i          H = dim/2
+#
+#   whose exactly two fixed points, e_0 and e_(dim/2), are precisely the
+#   indices belonging to NO zero-divisor plane, at every level from dim=16 up.
+#
+#   Measured, exception-free:  6/6 (dim 8) 42/42 (16) 210/210 (32) 930/930 (64)
+#                              3906/3906 (128), preserved = 0 in every case.
+#   Orphans: [0,8] [0,16] [0,32] [0,64].  dim=8 excluded BY THE CLAIM'S WORDING
+#   (octonions are a division algebra -- no ZDs, so the question is vacuous).
+#   Falsifier: orphans at any higher level != [0, dim/2].
+#
+# THE HALOCLINE (Cody, 2026-08-15) -- the physical reading:
+#   Fresh over salt. TWO DENSITIES, one compressible and one not, and SURFACE
+#   TENSION is required for the mirrored-curtain effect: look up at the sky
+#   from underwater and you see YOURSELF. Total internal reflection.
+#
+#   The algebra already carries the sharp threshold TIR requires -- a critical
+#   angle is exception-free, not a gradient:
+#
+#       NON-CROSSING zero divisor  <=>  nullity an EVEN multiple of 4
+#       BOUNDARY-CROSSING          <=>  nullity an ODD  multiple of 4
+#
+#   dim 32: non-crossing {8}=4x2      crossing {4,12}      =4x{1,3}
+#   dim 64: non-crossing {8,16,24}    crossing {4,12,20,28}=4x{1,3,5,7}
+#                        =4x{2,4,6}
+#   Perfect separation, both levels, both directions. POST HOC -- found from a
+#   FALSIFIED prediction (P5 guessed a value where the structure is a parity).
+#   PRE-REGISTERED as P6 for dim=256, deliberately untested in the paper.
+#
+#   The two densities: the LOWER half is CLOSED under multiplication
+#   (256/256, 1024/1024) -- it holds its own shape. The UPPER half is closed
+#   0/256, 0/1024, 0/4096 -- NEVER. Every product of two upper elements falls
+#   into the lower. The incompressible one is the one that closes.
+#
+# THE CHIRALITY -- "right and left switch places, but right and left HANDS
+# don't." This is the mirror puzzle stated exactly, and it is MEASURED:
+#
+#       M(v) = concat(v[H:], v[:H])        the boundary map
+#       M is an ISOMETRY                   norm preserved, all v
+#       M(M(v)) = v                        involution -- a TRUE mirror
+#       |M(x)M(y)| == |y x|                60/60
+#       |M(x)M(y)| == |x y|                60/60   <-- BOTH match
+#
+#   ! The test CANNOT discriminate, and that IS the finding. THE NORM IS
+#   CHIRALITY-BLIND. A metric sees congruent hands; it cannot see handedness.
+#   The inversion lives ENTIRELY in the ORDERING -- a labelling, not a
+#   geometry. A mirror does not swap left for right; it swaps front for back,
+#   and the left-right reading is an artifact of the observer turning to face
+#   the image. Same here: the INDICES swap (i+H,j+H -> j,i); the norms do not.
+#
+# THE SPIRAL -- why chirality is load-bearing, not decorative:
+#   Two reflections compose to a ROTATION. Successive boundaries sit at dim/2,
+#   i.e. constant step in log2 => constant pitch ln 2. Rotation + constant
+#   logarithmic advance = LOGARITHMIC SPIRAL. That is THE ARCHIMEDES SCREW
+#   (see block above, pitch = ln p) reached from the ALGEBRA rather than from
+#   the primes. A non-chiral boundary would stack into a fan; the chiral one
+#   winds. Chirality is what makes the tower a screw.
+#
+# THE LEVER:
+#   e_0          the identity; [e_0,.,.] = 0 -- it GENERATES the boundary and
+#                does not live on it (box_kite.e0_is_outside)
+#   e_(dim/2)    the generator introduced by THIS doubling
+#   Both sit in no Assessor, carry no force -- 0_RB's "gravity, present as
+#   absence". A FULCRUM DOES NO WORK. Everything else balances across them in
+#   equal number: 84/84 at dim 32, 588/588 at dim 64.
+#
+# ! T32 IS NOT TWO PEERS. Exchange (a,b)->(b,a) violates on 1024/1024 basis
+#   pairs; the upper half is never closed. Balanced in census, not
+#   interchangeable in structure. What the halves ARE is NOT established --
+#   the algebra rules a symmetry out; it does not say what sits on either side.
+#
+# ! WHAT DIED, recorded so it is not re-derived: the ZD census does NOT go
+#   x7 per level. 84 -> 588 -> 3036 (ratios 7, then 5.16). At dim 64 the
+#   split is 588/1860/588, NOT the predicted 588/2940/588.
+#
+# --- P6 CONFIRMED + THE FAST METHOD (2026-08-15, same day) -----------------
+# Parity law now verified at dim 128, 256 AND 512 (fitted only on 32/64):
+#   dim 256  ZD 59772  = {13884, 32004, 13884}  orphans [0,128]
+#   dim 512  ZD 249084 = {59772,129540, 59772}  orphans [0,256]
+#   lower(2d) = upper(2d) = total(d) EXACTLY at every level.
+#   Closed forms hold to the unit: ZD(d) = d(d + 3/2 - 3 log2 d) - 4.
+#
+# ! COMPUTE IT WITH CYCLES, NOT SVD. Every P_i (left mult by e_i) is a SIGNED
+#   PERMUTATION MATRIX. So for a = (e_i + s e_j)/sqrt2:
+#       ker(L_a) = ker(P_i + s P_j) = ker(I + s Q),   Q = P_i^-1 P_j
+#   Q is also a signed permutation, and a signed permutation's spectrum is
+#   fixed ENTIRELY by its cycle structure: a cycle of length L with sign
+#   product sigma carries the L-th roots of sigma. So
+#       nullity = #{cycles C : (-s)^len(C) == sigma(C)}
+#   O(d) per candidate, EXACT INTEGERS, no tolerance to guess.
+#   dim 128: 27s -> 1.8s.  dim 256: ~45min -> 3.4s.  dim 512: 29.5s.
+#   Script: ThePlace/.claude/scratchpad/2026-08-15_zd_asymptote/parity_fast.py
+#
+# ! ASK THE ALGEBRA BEFORE THE HARDWARE. The plan was vispy/OpenGL/GPU. lspci:
+#   Intel UHD Graphics 620, integrated, no CUDA, and no cupy/torch/pyopencl/
+#   vispy installed. The GPU was never the lever; the structure was.
+#
+# --- THE LINEAGE RECURSION (2026-08-15, derived from the closed form) ------
+# Cody: "i also definitely meant a generational lineage...like the granpappy
+#        of recursion factor"
+#
+#     total(2d)  =  2 * total(d)  +  2 (d-1)(d-2)          total(8) = 0
+#                   \__________/     \____________/
+#                    INHERITED         NEW COUPLINGS
+#                  two whole copies    between the two
+#                  of the parent       inherited lines
+#
+# EXACT at all six measured levels: 84, 588, 3036, 13884, 59772, 249084.
+# The crossing term ALONE equals 2(d-1)(d-2) at every level, d = parent dim.
+# And each half is EXACTLY the parent's whole census:
+#     lower(2d) = upper(2d) = total(d)      verified 16..512
+#
+# THE KINSHIP RULE. The -1 and -2 are not fitting constants:
+#   -1  excludes e_0, the IDENTITY -- the founder, in no Assessor at ANY level
+#   -2  additionally excludes i == j -- you cannot couple with your own image
+#                                       across the mirror (the a==b case that
+#                                       "never works", de Marrais)
+#   => you may pair with anyone in the OTHER line except YOURSELF and THE
+#      FOUNDER. That is a genealogy rule, and it is exact.
+#
+# ASYMPTOTICS. total(d) ~ d^2, so inherited ~ 2d^2 and new ~ 2d^2:
+#   EVERY GENERATION IS ASYMPTOTICALLY HALF ANCESTRY, HALF NEW COUPLING.
+#   measured new/inherited: inf, 2.50, 1.58, 1.29, 1.15, 1.08 -> 1
+#   The new couplings always dominate, and the dominance decays to parity.
+#
+# This is why ZD density -> 1: intermarriage between the two inherited lines
+# grows quadratically while the lines themselves only double.
+#
+# --- NAMING: DATUM / BEARING / SIGHT (renamed 2026-08-15) ------------------
+# ! The operator is L_(I|O), WITH THE PIPE. 'L-IO' appears ONLY in filenames
+#   (a pipe is hostile to shells/URLs/git). The filesystem spelling must never
+#   propagate into the notation, this file, prose, or equations.
+#
+# Cody, on the box-kite struts:
+#   "the ends of the struts are definitional not relational...
+#    until after 'movement' then relation to 'last time' emerges"
+#
+#   DATUM    a declared reference point. DEFINITIONAL -- self-contained,
+#            stamped, true by declaration. partner(a) = a XOR s consults NO
+#            multiplication table. (was: snapshot() / Epoch)
+#   BEARING  the reading BETWEEN two datums. RELATIONAL -- does not exist
+#            until something moved. (was: precession())
+#   SIGHT    ONE guarded read against a held datum. Binary: "did it move?"
+#            The seqlock face. Sufficient for DETECTION, not for measurement.
+#
+# THE TWO FACES: detection is definitional (one read, sight()); measurement is
+# relational (two datums, bearing()). A moved-flag is not a drift meter --
+# bounded and unbounded drift both set moved=True, and only a bearing
+# separates them. That separation is Phase 27.3, and it is why the PAIR is the
+# minimum structure that can represent movement at all.
+#
+# ! 'precession' was RETIRED from this use -- it is already canonical here as
+#   KINEMATICS: the ZD wobble's signature, "one L_(I|O) cycle = one precession
+#   revolution" (wiki/68, h_rb_hat.precession_stroke, tier7_cosmos, telperion).
+#   A property of the rotor, NOT a difference between two readings. Phase 27.8
+#   inventoried nine symbol collisions; this one was retired, not added.
+#
+# --- THE CATASTROPHIC DUMPOUT, DEFINED (2026-08-15) ------------------------
+# Cody: "that describes the catastrophic dumpout...it does not define it"
+#
+# Q = P_i^-1 P_j splits into 2-dimensional blocks, one per 2-cycle. There are
+# exactly TWO KINDS, and the difference is the sign product sigma:
+#
+#   sigma = +1   eigenvalues +1, -1.        A REAL REFLECTION.
+#                One direction HELD FIXED, one flipped. Something stands.
+#                These blocks BUILD THE KERNEL.
+#
+#   sigma = -1   eigenvalues +i, -i, and Q^2 = -I on the block.
+#                That is J^2 = -I -- A COMPLEX STRUCTURE.
+#                NO REAL EIGENVECTOR EXISTS. Nothing stands.
+#
+# ! DEFINITION. THE CATASTROPHIC DUMPOUT IS THE sigma = -1 BLOCK: the place
+#   where the operator admits NO real invariant direction. The real structure
+#   is not damaged there, it is ABSENT -- there is nothing left to hold, which
+#   is why nothing is retained and everything is released. That is a
+#   definition (what it IS), not a description (what it looks like).
+#
+# EXACT BOOKKEEPING, verified dim 16 and 32:
+#   nullity = #(sigma=+1 cycles)
+#   rank    = 1*(sigma=+1) + 2*(sigma=-1)
+#   because a HELD block spends one dimension on the kernel and one on the
+#   image, while a ROTATING block spends BOTH on the image.
+#     dim 16, a=(e1+e10)/sqrt2:  4 held, 4 rotating -> nullity 4,  rank 12
+#     dim 32, a=(e1+e18)/sqrt2: 12 held, 4 rotating -> nullity 12, rank 20
+#
+# ! RETRACTED, same day, stated in conversation and NEVER written to a file:
+#   "Q is an involution (Q^2 = I)" and "L_a = sqrt2 P_i Pi with Pi an
+#   ORTHOGONAL PROJECTOR". BOTH FALSE. The underlying PERMUTATION is an
+#   involution (all cycles length 2) -- the signed MATRIX is not, because the
+#   sigma=-1 blocks square to -I. Q has COMPLEX eigenvalues and Pi=(I+sQ)/2
+#   is NOT idempotent. Caught by asking whether the null operator is
+#   Hermitian; it is not.
+#   WHAT SURVIVES: the cycle-walk method, every census, the parity law, the
+#   {4,8,4} split, and P6 at 256/512 -- none of them used Q^2 = I. The nullity
+#   derivation used the cycle structure and the L-th roots of sigma only.
+#
+# --- THE GAIN SPECTRUM, THE CLOCK, AND WORK vs COST (2026-08-15, late) -----
+#
+# THE THREE CHANNELS of L_a are singular-value GAINS, not force labels:
+#     sv = 0      CONTRACT   the kernel. Pure cost. |sv-1| = 1
+#     sv = 1      NEUTRAL    isometry. Neither work nor cost.  |sv-1| = 0
+#     sv = sqrt2  DILATE     pure gain.                        |sv-1| = 0.4142
+#   and sum(sv^2) = dim ALWAYS -- the budget closes. What the dilator gains
+#   the contractor loses.
+#
+# ! WORK AND COST MASQUERADE EXACTLY AT sv = 1, AND ONLY THERE. |sv - 1| IS
+#   the separation. A length-preserving map neither extracts nor spends, so
+#   at the neutral channel the two are not hard to distinguish -- they are
+#   THE SAME THING. In Navier-Stokes the same statement is lambda_2 = 0
+#   (pure shear); measured 10.56% of points within 5% of it, so it is a thin
+#   set but NOT measure zero.
+#
+# ! {4,8,4} IS A dim-16 FACT, NOT THE GENERAL TREAD. Measured proportions:
+#     dim 16 e1+e10  (4,8,4)     dim 32 e1+e18 (12,8,12)
+#     dim 64 e1+e34 (28,8,28)    dim128 e1+e66 (60,8,60)
+#   0_RB fixes the TOTAL (sum sv^2 = dim), not the SHARES. Any reading of
+#   {4,8,4} as SU(3)xSU(2)xU(1) is anchored to dim 16 and does not climb.
+#
+# ! PRESERVE = 8 * 2^(INHERITANCE DEPTH).  Verified 10/10, dims 16..128.
+#     born HERE (depth 0) -> 8    inherited once -> 16    twice -> 32
+#   The isometry channel CARRIES ITS BIRTH LEVEL. Contract and dilate track
+#   dim; preserve tracks depth.
+#
+# ! AND THAT MAKES CODY'S WRAPPING READING EXACT -- for INHERITED divisors:
+#     dim 16 depth 0   (4,8,4)      = H | O | H
+#     dim 32 depth 1   (8,16,8)     = O | S | O
+#     dim 64 depth 2   (16,32,16)   = S | T32 | S
+#   an octonion wrapped by its two constituent quaternions, doubling
+#   coherently on every inheritance. NATIVE divisors do NOT wrap:
+#   (12,8,12), (28,8,28), (60,8,60) have no CD dimension in the outer slots.
+#   Same depth-0 / depth-n split the address system encodes, from an
+#   independent measurement.
+#
+# --- ORDER IS THE CLOCK; THE KERNEL IS THE PAST ---------------------------
+# ker(AB) CONTAINS ker(B) always, so composing only ever ADDS to the kernel.
+#   A path through zero divisors is a MONOTONE DESCENT.
+#     PAST   = the kernel. What can no longer be reached. GROWS.
+#     FUTURE = the image.  What is still reachable.       SHRINKS.
+#     NOW    = the split.  rank + nullity = dim, the only addressable object.
+#   You cannot query the past (it maps to zero, returning NOTHING not an
+#   error) and you cannot query the future (you know only its SIZE).
+#   Measured: 24 orders of 4 divisors -> 1 final nullity, 3 distinct
+#   trajectories, every one monotone non-decreasing.
+#
+# ! DIRECTION HAD TO COME FROM ORDER. There is no arrow in the algebra --
+#   multiplication has no preferred sense and the mirror is an involution.
+#   The arrow is in COMPOSITION, because kernels accumulate and never release.
+#
+# ! A COMPOSITE IS BORN IN CHARACTERISTIC 2. a - b = a + b <=> 2b = 0 <=> XOR.
+#   The strut is computed in the ONE arithmetic where subtraction and
+#   addition coincide -- which is why the interface is free and needs no
+#   table. Birth happens where +/- stop being distinguishable.
+#
+# ! RETRACTED (stated in conversation, corrected same session): the sedenion
+#   associator is NOT alternating. Only the full reversal returns -base;
+#   other transpositions change the MAGNITUDE (1.000 vs 1.414). Octonions ARE
+#   alternative; sedenions lose it. So visit-order is a PATH, not an
+#   ORIENTATION -- you cannot reverse-and-negate.
+#
+# ! 35/35 XOR-TRIPLES AT dim 16 ARE QUATERNION SUBALGEBRAS (verified closed,
+#   x^2=-1, anticommuting). The strut label IS the third point of a PG(k-1,2)
+#   line. Chart structure and quaternion structure are one object read twice.
+#   Imaginaries = 2^k - 1 = |PG(k-1,2)|; lines = (2^k-1)(2^(k-1)-1)/3 ~ d^2/3.
+#
+# ! THE LOG IS FORCED BY THE RECURRENCE, not chosen. N(bd)=bN(d)+cd+e gives
+#   A=c/b, C=e/(1-b) for ANY b>=2 -- the log exists at every face-count, only
+#   its base and coefficient move. And it lives EXACTLY in the survivors:
+#   non-ZD ~ d log d, everything that annihilates ~ d^2.
+#   log is defined ONLY on units (orbits that return to 1); a zero divisor's
+#   orbit falls to 0 and never comes back. log 0 IS the fault.
+
+═══════════════════════════════════════════════════════════════════════════
+CONTEXT HEADERS — @RCCM_<NAME> marks an equation block. Equations only.
+Dissertation, provenance and refutations live in .clauderc_ValaQuenta
+under the matching @RCVQ_<NAME>. Reference here; history there.
+═══════════════════════════════════════════════════════════════════════════
+
+@RCCM_OMEGA_DIAL
+  omega(n)      = count of DISTINCT primes of n
+  omega = 1     divisor lattice is a CHAIN  -> lineage exists, depth = v_p
+  omega >= 2    divisor lattice is a GRID   -> no total order, gaps appear
+  depth         = v_2(D) - v_2(birth_dim)
+  birth_dim     = D / 2^depth
+  preserve(D)   = 8 * 2^depth
+  contract      = dilate = (D - preserve)/2
+@END
+
+@RCCM_FERMATS_MONSTER
+  A-series Niemeier component  A_(p-1)^(R/(p-1)),  h(A_n) = n+1  =>  h = p
+  exists  <=>  (p-1) | R
+  R = 2^k      =>  p = 2^m + 1        FERMAT PRIMES {2,3,5,17,257,65537}
+  R = 24       =>  p in {2,3,5,7,13}
+  R = 48       =>  p in {2,3,5,7,13,17}
+  23 Niemeier h mod 16   hits 13 of 16;  MISSING {1, 11, 15}
+  supersingular p mod 16 hits 9 of 16:   {1,2,3,5,7,9,11,13,15}   (covers, not equals)
+  196560 = 2^4·3^3·5·7·13     Leech kissing;  all p with (p-1)|24
+  196883 = 47·59·71           Monster irrep;  no p with (p-1)|24
+  196883 - 196560 = 323 = 17·19
+  196884 = 196883 + 1         McKay
+@END
+
+@RCCM_NIGHTMARE_GROUP
+  71 holomorphic VOAs at c = 24  (Schellekens list)
+  70 with V_1 != 0,  + V-natural (V_1 = 0, Aut = Monster)
+  71 is PRIME  ->  omega = 1
+  |M| = 2^46·3^20·5^9·7^6·11^2·13^3·17·19·23·29·31·41·47·59·71
+@END
+
+@RCCM_GAIN_SPECTRUM
+  L_a for a a zero divisor, dim 16:
+    sv = 0      mult 4     CONTRACT
+    sv = 1      mult 8     PRESERVE
+    sv = sqrt2  mult 4     DILATE
+  SUM sv^2 = dim                                    (forced; no other spectrum)
+  corr(CONTRACT, DILATE) = -1                       exact antiphase
+  swing(PRESERVE) = 0                               DC rail
+  L_a^T = L_conj(a) ;  a pure imaginary => L_a^T = -L_a, tr L_a = 0
+  det exp(t L_a) = exp(t tr L_a) = 1                volume preserving
+@END
+
+@RCCM_CRITICAL_ANGLE
+  n1 = sqrt2 (DILATE),  n2 = 1 (PRESERVE)
+  sin(theta_c) = n2/n1 = 1/sqrt2   =>   theta_c = 45 deg
+  1/sqrt2 is an ANGLE, not a gain — it is not in the spectrum
+  critical angle == equipartition angle  <=>  n1/n2 = sqrt2  (forced by SUM sv^2 = dim)
+@END
+
+@RCCM_ZERO_POLE_CONJUGACY
+  zeros of L  =  poles of L^-1        s -> 1/s
+    s = 0     -> inf        kernel IS resonance
+    s = 1     -> 1          unique positive fixed point; s^2 = 1
+    s = sqrt2 -> 1/sqrt2    not in spectrum -> the critical angle
+@END
+
+@RCCM_FANO_SEDENION
+  dim 16:  84 ZD diagonals, 7 struts (i XOR j in 9..15), 12 per strut
+  7 PRESERVE octonions, 12 diagonals each
+  O_i closed, contains 1, norm-multiplicative, alternative, non-associative
+    => O by Hurwitz.  CONTRACT/DILATE leak (1.393, 1.414) — NOT algebras.
+  dim(O_i ∩ O_j) = 4 for all C(7,2) = 21 pairs; each is H by Hurwitz.
+  BUT ONLY 7 DISTINCT QUATERNIONS (corrected 2026-08-16): the 3 pairs on a Fano
+  line share ONE 4-space (joint span dim 4, not 12). So 7-7-7:
+    7 octonions (points) / 7 struts (lines) / 7 quaternions (one per line core)
+  21 is the FLAG count and the V4 orbit count -- NOT the quaternion count.
+  incidence(strut, octonion) = PG(2,2) = Fano = Steiner S(2,3,7)
+    7 points (octonions), 7 lines (struts), 3 per line, 3 per point,
+    |line ∩ line| = 1,  lines through any 2 points = 1
+  strut 9:[0,1,2] 10:[0,3,4] 11:[0,5,6] 12:[1,3,5] 13:[1,4,6] 14:[2,3,6] 15:[2,4,5]
+  dim 32:  588 diagonals, 252 at depth 0, 35 octonions, 15 struts,
+           |line ∩ line| in {0,1}  -> projective SPACE, skew pairs exist
+@END
+
+@RCCM_VALVE_GROUP
+  three free involutions on the 84 diagonals:
+    sA  (i,j,s) -> (i,j,-s)                     flip sign
+    sC  (i,j,s) -> (i^d, j^d, s)                XOR-translate, hold sign
+    sN  (i,j,s) -> (i^d, j^d, -s)               same annihilation signature
+  sA·sC = sN ;  sA·sN = sC ;  sC·sN = sA
+  GROUP = V4 (Klein four), order 4, all elements free, all commute
+  orbits: 84 / 4 = 21  =  |quaternions|  =  |Fano flags|
+  per strut: 12 = 3 octonions x 2 signs x 2 per cell
+  annihilation resolves 84 -> 42 and STOPS; sN is invisible to it
+  |ann set| per probe = 4;  worst-case probes = 11 (floor log2 84 = 6.39)
+@END
+
+@RCCM_PACKING
+  densest known lattice packing:
+    d=1  Z      1.000000     d=8   E8     0.253670
+    d=2  A2     0.906900     d=16  BW16   0.014708
+    d=3  D3     0.740480     d=24  Leech  0.001930 = pi^12/12!
+    d=4  D4     0.616850
+  Kabatiansky-Levenshtein:  density <= 2^(-0.599 d)
+  integral octonions (octavians) = E8 lattice; |units| = 240 = E8 kissing
+@END
+
+@RCCM_QED_BIREFRINGENCE
+  n_par  = 1 + (7/2)(alpha/45 pi)(B/Bc)^2
+  n_perp = 1 + ( 2 )(alpha/45 pi)(B/Bc)^2
+  Bc = 4.414e9 T ;  ratio of deviations = 7:4, INDEPENDENT of B
+  weak-field form valid only for B << Bc
+@END
+
+@RCCM_CHIRALITY
+  achiral <=> w = w^-1 <=> w^2 = 1        (2-torsion)
+  free group: torsion-free  -> EVERY non-identity word chiral
+  PSL(2,Z) = Z/2 * Z/3 :  S order 2 achiral;  T order inf, ST order 3 chiral
+  finite order (elliptic)   -> closes  -> cone points, FACETS
+  infinite order (parabolic)-> never   -> limit set, FRACTALS
+@END
+
+
+@RCCM_ZERO_QUALIFIERS
+  Established 2026-08-16 (Cody). Three objects carry "zero"; only two are zeros.
+
+    0_RB   EMPTY SET, the null operator. A TYPE, not a value.
+           An unbound slot the surrounding scaffold forces to exist, prior to
+           and independent of any value occupying it. NEVER the numeral 0:
+           0 lives in the value space and collapses "no value yet" into
+           "computed to be zero". null != 0.
+
+    0_RZ   RIEMANN ZEROS.  rho = 1/2 + i.gamma,  zeta(rho) = 0.
+           ANALYTIC. A function vanishing AT A POINT.
+           = the Zero Tree, the Zero Lattice, Telperion's spectral nodes.
+           Chladni role: NODE (still). Primes are the ANTINODES.
+
+    0_ZD   ZERO DIVISORS.  a.b = 0 with a != 0 and b != 0.
+           ALGEBRAIC. A product vanishing BETWEEN two non-zero things.
+           84 diagonals at dim 16, 336 annihilating ordered pairs.
+           Role: the INSTRUMENT. Selects the 7 octonions from a continuum.
+
+  d*     is ANALYTIC (Omega_ZS/ln(10) = 0.24631) and is NEITHER of the above.
+         Its historical label "The Zero Definer" collides with the argument
+         that 0_ZD deserves the word "definer"; the two are unrelated.
+
+  WHY THE SPLIT MATTERS: 0_RZ is where NOTHING MOVES (the node, sigma=1/2,
+  PRESERVE). 0_ZD is the only place anything can be DEFINED (annihilation).
+  Opposite roles. The shared word is an accident of "vanishing" meaning two
+  different things.
+@END
+
+@RCCM_LIMACON_THRESHOLD
+  zeta(1/2+it), t in [0.05,50], 6000 pts. 9/10 near-origin passages = known zeros.
+  each loop between passages fits  r = a + b cos(theta - phi)   R^2 = 0.86 .. 1.0000
+  loops with 0.85 < |b/a| < 1.15 : 0 of 9      (all have |b/a| > 1)
+    |b/a| < 1   dimpled       does NOT reach origin    NO zero
+    |b/a| = 1   CARDIOID      touches, one cusp        THE BOUNDARY
+    |b/a| > 1   looped        CROSSES origin           A ZERO
+  the cardioid is the SIFTING THRESHOLD, not the curve.
+  REFUTED: "the curve IS a cardioid" -- global fit R^2 = -0.7722 (worse than a
+  constant); curve winds 13.36 turns, a cardioid is single-valued over one.
+@END
+
+@RCCM_MARGINAL_CONDITIONS
+  one threshold, four unrelated structures:
+    limacon family     |b/a| = 1          cardioid: touch without crossing
+    Mandelbrot         |multiplier| = 1   main cardioid boundary
+    PSL(2,Z)/Mobius    |trace| = 2        parabolic
+    sedenion orbit     growth/step = 1    measured 1.000000, EVERY element
+@END
+
+@RCCM_REVERSIBILITY
+  5 steps out, 5 conjugate steps back, mean |x - x0|:
+    CAGE (contract, 4)        10.536054     IRREVERSIBLE
+    GUEST (preserve, 8) = O    0.000000     reversible (alternative law)
+    QUATERNION (4)     = H     0.000000     reversible (associative)
+  left vs right composition cost: IDENTICAL, ratio 1.00000, rates 0.22135 both.
+    forced: (xy)* = y*x* and |z| = |z*|  =>  |xy| = |yx| for pure imaginary.
+  so the screw has no left/right asymmetry -- the asymmetry is CHANNEL:
+    guest  work FREE (|prod| = 1.000000 at every depth) and RECOVERABLE
+    cage   work COSTS (e^0.2225d) and is PERMANENT
+@END
+
+@RCCM_AMPLITUDE_MODULATION
+  cage, composition depth d, n=600/depth:
+    mean ~ e^(0.2225 d)   R^2 = 0.9996
+    sd   ~ e^(0.3355 d)   R^2 = 0.9794      rate gap +0.1129
+    CV = sd/mean ~ e^(0.1129 d);  CV(12) = 0.4635; crosses 1 at d ~ 21 [EXTRAPOLATED]
+  guest: |prod| = 1.000000, modulation depth 0.000000, at every depth.
+  carrier conserved throughout: SUM sv^2 = 16 = dim.
+  NOTE 0.3355 is within 3% of ln(sqrt2) = 0.34657. UNVERIFIED -- one run, do not cite.
+  RETRACTED: "spread exceeds mean at depth 7" -- used max-min on n=40. Bad statistic.
+@END
+
+@RCCM_OBSERVER_AND_INVARIANT
+  same signal, two observers, rule "does MY operator annihilate this":
+    disagreement 800/800 = 100%.   BOTH CORRECT.
+  observer-DEPENDENT : which kernel is mine; self/other label; cage/guest role
+  observer-INDEPENDENT: the 84 diagonals; the 7 octonions; strut = i XOR j;
+                        where two struts MEET (21/21 pairs, exactly one octonion)
+  reason: the incidence is computed from i XOR j ALONE -- no observer term in the
+  expression, so no frame can reach it. (Same reason a GR invariant is invariant.)
+  domain DRAGS with the observer: ker overlap with a reference observer measured
+  4, 2, 0, 0 -- partial, i.e. linear action, not teleporting.
+  THE SWAPPER = which operator you hold. It is the ONLY thing breaking the 8/8
+  symmetry between preserve and the wings; the algebra supplies no fact of the
+  matter about which side is interior.
+@END
+
+@RCCM_CAGE_GUEST_SCOPE
+  dim PRESERVE = 8 ; dim CONTRACT+DILATE = 8 ; orthogonal complements.
+  DIMENSIONALLY SYMMETRIC  -> the perspective genuinely can flip (Fermat/Riemann
+                              as cage/guest is legitimate, frame-dependent)
+  ALGEBRAICALLY ASYMMETRIC -> preserve leak 9.49e-16, wings leak 1.414
+  closure is FRAME-INVARIANT: under 5 random re-bases preserve stays ~1e-15 and
+  wings stay ~1.2. A frame change swaps the LABELS, never which one is an algebra.
+  channel composition: PRESERVE = 1 real + 7 imaginary (carries e_0 entirely,
+  weight 1.000000); CONTRACT and DILATE are 4 imaginary + 0 real each.
+  the real axis sits in the channel that does not move. all work is imaginary.
+  e_0 alone generates dim 1 (R). e_0 + one imaginary generates dim 2 (C).
+@END
+
+@RCCM_RING_THEORY_SPINE
+  THE ONE STATEMENT (measured, G1):
+    element FALLS  <=>  its quotient ring has zero divisors.
+  INTEGER SIDE (Z, associative UFD):
+    N composite  <=>  Z/(N) has a zero divisor  <=>  (N) not a prime ideal   FALL
+    N prime      <=>  Z/(N) is a field                                       SURVIVE
+    N in {0,1}   <=>  degenerate quotients Z/(0)=Z, Z/(1)=0                   MINGLING
+    Two Trees == this dichotomy (domain vs not-a-domain).
+  ALGEBRA SIDE (T32/GF(2), NON-associative):
+    w falls  <=>  w nilpotent (w^2=0)  <=>  w in ZD set (= union associated primes)
+  ONE DETECTOR, BOTH RINGS (single operation):
+    Z    : gcd(a,N) > 1                          (the integer trace-Laplacian)
+    GF2  : Delta(w) = w . 1_dim ;  Delta(w)=0  <=>  w^2=0
+    census closes: units phi(N) + zero_divisors + {0} = N
+  THE THREE ORDERS (value -> curvature -> torsion):
+    order 1  spectrum/cymatic  ZD set = union associated primes   support  omega(n)
+    order 2  cepstrum          primary decomp (n)=cap(p_i^a_i)     exponents Omega(n)
+                               von Mangoldt Lambda(n)=log p iff n=p^k
+                               psi(x)=x - sum_rho x^rho/rho -> back to Riemann zeros
+    order 3  bispectrum        associator [a,b,c]=(ab)c-a(bc)      the ring defect
+  ASSOCIATOR = OBSTRUCTION TO BEING A RING:
+    associator == 0  for R,C,H (rings) ; != 0 from O up (not rings)
+    ring theory COMPLETE on Z side, is exactly what DIES on algebra side:
+    commutativity@H, associativity@O, domain@S(dim16).   quantised in 168=|PSL(2,7)|
+  GF(2) SQUARE LAW:  x^2 in {0, e_0} for all x. nilpotents (radical) vs involutory
+    units split the algebra in half (128/128 at dim 8, exhaustive).
+  CORRECTED LEMMA (OURS, 2026-08-22 — supersedes the UDEO white-paper proof):
+    1_dim is NOT a global annihilator. e_0 . 1 = 1 != 0 ; K round consts . 1 = 1.
+    TRUE law: Delta(w)=w.1 = 0  <=>  w^2=0. (exhaustive dim8; 20000 random dim32)
+    SHA-1 five IVs = NULL SUBALGEBRA on the nodal line (dist 0), NOT a "closed
+    ideal" (algebra is non-associative); four round consts at max dist 32.
+@END
+
+# --- @RCCM_RING_THEORY_SPINE CONNECTION NOTE (Claude, 2026-08-22) ------------
+# WHY THIS BLOCK IS HERE, and what it wires together for future sessions:
+#
+#   * It is the ring-theory NAMING of the factoral tower we already had. Nothing
+#     new was invented; the objects were renamed to their standard ring-theory
+#     names, which made the whole thing collapse to the one FALL<=>quotient-ZD
+#     statement. Cody's prompt: "where is ring theory in all this."
+#
+#   * gcd IS the integer trace-Laplacian. This ties @RCCM_GAIN_SPECTRUM /
+#     Delta(w)=w.1 (the GF(2) nodal-line test used in the SHA-1 name collision,
+#     TuringStack) to ordinary integer factoring. Same detector, two rings.
+#
+#   * The three orders are the DSP tower (spectrum/cepstrum/bispectrum) = the
+#     ring tower (associated primes / primary decomposition / associator).
+#     order-2 (cepstrum) == von Mangoldt Lambda == the missing "Riemann-facet
+#     fall condition" SedenionFactoralRelativity had been looking for.
+#     order-3 (associator) == @RCCM ... the 168 quantisation, the ring defect,
+#     the "curvature" of wiki/90 divisors-are-definers.
+#
+#   * FRACTAL CONTINUATION (frontier, provisional): circle -> ring (cyclotomic
+#     Z[zeta_n]) -> toroidal bifurcation (Riemann toroidal energy about the R-B
+#     axis, sigma=1/2; J_2 IS the torus involution, wiki/90) -> fractal. Each is
+#     the higher-order generational lineage of the last; ring theory is the
+#     skeleton. Experiment set: Ainulindale/wiki/fractals/ (200+ UF formulas).
+#
+#   * Engine: SedenionFactoralRelativity/engine/lineage.py, relations G1-G6
+#     (20/20). Owner's-manual writeup: Ainulindale/README.md section 20 and
+#     wiki/92_ring_theory_spine.md. History/refutation of the annihilator lemma:
+#     TuringStack/UDEO_Cryptographic_Vulnerability.md section 4.2 (retraction).
+# ----------------------------------------------------------------------------
+#
+# FRACTAL BLOCK BUILT 2026-08-22 (SedenionFactoralRelativity/engine/lineage.py,
+# FR1-FR3, engine now 23/23):
+#   FR1 tower_self_similar   CD tower exact self-similar recursion, assoc 168->1848
+#                            = 11*168, persist core 8 at every scale. KNOWN.
+#   FR2 bifurcation_cascade  period-doubling ratios bracket Feigenbaum 4.6692.
+#                            "bifurcates emergently"; J_2 the generator. KNOWN.
+#   FR3 fall_survive_boundary  box-count dim of an iterated generator's fall/
+#                            survive boundary, 1<D<2. fall=escape, survive=bounded
+#                            = G1 read on dynamics. wiki/fractals/ = the CONTROL
+#                            SET (Mandelbrot ~1.3, Julia ~1.6, Burning Ship ~1.56,
+#                            all distinct). FRONTIER framing: structural analogy to
+#                            factoring, NOT a claim the Mandelbrot set is the primes.
+#   helpers exported: nonassoc_count, feigenbaum_delta, escape_survives,
+#                     box_dimension, MANDELBROT, BURNING_SHIP.
+#
+# TWO-ANCHOR / X-RAY CRYSTALLOGRAPHY (2026-08-22, PW5): pinning BOTH the origin
+# (1=e0) and destination (N) makes factoring a boundary-value problem — the
+# factor is a geodesic NODE symmetric about the midpoint sqrt(N). Fermat walks the
+# excursion from sqrt(N); excursion = imbalance; RSA hides the factor by tuning it
+# large. Cody's frame "mathematical X-ray crystallography" is EXACT: N=crystal,
+# labelings=structure factors, two anchors=Ewald sphere, tuning=crystal rotation,
+# square residue=Bragg reflection, F6 XOR-differences=Patterson function, and the
+# PHASE PROBLEM (measure |F| order-1, lose arg F order-2) = why factoring is hard
+# and why bifurcation(classifier) is at chance. Polynomial factoring = solving the
+# phase problem from ONE measurement = OPEN, not claimed. Wiki: Ainulindale/94.
+#
+# THE ARITHMETIC DERIVATIVE (2026-08-22, G8): the ring-theory answer to "what is
+# a derivative" is a DERIVATION -- any additive map with Leibniz (ab)'=a'b+ab',
+# no limit needed. On Z: declare p'=1 for primes (atoms, constant rate), Leibniz
+# forces the rest -- n'=n*sum(a_i/p_i) for n=prod p_i^a_i (Barbeau 1961). n'/n IS
+# the log-derivative = the SAME cepstral order-2 datum as primary_decomposition/
+# von_mangoldt, read as a rate. D(0)=D(1)=0 (Mingling killed); D(p)=1; power rule
+# D(p^k)=k*p^(k-1) EXACT; fixed points D(n)=n forced to n=p^p: 4=2^2,27=3^3,
+# 3125=5^5 -- the "arithmetic e^x". Formal derivative on R[x] (any ring, no
+# limit) detects repeated roots via gcd(f,f')!=1 = the DISCRIMINANT = RAMIFICATION
+# when a prime splits in a ring extension -- ties directly to the cyclotomic
+# Z[zeta_n] frontier already in @RCCM_RING_THEORY_SPINE. Engine:
+# SedenionFactoralRelativity/engine/lineage.py, ring.arithmetic_derivative (G8).
+#
+# THE SMITH CHART (2026-08-22, PW8): Veritasium "The Scariest Chart in
+# Electrical Engineering" -> the Smith chart (Phillip Smith 1939) IS a Mobius
+# transform Gamma=(Z-Z0)/(Z+Z0), independently arrived at, in the SAME family as
+# L_(I|O). Z=Z0 (matched) = the unique fixed point Gamma=0 = the anchor; Z=0/inf
+# (short/open) = the other two anchors, both -> boundary |Gamma|=1; |Gamma|=1 <=>
+# Re(Z)=0 exactly = the lossless/reactive locus = the HORIZON (same role as
+# L_(I|O)'s r=1); constant-R/constant-X families orthogonal (conformal map);
+# Y=1/Z (admittance, inside-out) = EXACTLY Gamma -> -Gamma, a pi-ROTATION on the
+# same chart -- the Smith chart's own L_(I|O), one octave coarser than sedenion
+# theta->theta+pi/2 (order 2 not 4). Stub tuning = the two-anchor tuned pathway
+# (PW5/PW2), engineered since WWII radar. HONEST: not evidence FOR the wider
+# framework -- evidence the MATHEMATICAL OBJECT (Mobius+fixed anchor+tunable
+# path between two anchors) is what real engineering independently reaches for.
+# Engine: SedenionFactoralRelativity/engine/lineage.py, PW8.
+#
+# THE NUMBER CHART / VISUALISER METHODOLOGY (2026-08-22, PW9): the Smith chart
+# (PW8) is not an analogy for the factoral-decomposition visualiser -- it IS the
+# design template. Gamma_N(a) = excursion/(excursion+2a0) folds the unbounded
+# Fermat search radius (PW5) into a bounded [0,1) chart; a0=ceil(sqrt(N)) (the
+# two-anchor midpoint) is the fixed-point anchor, Gamma_N=0. Bounded, monotone
+# under tuning, and the factor NODE's Gamma_N position is a DIFFICULTY GAUGE:
+# balanced N -> near the anchor; hard/unbalanced N -> near the horizon. This
+# resolves the visualiser's design: ONE bounded chart, fixed-anchor landmarks
+# (1, N, sqrt(N)), tuning-as-a-dial (the multiplier k, PW2) -- not five
+# side-by-side panels. decompose_number(N)['number_chart'] is the datum.
+# Engine: SedenionFactoralRelativity/engine/lineage.py, PW9.
+
+# ============================================================
+# ADD:SCALE:SIGN — the tier-0 datatype  (2026-08-28)
+# Engine: ValaQuenta/modules/add_scale_sign/  (ASS, ASSWord, AddScaleSignModule)
+# Canonical decomposition maths (four-question test, roll-down):
+#   VAPMIP/add_scale_sign.py  — NOT duplicated in the datatype module
+# ============================================================
+#
+# A Python value type for elements of the tier-0 floor
+#   Aff(1,R) = R ⋊ (R_{>0} × Z/2) = ADD ⋊ (SCALE × SIGN),   x ↦ sign·scale·x + add.
+# Like `str` carries split/strip/replace, ASS carries its own manipulation
+# surface: compose (@), invert (~), residual(without) [strip one generator,
+# keep the rest — the str.strip analogue], only(part), parts(), decompose to
+# an ASSWord, to_smith(), lineage(order=).
+#
+# EACH GENERATOR'S EQUATION PART (its contribution to the generalized-equation
+# word):
+#   ADD    x ↦ x + a     Δ_ADD   = a            (translation; flow/count; FREE)
+#   SCALE  x ↦ s·x        Δ_SCALE = ln s         (log-gain; the fold; the WORK)
+#   SIGN   x ↦ g·x        Δ_SIGN  = g ∈ {−1,+1}  (one bit; det ±1; FREE)
+#
+# THE GENERALIZED EQUATION (the whole session's spine, one line):
+#   u  =  Σ_k [ g_k·ln s_k + a_k ]          the signed ADD:SCALE:SIGN word-length
+#   Γ  =  tanh(u/2)                          the Smith/Joukowsky fold in word coords
+# The fold IS the generating function of Aff(1,R) acting on ln x.
+#   GROUND STATE:  a_k→0, s_k→1, g_k→+1  ⇒  u=0  ⇒  Γ=0  ⇒  x = anchor
+#     = the now / the viewport / SCALE at identity = "readiness = ground state
+#       = only ADD:SCALE:SIGN".
+#
+# FIRING ORDER — the three-phase camshaft (Monad valve order):
+#   CAMSHAFT = (SIGN, SCALE, ADD)   SIGN fires first / innermost:
+#     x ↦ ADD( SCALE( SIGN(x) ) )   ⇔   T = ASS.ADD(a) @ ASS.SCALE(s) @ ASS.SIGN(g)
+#   the one non-trivial bracket is  [SCALE, ADD] = ADD  — order matters at THIS
+#   tier; the sedenion does NOT enter.
+#   FIRING DEFECT:  u_total − Σ u_generators  =  (g − 1)·ln s
+#     zero iff g=+1 or s=1; else −2·ln s. Non-zero ⇔ SIGN flipped a non-trivial
+#     SCALE ⇔ "you defined it twice" — the same shape as the Bell composed-
+#     rotation defect (.claude/scratchpad/2026-08-28_bell-native-space/).
+#
+# TWO GENERATIONAL-LINEAGE ORDERINGS of a recorded word (ASSWord):
+#   chrono — application order (when each step fired; the record / Paper's Hands)
+#   zeta   — sorted by spectral weight |u_k| descending (how much each step moves
+#            the fold). The departure between the two IS this datatype's ψ(x)−x.
+#
+# ORTHOGONAL SMITH CHARTS (read-out in the language it was built on):
+#   Γ_SCALE = tanh(½·ln s)   (multiplicative / E–W ring)
+#   Γ_ADD   = tanh(½·a)      (additive / N–S ring)
+#   parity  = g              (which quadrant sheet)
+#   ground → (0, 0, +1) = the centre / the now.
+#
+# RECORD KEEPING built in: .steps (atomic generators, application order),
+# .record() (the immutable (a,s,g) log), ~ reverses & inverts the record —
+# forward / backward / the Long Path, one type.
+
+# ============================================================
+# THREE SIGMAS — do not conflate them (2026-09-23)
+# Wiki: Ainulindale/wiki/123_sigma_rb_mass_gap_calibration.md
+# ============================================================
+#
+# "sigma" names THREE DIFFERENT OBJECTS across the codebase. Each is real
+# and each is used correctly in its own file -- the risk is carrying a
+# result from one into a sentence about another.
+#
+#   sigma_zeta   h_rb_hat/maths.py's `sigma` parameter = Re(s), the
+#                Dirichlet/Euler coupling exponent. A single float.
+#                Facets: 0, 1/2, 1, 2, real-only (Ainulindale/wiki/105's
+#                table). NO string/M-theory facet exists at this level.
+#
+#   sigma-strata sigma_0 .. sigma_4, Ainulindale/wiki/25 sec IX -- ordinal
+#                NESTED-INCLUSION levels of the sedenion (how many of the
+#                16 components are switched on), not a continuous coupling
+#                exponent at all. sigma_4 = e0..e15 all active = "String /
+#                ground state" -- THIS is where "mass gap -> string theory"
+#                actually lives in this framework (wiki/25 sec VII: GAP =
+#                e15 component -> ZD boundary -> 7 imaginary octonion
+#                units -> G2 holonomy -> 11D = 4 observable + 7 compact ->
+#                M-theory structure, one vacuum, no moduli). Matches
+#                ValaQuenta/modules/bao_mass_gap/maths.py's
+#                mtheory_compactification() exactly -- same chain, same
+#                11=4+7, same G2=Aut(O). This is a COMPACTIFICATION-SCALE
+#                argument (Delta sets a geometric scale), not a sigma-
+#                facet assignment.
+#
+#   sigma_RB     the real Oblique Gear object (ContextPlease/claude/
+#                scratchpad/2026-08-31_oblique-gear/oblique_gear_test.py):
+#                sigma_RB[k] = psi[k]*conj(psi[k^4]), psi in C^16.
+#                tilt = Re (8-vector, the driven/obliquity part),
+#                axis = Im (8-vector, the conserved anchor). sigma_self =
+#                1/2 + Sum(tilt)/(red+blue) is a SEPARATE, DERIVED scalar
+#                built FROM sigma_RB, not sigma_RB itself.
+#
+# CALIBRATION TEST, 2026-09-23 (Delta = bao_mass_gap's Yang-Mills/BAO
+# residue, 0.000707357533, INPUT as sigma_RB's mean tilt -- a forward-
+# propagation calibration: push a known quantity through the operator and
+# read what it says, not a derivation of Delta, which comes from
+# Omega_zeta_Sigma - D*.ln(10) independently):
+#
+#   Re(sigma_RB) = tilt = Delta on all 8 struts, exactly, by construction
+#   (that's the input, trivially true, not a finding).
+#
+#   sigma_self, PROVEN exactly strut-blind once each pair's energy is held
+#   fixed at a constant E (algebra: red=4E+Sum(tilt), blue=4E-Sum(tilt),
+#   so red+blue=8E always, independent of how tilt is distributed across
+#   the 7 struts):
+#       sigma_self = 1/2 + mean(tilt)/E = 1/2 + Delta/E
+#   Verified to 12 digits against the actual code with struts swept up to
+#   16x Delta's own scale -- sigma_self unchanged at every point. At E=1:
+#   sigma_self = 0.500707357179, landing deep inside the sigma_zeta = 1/2
+#   Quantum-Mechanics/Riemann facet (wiki/105) -- NOT string/M-theory.
+#   Confirms: the string/M-theory connection belongs to the sigma-strata /
+#   compactification route above, not to feeding Delta into sigma_RB's
+#   tilt -- these are different mechanisms and should not be merged into
+#   one claim.
+#
+#   CORRECTION to oblique_gear_test.py's own T7 docstring ("the axis
+#   holds" / drift tracks struts only): measured drift DOES depend on the
+#   mean, holding struts fixed (mean=Delta -> drift 3.664, mean=0 -> 3.919,
+#   mean=-Delta -> 3.930 over the same 200-step gain=0.05 gear-train run).
+#   Asymmetric in +-Delta and outside an 8-sample same-scale control's
+#   spread (0.006-0.04) -- OPEN, not yet distinguished from ordinary
+#   chaotic sensitivity of a 200-step nonlinear iterated rotation vs a
+#   real Delta-specific effect. Needs many more trials or a proper local-
+#   sensitivity/Lyapunov measurement before either verdict.
+#
+#   THE RECTIFIER LAW (an earlier, energy-UNnormalized embedding leaked
+#   strut information into sigma_self -- chased to an exact closed form,
+#   not dismissed as noise): with psi[k]=psi[k^4]=sqrt(|tilt_k|), signed,
+#     sigma_self = 1/2 + 4*Delta / Sum_k |Delta + lambda*u_k|
+#   (u = a fixed unit strut direction, lambda = strut scale), verified
+#   exact to 12 digits against code at 13 lambda values from 1e-6 to 1e5.
+#   TWO REGIMES, sharply divided at the first-sign-flip threshold:
+#     lambda below threshold: sigma_self = 1.0 EXACTLY, flat -- struts
+#       totally invisible (no cancellation in Sum|t_k| while every
+#       Delta+lambda*u_k shares Delta's sign).
+#     lambda above threshold: log-log fit slope = -0.9985 -- an exact
+#       INVERSE-FIRST-POWER law (dev ~ lambda^-1), matching the closed
+#       form's own large-lambda asymptote. NOT inverse-square -- tested
+#       and ruled out by the actual fit.
+#
+# STATUS: OPEN / THEORETICAL. Ad hoc cross-test between bao_mass_gap.py
+# and oblique_gear_test.py -- neither script is wired into ValaQuenta's
+# EquationModule/engine formulary yet, so this does not earn :CALCULATED
+# (feedback_calculated_label: that suffix requires the machinery to
+# reproduce the work from its own construction, not accept an input
+# unchanged). What's solid: the strut-blindness of sigma_self (exact
+# algebra, verified) and the rectifier's inverse-first-power law (exact
+# derivation + verified fit). What's open: whether T7's mean-sensitivity
+# is Delta-specific or generic chaos; whether sigma_RB has any principled
+# (non-injected) route to producing Delta rather than accepting it.
+
+# ── Added 2026-09-28 (ValaQuenta public-release pass). Equations only; history is in .clauderc_ValaQuenta (same tags).
+@RCCM_FORCED_SIGMA
+  F(s) = exp(-s E)   forward current          B(s) = exp(-(1-s) E)   backward current      (E real, s real)
+  h(s) := ln F - ln B = E (1 - 2s)            LINEAR in s;   h'(s) = -2E
+  Newton:  s <- s - h/h' = s + (1 - 2s)/2 = 1/2        one step, any real s0, any E != 0   (E cancels)
+  E = 0: F = B = 1 for every s (balanced everywhere); the symmetric meeting point is still 1/2.
+  ESTABLISHED (elementary algebra; ValaQuenta.noether.NoetherCurrents.forced_sigma == 0.5 exactly for
+  E in {0, 0.5, 10, 100, 1e3, 1e4, 745}, s0 in {-3, -1, 0, 0.25, 0.3}; tests/test_known_results.py).
+@END
+@RCCM_MOD4_ED
+  RSA, odd primes p,q:  4 | phi(n) = (p-1)(q-1)   =>   e d = 1 (mod phi(n))  =>  e d = 1 (mod 4)
+  (Z/4Z)* = {1,3} has exponent 2, every element self-inverse   =>   d = e (mod 4).
+  Removes exactly 1 bit of the private-exponent search space. ESTABLISHED (classical number theory; 2000/2000
+  random keys). It needs no sedenion machinery.
+@END
+@RCCM_HORNER_ADDRESS
+  TWO distinct Horner constructions — do not conflate the bases:
+  HYPERWEBSTER (modules/hyperwebster):  alphabet of 97 keyboard characters, c_i = index(char_i) in 0..96,
+      idx(text) = sum_i c_i 97^(k-1-i)        bijective on text of known length k;  decode: repeated mod/div 97.
+  P1 HASH (modules/udeo_crypto, from VAPMIP monad.py):  v = sum_i (ord(ch_i) - 32) 95^(k-1-i)  (Horner, base 95),
+      p = next prime >= max(2, v mod 65537) (cap 65536),  zero index = pi(p) in [1, 6542]   (pi(65536) = 6542).
+  ESTABLISHED (definitions; runnable as docs/listings.rst Listings 1 and 2 in ValaQuenta).
+@END
+@RCCM_OBLIQUE_GEAR_ANGLES
+  crank angle (black-hole side):  theta_crank = arctan(d*) = 13.820340 deg        (d* = 0.246; h_rb_hat, ESTABLISHED)
+  galaxy side:  y(x) = (2/pi) arctan(x),  x = r/r_t,    y'(x) = (2/pi)/(1+x^2)
+      tangent angle at x = 1:  arctan(1/pi) = 17.656787 deg
+  difference = 3.836448 deg   ==>  crank == galaxy tangent at r_t   is REFUTED as stated.  (OPEN:CALCULATED)
+  tangent angle equals theta_crank at   x = sqrt(2/(pi d*) - 1) = 1.260113    (cbrt(2) = 1.259921, gap 1.9e-4:
+  NOT significant at d*'s own input precision).
+  What survives: both sides keyed to the same d*, both use arctan to bound an unbounded ratio — kinship, not proof
+  of one mechanism.
+@END
+@RCCM_CONFIDENCE_TIERS
+  ESTABLISHED > THEORETICAL > CONJECTURE > OPEN        (strongest first; the tiers of the engine registry)
+  A compound label names several tiers ("ESTABLISHED+THEORETICAL"). In code: Equation.confidence = the WEAKEST
+  tier named; Equation.confidence_note = the label as authored. Never flatten a compound tag to its upper half.
+  COMPUTATIONAL is a fifth label used once (clay_millennium.rh_noether_balance_scan): a scan run in code, no claim
+  beyond the scan. Suffix :CALCULATED — see feedback_calculated_label.
+@END
+
+@RCCM_KITE_RELATIONS
+Sedenion box-kite as relations (VAPMIP/docs/wiki/Boxkite-Relational-Atlas.md). Assessor = ordered pair (a,b) of distinct Fano points = plane span(e_a,e_{b+8}) (42);
+strut s=a xor b; kite_s = Fano plane minus s (6 vertices, 12 edges, 8 faces, all holonomy -1). Edge = product relation xy=0 (never say binary).
+Primitives: zero, sign, doubling bit, collinearity (XOR), handedness alpha, commutator beta, associator phi=d(alpha), annihilation. Whole kite = antiflag (e8,P) + one cocycle.
+G2 (Der dim 14) fixes span(e0,e8); all 84 diagonals one orbit, stabiliser SU(2); N(y)=S3 of partners (4 lattice neighbours orthonormal; not closed under product).
+{4:8:4} per ZD = null 4 | now octonion O_u (u=polar of line a,b,s) 8 | future 4. Finite symmetry 2688 = 16 characters x GL(3,2)=168.
+Moving-kite invariants: norm, e0/e8 weights, lower/upper split, L_v/R_v singular spectra, associator norm. Frame-relative: chart energies, Walsh coefficients, sigma_RB tilt.
+Constants: d* faces 0.24631 / RG dim 8 / taut / ln10 (see D_STAR_* env); Lambert W0 0, W(1)=0.5671, W(-1/e)=-1 double root; UNS = divide by ln10.
+@END

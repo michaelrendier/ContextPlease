@@ -1,0 +1,1320 @@
+{
+ "DM-10": [
+  [
+   "identity",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "scale x2.5",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "conjugation (e_k -> -e_k, k>0)",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "WHT (dense Hadamard transform / 4)",
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   "Gray-code index map (unsigned)",
+   0.2857142857142857,
+   0.0,
+   0.0,
+   0.2857142857142857
+  ],
+  [
+   "bit-reversal index map (unsigned)",
+   0.23809523809523808,
+   0.16666666666666666,
+   0.16666666666666666,
+   0.23809523809523808
+  ],
+  [
+   "swap halves e_i <-> e_{i+8}",
+   1.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  [
+   "rotate every (k,k+8) pair by 0.3 rad",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "rotate every (k,k+8) pair by pi/4",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "character chi_1 (Hadamard row 1)",
+   1.0,
+   0.42857142857142855,
+   0.42857142857142855,
+   1.0
+  ],
+  [
+   "character chi_4 (Hadamard row 4)",
+   1.0,
+   0.42857142857142855,
+   0.42857142857142855,
+   1.0
+  ],
+  [
+   "character chi_5 (Hadamard row 5)",
+   1.0,
+   0.42857142857142855,
+   0.42857142857142855,
+   1.0
+  ],
+  [
+   "character chi_9 (Hadamard row 9)",
+   1.0,
+   0.5714285714285714,
+   0.5714285714285714,
+   1.0
+  ],
+  [
+   "character chi_15 (Hadamard row 15)",
+   1.0,
+   0.5714285714285714,
+   0.5714285714285714,
+   1.0
+  ],
+  [
+   "XOR-translate index by 1 (unsigned)",
+   0.42857142857142855,
+   0.14285714285714285,
+   0.14285714285714285,
+   0.42857142857142855
+  ],
+  [
+   "XOR-translate index by 3 (unsigned)",
+   0.42857142857142855,
+   0.14285714285714285,
+   0.14285714285714285,
+   0.42857142857142855
+  ],
+  [
+   "XOR-translate index by 8 (unsigned)",
+   1.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  [
+   "flip sign of e_0 only",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "flip sign of e_3 only",
+   0.7142857142857143,
+   0.8571428571428571,
+   0.8571428571428571,
+   0.7142857142857143
+  ],
+  [
+   "flip sign of e_8 only",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ],
+  [
+   "flip sign of e_11 only",
+   0.7142857142857143,
+   0.8571428571428571,
+   0.8571428571428571,
+   0.7142857142857143
+  ],
+  [
+   "left-multiply by e_1",
+   0.42857142857142855,
+   0.2857142857142857,
+   0.2857142857142857,
+   0.42857142857142855
+  ],
+  [
+   "left-multiply by e_5",
+   0.42857142857142855,
+   0.2857142857142857,
+   0.2857142857142857,
+   0.42857142857142855
+  ],
+  [
+   "left-multiply by e_8",
+   1.0,
+   1.0,
+   1.0,
+   1.0
+  ]
+ ],
+ "DM-10-control": {
+  "random_orthogonal_both": 0.0
+ },
+ "DM-12-std": {
+  "capable_ordered_plane_pairs": 168,
+  "planes_with_a_partner": 42,
+  "degree_set": [
+   4
+  ],
+  "within_chart": 168,
+  "nullity_hist": {
+   "2": 168
+  },
+  "kappa_x": [
+   1.0,
+   -1.0
+  ]
+ },
+ "DM-13": [
+  [
+   "0",
+   1,
+   {
+    "capable_ordered_plane_pairs": 1764,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     42
+    ],
+    "within_chart": 252,
+    "nullity_hist": {
+     "2": 252,
+     "1": 1512
+    },
+    "kappa_x": []
+   }
+  ],
+  [
+   "1",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "1",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "1/2",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   "1/2",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   "sqrt2",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.8409,
+     -0.8409
+    ]
+   }
+  ],
+  [
+   "sqrt2",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     0.8409,
+     -0.8409
+    ]
+   }
+  ],
+  [
+   "2",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071
+    ]
+   }
+  ],
+  [
+   "2",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071
+    ]
+   }
+  ],
+  [
+   "e",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.6065,
+     -0.6065
+    ]
+   }
+  ],
+  [
+   "e",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     0.6065,
+     -0.6065
+    ]
+   }
+  ],
+  [
+   "pi",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.5642,
+     -0.5642
+    ]
+   }
+  ],
+  [
+   "pi",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     0.5642,
+     -0.5642
+    ]
+   }
+  ],
+  [
+   "phi",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7862,
+     -0.7862
+    ]
+   }
+  ],
+  [
+   "phi",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     -0.7862,
+     0.7862
+    ]
+   }
+  ],
+  [
+   "ln10",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.659,
+     -0.659
+    ]
+   }
+  ],
+  [
+   "ln10",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     -0.659,
+     0.659
+    ]
+   }
+  ],
+  [
+   "Omega_ZS=d*_ln10",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     1.3279,
+     -1.3279
+    ]
+   }
+  ],
+  [
+   "Omega_ZS=d*_ln10",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     1.3279,
+     -1.3279
+    ]
+   }
+  ],
+  [
+   "d*=d*_taut",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     2.0149,
+     -2.0149
+    ]
+   }
+  ],
+  [
+   "d*=d*_taut",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     2.0149,
+     -2.0149
+    ]
+   }
+  ],
+  [
+   "d*_spec",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     2.0162,
+     -2.0162
+    ]
+   }
+  ],
+  [
+   "d*_spec",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     2.0162,
+     -2.0162
+    ]
+   }
+  ],
+  [
+   "GAP",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     -37.606,
+     37.606
+    ]
+   }
+  ],
+  [
+   "GAP",
+   1,
+   {
+    "capable_ordered_plane_pairs": 84,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2
+    ],
+    "within_chart": 84,
+    "nullity_hist": {
+     "2": 84
+    },
+    "kappa_x": [
+     -37.606,
+     37.606
+    ]
+   }
+  ],
+  [
+   "i",
+   -1,
+   {
+    "capable_ordered_plane_pairs": 252,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     6
+    ],
+    "within_chart": 252,
+    "nullity_hist": {
+     "2": 252
+    },
+    "kappa_x": [
+     "(-0.7071-0.7071j)",
+     "(0.7071+0.7071j)",
+     "(0.7071-0.7071j)",
+     "(-0.7071+0.7071j)"
+    ]
+   }
+  ],
+  [
+   "i",
+   1,
+   {
+    "capable_ordered_plane_pairs": 252,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     6
+    ],
+    "within_chart": 252,
+    "nullity_hist": {
+     "2": 252
+    },
+    "kappa_x": [
+     "(-0.7071+0.7071j)",
+     "(0.7071-0.7071j)",
+     "(-0.7071-0.7071j)",
+     "(0.7071+0.7071j)"
+    ]
+   }
+  ]
+ ],
+ "DM-14": [
+  [
+   "0",
+   {
+    "capable_ordered_plane_pairs": 1764,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     42
+    ],
+    "within_chart": 252,
+    "nullity_hist": {
+     "3": 774,
+     "2": 216,
+     "4": 756,
+     "1": 18
+    },
+    "kappa_x": [
+     0.0,
+     "family"
+    ]
+   }
+  ],
+  [
+   "1",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "1/2",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142,
+     2.0,
+     -2.0
+    ]
+   }
+  ],
+  [
+   "sqrt2",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.5946,
+     -0.5946,
+     0.7071,
+     -0.7071,
+     0.8409,
+     -0.8409,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "2",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.3536,
+     -0.3536,
+     0.5,
+     -0.5,
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "e",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.2231,
+     -0.2231,
+     0.3679,
+     -0.3679,
+     0.6065,
+     -0.6065,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "pi",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     -0.1796,
+     0.1796,
+     0.3183,
+     -0.3183,
+     -0.5642,
+     0.5642,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "phi",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.4859,
+     -0.4859,
+     0.618,
+     -0.618,
+     -0.7862,
+     0.7862,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "ln10",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.2862,
+     -0.2862,
+     0.4343,
+     -0.4343,
+     0.659,
+     -0.659,
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   "Omega_ZS=d*_ln10",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7531,
+     -0.7531,
+     1.0,
+     -1.0,
+     1.3279,
+     -1.3279,
+     1.7632,
+     -1.7632
+    ]
+   }
+  ],
+  [
+   "d*=d*_taut",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.4963,
+     -0.4963,
+     1.0,
+     -1.0,
+     2.0149,
+     -2.0149,
+     4.06,
+     -4.06
+    ]
+   }
+  ],
+  [
+   "d*_spec",
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.496,
+     -0.496,
+     1.0,
+     -1.0,
+     2.0162,
+     -2.0162,
+     4.065,
+     -4.065
+    ]
+   }
+  ],
+  [
+   "GAP",
+   {
+    "capable_ordered_plane_pairs": 537,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4,
+     14,
+     15,
+     20,
+     27
+    ],
+    "within_chart": 171,
+    "nullity_hist": {
+     "2": 198,
+     "1": 336,
+     "3": 3
+    },
+    "kappa_x": [
+     0.0,
+     0.0266,
+     -0.0266,
+     1.0,
+     -1.0,
+     37.606,
+     -37.606,
+     1414.2136
+    ]
+   }
+  ],
+  [
+   "i",
+   {
+    "capable_ordered_plane_pairs": 252,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     6
+    ],
+    "within_chart": 252,
+    "nullity_hist": {
+     "2": 252
+    },
+    "kappa_x": [
+     "(-0.7071-0.7071j)",
+     "(0.7071+0.7071j)",
+     "(0.7071-0.7071j)",
+     "(-0.7071+0.7071j)",
+     1.0,
+     "(-0+1j)",
+     "(-0-1j)",
+     -1.0
+    ]
+   }
+  ]
+ ],
+ "DM-15": [
+  [
+   1,
+   0.0,
+   {
+    "capable_ordered_plane_pairs": 1344,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4,
+     36,
+     38
+    ],
+    "within_chart": 240,
+    "nullity_hist": {
+     "2": 768,
+     "1": 432,
+     "4": 144
+    },
+    "kappa_x": [
+     0.0,
+     1.0,
+     -1.0,
+     "family"
+    ]
+   }
+  ],
+  [
+   1,
+   1.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   1,
+   2.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   1,
+   -2.0,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   2,
+   0.0,
+   {
+    "capable_ordered_plane_pairs": 1344,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4,
+     36,
+     38
+    ],
+    "within_chart": 240,
+    "nullity_hist": {
+     "2": 768,
+     "1": 432,
+     "4": 144
+    },
+    "kappa_x": [
+     0.0,
+     1.0,
+     -1.0,
+     "family"
+    ]
+   }
+  ],
+  [
+   2,
+   1.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   2,
+   2.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   2,
+   -2.0,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   3,
+   0.0,
+   {
+    "capable_ordered_plane_pairs": 1344,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4,
+     36,
+     38
+    ],
+    "within_chart": 240,
+    "nullity_hist": {
+     "2": 768,
+     "1": 432,
+     "4": 144
+    },
+    "kappa_x": [
+     0.0,
+     1.0,
+     -1.0,
+     "family"
+    ]
+   }
+  ],
+  [
+   3,
+   1.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     1.0,
+     -1.0
+    ]
+   }
+  ],
+  [
+   3,
+   2.0,
+   {
+    "capable_ordered_plane_pairs": 120,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     2,
+     4
+    ],
+    "within_chart": 120,
+    "nullity_hist": {
+     "2": 120
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ],
+  [
+   3,
+   -2.0,
+   {
+    "capable_ordered_plane_pairs": 168,
+    "planes_with_a_partner": 42,
+    "degree_set": [
+     4
+    ],
+    "within_chart": 168,
+    "nullity_hist": {
+     "2": 168
+    },
+    "kappa_x": [
+     0.7071,
+     -0.7071,
+     1.0,
+     -1.0,
+     1.4142,
+     -1.4142
+    ]
+   }
+  ]
+ ]
+}

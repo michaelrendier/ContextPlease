@@ -1,0 +1,50 @@
+1. THE FOUR TESTS (principal branch W0 at x = 0, 1, -1/e ; the second real branch W-1 at x = -1/e)
+   W0(0)       = 0.0
+   W0(1)       = 0.5671432904097838729999687
+   W0(-1/e)    = -0.99999999999999999999758
+   W-1(-1/e)   = -1.00000000000000000000242
+   distinct values (to 15 digits): 3 ; counted with multiplicity (the branch point is a double root): 4
+   numerical splitting of the double root: W0(-1/e) - W-1(-1/e) = 4.8399e-21  (evaluating at a 40-digit -1/e, error ~1e-41, splits the pair by ~ sqrt(2 e x error): the square-root sensitivity IS the double root)
+
+2. THE VALUES IN UNIVERSAL NATIVE SPACE (UNS = decimal-log metric ds = d.log10(p): divide a natural-log quantity by ln 10)
+   ln 10 = 2.302585092994045684 ; 1/ln 10 = log10(e) = 0.43429448190325182765 ; d*_taut = W(1)/ln 10 = 0.24630720147342257805
+   value       natural scale              UNS (value / ln 10)        in units of d*_taut       
+   W0(0)       0.0                        0.0                        0.0                       
+   W0(1)       0.567143290409783873       0.24630720147342257805     2.302585092994045684      
+   W0(-1/e)    -1.0                       -0.43429448190325182765    -4.0599706140053868953    
+   W-1(-1/e)   -1.0                       -0.43429448190325182765    -4.0599706140053868953    
+   sum of the four tests: -1.432856709590216127 = Omega - 2 ; UNS: -0.62228176233308107725 = d*_taut - 2/ln10 : -0.62228176233308107725 ; in d*_taut units: -5.8173561350167281067
+   W(1) in UNS IS d*_taut (the Flow);  W(-1/e) in UNS is -log10(e) = -0.4342944819...;  W(1) = ln10 x d*_taut (the Translator)
+   1/d*_taut = ln10/Omega = 4.0599706140053868953
+
+3. W AS THE FIXED-POINT MULTIPLIER.  f_lam(x) = exp(-lam x): fixed point x* = W(lam)/lam ; multiplier f'(x*) = -lam x* = -W(lam)
+   lam      W(lam)        multiplier -W(lam)   numerical f'(x*)   behaviour of the iteration (last values)
+   0.0000   0.00000000    -0.00000000          -0.00000000        attracting fixed point
+   1.0000   0.56714329    -0.56714329          -0.56714329        attracting fixed point
+   2.0000   0.85260550    -0.85260550          -0.85260550        attracting fixed point
+   2.6639   0.98992420    -0.98992420          -0.98992420        attracting fixed point
+   2.7183   1.00000000    -1.00000000          -1.00000000        period 2
+   3.0000   1.04990889    -1.04990889          -1.04990889        period 2
+   4.0000   1.20216787    -1.20216787          -1.20216787        period 2
+   8.0000   1.60581200    -1.60581200          -1.60581200        period 2
+   NOTE: past lam = e the orbit settles on a period-2 cycle and stays there (tested to lam = 8): exp(-lam x) is DECREASING, so its second iterate is increasing and the real map cannot be chaotic; no cascade, no crisis in the technical sense on the real line.
+   multiplier = -1 (FLIP: period doubling) at W(lam) = 1  <=>  lam = e ;  multiplier = 0 at lam = 0 (superstable) ; the idle point is lam = 1 : multiplier -Omega
+   GROWTH family g_lam(x) = exp(lam x): fixed points are solutions of exp(lam x) = x, i.e. x = -W(-lam)/lam ; multiplier = -W(-lam)
+      lam = 0.300000 : number of real fixed points = 2
+      lam = 0.367879 : number of real fixed points = 0   (tangent: the double root; fixed point x = e, multiplier +1)
+      lam = 0.400000 : number of real fixed points = 0
+   (at lam = 1/e: W(-1/e) = -1 and the multiplier -W = +1: the FOLD / saddle-node; tetration's critical base e^{1/e})
+
+4. THE FOLD IS A PROJECTION.  The curve (w, x = w e^w) is smooth and single-valued in w; dx/dw = e^w (1+w) vanishes at w = -1.  Number of real w with w e^w = x:
+      x = +2.000000 : 1 real preimage(s)
+      x = +0.500000 : 1 real preimage(s)
+      x = +0.000000 : 1 real preimage(s)
+      x = -0.100000 : 2 real preimage(s)
+      x = -0.367879 : 2 real preimage(s)   <- the branch point (exactly ONE preimage, a double root; the float -1/e sits a hair above the true value, so the grid sees 2)
+      x = -0.400000 : 0 real preimage(s)
+   (Whitney: the generic singularity of a projection of a smooth curve/surface is a fold; the two-valuedness of W is the shadow of a smooth curve with a vertical tangent)
+
+5. THE CARDIOID CUSP IS THE SAME MULTIPLIER +1.  Boundary of the main cardioid: c(mu) = mu/2 - mu^2/4 for the fixed-point multiplier mu = e^{i t} of z -> z^2 + c
+   dc/dmu = 1/2 - mu/2 vanishes on the unit circle only at mu = 1 : c(1) = 0.2500 ; at c = 1/4 the fixed point z = 1/2 has multiplier 2z = 1.0000 (the saddle-node)
+   |dc/dt| along the boundary near t = 0 (speed of the boundary point; 0 = cusp): [0.0998, 0.05, 0.0, 0.05, 0.0998]
+   So the cardioid is the unit circle |mu| = 1 seen through a map with a critical point at mu = 1: a circle, flattened.

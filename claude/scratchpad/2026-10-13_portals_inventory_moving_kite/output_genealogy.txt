@@ -1,0 +1,81 @@
+LEVEL 1  index group  Z2^4 = F2^4 under XOR  (16 elements; 15 nonzero)
+LEVEL 2  sign cocycle alpha(i,j) in {+-1}:  e_i e_j = alpha(i,j) e_{i xor j}   [twisted group algebra R^alpha[Z2^4]]
+   every basis product is +-1 times a single basis element: True (max extra mass 0.0e+00)
+   commutator sign beta(i,j) = alpha(i,j)alpha(j,i): -1 for distinct nonzero i,j: True ; +1 when i=0, j=0 or i=j: True
+   (the 'braiding' data; beta is NOT a bicharacter on Z2^4: beta(i^j,k) vs beta(i,k)beta(j,k) for independent i,j,k: 2520 violations)
+LEVEL 3  associator sign phi(i,j,k) = (e_i e_j) e_k / e_i (e_j e_k) in {+-1}: values seen [-1, 1] ; phi=-1 in 1848 of 4096 triples (catalog: 1848 nonzero associators)
+   nonassociative (phi=-1) among DEPENDENT triples (k in span{i,j}): 0 of 931 ; among INDEPENDENT triples: 1848 of 2730
+
+LEVEL 4  subalgebras = subgroups of Z2^4:
+   order 2 (C):  15 subgroups {0,i}
+   order 4 (H): 35 subgroups = the 35 lines of PG(3,2); composition (norm-multiplicative) holds in all: True
+   order 8: 50 subgroups = the 15 hyperplanes ker chi_u (+0); octonion-like (composition AND every independent triple nonassociative): 0 of 50
+      [0, 1, 2, 3]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 2, 3, 4, 5, 6, 7]           composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 2, 3, 8, 9, 10, 11]         composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 2, 3, 12, 13, 14, 15]       composition=False  all-independent-triples-nonassociative=False
+      [0, 1, 4, 5]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 4, 5, 8, 9, 12, 13]         composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 4, 5, 10, 11, 14, 15]       composition=False  all-independent-triples-nonassociative=False
+      [0, 1, 6, 7]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 6, 7, 8, 9, 14, 15]         composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 6, 7, 10, 11, 12, 13]       composition=False  all-independent-triples-nonassociative=False
+      [0, 1, 8, 9]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 10, 11]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 12, 13]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 1, 14, 15]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 4, 6]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 4, 6, 8, 10, 12, 14]        composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 4, 6, 9, 11, 13, 15]        composition=False  all-independent-triples-nonassociative=False
+      [0, 2, 5, 7]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 5, 7, 8, 10, 13, 15]        composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 5, 7, 9, 11, 12, 14]        composition=False  all-independent-triples-nonassociative=False
+      [0, 2, 8, 10]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 9, 11]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 12, 14]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 2, 13, 15]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 4, 7]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 4, 7, 8, 11, 12, 15]        composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 4, 7, 9, 10, 13, 14]        composition=False  all-independent-triples-nonassociative=False
+      [0, 3, 5, 6]                       composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 5, 6, 8, 11, 13, 14]        composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 5, 6, 9, 10, 12, 15]        composition=False  all-independent-triples-nonassociative=False
+      [0, 3, 8, 11]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 9, 10]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 12, 15]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 3, 13, 14]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 4, 8, 12]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 4, 9, 13]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 4, 10, 14]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 4, 11, 15]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 5, 8, 13]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 5, 9, 12]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 5, 10, 15]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 5, 11, 14]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 6, 8, 14]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 6, 9, 15]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 6, 10, 12]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 6, 11, 13]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 7, 8, 15]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 7, 9, 14]                      composition=True  all-independent-triples-nonassociative=False
+      [0, 7, 10, 13]                     composition=True  all-independent-triples-nonassociative=False
+      [0, 7, 11, 12]                     composition=True  all-independent-triples-nonassociative=False
+   order 16: the sedenions; composition fails (zero divisors): worst |xy|-|x||y| on random pairs = 3.639
+
+LEVEL 5  projective geometry PG(3,2):  15 points, 35 lines, 15 planes (=hyperplanes), each point on 7 lines
+   |GL(4,2)| = 20160 (= A8). Antiflag (point 8, plane P={1..7}): 15 x 8 = 120 antiflags -> stabiliser order 20160/120 = 168 (= |PSL(2,7)|)
+   Klein correspondence count: lines of PG(3,2) = 35 = points of the Klein quadric Q+(5,2) (q^2+1)(q^2+q+1) = 35
+
+LEVEL 6  Assessors from the antiflag (point e8, plane P = {1..7}):
+   each Assessor plane span(e_a, e_{b+8}) lies on a unique PG line {a, b+8, (a^b)+8}: 42 Assessors on 21 distinct lines, [2] Assessors per line
+      1 point of P, 2 outside                       not through e8   21 lines   <- the Assessor lines
+      1 point of P, 2 outside                       through e8        7 lines
+      in P                                          not through e8    7 lines
+   struts (chart label) s = a xor b  = a point of the lower plane P:  chart s holds the Assessors (a, a^s), a not in {0,s}:  6 each, 7 charts, 42 total
+   EDGE RULE: Assessors (a,b),(c,d) are joined by a vanishing product iff  a^b = c^d (same strut)  and (c,d) != (b,a) (not the reversal): predicate == measured adjacency: True (168 ordered pairs)
+   the necessary identity: basis products of x=e_a+-e_{b+8}, y=e_c+-e_{d+8} cancel in pairs only if  a^c = b^d  (and  a^d = b^c),  i.e.  a^b^c^d = 0;  the signs alpha then pick which 2 of the 4 sign choices annihilate: [2] sign choices per adjacent plane pair
+
+LEVEL 7  one box-kite (chart 1): vertices, edges, faces
+   vertices 6, edges 12, triangular faces 8, non-edges (the 3 'struts' in De Marrais's sense = axes joining opposite vertices): [((2, 3), (3, 2)), ((4, 5), (5, 4)), ((6, 7), (7, 6))]
+   faces whose three vertices can carry diagonals that ALL mutually annihilate (both orders): 0 ; faces where they cannot: 8
+   faces carrying a one-direction cycle x1 x2 = x2 x3 = x3 x1 = 0: 0

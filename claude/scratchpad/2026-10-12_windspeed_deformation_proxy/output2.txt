@@ -1,0 +1,29 @@
+A. eps pattern per pencil r (r<=7 are the box-kite struts) vs Hadamard rows (columns j=0..6)
+   r=1  err=4.4e-16 eps=++--++-  = +/- Hadamard row [2]
+   r=2  err=3.3e-16 eps=+--++--  = +/- Hadamard row [3]
+   r=3  err=4.4e-16 eps=++--++-  = +/- Hadamard row [2]
+   r=4  err=4.4e-16 eps=+++++++  = +/- Hadamard row [0]
+   r=5  err=3.3e-16 eps=+-+-+-+  = +/- Hadamard row [1]
+   r=6  err=4.4e-16 eps=++--++-  = +/- Hadamard row [2]
+   r=7  err=3.3e-16 eps=+--++--  = +/- Hadamard row [3]
+   r=8  err=4.4e-16 eps=+++--++  = +/- Hadamard row NONE
+   r=9  err=3.3e-16 eps=+-++-+-  = +/- Hadamard row NONE
+   r=10 err=1.3e+00 eps=++-+--+  = +/- Hadamard row NONE
+   r=11 err=1.4e+00 eps=+------  = +/- Hadamard row NONE
+   r=12 err=1.3e+00 eps=+--+--+  = +/- Hadamard row NONE
+   r=13 err=1.3e+00 eps=+-+--++  = +/- Hadamard row NONE
+   r=14 err=1.5e+00 eps=+--+-++  = +/- Hadamard row [7]
+   r=15 err=1.4e+00 eps=+--+++-  = +/- Hadamard row NONE
+
+B. anchoring: 128 different subsets of stations held fixed -> 7 different groupings of the 7 struts
+   {1,3,6} stay rigid under 8 of 128 anchor subsets; rigid-set sizes seen: [0, 1, 2, 3, 7]
+   grouping ((1, 3, 6), (2, 7), (4,), (5,))  <- 73 anchor subsets, e.g. anchored stations [1]
+   grouping ((1, 3, 5, 6), (2, 4, 7))  <- 12 anchor subsets, e.g. anchored stations [1, 4, 5]
+   grouping ((1, 2, 3, 6, 7), (4, 5))  <- 12 anchor subsets, e.g. anchored stations [2, 4, 6]
+   grouping ((1, 3, 4, 6), (2, 5, 7))  <- 12 anchor subsets, e.g. anchored stations [3, 4, 7]
+   grouping ((1, 2, 3, 4, 5, 6, 7),)  <- 11 anchor subsets, e.g. anchored stations [1, 2, 4, 5, 6]
+
+C. regimes of the SAME law H = -cos(sum eps*phi), strut 1:
+   discrete  phi in {0,pi/2}            : H values seen = [-1.0, 0.0, 1.0]
+   semi-cont phi on grid {0,pi/8,...,pi/2}: 9 distinct H values, from -1.000 to 1.000
+   continuous phi real                   : H fills [-1, 1]

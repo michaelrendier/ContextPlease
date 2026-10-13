@@ -1,0 +1,31 @@
+ordered ZD pairs 336
+(a) frame-preserving index maps: 168
+    element orders in the 168: {1: 1, 2: 21, 3: 56, 4: 42, 7: 48}  (PSL(2,7): 1x1, 2x21, 3x56, 4x42, 7x48)
+    unsigned permutation matrices (no sign lift) that keep ALL 336 pairs: 21 of 168
+    their element orders: {1: 1, 3: 14, 7: 6}
+    closed under composition (a subgroup)? True
+    orbit of strut 1 under it: [1, 2, 3, 4, 5, 6, 7]  -> transitive on the 7 struts? True
+
+(b) {4:8:4}: eigen-blocks of R_y^T R_y for each of the 84 diagonals y (x -> x y)
+    eigenvalues of R^T R: [np.float64(0.0), np.float64(2.0), np.float64(4.0)] dims: {'null (gain 0)': 4, 'gain |y|': 8, 'gain sqrt2|y|': 4}
+    index weight of each block (diag of projector, indices 0..15):
+      null        [0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.5]
+      gain 1      [1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0]
+      gain sqrt2  [0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.5]
+    the 4 edge-partners x (x y = 0): [(4, 5, -1), (5, 4, 1), (6, 7, 1), (7, 6, -1)]
+    they span rank 4; fraction of each lying in the null block: [1.0, 1.0, 1.0, 1.0]
+    where the 84 diagonals sit relative to y=(2,3,+): (norm in null / gain1 / gain-sqrt2)
+      (0.500 0.707 0.500) x48  e.g. (1, 4, 1) 
+      (0.707 0.000 0.707) x16  e.g. (4, 6, 1) 
+      (0.000 1.000 0.000) x12  e.g. (1, 2, 1) y itself
+      (0.000 0.000 1.000) x4   e.g. (4, 5, 1) 
+      (1.000 0.000 0.000) x4   e.g. (4, 5, -1) 
+    chart 1 assessors: [(2, 3), (3, 2), (4, 5), (5, 4), (6, 7), (7, 6)]  y=(2,3): opposite vertex is the reversal (3,2)
+      reversal (3, 2, 1) : null 0.000, gain1 1.000, gain-sqrt2 0.000
+      reversal (3, 2, -1) : null 0.000, gain1 1.000, gain-sqrt2 0.000
+    left-annihilator {x : y x = 0} dim 4 ; principal-angle overlap with the right-annihilator: 1.000
+    gain-sqrt2 block vs left-annihilator overlap: 0.000
+    overlap of the emerger's fixed index sets with the real blocks of this diagonal (tr(P_idx P_block)/dim):
+      {4..7}         null 0.50  gain1 0.00  gain-sqrt2 0.50
+      {1,2,3,8..11}  null 0.00  gain1 0.88  gain-sqrt2 0.00
+      {12..15}       null 0.50  gain1 0.00  gain-sqrt2 0.50

@@ -1,0 +1,24 @@
+MAX CHANGE of each reading when the address is moved by a continuous G2 deformation g = exp(0.7 D)   (3 vectors: random + 2 prompts)
+   reading                                      max change   invariant under the moving kite?
+   norm                                         0.000e+00    YES
+   e0 weight (fixed_point_weight)               2.776e-17    YES
+   e8 weight                                    3.469e-17    YES
+   outside_share (e0+e8)                        6.939e-18    YES
+   lower / upper energy split                   2.220e-16    YES
+   chart_energy[1] (7 chart energies)           3.449e-02    no
+   chart_energy[4]                              2.278e-02    no
+   local_curvature (top-3 basis triples)        1.200e+01    no
+   Walsh W_4 (= ptol Gamma)                     2.790e-01    no
+   Walsh W_9                                    2.140e-01    no
+   sigma_RB  sum tilt                           8.907e-01    no
+   sigma_RB  sum axis                           0.000e+00    YES
+   sing. values of L_v, smallest                2.220e-16    YES
+   sing. values of L_v, largest                 2.220e-16    YES
+   sing. values of R_v, smallest                0.000e+00    YES
+   associator norm K(v)                         9.663e-13    YES
+
+SAME readings under the FINITE group (168 frame-preserving index maps; sign-blind readings):  all chart/lattice readings permute covariantly (part 3 SC-02); the moving-kite invariants above need no relabelling at all.
+
+sigma_RB frame: tilt = Re sum_k psi[k] conj psi[k^4], psi[k] = x[k] + i x[k^8]; the pairing k <-> k^4 is the red/blue pairing (Hadamard character chi_4), the pairing k <-> k^8 is the Cayley-Dickson doubling pair.
+   ptol: neutron generation           sum tilt +0.507920  sum axis +0.00e+00  (axis sum is identically 0)
+   ptol: the cat sat on the mat       sum tilt +0.518650  sum axis +0.00e+00  (axis sum is identically 0)

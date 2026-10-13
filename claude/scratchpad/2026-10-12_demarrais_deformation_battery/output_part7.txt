@@ -1,0 +1,65 @@
+(a) Assessor planes of each strut have index XOR s+8; pencil(r) stations that are Assessor planes:
+   strut 1: XOR set [9] ; pencil(9) = [(1, 8), (2, 11), (3, 10), (4, 13), (5, 12), (6, 15), (7, 14)]
+   strut 2: XOR set [10] ; pencil(10) = [(1, 11), (2, 8), (3, 9), (4, 14), (5, 15), (6, 12), (7, 13)]
+   strut 3: XOR set [11] ; pencil(11) = [(1, 10), (2, 9), (3, 8), (4, 15), (5, 14), (6, 13), (7, 12)]
+   strut 4: XOR set [12] ; pencil(12) = [(1, 13), (2, 14), (3, 15), (4, 8), (5, 9), (6, 10), (7, 11)]
+   strut 5: XOR set [13] ; pencil(13) = [(1, 12), (2, 15), (3, 14), (4, 9), (5, 8), (6, 11), (7, 10)]
+   strut 6: XOR set [14] ; pencil(14) = [(1, 15), (2, 12), (3, 13), (4, 10), (5, 11), (6, 8), (7, 9)]
+   strut 7: XOR set [15] ; pencil(15) = [(1, 14), (2, 13), (3, 12), (4, 11), (5, 10), (6, 9), (7, 8)]
+   pencil( 1): 0 of 7 stations are Assessor planes
+   pencil( 2): 0 of 7 stations are Assessor planes
+   pencil( 3): 0 of 7 stations are Assessor planes
+   pencil( 4): 0 of 7 stations are Assessor planes
+   pencil( 5): 0 of 7 stations are Assessor planes
+   pencil( 6): 0 of 7 stations are Assessor planes
+   pencil( 7): 0 of 7 stations are Assessor planes
+   pencil( 8): 0 of 7 stations are Assessor planes
+   pencil( 9): 6 of 7 stations are Assessor planes
+   pencil(10): 6 of 7 stations are Assessor planes
+   pencil(11): 6 of 7 stations are Assessor planes
+   pencil(12): 6 of 7 stations are Assessor planes
+   pencil(13): 6 of 7 stations are Assessor planes
+   pencil(14): 6 of 7 stations are Assessor planes
+   pencil(15): 6 of 7 stations are Assessor planes
+
+(b) rank of the gradient set of H(phi) over 60 random points (left bracketing, natural station order):
+   r= 1  singular values [15.886, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 2  singular values [14.652, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 3  singular values [14.726, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 4  singular values [14.614, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 5  singular values [15.713, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 6  singular values [14.353, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 7  singular values [15.119, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 8  singular values [15.436, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r= 9  singular values [14.329, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] -> rank 1
+   r=10  singular values [8.984, 7.623, 4.407, 3.729, 0.0, 0.0, 0.0] -> rank 4
+   r=11  singular values [9.901, 8.065, 4.846, 3.992, 0.0, 0.0, 0.0] -> rank 4
+   r=12  singular values [13.885, 5.733, 5.174, 5.062, 4.092, 0.0, 0.0] -> rank 5
+   r=13  singular values [6.152, 5.316, 5.095, 4.394, 3.73, 0.0, 0.0] -> rank 5
+   r=14  singular values [10.559, 8.186, 5.196, 4.39, 3.316, 0.0, 0.0] -> rank 5
+   r=15  singular values [7.649, 6.784, 5.51, 5.261, 3.494, 0.0, 0.0] -> rank 5
+
+(c) negative results: is it alternativity or associator counts?
+   e_r(e_r e_a) = -e_a fails for 0 (r,a) pairs
+   pencil  1: nonzero [e_ak,e_al,e_r] in 18/21 ; [e_ak,e_r,e_al] in 15/21 ; rank 1
+   pencil  8: nonzero [e_ak,e_al,e_r] in 21/21 ; [e_ak,e_r,e_al] in 21/21 ; rank 1
+   pencil  9: nonzero [e_ak,e_al,e_r] in  9/21 ; [e_ak,e_r,e_al] in 21/21 ; rank 1
+   pencil 10: nonzero [e_ak,e_al,e_r] in  9/21 ; [e_ak,e_r,e_al] in 21/21 ; rank 4
+   pencil 15: nonzero [e_ak,e_al,e_r] in  9/21 ; [e_ak,e_r,e_al] in 21/21 ; rank 5
+
+(d) mechanism: each station = e_a * exp(eta e_r phi) with e_a^-1 e_b = eta e_r ; product of the bare e_a (phi=0):
+   r= 1 : all stations +/- e_r: True   eta=--+-++-  prod(e_a) = -1 e_0
+   r= 2 : all stations +/- e_r: True   eta=+----++  prod(e_a) = -1 e_0
+   r= 3 : all stations +/- e_r: True   eta=--+-++-  prod(e_a) = -1 e_0
+   r= 4 : all stations +/- e_r: True   eta=+++----  prod(e_a) = -1 e_0
+   r= 5 : all stations +/- e_r: True   eta=-+--+-+  prod(e_a) = -1 e_0
+   r= 6 : all stations +/- e_r: True   eta=--+-++-  prod(e_a) = -1 e_0
+   r= 7 : all stations +/- e_r: True   eta=+----++  prod(e_a) = -1 e_0
+   r= 8 : all stations +/- e_r: True   eta=+++++++  prod(e_a) = -1 e_0
+   r= 9 : all stations +/- e_r: True   eta=-+-+--+  prod(e_a) = -1 e_0
+   r=10 : all stations +/- e_r: True   eta=--+++--  prod(e_a) = -1 e_0
+   r=11 : all stations +/- e_r: True   eta=+--+-+-  prod(e_a) = -1 e_0
+   r=12 : all stations +/- e_r: True   eta=----+++  prod(e_a) = -1 e_0
+   r=13 : all stations +/- e_r: True   eta=+-+---+  prod(e_a) = -1 e_0
+   r=14 : all stations +/- e_r: True   eta=++--+--  prod(e_a) = -1 e_0
+   r=15 : all stations +/- e_r: True   eta=-++--+-  prod(e_a) = -1 e_0

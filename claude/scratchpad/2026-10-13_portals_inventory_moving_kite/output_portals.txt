@@ -1,0 +1,26 @@
+1. REACHABILITY: from the diagonal (2, 3, 1) can a continuous G2 flow (which preserves EVERY zero-divisor relation) carry it onto each of the other 83 diagonals?
+   OTHER CHART              reachable 72 of 72
+   same plane               reachable  1 of  1
+   same chart, reversal     reachable  2 of  2
+   same chart, neighbour    reachable  8 of  8
+   residual of the best attempts: max over reachable = 1.0e-12 ; min over unreachable = none
+
+2. THE PATH from (2, 3, 1) (chart 1) to (1, 2, 1) (chart 3)
+   d1 = (2, 3, 1) is annihilated by its neighbour (4,5,-)  : |d1 y0| = 0.0e+00
+   tau   |x(tau) y(tau)|   angle(x, nearest lattice diagonal) deg   dominant chart (share)   smallest singular value of L_x   straight-line |x y_min|
+   0.00  0.0e+00            0.00                              1 (0.17)                 4.0e-17                       0.000
+   0.25  4.2e-14           28.42                              3 (0.17)                 1.4e-14                       0.215
+   0.50  8.2e-14           40.63                              2 (0.16)                 3.0e-14                       0.366
+   0.75  2.0e-13           28.42                              1 (0.17)                 5.0e-14                       0.215
+   1.00  1.6e-13            0.00                              3 (0.17)                 6.1e-14                       0.000
+
+3. INSIDE a zero divisor y = (2,3,+): the annihilator N(y) = {x : x y = 0}
+   dim N(y) = 4 ; every nonzero element of N(y) is itself a zero divisor (x y = 0, x != 0)
+   the 4 lattice neighbours of y inside N(y): Gram matrix (cosines) =
+[[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]]
+   a great-circle arc from neighbour 1 to neighbour 2 stays in N(y) (arc point annihilates y): |w y| = 0.0e+00
+   products inside N(y): |x1 x2|/(|x1||x2|) range 1.006..1.378 ; fraction of the product that stays in N(y): 0.000..0.000  (1.0 = N(y) is closed under multiplication)
+   stabiliser of y has dim 3 and acts on the 4 neighbours with rank 3 (it rotates them inside N(y) = S^3, fixing y)

@@ -1,0 +1,6 @@
+(i) pure-relabelling automorphisms == unsigned maps keeping all 336 ZD pairs ?  sizes 21, 21 ; identical sets: True
+(ii) rule 'u = the unique nonzero u in F2^3 with u.a = u.b = 0' reproduces the 8-block for all 84 diagonals: failures = 0 ; diagonals per u: {4: 12, 2: 12, 6: 12, 1: 12, 5: 12, 3: 12, 7: 12}
+(iii) u=4 : 8-block indices [0, 1, 2, 3, 8, 9, 10, 11] closed under XOR (a subalgebra): True
+(iii) u=2 : 8-block indices [0, 1, 4, 5, 8, 9, 12, 13] closed under XOR (a subalgebra): True
+(iii) u=1 : 8-block indices [0, 2, 4, 6, 8, 10, 12, 14] closed under XOR (a subalgebra): True
+(iv) characters u in 1..15 that arise as a diagonal's {4:8:4} split: [1, 2, 3, 4, 5, 6, 7] ; never: [8, 9, 10, 11, 12, 13, 14, 15]

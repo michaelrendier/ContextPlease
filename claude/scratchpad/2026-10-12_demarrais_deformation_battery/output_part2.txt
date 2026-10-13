@@ -1,0 +1,101 @@
+pairs 336
+
+DM-10  operators on the 336 ordered ZD pairs (x,y), xy=0.   fraction with the stated product still zero
+   operator T                                 T(x)T(y)   T(x) y   x T(y)   T(y)T(x)
+   identity                                      1.000    1.000    1.000      1.000
+   scale x2.5                                    1.000    1.000    1.000      1.000
+   conjugation (e_k -> -e_k, k>0)                1.000    1.000    1.000      1.000
+   WHT (dense Hadamard transform / 4)            0.000    0.000    0.000      0.000
+   Gray-code index map (unsigned)                0.286    0.000    0.000      0.286
+   bit-reversal index map (unsigned)             0.238    0.167    0.167      0.238
+   swap halves e_i <-> e_{i+8}                   1.000    0.000    0.000      1.000
+   rotate every (k,k+8) pair by 0.3 rad          1.000    1.000    1.000      1.000
+   rotate every (k,k+8) pair by pi/4             1.000    1.000    1.000      1.000
+   character chi_1 (Hadamard row 1)              1.000    0.429    0.429      1.000
+   character chi_4 (Hadamard row 4)              1.000    0.429    0.429      1.000
+   character chi_5 (Hadamard row 5)              1.000    0.429    0.429      1.000
+   character chi_9 (Hadamard row 9)              1.000    0.571    0.571      1.000
+   character chi_15 (Hadamard row 15)            1.000    0.571    0.571      1.000
+   XOR-translate index by 1 (unsigned)           0.429    0.143    0.143      0.429
+   XOR-translate index by 3 (unsigned)           0.429    0.143    0.143      0.429
+   XOR-translate index by 8 (unsigned)           1.000    0.000    0.000      1.000
+   flip sign of e_0 only                         1.000    1.000    1.000      1.000
+   flip sign of e_3 only                         0.714    0.857    0.857      0.714
+   flip sign of e_8 only                         1.000    1.000    1.000      1.000
+   flip sign of e_11 only                        0.714    0.857    0.857      0.714
+   left-multiply by e_1                          0.429    0.286    0.286      0.429
+   left-multiply by e_5                          0.429    0.286    0.286      0.429
+   left-multiply by e_8                          1.000    1.000    1.000      1.000
+   random orthogonal 16x16 (10 draws), best fraction preserved: 0.000
+
+DM-11  ZD defect of x(theta)=cos e_a + sin e_{b+8} against its best partner diagonal (standard algebra):
+   theta=0.0000  min_y ||x y|| = 1.41421
+   theta=0.1000  min_y ||x y|| = 1.26596
+   theta=0.5000  min_y ||x y|| = 0.56308
+   theta=0.7754  min_y ||x y|| = 0.02000
+   theta=0.7854  min_y ||x y|| = 0.00000
+   theta=0.7954  min_y ||x y|| = 0.02000
+   theta=1.0000  min_y ||x y|| = 0.42592
+   theta=1.5708  min_y ||x y|| = 1.41421
+
+DM-12  standard sedenions:  {'capable_ordered_plane_pairs': 168, 'planes_with_a_partner': 42, 'degree_set': [4], 'within_chart': 168, 'nullity_hist': {2: 168}, 'kappa_x': [1.0, -1.0]}
+
+DM-13  deform ONLY the sedenion doubling  mu4 = +/- c   (mu1..3 = -1).  c from the UNS list
+   c                   sign  pairs    planes    degrees        within-chart kappa_x (ZD slope in plane)
+   0                     +1  1764     42        [42]           252          []
+   1                     -1  168      42        [4]            168          [1.0, -1.0]
+   1                     +1  84       42        [2]            84           [1.0, -1.0]
+   1/2                   -1  168      42        [4]            168          [1.4142, -1.4142]
+   1/2                   +1  84       42        [2]            84           [1.4142, -1.4142]
+   sqrt2                 -1  168      42        [4]            168          [0.8409, -0.8409]
+   sqrt2                 +1  84       42        [2]            84           [0.8409, -0.8409]
+   2                     -1  168      42        [4]            168          [0.7071, -0.7071]
+   2                     +1  84       42        [2]            84           [0.7071, -0.7071]
+   e                     -1  168      42        [4]            168          [0.6065, -0.6065]
+   e                     +1  84       42        [2]            84           [0.6065, -0.6065]
+   pi                    -1  168      42        [4]            168          [0.5642, -0.5642]
+   pi                    +1  84       42        [2]            84           [0.5642, -0.5642]
+   phi                   -1  168      42        [4]            168          [0.7862, -0.7862]
+   phi                   +1  84       42        [2]            84           [-0.7862, 0.7862]
+   ln10                  -1  168      42        [4]            168          [0.659, -0.659]
+   ln10                  +1  84       42        [2]            84           [-0.659, 0.659]
+   Omega_ZS=d*_ln10      -1  168      42        [4]            168          [1.3279, -1.3279]
+   Omega_ZS=d*_ln10      +1  84       42        [2]            84           [1.3279, -1.3279]
+   d*=d*_taut            -1  168      42        [4]            168          [2.0149, -2.0149]
+   d*=d*_taut            +1  84       42        [2]            84           [2.0149, -2.0149]
+   d*_spec               -1  168      42        [4]            168          [2.0162, -2.0162]
+   d*_spec               +1  84       42        [2]            84           [2.0162, -2.0162]
+   GAP                   -1  168      42        [4]            168          [-37.606, 37.606]
+   GAP                   +1  84       42        [2]            84           [-37.606, 37.606]
+   i                     -1  252      42        [6]            252          [(-0.7071-0.7071j), (0.7071+0.7071j), (0.7071-0.7071j), (-0.7071+0.7071j)]
+   i                     +1  252      42        [6]            252          [(-0.7071+0.7071j), (0.7071-0.7071j), (-0.7071-0.7071j), (0.7071+0.7071j)]
+
+DM-14  deform ALL four doubling levels together  mu_k = -c   (k=1..4)
+   0                  pairs=1764  planes=42  degrees=[42] within=252 kappa=[0.0, 'family']
+   1                  pairs=168   planes=42  degrees=[4] within=168 kappa=[1.0, -1.0]
+   1/2                pairs=168   planes=42  degrees=[4] within=168 kappa=[0.7071, -0.7071, 1.0]
+   sqrt2              pairs=168   planes=42  degrees=[4] within=168 kappa=[0.5946, -0.5946, 0.7071]
+   2                  pairs=168   planes=42  degrees=[4] within=168 kappa=[0.3536, -0.3536, 0.5]
+   e                  pairs=168   planes=42  degrees=[4] within=168 kappa=[0.2231, -0.2231, 0.3679]
+   pi                 pairs=168   planes=42  degrees=[4] within=168 kappa=[-0.1796, 0.1796, 0.3183]
+   phi                pairs=168   planes=42  degrees=[4] within=168 kappa=[0.4859, -0.4859, 0.618]
+   ln10               pairs=168   planes=42  degrees=[4] within=168 kappa=[0.2862, -0.2862, 0.4343]
+   Omega_ZS=d*_ln10   pairs=168   planes=42  degrees=[4] within=168 kappa=[0.7531, -0.7531, 1.0]
+   d*=d*_taut         pairs=168   planes=42  degrees=[4] within=168 kappa=[0.4963, -0.4963, 1.0]
+   d*_spec            pairs=168   planes=42  degrees=[4] within=168 kappa=[0.496, -0.496, 1.0]
+   GAP                pairs=537   planes=42  degrees=[4, 14, 15, 20, 27] within=171 kappa=[0.0, 0.0266, -0.0266]
+   i                  pairs=252   planes=42  degrees=[6] within=252 kappa=[(-0.7071-0.7071j), (0.7071+0.7071j), (0.7071-0.7071j)]
+
+DM-15  deform ONE lower level (others standard)
+   mu1=+0.0  pairs=1344  planes=42  degrees=[4, 36, 38] within=240
+   mu1=+1.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu1=+2.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu1=-2.0  pairs=168   planes=42  degrees=[4] within=168
+   mu2=+0.0  pairs=1344  planes=42  degrees=[4, 36, 38] within=240
+   mu2=+1.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu2=+2.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu2=-2.0  pairs=168   planes=42  degrees=[4] within=168
+   mu3=+0.0  pairs=1344  planes=42  degrees=[4, 36, 38] within=240
+   mu3=+1.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu3=+2.0  pairs=120   planes=42  degrees=[2, 4] within=120
+   mu3=-2.0  pairs=168   planes=42  degrees=[4] within=168

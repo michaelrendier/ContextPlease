@@ -1,0 +1,4 @@
+neutron generation           ZD=False outside=0.011 dom_chart=1 share=0.17 curv=12.0 shares=[0.17, 0.17, 0.16, 0.13, 0.12, 0.13, 0.13]
+pressurized water reactor    ZD=False outside=0.037 dom_chart=2 share=0.17 curv=12.0 shares=[0.16, 0.17, 0.17, 0.14, 0.13, 0.12, 0.12]
+the cat sat on the mat       ZD=False outside=0.029 dom_chart=2 share=0.17 curv=12.0 shares=[0.17, 0.17, 0.16, 0.13, 0.13, 0.12, 0.12]
+neutron                      ZD=False outside=0.075 dom_chart=4 share=0.15 curv=4.0 shares=[0.15, 0.14, 0.14, 0.15, 0.14, 0.14, 0.14]

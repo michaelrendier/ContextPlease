@@ -1,0 +1,50 @@
+(a2) index maps A that are AUTOMORPHISMS with all signs +1 (pure relabelling): 21 of 168
+
+(b2) for each of the 84 diagonals: the character u such that  gain-1 block = coordinate subspace {i : chi_u(i)=+1}
+   u = (4,) : 12 diagonals, e.g. [(1, 2, 1), (1, 2, -1), (1, 3, 1)]
+   u = (2,) : 12 diagonals, e.g. [(1, 4, 1), (1, 4, -1), (1, 5, 1)]
+   u = (6,) : 12 diagonals, e.g. [(1, 6, 1), (1, 6, -1), (1, 7, 1)]
+   u = (1,) : 12 diagonals, e.g. [(2, 4, 1), (2, 4, -1), (2, 6, 1)]
+   u = (5,) : 12 diagonals, e.g. [(2, 5, 1), (2, 5, -1), (2, 7, 1)]
+   u = (3,) : 12 diagonals, e.g. [(3, 4, 1), (3, 4, -1), (3, 7, 1)]
+   u = (7,) : 12 diagonals, e.g. [(3, 5, 1), (3, 5, -1), (3, 6, 1)]
+   by strut of the plane (a XOR b) -> u :
+      strut 1 -> u [(2,), (4,), (6,)]
+      strut 2 -> u [(1,), (4,), (5,)]
+      strut 3 -> u [(3,), (4,), (7,)]
+      strut 4 -> u [(1,), (2,), (3,)]
+      strut 5 -> u [(2,), (5,), (7,)]
+      strut 6 -> u [(1,), (6,), (7,)]
+      strut 7 -> u [(3,), (5,), (6,)]
+
+(c) 132 bracketings of 7 factors (Catalan(6) = 132)
+   pencil r : bracketings giving rank 1 (single-phase law) / total 132 ; distinct sign patterns among them
+   r= 1 : rank1 132/132 ; rank histogram {1: 132} ; patterns 7
+   r= 2 : rank1 132/132 ; rank histogram {1: 132} ; patterns 7
+   r= 4 : rank1 132/132 ; rank histogram {1: 132} ; patterns 7
+   r= 8 : rank1 132/132 ; rank histogram {1: 132} ; patterns 14
+   r= 9 : rank1  52/132 ; rank histogram {1: 52, 4: 56, 6: 21, 7: 3} ; patterns 3
+   r=10 : rank1   0/132 ; rank histogram {4: 34, 5: 52, 6: 31, 7: 15} ; patterns 0
+   r=12 : rank1   0/132 ; rank histogram {5: 116, 6: 12, 7: 4} ; patterns 0
+   r=15 : rank1  10/132 ; rank histogram {1: 10, 4: 22, 5: 82, 6: 12, 7: 6} ; patterns 2
+      r= 1 patterns that are +/- Hadamard rows: 3 of 7 ; non-Hadamard e.g. ['+-++-+-', '++-+++-', '+++----']
+      r= 2 patterns that are +/- Hadamard rows: 3 of 7 ; non-Hadamard e.g. ['+---+--', '+----++', '+-++-+-']
+      r= 4 patterns that are +/- Hadamard rows: 3 of 7 ; non-Hadamard e.g. ['+----++', '+++-+++', '+++----']
+      r= 8 patterns that are +/- Hadamard rows: 0 of 14 ; non-Hadamard e.g. ['+-+++-+', '+-----+', '++-----']
+      r= 9 patterns that are +/- Hadamard rows: 2 of 3 ; non-Hadamard e.g. ['+-++-+-']
+      r=10 patterns that are +/- Hadamard rows: 0 of 0 ; non-Hadamard e.g. []
+      r=12 patterns that are +/- Hadamard rows: 0 of 0 ; non-Hadamard e.g. []
+      r=15 patterns that are +/- Hadamard rows: 1 of 2 ; non-Hadamard e.g. ['++-+--+']
+
+   firing order (permuting the 7 stations, left-bracketed product), 300 random permutations per pencil:
+   r= 1 : rank histogram {1: 300} ; rank-1 orders 300/300 ; sign patterns 10 distinct
+   r= 9 : rank histogram {1: 11, 4: 71, 5: 129, 6: 51, 7: 38} ; rank-1 orders 11/300 ; sign patterns 3 distinct
+   r=10 : rank histogram {1: 9, 4: 73, 5: 129, 6: 53, 7: 36} ; rank-1 orders 9/300 ; sign patterns 3 distinct
+
+(d) kernel fiber as written: support {e0, e_a, e_b}; strut s = a XOR b -> the Fano line {a, b, s}
+   strut 1 : (a,b)=(2,3), s=1 : span{e0,e_a,e_b,e_s} closed under products (a quaternion subalgebra)? True ; span{e0,e_a,e_{b+8}} closed? False
+   strut 2 : (a,b)=(1,3), s=2 : span{e0,e_a,e_b,e_s} closed under products (a quaternion subalgebra)? True ; span{e0,e_a,e_{b+8}} closed? False
+   strut 5 : (a,b)=(1,4), s=5 : span{e0,e_a,e_b,e_s} closed under products (a quaternion subalgebra)? True ; span{e0,e_a,e_{b+8}} closed? False
+   emerger.domain_of({a,b,s}) strut 1 = H ; domain_of({a, b+8}) = FRAGMENT
+   emerger.domain_of({a,b,s}) strut 2 = H ; domain_of({a, b+8}) = FRAGMENT
+   emerger.domain_of({a,b,s}) strut 5 = H ; domain_of({a, b+8}) = FRAGMENT
