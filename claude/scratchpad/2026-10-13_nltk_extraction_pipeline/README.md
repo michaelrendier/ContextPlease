@@ -9,3 +9,6 @@ Tagger error seen: "produces" tagged NOUN. Chunk-grammar bug found and fixed (VE
 ## Topic-bag test (Cody's search/AI-overview idea) - topic_bag.py, neutron_generation_overview.txt
 Ingested a search-AI overview of "neutron generation" (URLs/citations stripped) -> 114-lemma topic bag (neutron 15, fission 6, nuclear 4, deuterium 4 ...). Sense score = overlap of the sense bag (gloss + related glosses) with the topic bag.
 reactor -> nuclear_reactor.n.01 (21 vs 2) OK; generation -> generation.n.06 (3 vs 2, thin margin) OK; neutron -> neutron.n.01 OK; "type" -> type.n.06 (printing block, scores 2 vs 1 = noise) WRONG: generic words need a margin rule / MFS fallback.
+
+## Hearst-pattern test (hearst.py): can ingested text add typed WordNet edges?
+Raw regex over sentences gave 12 candidates, ~3 plausible (fissile materials -> uranium-235/plutonium; spontaneous fission emitters -> californium-252; light target -> beryllium) and the rest noise (clause fragments, 'to' as a head). Conclusion: patterns must be anchored on NP chunk heads (the chunker), not raw strings.
