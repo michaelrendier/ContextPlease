@@ -1,6 +1,8 @@
-Checks before you send EMAIL_PRINCETON_WORDNET.txt (Claude, 2026-10-13):
-1. Address fellbaum@princeton.edu is the one on Princeton's Linguistics profile for Christiane Fellbaum (confirmed in a search today).
-2. Attach the PDF named in the Attach line (same folder, 42 pages).
-3. Open the branch link once on send day to make sure it still loads.
-4. Look at the WordNet license text yourself: no WordNet license notice is in VAPMIP, ValaQuenta or Ainulindale, and the email says you want to carry it correctly.
-5. The email states no numbers from the paper on purpose, and makes no suggestions to the team: it has exactly two requests (the paper, the VAPMIP repo) and one hope (help seeing the maths).
+Checks before you send EMAIL_PRINCETON_WORDNET.txt (Claude, 2026-10-14):
+1. Address fellbaum@princeton.edu is the one on Princeton's Linguistics profile for Christiane Fellbaum (confirmed in a search 2026-10-13).
+2. Attach the PDF named in the Attach line (42 pages, same folder).
+3. Open the repo links once on send day (VAPMIP, the paper's branch directory) and the Phase 42 page; the benchmark script reproduced the table on 2026-10-14.
+4. License: DONE in the repos. VAPMIP now has NOTICE, WORDNET_LICENSE.txt (WordNet 3.0 verbatim) and LICENSE (GPL v3; there was none, and the email says GPL v3); the paper directory carries NOTICE + WORDNET_LICENSE.txt.
+5. IMPORTANT, from the WordNet license text itself: "The name of Princeton University or Princeton may not be used in advertising or publicity pertaining to distribution of the software and/or database." Private correspondence is fine. Do not write in READMEs, posts or papers that Princeton reviewed, endorsed or "had first looks" at this; cite WordNet as a source only. Not legal advice; if in doubt, ask the WordNet team in a reply.
+6. The email states no energy figure as measured for the engine's own share: the whole-laptop numbers are upper bounds (the battery method cannot separate the engine from the laptop's idle draw).
+7. The email has exactly two requests (the paper, the VAPMIP repo) and one hope (help seeing the maths); no suggestions to the team.
