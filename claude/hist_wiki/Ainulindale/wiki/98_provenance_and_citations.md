@@ -438,7 +438,8 @@ Summary — expected to shrink as items are found to be already established:
   70/72 translators) for the semantic word engine.
 - **Walt Whitman** — "O Captain! My Captain!" (1865); the METHODOLOGY.md byline.
 - **Infocom / *Zork I* (1980)** — "West of House"; the parser question that
-  opens both papers.
+  opens both papers. **Built-against (prior work, deliberate tool selection), NOT
+  Post-Hoc** — Cody, 2026-10-13; README Prerequisites item 10.
 - **Louise Bourgeois? no — Jorge Luis Borges** — *The Library of Babel*. Fix the
   "Louise Borges" typo in VAPMIP_Paper §2.
 
