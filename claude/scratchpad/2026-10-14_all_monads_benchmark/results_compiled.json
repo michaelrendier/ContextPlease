@@ -1,0 +1,105 @@
+{
+ "ptolemy -r replies": [
+  "changelogs\u200aemployed\u200aconstruction\u200auep",
+  "kite\u200aits\u200aengine\u200aprobe",
+  "kite\u200aits\u2009real\u200agawo",
+  "libx\u2009alternator\u200acdot\u2008muller",
+  "kite\u200aopen\u200aand\u200awhere",
+  "kite\u200apores\u200aangular\u200ahelicities"
+ ],
+ "ptolemy -r timing": {
+  "lines": 600,
+  "wall_s": 17.31,
+  "ms_per_line": 28.8,
+  "cpu_s": 17.29,
+  "maxrss_mb": 62.0
+ },
+ "ptol -say": [
+  {
+   "prompt": "finger pointer",
+   "ms": 12726,
+   "reply": [
+    "Wittgenstein trolleys wittgenstein."
+   ]
+  },
+  {
+   "prompt": "what is a tree",
+   "ms": 12228,
+   "reply": [
+    "Time is able."
+   ]
+  },
+  {
+   "prompt": "neutron generation in different reactor types",
+   "ms": 12292,
+   "reply": [
+    "Priest relates country."
+   ]
+  },
+  {
+   "prompt": "good morning",
+   "ms": 12400,
+   "reply": [
+    "Priest relates country."
+   ]
+  },
+  {
+   "prompt": "can you play the piano?",
+   "ms": 12366,
+   "reply": [
+    "Time is able."
+   ]
+  },
+  {
+   "prompt": "the first reactor was built after neutrons were discovered",
+   "ms": 12534,
+   "reply": [
+    "George relates country."
+   ]
+  }
+ ],
+ "ptol plain": [
+  {
+   "prompt": "finger pointer",
+   "ms": 913,
+   "reply": [
+    "gift-gems tropheus \u00b7 spurned \u00b7 \u00b7 ox-hide \u00b7 \u00b7 \u00b7 converteret *trolley *wittgenstein *rapa *nuys *mais"
+   ]
+  },
+  {
+   "prompt": "what is a tree",
+   "ms": 843,
+   "reply": [
+    "horseback whirleth \u00b7 tilt \u00b7 \u00b7 innovators marsyas arrow-swift catos philippopolis *polysyllables *ise *\u00b7 *\u00b7 *joost"
+   ]
+  },
+  {
+   "prompt": "neutron generation in different reactor types",
+   "ms": 839,
+   "reply": [
+    "weaver-of-peace glory-decked monenda \u00b7 hard-scrabble massy \u00b7 *alwayes *squirting *yom *\u00b7 *\u00b7 *convinto *\u00b7 *\u00b7 *\u00b7"
+   ]
+  },
+  {
+   "prompt": "good morning",
+   "ms": 869,
+   "reply": [
+    "\u00b7 \u00b7 \u00b7 penned \u00b7 colourless aliment gaule \u00b7 *seemes *gurls *aughty *winningly *birdseye *\u00b7 *lexicogrammatical-word"
+   ]
+  },
+  {
+   "prompt": "can you play the piano?",
+   "ms": 876,
+   "reply": [
+    "water's-edge folcwalda's refute industriously assiduously \u00b7 \u00b7 confabulations patrolling swarming-time vagabonds alemannicus *marja-liisa *\u00b7 *mcarthur *\u00b7"
+   ]
+  },
+  {
+   "prompt": "the first reactor was built after neutrons were discovered",
+   "ms": 914,
+   "reply": [
+    "\u00b7 \u00b7 commissioning ebb-tide phiz \u00b7 unappropriated \u00b7 \u00b7 \u00b7 enoch lukewarm *countryfolk *collectives *nodes *\u00b7"
+   ]
+  }
+ ]
+}

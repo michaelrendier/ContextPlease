@@ -1,0 +1,6 @@
+VQ_rotary_monad.ValaQuenta.speak -> load 0.08s warm None ms
+ZD_rotary_monad.AhuraMazda.speak -> load 0.08s warm None ms
+rotary_monad.AhuraMazda.speak -> load 0.06s warm None ms
+ptolemy_monad.PtolemyMonad.process_input -> load 0.08s warm None ms
+boxkite_orbweaver_monad.OrbWeaverMonad.weave -> load 0.12s warm None ms
+monad_english_io.MonadEnglish.basin -> load 0.73s warm None ms

@@ -1,0 +1,24 @@
+19D_boxkite_context_monad -> ImportError: '19D_boxkite_context_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+19D_rotary_boxkite_monad -> load 0.79s warm None ms
+RF_monad -> ImportError: 'RF_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+UDEO_monad -> ImportError: 'UDEO_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+VQ_rotary_monad -> ImportError: 'VQ_rotary_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+ZD_rotary_monad -> ImportError: 'ZD_rotary_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+boxkite_orbweaver_monad -> ImportError: 'boxkite_orbweaver_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+intention_monad -> ImportError: 'intention_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+lio_monad -> ImportError: 'lio_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad -> load 0.03s warm 120.9 ms
+monad_addressing -> ImportError: 'monad_addressing' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad_browse -> ImportError: 'monad_browse' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad_bus -> ImportError: 'monad_bus' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad_combine -> ImportError: 'monad_combine' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad_english_io -> ImportError: 'monad_english_io' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+monad_harness_diagnostic -> load 0.05s warm 125.5 ms
+monad_identity -> ImportError: 'monad_identity' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+ptolemy_monad -> ImportError: 'ptolemy_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+rotary_monad -> ImportError: 'rotary_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+rotary_rerun_boxkite_monad -> load 2.08s warm 1507.2 ms
+rotary_rerun_monad -> ImportError: 'rotary_rerun_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+scaled_mind_eye_boxkite_kernel_monad -> load 1.23s warm 31.0 ms
+translator_monad -> ImportError: 'translator_monad' has no recognised chat interface (no say(), no generate(), no known structural adapter)
+walkwithme_monad -> load 0.2s warm 111.8 ms
