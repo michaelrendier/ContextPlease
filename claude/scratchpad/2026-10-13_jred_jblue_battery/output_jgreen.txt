@@ -1,0 +1,10 @@
+JG-1 xy = -<x,y>e0 + (1/2)[x,y] for pure imaginary x,y: max residual 3.7e-15  (dot = symmetric part, in e0; cross = antisymmetric part)
+JG-2 with r=r0e0+r_im (red), b (blue): [r,b]=2 r_im b: 7.2e-15 ; r b + b r = 2 r0 b: 3.3e-15 ; red part of 0_RB-0_BR: 0.0e+00
+JG-3 psi=J_red+J_blue: |red part| 2.318, |blue part| 2.440 ; 0_RB-0_BR=[r,b]: |red part| 0.0e+00, |blue part| 13.958  => equality as sedenion vectors is impossible whenever the red part is nonzero
+JG-4 Dirichlet, random a_n, N=200:
+   s=0.2: F(s)+F(1-s)=  -9.8551 (unsigned sum, symmetric)   F(s)-F(1-s)=  -5.4994 (signed sum = antisymmetrisation)
+   s=0.35: F(s)+F(1-s)=  -8.0344 (unsigned sum, symmetric)   F(s)-F(1-s)=  -2.4885 (signed sum = antisymmetrisation)
+   s=0.5: F(s)+F(1-s)=  -7.4599 (unsigned sum, symmetric)   F(s)-F(1-s)=   0.0000 (signed sum = antisymmetrisation)
+   s=0.65: F(s)+F(1-s)=  -8.0344 (unsigned sum, symmetric)   F(s)-F(1-s)=   2.4885 (signed sum = antisymmetrisation)
+   s=0.8: F(s)+F(1-s)=  -9.8551 (unsigned sum, symmetric)   F(s)-F(1-s)=   5.4994 (signed sum = antisymmetrisation)
+   unsigned sum at s and 1-s equal: True ; signed difference odd about 1/2: True ; signed difference at 1/2 = 0.0

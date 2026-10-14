@@ -147,6 +147,23 @@ J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
   That is FALSE under the corrected chain: J_red + J_blue = 0_RB, and
   Sigma_RB = 0_RB - 0_BR. They differ by exactly the usage cost.
   Antisymmetric under R/B exchange (0_RB - 0_BR, not +) -- the same
+  CORRECTED 2026-10-13 (Cody) J_green -- SUPERSEDES the 2026-08-16 chain above. The
+  "Sigma_RB = 0_RB - 0_BR = Memory" assignment and "J_red + J_blue = 0_RB = Wisdom" were
+  an older model's mistake (the 08-16 text is kept for lineage). OFFICIAL:
+      J_red + J_blue  =  J_green
+      J_red + J_blue  =  0_RB - 0_BR      (builds in the cross AND dot product; how an
+                                           addition equals a subtraction; the inside-out
+                                           works as a special case of 0_RB - 0_BR)
+  Knowledge + Experience = Wisdom is the adage that named it. MEASURED 2026-10-13
+  (VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md, battery JG): xy = -<x,y>e0 + (1/2)[x,y]
+  exactly (dot = symmetric part in e0, cross = antisymmetric part); with the red/blue grading
+  0_RB - 0_BR := r*b - b*r lies wholly in BLUE, so the identity cannot hold as a sedenion
+  vector equation whenever J_red+J_blue has a red part; it holds in the Dirichlet reading
+  with J_blue orientation-signed: F(s) - F(1-s), odd about s=1/2 and zero on the critical
+  line (the Noether balance). Operational definition of 0_BR still to be pinned by Cody.
+  Lowercase sigma_RB (tilt/axis; ptol.c per-channel product psi_k psi_(k^4)) is a different
+  object and is UNCHANGED. Older three-phase files say J_red + J_blue + J_green = 0 (there
+  J_green = -(J_red+J_blue)): sign convention open.
   algebraic signature as a cross product, not a dot product; this is the
   "energy conversion channel" (eigenvalue +-i*sqrt(2), the surviving
   antisymmetric piece at a zero-divisor crossing, per RedBlue-Hamiltonian-
@@ -466,7 +483,7 @@ NOTATION CHEAT SHEET (symbol -> plain meaning)
   0_ZD                     Zero Divisors, a.b = 0 with a,b != 0 (actual zeros of a product)
   Omega_ZS                 Lambert W(1), d* in log-space
   J_red / J_blue           forward / reverse Dirichlet current (Knowledge/Experience)
-  Sigma_RB                 0_RB - 0_BR = Memory = Wisdom - Usage.  NOT J_red +
+  Sigma_RB                 [RETIRED 2026-10-13: see J_green. Was: 0_RB - 0_BR = Memory = Wisdom - Usage.  NOT J_red +
                            J_blue -- that sum is WISDOM (= 0_RB) and the two
                            differ by the usage cost (corrected 2026-08-16);
                            "Sigma" is
@@ -2069,7 +2086,7 @@ Constants: d* faces 0.24631 / RG dim 8 / taut / ln10 (see D_STAR_* env); Lambert
 
 @RCCM_J_RED_J_BLUE
 STANDING RULE (Cody 2026-10-13): any mention of J_red/J_blue means run tests and add to VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md.
-Chain (canonical, 2026-08-16): J_red + J_blue = WISDOM = 0_RB; 0_BR = USAGE; Sigma_RB = 0_RB - 0_BR = MEMORY. ptol.c shells: J_red = k in {0-3,8-11} cos forward, J_blue = {4-7,12-15} sin return.
+Chain (OFFICIAL 2026-10-13, Cody): J_red + J_blue = J_green = 0_RB - 0_BR (cross+dot). The 2026-08-16 chain (J_red+J_blue=0_RB=Wisdom; Sigma_RB=0_RB-0_BR=Memory) is retired as an older model's mistake. ptol.c shells: J_red = k in {0-3,8-11} cos forward, J_blue = {4-7,12-15} sin return.
 MEASURED: J_red/J_blue is the Z2 grading by chi_4 (red*red->red, red*blue->blue, blue*blue->red; J_red an octonion, J_blue the odd part). Pure-imaginary red anticommutes exactly with blue;
 xy+yx = -2<x,y>e0 for all 84 ZD diagonals (friction = the real part, in e0). Each strut has its own polar u (ptol's pair = u=4, 3 of 21 struts). Strut = 2 components (+/- pairs), partner spaces N+ (+) N- = blue_u half.
 Stabiliser SU(2) of a strut diagonal fixes the strut and rotates its 4 partners rigidly in N(y)=S3 (the muscle). OPEN: J_red x J_blue = d* (0.24600 vs 0.24631); hypercomplex_zeta j_red==j_blue.
