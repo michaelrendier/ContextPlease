@@ -42,6 +42,8 @@ We describe three small, self-checking Python programs (standard library only, a
 
 A label is placed next to the result it describes. A result without code carries no `:CALCULATED`. The original engine prints its own provenance word, `KNOWN` or `OURS`; this paper maps `KNOWN` to `ESTABLISHED` and appends `:CALCULATED`, and the engine's blocks are shown verbatim, so both words appear.
 
+**Provenance of the literature: built-against and Post-Hoc.** The project distinguishes work the author built against from work he found afterwards. **The Collatz conjecture is the one thing here the author engineered against** (built-against, no tag): it was the first test of the GenerationalLineage engine, chosen as a simple ordering of the integers before any of the literature below had been read. **Everything else cited in this paper was noticed after the code already ran and is marked `Post-Hoc:`** in the references. In particular, the author did not know the Bernstein–Lagarias results when the original engine was written; that his engine reproduces their tables is a check on the code, not evidence that he derived them.
+
 ## 1. Introduction
 
 The Collatz conjecture asserts that every positive integer reaches 1 under iteration of T. It is well known that T, extended to the 2-adic integers Z₂, is conjugate to the shift (Lagarias 1985; Bernstein 1994; Bernstein–Lagarias 1996), and that the difficulty therefore sits in how the integers lie inside Z₂ and not in the dynamics of the shift itself. This paper does not add to that. It does three narrower things: it shows, with runnable code, ten facts about T that follow from the conjugacy and from elementary counting; it re-computes the published numerical tables of Bernstein–Lagarias and records exactly where our numbers and theirs differ; and it reads T through one particular software framework, the GenerationalLineage engine, whose first real test this map was in August 2026.
@@ -451,7 +453,7 @@ python3 engine/e_collatz_gl_decomposition.py # about 7 s; needs GenerationalLine
 python3 paper/make_paper.py --check          # does this paper match a fresh build?
 ```
 
-Environment of this build: Python 3.12.3, a ThinkPad X1 Carbon (6th gen, Core i7-8550U); building the paper took about 31 s. SHA-256 prefixes of the engine files used:
+Environment of this build: Python 3.12.3, a ThinkPad X1 Carbon (6th gen, Core i7-8550U); building the paper took about 32 s. SHA-256 prefixes of the engine files used:
 
 | file | sha256 (first 12) |
 |---|---|
@@ -487,15 +489,15 @@ collatz.drift_at_half   [tier 3 | KNOWN (Terras 1976; Everett 1977)]
 
 ## References
 
-Copies of the works we could download are in `references/` (and in [ContextPlease](https://github.com/michaelrendier/ContextPlease/tree/main/claude/references/CollatzShift)); the ledger of what was and was not downloaded is [`references/INDEX.md`](https://github.com/michaelrendier/ContextPlease/blob/main/claude/references/INDEX.md).
+**The Collatz conjecture itself (the 3x+1 problem) is built-against and carries no tag; every numbered item below is `Post-Hoc:` except item 7.** Copies of the works we could download are in `references/` (and in [ContextPlease](https://github.com/michaelrendier/ContextPlease/tree/main/claude/references/CollatzShift)); the ledger of what was and was not downloaded is [`references/INDEX.md`](https://github.com/michaelrendier/ContextPlease/blob/main/claude/references/INDEX.md).
 
-1. R. Terras, A stopping time problem on the positive integers, *Acta Arith.* **30** (1976), 241–252. (not downloaded)
-2. C. J. Everett, Iteration of the number theoretic function f(2n) = n, f(2n+1) = 3n+2, *Adv. Math.* **25** (1977), 42–45. (not downloaded)
-3. J. C. Lagarias, The 3x+1 problem and its generalizations, *Amer. Math. Monthly* **92** (1985), 3–23. (not downloaded)
-4. D. J. Bernstein, A non-iterative 2-adic statement of the 3x+1 conjecture, *Proc. Amer. Math. Soc.* **121** (1994), 405–408. (not downloaded; the publisher's site returned a bot-check page)
-5. D. J. Bernstein, J. C. Lagarias, The 3x+1 conjugacy map, *Canad. J. Math.* **48** (1996), 1154–1169. (`references/Bernstein_Lagarias_1996_retypeset.pdf`, preprint copy also included)
-6. J. C. Lagarias, The 3x+1 problem: an annotated bibliography (1963–1999), arXiv:math/0309224v13. (`references/Lagarias_annotated_bibliography_arXiv_math0309224.pdf`; read only for its existence and scope)
-7. C. M. Allison, The Generational Lineage Engine, version 1.0.0 (2026), https://github.com/michaelrendier/GenerationalLineage.
+1. `Post-Hoc:` R. Terras, A stopping time problem on the positive integers, *Acta Arith.* **30** (1976), 241–252. (not downloaded)
+2. `Post-Hoc:` C. J. Everett, Iteration of the number theoretic function f(2n) = n, f(2n+1) = 3n+2, *Adv. Math.* **25** (1977), 42–45. (not downloaded)
+3. `Post-Hoc:` J. C. Lagarias, The 3x+1 problem and its generalizations, *Amer. Math. Monthly* **92** (1985), 3–23. (not downloaded)
+4. `Post-Hoc:` D. J. Bernstein, A non-iterative 2-adic statement of the 3x+1 conjecture, *Proc. Amer. Math. Soc.* **121** (1994), 405–408. (not downloaded; the publisher's site returned a bot-check page)
+5. `Post-Hoc:` D. J. Bernstein, J. C. Lagarias, The 3x+1 conjugacy map, *Canad. J. Math.* **48** (1996), 1154–1169. (`references/Bernstein_Lagarias_1996_retypeset.pdf`, preprint copy also included)
+6. `Post-Hoc:` J. C. Lagarias, The 3x+1 problem: an annotated bibliography (1963–1999), arXiv:math/0309224v13. (`references/Lagarias_annotated_bibliography_arXiv_math0309224.pdf`; read only for its existence and scope)
+7. (built-against; the author's own software, no tag) C. M. Allison, The Generational Lineage Engine, version 1.0.0 (2026), https://github.com/michaelrendier/GenerationalLineage.
 
 (Citation details for items 1–4 are from memory or from publisher listings and should be checked before this draft is circulated further. The paper's own code was executed; the cited papers' proofs were not re-derived.)
 

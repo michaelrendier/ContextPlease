@@ -11,4 +11,6 @@
 | Everett (1977), Iteration of the number theoretic function f(2n)=n, f(2n+1)=3n+2, Adv. Math. 25, 42-45 | CollatzShift | none | none | - | NOT downloaded |
 | Letherman, Schleicher, Wood (1999), The (3n+1)-problem and holomorphic dynamics, Experiment. Math. 8 | CollatzShift | none | none | - | NOT downloaded (Project Euclid returned a bot-check page even with a Mozilla User-Agent, 2026-10-14) |
 
+**Provenance tags (Cody, 2026-10-14).** The Collatz conjecture itself is BUILT-AGAINST (the author engineered against it; it was the first test of GenerationalLineage) and carries no tag. Every other work in the CollatzShift rows above is `Post-Hoc:` (found after the code already ran).
+
 Earlier downloads recorded elsewhere: `Ainulindale/references/` (permutation papers, cs_hashing_overhead, `CITATION_DOWNLOADS.md`). They predate this ledger and have not been re-indexed here.
