@@ -1,0 +1,14 @@
+A. Does forcing the FIRST bit to 1 raise the Lyndon-factor count of random bits?   (N=115, 20000 draws each)
+   first bit free 6.02 (sd 2.55) | first bit 1 7.01 (sd 2.58) | first bit 0 5.02 (sd 2.14)
+
+B. H3 / R2 test, matched: first k=115 parities of a LARGE random n (400 bits) vs random bits with the SAME first bit   (3000 draws)
+   n parity 1: large random n 7.02 (sd 2.54) | random bits, first bit 1: 7.04 (sd 2.57)
+   n parity 0: large random n 5.04 (sd 2.16) | random bits, first bit 0: 5.02 (sd 2.14)
+
+C. H2 test: small odd starts, stream to 1, z-scores against three controls (300 starts, 400 control draws each)
+   unmatched                                    mean z +1.35 (sd 1.01), fraction z>0 0.97
+   first bit matched                            mean z +0.94 (sd 1.00), fraction z>0 0.86
+   first bit + last 6 bits (001000) matched     mean z -0.04 (sd 0.96), fraction z>0 0.46
+
+D. same, small EVEN starts (first bit 0), first bit + tail matched (200 starts)
+   even starts, matched: mean z +0.07 (sd 1.02), fraction z>0 0.48

@@ -136,6 +136,22 @@ QUEUED | Necas-Ruzicka-Sverak (1996) + Jia-Sverak (2014) + CKN (1982)  [see VAPM
   | continuous vs discrete self-similarity; the Hausdorff/Laplacian diagnostic
   | Crawford_NavierStokes
 
+# --- FourthAgePapers/CollatzShift (Literature Download Protocol, 2026-10-14; ledger: ContextPlease/claude/references/INDEX.md) ---
+cited-pending | Bernstein & Lagarias (1996) "The 3x+1 conjugacy map", Canad. J. Math. 48, 1154-1169 -- Post-Hoc; DOWNLOADED 2026-10-14
+  | Phi conjugates the shift S to T on Z_2; Phi mod 2^n has order 2^(n-4) for n>=6, cycle lengths powers of 2; 1-cycle counts to n=1000; conjecture: exactly two odd fixed points; Collatz <=> Z+ in Phi(-Z/3)
+  | CollatzShift R2/R3 (parity-vector conjugacy); the engine reproduces their Tables 2.2-2.4 exactly (odd fixed-point counts n<=20, 21, 30, 40, 100, 160, 200)
+  | FourthAgePapers/CollatzShift ("A Bit Shift Wearing A Disguise") ; copies in ContextPlease/claude/references/CollatzShift and CollatzShift/references
+
+cited-pending | Lagarias, "The 3x+1 problem: an annotated bibliography (1963-1999)", arXiv:math/0309224v13 -- Post-Hoc; DOWNLOADED 2026-10-14
+  | the literature the paper sits in
+  | CollatzShift background / reference list
+  | FourthAgePapers/CollatzShift
+
+QUEUED | Bernstein (1994) Proc. AMS 121, 405-408 ; Terras (1976) Acta Arith. 30, 241-252 ; Lagarias (1985) Amer. Math. Monthly 92, 3-23 ; Everett (1977) Adv. Math. 25, 42-45 ; Letherman, Schleicher & Wood (1999) Experiment. Math. 8 -- cited by CollatzShift, NOT yet downloaded (see ledger for why)
+  | non-iterative 2-adic statement; stopping-time densities; the survey; the Everett density result; complex/holomorphic Collatz
+  | CollatzShift R2, R10, the lineage note
+  | FourthAgePapers/CollatzShift
+
 # =============================================================================
 # Ainulindale   (provenance wiki — home of the researcher pages themselves)
 # =============================================================================
