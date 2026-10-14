@@ -1,0 +1,71 @@
+
+==============================================================================
+0. state of the engine: GL toolsets self-verify
+==============================================================================
+31 toolsets; pass flags: {'add_scale_sign': True, 'scale': True, 'units': True, 'box_kite': True, 'noether': True, 'archimedes_screw': True, 'inversion': True, 't32_nilpotency': True, 'cipher': True, 'comma_sequence': True, 'hyper_linear': True, 'equation_space': True, 'spectral_primes': True, 'cs_benchmark': True, 'stencil': True, 'periodicity': True, 'lyndon': True, 'berlekamp_massey': True, 'logperiodic': True, 'permutation': True, 'rejewski': True, 'jordan_chevalley': True, 're_pair': True, 'pohlig_hellman': True, 'unicity': True, 'oscilloscope': True, 'emerger': True, 'lineage': True, '_ok': True, '_skipped': [], '_complete': True} 7.9s
+
+==============================================================================
+1. T on each branch, written as ASS elements (x -> sign*scale*x + add)
+==============================================================================
+even branch : x ↦ +1·0.5·x + 0 | residual without SIGN identical: True
+odd branch  : x ↦ +1·1.5·x + 0.5 | residual without SIGN identical: True
+ODD as composition  ADD(1/2) @ SCALE(3/2) == ODD : True
+ASS.SIGN(-1) (the engine's SIGN) occurs in either branch:  False
+CAMSHAFT (engine firing order, innermost first): ('SIGN', 'SCALE', 'ADD') | Collatz odd branch fires SCALE then ADD
+ADD-first alternative  (n+a)*3/2 reproduces (3n+1)/2 only with a = 1/3, not an integer: True
+
+==============================================================================
+2. exhaustive: composing the branch ASS elements along ANY parity word gives T^k on its class (all words of length k <= 12)
+==============================================================================
+classes checked 8190, mismatches 0  (scale == 3^d/2^k exactly and el(n) == T^k(n) on a lift)
+
+==============================================================================
+3. the engine's Long-Path memory (set membership, Recaman rule) on Collatz orbits
+==============================================================================
+n=    27  stopping time (steps to 1) =   70  first revisit of a value: steps 69->71 at value 2.0
+n=    97  stopping time (steps to 1) =   75  first revisit of a value: steps 74->76 at value 2.0
+n=   871  stopping time (steps to 1) =  113  first revisit of a value: steps 112->114 at value 2.0
+n=  6171  stopping time (steps to 1) =  165  first revisit of a value: steps 164->166 at value 2.0
+n= 77031  stopping time (steps to 1) =  221  first revisit of a value: steps 220->222 at value 2.0
+
+==============================================================================
+4. permutation toolset on the parity-vector bijection Q_k : Z/2^k -> Z/2^k
+==============================================================================
+k= 1  size      2  cycles     2  fixed points   2  order 1  sign +1  longest cycle 1
+k= 2  size      4  cycles     4  fixed points   4  order 1  sign +1  longest cycle 1
+k= 3  size      8  cycles     7  fixed points   6  order 2  sign -1  longest cycle 2
+k= 4  size     16  cycles    13  fixed points  10  order 2  sign -1  longest cycle 2
+k= 5  size     32  cycles    23  fixed points  16  order 4  sign -1  longest cycle 4
+k= 6  size     64  cycles    39  fixed points  22  order 4  sign -1  longest cycle 4
+k= 7  size    128  cycles    63  fixed points  30  order 8  sign -1  longest cycle 8
+k= 8  size    256  cycles   105  fixed points  44  order 16  sign -1  longest cycle 16
+k= 9  size    512  cycles   165  fixed points  58  order 32  sign -1  longest cycle 32
+k=10  size   1024  cycles   253  fixed points  68  order 64  sign -1  longest cycle 64
+k=11  size   2048  cycles   377  fixed points  80  order 128  sign -1  longest cycle 128
+k=12  size   4096  cycles   565  fixed points  96  order 256  sign -1  longest cycle 256
+k=13  size   8192  cycles   833  fixed points 122  order 512  sign -1  longest cycle 512
+k=14  size  16384  cycles  1217  fixed points 144  order 1024  sign -1  longest cycle 1024
+
+==============================================================================
+4b. Q_k: isometry check, power-of-two cycle lengths, fixed points (the numbers whose parity word is their own binary digits)
+==============================================================================
+Q_k(n) mod 2^(k-1) == Q_(k-1)(n mod 2^(k-1)) for all n, k = 2..14: violations = 0  (so Q is an isometry of the 2-adic metric, level by level)
+every cycle length of Q_k, k = 1..14, is a power of two: True
+fixed points of Q_k: {3: [0, 2, 3, 4, 6, 7], 4: [0, 3, 4, 6, 7, 8, 11, 12, 14, 15], 5: [0, 3, 6, 8, 11, 12, 14, 15, 16, 19, 22, 24, 27, 28, 30, 31], 6: [0, 6, 11, 12, 15, 16, 22, 24, 28, 30, 31, 32, 38, 43, 44, 47, 48, 54, 56, 60, 62, 63]}
+
+==============================================================================
+5. factor moves on orbit parity streams, with a random control of the same length (CONTROL first)
+==============================================================================
+n=    27 len   72 | Collatz: L=36 (N/2=36) repair 0.542 depth 5 lyndon 10 period 72  | control(40): L mean 36.1 sd 0.8, repair 0.525, lyndon 5.1
+n=    97 len   77 | Collatz: L=38 (N/2=38) repair 0.532 depth 5 lyndon 8 period 75  | control(40): L mean 38.9 sd 0.8, repair 0.515, lyndon 5.0
+n=   871 len  115 | Collatz: L=58 (N/2=57) repair 0.452 depth 6 lyndon 10 period 115  | control(40): L mean 57.9 sd 1.0, repair 0.470, lyndon 5.8
+n=  6171 len  167 | Collatz: L=84 (N/2=83) repair 0.407 depth 6 lyndon 9 period 167  | control(40): L mean 84.2 sd 1.1, repair 0.424, lyndon 7.0
+n= 77031 len  223 | Collatz: L=112 (N/2=111) repair 0.39 depth 6 lyndon 9 period 223  | control(40): L mean 111.6 sd 1.1, repair 0.394, lyndon 6.6
+periodic parity word (10)^20 for comparison: {'n': 40, 'L': 2, 'determined': True, 'repair_ratio': 0.275, 'repair_depth': 4, 'lyndon_factors': 21, 'min_period': 2}
+
+==============================================================================
+6. the first-run faults of the paper, re-found with the engine's own tools
+==============================================================================
+k=4 d=2: rotation-minimal words 2  vs  primitive (Lyndon) words 1   (the paper's first fault was reporting the first as cycles)
+k=6 d=3: rotation-minimal words 4  vs  primitive (Lyndon) words 3   (the paper's first fault was reporting the first as cycles)
+k=8 d=4: rotation-minimal words 10  vs  primitive (Lyndon) words 8   (the paper's first fault was reporting the first as cycles)
