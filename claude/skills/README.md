@@ -92,3 +92,5 @@ content, not part of this project's own accumulated context.
 | `pptx` | Create, read, or edit PowerPoint decks (.pptx/.potx) — layouts, speaker notes, templates, comments. |
 | `skill-creator` | Create a new skill, edit/optimize an existing one, or run evals to benchmark a skill's triggering accuracy. |
 | `xlsx` | Open, edit, create, clean, or convert spreadsheet files (.xlsx/.xlsm/.xltx/.csv/.tsv). |
+
+**Added 2026-10-13:** `nltk-zork-wordnet` — NLTK as the content-processing base for the Zork Sentence WordNet Parser (measured environment facts, Zork-to-NLTK mapping, disambiguation results, API cheat-sheet). Install with the others.
