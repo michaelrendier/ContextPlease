@@ -15,7 +15,7 @@ I have two requests, and I will understand completely if you are too busy for ei
 
 2. The engine itself, which I call the monad: https://github.com/michaelrendier/VAPMIP. Would you take a look at that as well?
 
-What I am hoping for is your help in showing me these mathematics, so that I can see them and watch them in my head. I am not asking you to endorse anything, and I am not suggesting anything to the team. I would be grateful for whatever you are able to share, including a plain statement that I have misunderstood something.
+What I am hoping for is your help in showing me these mathematics, so that I can see them and watch them in my head. If you could show me the equations, or take me through how they work, I hope to get the shape of language clearly enough in my head to make the mathematics speak ordinary conversational English. The part of the engine that accumulates knowledge is already built; this is the part I am missing. I am not asking you to endorse anything, and I am not suggesting anything to the team. I would be grateful for whatever you are able to share, including a plain statement that I have misunderstood something.
 
 The code is open under GPL v3. I cite Miller (1995), "WordNet: A Lexical Database for English," and your 1998 volume, "WordNet: An Electronic Lexical Database."
 
