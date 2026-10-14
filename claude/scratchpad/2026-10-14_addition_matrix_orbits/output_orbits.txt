@@ -1,0 +1,25 @@
+1. x -> a x + b on Z/10^m: cycle type vs the CRT product of the types on Z/2^m and Z/5^m  (two rotor stacks of different gearing)
+   336 affine maps checked (m<=4; units and non-units of the ring, 'cycle type' = the cycles the orbits end in), CRT prediction wrong for 0
+   odometer x->x+1 on Z/10^1: {10: 1}   | x->3x+1: {2: 1, 4: 2}
+   odometer x->x+1 on Z/10^2: {100: 1}   | x->3x+1: {2: 2, 4: 4, 20: 4}
+   odometer x->x+1 on Z/10^3: {1000: 1}   | x->3x+1: {4: 10, 20: 8, 100: 8}
+   odometer x->x+1 on Z/10^4: {10000: 1}   | x->3x+1: {8: 10, 40: 8, 200: 8, 1000: 8}
+
+2. renormalisation: first-return map of the odometer on Z/10^m to the sub-lattice {x = 0 mod 10} is the odometer on Z/10^(m-1) (x -> x/10)
+   conjugate to the odometer one scale down for m = 2,3,4: True
+
+3. the digit at global column c of num1*(num2+t) as a function of t: its minimal period (a rotor of period 10^(c+1)/gcd(num1,10^(c+1)))
+   num1=         1: columns c=0..3  measured period / predicted: 10/10 100/100 1000/1000 10000/10000
+   num1=         2: columns c=0..3  measured period / predicted: 5/5 50/50 500/500 5000/5000
+   num1=         3: columns c=0..3  measured period / predicted: 10/10 100/100 1000/1000 10000/10000
+   num1=         5: columns c=0..3  measured period / predicted: 2/2 20/20 200/200 2000/2000
+   num1=         7: columns c=0..3  measured period / predicted: 10/10 100/100 1000/1000 10000/10000
+   num1=        10: columns c=0..3  measured period / predicted: 1/1 10/10 100/100 1000/1000
+   num1=        13: columns c=0..3  measured period / predicted: 10/10 100/100 1000/1000 10000/10000
+   num1=1234567890: columns c=0..3  measured period / predicted: 1/1 10/10 100/100 1000/1000
+   all equal: True
+
+4. tree automorphisms (the 'rotor' structure): a bijection of Z/b^n that induces a bijection mod b^k for every k<n; x->ax+b' with a coprime to the base qualifies
+   odometer, x->3x+1, x->5x+7 on Z/2^n (n<=8) are solenoidal: True
+   every cycle length of those maps on Z/2^n is a power of two: True
+   x->2x+1 on Z/5^n (a=2 is a unit mod 5): cycle lengths for n=1..4: [[1, 4], [1, 4, 20], [1, 4, 20, 100], [1, 4, 20, 100, 500]] (factors of 4 and 5 appear: not a 5-group)
