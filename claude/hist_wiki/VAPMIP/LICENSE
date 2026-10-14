@@ -1,0 +1,23 @@
+VAPMIP — the Monad
+Copyright (c) 2026 Cody Michael Allison (Michael Rendier). All rights reserved.
+
+PROPRIETARY. The Monad, which is the code in this repository, is proprietary. Its presence in a public repository grants no
+license to use, copy, modify, compile, run for any purpose beyond reading it, or distribute it. Licensing of the Monad is
+available; discuss in person or write to the.wandering.god@gmail.com.
+
+What is NOT restricted:
+  * The mathematics. Mathematics is not copyrightable, and nothing here restricts anyone from using, studying, re-deriving or
+    publishing the mathematics, the algorithms as ideas, or the measurements described in this repository's documents.
+    What is protected is the code, which is the author's engineering work (written with Claude's code generation, directed
+    and owned by the author).
+  * The harness and the console plugin are GNU GPL v3.0 (full text: LICENSE-GPL-3.0.txt). In this repository that covers:
+        harness.py
+        PtolC/monad_harness.c
+        PtolC/monad_harness.h
+    and, in the PtolemyDesktop repository, the console UI plugin (ptolemy_console.py, console_link.py) and the rest of
+    PtolemyDesktop. Everything else in this repository is the proprietary Monad.
+
+Only VAPMIP (the Monad) and POE are proprietary; the rest of the author's projects are GPL v3.0 unless they say otherwise.
+
+Third-party material (WordNet 3.0, Open English WordNet, NLTK, the UD treebanks) keeps its own license: see NOTICE and
+WORDNET_LICENSE.txt.
