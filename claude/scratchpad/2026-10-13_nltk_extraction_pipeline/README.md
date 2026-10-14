@@ -5,3 +5,7 @@ Warm cost 3-19 ms per prompt; first call ~3.9 s (WordNet lazy load).
 Results (4 prompts, illustrative): bank -> depository_financial_institution.n.01 OK; plant (power) -> plant.n.01 OK; first reactor -> nuclear_reactor.n.01 OK; neutron -> neutron.n.01 OK; fission.n.02 OK.
 FAIL on the target prompt "neutron generation in different reactor types": reactor -> reactor.n.01 (electrical), generation -> coevals.n.01 (wanted nuclear_reactor.n.01, generation.n.06). Six words give almost no gloss overlap; the topical tie is not in WordNet glosses either.
 Tagger error seen: "produces" tagged NOUN. Chunk-grammar bug found and fixed (VERB removed from NP modifiers).
+
+## Topic-bag test (Cody's search/AI-overview idea) - topic_bag.py, neutron_generation_overview.txt
+Ingested a search-AI overview of "neutron generation" (URLs/citations stripped) -> 114-lemma topic bag (neutron 15, fission 6, nuclear 4, deuterium 4 ...). Sense score = overlap of the sense bag (gloss + related glosses) with the topic bag.
+reactor -> nuclear_reactor.n.01 (21 vs 2) OK; generation -> generation.n.06 (3 vs 2, thin margin) OK; neutron -> neutron.n.01 OK; "type" -> type.n.06 (printing block, scores 2 vs 1 = noise) WRONG: generic words need a margin rule / MFS fallback.

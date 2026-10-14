@@ -1,0 +1,15 @@
+Neutron generation is the process of creating free neutrons through nuclear fusion, fission, particle bombardment, or radioisotope decay.
+Main Methods of Neutron Generation
+Compact Neutron Generators (Fusion-Based): Compact linear particle accelerators accelerate hydrogen isotopes (deuterium and/or tritium) into a metal hydride target.
+D-D Reaction: Deuterium + Deuterium produces a Helium-3 ion and a 2.5 MeV neutron.
+D-T Reaction: Deuterium + Tritium produces a Helium-4 (alpha) particle and a high-energy 14.1 MeV neutron.
+These electrical devices can be switched on and off, making them safe and portable alternatives to nuclear reactors.
+Spallation Sources: High-energy protons (accelerated nearly to the speed of light) strike heavy metal targets like liquid mercury or lead.
+This impact shatters the target nuclei in a cascade, releasing hundreds of trillions of neutrons per pulse (used in large facilities like the Spallation Neutron Source).
+Nuclear Fission Reactors: Sustained chain reactions in fissile materials like uranium-235 or plutonium continuously split atoms, releasing multiple fast neutrons per fission event.
+In reactor physics, a neutron generation refers to the lifecycle stage of fission neutrons being released, thermalized, and absorbed to trigger the next split.
+Radioisotope and (alpha,n) Sources: Spontaneous fission emitters like californium-252 release neutrons directly.
+Alpha-emitting radioisotopes combine with a light target like beryllium to trigger secondary (alpha,n) nuclear reactions.
+Common Applications: Materials Analysis: Neutron activation analysis and prompt gamma-ray tracking.
+Industrial and Security: Non-destructive testing, cargo scanning, and prompt fission neutron logging.
+Medicine: Fast neutron therapy and isotope production.
