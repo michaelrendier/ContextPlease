@@ -1,0 +1,7 @@
+# Struts: singular or multiple? Friction where they cross? (2026-10-13, Cody's question)
+Definition used: a strut = an antipodal pair of kite vertices = a reversal pair of Assessors {(a,b),(b,a)}, b=a^s; 4 diagonals (a,b,+-),(b,a,+-); 21 struts = 7 kites x 3. "Friction" proxies: product norm, commutator, ANTICOMMUTATOR |xy+yx| (symmetric residue), common annihilator.
+[MEASURED] x*x = -|x|^2 e0 for all 84 diagonals (exact).
+[MEASURED] Inside a strut the 4 diagonals mutually ANTICOMMUTE exactly (anticommutator 0). They split into TWO components: {(a,b,+),(b,a,-)} and {(a,b,-),(b,a,+)}, each pair sharing a 4-dim partner space (N+ and N-); N+ and N- are orthogonal, overlap 0, together span 8 dims = indices {4-7,12-15} for strut (1,2) = the complement of J_red={0-3,8-11} (the diagonals themselves lie in J_red). That 8-dim span is NOT closed under product (residual 13.5).
+[MEASURED] Same kite, different strut: product is 0 (edge) in half the sign choices and otherwise the pair anticommutes exactly (294/294): no commuting residue anywhere inside a kite.
+[MEASURED] Different kites (3024 pairs): 2184 anticommute exactly; 840 have |{x,y}|=1 = a symmetric residue, and those 840 are EXACTLY the pairs whose supports share one basis index (e_i). Same fraction (5/18) for every kite pair. Basis units e_i,e_j (i!=j) always anticommute, so friction can only come from a shared axis.
+[NOT TESTED] that Cody's J_red/J_blue (forward/reverse Dirichlet series, realised as octonions) equal these halves.

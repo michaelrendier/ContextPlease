@@ -1,0 +1,5 @@
+x*x = -|x|^2 e0 for all 84 diagonals: max residual 0.0e+00
+same-kite pairs with nonzero product: 294  of which NOT exactly anticommuting: 0
+cross-kite mean anticommutator |{x,y}| per kite pair: min 0.278 mean 0.278 max 0.278; distinct values: [np.float64(0.278)]
+per-pair anticommutator values (rounded) and counts: {np.float64(0.0): 2184, np.float64(1.0): 840}
+mean friction by (s1 xor s2): {1: 0.278, 2: 0.278, 3: 0.278, 4: 0.278, 5: 0.278, 6: 0.278, 7: 0.278}

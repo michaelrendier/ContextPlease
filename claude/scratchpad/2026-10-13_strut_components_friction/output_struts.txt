@@ -1,0 +1,21 @@
+== one strut, its four diagonals: (a,b,+),(a,b,-),(b,a,+),(b,a,-)   [a,b]=(1,2) strut s=3
+pair                         |xy|   |yx|   |[x,y]| |{x,y}|  commonKerDim
+(1, 2, 1)    (1, 2, -1)     1.000  1.000  2.000  0.000   0
+(1, 2, 1)    (2, 1, 1)      1.000  1.000  2.000  0.000   0
+(1, 2, 1)    (2, 1, -1)     1.000  1.000  2.000  0.000   4
+(1, 2, -1)   (2, 1, 1)      1.000  1.000  2.000  0.000   4
+(1, 2, -1)   (2, 1, -1)     1.000  1.000  2.000  0.000   0
+(2, 1, 1)    (2, 1, -1)     1.000  1.000  2.000  0.000   0
+
+component partner spaces: dim N+ = 4  dim N- = 4  overlap dim = 0
+  max |<N+,N->| (orthogonality): 8.913024728924446e-16
+  span(N+,N-) dim = 8
+  span closed under product? max residual outside span: 13.4679 (0 => a subalgebra)
+  basis indices touched by span(N+,N-): [np.int64(4), np.int64(5), np.int64(6), np.int64(7), np.int64(12), np.int64(13), np.int64(14), np.int64(15)]
+
+== friction by class (mean over pairs; |xy|/|x||y| , |yx| , |[x,y]| , |{x,y}|) and fraction with xy=0
+different kite                       n= 3024   1.000  1.000  1.926  0.278   xy=0: 0.00  [x,y]=0: 0.00
+same Assessor, +/-                   n=   42   1.000  1.000  2.000  0.000   xy=0: 0.00  [x,y]=0: 0.00
+same kite, different strut           n=  336   0.707  0.707  1.414  0.000   xy=0: 0.50  [x,y]=0: 0.50
+same strut (reversal), opp sign      n=   42   1.000  1.000  2.000  0.000   xy=0: 0.00  [x,y]=0: 0.00
+same strut (reversal), same sign     n=   42   1.000  1.000  2.000  0.000   xy=0: 0.00  [x,y]=0: 0.00
