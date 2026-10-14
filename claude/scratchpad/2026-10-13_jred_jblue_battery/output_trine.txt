@@ -1,0 +1,14 @@
+(red,blue,green index, sign, closes as quaternion line, grade of green):
+   (1, 4, 5, np.float64(-1.0), np.True_, 'blue')
+   (1, 5, 4, np.float64(1.0), np.True_, 'blue')
+   (1, 6, 7, np.float64(1.0), np.True_, 'blue')
+   (1, 7, 6, np.float64(-1.0), np.True_, 'blue')
+   (2, 4, 6, np.float64(-1.0), np.True_, 'blue')
+   (2, 5, 7, np.float64(-1.0), np.True_, 'blue')
+   (2, 6, 4, np.float64(1.0), np.True_, 'blue')
+   (2, 7, 5, np.float64(1.0), np.True_, 'blue')
+   (3, 4, 7, np.float64(-1.0), np.True_, 'blue')
+   (3, 5, 6, np.float64(1.0), np.True_, 'blue')
+   (3, 6, 5, np.float64(-1.0), np.True_, 'blue')
+   (3, 7, 4, np.float64(1.0), np.True_, 'blue')
+lines with red J_red, blue J_blue and J_green=[J_blue,J_red]: 12 ; all green in blue half: True
