@@ -1,0 +1,8 @@
+graph: 117659 synsets, 285946 directed edges, built in 13.9s
+reactor    PPR=nuclear_reactor.n.01           lesk=reactor.n.01               (83 ms) | neutron generation in different reactor types
+generation PPR=generation.n.02                lesk=generation.n.02            (72 ms) | neutron generation in different reactor types
+reactor    PPR=nuclear_reactor.n.01           lesk=nuclear_reactor.n.01       (61 ms) | the first reactor was built after neutrons were discovered
+bank       PPR=bank.n.03                      lesk=bank.n.01                  (58 ms) | he sat on the bank of the river and fished
+bank       PPR=bank.n.06                      lesk=savings_bank.n.02          (52 ms) | she deposited money at the bank
+plant      PPR=plant.n.01                     lesk=plant.n.03                 (58 ms) | the plant needs water and sunlight to grow
+plant      PPR=plant.n.02                     lesk=plant.n.02                 (52 ms) | the plant produces electricity from nuclear fission
