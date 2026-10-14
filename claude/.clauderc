@@ -405,3 +405,11 @@ vq_docs()  { ( cd "$VALE" && .venv/bin/python docs/gen_api.py && .venv/bin/pytho
 # ~/.bashrc (same variable name, different value). If GitHub says 401, `source ~/.bashrc` and retry BEFORE diagnosing.
 # The current GITHUB_TOKEN (ends JgP) has repo + workflow scope, so Actions workflows and Pages can be pushed/enabled.
 # Never touch PTOL_SEED_TOKEN.
+
+# ============================================================
+# EVERY REQUEST GETS A MOZILLA USER AGENT (Cody, 2026-10-14)
+# Most automated-access blocks (HTTP 403) disappear with a browser-style User-Agent. Use `fetch` (or curl -A "$CLAUDE_UA") for every
+# outbound HTTP request; in Python set the same header. Public, freely available works only: a paywall, login or CAPTCHA page is a stop, not an obstacle.
+# ============================================================
+export CLAUDE_UA='Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0'
+fetch() { curl -sL -m "${FETCH_TIMEOUT:-60}" -A "$CLAUDE_UA" "$@"; }

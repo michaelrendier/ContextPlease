@@ -1,7 +1,7 @@
 ---
 name: cs-paper-code-conventions
 description: Standard conventions for presenting Python/code machinery inside a computer-science paper — when to show a runnable code Listing vs. when to describe an API in prose vs. when to use boxed pseudocode vs. a literal REPL transcript, how to caption/number/cite each, and the "perpetual now" rule that every Listing must read cold, without silently assuming the reader carried forward state from an earlier one. Use when writing or revising any paper in FourthAgePapers (or any other engineering-structure paper) that has running code behind a claim, whenever the draft is leaning on dense mathematical notation (Σ, ∫, custom symbols) to describe something that is actually a short function, whenever a section has more than one code Listing and you need to check none of them depends on invisible state from an earlier one, whenever the artifact is a console/REPL session rather than a function, or when the user says "show the code, not the maths" / asks how a CS paper should present code / asks to check a paper's code-block conventions.
-version: 0.3.0
+version: 0.4.0
 ---
 
 # CS Paper Code Conventions
@@ -98,6 +98,41 @@ to excerpt it at all and documents the *installation and use* of the
 whole thing instead — the same move scikit-learn makes at six pages,
 here stretched to forty-four because the domain (lattice gauge theory)
 needs that much closed-form setup before "how to run it" makes sense.
+
+## 0b. Three more conventions, from the permutation/indexing literature (verified 2026-09-29)
+
+Found by pulling the most-cited papers on permutations, string rotations and permutation-based
+indexing and reading the ones that were open (`Ainulindale/references/permutation_papers/`;
+citation counts are OpenAlex, 2026-09-29). Each one is a real, working way to show code in a
+paper that is a storage/indexing mechanism.
+
+**E — Named-step algorithm + ONE running example, in prose.**
+Burrows & Wheeler, *A Block-sorting Lossless Data Compression Algorithm* (DEC SRC-RR-124, 1994;
+2,352 cites; read in full, 8 pp.). The two procedures are "Algorithm C" (compress transform)
+and "Algorithm D" (inverse), each written as numbered, bracket-titled steps — "C1. [sort
+rotations]", "C2. [find last characters of rotations]", "D1. [find first characters of
+rotations]" — in Knuth's style, with no code in any language. One example string, `abraca`,
+is carried through EVERY step, and the intermediate matrix M is printed after C1, so a reader
+can check each step by hand. Natural fit for a reversible mapping whose round trip is the
+claim (string ↔ address): state the forward and inverse as two lettered algorithms and
+hand-run one short string through both.
+
+**F — Short-paper pseudocode + the enumerated table for a tiny case.**
+Myrvold & Ruskey, *Ranking and unranking permutations in linear time* (Inf. Process. Lett.
+79, 2001; 127 cites; read in full, 4 pp.). Pascal-style `procedure unrank1(n, r, π)` /
+`function rank1(...)`, a two-sentence correctness argument, and a figure listing ALL 24
+permutations of n=4 with their ranks (Fig. 1, Fig. 2) — exhaustive over the smallest
+non-trivial case instead of sampled. The order of the permutations is *defined by the
+unranking algorithm*, and the paper says so. Natural fit for any bijection over a finite set:
+show the whole table at n=4 and let the reader see the bijection.
+
+**G — The algorithm lives in a numbered Figure; the running example is a drawing.**
+Amato & Savino, *Approximate similarity search in metric spaces using inverted files*
+(InfoScale 2008; 111 cites; read). "Figure 1: Example of perspective based space
+transformation", "Figure 2: Inverted file obtained for the running example", "Figure 3: Basic
+searching algorithm using inverted files" — the pseudocode is boxed as a Figure and referenced
+by number, and each experiment is a numbered performance figure. This is Convention C
+(boxed pseudocode) with the running example carried by the same Figure sequence.
 
 ## 1. Which one to use — decide per component, not per paper
 
@@ -278,3 +313,45 @@ The same conventions worked for an API reference site (Sphinx). Worked example:
   Running it found a real bug the first time (registering 38 modules printed 38 lines).
 - A listing that needs a class shell (a method) is shown inside a minimal `class X:` wrapper
   and labelled as extracted.
+
+## 7. A white paper on a storage mechanism (HyperindexingSystem, 2026-09-29)
+
+Cody, 2026-09-29: "this paper does not demand narrative. it's straight a white paper on
+hyperindexing storage." What that changes:
+
+- **No lineage story in the body.** How the idea was reached (tools used, videos watched,
+  who suggested what) is not the paper's job; the premise, definitions, mechanism, measurements
+  and limits are. Provenance survives only as (a) the premise citation under the title
+  (here: Borges, "The Library of Babel", and libraryofbabel.info's About page + forum) and
+  (b) the citation list, tagged built-against (no tag) vs `Post-Hoc:`.
+- **Order of a storage white paper:** premise → definitions (address, chunk, layer) → the
+  mechanism as Listings (B) or named-step algorithms with one running example (E) → the
+  exhaustive small-case table (F) → measurements as `>`-transcripts (D) → limits and negative
+  results stated as results → citations. The two orders in which the reader can be lost are
+  "measurement before definition" and "claim before limit".
+- **Convention per component (this paper):** the string↔address bijection → E with a running
+  example (or B); the rank of a string within a composition class → F (n=4 table) ; the
+  benchmark sessions → D; the 256-bit fold and any unbuilt construction → C, labelled
+  THEORETICAL; established ranking/generation algorithms (Myrvold–Ruskey, Fisher–Yates,
+  Burrows–Wheeler) → A, cite and point at the file.
+- **Every number in the paper is a measured number** with its script path, or is labelled
+  as arithmetic. A claim the code audit could not reproduce (2026-09-29: vocabulary-reduction
+  factors, the spectral-range search, the 97% figure) is not in the paper as a result.
+
+## Sources added 2026-09-29 (§0b, §7)
+- Burrows, M., Wheeler, D. J. *A Block-sorting Lossless Data Compression Algorithm.* SRC-RR-124 (1994). Read: `Ainulindale/references/permutation_papers/Burrows_Wheeler_1994.pdf`.
+- Myrvold, W., Ruskey, F. *Ranking and unranking permutations in linear time.* IPL 79 (2001) 281–284. Read: `MyrvoldRuskey_2001.pdf`.
+- Amato, G., Savino, P. *Approximate similarity search in metric spaces using inverted files.* InfoScale 2008. Read: `Amato_Savino_2008.pdf`.
+- Not opened (paywalled, listed in `FourthAgePapers/HyperindexingSystem/citations.md`): Sedgewick 1977, Durstenfeld 1964, Ehrlich 1973, Cover 1973, Manber–Myers 1993, Ferragina–Manzini 2000, Chávez et al. 2008, Fagin et al. 2003, Bayer–Diaconis 1992.
+
+## 8. Papers written with an assistant (added 2026-10-14, Cody)
+
+Standing rules for every paper the author now writes with a model, first applied to `FourthAgePapers/CollatzShift/paper/` (*A Bit Shift Wearing A Disguise*), which is the worked example.
+
+* **The assistant note comes first, not hidden.** An opening box, before the abstract: the model's name and id; that a transformer wrote the paper with this skill running (link to the skill in ContextPlease); who the author is and what he is not; the author's method of NOT telling the model what result he is looking for, so he is not handed the answers he wants (stated as a safeguard, not a guarantee); and what kind of paper this is.
+* **Labels and hedging.** `ESTABLISHED` (cited), `OURS`, `THEORETICAL`, `OPEN`; the suffix `:CALCULATED` goes on any result the paper's own code produces (CALCULATED is not DERIVED). Keep the academic hedging; do not drop an academic label because code exists, append `:CALCULATED`.
+* **A paper that uses GenerationalLineage describes the engine in its own section BEFORE it presents results from it,** and says plainly that engine and paper share an author and an assistant.
+* **Every paper ends with an appendix: what in ContextPlease was used, and what ContextPlease is** (a short purpose paragraph so any model can come up to speed with historical access, then a table of files, skills and scratchpads used, each linked).
+* **Not a Fourth Age paper unless it carries a pre-registered prediction.** If it is a results/code paper, say so in a scope section.
+* **A code paper has no proofs.** Show the programs (B for short mechanisms, A for long files, D for transcripts). Generate the paper from the engines (`paper/make_paper.py`): numbers taken from fresh runs, listings extracted verbatim and executed cold, and a `--check` mode so the committed text cannot drift from the code.
+* **Literature:** every download of another person's work follows the Literature Download Protocol (`ContextPlease/claude/references/INDEX.md`; copy beside the paper; verify each file by its title page), and requests carry a browser-style User-Agent.

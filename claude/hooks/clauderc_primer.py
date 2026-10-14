@@ -37,6 +37,7 @@ out = ["CLAUDERC MAP (auto-generated at session start; Cody's context-shortcut s
  "know', look here first (rcls, rccm/rcvq/rcboth, ctxengine, grep the files). (3) If still absent: say 'I don't remember' and let him point you to",
  "the spot; do not guess. (4) Context purity matters near the prompt; rolled-out context is attention moved elsewhere, not loss: pull it back by block.",
  "(5) Use the code's own identifiers; maths in Unicode, never LaTeX. Pull a block:  source ~/.clauderc_ctx; rcboth NAME   (or rcls).",
+ "(7) Every outbound HTTP request gets a Mozilla user agent (curl -A \"$CLAUDE_UA\" or the fetch helper in ~/.clauderc; same header in Python). Public works only; a paywall/login page is a stop.",
  "(6) Literature Download Protocol: every download of another person's work -> ContextPlease/claude/references/INDEX.md + ~/.clauderc_citations, copy kept in ContextPlease, mirrored beside the citing paper/repo; verify each file by its title page.", ""]
 for f in sorted(glob.glob(H + "/.clauderc*")):
     b = os.path.basename(f)

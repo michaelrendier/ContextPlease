@@ -240,6 +240,7 @@ it was established, refuted or left open.
 |---|---|---|
 | `skills/` | 21 entries: the **8 custom skills** authored for this project (`addition-matrix`, `cs-paper-code-conventions`, `generational-lineage`, `imagemagick`, `nes-viewport`, `observer-position`, `scad-spatial`, `unit-management`) plus 12 reference copies of Anthropic's built-in skills, plus its own `README.md` | The custom eight are the payload: copy one into `~/.claude/skills/<name>` (or `<repo>/.claude/skills/`) and it takes effect. `skills/README.md` has the index and the install commands. Live originals are `~/.claude/skills/`; the mirror is not kept in sync automatically |
 | `scratchpad/` | 64 entries: one dated subdirectory per piece of work, each with a `README.md`, plus `README.md` and a script | Canonical, versioned. `ThePlace/.claude/scratchpad/` is the staging area and must be mirrored in. Manifest: `.clauderc_scratchpad_contents` |
+| `references/` | the Literature Download Protocol ledger (`INDEX.md`) and every downloaded third-party work, by paper or repo | started 2026-10-14; each downloaded file is also mirrored beside the paper that cites it |
 | `hist_prime/` | every context primer, organised by originating repo (`_root` for none), plus `MANIFEST.json` | A copy, not the original; migrated 2026-08-28 |
 | `hist_todo/` | a snapshot copy of each repo's `TODO.md` | originals stay in their repos |
 | `hist_wiki/` | a copy of every repo's `wiki/` pages, by originating repo | point-in-time; ValaQuenta re-copied 2026-09-28 |
