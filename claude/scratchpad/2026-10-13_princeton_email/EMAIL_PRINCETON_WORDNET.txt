@@ -19,7 +19,7 @@ I have two requests, and I will understand completely if you are too busy for ei
 
 What I am hoping for is your help in showing me these mathematics, so that I can see them and watch them in my head. If you could show me the equations, or take me through how they work, I hope to get the shape of language clearly enough in my head to make the mathematics speak ordinary conversational English. The part of the engine that accumulates knowledge is already built; this is the part I am missing. I am not asking you to endorse anything, and I am not suggesting anything to the team. I would be grateful for whatever you are able to share, including a plain statement that I have misunderstood something.
 
-The code is publicly readable; the engine (the monad) is proprietary and licensed on request, the mathematics is free to use, and the harness and console are GPL v3. WordNet's license and copyright notice are carried in the repositories, and I cite Miller (1995), "WordNet: A Lexical Database for English," and your 1998 volume, "WordNet: An Electronic Lexical Database."
+The code is publicly readable; the engine (the monad) is free for research and non-commercial use and licensed for commercial use, the mathematics is free to use, and the harness and console are GPL v3. WordNet's license and copyright notice are carried in the repositories, and I cite Miller (1995), "WordNet: A Lexical Database for English," and your 1998 volume, "WordNet: An Electronic Lexical Database."
 
 Thank you for WordNet, and for your time.
 
