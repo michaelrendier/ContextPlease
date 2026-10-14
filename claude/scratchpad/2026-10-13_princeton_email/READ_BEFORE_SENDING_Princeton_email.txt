@@ -1,0 +1,6 @@
+Checks before you send EMAIL_PRINCETON_WORDNET.txt (Claude, 2026-10-13):
+1. Address fellbaum@princeton.edu is the one on Princeton's Linguistics profile for Christiane Fellbaum (confirmed in a search today).
+2. Attach the PDF named in the Attach line (same folder, 42 pages).
+3. Open the branch link once on send day to make sure it still loads.
+4. Look at the WordNet license text yourself: no WordNet license notice is in VAPMIP, ValaQuenta or Ainulindale, and the email says you want to carry it correctly.
+5. The email states no numbers from the paper on purpose (the 146,743 / 154,725 figures were not re-run today).

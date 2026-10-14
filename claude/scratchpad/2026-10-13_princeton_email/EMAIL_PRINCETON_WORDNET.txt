@@ -1,0 +1,27 @@
+To:       Christiane Fellbaum <fellbaum@princeton.edu>
+From:     Cody Michael Allison <the.wandering.god@gmail.com>
+Subject:  A small project built on WordNet, and a request for your guidance
+Attach:   19_Dimensional_Scalar_WordNet_Context_Propagation_v4.0_2026-10-13.pdf
+
+Dear Professor Fellbaum,
+
+My name is Cody Allison. I am an independent builder with no academic affiliation, and I am writing to you with real humility, because everything I have made rests on the work that you, Professor Miller, and your colleagues have spent a lifetime on.
+
+For about six months I have been building a small language engine that runs entirely offline on a laptop. WordNet is its foundation. Each word is stored with the counts of its 19 relation pointers (hypernyms, hyponyms, meronyms and the rest), and I rebuilt that table directly against the WordNet C library and checked it against NLTK. The paper I have attached describes it. I do not claim it is important. I only hope it is not wrong, and you are the person best placed to tell me.
+
+Along the way I ran into things I may be misreading. On a short prompt, "neutron generation in different reactor types", the simple disambiguation methods I tried chose the electrical sense of "reactor". I also noticed that "pressurized water reactor" has no synset of its own. I would like to record that sort of gap carefully, with sources, in a file kept apart from WordNet itself, and not to change WordNet in any way.
+
+I have two small requests, and I will understand completely if you are too busy for either:
+
+1. If you could look at the paper, or only the first few pages, and tell me where I have misunderstood WordNet, I would be very grateful for a plain and critical answer.
+2. If the team has a preferred way to receive suggestions about missing senses or relations, I would like to know what it is.
+
+The code is open (GPL v3) at github.com/michaelrendier, and the paper's own directory is https://github.com/michaelrendier/FourthAgePapers/tree/scalar-context-propagation/ScalarContextPropagation. I cite Miller (1995) and your 1998 volume, and I want to carry the WordNet license notice correctly in anything I share. Please tell me if I should be doing something differently.
+
+Thank you for WordNet, and for your time.
+
+With respect,
+Cody Michael Allison (Michael Rendier)
+the.wandering.god@gmail.com
+ORCID 0009-0007-7239-6760
+github.com/michaelrendier
