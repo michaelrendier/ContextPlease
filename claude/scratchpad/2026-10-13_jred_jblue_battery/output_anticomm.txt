@@ -1,0 +1,2 @@
+pure-imaginary J_red element r (no e0) and J_blue element b: max |rb+br| = 2.3e-15  (exact anticommutation: r*b = -b*r = [r,b]/2)
+with the e0 part of J_red included: |rb+br| = 1.176 = 2|r0| |b| = 1.176

@@ -1,0 +1,6 @@
+stabiliser of y=(1,2,+) in g2: dim 3
+lattice partners z with z*y=0: 4 [(4, 7, -1), (5, 6, 1), (6, 5, -1), (7, 4, 1)]
+ theta=0.3: |g y - y|=3.6e-17; opposite diag moved 0.000; 4 partners moved [0.104 0.104 0.104 0.104]; nonzeros per partner [8, 8, 8, 8]; partners still annihilate y: 1.4e-16; images are ZD: [4, 4, 4, 4]
+ theta=0.8: |g y - y|=1.5e-16; opposite diag moved 0.000; 4 partners moved [0.277 0.277 0.277 0.277]; nonzeros per partner [8, 8, 8, 8]; partners still annihilate y: 3.9e-16; images are ZD: [4, 4, 4, 4]
+ theta=1.6: |g y - y|=2.2e-16; opposite diag moved 0.000; 4 partners moved [0.551 0.551 0.551 0.551]; nonzeros per partner [8, 8, 8, 8]; partners still annihilate y: 7.7e-16; images are ZD: [4, 4, 4, 4]
+ whole kite s=3 (12 diagonals) after flow, still ZD (kernel 4): True ; other kites also ZD: True

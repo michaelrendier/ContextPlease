@@ -1,0 +1,27 @@
+JB-1 grading by chi_4 (J_red=[0, 1, 2, 3, 8, 9, 10, 11], J_blue=[4, 5, 6, 7, 12, 13, 14, 15])
+   red*red    mean |red part|   7.287  mean |blue part|   0.000
+   red*blue   mean |red part|   0.000  mean |blue part|   7.427
+   blue*red   mean |red part|   0.000  mean |blue part|   7.511
+   blue*blue  mean |red part|   7.472  mean |blue part|   0.000
+   J_red norm-multiplicative: | |xy|-|x||y| | =8.9e-16 ; alternative: |x(xy)-(xx)y| = 1.2e-15
+   J_blue*J_blue norm: | |xy|-|x||y| | = 3.3e-01 (blue is not a subalgebra; odd part)
+JB-2 interface: commutator [r,b] and [b,b'] landing
+   [red,blue]   red part   0.000  blue part  12.702
+   [blue,blue]  red part  14.025  blue part   0.000
+   [red,red]    red part  12.610  blue part   0.000
+JB-3 struts vs J: per strut (a,b) polar u = unique u in 1..7 with chi_u(a)=chi_u(b)=+1
+   struts per polar u: {1: 3, 2: 3, 3: 3, 4: 3, 5: 3, 6: 3, 7: 3} (u=4 is ptol's fixed J_red/J_blue)
+   all diagonals inside ker chi_u: True ; all partner spaces inside the chi_u=-1 coset: True
+JB-4 muscle test: L_x^2 = -|x|^2 ?
+   max |L_x^2 + |x|^2 I| over 84 diagonals: 2.00e+00
+   rotate every diagonal by exp(theta L_x/|x|) (x=(1,2,+), strut s=3); kernel dim of the image (4 = still a zero divisor):
+   theta=0.00 {'same strut': {4: 4}, 'other kite': {4: 72}, 'same kite, other strut': {4: 8}}
+   theta=0.30 {'same strut': {0: 4}, 'other kite': {0: 72}, 'same kite, other strut': {4: 8}}
+   theta=0.80 {'same strut': {0: 4}, 'other kite': {0: 72}, 'same kite, other strut': {4: 8}}
+   theta=1.57 {'same strut': {0: 4}, 'other kite': {0: 72}, 'same kite, other strut': {4: 8}}
+JB-5 friction: symmetric part xy+yx vs -2<x,y>e0 over all pairs of diagonals
+   max |xy+yx + 2<x,y>e0| = 0.0e+00  (symmetric part is exactly the REAL part: friction = <x,y> deposited in e0)
+JB-6 strut as a sheet of zero divisors; where forward and backward cross
+   within one component (y1,y3 share N+): kernel dim of cos t y1+sin t y3: Counter({4: 73})
+   across components (+ with -): kernel dim of cos t y1+sin t y2 along t: [(np.float64(0.0), 4), (np.float64(0.26), 0), (np.float64(0.52), 0), (np.float64(0.79), 0), (np.float64(1.05), 0), (np.float64(1.31), 0), (np.float64(1.57), 4), (np.float64(1.83), 0), (np.float64(2.09), 0), (np.float64(2.36), 0), (np.float64(2.62), 0), (np.float64(2.88), 0), (np.float64(3.14), 4)]
+   across components (y1 with y4): Counter({0: 68, 4: 5})

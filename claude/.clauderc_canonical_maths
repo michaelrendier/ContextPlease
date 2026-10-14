@@ -2066,3 +2066,11 @@ G2 (Der dim 14) fixes span(e0,e8); all 84 diagonals one orbit, stabiliser SU(2);
 Moving-kite invariants: norm, e0/e8 weights, lower/upper split, L_v/R_v singular spectra, associator norm. Frame-relative: chart energies, Walsh coefficients, sigma_RB tilt.
 Constants: d* faces 0.24631 / RG dim 8 / taut / ln10 (see D_STAR_* env); Lambert W0 0, W(1)=0.5671, W(-1/e)=-1 double root; UNS = divide by ln10.
 @END
+
+@RCCM_J_RED_J_BLUE
+STANDING RULE (Cody 2026-10-13): any mention of J_red/J_blue means run tests and add to VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md.
+Chain (canonical, 2026-08-16): J_red + J_blue = WISDOM = 0_RB; 0_BR = USAGE; Sigma_RB = 0_RB - 0_BR = MEMORY. ptol.c shells: J_red = k in {0-3,8-11} cos forward, J_blue = {4-7,12-15} sin return.
+MEASURED: J_red/J_blue is the Z2 grading by chi_4 (red*red->red, red*blue->blue, blue*blue->red; J_red an octonion, J_blue the odd part). Pure-imaginary red anticommutes exactly with blue;
+xy+yx = -2<x,y>e0 for all 84 ZD diagonals (friction = the real part, in e0). Each strut has its own polar u (ptol's pair = u=4, 3 of 21 struts). Strut = 2 components (+/- pairs), partner spaces N+ (+) N- = blue_u half.
+Stabiliser SU(2) of a strut diagonal fixes the strut and rotates its 4 partners rigidly in N(y)=S3 (the muscle). OPEN: J_red x J_blue = d* (0.24600 vs 0.24631); hypercomplex_zeta j_red==j_blue.
+@END
