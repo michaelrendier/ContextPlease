@@ -1,0 +1,4 @@
+AC offline; idle mean 8.960 W (sd 1.398, n=160); idle1 7.572 idle2 10.348
+load: 5000 replies in 129.3 s (25.9 ms/reply); mean 9.255 W over 139 samples; exit 0
+delta 0.296 W -> 38.21 J = 10.61 mWh for the run -> 7.642 mJ = 2.1228 uWh per reply
+battery energy_now: start 24.140 Wh, after load 23.810 Wh, end 23.550 Wh
