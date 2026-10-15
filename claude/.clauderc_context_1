@@ -31,7 +31,7 @@ source_files: VAPMIP/docs/paper_drafts/Forward_Propagation_of_Information_DRAFT.
   VAPMIP/docs/wiki/Tuning-the-Engine/{00_index.md,42_every_voice_benchmark.md} · VAPMIP/benchmarks/all_voices/{benchmark_voices.py,runs/results_2026-10-14.json} ·
   VAPMIP/docs/wiki/Scaled-Kite-English-Thought-Center-Context.md · VAPMIP/LICENSE · VAPMIP/NOTICE
 source_hash (sha256, first 16 hex; recompute with sha256sum, mismatch = stale):
-  608f61e7d7fdc8a6 paper draft · 0f09c214d1a83cac README · ae8cd37ee79b5d06 wiki 42 · e444e7873cebb6f5 wiki index · 26479393463f39db benchmark_voices.py ·
+  e631a99d77162025 paper draft · 6eee9c63868fbea0 README · d0f35731fdea8e1c wiki 42 · e444e7873cebb6f5 wiki index · 26479393463f39db benchmark_voices.py ·
   7e8b8e7c66bb433d results_2026-10-14.json · 2726531554c2e8d0 Scaled-Kite page · 1abba3bece7ab8f6 LICENSE · 6617d5e9dc43bde7 NOTICE
 
 THE PAPER
@@ -54,11 +54,20 @@ THE PAPER
     5 the voices and what each returns : D : Phase 42 transcripts      6 energy and method : D : .claude/scratchpad/2026-10-13_monad_energy/      7 prompt extraction : A+D : 2026-10-13_nltk_extraction_pipeline/
     8 context flow (stated as specified work, THEORETICAL) : C      9 limits and negative results as results : D : Phase 42 §6      A Tuning the Engine appendix : A
 
+TERM: "WARM" / "COLD" (capacitor language; defined in the draft, §1.1; use it the same way everywhere)
+  "Warm" is the engine's own word and it comes from the capacitor. ValaQuenta/capacitor.py, class Capacitor, is an RC integrator: time constant tau = the conversational window; each sample moves the stored
+  charge V toward the signal, V <- V + (signal - V)/tau; it passes the slow component (the word's identity) and smooths away surface variation; transfer function 1/(1 + s*tau). In the monad the stored
+  charge enters the word count: VAPMIP/monad.py weighs the stored side (V, beta*E^2, "stored charge, warm field") against the flowing side (T): n_additional = n_words * sumT/(sumT + sumV); the starter always
+  fires first (_starter(prompt, warmup=8)) to charge the field before the words are chosen. COLD field = no charge; WARM field = charged.
+  In the benchmark (benchmarks/all_voices/benchmark_voices.py): round 1 over the six prompts is COLD (module just loaded, WordNet not yet read in), round 2 is WARM (same six prompts, after round 1 has charged
+  the field and filled the caches). Every "warm ms" and warm-energy figure in the paper, README and wiki 42 is round 2. The benchmark does NOT separate the capacitor's charge from the one-time loading inside the cold
+  round: report the cold/warm gap as measured, do not attribute it to either cause. (Use engineered-operator wording in the paper: RC integrator, time constant, stored charge; no theory names.)
+
 THE MACHINERY THAT EXISTS (all measured 2026-10-14 on one ThinkPad X1 Carbon 6th, 20KH002XUS, i7-8550U, no GPU, no network, laptop on battery)
   What it is: each word is the counts of its 19 WordNet relation pointers plus a prime address; a verb-governed parser (Infocom/Zork tradition) selects one of sixteen operators; voices turn a prompt into a reply.
   Census: 24 monad modules from the console's own discover_monads() (PtolemyDesktop/ptolemy_console.py globs VAPMIP/*monad*.py); 6 speak through the loader; 6 more speak through their own entry point
     (process_input, speak, weave, basin) via EntryPointMonadAdapter (test PtolemyDesktop/tests/test_monad_entry_points.py), so all 12 are selectable; 12 are structure/tooling with no speaking entry point.
-  Twelve voices, warm reply (mean of six prompts), added memory, whole-laptop energy per reply:
+  Twelve voices, WARM reply (round 2, see TERM above; mean of six prompts), added memory, whole-laptop energy per reply:
     VQ_rotary_monad.ValaQuenta.speak 0.30 ms 3.3 MB 0.8 uWh (one word echoed) · rotary_monad.AhuraMazda.speak 0.53 ms 6.9 MB 1.4 uWh (same word every prompt) ·
     ptolemy_monad.PtolemyMonad.process_input 1.4 ms 3.7 MB 3.6 uWh (hypernym/definition words: "can you play the piano?" -> "container stringed instrument percussion instrument keyboard instrument grand piano") ·
     boxkite_orbweaver_monad.OrbWeaverMonad.weave 1.8 ms (2-8 s with real words) 10.9 MB 4.6 uWh (document plan: room, bridge, frame, scaffold, connectives) ·
