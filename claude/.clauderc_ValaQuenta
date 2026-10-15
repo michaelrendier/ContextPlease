@@ -206,7 +206,7 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile session_20260928"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix session_20260928"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -1526,6 +1526,26 @@ sibling offsets are ADDITIVE within a location (2^16-point box in Z_m) but locat
 FILES: ValaQuenta/modules/basile/{__init__,maths,tools}.py + manifest.json; notebooks/basile/01-04; wiki/basile.md;
 wiki/toolbox/39_basile.md; tests/test_basile.py (2 skipped without cache); Ainulindale/wiki/124_basile_invertible_location_maps.md;
 local copy of published files: Ainulindale/references/babel/ (NOT for redistribution).
+"
+
+export CTX_ADDITION_MATRIX="
+addition_matrix -- the addition matrix of long multiplication read as arithmetic mod 10^k. v1.0 (2026-10-14).
+confidence_floor=ESTABLISHED (elementary number theory, checked exhaustively); the K=0 address is OURS (restatement).
+
+WHAT IT IS: (A) the matrix/carry matrix of the Multiplication Matrix Explorer (21 columns, carries in {0,1}); (B) columns as rotors:
+exact column period 10^(c+1)/gcd(num1,10^(c+1)), cycle type of x->ax+b on Z/10^m = CRT combination of Z/2^m and Z/5^m, odometer first
+return to multiples of 10 = odometer one scale down, Z/2^n cycle lengths powers of two; (C) THE LAW: live states of the digit-by-digit
+factor search after column c (c<n) = #{(p,q) mod 10^(c+1): pq=N} = f2*f5, f_p=(v+1)phi(p^k) for v<k, k*phi(p^k)+p^k for N=0 mod p^k;
+for v2,v5<c+1 this is (v2+1)(v5+1)*4*10^c = unit-group torsors, x10 per column, every unit solution has exactly 10 lifts; (D) address:
+K=(p'q'-N)/10^n integer for unit solutions mod 10^n; true factorisation is exactly K=0 (pair+swap), NOT isolated (near-misses |K|=1..14).
+
+!! NOT a factoring method. Live-state count = cost of the search. Branch-and-prune from low digits is Heninger & Shacham 2009 (Post-Hoc).
+!! Columns are bijections only for num1 coprime to 10; the code raises ValueError rather than report a cycle type that does not exist.
+!! Explorer discrepancy found: matrix_math.py docstring says 20 columns, N_COLUMNS is 21 (engine matches the constant).
+
+FILES: ValaQuenta/modules/addition_matrix/{__init__,maths,tools}.py + manifest.json; notebooks/addition_matrix/01,02; wiki/addition_matrix.md;
+wiki/toolbox/40_addition_matrix.md; tests/test_addition_matrix.py (11, cross-checks Explorer via MME_PATH or sibling dir);
+Ainulindale/wiki/125_addition_matrix_rotors_and_the_factor_search_law.md. Paper stub: FourthAgePapers/AdditionMatrixOrbits.
 "
 
 export CTX_BRACKETING_FIRING_ORDER="

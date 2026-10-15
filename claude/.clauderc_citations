@@ -153,6 +153,11 @@ cited-pending | Rozier, "Parity sequences of the 3x+1 map on the 2-adic integers
   | CollatzShift section 5.8 (outside source for the table-2.2 columns; read as consistent, not compared entry by entry)
   | FourthAgePapers/CollatzShift ; copies in ContextPlease/claude/references/CollatzShift and CollatzShift/references
 
+cited-pending | Heninger & Shacham (2009) "Reconstructing RSA Private Keys from Random Key Bits", CRYPTO 2009; ePrint 2008/510 -- Post-Hoc; NOT DOWNLOADED (Cloudflare challenge 2026-10-14)
+  | branch-and-prune search from the low-order bits of p, q, d: the same digit-by-digit lift as the addition-matrix factor search, applied with extra known bits
+  | AdditionMatrixOrbits (the live-state law of the search); addition_matrix engine, wiki/125
+  | FourthAgePapers/AdditionMatrixOrbits
+
 QUEUED | Post-Hoc: Bernstein (1994) Proc. AMS 121, 405-408 ; Terras (1976) Acta Arith. 30, 241-252 ; Lagarias (1985) Amer. Math. Monthly 92, 3-23 ; Everett (1977) Adv. Math. 25, 42-45 ; Letherman, Schleicher & Wood (1999) Experiment. Math. 8 -- cited by CollatzShift, NOT yet downloaded (see ledger for why)
   | non-iterative 2-adic statement; stopping-time densities; the survey; the Everett density result; complex/holomorphic Collatz
   | CollatzShift R2, R10, the lineage note

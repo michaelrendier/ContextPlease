@@ -1,0 +1,7 @@
+4 3 60 0 {'overflow': 0.572, 'size': 0.572, 'low': 0.446, 'random child': 0.502} {'overflow': 1.9, 'size': 1.9, 'low': -1.4, 'random child': 0.0}
+4 3 400 1 {'overflow': 0.502, 'size': 0.502, 'low': 0.497, 'random child': 0.514} {'overflow': 0.2, 'size': 0.2, 'low': -0.2, 'random child': 1.0}
+4 3 400 2 {'overflow': 0.521, 'size': 0.521, 'low': 0.478, 'random child': 0.522} {'overflow': 1.5, 'size': 1.5, 'low': -1.5, 'random child': 1.5}
+5 4 100 1 {'overflow': 0.442, 'size': 0.442, 'low': 0.548, 'random child': 0.522} {'overflow': -2.0, 'size': -2.0, 'low': 1.7, 'random child': 0.8}
+5 4 300 3 {'overflow': 0.478, 'size': 0.478, 'low': 0.511, 'random child': 0.509} {'overflow': -1.3, 'size': -1.3, 'low': 0.6, 'random child': 0.5}
+5 4 300 4 {'overflow': 0.489, 'size': 0.489, 'low': 0.477, 'random child': 0.494} {'overflow': -0.7, 'size': -0.7, 'low': -1.4, 'random child': -0.4}
+5 4 300 5 {'overflow': 0.536, 'size': 0.536, 'low': 0.465, 'random child': 0.502} {'overflow': 2.2, 'size': 2.2, 'low': -2.1, 'random child': 0.1}

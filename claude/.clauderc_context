@@ -8,6 +8,24 @@
 # through-line only; the auto-memory index + hist_prime primers hold the detail.
 
 ═════════════════════════════════════════════════════
+2026-10-14 — Addition matrix as rotors: engine + Explorer toolsets + code paper stub; Bernstein–Lagarias window audit; Lyndon stub
+═════════════════════════════════════════════════════
+
+STATE (ESTABLISHED:CALCULATED, run): ValaQuenta engine `addition_matrix` v1.0 (modules/addition_matrix, manifest, notebooks/addition_matrix/01-02, wiki/addition_matrix.md,
+wiki/toolbox/40, 11 tests incl. cell-for-cell cross-check vs MultiplicationMatrixExplorer; full suite 59 passed/3 skipped; registry 40 engines/348 equations;
+CTX_ADDITION_MATRIX in .clauderc_ValaQuenta; Ainulindale wiki 125). LAW: live states of the digit-by-digit factor search after column c<n = #{(p,q) mod 10^(c+1): pq=N}
+= f2*f5, f_p=(v+1)phi(p^k) for v<k else k*phi(p^k)+p^k; for v2,v5<c+1 = (v2+1)(v5+1)*4*10^c (unit-group torsors, x10/column, every unit solution has exactly 10 lifts).
+ADDRESS: K=(p'q'-N)/10^n is an integer; true factorisation is exactly K=0 (pair+swap), UNIQUE among zero-overflow solutions, NOT ISOLATED (near-misses |K|=1..15).
+NOT a factoring method. Explorer (MultiplicationMatrixExplorer): toolsets/{law,torsor,treeaut,closedform}.py + wiki/core_functionality.md + wiki/toolbox/ + factor-panel law lines
++ tests/. Follow-ups DONE: closed form holds for every N, p=2(k<=10),3,5,7,11; Aut(binary tree depth n) is a 2-group of order 2^(2^n-1) (brute n<=3), affine maps on Z/2^n
+(order 2^(2n-1)) lie in it -> power-of-two cycles; on Z/5^m lengths 1,4,20,100,500; no tested guide (overflow, size bound, smallest p') prefers the true child before the last
+level (scatter |z|<~2; two borderline cells chased, both signs). Paper stub FourthAgePapers/AdditionMatrixOrbits (9 pp, make_paper --check True; NOT a Fourth Age paper).
+TuringStack/wiki/Digit-by-Digit-Factor-Search-Law-2026-10-14.md (white-hat, no CVE). VAPMIP: docs/wiki/Lyndon-Factorisation.md + lyndon_conjugation.py (STUB: Duval core verified on
+2046 words; conjugates()/inflection_frame() raise NotImplementedError; combinatorial 'conjugate' = rotation, may differ from grammatical sense). CollatzShift: B-L window audit
+(2514 listed fixed points sound; printed block = ours minus {102} plus {144}; still OPEN); Rozier 2018 added to ledger; README updated.
+OPEN: Heninger-Shacham 2009 not downloadable (Cloudflare); Explorer matrix_math.py prose says 20 columns, N_COLUMNS is 21; Lyndon/tense mechanism not designed; engine tests need MME_PATH or sibling dir.
+
+═════════════════════════════════════════════════════
 2026-10-06 → 10-12 — HyperindexingSystem re-engineer: JSON entry fields, .perm files, Midline T S DD code
 ═════════════════════════════════════════════════════
 
