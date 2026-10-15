@@ -1,0 +1,27 @@
+13 beams, one planar ring (all aimed from the ring plane)          rival max  1.00 of peak | axial: last z with I>0.5 within 20 wavelengths = 19.95
+13 beams, one cone ring at 45 deg                                  rival max  1.00 of peak | axial: last z with I>0.5 within 20 wavelengths = 19.95
+13 = 1 on axis + 6 at 30 deg + 6 at 60 deg (two cone rings)        rival max  0.87 of peak | axial: last z with I>0.5 within 20 wavelengths = 19.70
+13 = icosahedron (12, six counter-propagating pairs) + 1 on axis   rival max  0.91 of peak | axial: last z with I>0.5 within 20 wavelengths = 19.05
+13 random directions over the sphere                               rival max  0.68 of peak | axial: last z with I>0.5 within 20 wavelengths =  0.30
+13 random directions over the upper hemisphere                     rival max  0.77 of peak | axial: last z with I>0.5 within 20 wavelengths =  0.40
+
+Phase tolerance (13 equal beams, random phase error sigma per beam): mean peak intensity as fraction of N^2
+  sigma = 0.05 rad  ->  0.998   (path error sigma = 4.23 nm at 532 nm; femtometer = 1e-6 nm)
+  sigma = 0.10 rad  ->  0.991   (path error sigma = 8.47 nm at 532 nm; femtometer = 1e-6 nm)
+  sigma = 0.20 rad  ->  0.964   (path error sigma = 16.93 nm at 532 nm; femtometer = 1e-6 nm)
+  sigma = 0.50 rad  ->  0.797   (path error sigma = 42.34 nm at 532 nm; femtometer = 1e-6 nm)
+  sigma = 1.00 rad  ->  0.417   (path error sigma = 84.67 nm at 532 nm; femtometer = 1e-6 nm)
+
+Air: dn/dT = -1e-6 per K (approx., room air). Optical path change for a 10 cm arm:
+  dT = 1 K -> 100 nm  (1e+08 fm)
+  dT = 0.1 K -> 10 nm  (1e+07 fm)
+  dT = 0.001 K -> 0.1 nm  (1e+05 fm)
+  dT = 1e-06 K -> 0.0001 nm  (100 fm)
+
+How many beams for ONE point? random directions over the full sphere, rival maximum (outside 0.3 wavelength) in a 6-wavelength cube, mean of 5 draws
+  N =   13: rival max = 0.693 of the central peak   (mean background level ~ 1/N = 0.077)
+  N =   25: rival max = 0.402 of the central peak   (mean background level ~ 1/N = 0.040)
+  N =   50: rival max = 0.322 of the central peak   (mean background level ~ 1/N = 0.020)
+  N =  100: rival max = 0.303 of the central peak   (mean background level ~ 1/N = 0.010)
+  N =  200: rival max = 0.287 of the central peak   (mean background level ~ 1/N = 0.005)
+  N =  400: rival max = 0.273 of the central peak   (mean background level ~ 1/N = 0.003)
