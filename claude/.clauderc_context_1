@@ -31,7 +31,7 @@ source_files: VAPMIP/docs/paper_drafts/Forward_Propagation_of_Information_DRAFT.
   VAPMIP/docs/wiki/Tuning-the-Engine/{00_index.md,42_every_voice_benchmark.md} · VAPMIP/benchmarks/all_voices/{benchmark_voices.py,runs/results_2026-10-14.json} ·
   VAPMIP/docs/wiki/Scaled-Kite-English-Thought-Center-Context.md · VAPMIP/LICENSE · VAPMIP/NOTICE
 source_hash (sha256, first 16 hex; recompute with sha256sum, mismatch = stale):
-  e631a99d77162025 paper draft · 6eee9c63868fbea0 README · d0f35731fdea8e1c wiki 42 · e444e7873cebb6f5 wiki index · 26479393463f39db benchmark_voices.py ·
+  ec7102b5a51a11b2 paper draft · 6eee9c63868fbea0 README · 334c2a51b7bbc3dc wiki 42 · e444e7873cebb6f5 wiki index · 26479393463f39db benchmark_voices.py ·
   7e8b8e7c66bb433d results_2026-10-14.json · 2726531554c2e8d0 Scaled-Kite page · 1abba3bece7ab8f6 LICENSE · 6617d5e9dc43bde7 NOTICE
 
 THE PAPER
@@ -55,7 +55,7 @@ THE PAPER
     8 context flow (stated as specified work, THEORETICAL) : C      9 limits and negative results as results : D : Phase 42 §6      A Tuning the Engine appendix : A
 
 TERM: "WARM" / "COLD" (capacitor language; defined in the draft, §1.1; use it the same way everywhere)
-  "Warm" is the engine's own word and it comes from the capacitor. ValaQuenta/capacitor.py, class Capacitor, is an RC integrator: time constant tau = the conversational window; each sample moves the stored
+  "Warm" is the engine's own word and it comes from the capacitor, which was added to the engine literally to SMOOTH THE SIGNAL (Cody). ValaQuenta/capacitor.py, class Capacitor, is an RC integrator: time constant tau = the conversational window; each sample moves the stored
   charge V toward the signal, V <- V + (signal - V)/tau; it passes the slow component (the word's identity) and smooths away surface variation; transfer function 1/(1 + s*tau). In the monad the stored
   charge enters the word count: VAPMIP/monad.py weighs the stored side (V, beta*E^2, "stored charge, warm field") against the flowing side (T): n_additional = n_words * sumT/(sumT + sumV); the starter always
   fires first (_starter(prompt, warmup=8)) to charge the field before the words are chosen. COLD field = no charge; WARM field = charged.
