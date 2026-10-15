@@ -8,6 +8,18 @@
 # through-line only; the auto-memory index + hist_prime primers hold the detail.
 
 ═════════════════════════════════════════════════════
+2026-10-14 (late) — POE free-standing-light planning rig; licences; GPL sweep; return to the VAPMIP paper
+═════════════════════════════════════════════════════
+
+STATE: POE (proprietary, not for sale or licensing; README invites design/production partners, IC + nanotech engineers, 3D modelers): concept page pendant/optics/FREE_STANDING_POINT_OF_LIGHT.md,
+Blender narrative mock-up (pendant/cad/blender), OpenSCAD wall-mounted planning rig N=13/18, working volume to ~4 ft (pendant/cad/scad, design_calc.py: servo step ~150x too coarse for the 10 urad tolerance =>
+fine fibre-tip stage; phase must be closed on a signal at the focus), copper pancake coil guide + coil_design.py (earlier L values ~1.8x low; conductive-PLA coil Q ~0.006). Primer: hist_prime/POE/PRIMER_2026-10-14_SERVO_RING_PLANNING_RIG.md.
+Visibility of the point without a scatterer is OPEN (Rayleigh estimate ~1e-5 of beam-path scatter); the author's design stands. LICENCES: every repo except VAPMIP and POE has the GNU GPL v3.0 LICENSE on its default branch (PtolemyDesktop, AbrikosovTree,
+DeriveCancerDrugs, MedicineIsAlwaysFree needed it added to main; TuringStack was MIT -> GPL; PTorrent keeps COPYING); VAPMIP LICENSE = "Short-term licensing available upon request with offer"; POE = proprietary, not for sale.
+PTorrent got WordNet notice + license (it tracks a WordNet-derived pkl). Tuning-the-Engine index header corrected (45 pages, Phases 1-42). .clauderc_context_1 was CLEARED and refilled with the VAPMIP-paper context (only extant machinery).
+OPEN: Fritzing board map; vendor STEP models for servos not downloaded; whether to restate the harness GPL in VAPMIP/NOTICE; stale Desktop/SpaceClaude/A_Bit_Shift_Wearing_A_Disguise_2026-10-14.pdf (duplicate of the repo's one PDF).
+
+═════════════════════════════════════════════════════
 2026-10-14 — Addition matrix as rotors: engine + Explorer toolsets + code paper stub; Bernstein–Lagarias window audit; Lyndon stub
 ═════════════════════════════════════════════════════
 

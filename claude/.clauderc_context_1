@@ -23,3 +23,70 @@
 # read date — treat specific numeric/technical claims as provisional until
 # you've done your pass and this note is removed.
 
+## VAPMIP
+
+### The VAPMIP paper — state as of 2026-10-14 (written for a cold session; ONLY extant, measured machinery; stubs and plans are not described here)
+
+source_files: VAPMIP/docs/paper_drafts/Forward_Propagation_of_Information_DRAFT.md · VAPMIP/README.md ("Start Here") ·
+  VAPMIP/docs/wiki/Tuning-the-Engine/{00_index.md,42_every_voice_benchmark.md} · VAPMIP/benchmarks/all_voices/{benchmark_voices.py,runs/results_2026-10-14.json} ·
+  VAPMIP/docs/wiki/Scaled-Kite-English-Thought-Center-Context.md · VAPMIP/LICENSE · VAPMIP/NOTICE
+source_hash (sha256, first 16 hex; recompute with sha256sum, mismatch = stale):
+  608f61e7d7fdc8a6 paper draft · 0f09c214d1a83cac README · ae8cd37ee79b5d06 wiki 42 · e444e7873cebb6f5 wiki index · 26479393463f39db benchmark_voices.py ·
+  7e8b8e7c66bb433d results_2026-10-14.json · 2726531554c2e8d0 Scaled-Kite page · 1abba3bece7ab8f6 LICENSE · 6617d5e9dc43bde7 NOTICE
+
+THE PAPER
+  Title: "Forward Propagation of Information: Teaching The Maths how to speak English". Author block: Cody Michael Allison (Michael Rendier), independent researcher.
+  Status: DRAFT, "NOT THE PAPER": abstract v3 + §1 (benchmarks) + a section plan; the paper is written LAST and "will take another injection or two of insight".
+  Thesis (first stated in this draft; Ainulindale/AgeThird/VAPMIP_Paper.md records it as deferred): "my attempt to teach the maths how to speak English".
+  A PDF of the draft (tables sized to content) is at ~/Desktop/SpaceClaude/Forward_Propagation_of_Information_DRAFT.pdf (built 2026-10-14; not in a repo).
+  Standing rules for it: engineered-operator vocabulary only (no theory/UFT names) for the speaking engine; labels ESTABLISHED / OURS / THEORETICAL / OPEN with :CALCULATED when
+  the paper's own code produces the result; assistant note first; a closing appendix "what in ContextPlease was used and what ContextPlease is" (skill cs-paper-code-conventions §8);
+  every download of another person's work goes in ContextPlease/claude/references/INDEX.md; WordNet, NLTK, UD treebanks = A (cited); Infocom/Zork parser = built-against, never Post-Hoc;
+  no denial phrasing; the Collatz-style "failures stay in the code" rule; no Fourth Age claim unless a pre-registered prediction exists.
+  Licensing shapes the conventions: the Monad is proprietary (VAPMIP/LICENSE, now only "Short-term licensing available upon request with offer", 2026-10-14) so the paper publishes the
+  MECHANISM, not the source: Convention E (named-step algorithm + one running example) and F (exhaustive small-case table) for mechanism, D (literal transcripts) for behaviour and
+  benchmarks, A (path + function name) for Monad code, B (verbatim listings) only for GPL v3 / third-party parts. Harness (harness.py, PtolC/monad_harness.c/.h) and the console plugin are
+  GPL v3 (LICENSE-GPL-3.0.txt, NOTICE retained; the GPL sentence was removed from LICENSE on 2026-10-14, so add it back to NOTICE if he wants it stated). The companion paper
+  FourthAgePapers/ScalarContextPropagation carries verbatim Monad listings under GPL v3: needs a decision before the two travel together.
+  Outline already in the draft (§ : content : convention : source that exists):
+    1 benchmarks, every voice : D : wiki 42 + benchmarks/all_voices/      2 the address (19 relation-pointer counts + prime; round trip) : E+F : wordnet_boxkite.py, PtolC/dump_boxkite_bin.c, the 19-D paper
+    3 the parser (verb selects one of 16 operators) : A+D : zork_parser.py, PtolC/zork.c      4 the store (one mmap'd file, one binary search) : A : PtolC/monad3c.h, PtolC/monad3_c.bin (48,209,731 bytes)
+    5 the voices and what each returns : D : Phase 42 transcripts      6 energy and method : D : .claude/scratchpad/2026-10-13_monad_energy/      7 prompt extraction : A+D : 2026-10-13_nltk_extraction_pipeline/
+    8 context flow (stated as specified work, THEORETICAL) : C      9 limits and negative results as results : D : Phase 42 §6      A Tuning the Engine appendix : A
+
+THE MACHINERY THAT EXISTS (all measured 2026-10-14 on one ThinkPad X1 Carbon 6th, 20KH002XUS, i7-8550U, no GPU, no network, laptop on battery)
+  What it is: each word is the counts of its 19 WordNet relation pointers plus a prime address; a verb-governed parser (Infocom/Zork tradition) selects one of sixteen operators; voices turn a prompt into a reply.
+  Census: 24 monad modules from the console's own discover_monads() (PtolemyDesktop/ptolemy_console.py globs VAPMIP/*monad*.py); 6 speak through the loader; 6 more speak through their own entry point
+    (process_input, speak, weave, basin) via EntryPointMonadAdapter (test PtolemyDesktop/tests/test_monad_entry_points.py), so all 12 are selectable; 12 are structure/tooling with no speaking entry point.
+  Twelve voices, warm reply (mean of six prompts), added memory, whole-laptop energy per reply:
+    VQ_rotary_monad.ValaQuenta.speak 0.30 ms 3.3 MB 0.8 uWh (one word echoed) · rotary_monad.AhuraMazda.speak 0.53 ms 6.9 MB 1.4 uWh (same word every prompt) ·
+    ptolemy_monad.PtolemyMonad.process_input 1.4 ms 3.7 MB 3.6 uWh (hypernym/definition words: "can you play the piano?" -> "container stringed instrument percussion instrument keyboard instrument grand piano") ·
+    boxkite_orbweaver_monad.OrbWeaverMonad.weave 1.8 ms (2-8 s with real words) 10.9 MB 4.6 uWh (document plan: room, bridge, frame, scaffold, connectives) ·
+    ZD_rotary_monad.AhuraMazda.speak 2.0 ms 6.8 MB 5.1 uWh (empty set for all prompts) · monad_english_io.MonadEnglish.basin 3.6 ms 280 MB 9.2 uWh (idea pool) ·
+    scaled_mind_eye_boxkite_kernel_monad 31 ms 84 MB 88 uWh · 19D_rotary_boxkite_monad 32 ms 73 MB 83 uWh (grammar-gated: "Pointer fingers." or an honest null, never fabricated) ·
+    walkwithme_monad / monad / monad_harness_diagnostic (one generator, three files) 112-126 ms 5-6 MB 286-318 uWh · rotary_rerun_boxkite_monad 1.5 s 154 MB 4,065 uWh ("It comprises thumb." decompose list).
+  Compiled REPL: ptolemy -r -n = Zork parser in front of the C monad: 28.8 ms per line over 600 lines, 62 MB peak; ptol -say 12.2-12.7 s; ptol plain 0.84-0.91 s.
+  Energy: whole-laptop, battery discharge, AC unplugged, display and OS included (an UPPER BOUND for the Monad's own share). 9.255 W x 25.9 ms = 66.6 uWh per compiled reply; the engine's own share is below
+    the method's resolution (idle drifted 7.57 -> 10.35 W), at most ~12 uWh; "derived" rows use the 9.255 W mean, "measured" rows their own run. Public comparison ~0.3 Wh per typical LLM query
+    (Google 0.24, OpenAI 0.34, Epoch AI ~0.3 Wh, via secondary coverage; units are Wh, not kWh) => every voice is 74x to ~389,000x lower. Battery 57 Wh design, 25.65 Wh now (399 cycles).
+  Prompt extraction front end: 3-19 ms warm; part-of-speech tagger trained offline on UD-EWT, UPOS accuracy 0.9389 (scratchpad 2026-10-13_nltk_extraction_pipeline).
+  Reproduce: cd VAPMIP/PtolC && make (needs gcc, make, libm, libxml2-dev); ./ptolemy -r -n ; ./ptol -M tree ; python3 benchmarks/all_voices/benchmark_voices.py (~3 min; 24 modules, 12 speaking expected;
+    bins checksummed before/after = unchanged). If system python3 cannot import nltk use PtolemyDesktop/.venv/bin/python (pandas/numpy ABI mismatch).
+  Not re-run in this pass: the 19-count address round trip (146,743 of 146,743) recorded in the companion paper.
+  Stated limits (README "not done yet", and facts, not apologies): context flow (carrying the prompt's topic through the reply) is the open stage; the pieces exist (extraction front end, topic-bag sense choice,
+    document planner) and are not joined into one voice; most replies are short fragments, on topic for some prompts and not others; the sentence voice with real words is Python (1.5-12 s) and porting the
+    relational composter to C is the step to milliseconds; the idea pool is sharp for some prompts and noise for others (store still holds un-sanitised granular material; sanitising is a later project).
+
+TUNING THE ENGINE WIKI (VAPMIP/docs/wiki/Tuning-the-Engine/): the engineering log, one page per phase, 45 pages: Phases 1-42 + addenda 02b, 21b + a chain-of-custody audit (_chain_of_custody_2026-08-27.md), 8,764 lines.
+  Protocol: the pages are the ONLY live copy (the monolith is archived and must not be edited); new phases are new pages; a repass of 00_index.md is part of "update Tuning the Engine" every time
+  (index header was stale at "42 entries, Phases 1-41" and was corrected 2026-10-14). Bylines: Phases 1-23 Claude Sonnet 4.6; 24-28 Opus 5; 29-39 Opus 5 and Sonnet 5; 40-42 Sonnet 5.5.
+  Cody reports that Gemini and Codex each independently called it the most scientifically sound documentation they had seen (his report; not verified here; he is happy about it). Phase 42 (every voice) is a measurement
+  session, not a build: no engine file changed; it holds every transcript and the census (§5 transcripts, §6 limits).
+  Related design record: docs/wiki/Scaled-Kite-English-Thought-Center-Context.md §22-§24 (§24 corrects §22: there are two voices, the compiled one and the box-kite one).
+
+OPEN DECISIONS / THREADS (his to decide; do not resolve silently)
+  - Princeton WordNet outreach: email (SpaceClaude/EMAIL_PRINCETON_WORDNET.txt, checklist READ_BEFORE_SENDING_Princeton_email.txt) is final and unsent; he sends it himself. WordNet license: notice must appear on ALL copies
+    of the data/derived data (VAPMIP/NOTICE + WORDNET_LICENSE.txt present; PTorrent got them 2026-10-14); do not use Princeton's name in publicity.
+  - Paper conventions for a proprietary Monad (above); the companion ScalarContextPropagation listings; whether to restate harness GPL in NOTICE.
+  - What "one voice that carries the prompt's topic through the reply" will be; the paper is written last.
+  - Lyndon factorisation as the conjugation/tense mechanism: wiki page + STUB only (docs/wiki/Lyndon-Factorisation.md, lyndon_conjugation.py); not designed, not part of the machinery above.

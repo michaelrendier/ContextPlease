@@ -506,3 +506,8 @@ addition_matrix_sudoku/
 
 spectral_primes/
     build_and_test.py
+
+2026-10-14_poe_servo_ring/
+    beam_geometry.py, output_beam_geometry.txt
+2026-10-14_addition_matrix_followups/
+    chase_borderline_cell.py, output_chase_borderline_cell.txt, README.md
