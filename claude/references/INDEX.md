@@ -5,6 +5,7 @@
 |---|---|---|---|---|---|
 | Bernstein & Lagarias (1996), The 3x+1 conjugacy map, Canad. J. Math. 48, 1154-1169 | CollatzShift | `references/CollatzShift/Bernstein_Lagarias_1996_retypeset.pdf` (+ Umich preprint) | `FourthAgePapers/CollatzShift/references/` | 2026-10-14 | downloaded, verified |
 | Lagarias, The 3x+1 problem: an annotated bibliography (1963-1999), arXiv:math/0309224v13 | CollatzShift | `references/CollatzShift/Lagarias_annotated_bibliography_arXiv_math0309224.pdf` | `FourthAgePapers/CollatzShift/references/` | 2026-10-14 | downloaded, verified |
+| Rozier (2018), Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding, arXiv:1805.00133v6 | CollatzShift | `references/CollatzShift/Rozier_2018_parity_sequences_arXiv_1805.00133.pdf` | `FourthAgePapers/CollatzShift/references/` | 2026-10-14 | downloaded (title page checked); Post-Hoc; used for its N_k table, k ≤ 16 |
 | Bernstein (1994), A non-iterative 2-adic statement of the 3N+1 conjecture, Proc. AMS 121, 405-408 | CollatzShift | none | none | - | NOT downloaded (publisher bot-check page even with a Mozilla User-Agent, 2026-10-14); fetch by hand |
 | Terras (1976), A stopping time problem on the positive integers, Acta Arith. 30, 241-252 | CollatzShift | none | none | - | NOT downloaded (no free PDF found); fetch by hand |
 | Lagarias (1985), The 3x+1 problem and its generalizations, Amer. Math. Monthly 92, 3-23 | CollatzShift | none | none | - | NOT downloaded (JSTOR) |

@@ -1,0 +1,11 @@
+1. live states after column c  vs  #{(p,q) mod 10^(c+1): pq = N mod 10^(c+1)}  vs  (v2(N)+1)(v5(N)+1) phi(10^(c+1))
+   N=3233 (v2=0, v5=0), n=2: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 4, 4, 4), (1, 40, 40, 40)]
+   N=14351 (v2=0, v5=0), n=3: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 4, 4, 4), (1, 40, 40, 40), (2, 400, 400, 400)]
+   N=420 (v2=2, v5=1), n=2: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 27, 27, None), (1, 320, 320, None)]
+   N=850 (v2=1, v5=2), n=2: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 27, 27, None), (1, 260, 260, None)]
+   N=5100 (v2=2, v5=2), n=2: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 27, 27, None), (1, 520, 520, None)]
+   N=1022117 (v2=0, v5=0), n=4: (column, search survivors, brute count mod 10^(c+1), closed form when v<c+1) [(0, 4, 4, 4), (1, 40, 40, 40), (2, 400, 400, 400)]
+
+2. the answer's address: every solution p' mod 10^n gives q' = N/p' mod 10^n and an overflow K = (p'q' - N)/10^n; the true factorisation is exactly K = 0
+   60 semiprimes p*q (3-digit primes): unit solutions per N = {400}, solutions with K=0 (the true pair and its swap) = {2}
+   smallest nonzero |K| among the other solutions: min 1, median 2.0, max 14; median |K| overall 167 (of a possible ~1000)
