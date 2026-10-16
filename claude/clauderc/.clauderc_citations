@@ -230,3 +230,4 @@ BUILT-AGAINST | de Marrais 2000, The 42 Assessors and the Box-Kites they fly, ar
 COMPARISON | public per-query energy: Altman 2025 (0.34 Wh), You/Epoch 2025 (0.3 Wh), Vahdat et al./Google 2025 (0.24 Wh)
   | copies: ContextPlease/claude/references/VAPMIPPaper/ (mirror VAPMIP/paper/references/) ; ledger rows in references/INDEX.md
   | UNVERIFIED (not fetched, ACM bot challenge / books): Miller 1995, Fellbaum 1998, Lebling 1979, Bird 2009 — details from memory
+POST-HOC (VAPMIP paper, 2026-10-16) | Moreno 1998 (arXiv q-alg/9710013, fetched) ; Corless et al. 1996 Lambert W (fetched) ; Knuth 1973 TAOCP 3 §6.4 (book) ; Smith 1939 (paywalled) ; Cawagas 2004 (403) — page Ainulindale/wiki/128_vapmip_paper_citation_pass_2026_10_16.md
