@@ -1,0 +1,68 @@
+{
+ "load_s": 0.046,
+ "cold": [
+  {
+   "prompt": "finger pointer",
+   "reply": "digit hand extremity mark thumb",
+   "ms": 6246.37
+  },
+  {
+   "prompt": "what is a tree",
+   "reply": "woody plant metric linear unit linden acacia southern beech",
+   "ms": 38.9
+  },
+  {
+   "prompt": "neutron generation in different reactor types",
+   "reply": "electrical device varied linear unit difference kind",
+   "ms": 38.71
+  },
+  {
+   "prompt": "good morning",
+   "reply": "day early-morning hour common good advantage time period",
+   "ms": 16.54
+  },
+  {
+   "prompt": "can you play the piano?",
+   "reply": "container stringed instrument percussion instrument keyboard instrument grand piano",
+   "ms": 18.33
+  },
+  {
+   "prompt": "the first reactor was built after neutrons were discovered",
+   "reply": "electrical device rank make coil nucleon",
+   "ms": 20.18
+  }
+ ],
+ "warm": [
+  {
+   "prompt": "finger pointer",
+   "reply": "digit hand extremity mark thumb",
+   "ms": 0.94
+  },
+  {
+   "prompt": "what is a tree",
+   "reply": "woody plant metric linear unit linden acacia southern beech",
+   "ms": 1.44
+  },
+  {
+   "prompt": "neutron generation in different reactor types",
+   "reply": "electrical device varied linear unit difference kind",
+   "ms": 1.62
+  },
+  {
+   "prompt": "good morning",
+   "reply": "day early-morning hour common good advantage time period",
+   "ms": 0.77
+  },
+  {
+   "prompt": "can you play the piano?",
+   "reply": "container stringed instrument percussion instrument keyboard instrument grand piano",
+   "ms": 1.25
+  },
+  {
+   "prompt": "the first reactor was built after neutrons were discovered",
+   "reply": "electrical device rank make coil nucleon",
+   "ms": 1.97
+  }
+ ],
+ "projection_worst_abs_diff": 4.910866158169824e-11
+}

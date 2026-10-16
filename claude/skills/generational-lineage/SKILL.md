@@ -261,6 +261,7 @@ the space allows. Reach for the move that matches the KIND of factor:
 | sequence's own lineage tree | `re_pair` | rules, generation depth; minimality reported UNKNOWN |
 | group order lineage | `pohlig_hellman` | cost from the largest prime factor; refuses over budget |
 | how much evidence is enough | `unicity` | U = H(K)/D; rigorous bound vs literature estimate kept apart |
+| every unit circle / which conic / is a coincidence just π-algebra | `circle` | catalogue of constants × roles (r, d, C, A), `pi_lattice` first-line test, imaginary circle (A = −π), six drawings + the ℓ_p seventh, σ_RB reading |
 
 Rules the moves share (all already practised in this repo): exact round-trip,
 a control/null before the measurement, explicit refusal (`AscentNotFree`) over a

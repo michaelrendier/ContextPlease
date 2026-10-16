@@ -1,0 +1,26 @@
+fields of response: ['direction', 'exchange_log', 'leaves_in', 'leaves_out', 'repass', 'root_vector', 'text']
+> finger pointer
+   cold  6246.37 ms: digit hand extremity mark thumb
+   warm     0.94 ms: digit hand extremity mark thumb   same=True
+> what is a tree
+   cold    38.90 ms: woody plant metric linear unit linden acacia southern beech
+   warm     1.44 ms: woody plant metric linear unit linden acacia southern beech   same=True
+> neutron generation in different reactor types
+   cold    38.71 ms: electrical device varied linear unit difference kind
+   warm     1.62 ms: electrical device varied linear unit difference kind   same=True
+> good morning
+   cold    16.54 ms: day early-morning hour common good advantage time period
+   warm     0.77 ms: day early-morning hour common good advantage time period   same=True
+> can you play the piano?
+   cold    18.33 ms: container stringed instrument percussion instrument keyboard instrument grand piano
+   warm     1.25 ms: container stringed instrument percussion instrument keyboard instrument grand piano   same=True
+> the first reactor was built after neutrons were discovered
+   cold    20.18 ms: electrical device rank make coil nucleon
+   warm     1.97 ms: electrical device rank make coil nucleon   same=True
+P from ptol.c: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53]
+parity finger pointer                 max|C-Py|=4.91e-11  sigma_self py=0.1501236969 Gamma=-0.6997526061  C head: 
+parity what is a tree                 max|C-Py|=4.87e-11  sigma_self py=0.2100110014 Gamma=-0.5799779971  C head: 
+parity neutron generation in differen max|C-Py|=4.88e-11  sigma_self py=0.2453821540 Gamma=-0.5092356919  C head: 
+parity good morning                   max|C-Py|=4.79e-11  sigma_self py=0.2530896120 Gamma=-0.4938207760  C head: 
+parity can you play the piano?        max|C-Py|=4.40e-11  sigma_self py=0.0307495329 Gamma=-0.9385009342  C head: 
+parity the first reactor was built af max|C-Py|=4.34e-11  sigma_self py=0.1304088690 Gamma=-0.7391822620  C head: 

@@ -1,0 +1,24 @@
+31 commits
+2026-04-27 Ainulindale            dd7666b 2026-04-27: Ĥ_RB rename — RedBlue Hamiltonian → RedBlue Inductive Geometry Coupling Hamiltonian, symbol _RB preserved, signature intact
+2026-04-30 PtolemyDesktop         03cbc8f Rename Ptolemy++ -> Ptolemy3 (C/C++ port holding pen); restructure into GeminiConsole, Ptolemy2, archive, scratchpad
+2026-04-30 PtolemyDesktop         a039ad9 Rename Ptolemy3/ -> PtolCPP/ (avoid collision with Ptolemy3.py kernel)
+2026-05-03 PtolemyDesktop         6b987e4 v0.9 item 20: rename LLM_Datatype_parser→LSH_Datatype_parser, add acquire_inline.py (two-pass pre/post inference), fix Wiktionary etymology XPath
+2026-05-07 PtolemyDesktop         227ad4f 2026-05-07: Output layer wired, deprecated code archived, smnnip→smip renamed
+2026-05-07 PtolemyDesktop         47b2e57 2026-05-07: Clean up Ainulindale/core/ remnants and git rename artifact
+2026-05-11 RiemannHypothesisProof b86e568 2026-05-11: RiemannHypothesisProof.txt + README.md — rename SMNNIP/SMIP → SMMNIP (Standard Model of Monad Information Propagation) throughout live files; archived papers 
+2026-05-15 Ainulindale            b7075a7 2026-05-15: README + wiki — Monad center stage, H_hat_RB engine, 8 new pages
+2026-05-15 Ainulindale            bbe530c 2026-05-16: Constant Facets — π φ i e derived from H_hat_RB; conjecture rewrite (15 Parts); wiki/22
+2026-06-03 Ainulindale            5326eac Engine 3 notebook: Ĥ_RB dual currents — J_Red→d* J_Blue→W(1) shadows opposite
+2026-07-11 .claude                2e38b1b canonical_maths: mark H_hat_RB as the authoritative anchor for confusion/uncertainty
+2026-08-15 Ainulindale            5981223 Rename snapshot/Epoch/precession -> datum/Datum/bearing; add sight()
+2026-08-15 ContextPlease          4300f26 Rename snapshot/Epoch/precession -> datum/Datum/bearing; add sight()
+2026-08-15 VAPMIP                 00e7196 Rename snapshot/Epoch/precession -> datum/Datum/bearing; add sight()
+2026-08-15 ValaQuenta             029c40f Rename snapshot/Epoch/precession -> datum/Datum/bearing; add sight()
+2026-08-20 Ainulindale            6e95328 D-CS abstract: define 0_RB minimally before J_red/J_blue; README 2026-08-20 head
+2026-08-20 VAPMIP                 78f56e4 Generational Lineage engine: the anatomy of sigma in 0_RB
+2026-08-22 ContextPlease          9cea3ba scratchpad: i as precessional rotation; the Null Operator's generational lineage
+2026-09-02 GenerationalLineage    722543f Rename to The Generational Lineage Engine; the two lines + 7 toolset ports
+2026-09-02 VAPMIP                 a1d88b4 harness.lineage: follow the GenerationalLineage rename (was SedenionFactoralRelativity), older dir names kept as fallback
+2026-09-15 TuringStack            dfacfea udeo_crypto: rename UDEO_RSA_DEMO.py -> RSA_DEMO.py
+2026-10-13 Ainulindale            d9416be Notation correction 2026-10-13: J_red + J_blue = J_green = 0_RB - 0_BR (older Sigma_RB chain retired)
+2026-10-13 VAPMIP                 a276302 J_red/J_blue/0_RB standing record: grading, interface, struts, muscle

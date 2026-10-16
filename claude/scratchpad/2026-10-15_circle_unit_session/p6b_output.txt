@@ -1,0 +1,6 @@
+lobes 40  corr(shape factor, sweep s) = 0.9779736563688878
+shape/s : median 0.989  min -0.261 max 1.055
+s<=1.05 lobes (single petals): median shape/s = 1.021   s>1.05 (overlapping): median 0.954
+linear fit shape = 0.732 s + 0.251
+cardioid (r=D(1+cos)/2 over a full turn, s=2) has shape factor 1.5; circle (s=1) has 1.0; rose petal r=Dcos(phi/s) has shape s
+largest lobes: s=1.75 shape=1.533 (cardioid-like, 1.5 expected)

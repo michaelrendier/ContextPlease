@@ -1,0 +1,20 @@
+19349 text files scanned
+name                              files   hits  top repos (files)
+Hamiltonian of Consciousness         17     35  Ainulindale:13, ContextPlease:2, PtolemyDesktop:1, FourthAgePapers:1
+Observer Hamiltonian                  4      6  ContextPlease:2, PtolemyDesktop:2
+Inductive Geometric Coupling          0      0  
+Boundary Generator                   26     59  ValaQuenta:6, Ainulindale:6, FourthAgePapers:5, ContextPlease:4, FLUID_DATA_TODO.md:1, PDesktop:1
+Seg Fault Handler                     0      0  
+Fixed Point Space                    21     55  ContextPlease:9, Ainulindale:7, FourthAgePapers:2, FLUID_DATA_TODO.md:1, WTAF.txt:1, .claude:1
+Mathematical Hyperindexer            13     16  ContextPlease:5, FourthAgePapers:3, VAPMIP:2, PtolemyDesktop:1, ValaQuenta:1, PDesktop:1
+H_hat_RB (any spelling)             302   1882  ContextPlease:71, Ainulindale:60, FourthAgePapers:45, VAPMIP:35, ValaQuenta:32, PtolemyDesktop:21
+RedBlue Hamiltonian                 190    546  Ainulindale:72, ContextPlease:66, FourthAgePapers:18, VAPMIP:12, ValaQuenta:6, PtolemyDesktop:5
+H_RB                                178    815  ValaQuenta:75, ContextPlease:41, Ainulindale:18, FourthAgePapers:12, VAPMIP:9, PtolemyDesktop:8
+RedBlue Geometries Engine            66    182  ContextPlease:14, Ainulindale:13, VAPMIP:10, FourthAgePapers:9, ValaQuenta:9, PtolemyDesktop:4
+Red Blue Empty Set                    1      1  ContextPlease:1
+∅_RB                                 79    211  ContextPlease:34, VAPMIP:15, Ainulindale:10, FourthAgePapers:8, GenerationalLineage:5, ValaQuenta:4
+The Null Operator                    32     63  ContextPlease:11, ValaQuenta:9, VAPMIP:4, FourthAgePapers:3, Ainulindale:3, TuringStack:1
+0_RB                                189    586  ContextPlease:64, ValaQuenta:37, FourthAgePapers:20, Ainulindale:19, VAPMIP:19, .claude:15
+0_BR                                 18    105  ContextPlease:8, .claude:4, VAPMIP:3, Ainulindale:2, PDesktop:1
+Geometric Observer                   19     98  ValaQuenta:15, ContextPlease:2, FourthAgePapers:2
+Hyperwebster (related)              603   3046  ContextPlease:199, PtolemyDesktop:131, ValaQuenta:89, Ainulindale:64, FourthAgePapers:51, .claude:26

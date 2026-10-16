@@ -1,0 +1,109 @@
+{
+ "ledger": [
+  {
+   "id": "T1",
+   "claim": "e0 is the two-sided multiplicative identity of the sedenion product used by the engines (300 random vectors)",
+   "ok": true,
+   "detail": "max |e0*x - x| = 0.0e+00"
+  },
+  {
+   "id": "T2",
+   "claim": "multiplying by e0 preserves the norm (e0 is not a zero divisor)",
+   "ok": true,
+   "detail": "max deviation 0.0e+00"
+  },
+  {
+   "id": "T3",
+   "claim": "e0 is in no assessor, is not a point of PG(3,2), and its associator vanishes against every pair",
+   "ok": true,
+   "detail": "{'e0_is_a_pg32_point': False, 'e0_in_any_assessor': False, 'e0_associator_always_vanishes': True, 'e0_is_outside_the_geometry': True}"
+  },
+  {
+   "id": "T4",
+   "claim": "e0 commutes with every basis element",
+   "ok": true,
+   "detail": "max |[e0,ej]| = 0.0e+00"
+  },
+  {
+   "id": "T5",
+   "claim": "7 box-kites of 6 assessors each; 42 assessors in all; no assessor in two kites",
+   "ok": true,
+   "detail": "kite sizes {1: 6, 2: 6, 3: 6, 4: 6, 5: 6, 6: 6, 7: 6}"
+  },
+  {
+   "id": "T6",
+   "claim": "every kite's Laplacian spectrum is {0,4,4,4,6,6} (octahedron)",
+   "ok": true,
+   "detail": "strut 1 spectrum [0.0, 4.0, 4.0, 4.0, 6.0, 6.0]"
+  },
+  {
+   "id": "T7",
+   "claim": "adjacency: zero cross-kite edges; 7 components; 7 zero modes in the glued Laplacian",
+   "ok": true,
+   "detail": "cross-kite edges = 0"
+  },
+  {
+   "id": "T8",
+   "claim": "the glued atlas has exactly 7 zero modes",
+   "ok": true,
+   "detail": "zero modes 7 of 42"
+  },
+  {
+   "id": "T9",
+   "claim": "skeleton: 14 indices each lie in 6 of the 7 charts; exactly e0 and e8 lie in none",
+   "ok": true,
+   "detail": "indices in no chart [0, 8]"
+  },
+  {
+   "id": "T10",
+   "claim": "the zero modes identify at the fixed point; hub weight of pure e0 is exactly 1",
+   "ok": true,
+   "detail": "adjacency disconnects the 7 charts; the skeleton shares 6 of 7 charts per index; the zero modes are 7 copies of one constant and identify at"
+  },
+  {
+   "id": "T11",
+   "claim": "fixed_point_weight at landing equals 1 - depth^2 for all 7 struts x 5 depths (same constant read at every chart)",
+   "ok": true,
+   "detail": "max deviation 1.1e-16"
+  },
+  {
+   "id": "T12",
+   "claim": "a fiber throw leaves energy only on e0 and the chosen assessor's two indices",
+   "ok": true,
+   "detail": "nonzero components [0, 2, 3]"
+  },
+  {
+   "id": "T13",
+   "claim": "NULL discipline census recorded (not a pass/fail on the engines: each is a data point)",
+   "ok": true,
+   "detail": "1 of 5 entries keep null; 4 select a value"
+  }
+ ],
+ "null_census": [
+  {
+   "engine": "rotary_rerun_monad.MindsEye.snapshot(zeros)['sigma_self']",
+   "returns": "nan",
+   "keeps_null": true
+  },
+  {
+   "engine": "box_kite.fixed_point_weight(zeros)",
+   "returns": "0.0",
+   "keeps_null": false
+  },
+  {
+   "engine": "ptol -r \"\" (C, empty prompt) sigma_self",
+   "returns": "0.5000000000",
+   "keeps_null": false
+  },
+  {
+   "engine": "ptol.c measure_sigma: `if (total < 1e-15) return 0.5;`",
+   "returns": "returns 0.5 (the balance point) for a zero vector",
+   "keeps_null": false
+  },
+  {
+   "engine": "ValaQuenta.noether ...forced_sigma(E=0)",
+   "returns": "0.5",
+   "keeps_null": false
+  }
+ ]
+}

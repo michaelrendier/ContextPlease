@@ -1,0 +1,7 @@
+C verbs: 197   Python verbs: 207
+only in C: [] 0
+only in Python: ['again', 'and also', 'break open', 'g', 'look for', 'these', 'those', 'type', 'with', 'z'] 10
+same verb, different operator: [('break', 1, 14), ('compose', 9, 12), ('print', 12, 15), ('scan', 0, 7), ('write', 9, 12)] 5
+operators covered (C): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] 16 of 16; (Py): 16 of 16
+operator names (Python): {0: 'identity', 1: 'negate', 2: 'bind', 3: 'name', 4: 'apply', 5: 'abstract', 6: 'branch', 7: 'iterate', 8: 'recurse', 9: 'allocate', 10: 'query', 11: 'dereference', 12: 'compose', 13: 'parallelize', 14: 'interrupt', 15: 'emit'}
+verbs per operator (C): {0: 14, 1: 14, 2: 15, 3: 13, 4: 14, 5: 13, 6: 15, 7: 11, 8: 11, 9: 13, 10: 13, 11: 11, 12: 9, 13: 9, 14: 11, 15: 11}

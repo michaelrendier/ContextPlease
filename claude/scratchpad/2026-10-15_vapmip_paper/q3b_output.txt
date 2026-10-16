@@ -1,0 +1,3 @@
+samples 10000; within 1e-4 of 0.2460: 31 (0.3100%); of 0.24631: 25 (0.2500%)
+neutron prompt: P_r*P_b at sigma=0, 1 = 0.24605600431555374 0.24610953223337637
+expected hits for 30 samples at this rate: 0.093

@@ -1,0 +1,39 @@
+max rel diff GL vs h_rb_hat euler_product: 0
+  s=0.1 p=2: G(s)/G(1-s)=1.741101  p^(1-2s)=1.741101  wire e^(-2|u|ln p) for min/max = 0.574349
+  s=0.1 p=3: G(s)/G(1-s)=2.408225  p^(1-2s)=2.408225  wire e^(-2|u|ln p) for min/max = 0.415244
+  s=0.3 p=2: G(s)/G(1-s)=1.319508  p^(1-2s)=1.319508  wire e^(-2|u|ln p) for min/max = 0.757858
+  s=0.3 p=3: G(s)/G(1-s)=1.551846  p^(1-2s)=1.551846  wire e^(-2|u|ln p) for min/max = 0.644394
+  s=0.7 p=2: G(s)/G(1-s)=0.757858  p^(1-2s)=0.757858  wire e^(-2|u|ln p) for min/max = 0.757858
+  s=0.7 p=3: G(s)/G(1-s)=0.644394  p^(1-2s)=0.644394  wire e^(-2|u|ln p) for min/max = 0.644394
+76 rows -> p8_sigma_scan.csv
+label                                             sigma regime                                 sumG20    |euler|
+r = 1/2                                         0.50000 critical (σ≈½)                         4.9896      583.7
+r = 1/2/2 (half of diameter 1/2)                0.25000 forbidden/Fermat zone (0<σ<½)          9.5992  1.367e+06
+r = 1                                           1.00000 Yang–Mills-like (σ≈1)                  1.7429      7.825
+r = 1/2 (half of diameter 1)                    0.50000 critical (σ≈½)                         4.9896      583.7
+r = 2                                           2.00000 GR-like (σ≥2)                          0.4497      1.641
+r = 2/2 (half of diameter 2)                    1.00000 Yang–Mills-like (σ≈1)                  1.7429      7.825
+r = pi                                          3.14159 GR-like (σ≥2)                          0.1548      1.176
+r = pi/2 (half of diameter pi)                  1.57080 intermediate                           0.7400      2.309
+r = 2pi                                         6.28319 GR-like (σ≥2)                          0.0139      1.014
+r = 2pi/2 (half of diameter 2pi)                3.14159 GR-like (σ≥2)                          0.1548      1.176
+r = 1/pi                                        0.31831 forbidden/Fermat zone (0<σ<½)          7.9609  6.389e+04
+r = 1/pi/2 (half of diameter 1/pi)              0.15915 forbidden/Fermat zone (0<σ<½)         12.4261  9.633e+08
+r = phi                                         1.61803 intermediate                           0.6973      2.195
+r = phi/2 (half of diameter phi)                0.80902 intermediate                           2.5044      20.37
+r = e                                           2.71828 GR-like (σ≥2)                          0.2239      1.269
+r = e/2 (half of diameter e)                    1.35914 intermediate                           0.9838      3.093
+r = ln10                                        2.30259 GR-like (σ≥2)                          0.3303       1.43
+r = ln10/2 (half of diameter ln10)              1.15129 intermediate                           1.3483      4.815
+r = sqrt2                                       1.41421 intermediate                           0.9107      2.832
+r = sqrt2/2 (half of diameter sqrt2)            0.70711 intermediate                           3.0982      43.84
+r = Omega_ZS                                    0.56714 intermediate                           4.2474      205.1
+r = Omega_ZS/2 (half of diameter Omega_ZS)      0.28357 forbidden/Fermat zone (0<σ<½)          8.7490  2.648e+05
+r = d*                                          0.24631 forbidden/Fermat zone (0<σ<½)          9.6985  1.669e+06
+r = d*/2 (half of diameter d*)                  0.12315 forbidden/Fermat zone (0<σ<½)         13.8031  5.867e+10
+r = d*_spec                                     0.24600 forbidden/Fermat zone (0<σ<½)          9.7068  1.697e+06
+r = d*_spec/2 (half of diameter d*_spec)        0.12300 forbidden/Fermat zone (0<σ<½)         13.8093  5.989e+10
+r = GAP                                         0.00071 forbidden/Fermat zone (0<σ<½)         19.9565  1.018e+54
+r = GAP/2 (half of diameter GAP)                0.00035 forbidden/Fermat zone (0<σ<½)         19.9782  1.056e+60
+r = i                                        0.0000+1.0000j trivial (σ≤0)                         11.8044  2.377e-05
+r = 1/2 (d=1): C = π                            3.14159 GR-like (σ≥2)                          0.1548      1.176

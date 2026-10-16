@@ -1,0 +1,25 @@
+repos with git history: 21
+repo first commits: {'Ainulindale': '2026-04-15', 'PtolemyDesktop': '2026-04-18', 'UniversalSynth': '2026-05-04', 'ValaQuenta': '2026-05-04', 'RiemannHypothesisProof': '2026-05-08', 'VAPMIP': '2026-05-10', 'SemanticWordEngine': '2026-05-12', 'ArdaQuenta': '2026-05-30', 'POE': '2026-05-30', 'PTorrent': '2026-05-31', 'DeriveCancerDrugs': '2026-06-01', 'MedicineIsAlwaysFree': '2026-06-01', 'TuringStack': '2026-06-06', 'SedenionSpectralRelativity': '2026-06-14', 'FourthAgePapers': '2026-06-16', 'AbrikosovTree': '2026-06-29', 'BulletCluster': '2026-06-29', '.claude': '2026-07-07', 'ContextPlease': '2026-07-09', 'GenerationalLineage': '2026-07-17', 'MultiplicationMatrixExplorer': '2026-09-24'}
+
+Hamiltonian of Consciousness       earliest 2026-04-16  Ainulindale            a894f42  Archive: SMNNIP_Ainulindale_Conclusion.txt -> paper/SMNNIP_Ainulindale_Conclusion.txt
+Consciousness Hamiltonian          earliest 2026-08-16  Ainulindale            65331ca  wiki 89/90; migrate AinulindaleBAK with provenance; gitignore regeneratable output
+Observer Hamiltonian               earliest 2026-05-10  PtolemyDesktop         b6b25a6  Wiki: add established works pages + Pharos fractal SVG
+Inductive Geometric Coupling       (no git commit introduces this string)
+Boundary Generator                 earliest 2026-05-15  Ainulindale            b7075a7  2026-05-15: README + wiki — Monad center stage, H_hat_RB engine, 8 new pages
+Seg Fault Handler                  (no git commit introduces this string)
+Fixed Point Space                  earliest 2026-06-03  Ainulindale            d181172  wiki/41: THE ONE RIEMANN ELECTRON UNIVERSE — the actual answer
+Hyperindexer                       earliest 2026-08-30  ContextPlease          e311071  hist_prime: FourthAgePapers primer — hyperindexing / tower benchmark / IP model / Operator
+H_hat_RB                           earliest 2026-05-12  PtolemyDesktop         ca896fc  Wiki: add RedBlue Hamiltonian page and Original Work section to Home
+Ĥ_RB                               earliest 2026-04-15  Ainulindale            12e13f0  First Age — Initial commit
+HhatRB                             earliest 2026-08-29  ContextPlease          5189b0e  hist_wiki (357 pages) + monad.bin builder release (corpuses + scripts + spec)
+RedBlue Hamiltonian                earliest 2026-04-15  Ainulindale            12e13f0  First Age — Initial commit
+H_RB                               earliest 2026-04-15  Ainulindale            12e13f0  First Age — Initial commit
+RedBlue Geometries                 earliest 2026-05-16  PtolemyDesktop         27fbe82  v1.111 — RedBlue Geometries Engine C binary feature-complete
+Emptyset_RB                        earliest 2026-08-04  VAPMIP                 a113efe  Tuning-the-Engine: Phase 24 — The Archimedes Screw
+Red Blue Empty                     (no git commit introduces this string)
+∅_RB                               earliest 2026-07-29  Ainulindale            3a509bb  Add wiki 81 (SHA-1 collision geometry) and 82 (L_(I|O) photon path)
+Null Operator                      earliest 2026-06-26  FourthAgePapers        1d0f242  Add FourthAgePaper: The Zero Lattice: Telperion v0.100
+0_RB                               earliest 2026-07-29  Ainulindale            3a509bb  Add wiki 81 (SHA-1 collision geometry) and 82 (L_(I|O) photon path)
+0_BR                               earliest 2026-07-31  .claude                b0c4fc0  SessionStart hook: canonical-maths context injector, settings.json, env setup script; refr
+Geometric Observer                 earliest 2026-06-02  Ainulindale            91bd7b8  Sync: papers, roadmap, context primer, ValaQuenta module updates
+Lagrangian Laplacian Hamiltonian   earliest 2026-05-04  PtolemyDesktop         b6be4a3  Wiki: Emmy Noether deep dive, masters tributes (Riemann, Berry-Keating, Lorenz, Stirling, 

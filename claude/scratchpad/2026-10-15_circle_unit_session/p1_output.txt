@@ -1,0 +1,10 @@
+∫0^2π sin² = 3.14159265358979323846264338328    ∫ cos² = 3.14159265358979323846264338328   sum = 6.28318530717958647692528676656 (= 2π: 6.28318530717958647692528676656 )
+mean of sin² over the cycle = 0.5   <- the 1/2
+area under the curve / bounding rectangle (2π x 1) = 0.5
+(sin²x − 1/2)² + (sin x cos x)²  = [0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25 0.25]  <- constant 1/4: circle radius 1/2 centre (1/2, 0)
+that circle: radius 1/2, diameter 1, circumference π, area π/4 ;  it passes through the origin (x=0 at sin x=0)
+polar form about the origin: r = cos φ  (φ = x):  x = r cos φ = cos²x ... check r²= x²+y² -> [0. 0. 0. 0. 0. 0. 0. 0. 0.]
+circle d=1: circumference 3.14159265358979323846264338328  area 0.78539816339744830961566084582  | area under heartbeat over one cycle = 3.14159265358979323846264338328 = circumference of that circle (pi*d)
+                         and  = 4 * (area of that circle): 3.14159265358979323846264338328
+polar area ½∫cos²φ dφ over [-π/2,π/2] = 0.78539816339744830961566084582  = π/4
+area under sin² over HALF cycle [0,π] = 1.57079632679489661923132169164  = π/2

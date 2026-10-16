@@ -1,0 +1,165 @@
+{
+ "before": {
+  "ptol": "1d5e1824d2a2043b",
+  "ptol.c": "f3ec1f78bb0e28e6",
+  "ptolemy": "cb731285264ec746",
+  "monad.c": "48c4af3de8ae4957",
+  "monad3_c.bin": "fe23a2910a07e32b",
+  "monad_grammar.bin": "b7874fc823893d99",
+  "monad_phonetic.bin": "c580908a4aed599f",
+  "ptolemy_monad.py": "ecde494868fb5128"
+ },
+ "prompts": [
+  "finger pointer",
+  "what is a tree",
+  "neutron generation in different reactor types",
+  "good morning",
+  "can you play the piano?",
+  "the first reactor was built after neutrons were discovered"
+ ],
+ "rows": [
+  {
+   "prompt": "finger pointer",
+   "ptol": {
+    "out": "gift-gems tropheus · spurned · · ox-hide · · · converteret *trolley *wittgenstein *rapa *nuys *mais\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_finger_pointer_1792061940.svg",
+    "ms": 912.5,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "trolley wittgenstein rapa nuys mais\n\n[stderr] [σ=0.1501 Γ=-0.6998 primes: 37 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: trolley=-0.731 wittgenstein=-0.903]",
+    "ms": 1231.1,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.0130606109\n-0.0484712062\n-0.0348052450\n-0.0310864099\n+0.2170301614\n+0.1484894435\n+0.1657291624\n+0.2208703179\n+0.0365326857\n+0.1500621282\n+0.1891533863\n+0.2929054568\n+0.4363923386\n+0.4307964944\n+0.4169717022\n+0.3931742000\n---\n37\n41\n43\n47\n53\n---\n-0.0028345465\n-0.0071974624\n-0.0057682441\n-0.0068660652\n-0.0028345465\n-0.0071974624\n-0.0057682441\n-0.0068660652\n+0.0159425842\n+0.0646462388\n+0.0788716095\n+0.1151628686\n+0.0159425842\n+0.0646462388\n+0.0788716095\n+0.1151628686\n---\neye: 0.1501236969\n+0.0335668164\n-0.0251898745\n-0.0294927938\n-0.0352860843\n+0.1627773005\n+0.0594031495\n+0.0689211535\n+0.1429615759\n-0.1057400739\n+0.0157719101\n+0.0610742051\n+0.1846869108\n+0.4860841089\n+0.4824826983\n+0.4709932134\n+0.4480396556\n---\nhands: 0.8498763031\n-0.0733921703\n-0.0790314278\n-0.0327585093\n-0.0049933473\n+0.2572273010\n+0.2171589962\n+0.2273809161\n+0.2582921869\n+0.1753869899\n+0.2661925283\n+0.2951545640\n+0.3698067292\n+0.3446539238\n+0.3382144328\n+0.3243037817\n+0.3028005216\n---\ngamma: -0.6997526061\nu:     -1.7336312125\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.1501236969  Γ: -0.6997526061  u: -1.7336312125  (Δ½: -0.3498763031)",
+    "ms": 2.2,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> changelogs employed construction uep\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] I don't know 'finger'. Try: look, take, put, go, use, open, say, find, make, ask\n\n[ptolemy] session ended",
+    "ms": 289.5
+   }
+  },
+  {
+   "prompt": "what is a tree",
+   "ptol": {
+    "out": "horseback whirleth · tilt · · innovators marsyas arrow-swift catos philippopolis *polysyllables *ise *· *· *joost\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_what_is_a_tree_1792061944.svg",
+    "ms": 874.6,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "polysyllables ise joost\n\n[stderr] [σ=0.2100 Γ=-0.5800 primes: 37 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]",
+    "ms": 1206.8,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.0847696893\n-0.0536001670\n-0.0900790963\n+0.0216637137\n+0.2501290500\n+0.1823809755\n+0.1762632253\n+0.2202903695\n+0.0855052433\n+0.1864648829\n+0.2218200585\n+0.3163607525\n+0.4076442949\n+0.4023765159\n+0.3894261252\n+0.3671942627\n---\n37\n41\n43\n47\n53\n---\n-0.0212033619\n-0.0097756507\n-0.0158776321\n+0.0047723075\n-0.0212033619\n-0.0097756507\n-0.0158776321\n+0.0047723075\n+0.0348557246\n+0.0750290899\n+0.0863825259\n+0.1161658532\n+0.0348557246\n+0.0750290899\n+0.0863825259\n+0.1161658532\n---\neye: 0.2100110014\n-0.0544425301\n-0.0256367637\n-0.0994655089\n+0.0161995830\n+0.2134491113\n+0.1142076216\n+0.0994146907\n+0.1610450388\n-0.0423630991\n+0.0692605018\n+0.1113870526\n+0.2269499424\n+0.4669299569\n+0.4632291825\n+0.4518617220\n+0.4295478868\n---\nhands: 0.7899889986\n-0.1201209421\n-0.0841221174\n-0.0702668390\n+0.0386456904\n+0.2719154140\n+0.2287714623\n+0.2218910773\n+0.2466546757\n+0.1980013491\n+0.2796109266\n+0.3062084215\n+0.3754493078\n+0.3252287703\n+0.3192978298\n+0.3064041208\n+0.2863459969\n---\ngamma: -0.5799779971\nu:     -1.3248591024\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.2100110014  Γ: -0.5799779971  u: -1.3248591024  (Δ½: -0.2899889986)",
+    "ms": 2.4,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> kite its engine probe\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] e0/identity  \"identity is tree\"\n\n[ptolemy] session ended",
+    "ms": 300.1
+   }
+  },
+  {
+   "prompt": "neutron generation in different reactor types",
+   "ptol": {
+    "out": "weaver-of-peace glory-decked monenda · hard-scrabble massy · *alwayes *squirting *yom *· *· *convinto *· *· *·\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_neutron_generation_in_different_reactor_1792061949.svg",
+    "ms": 874.0,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "alwayes squirting yom convinto\n\n[stderr] [σ=0.2454 Γ=-0.5092 primes: 11 13 17 19 37 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: squirting=-0.890]",
+    "ms": 1178.0,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.1860231354\n+0.0025889945\n-0.0034794315\n-0.0356887012\n+0.2538074292\n+0.3232248634\n+0.2675824751\n+0.3192603185\n+0.1254653820\n+0.1476207631\n+0.2191728686\n+0.3520154206\n+0.3181325961\n+0.3005941779\n+0.2994256631\n+0.3619072456\n---\n11\n13\n17\n19\n37\n41\n43\n47\n53\n---\n-0.0472140538\n+0.0008368274\n-0.0009310349\n-0.0113939861\n-0.0472140538\n+0.0008368274\n-0.0009310349\n-0.0113939861\n+0.0399146277\n+0.0443739419\n+0.0656259815\n+0.1273969313\n+0.0399146277\n+0.0443739419\n+0.0656259815\n+0.1273969313\n---\neye: 0.2453821540\n-0.2391722196\n+0.0756936866\n+0.0129652646\n-0.0535646907\n+0.2429165085\n+0.3804566514\n+0.2637030019\n+0.3684789259\n+0.0337770205\n+0.0103149650\n+0.1473066141\n+0.3936237231\n+0.2987097201\n+0.2551863959\n+0.2422186068\n+0.3661346046\n---\nhands: 0.7546178460\n-0.1719726944\n-0.0450164754\n-0.0105368939\n-0.0118691175\n+0.2640365979\n+0.2993928248\n+0.2699019878\n+0.2941032657\n+0.1988709833\n+0.2376741544\n+0.2782129270\n+0.3577437304\n+0.2942995757\n+0.2861541382\n+0.2854142738\n+0.3131651081\n---\ngamma: -0.5092356919\nu:     -1.1233946491\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.2453821540  Γ: -0.5092356919  u: -1.1233946491  (Δ½: -0.2546178460)",
+    "ms": 2.1,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> kite its real gawo\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] I don't know 'neutron'. Try: look, take, put, go, use, open, say, find, make, ask\n\n[ptolemy] session ended",
+    "ms": 269.5
+   }
+  },
+  {
+   "prompt": "good morning",
+   "ptol": {
+    "out": "· · · penned · colourless aliment gaule · *seemes *gurls *aughty *winningly *birdseye *· *lexicogrammatical-word\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_good_morning_1792061953.svg",
+    "ms": 882.6,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "seemes gurls aughty winningly birdseye lexicogrammatical-word\n\n[stderr] [σ=0.2531 Γ=-0.4938 primes: 19 31 37 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]",
+    "ms": 1203.7,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.0196444200\n-0.0257580815\n-0.0878610286\n-0.0451475553\n+0.1308996496\n+0.1133756855\n+0.2279526938\n+0.2917076012\n+0.0861625042\n+0.2176252230\n+0.2557671297\n+0.3494006703\n+0.4026670168\n+0.3938819772\n+0.3756346113\n+0.3485409143\n---\n19\n31\n37\n41\n43\n47\n53\n---\n-0.0025714477\n-0.0029203401\n-0.0200281582\n-0.0131698850\n-0.0025714477\n-0.0029203401\n-0.0200281582\n-0.0131698850\n+0.0346947985\n+0.0857186531\n+0.0960749864\n+0.1217804291\n+0.0346947985\n+0.0857186531\n+0.0960749864\n+0.1217804291\n---\neye: 0.2530896120\n+0.0119144573\n+0.0004181973\n-0.0857087017\n-0.0662018405\n+0.0707192962\n+0.0423959685\n+0.1858791696\n+0.2694768676\n-0.0081667982\n+0.1415067569\n+0.1859933581\n+0.2963168308\n+0.4502388288\n+0.4415501774\n+0.4228067934\n+0.3939879715\n---\nhands: 0.7469103880\n-0.0572042534\n-0.0542665288\n-0.0820537143\n-0.0175990288\n+0.1835548858\n+0.1721740307\n+0.2526873072\n+0.2957759282\n+0.1737422623\n+0.2822198203\n+0.3129055658\n+0.3874148001\n+0.3420341384\n+0.3336386149\n+0.3167753349\n+0.2925517056\n---\ngamma: -0.4938207760\nu:     -1.0822015918\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.2530896120  Γ: -0.4938207760  u: -1.0822015918  (Δ½: -0.2469103880)",
+    "ms": 2.1,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> libx alternator cdot muller\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] I don't know 'good'. Try: look, take, put, go, use, open, say, find, make, ask\n\n[ptolemy] session ended",
+    "ms": 277.7
+   }
+  },
+  {
+   "prompt": "can you play the piano?",
+   "ptol": {
+    "out": "water's-edge folcwalda's refute industriously assiduously · · confabulations patrolling swarming-time vagabonds alemannicus *marja-liisa *· *mcarthur *·\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_can_you_play_the_piano_1792061958.svg",
+    "ms": 888.8,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "marja-liisa mcarthur\n\n[stderr] [σ=0.0307 Γ=-0.9385 primes: 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]",
+    "ms": 1132.3,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.0977082019\n+0.0023840444\n-0.0057059152\n+0.0312361119\n+0.1143018917\n+0.1414218039\n+0.2343655082\n+0.1999302647\n+0.1024556041\n+0.0389800653\n+0.0379550358\n+0.0820458611\n+0.4257201788\n+0.4444687836\n+0.4711667183\n+0.4904058209\n---\n41\n43\n47\n53\n---\n-0.0111682323\n+0.0003371559\n-0.0013372697\n+0.0062450441\n-0.0111682323\n+0.0003371559\n-0.0013372697\n+0.0062450441\n+0.0436174181\n+0.0173254222\n+0.0178831496\n+0.0402357679\n+0.0436174181\n+0.0173254222\n+0.0178831496\n+0.0402357679\n---\neye: 0.0307495329\n-0.0259631007\n+0.0343864663\n+0.0111864276\n+0.0363371574\n+0.0060913180\n+0.0340496144\n+0.1639070052\n+0.1008589948\n+0.0069824534\n-0.1461649947\n-0.1661652047\n-0.1477662689\n+0.4080799667\n+0.4408866591\n+0.4908112098\n+0.5346015195\n---\nhands: 0.9692504671\n-0.1765003002\n-0.0596866796\n-0.0171039236\n+0.0533846691\n+0.2197878794\n+0.2327731231\n+0.2706772934\n+0.2551995904\n+0.2420734390\n+0.2480289342\n+0.2573153490\n+0.3009745355\n+0.3281981472\n+0.3326566255\n+0.3370341622\n+0.3352288289\n---\ngamma: -0.9385009342\nu:     -3.4506482550\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.0307495329  Γ: -0.9385009342  u: -3.4506482550  (Δ½: -0.4692504671)",
+    "ms": 2.1,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> kite open and where\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] I don't know 'can'. Try: look, take, put, go, use, open, say, find, make, ask\n\n[ptolemy] session ended",
+    "ms": 285.5
+   }
+  },
+  {
+   "prompt": "the first reactor was built after neutrons were discovered",
+   "ptol": {
+    "out": "· · commissioning ebb-tide phiz · unappropriated · · · enoch lukewarm *countryfolk *collectives *nodes *·\n\n[stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_the_first_reactor_was_built_1792061962.svg",
+    "ms": 863.4,
+    "deterministic": false
+   },
+   "ptol_say": {
+    "out": "countryfolk collectives nodes\n\n[stderr] [σ=0.1304 Γ=-0.7392 primes: 41 43 47 53]\n  [Gamma-Radial Windspeed per firing word: countryfolk=-0.905]",
+    "ms": 1251.0,
+    "deterministic": true
+   },
+   "ptol_raw": {
+    "out": "-0.2391614857\n-0.0315850810\n-0.0286428379\n+0.0321724048\n+0.1844773656\n+0.2381877242\n+0.2802822335\n+0.1839152405\n+0.0827493744\n+0.1594331946\n+0.1150720112\n+0.1576375253\n+0.4657475232\n+0.4492729182\n+0.3895209946\n+0.3097569675\n---\n41\n43\n47\n53\n---\n-0.0441198808\n-0.0075231786\n-0.0080280786\n+0.0059169956\n-0.0441198808\n-0.0075231786\n-0.0080280786\n+0.0059169956\n+0.0385403162\n+0.0716290166\n+0.0448229642\n+0.0488293218\n+0.0385403162\n+0.0716290166\n+0.0448229642\n+0.0488293218\n---\neye: 0.1304088690\n-0.2389749527\n+0.0161351961\n+0.0077074149\n-0.0083076507\n+0.1178042603\n+0.2202123721\n+0.2853075484\n+0.0394285282\n-0.0819283366\n+0.0343474162\n-0.0983336765\n-0.0767809043\n+0.5706820378\n+0.5283497802\n+0.3766348982\n+0.1644193599\n---\nhands: 0.8695911310\n-0.2322298330\n-0.0806081211\n-0.0364169578\n+0.0690899144\n+0.2319790168\n+0.2524630053\n+0.2686487966\n+0.2392647265\n+0.2214796047\n+0.2765003764\n+0.2722153142\n+0.3124554763\n+0.3331227365\n+0.3267494620\n+0.3059622281\n+0.2791348724\n---\ngamma: -0.7391822620\nu:     -1.8973484756\n\n[stderr] eye: H  σ_in: 0.5000  σ_self: 0.1304088690  Γ: -0.7391822620  u: -1.8973484756  (Δ½: -0.3695911310)",
+    "ms": 2.4,
+    "deterministic": true
+   },
+   "ptolemy_repl": {
+    "out": ">>> kite shrodinger pores helicities\n>>> \n[stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154\n[ptolemy] interactive  (blank line or Ctrl-D to quit)\n          Zork sentence parser active — verb-governed input\n          /generate <prompt>  /status  /health  /vocab <w>  /help\n          loaded: /home/rendier/.ptolemy/monad.bin\n\n[zork] I don't know 'the'. Try: look, take, put, go, use, open, say, find, make, ask\n\n[ptolemy] session ended",
+    "ms": 268.3
+   }
+  }
+ ],
+ "after": {
+  "ptol": "1d5e1824d2a2043b",
+  "ptol.c": "f3ec1f78bb0e28e6",
+  "ptolemy": "cb731285264ec746",
+  "monad.c": "48c4af3de8ae4957",
+  "monad3_c.bin": "fe23a2910a07e32b",
+  "monad_grammar.bin": "b7874fc823893d99",
+  "monad_phonetic.bin": "c580908a4aed599f",
+  "ptolemy_monad.py": "ecde494868fb5128"
+ },
+ "unchanged": true
+}

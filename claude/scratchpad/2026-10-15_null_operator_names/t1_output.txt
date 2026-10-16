@@ -1,0 +1,22 @@
+PASS  T1  e0 is the two-sided multiplicative identity of the sedenion product used by the engines (300 random vectors)   [max |e0*x - x| = 0.0e+00]
+PASS  T2  multiplying by e0 preserves the norm (e0 is not a zero divisor)   [max deviation 0.0e+00]
+PASS  T3  e0 is in no assessor, is not a point of PG(3,2), and its associator vanishes against every pair   [{'e0_is_a_pg32_point': False, 'e0_in_any_assessor': False, 'e0_associator_always_vanishes': True, 'e0_is_outside_the_geometry': True}]
+PASS  T4  e0 commutes with every basis element   [max |[e0,ej]| = 0.0e+00]
+PASS  T5  7 box-kites of 6 assessors each; 42 assessors in all; no assessor in two kites   [kite sizes {1: 6, 2: 6, 3: 6, 4: 6, 5: 6, 6: 6, 7: 6}]
+PASS  T6  every kite's Laplacian spectrum is {0,4,4,4,6,6} (octahedron)   [strut 1 spectrum [0.0, 4.0, 4.0, 4.0, 6.0, 6.0]]
+PASS  T7  adjacency: zero cross-kite edges; 7 components; 7 zero modes in the glued Laplacian   [cross-kite edges = 0]
+PASS  T8  the glued atlas has exactly 7 zero modes   [zero modes 7 of 42]
+PASS  T9  skeleton: 14 indices each lie in 6 of the 7 charts; exactly e0 and e8 lie in none   [indices in no chart [0, 8]]
+PASS  T10  the zero modes identify at the fixed point; hub weight of pure e0 is exactly 1   [adjacency disconnects the 7 charts; the skeleton shares 6 of 7 charts per index; the zero modes are 7 copies of one constant and identify at]
+PASS  T11  fixed_point_weight at landing equals 1 - depth^2 for all 7 struts x 5 depths (same constant read at every chart)   [max deviation 1.1e-16]
+PASS  T12  a fiber throw leaves energy only on e0 and the chosen assessor's two indices   [nonzero components [0, 2, 3]]
+
+NULL DISCIPLINE — all-zero / empty input; does the engine keep 'no value yet' or manufacture a value?
+  KEEPS NULL   rotary_rerun_monad.MindsEye.snapshot(zeros)['sigma_self']  -> nan
+  MANUFACTURES  box_kite.fixed_point_weight(zeros)                         -> 0.0
+  MANUFACTURES  ptol -r "" (C, empty prompt) sigma_self                    -> 0.5000000000
+  MANUFACTURES  ptol.c measure_sigma: `if (total < 1e-15) return 0.5;`     -> returns 0.5 (the balance point) for a zero vector
+  MANUFACTURES  ValaQuenta.noether ...forced_sigma(E=0)                    -> 0.5
+PASS  T13  NULL discipline census recorded (not a pass/fail on the engines: each is a data point)   [1 of 5 entries keep null; 4 select a value]
+
+13 PASS, 0 FAIL of 13

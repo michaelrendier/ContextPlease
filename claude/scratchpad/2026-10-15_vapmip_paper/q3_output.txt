@@ -1,0 +1,22 @@
+prompt                       sigma | sum_k s_rb | sum|s_rb| | Pred*Pblue | sqrt(PrPb) | sigma_self
+finger pointer               0.00 | -0.046519 | 0.346745 | 0.046620 | 0.215918 | 0.049024
+finger pointer               0.25 | +0.248735 | 0.425620 | 0.062941 | 0.250881 | 0.067497
+finger pointer               0.50 | +0.503914 | 0.594579 | 0.127587 | 0.357193 | 0.150124
+finger pointer               0.75 | +0.622156 | 0.777907 | 0.202414 | 0.449904 | 0.281857
+finger pointer               1.00 | +0.599547 | 0.820293 | 0.243380 | 0.493335 | 0.418634
+what is a tree               0.00 | +0.019016 | 0.331215 | 0.050076 | 0.223776 | 0.052871
+what is a tree               0.25 | +0.322731 | 0.478450 | 0.086953 | 0.294878 | 0.096209
+what is a tree               0.50 | +0.540698 | 0.728124 | 0.165906 | 0.407316 | 0.210011
+what is a tree               0.75 | +0.598136 | 0.858053 | 0.229565 | 0.479130 | 0.357049
+what is a tree               1.00 | +0.535987 | 0.851114 | 0.249879 | 0.499879 | 0.489020
+neutron generation in differ 0.00 | +0.166217 | 0.622437 | 0.246056 | 0.496040 | 0.437199
+neutron generation in differ 0.25 | +0.296797 | 0.606362 | 0.183628 | 0.428519 | 0.242373
+neutron generation in differ 0.50 | +0.437218 | 0.675375 | 0.185170 | 0.430314 | 0.245382
+neutron generation in differ 0.75 | +0.505035 | 0.765514 | 0.221565 | 0.470707 | 0.331374
+neutron generation in differ 1.00 | +0.495912 | 0.791521 | 0.246110 | 0.496094 | 0.437626
+
+d* = 0.24600 (header) ; 0.24631 (Omega/ln10). Is any column constant across sigma and prompts? -> see spread below
+sum_s     min -0.46211 max +0.64034 mean +0.33500
+abs_s     min +0.20343 max +0.88433 mean +0.61714
+PrPb      min +0.02054 max +0.24988 mean +0.15497
+sqrtPrPb  min +0.14330 max +0.49988 mean +0.37838

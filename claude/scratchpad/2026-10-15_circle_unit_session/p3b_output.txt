@@ -1,0 +1,5 @@
+minimax σ, bare guess : 0.0448367  (max rel err 3.4213%)
+minimax σ, +1 Newton  : 0.0450333  (max rel err 0.1751%)    Quake σ=0.0450466 Lomont σ=0.0448368
+  Omega/4π: 0.0451318   vs Newton-optimal 0.0450333  (0.22%)   vs bare 0.0448367 (0.66%)
+  1/22: 0.0454545   vs Newton-optimal 0.0450333  (0.94%)   vs bare 0.0448367 (1.38%)
+observed relative distance 0.219%; chance that a 50-candidate family has a member that close: 1.92%

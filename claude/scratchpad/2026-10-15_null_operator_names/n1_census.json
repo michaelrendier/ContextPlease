@@ -1,0 +1,237 @@
+{
+ "Hamiltonian of Consciousness": {
+  "files": 17,
+  "hits": 35,
+  "repos": {
+   "ContextPlease": 2,
+   "PtolemyDesktop": 1,
+   "FourthAgePapers": 1,
+   "Ainulindale": 13
+  }
+ },
+ "Observer Hamiltonian": {
+  "files": 4,
+  "hits": 6,
+  "repos": {
+   "ContextPlease": 2,
+   "PtolemyDesktop": 2
+  }
+ },
+ "Inductive Geometric Coupling": {
+  "files": 0,
+  "hits": 0,
+  "repos": {}
+ },
+ "Boundary Generator": {
+  "files": 26,
+  "hits": 59,
+  "repos": {
+   "FLUID_DATA_TODO.md": 1,
+   "ContextPlease": 4,
+   "FourthAgePapers": 5,
+   "ValaQuenta": 6,
+   "PDesktop": 1,
+   "RiemannHypothesisProof": 1,
+   "Ainulindale": 6,
+   ".claude": 1,
+   "VAPMIP": 1
+  }
+ },
+ "Seg Fault Handler": {
+  "files": 0,
+  "hits": 0,
+  "repos": {}
+ },
+ "Fixed Point Space": {
+  "files": 21,
+  "hits": 55,
+  "repos": {
+   "FLUID_DATA_TODO.md": 1,
+   "WTAF.txt": 1,
+   "ContextPlease": 9,
+   "FourthAgePapers": 2,
+   "Ainulindale": 7,
+   ".claude": 1
+  }
+ },
+ "Mathematical Hyperindexer": {
+  "files": 13,
+  "hits": 16,
+  "repos": {
+   "ContextPlease": 5,
+   "PtolemyDesktop": 1,
+   "FourthAgePapers": 3,
+   "ValaQuenta": 1,
+   "PDesktop": 1,
+   "VAPMIP": 2
+  }
+ },
+ "H_hat_RB (any spelling)": {
+  "files": 302,
+  "hits": 1882,
+  "repos": {
+   "LEGAL_IP_OUTREACH_FR_2026-06-06.txt": 1,
+   "FLUID_DATA_TODO.md": 1,
+   "PTorrent": 12,
+   "UniversalSynth": 2,
+   "ContextPlease": 71,
+   "PtolemyDesktop": 21,
+   "FourthAgePapers": 45,
+   "ValaQuenta": 32,
+   "GenerationalLineage": 4,
+   "SedenionSpectralRelativity": 1,
+   "PDesktop": 3,
+   "TuringStack": 4,
+   "RiemannHypothesisProof": 5,
+   "POE": 1,
+   "SemanticWordEngine": 1,
+   "Ainulindale": 60,
+   ".claude": 3,
+   "VAPMIP": 35
+  }
+ },
+ "RedBlue Hamiltonian": {
+  "files": 190,
+  "hits": 546,
+  "repos": {
+   "ContextPlease": 66,
+   "PtolemyDesktop": 5,
+   "FourthAgePapers": 18,
+   "ValaQuenta": 6,
+   "PDesktop": 4,
+   "TuringStack": 1,
+   "RiemannHypothesisProof": 5,
+   "Ainulindale": 72,
+   ".claude": 1,
+   "VAPMIP": 12
+  }
+ },
+ "H_RB": {
+  "files": 178,
+  "hits": 815,
+  "repos": {
+   "PTorrent": 6,
+   "ContextPlease": 41,
+   "PtolemyDesktop": 8,
+   "FourthAgePapers": 12,
+   "ValaQuenta": 75,
+   "TuringStack": 1,
+   "RiemannHypothesisProof": 1,
+   "POE": 2,
+   "Ainulindale": 18,
+   "ArdaQuenta": 3,
+   ".claude": 2,
+   "VAPMIP": 9
+  }
+ },
+ "RedBlue Geometries Engine": {
+  "files": 66,
+  "hits": 182,
+  "repos": {
+   "LEGAL_IP_OUTREACH_FR_2026-06-06.txt": 1,
+   "PTorrent": 1,
+   "ContextPlease": 14,
+   "PtolemyDesktop": 4,
+   "FourthAgePapers": 9,
+   "ValaQuenta": 9,
+   "PDesktop": 1,
+   "TuringStack": 2,
+   "POE": 1,
+   "Ainulindale": 13,
+   ".claude": 1,
+   "VAPMIP": 10
+  }
+ },
+ "Red Blue Empty Set": {
+  "files": 1,
+  "hits": 1,
+  "repos": {
+   "ContextPlease": 1
+  }
+ },
+ "∅_RB": {
+  "files": 79,
+  "hits": 211,
+  "repos": {
+   "ContextPlease": 34,
+   "FourthAgePapers": 8,
+   "ValaQuenta": 4,
+   "GenerationalLineage": 5,
+   "RiemannHypothesisProof": 1,
+   "Ainulindale": 10,
+   ".claude": 2,
+   "VAPMIP": 15
+  }
+ },
+ "The Null Operator": {
+  "files": 32,
+  "hits": 63,
+  "repos": {
+   "ContextPlease": 11,
+   "FourthAgePapers": 3,
+   "ValaQuenta": 9,
+   "TuringStack": 1,
+   "Ainulindale": 3,
+   ".claude": 1,
+   "VAPMIP": 4
+  }
+ },
+ "0_RB": {
+  "files": 189,
+  "hits": 586,
+  "repos": {
+   "ContextPlease": 64,
+   "FourthAgePapers": 20,
+   "ValaQuenta": 37,
+   "GenerationalLineage": 8,
+   "PDesktop": 1,
+   "TuringStack": 5,
+   "RiemannHypothesisProof": 1,
+   "Ainulindale": 19,
+   ".claude": 15,
+   "VAPMIP": 19
+  }
+ },
+ "0_BR": {
+  "files": 18,
+  "hits": 105,
+  "repos": {
+   "ContextPlease": 8,
+   "PDesktop": 1,
+   "Ainulindale": 2,
+   ".claude": 4,
+   "VAPMIP": 3
+  }
+ },
+ "Geometric Observer": {
+  "files": 19,
+  "hits": 98,
+  "repos": {
+   "ContextPlease": 2,
+   "FourthAgePapers": 2,
+   "ValaQuenta": 15
+  }
+ },
+ "Hyperwebster (related)": {
+  "files": 603,
+  "hits": 3046,
+  "repos": {
+   "response.md": 1,
+   "home.rendier.tree.json": 1,
+   "framework.txt": 1,
+   "UniversalSynth": 1,
+   "ContextPlease": 199,
+   "PtolemyDesktop": 131,
+   "FourthAgePapers": 51,
+   "ValaQuenta": 89,
+   "GenerationalLineage": 6,
+   "PDesktop": 5,
+   "TuringStack": 5,
+   "RiemannHypothesisProof": 2,
+   "SemanticWordEngine": 4,
+   "Ainulindale": 64,
+   ".claude": 26,
+   "VAPMIP": 17
+  }
+ }
+}

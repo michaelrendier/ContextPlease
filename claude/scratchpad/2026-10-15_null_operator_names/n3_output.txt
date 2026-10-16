@@ -1,0 +1,38 @@
+[seg fault] home.rendier.tree.json:241226: {"type":"file","name":"quit_segfault_test.sh"},
+[seg fault] home.rendier.tree.json:241231: {"type":"file","name":"segfault_test.py"},
+[seg fault] home.rendier.tree.json:256644: {"type":"file","name":"segfault-monad.cpython-312.pyc"}
+[seg fault] home.rendier.tree.json:256647: {"type":"file","name":"segfault-monad.py"},
+[seg fault] framework.txt:6405: │   │   │   └── segfault-monad.cpython-312.pyc
+[seg fault] framework.txt:6427: │   │   ├── segfault-monad.py
+[Inductive Geometric Coupling] FLUID_DATA_TODO.md:54: - p^{-σ} = Geometric coupling. Euler/Dirichlet coefficient.
+[seg fault] Ptolemy2/technical/examples/learnopencv-master/ImageMetrics/Python/libsvm/FAQ.html:52: <li class="headlines_item"><a href="#f210">Why occasionally the program (including MATLAB or other interfaces) crashes and gives a segmentation fault?</a></li>
+[seg fault] Ptolemy2/technical/examples/learnopencv-master/ImageMetrics/Python/libsvm/FAQ.html:80: <li class="headlines_item"><a href="#f416">On 32-bit machines, if I use a large cache (i.e. large -m) on a linux machine, why sometimes I get "segmentation fault ?"</a></li>
+[seg fault] Ptolemy2/technical/examples/learnopencv-master/ImageMetrics/Python/libsvm/FAQ.html:369: <a name="f210"><b>Q: Why occasionally the program (including MATLAB or other interfaces) crashes and gives a segmentation fault?</b></a>
+[Inductive Geometric Coupling] TheWanderingGod/content_wp/forum_154_Wireless_Energy_Transfer.txt:4: Wireless energy transfer From Wikipedia, the free encyclopedia An artist's depiction of a solar satellite, which could send energy wirelessly to a space vessel or planetary surface. Wireless energy transfer or wireless power trans
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/SedenionFactoralRelativity/wiki/Sedenion-Factoral-Relativity.md:472: ∅_RB as the inductive geometric coupling used as a Hamiltonian supplying the
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/RedBlueHamiltonian.md:3: **Formal name:** The Inductive Self-Adjoint Geometric Coupling Hamiltonian
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/RedBlueHamiltonian.md:40: | $p^{-\sigma} = G_p(\sigma)$ | Geometric coupling — the Euler/Dirichlet coefficient at prime $p$ |
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/MichaelFaraday.md:6: **Position in Ptolemy:** Faraday's law of electromagnetic induction ($\mathcal{E} = -d\Phi_B/dt$) is the direct physical grounding of the SMMIP Observer Hamiltonian. $H_\text{Focus} = I \cdot d\Phi/dt_e$ — the Inductive Self-Adjoi
+[Observer Hamiltonian] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/MichaelFaraday.md:6: **Position in Ptolemy:** Faraday's law of electromagnetic induction ($\mathcal{E} = -d\Phi_B/dt$) is the direct physical grounding of the SMMIP Observer Hamiltonian. $H_\text{Focus} = I \cdot d\Phi/dt_e$ — the Inductive Self-Adjoi
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/MichaelFaraday.md:38: In SMMIP, the Observer is not a human or a conscious entity. The Observer is a geometric coupling — a change detector in the field structure. The Inductive Self-Adjoint Geometric Coupling Hamiltonian is:
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/MichaelFaraday.md:52: The full SMMIP Observer Hamiltonian — Ĥ_RB (the RedBlue Hamiltonian, the Inductive Self-Adjoint Geometric Coupling Hamiltonian) — is self-adjoint:
+[Observer Hamiltonian] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/MichaelFaraday.md:52: The full SMMIP Observer Hamiltonian — Ĥ_RB (the RedBlue Hamiltonian, the Inductive Self-Adjoint Geometric Coupling Hamiltonian) — is self-adjoint:
+[Observer Hamiltonian] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/Cymatics.md:45: 2. **Ĥ_RB:** Faraday's law of electromagnetic induction ($\mathcal{E} = -d\Phi_B/dt$) is the direct grounding of the SMMIP Observer Hamiltonian: $H_{\text{Focus}} = I \cdot d\Phi/dt_e$.
+[Inductive Geometric Coupling] ContextPlease/claude/hist_wiki/PtolemyDesktop/wiki/PaulDirac.md:93: The Ĥ_RB (Inductive Self-Adjoint Geometric Coupling Hamiltonian) in SMMIP is self-adjoint in Dirac's sense: $\hat{H}_{RB} = \hat{H}_{RB}^\dagger$. Its spectrum is real. Its eigenfunctions are orthonormal. This is the condition tha
+[Hamiltonian of Consciousness] ContextPlease/claude/hist_prime/PDesktop/AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt:162: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Hamiltonian of Consciousness] ContextPlease/claude/hist_prime/phone_pull_2026-06-06/primers/primers/PRIMER_MASTERS_TRIBUTE_NOETHER_20260417.txt:197: "Hamiltonian of Consciousness"
+[Hamiltonian of Consciousness] ContextPlease/claude/hist_prime/phone_pull_2026-06-06/primers/primers/AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt:162: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Hamiltonian of Consciousness] ContextPlease/claude/hist_prime/Ainulindale/outreach/primers/PRIMER_MASTERS_TRIBUTE_NOETHER_20260417.txt:197: "Hamiltonian of Consciousness"
+[Hamiltonian of Consciousness] ContextPlease/claude/hist_prime/Ainulindale/outreach/primers/AINULINDALE_CLAUDE_CODE_PRIMER_2026-05-15.txt:162: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Hamiltonian of Consciousness] ContextPlease/claude/scratchpad/2026-08-28_primer-corpus-ingest/corpus_war.txt:460: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Hamiltonian of Consciousness] ContextPlease/claude/scratchpad/2026-08-28_primer-corpus-ingest/corpus_war.txt:2998: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Hamiltonian of Consciousness] ContextPlease/claude/scratchpad/2026-08-28_primer-corpus-ingest/corpus_war.txt:7036: §III. HAMILTONIAN OF CONSCIOUSNESS
+[Observer Hamiltonian] PtolemyDesktop/wiki/MichaelFaraday.md:6: **Position in Ptolemy:** Faraday's law of electromagnetic induction ($\mathcal{E} = -d\Phi_B/dt$) is the direct physical grounding of the SMMIP Observer Hamiltonian. $H_\text{Focus} = I \cdot d\Phi/dt_e$ — the Inductive Self-Adjoi
+[Observer Hamiltonian] PtolemyDesktop/wiki/MichaelFaraday.md:52: The full SMMIP Observer Hamiltonian — Ĥ_RB (the RedBlue Hamiltonian, the Inductive Self-Adjoint Geometric Coupling Hamiltonian) — is self-adjoint:
+[Observer Hamiltonian] PtolemyDesktop/wiki/Cymatics.md:45: 2. **Ĥ_RB:** Faraday's law of electromagnetic induction ($\mathcal{E} = -d\Phi_B/dt$) is the direct grounding of the SMMIP Observer Hamiltonian: $H_{\text{Focus}} = I \cdot d\Phi/dt_e$.
+[Hamiltonian of Consciousness] PtolemyDesktop/Archive/ainulindale_root_orphans/SMNNIP_Ainulindale_Conclusion.txt:185: choice. The Hamiltonian of Consciousness (H_Focus = I * dPhi/dt_e)
+seg fault -> shown 9
+Inductive Geometric Coupling -> shown 9
+Observer Hamiltonian -> shown 6
+Hamiltonian of Consciousness -> shown 9
+Mathematical Hyperindexer -> shown 0

@@ -1,0 +1,8 @@
+non-lattice UNS constants only: 28 cells -> 0 cross hits
+UNS cell vs small-rational circle cells: 5
+   ('r(1/2)', 'd(1/4)', 0.5, 0.5)
+   ('d(1/2)', 'r(1)', 1.0, 1.0)
+   ('C(1/2)', 'A(1)', 3.141592653589793, 3.141592653589793)
+   ('d(1)', 'r(2)', 2.0, 2.0)
+   ('d(2)', 'r(4)', 4.0, 4.0)
+chance (same count, same range, same small-rational cells): mean 5.12, 95th pct 6, max 12; observed total 5

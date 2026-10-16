@@ -1,0 +1,24 @@
+(a) flux law  S_{n-1}(r) F(r) = enclosed source:   n=2 wire (Ampere), n=3 gravity/Coulomb (Newton/Gauss), n=4,5 higher
+    constants: 2D: 1/S_1(r) = 1/(2 pi r)  [circumference];  3D: 1/(4 pi r^2) [sphere area];  n: 1/S_{n-1}
+    n=2: log-log slope inside +1.000, outside -1.000  (expected +1 and -1); peak at r=R, F(R)=0.15915 = 1/S_1(1) = 0.15915
+    n=3: log-log slope inside +1.000, outside -2.000  (expected +1 and -2); peak at r=R, F(R)=0.07958 = 1/S_2(1) = 0.07958
+    n=4: log-log slope inside +1.000, outside -3.000  (expected +1 and -3); peak at r=R, F(R)=0.05066 = 1/S_3(1) = 0.05066
+    n=5: log-log slope inside +1.000, outside -4.000  (expected +1 and -4); peak at r=R, F(R)=0.03800 = 1/S_4(1) = 0.03800
+
+(b) inversion r -> R^2/r :  F(R^2/r)/F(r) for r<R
+    n=2: ratio [1. 1. 1.]   Kelvin weight (r/R)^(n-2) = [1. 1. 1.]   EXACT SYMMETRY (n=2)
+    n=3: ratio [0.2 0.5 0.9]   Kelvin weight (r/R)^(n-2) = [0.2 0.5 0.9]   symmetric only after the Kelvin weight
+    n=4: ratio [0.04 0.25 0.81]   Kelvin weight (r/R)^(n-2) = [0.04 0.25 0.81]   symmetric only after the Kelvin weight
+    -> the wire is symmetric under the circle fold ONLY in 2D, where inversion is conformal and the Laplacian is covariant with weight 1.
+       gravity (n=3) has the same fold with weight (r/R): the tent in u=ln r has slopes +1/-2, not +1/-1.
+
+(c) Mandelbrot: f(z) = z^2 + c.  fixed point z* = (1 - sqrt(1-c))/... ; multiplier mu = f'(z*) = 2 z*.   c(mu) = mu/2 - mu^2/4
+    fixed point z*=mu/2 solves z*^2+c=z*: max residual 7.9e-17;  attracting iff |mu|<1  (|mu| = r/R of the wire interior)
+    c(mu) on |mu|=1: cusp at mu=1 gives c=0.2500+0.0000j (=1/4); min speed |dc/dtheta| = 7.85e-06 at theta=6.2832 (critical point of c(mu): dc/dmu = (1-mu)/2 = 0 at mu=1)
+    cardioid area 1.178097 (3π/8 = 1.178097);  perimeter 4.000000 (4)
+    c=0: Julia set = the unit circle (mu=0).  c inside the cardioid: Julia set is a quasicircle (deformed unit circle).  Outside: Cantor dust.  |mu|=1: Siegel/parabolic boundary.
+    fold mu -> 1/conj(mu): the SAME fixed point of f^{-1} has multiplier 1/mu:  B_wire(r) = min(|mu|, 1/|mu|) = contraction strength of the fixed point under f or under f^{-1}
+      r/R=0.3: |B|/Bmax=0.3000 = min(|mu|,1/|mu|) with |mu|=r/R ;  e^(-|u|) = 0.3000
+      r/R=0.7: |B|/Bmax=0.7000 = min(|mu|,1/|mu|) with |mu|=r/R ;  e^(-|u|) = 0.7000
+      r/R=1.6: |B|/Bmax=0.6250 = min(|mu|,1/|mu|) with |mu|=r/R ;  e^(-|u|) = 0.6250
+      r/R=3.0: |B|/Bmax=0.3333 = min(|mu|,1/|mu|) with |mu|=r/R ;  e^(-|u|) = 0.3333

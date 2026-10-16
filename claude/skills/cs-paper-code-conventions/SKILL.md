@@ -355,3 +355,24 @@ Standing rules for every paper the author now writes with a model, first applied
 * **Not a Fourth Age paper unless it carries a pre-registered prediction.** If it is a results/code paper, say so in a scope section.
 * **A code paper has no proofs.** Show the programs (B for short mechanisms, A for long files, D for transcripts). Generate the paper from the engines (`paper/make_paper.py`): numbers taken from fresh runs, listings extracted verbatim and executed cold, and a `--check` mode so the committed text cannot drift from the code.
 * **Literature:** every download of another person's work follows the Literature Download Protocol (`ContextPlease/claude/references/INDEX.md`; copy beside the paper; verify each file by its title page), and requests carry a browser-style User-Agent.
+
+## 9. What an introduction is (added 2026-10-15, Cody; measured on six published white papers)
+
+**Rule.** An introduction is **the problem and the intended way around it.** It is not the paper. Cody's formula: the abstract states the problem engineered against; the introduction says how the author plans to avoid it; results follow the code, and the code follows the definitions, in the order the code runs (define the machinery, then employ it).
+
+**Shape (what all six exemplars share).** (1) the constraint in the field, stated plainly; (2) why the existing fixes do not remove it; (3) "we propose X", one or two sentences; (4) optionally one payoff sentence. Target **250–600 words.** At most a two-sentence pointer to where the construction starts. The shortest and most-read exemplars (Transformer, Bitcoin) have no results section, no definitions and no roadmap.
+
+**Never in an introduction (unless asked):** result tables or numbers beyond one payoff sentence; definitions of the mechanism; the history of the project; a contributions list that restates the whole paper; a section-by-section tour; anything that is not in the code being described. **Do not draft a paper the author has not discussed yet.** Take the author's content section by section; ask nothing that the repositories already answer (check git and the code first).
+
+**Exemplars** (public works; copies and title-page verification in `ContextPlease/claude/skills/cs-paper-code-conventions/references/WhitePaperIntroExemplars/`, ledger rows in `references/INDEX.md`; introduction lengths from `pdftotext`, approximate ±10 %):
+
+| paper | engineered against | proposes | results (in the abstract) | intro | results in intro? |
+|---|---|---|---|---|---|
+| Vaswani et al. 2017, *Attention Is All You Need* | recurrence is sequential, blocks parallelism | the Transformer: attention only | 28.4 BLEU WMT14 En→De (+2 over best incl. ensembles); 41.8 En→Fr single model, 3.5 days on 8 GPUs | ~280 words | one payoff sentence ("twelve hours on eight P100 GPUs") |
+| Radford et al. 2018, GPT-1 | scarce labelled data; unclear objective and transfer | generative pre-training + discriminative fine-tuning, task-aware inputs | SOTA on 9 of 12 tasks; +8.9 % Stories Cloze, +5.7 % RACE, +1.5 % MultiNLI, +5.5 % GLUE | ~600 | yes, a closing results paragraph |
+| Nakamoto 2008, *Bitcoin* | payments need trusted third parties; double-spending | peer-to-peer timestamp server, proof of work | none; a security condition (honest nodes hold the CPU majority) | ~270 | no |
+| Stevens et al. 2017, *The first collision for full SHA-1* | SHA-1 deprecated yet deployed because a collision looked impractical | combined cryptanalytic attack; chosen-prefix PDF forgery | first SHA-1 collision; 2^63.1 compressions, ~6,500 CPU-years + 100 GPU-years; >100,000× faster than brute force | ~920 | mostly history of MD5/SHA-1 attacks |
+| Nemec et al. 2017, *The Return of Coppersmith's Attack* (ROCA, CVE-2017-15361) | an entropy flaw in the primes of a widely deployed RSA library | practical factorisation from the primes' structure; fast fingerprint test | 1024-bit < 3 CPU-months, 2048-bit < 100 CPU-years (worst case); tens of millions of devices | ~950 | contributions list (4) + a section roadmap |
+| Kocher et al. 2018, *Spectre Attacks* (CVE-2017-5753/-5715) | speculative execution leaks across protection boundaries | practical attacks combining side channels, faults, ROP | arbitrary memory read; Intel, AMD, ARM | ~1,900 | background; results later |
+
+**Observation to keep.** In all six, the numbers sit in the **abstract**; the introduction repeats the problem at length with citations. Cody's structure (abstract = problem, introduction = how it is avoided) matches the Transformer/Bitcoin pattern; the longer papers add contributions, history or a results paragraph, which he does not want here.

@@ -1,0 +1,12 @@
+hub: e0_is_outside = True | gluing reading: adjacency disconnects the 7 charts; the skeleton shares 6 of 7 charts per index; the zero modes are 7 copies of one constant and identify at e_0 -- the fixed po | hub weight 1.0
+struts: [1, 2, 3, 4, 5, 6, 7]  assessors in strut 1: [(2, 3), (3, 2)]
+
+prompt                                         ptol sigma_self  kernel sigma_self    |diff|  is_ZD  windspeed  fixed_point_weight
+finger pointer                                    0.1501236969       0.8499011343   7.0e-01  False +12.00000  0.00017
+what is a tree                                    0.2100110014       0.8059336285   6.0e-01  False +12.00000  0.00719
+neutron generation in different reactor types     0.2453821540       0.6216828451   3.8e-01  False +4.00000  0.03460
+good morning                                      0.2530896120       0.8221482364   5.7e-01  False +12.00000  0.00039
+can you play the piano?                           0.0307495329       0.8614748203   8.3e-01  False +12.00000  0.00955
+the first reactor was built after neutrons we     0.1304088690       0.7368004541   6.1e-01  False +12.00000  0.05720
+
+ptol.c vector component 0 (e0 weight) squared = fixed_point_weight check: [0.00017, 0.00719, 0.0346, 0.00039, 0.00955, 0.0572]

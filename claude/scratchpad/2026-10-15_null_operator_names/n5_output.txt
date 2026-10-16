@@ -1,0 +1,17 @@
+files naming the object: 684:  H-family only 466 (68%) | null-family only 154 (23%) | both 64 (9%)
+files using the H-family at all: 530 (77%);  null-family at all: 218 (32%)
+hits: H-family 3,239 (78%) | null-family 903 (22%)
+
+repo                      H only  N only  both   H hits   N hits
+ContextPlease                123      57    18      776      323
+Ainulindale                  101      13    10      844       95
+ValaQuenta                    98      31     7      557      100
+FourthAgePapers               43       8    13      431       88
+VAPMIP                        39      21     8      136      157
+.claude                        1      12     3      143       60
+PtolemyDesktop                22       0     0      135        0
+PDesktop                       4       0     1       69        8
+GenerationalLineage            1       6     3        9       49
+RiemannHypothesisProof         5       1     1       38        6
+FLUID_DATA_TODO.md             1       0     0       38        0
+TuringStack                    4       5     0       21       17

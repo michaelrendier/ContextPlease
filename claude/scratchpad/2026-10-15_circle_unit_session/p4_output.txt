@@ -1,0 +1,26 @@
+(1) one dipole at inverse temperature kappa = MB/kT: sampled theta vs von Mises vs Gaussian
+ kappa  sd(theta)  1/sqrt(kappa)    <cos>    I1/I0  KL(vM||sample hist)    skew  ex.kurt
+   0.5     1.5336         1.4142   0.2428   0.2425              0.00065  -0.001   -0.736
+     2     0.8737         0.7071   0.6977   0.6978              0.00106  -0.028    0.862
+    10     0.3239         0.3162   0.9490   0.9486              0.00069   0.025    0.192
+    50     0.1416         0.1414   0.9900   0.9899              0.00038  -0.008    0.035
+   200     0.0707         0.0707   0.9975   0.9975              0.00060   0.007    0.059
+   -> <cos> = I1/I0 (2D von Mises); sd -> 1/sqrt(kappa) for large kappa; excess kurtosis -> 0 (Gaussian) as kappa grows
+
+(2) the ENERGY itself: U/MB = -cos(theta).  Its distribution at kappa: mean and variance
+   kappa= 0.0: mean U = +0.0002 (theory -0.0000)  var U = 0.5019  (theory 0.5000)   sd U/MB = 0.7085
+   kappa=   2: mean U = -0.6990 (theory -0.6978)  var U = 0.1623  (theory 0.1642)   sd U/MB = 0.4029
+   kappa=  10: mean U = -0.9487 (theory -0.9486)  var U = 0.0053  (theory 0.0053)   sd U/MB = 0.0727
+   kappa=  50: mean U = -0.9900 (theory -0.9899)  var U = 0.0002  (theory 0.0002)   sd U/MB = 0.0140
+   uniform (kappa=0): sd(U)/MB = 1/sqrt(2) = 0.7071 in 2D
+   fluctuation-dissipation check: Var(U) = kT^2 C  -> C/k = kappa^2 Var(cos)
+
+(3) N independent dipoles: total energy is a SUM -> central limit theorem
+   N=   1: skew +2.097  excess kurtosis +4.417  (Gaussian: 0, 0)
+   N=   4: skew +1.024  excess kurtosis +1.006  (Gaussian: 0, 0)
+   N=  30: skew +0.354  excess kurtosis +0.108  (Gaussian: 0, 0)
+   N= 400: skew +0.098  excess kurtosis +0.011  (Gaussian: 0, 0)
+
+(4) maximum entropy: von Mises has the largest entropy among circle densities with the same <cos>
+   same <cos> = 0.8100: H(von Mises) = 0.99323, H(wrapped normal) = 0.98719  -> vM larger by 0.00604  (they differ slightly: both near-Gaussian)
+   Gaussian on the line: max entropy for given variance (Shannon 1948); on the circle: von Mises for given <cos> (Jaynes 1957)

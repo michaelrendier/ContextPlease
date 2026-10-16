@@ -1,0 +1,128 @@
+
+>>> finger pointer
+  [ptol  912.5 ms] gift-gems tropheus · spurned · · ox-hide · · · converteret *trolley *wittgenstein *rapa *nuys *mais
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_finger_pointer_1792061940.svg
+  [ptol_say  1231.1 ms  det] trolley wittgenstein rapa nuys mais
+      
+      [stderr] [σ=0.1501 Γ=-0.6998 primes: 37 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: trolley=-0.731 wittgenstein=-0.903]
+  [ptolemy_repl  289.5 ms] >>> changelogs employed construction uep
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] I don't know 'finger'. Try: look, take, put, go, use, open, say, find, make, ask
+      
+      [ptolemy] session ended
+  [ptol_raw 2.2 ms det=True] first line: -0.0130606109
+
+>>> what is a tree
+  [ptol  874.6 ms] horseback whirleth · tilt · · innovators marsyas arrow-swift catos philippopolis *polysyllables *ise *· *· *joost
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_what_is_a_tree_1792061944.svg
+  [ptol_say  1206.8 ms  det] polysyllables ise joost
+      
+      [stderr] [σ=0.2100 Γ=-0.5800 primes: 37 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]
+  [ptolemy_repl  300.1 ms] >>> kite its engine probe
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] e0/identity  "identity is tree"
+      
+      [ptolemy] session ended
+  [ptol_raw 2.4 ms det=True] first line: -0.0847696893
+
+>>> neutron generation in different reactor types
+  [ptol  874.0 ms] weaver-of-peace glory-decked monenda · hard-scrabble massy · *alwayes *squirting *yom *· *· *convinto *· *· *·
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_neutron_generation_in_different_reactor_1792061949.svg
+  [ptol_say  1178.0 ms  det] alwayes squirting yom convinto
+      
+      [stderr] [σ=0.2454 Γ=-0.5092 primes: 11 13 17 19 37 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: squirting=-0.890]
+  [ptolemy_repl  269.5 ms] >>> kite its real gawo
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] I don't know 'neutron'. Try: look, take, put, go, use, open, say, find, make, ask
+      
+      [ptolemy] session ended
+  [ptol_raw 2.1 ms det=True] first line: -0.1860231354
+
+>>> good morning
+  [ptol  882.6 ms] · · · penned · colourless aliment gaule · *seemes *gurls *aughty *winningly *birdseye *· *lexicogrammatical-word
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_good_morning_1792061953.svg
+  [ptol_say  1203.7 ms  det] seemes gurls aughty winningly birdseye lexicogrammatical-word
+      
+      [stderr] [σ=0.2531 Γ=-0.4938 primes: 19 31 37 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]
+  [ptolemy_repl  277.7 ms] >>> libx alternator cdot muller
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] I don't know 'good'. Try: look, take, put, go, use, open, say, find, make, ask
+      
+      [ptolemy] session ended
+  [ptol_raw 2.1 ms det=True] first line: -0.0196444200
+
+>>> can you play the piano?
+  [ptol  888.8 ms] water's-edge folcwalda's refute industriously assiduously · · confabulations patrolling swarming-time vagabonds alemannicus *marja-liisa *· *mcarthur *·
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_can_you_play_the_piano_1792061958.svg
+  [ptol_say  1132.3 ms  det] marja-liisa mcarthur
+      
+      [stderr] [σ=0.0307 Γ=-0.9385 primes: 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: (none — no firing word has a WordNet entry with a nonzero relation vector)]
+  [ptolemy_repl  285.5 ms] >>> kite open and where
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] I don't know 'can'. Try: look, take, put, go, use, open, say, find, make, ask
+      
+      [ptolemy] session ended
+  [ptol_raw 2.1 ms det=True] first line: -0.0977082019
+
+>>> the first reactor was built after neutrons were discovered
+  [ptol  863.4 ms] · · commissioning ebb-tide phiz · unappropriated · · · enoch lukewarm *countryfolk *collectives *nodes *·
+      
+      [stderr] paper: /home/rendier/.claude/jobs/63e1a9e8/tmp/home/.ptolemy/papers/ptol_the_first_reactor_was_built_1792061962.svg
+  [ptol_say  1251.0 ms  det] countryfolk collectives nodes
+      
+      [stderr] [σ=0.1304 Γ=-0.7392 primes: 41 43 47 53]
+        [Gamma-Radial Windspeed per firing word: countryfolk=-0.905]
+  [ptolemy_repl  268.3 ms] >>> kite shrodinger pores helicities
+      >>> 
+      [stderr] [state] loaded /home/rendier/.ptolemy/monad.bin  vocab=15056  A=1132343  wc=1331154
+      [ptolemy] interactive  (blank line or Ctrl-D to quit)
+                Zork sentence parser active — verb-governed input
+                /generate <prompt>  /status  /health  /vocab <w>  /help
+                loaded: /home/rendier/.ptolemy/monad.bin
+      
+      [zork] I don't know 'the'. Try: look, take, put, go, use, open, say, find, make, ask
+      
+      [ptolemy] session ended
+  [ptol_raw 2.4 ms det=True] first line: -0.2391614857
+
+engine files unchanged: True

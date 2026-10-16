@@ -1,0 +1,27 @@
+1. integer points of the l_p circle of radius c, |x|^p+|y|^p=c^p, 0<x<=y<c, c<=300  (p integer = the FERMAT CURVE x^p+y^p=z^p)
+   p=2: 209 primitive+non-primitive solutions with z<=300   e.g. [(3, 4, 5), (6, 8, 10), (5, 12, 13)]
+   p=3: 0 primitive+non-primitive solutions with z<=300   e.g. []
+   p=4: 0 primitive+non-primitive solutions with z<=300   e.g. []
+   p=5: 0 primitive+non-primitive solutions with z<=300   e.g. []
+   (p=2 has them all — Pythagorean triples; p>=3 none: Fermat's Last Theorem, Wiles 1995. Non-integer exponents have no rational structure to count.)
+
+2. Three conics, three factorisation methods (Cayley-Klein triple), N = p q
+   N=65: Euler (circle x^2+y^2=N) -> (5, 13) from reps [(1, 8), (4, 7)];  Fermat (hyperbola a^2-b^2=N) -> (5, 13) in 1 steps
+   N=221: Euler (circle x^2+y^2=N) -> (17, 13) from reps [(5, 14), (10, 11)];  Fermat (hyperbola a^2-b^2=N) -> (13, 17) in 1 steps
+   N=1073: Euler (circle x^2+y^2=N) -> (29, 37) from reps [(7, 32), (17, 28)];  Fermat (hyperbola a^2-b^2=N) -> (29, 37) in 1 steps
+   N=3233: Euler (circle x^2+y^2=N) -> (53, 61) from reps [(23, 52), (32, 47)];  Fermat (hyperbola a^2-b^2=N) -> (53, 61) in 1 steps
+   N=11413: Euler (circle x^2+y^2=N) -> (101, 113) from reps [(62, 87), (73, 78)];  Fermat (hyperbola a^2-b^2=N) -> (101, 113) in 1 steps
+   Euler needs p,q = 1 (mod 4) [two sum-of-squares reps exist]; Fermat is general. The elliptic conic is the Gaussian-integer lattice; the hyperbolic conic is the split-complex one.
+
+3. the imaginary circle x^2+y^2 = -N: (x+iy)(x-iy) = -N ; Fermat's hyperbola is the REAL section after y -> i y
+   a^2 - b^2 = N: (10)^2 - (3)^2 = 91;  as a circle: a^2 + (ib)^2 = (91+0j)  -> radius^2 = N: the circle of radius sqrt(N) with the second coordinate imaginary
+   A(r=sqrt N) = pi N; the same circle with the second axis imaginary has the hyperbola's 'area' sign flip: -> hyperbolic sector area = (N/2) * phi, no pi
+
+4. conjugate exponents 1/p+1/q=1 : the Holder dual. Table (p, q, pi_p) — the dual pair always has the same pi_p
+   p=1.25  q=5.0000   pi_p=3.498457 pi_q=3.498457  area_p=2.42714 area_q=3.80060
+   p=1.5   q=3.0000   pi_p=3.259768 pi_q=3.259768  area_p=2.73785 area_q=3.53328
+   p=2.0   q=2.0000   pi_p=3.141593 pi_q=3.141593  area_p=3.14159 area_q=3.14159
+   p=3.0   q=1.5000   pi_p=3.259768 pi_q=3.259768  area_p=3.53328 area_q=2.73785
+   p=4.0   q=1.3333   pi_p=3.396935 pi_q=3.396935  area_p=3.70815 area_q=2.54164
+   p=5.0   q=1.2500   pi_p=3.498457 pi_q=3.498457  area_p=3.80060 area_q=2.42714
+   pi_p equal on the dual pair, AREAS differ -> duality preserves circumference/diameter, not area.

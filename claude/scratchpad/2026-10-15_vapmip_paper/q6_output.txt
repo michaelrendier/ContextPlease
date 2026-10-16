@@ -1,0 +1,7 @@
+inputs >=20 chars: 600; non-monotone on [0,1]: 599
+monotone rising on [0,.5]: 1  on [.5,1]: 600
+location of first drop (sigma): {0.0: 599}
+fraction of first drops at sigma < 0.5: 1.0
+argmin sigma of sigma_self for long inputs: {0.0: 1, 0.05: 2, 0.1: 6, 0.15: 24, 0.2: 53, 0.25: 75, 0.3: 85, 0.35: 39, 0.4: 10, 0.45: 4, 0.5: 1}
+sigma_self(0) / min: median 1.926408784504377
+control, random lowercase 40-byte strings, argmin sigma: {0.25: 2, 0.3: 84, 0.35: 111, 0.4: 3}
