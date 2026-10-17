@@ -85,6 +85,8 @@ class Report:
     sysfs_mounted: bool = False
     sysfs_proc_filesystems_found: bool = False
     sysfs_note: str = ''
+    sysfs_fs_dirs: List[str] = field(default_factory=list)      # names under <sysfs mount>/fs (depth 1, AppArmor filtered)
+    sysfs_fs_identical_to_host: Optional[bool] = None            # True = the mount shows the host's /sys/fs, not the file
     rooms_source: str = ''
     device_types: List[str] = field(default_factory=list)
     nodev_types: List[str] = field(default_factory=list)
@@ -107,43 +109,66 @@ def run(cmd: List[str], use_sudo: bool, timeout: int = STEP_TIMEOUT) -> Tuple[in
 # ── the hallway ─────────────────────────────────────────────────────────────
 class HallwayStroll:
 
-    def __init__(self, target: str, work: str, execute: bool, include_nodev: bool = False):
+    def __init__(self, target: str, work: str, execute: bool, include_nodev: bool = False,
+                 sysfs_mount: Optional[str] = None):
         self.file = os.path.abspath(target)
         self.work = guard(os.path.abspath(work))
         self.hall = os.path.join(self.work, 'Hallway')
         self.execute = execute
         self.include_nodev = include_nodev
+        self.sysfs_mount = guard(os.path.abspath(sysfs_mount)) if sysfs_mount else None
         self.fstypes: List[str] = []
         self.rep = Report(self.file, os.path.getsize(self.file))
         self._mounted: List[str] = []       # mountpoints we created, for the finally-umount
         self._made: List[str] = []          # directories we created, for rmdir (never rm -rf)
 
-    # step 1 — his sysfs step. Reads ONE path. Never lists, never walks, never cd's.
+    # step 1 — his sysfs step. Depth-1, name-only reads; never walks, never cd's.
     def sysfs_step(self) -> Optional[str]:
-        mp = guard(os.path.join(self.work, '_sysfs'))
-        os.makedirs(mp, exist_ok=True)
-        self._made.append(mp)
-        if not self.execute:
-            self.rep.sysfs_note = f'DRY RUN: would mount -t sysfs -o {MOUNT_OPTS} {self.file} {mp}'
-            return None
-        rc, _, err = run(['mount', '-t', 'sysfs', '-o', MOUNT_OPTS, self.file, mp], True)
-        self.rep.sysfs_mounted = rc == 0
-        if rc != 0:
-            self.rep.sysfs_note = f'sysfs mount failed: {err}'
-            return None
-        self._mounted.append(mp)
-        probe = guard(os.path.join(mp, 'proc', 'filesystems'))
+        pre = self.sysfs_mount is not None          # a mount Cody made; we read it and do NOT umount it
+        mp = self.sysfs_mount or guard(os.path.join(self.work, '_sysfs'))
+        if not pre:
+            os.makedirs(mp, exist_ok=True)
+            self._made.append(mp)
+            if not self.execute:
+                self.rep.sysfs_note = f'DRY RUN: would mount -t sysfs -o {MOUNT_OPTS} {self.file} {mp}'
+                return None
+            rc, _, err = run(['mount', '-t', 'sysfs', '-o', MOUNT_OPTS, self.file, mp], True)
+            self.rep.sysfs_mounted = rc == 0
+            if rc != 0:
+                self.rep.sysfs_note = f'sysfs mount failed: {err}'
+                return None
+            self._mounted.append(mp)
+        else:
+            self.rep.sysfs_mounted = True
         try:
+            self._sysfs_fs_listing(mp)
+            probe = guard(os.path.join(mp, 'proc', 'filesystems'))
             if os.path.isfile(probe):
                 rc, out, _ = run(['cat', probe], False, timeout=5)
                 self.rep.sysfs_proc_filesystems_found = rc == 0
-                self.rep.sysfs_note = 'proc/filesystems present inside the sysfs mount'
+                self.rep.sysfs_note += ' | proc/filesystems present inside the sysfs mount'
                 return out if rc == 0 else None
-            self.rep.sysfs_note = ('no proc/filesystems inside the sysfs mount: sysfs ignores the file '
-                                   'and shows the kernel /sys view, which has no proc/ directory')
+            self.rep.sysfs_note += (' | no proc/filesystems inside the sysfs mount (sysfs has no proc/ directory)')
             return None
         finally:
-            self._umount(mp)
+            if not pre:
+                self._umount(mp)
+
+    def _sysfs_fs_listing(self, mp: str):
+        """Names directly under <mp>/fs and the same under the host /sys/fs. Depth 1, names only,
+        walled names dropped before anything else sees them."""
+        def names(d: str) -> List[str]:
+            try:
+                return sorted(n for n in os.listdir(guard(d)) if not walled(os.path.join(d, n)))
+            except OSError:
+                return []
+        mine, host = names(os.path.join(mp, 'fs')), names('/sys/fs')
+        self.rep.sysfs_fs_dirs = mine
+        self.rep.sysfs_fs_identical_to_host = (mine == host) if mine else None
+        self.rep.sysfs_note = (f'fs/ lists {len(mine)} names; '
+                               + ('IDENTICAL to the host /sys/fs (sysfs ignores the file: this is the kernel view, '
+                                  'not the file contents)' if mine and mine == host else
+                                  'differs from the host /sys/fs' if mine else 'no fs/ directory'))
 
     # step 2
     def the_rooms(self, from_sysfs: Optional[str] = None) -> List[str]:
@@ -167,7 +192,7 @@ class HallwayStroll:
         loadable = []
         for t in PROBE_FIRST:
             m = MODDIR.get(t, t)
-            if t not in dev and (os.path.isdir(os.path.join(kdir, m)) or
+            if t not in dev and t not in nodev and (os.path.isdir(os.path.join(kdir, m)) or
                                  any(os.path.exists(os.path.join(kdir, m + ext)) for ext in ('.ko', '.ko.zst', '.ko.xz'))):
                 loadable.append(t)
         self.rep.loadable_types = loadable
@@ -279,13 +304,14 @@ def main(argv=None) -> int:
     ap.add_argument('--execute', action='store_true')
     ap.add_argument('--include-nodev-types', action='store_true',
                     help='also try nodev types (their source is ignored; securityfs is still never mounted)')
+    ap.add_argument('--sysfs-mount', help='an existing -t sysfs mount of FILE to read (not unmounted by us)')
     ap.add_argument('--selftest', action='store_true')
     a = ap.parse_args(argv)
     if a.selftest:
         return selftest()
     if not a.file or not os.path.isfile(a.file):
         ap.error('FILE must be an existing regular file')
-    h = HallwayStroll(a.file, a.work, a.execute, a.include_nodev_types)
+    h = HallwayStroll(a.file, a.work, a.execute, a.include_nodev_types, a.sysfs_mount)
     try:
         text = h.sysfs_step()
         h.the_rooms(text)
@@ -298,6 +324,8 @@ def main(argv=None) -> int:
     r = h.rep
     print(f'target      {r.target} ({r.size} bytes)')
     print(f'sysfs step  mounted={r.sysfs_mounted} proc/filesystems-inside={r.sysfs_proc_filesystems_found}  {r.sysfs_note}')
+    if r.sysfs_fs_dirs:
+        print(f'sysfs fs/   {r.sysfs_fs_dirs}  identical_to_host={r.sysfs_fs_identical_to_host}')
     print(f'rooms from  {r.rooms_source}: {len(r.device_types)} device-backed, {len(r.nodev_types)} nodev'
           f' (never mounted: {r.skipped_never_mount})')
     if r.composite:

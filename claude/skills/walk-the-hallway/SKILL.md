@@ -22,13 +22,20 @@ that touches AppArmor. A process stuck inside those directories cannot leave and
 - **Never `cd` into a mount.** Use absolute paths, one named file at a time, with `timeout`.
 - **Never recurse into a pseudo (`nodev`) mount** — sysfs, proc, securityfs, debugfs, tracefs, cgroup, bpf.
   Their trees are live kernel state, not the image.
+- **sysfs is effectively infinite.** `devices/`, `bus/`, `class/` and `block/` are symlink loops that point back at
+  each other, and `/sys/devices` alone has tens of thousands of entries. Rules: **depth 1, names only, symlinks never
+  followed, a hard entry cap, never `find`/`os.walk`/`ls -R` on sysfs, proc, securityfs, debugfs, tracefs or cgroup.**
+  The walker in `hallway_mount.py` is for real (device-backed) mounts only: depth 3, `follow_symlinks=False`, 5000 entries.
 - Every external command runs with a timeout (`STEP_TIMEOUT = 20 s`).
 - `scripts/hallway_mount.py --selftest` proves the wall rejects 7 patterns before you run anything.
 
 ## 1. The procedure (his order)
 
-1. **sysfs step.** `mount -t sysfs -o ro,nosuid,nodev,noexec FILE MP`; read exactly `MP/proc/filesystems`
-   by its absolute path; note what is there; `umount MP`.
+1. **sysfs step.** `mount -t sysfs -o ro,nosuid,nodev,noexec FILE MP` (or read a mount Cody already made:
+   `--sysfs-mount /mnt/biossysfs`, which the script never unmounts). Two bounded reads: the **names directly under
+   `MP/fs`** (depth 1, AppArmor names dropped) and the single path `MP/proc/filesystems`. The script also lists the
+   host's `/sys/fs` and records `sysfs_fs_identical_to_host`, so the report states whether the mount told it anything
+   about the file. Then `umount MP` (unless it was Cody's).
 2. **Rooms.** Take the filesystem list (from step 1 if it exists there, otherwise `/proc/filesystems`).
 3. **Hallway.** Remount the FILE read-only: one directory per type under `Hallway/<type>/`, plus
    `Hallway/All` mounted with the **comma list** `-t t1,t2,...` (mount tries them in order; first success wins).
@@ -46,7 +53,17 @@ Report goes to `DIR/hallway_report.json`. Exit status is non-zero only if someth
 
 ## 2. What the kernel actually does (measured 2026-10-17, util-linux 2.39.3; manual excerpts in `references/mount-t.md`)
 
-- **Step 1 as written cannot see inside the file.** `sysfs` is a `nodev` type: mount ignores the source
+- **The `fs/` method (Cody, 2026-10-17): the directory `MP/fs` lists the filesystems the kernel has active.** Measured on
+  `/mnt/biossysfs` (a sysfs mount whose source is the BIOS file): 15 names — `bpf btrfs cgroup ecryptfs erofs ext4 f2fs
+  fuse gfs2 nilfs2 o2cb ocfs2 pstore ubifs xfs` — **byte-identical to the host's `/sys/fs`**. It is a real, useful cross-check
+  on `/proc/filesystems` (active vs merely loaded), but because sysfs ignores its source it is the HOST kernel's list, not
+  the file's. Neither `fs/` nor `proc/filesystems` can show what is inside the image.
+- **Running `cat /proc/filesystems` from a shell whose cwd is inside the mount changes nothing.** /proc is the host's procfs
+  and cwd does not select it (captured from `/mnt/biossysfs`, byte-identical to a plain cat:
+  `references/proc_filesystems_2026-10-17.txt`).
+- **Why the list got long.** Before the first probe only 8 device-backed types were loaded; the probe's mount attempts made
+  the kernel autoload modules, so the list grew to 36 device-backed + 28 nodev. The modules stay loaded until unload or reboot.
+- **Step 1 as first written cannot see inside the file.** `sysfs` is a `nodev` type: mount ignores the source
   argument and shows the host's `/sys`. `proc/filesystems` does not exist inside it (measured). The list
   you get is the kernel's list of supported types, not a list of what the file contains. The script records
   that outcome honestly in `sysfs_note` and falls back to `/proc/filesystems`.
@@ -75,9 +92,11 @@ on a 6 MB capsule, none real). Trust a hit only after a parse or a successful ro
 UEFI firmware volumes (FFS2/FFS3) are not Linux filesystems; the readers are UEFITool / UEFIExtract
 (`/usr/bin/uefitool` is installed here; it is a GUI, there is no CLI extractor).
 
-## 4. Worked result: HP BIOS capsule `~/Projects/BIOS/S301LAAS.215` (6 293 504 bytes), 2026-10-17
+## 4. Worked result: BIOS capsule `~/Projects/BIOS/S301LAAS.215` (6 293 504 bytes), 2026-10-17
 
-- sysfs mount succeeded; no `proc/filesystems` inside it.
+Cody: it is an OLD BIOS file for a different computer than this one. It is only a test subject here.
+
+- sysfs mount succeeded; `fs/` lists 15 names identical to the host's `/sys/fs`; no `proc/filesystems` inside it.
 - 38 device-backed types probed, singly and as one comma list: **0 mounted** at offset 0. Nothing left mounted.
 - `scan_offsets.py`: AMI Aptio capsule GUID at 0 (and 5 850 784); UEFI FFS2 firmware volumes at 67 584,
   526 336, 5 572 608; 8 `_FVH` signatures in all. So the negative space is UEFI volumes, read with UEFITool.

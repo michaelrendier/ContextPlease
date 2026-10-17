@@ -31,3 +31,5 @@ A Monad built from all four speaks the project's own language literally. The
 parts into the `.bin` vocabulary + knowledge store.
 
 **Re-copied 2026-09-28:** ValaQuenta/wiki (incl. toolbox/) refreshed after the public-release pass — 104 files under hist_wiki/ValaQuenta/. The page counts above are the 2026-08-29 snapshot.
+
+**Added 2026-10-17:** `skills/` — one wiki page per skill, written at skill creation and refreshed for each skill loaded in a session (`skills/00_index.md`). First page: `walk-the-hallway`.
