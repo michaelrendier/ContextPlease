@@ -94,3 +94,5 @@ content, not part of this project's own accumulated context.
 | `xlsx` | Open, edit, create, clean, or convert spreadsheet files (.xlsx/.xlsm/.xltx/.csv/.tsv). |
 
 **Added 2026-10-13:** `nltk-zork-wordnet` — NLTK as the content-processing base for the Zork Sentence WordNet Parser (measured environment facts, Zork-to-NLTK mapping, disambiguation results, API cheat-sheet). Install with the others.
+
+**Added 2026-10-17:** `walk-the-hallway` — Cody's mount-the-binary method for exploring the negative space of a .bin / firmware / factory image: read-only mounts under every device-backed filesystem type (comma-list probe), an offset-signature scan for when nothing opens at offset 0, and a HARD WALL against AppArmor paths. Ships `scripts/hallway_mount.py` (dry-run by default, self-tested wall) and `scripts/scan_offsets.py`, the mount(8) `-t` excerpts and the script lineage. Install with the others.
