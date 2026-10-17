@@ -413,3 +413,7 @@ vq_docs()  { ( cd "$VALE" && .venv/bin/python docs/gen_api.py && .venv/bin/pytho
 # ============================================================
 export CLAUDE_UA='Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0'
 fetch() { curl -sL -m "${FETCH_TIMEOUT:-60}" -A "$CLAUDE_UA" "$@"; }
+
+# ── NLP data (2026-10-17) ─────────────────────────────────────────────────────
+export NLP_DATA="$HOME/nlp_data"          # Princeton WordNet 3.0/3.1 distributions (SQL, Prolog, SemCor 1.6, glosstag, morphosemantic links, SUMO), VerbNet 3.4, SemLink, PropBank, spaCy wheels; MANIFEST.md lists every file
+export NLTK_DATA="$HOME/nltk_data"        # the NLTK data collection `all` (122 packages, 3.5 GB); also the default path
