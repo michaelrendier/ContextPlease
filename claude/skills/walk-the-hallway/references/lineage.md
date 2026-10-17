@@ -1,5 +1,10 @@
 # Where the hallway script lives (found 2026-10-17)
 
+> **Intended goal (Cody, 2026-10-17):** the hallway is not only a filesystem-mount walker. It is a breadth-first, level-at-a-time
+> surface mapper for any public-facing collection, across many protocols and filesystems, that records structure into its own
+> sitemap to power the actual crawl, in resumable chunk cycles. The mount-based script below is **backend 1**. See `../SKILL.md`
+> and `surface-map.md`.
+
 | copy | lines | what it is |
 |---|---|---|
 | ~/Projects/Coding/BIOS/WalkTheHalls.py | 67 | the ORIGINAL mount-walk: `HallwayStroll.the_rooms()` reads /proc/filesystems, `the_hallway()` makes Hallway/<fstype>/ and Hallway/All and runs `sudo mount -t ...`. Its Hallway/ dir (38 empty fstype dirs, 2026-03-24) is the result of a run. |

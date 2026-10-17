@@ -1,14 +1,44 @@
 # walk-the-hallway
 
 **Skill:** `~/.claude/skills/walk-the-hallway/` · mirror `ContextPlease/claude/skills/walk-the-hallway/`
-**Created:** 2026-10-17 · **Owner of the method:** Cody Michael Allison (Michael Rendier)
+**Created:** 2026-10-17 · **Scope widened by Cody the same day (see below)** · **Owner of the method:** Cody Michael Allison (Michael Rendier)
 
-## What it is
+## What it is (Cody, 2026-10-17: the intended goal)
 
-Cody's way of exploring the **negative space** of a binary — a firmware capsule, a phone factory image, a raw dump.
-Mount the file as a filesystem, see which rooms open, and treat the *structure* of what opens (paths and kinds, never
-content) as a fingerprint. The design note (`hist_prime/PTOLEMY_DOCS/049_WalkTheHallway.txt`) ties it to APISniff and
-to Alexandria, the OpenGL "Grid", where the structural hash becomes a cityscape.
+A **reconnaissance pass that comes before the real crawl.** Point it at any collection of public-facing information and it walks
+the hallways of that thing to learn its shape: where the files live, how they are named and sharded, which protocol each level
+speaks, what kind of file each leaf is, what a listing costs. It records the structure as **its own sitemap**, and the sitemap
+**powers the actual crawl**. It evaluates nothing and downloads only listings and a few magic bytes.
+
+* **Cody's example:** a collection of coin images. The hallway finds where the images exist, records the structure
+  (`images/<year>/<denomination>/<id>.jpg`, page sizes, shard sizes), and the crawler then fetches exactly what the map says.
+* **Every filesystem and protocol presents information its own way.** The hallway has one *backend* per way of presenting a
+  hall and one common map. The **`mount` door is itself a family of public-facing protocols**: `mount -t TYPE` opens a local
+  image or a remote NFS, CIFS/SMB, WebDAV, SSHFS, FTP or S3 (FUSE) filesystem, and the hall then lists like a directory.
+  Beside it: S3 prefix listings, FTP `LIST`, HTTP indexes and sitemaps, REST/JSON pages, TAP schemas and ObsCore censuses, and
+  container files (FITS HDUs, tar/zip members, HDF5 groups, SQLite tables, CASA tables).
+* **Not all at once.** Breadth-first, one level per expansion, in bounded **chunk cycles** run by threaded workers hopping between
+  hosts, checkpointed so the walk resumes. Threads help across hosts (listings are latency-bound); within one host bandwidth
+  does not add (measured 4.6 vs 4.9 MB/s).
+* **Every file type:** a file is a *leaf* (identified by magic bytes, not opened) or a *container* (a hall of its own).
+  Unknown types stay leaves with magic, size and entropy; the offset scan is the fallback inside unknown binaries.
+* **The structure hash is the fingerprint** (his Alexandria design); diffing it on a re-walk flags drift.
+* **The generalised wall:** when a door is closed — AppArmor, `robots.txt`, a login, a paywall, a rate limit — record the door and
+  never open it. Read `robots.txt` before touching a host.
+
+### Status (2026-10-17)
+
+| piece | state |
+|---|---|
+| mount protocol family, local images | **built and run** (`hallway_mount.py`, `scan_offsets.py`) |
+| mount protocol family, remote public filesystems | designed; here: `mount.cifs`, `smbclient`, `sshfs`, `mount.fuse` present; `mount.nfs`, `showmount`, `davfs2`, `curlftpfs`, `rclone`, `s3fs` absent |
+| S3 prefix listing, FTP listing, API product listing, TAP/ObsCore census, FITS HDU walk | measured by hand, not yet code |
+| HTTP index / sitemap.xml / tar / zip / HDF5 / SQLite / unknown-type backends | designed |
+| node table, frontier queue, chunk-cycle runner, sitemap writers, crawl-plan derivation | designed (`references/surface-map.md`) |
+
+Measured by hand: three S3 levels, one request each. `stpubdata/` has 11 subdirectories; `hst/` has two; `hst/public/` has at least
+1 000 four-character shard prefixes (truncated). The walker learns the sharding scheme from the sample and stops; that scheme is what
+the crawl plan needs.
 
 ## The hard wall
 
@@ -18,7 +48,7 @@ never mounted. A process inside those directories cannot leave and has to be kil
 infinite (symlink loops among `devices`, `bus`, `class`), so sysfs, proc, securityfs, debugfs, tracefs and cgroup are
 read at depth 1, names only, symlinks never followed.
 
-## The procedure
+## Backend 1 — the mount protocol family: the procedure for a local image
 
 1. **sysfs step** — mount the file as `-t sysfs` (or read an existing mount, `--sysfs-mount /mnt/biossysfs`); list the names
    under `fs/`; look for `proc/filesystems`.
@@ -43,7 +73,7 @@ Test subject: `~/Projects/BIOS/S301LAAS.215`, 6 293 504 bytes, an **old BIOS for
 
 ## Files
 
-`SKILL.md` (operating manual) · `scripts/hallway_mount.py` (dry-run default, `--execute`, `--sysfs-mount`, `--selftest`) ·
+`SKILL.md` (operating manual) · `references/surface-map.md` (node record, walls, chunk cycles, outputs, coin example) · `scripts/hallway_mount.py` (dry-run default, `--execute`, `--sysfs-mount`, `--selftest`) ·
 `scripts/scan_offsets.py` · `references/mount-t.md` (verbatim mount(8) excerpts) · `references/lineage.md` ·
 `references/proc_filesystems_2026-10-17.txt`.
 

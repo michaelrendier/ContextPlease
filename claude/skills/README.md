@@ -75,6 +75,7 @@ content, not part of this project's own accumulated context.
 | `observer-position` | Tracking your own vantage point inside hypergeometric/algebraic maths with no camera or screen (sedenion space, box-kite structure). Combines `nes-viewport`'s bounded-window discipline with `scad-spatial`'s camera-angle parameters, applied abstractly. |
 | `scad-spatial` | 3D spatial-awareness methodology: camera as viewport, OpenSCAD's edge/transform/camera language, disciplined visualization of higher-dimensional maths within human 3D perception limits. |
 | `unit-management` | Identify which physical equations are relevant to a prompt by decomposing its quantities into SI base-dimension exponent vectors and matching against known equations. |
+| `walk-the-hallway` | Surface-mapping recon pass before a crawl: walk any public collection one level at a time (mount protocol family, S3, FTP, HTTP, APIs, TAP, container files), record a sitemap + structure fingerprint, derive a crawl plan; resumable chunk cycles; closed doors are recorded, never opened. Local-image mount backend built; the rest designed. |
 
 ## Index — built-in (ship with Claude Code / the Claude apps)
 
@@ -95,4 +96,4 @@ content, not part of this project's own accumulated context.
 
 **Added 2026-10-13:** `nltk-zork-wordnet` — NLTK as the content-processing base for the Zork Sentence WordNet Parser (measured environment facts, Zork-to-NLTK mapping, disambiguation results, API cheat-sheet). Install with the others.
 
-**Added 2026-10-17:** `walk-the-hallway` — Cody's mount-the-binary method for exploring the negative space of a .bin / firmware / factory image: read-only mounts under every device-backed filesystem type (comma-list probe), an offset-signature scan for when nothing opens at offset 0, and a HARD WALL against AppArmor paths. Ships `scripts/hallway_mount.py` (dry-run by default, self-tested wall) and `scripts/scan_offsets.py`, the mount(8) `-t` excerpts and the script lineage. Install with the others.
+**Added 2026-10-17:** `walk-the-hallway` — Cody's breadth-first, level-at-a-time **surface mapper** for any public-facing collection, across many protocols and filesystems (the `mount` door itself, S3 prefixes, FTP, HTTP indexes, REST/TAP/ObsCore, container files such as FITS/tar/HDF5). It records the structure as its own sitemap, which powers the actual crawl, in resumable chunk cycles; a closed door (AppArmor, `robots.txt`, login, paywall, rate limit) is recorded and never opened. **Built:** the local-image mount backend (`scripts/hallway_mount.py`, dry-run by default, self-tested wall; `scripts/scan_offsets.py`). **Designed:** the rest (`references/surface-map.md`). Install with the others.

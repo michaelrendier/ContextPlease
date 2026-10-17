@@ -8,4 +8,4 @@ nltk-zork-wordnet, observer-position, scad-spatial, unit-management) get theirs 
 
 | skill | page | one line |
 |---|---|---|
-| walk-the-hallway | [walk-the-hallway.md](walk-the-hallway.md) | mount a binary read-only under every device-backed filesystem type, find what opens, fingerprint by structure; AppArmor hard wall |
+| walk-the-hallway | [walk-the-hallway.md](walk-the-hallway.md) | breadth-first surface mapper for any public-facing collection and protocol (mount family, S3, FTP, HTTP, APIs, TAP, container files); records its own sitemap to power the real crawl; resumable chunk cycles; generalised AppArmor/robots wall. Built: local-image mount backend |
