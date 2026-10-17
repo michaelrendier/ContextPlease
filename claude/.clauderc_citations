@@ -220,3 +220,17 @@ QUEUED | J. Basile, libraryofbabel.info-algo (2019, CC BY-SA-NC) ; "Grains of Sa
   | an invertible pseudo-random number generator (LCG + shift/XOR) joins a numeric location to a page/image, nothing stored
   | the scrambled member of the hyperindex family; ordered address = the Hyperwebster
   | FourthAgePapers/HyperindexingSystem (paper §1) ; ValaQuenta modules/basile ; Ainulindale/wiki/124
+
+# --- STYLE EXEMPLARS (not Post-Hoc): white papers read for cs-paper-code-conventions §9 "What an introduction is" (2026-10-15) ---
+QUEUED-DONE | Vaswani 2017 (Attention Is All You Need); Radford 2018 (GPT-1); Nakamoto 2008 (Bitcoin); Stevens 2017 (SHAttered); Nemec 2017 (ROCA); Kocher 2018 (Spectre)
+  | copies: ContextPlease/claude/skills/cs-paper-code-conventions/references/WhitePaperIntroExemplars/ ; ledger rows in references/INDEX.md ; used in: skills/cs-paper-code-conventions §9
+
+# --- VAPMIP PAPER "Forward Propagation of Information" (2026-10-16) ---
+BUILT-AGAINST | de Marrais 2000, The 42 Assessors and the Box-Kites they fly, arXiv:math/0011260 ; WordNet (Miller 1995; Fellbaum 1998) ; Infocom/Zork parser (Lebling/Blank/Anderson 1979) ; NLTK (Bird/Klein/Loper 2009)
+COMPARISON | public per-query energy: Altman 2025 (0.34 Wh), You/Epoch 2025 (0.3 Wh), Vahdat et al./Google 2025 (0.24 Wh)
+  | copies: ContextPlease/claude/references/VAPMIPPaper/ (mirror VAPMIP/paper/references/) ; ledger rows in references/INDEX.md
+  | UNVERIFIED (not fetched, ACM bot challenge / books): Miller 1995, Fellbaum 1998, Lebling 1979, Bird 2009 — details from memory
+POST-HOC (VAPMIP paper, 2026-10-16) | Moreno 1998 (arXiv q-alg/9710013, fetched) ; Corless et al. 1996 Lambert W (fetched) ; Knuth 1973 TAOCP 3 §6.4 (book) ; Smith 1939 (paywalled) ; Cawagas 2004 (403) — page Ainulindale/wiki/128_vapmip_paper_citation_pass_2026_10_16.md
+BUILT-AGAINST (orb-weaver impetus, 2026-10-16) | Veritasium 2026, "Is spider web really stronger than steel?" (YouTube wt4p2oalmRY, 2026-08-02): spidroin nanocrystal/amorphous structure, pH-dial N-terminal pairing, spinning duct + drawdown taper -> Phase 35 idea grammar (CRYSTAL/SLACK/TRANSITION/BIND)
+  | copies: ContextPlease/claude/references/VAPMIPOrbweaver/ (mirror VAPMIP/docs/references/VAPMIPOrbweaver/) ; ledger row in references/INDEX.md ; used in: hist_prime/VAPMIP/CONTEXT_PRIMER_2026-10-16_SEMANTIC_ORBWEAVER.md
+  | secondary Post-Hoc from the same arc (already paged): Vollrath & Knight (Ainulindale wiki 113), Rising & Johansson (wiki 117), Halliday & Hasan (wiki 118)

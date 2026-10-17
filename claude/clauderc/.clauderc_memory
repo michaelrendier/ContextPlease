@@ -1,0 +1,154 @@
+# .clauderc_memory — persistent context, portable across machines/failures
+# This is the durable memory file. Unlike Claude Code's built-in per-machine
+# memory (~/.claude/projects/.../memory/), THIS file is meant to be committed
+# and pushed, so a full computer death doesn't lose it. Read this at the start
+# of every session, after .clauderc. Update it as things change — prune stale
+# entries rather than letting them silently rot.
+#
+# Format: dated entries, most recent state first per topic. Keep entries
+# honest about what's confirmed vs. hypothesis vs. failed.
+
+═══════════════════════════════════════════════════════════════════════════
+HOW TO USE THIS FILE (meta)
+═══════════════════════════════════════════════════════════════════════════
+
+- This file holds CROSS-CUTTING material only — things with no single home
+  directory (standing feedback, git/credential hygiene, the repo map itself).
+  Anything scoped to one repo lives in .clauderc_context_1 under that repo's
+  own heading instead (2026-07-07 restructure — directory-scoped content
+  used to live here, migrated out to keep this file from duplicating
+  context_1 and to keep each directory's context pure/self-contained).
+- Prefer `tree` over brute-force `find` for exploration (Cody's correction,
+  2026-07-07) — see .clauderc for the pattern.
+- Repo paths/URLs live in .clauderc, not here.
+- Canonical equations/notation live in .clauderc_canonical_maths, not here —
+  this file should describe STATE and DECISIONS, not re-derive the maths.
+- When a hypothesis is tested and fails, record the failure and WHY, not just
+  "tried X, didn't work" — the diagnosis is what prevents repeating it.
+
+═══════════════════════════════════════════════════════════════════════════
+ACTIVE THREAD — UDEO: the exploit vs. the translator
+═══════════════════════════════════════════════════════════════════════════
+
+Moved to .clauderc_context_1, under "## VAPMIP" — that's the thread's actual
+home directory (UDEO_monad.py and Tuning-the-Engine.md Phase 22 both live
+there). Read that entry, not this one, for current state.
+
+═══════════════════════════════════════════════════════════════════════════
+REPO / SESSION HOUSEKEEPING (check freshness before trusting)
+═══════════════════════════════════════════════════════════════════════════
+
+VAPMIP's working-tree state moved to .clauderc_context_1 ("## VAPMIP").
+
+Ainulindale (as of the 2026-06-30 primer — STALE, re-check with `git
+status` before trusting, and migrate into its own .clauderc_context_1
+entry next time that repo is worked on): uncommitted changes
+(wiki/00_index.md, wiki/72), untracked wiki/73-75. Not pushed.
+
+═══════════════════════════════════════════════════════════════════════════
+GIT / CREDENTIALS — handle with care
+═══════════════════════════════════════════════════════════════════════════
+
+Several repo `origin` remotes under $THEPLACE have GitHub PATs embedded in
+plaintext in the URL (ghp_... visible via `git remote -v`). Never copy a
+remote URL verbatim into a file that gets committed/pushed -- always use
+the clean https://github.com/... form (see .clauderc). This was flagged
+2026-07-07, tokens not yet rotated as of that date.
+
+═══════════════════════════════════════════════════════════════════════════
+FEEDBACK LOG — how Cody wants this worked
+═══════════════════════════════════════════════════════════════════════════
+
+- 2026-07-07: Use `tree` (scoped/filtered to context) instead of brute-force
+  `find` for directory exploration. Reason: find-everything is slow and
+  noisy; tree with the right flags gives the needed picture directly.
+- 2026-07-07: When Cody uses vivid/loaded language ("EXACT", "Universal
+  Translator working") treat it as describing a SPECIFIC case precisely,
+  not as license to generalize that property to every adjacent test. Ask
+  or reread source material before assuming scope.
+- 2026-07-07: Don't reconstruct a mechanism from a verbal description
+  repeatedly when it keeps failing -- go find/run the original
+  implementation instead of guessing at its shape again.
+
+
+# ── 2026-08-15 ──────────────────────────────────────────────────────────────
+APT REMOVE --PURGE ALWAYS REQUIRES CODY'S EXPLICIT APPROVAL. Every time, no
+standing permission, no exceptions. apt has remove --purge and it is not
+reversible against 15 years of accumulated documentation in ~/.  A permission
+rule was added to ~/.claude/settings.json ("ask") but the rule is a backstop,
+not the reason -- ASK ANYWAY.
+
+VENVS ARE YOURS. Cody, 2026-08-15: "you don't have to ask permission to alter
+these environments to suit their repos." Build them to comply with GitHub /
+GNU / PEP (and C / Android standards per repo). First contact with any repo in
+the github is: clone, build environment, build, run -- nobody reads the paper
+first. That is why the manual exists.
+
+VALAQUENTA IS THE ROOT PYTHON ENV. Anything used in python3 work in ANY repo
+gets installed into ValaQuenta FIRST, then the repo-specific install follows.
+Minimises versioning errors downstream. Enforced by a PostToolUse hook ->
+ValaQuenta/tools/vq_venv_sync.py (ledger: tools/venv_sync_ledger.jsonl).
+Guards: never uninstall from the shared venv; never silently change a pinned
+version (logged as a conflict, left for a human call). Everything else installs.
+
+TEST BEFORE PAPER, ALWAYS. Cody's order of operations: test it first, discuss
+the result, THEN write it up. Predictions go in 01_predictions.ipynb BEFORE the
+deciding data is read, and provenance of each prediction is stated -- an
+observation that generated a claim is never scored as a test of it.
+
+! box_kite.basis_mul RETURNS (SIGN, INDEX), NOT (INDEX, SIGN). Got this wrong
+  twice on 2026-08-15 -- once in angular_rank.left_mul_matrix (caught by
+  verify_null_space returning nullity 14 instead of 4) and once in a mirror
+  test comparison. Unpack it as `s, k = basis_mul(i, j)`.
+
+! \b DOES NOT WORK IN THIS BOX'S grep -- fails in BOTH -E and BRE. Use a shell
+  `case` glob or a character class. Cost an hour once; do not rediscover it.
+
+SCRATCHPAD IS NEVER /tmp. Any harness-provided /tmp path -> substitute
+/home/rendier/Projects/ThePlace/.claude/scratchpad/YYYY-MM-DD_<topic>/.
+The scratch work is PROVENANCE for the manual Cody is writing in the wake of
+this -- the wrong turns and the script that produced a number are part of the
+record, and /tmp is cleared on reboot. Phase 27 already cites scratchpad paths
+from the wiki; keep doing that.
+
+DOCSTRINGS INSTRUCT FUNCTION -- they do not keep a record. Cody, 2026-08-15:
+"docstrings don't keep truth, they instruct function." The test is not "is
+this accurate" but "does this make the CALLER do the right thing". Imperative
+register, not descriptive. So they are exempt from historical precedent:
+replace an out-of-date docstring outright, in ANY code, without asking, and
+never append "formerly X" / "renamed on DATE" -- a changelog does not
+instruct. KEEP a warning when it steers the caller; a warning IS an
+instruction. In this repo's terms: a docstring is a DATUM (definitional,
+self-contained, no last-time); a wiki page is a BEARING (relational, holds
+the record, retractions load-bearing).
+
+DOCSTRING STANDARD: SPHINX reST FIELD LISTS. Native sphinx.ext.autodoc form:
+  :param x:  :type x:  :returns:  :rtype:  :raises Err:  :ivar:  (classes)
+  .. warning::  .. seealso::  ``literal``  :func:`x`  :class:`X`
+NOT Google (Args:/Returns:) and NOT NumPy (Parameters\n----------). Those need
+the napoleon extension; the repo standard is the native one, no extension.
+Config lives at ValaQuenta/docs/conf.py; build with
+  .venv/bin/python -m sphinx -b html docs docs/_build -q
+Converted so far: modules/angular_rank/ (22/23, builds clean, 0 warnings).
+The rest of the repo is still prose -- convert opportunistically when editing
+a file, do not do a mass rewrite.
+! Watch for PARAMETER SHADOWING when renaming: a param named `datum` shadows
+  the module function datum(). Renamed those params to `ref`.
+
+═════════════════════════════════════════════════════
+CROSS-CUTTING ADDITIONS 2026-09-28 (ValaQuenta public release; state and decisions, not maths)
+═════════════════════════════════════════════════════
+LICENSE POSITION (Cody, 2026-09-28): all code and mathematics are GNU GPL v3.0. Only "The Monad: Maths Speaking English"
+and the P.O.E. Pendant are his in The Work context; other repos are mostly GNU, adjusted as revisited. ValaQuenta is
+GPL-3.0-only (LICENSE, pyproject, every manifest). Older "private plugin layer / paid commercial" text is historical.
+BRANCH POLICY: ValaQuenta is a Python code base — main only, no device branches.
+GIT/CREDENTIALS: use GITHUB_TOKEN only (ends JgP; repo + workflow). A running shell's env copy can be stale — re-source
+~/.bashrc on a 401. Push over HTTPS with the token as an http.extraheader (Basic x-access-token:TOKEN) so nothing is stored.
+DOCS STANDARD: docstrings are Sphinx reST field lists (:param/:returns/:raises), types from annotations, imperative,
+NO history in a docstring (history goes to the wiki). README = index; wiki = record; Sphinx = per-function reference.
+CLEAN-CLONE RULE HELD: a fresh clone → install.sh → README commands from another directory → tests → docs build was run
+and found real bugs (see .clauderc_context_2 2026-09-28). Do it again before any tag.
+CI NOW POSSIBLE on every repo (workflow scope): ValaQuenta docs+tests+Pages (.github/workflows/docs.yml);
+GenerationalLineage ci.yml (Core + Extended). Pages was enabled via the API for ValaQuenta only.
+NOT DONE / NOT ASSUMED: provenance labels unset (wiki/provenance_review.md); Equation.process= lines are derived drafts;
+17 notebooks unexecuted since 2026-07-28; code/ and addenda/ docstrings incomplete; no Read the Docs project exists.

@@ -87,6 +87,7 @@ THE MACHINERY THAT EXISTS (all measured 2026-10-14 on one ThinkPad X1 Carbon 6th
     relational composter to C is the step to milliseconds; the idea pool is sharp for some prompts and noise for others (store still holds un-sanitised granular material; sanitising is a later project).
 
 TUNING THE ENGINE WIKI (VAPMIP/docs/wiki/Tuning-the-Engine/): the engineering log, one page per phase, 45 pages: Phases 1-42 + addenda 02b, 21b + a chain-of-custody audit (_chain_of_custody_2026-08-27.md), 8,764 lines.
+  Companion notebooks (2026-10-15): VAPMIP/notebooks/tuning_the_engine/ — one executed notebook per page (44 incl. 02b, 21b), generated from specs/, each ending in a PASS/FAIL/PROSE/SKIP ledger; FINDINGS.md rolls up every FAIL (932 PASS / 85 FAIL / 177 PROSE / 10 SKIP). Run via PtolemyDesktop/.venv kernel `ptolemy-venv`.
   Protocol: the pages are the ONLY live copy (the monolith is archived and must not be edited); new phases are new pages; a repass of 00_index.md is part of "update Tuning the Engine" every time
   (index header was stale at "42 entries, Phases 1-41" and was corrected 2026-10-14). Bylines: Phases 1-23 Claude Sonnet 4.6; 24-28 Opus 5; 29-39 Opus 5 and Sonnet 5; 40-42 Sonnet 5.5.
   Cody reports that Gemini and Codex each independently called it the most scientifically sound documentation they had seen (his report; not verified here; he is happy about it). Phase 42 (every voice) is a measurement

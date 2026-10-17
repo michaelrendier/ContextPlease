@@ -511,3 +511,7 @@ spectral_primes/
     beam_geometry.py, output_beam_geometry.txt
 2026-10-14_addition_matrix_followups/
     chase_borderline_cell.py, output_chase_borderline_cell.txt, README.md
+
+2026-10-15_circle_unit_session/  — circle/unit-circle session (p1–p7 + README.md): heartbeat ½-radius circle, UNS-constant circle table, fast-inv-sqrt, dipole→normal, wire/gravity/Mandelbrot translation, zeta lobes, ℓ_p circles. No GL code written.
+
+2026-10-15_vapmip_paper/  — evidence for the VAPMIP paper on ptol.c + ptolemy_monad.py: q1 surface, q2 twin+projection parity, q3 conservation claim test, q4 eyes/monotone, q5 parser tables, q6 U-shape. Generator: VAPMIP/paper/.
