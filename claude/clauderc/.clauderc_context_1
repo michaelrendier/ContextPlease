@@ -15,7 +15,7 @@
 All per-repo entries were cleared by Cody's instruction after everything was pushed (pre-clear copy: ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-17).
 NEXT SESSION starts on PTorrent, then the primer
     ContextPlease/claude/hist_prime/PTorrent/CONTEXT_PRIMER_2026-10-17_INSITU_EVALUATION_EINSTEIN_CROSS.md
-(improve PTorrent's in situ dataset evaluation; truck burglary lost most telescope data; starting pad = the most-cited Einstein cross; nothing built).
+(shore up PTorrent in situ dataset evaluation so telescope data need not be re-downloaded after the truck burglary; the data still exists at its archives; starting pad = the most-cited Einstein cross; nothing built).
 
 ## PTorrent
 2026-10-17: 19 domain bins (c, foundations, mathematics, meaning, physics, python, sedenion, war + holcus_ copies; phone foundations/meaning/fermat) moved bin_archive/clean -> dirty with a POISON.md each (copies in ContextPlease/claude/monad_bin/poison_notes/). New sanitised monad_mathematics.bin and monad_physics.bin are in bin_archive/clean (built by VAPMIP/Wernicke/sanitize/build_bins.py; 75 of 341 corpus URLs returned no text). Fetched page text is local in corpus_text/ (gitignored). Env vars for corpus lists and bins are in ~/.clauderc (PTORRENT_BINS, CORPUS_*_LIST, BIN_*_OLD). Granular-bin rule (Cody): they are weight layers over the whole vocabulary, never combined, never read directly.

@@ -1,7 +1,7 @@
 # Context primer, 2026-10-17: improving the in situ evaluation of datasets (starting pad: the most-cited Einstein cross)
 
-## Why this exists (Cody, 2026-10-17)
-His truck was burglarized and most of his telescope data is gone. He wants to improve PTorrent's **in situ evaluation of datasets** so that data can be re-obtained and evaluated where it lives, instead of depending on local copies. The engineering starting pad is to arrange **the most cited Einstein cross in the literature** as the first dataset family to evaluate.
+## Why this exists (Cody, 2026-10-17; corrected the same day)
+His truck was burglarized (hospital parking lot, during a doctor's appointment). The telescope data is NOT lost: it still exists at its archives and only has to be re-downloaded, which is a pain. So the goal is to shore up PTorrent's **in situ evaluation of datasets** code, so that data can be evaluated where it lives and a re-download is not needed. The engineering starting pad is to arrange **the most cited Einstein cross in the literature** as the first dataset family to evaluate. (The first version of this primer said the data was lost; that was wrong.)
 
 ## What is already in the repos (read these first)
 * `PTorrent/spec/ptorrent-format-v1.md`: job type `evaluation` = "Data Transversal, apply evaluation terms (bin) to a structured dataset in situ"; output is a `.peval` file announced with an `EVALUATE` transaction. `output_format` includes `"peval"`, `"fits"`, `"hdf5"`.
@@ -13,7 +13,7 @@ His truck was burglarized and most of his telescope data is gone. He wants to im
 
 ## Open items (nothing below is decided or built)
 1. **Which cross is "the most cited"?** The object conventionally called the Einstein Cross is the lensed quasar Q2237+0305 (Huchra's lens; lens galaxy ZW 2237+030). That is my recollection and still needs verifying. "Most cited" must be measured, not assumed: pull citation counts from ADS or INSPIRE for the candidates (Q2237+0305, the Refsdal cross, others) and record the query, the date and the counts.
-2. **What was lost?** Cody has not yet listed which telescope datasets were in the truck. Ask for an inventory (instrument, target, dates, where copies may still exist: Datasets volume, phone pulls, cloud) before designing recovery.
+2. **Which datasets would otherwise be re-downloaded?** Ask Cody which telescope datasets he needs again (instrument, target, archive), so the evaluation code is designed around those archives.
 3. **What "improve in situ evaluation" means concretely** (his words are the only spec): evaluate the dataset where it is hosted (archive API, no full download) and ship only the `.peval` result plus the terms. Decide which of the existing `.peval` fields are enough and what is missing for lensed-quasar light curves, astrometry of the four images and time delays.
 4. Keep to the standing protocols: public archives only, Mozilla user agent on every request, a paywall or login page is a stop, every download logged in `ContextPlease/claude/references/INDEX.md` and `~/.clauderc_citations`.
 
