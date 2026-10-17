@@ -1,0 +1,34 @@
+# .clauderc_context_1 — per-directory current-state context, AUTHORITATIVE
+#
+# One entry per top-level directory/repo. Live-edited in place, not a log —
+# when something changes, overwrite the stale part, don't append a new dated
+# block (that's .clauderc_context_2's job, for historical/poignant material).
+#
+# Populated ONE REPO AT A TIME (Cody's instruction, 2026-07-07) to keep each
+# entry's context pure — no cross-repo bleed from reading multiple repos'
+# docs in the same pass.
+#
+# Each entry should carry a source_hash line: sha256 of the primary docs it
+# was distilled from. Before trusting a cached entry, re-hash those files —
+# match means skip re-reading them; mismatch means the entry is stale and
+# needs re-deriving. Recompute with:
+#   sha256sum <files listed in source_files>
+#
+# Extraction (once seeded in .clauderc, see ctxdir() there):
+#   awk '/^## VAPMIP$/{f=1;next} /^## /{f=0} f' .clauderc_context_1
+#
+# Cody: papers under active repos may contain known errors pending your own
+# corrections (flagged 2026-07-07, corrections deferred until this file
+# system is settled). Entries below describe STATE AND STRUCTURE as of the
+# read date — treat specific numeric/technical claims as provisional until
+# you've done your pass and this note is removed.
+
+## NOTE (2026-10-16): cleared on purpose
+All per-repo entries were cleared by Cody's instruction at the end of the VAPMIP-paper session (after ContextPlease was pushed; the pre-clear copy is ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-16, commit e60a845).
+NEXT SESSION: start from the context primer
+    ContextPlease/claude/hist_prime/VAPMIP/CONTEXT_PRIMER_2026-10-16_SEMANTIC_ORBWEAVER.md
+(the semantic orbweaver pathway, Phase 43: orbweaver monad into the semantic part of the sentence constructor on the original semantic prime hash; no boxkite there; semantic web weighted heavier than the context boxkite; discussion first, nothing built). Stub page: VAPMIP/docs/wiki/Tuning-the-Engine/43_semantic_orbweaver_pathway_construction.md.
+Repopulate entries here ONE REPO AT A TIME as the work needs them (see the header rules above).
+
+## VAPMIP
+Semantic orbweaver work: live notes in VAPMIP/docs/semantic_orbweaver_notes.md (mirror ContextPlease/claude/hist_prime/VAPMIP/). May bins read-only in VAPMIP/checkpoints/clean/. T0 traced 2026-10-17 (holcus = demotic rule, same first word for all 8 prompts). Broca/Wernicke dirs + Boxkite/Orbweaver branches pending his answer on the assignment.

@@ -16,6 +16,8 @@ Both papers are attached and live in public repositories, where the code, the no
 
 What I am asking for is simple. The part of the engine that gathers knowledge is built; the part I am missing is the shape of language, how the relations you recorded turn into a sentence that sounds like a person. If you or your colleagues could take a look, and show me where the structure really lies, or tell me plainly that I have misunderstood something, I would be deeply grateful. I am not asking for endorsement.
 
+One practical need sits under that. My engine can only read WordNet; it cannot add to it. When it meets a word your database does not carry (in 3.0, "phasor" and "abelian" return no synset), I have no sanctioned way to define the new word, place it under a hypernym, and update the relations on both sides so that every count stays consistent. I have started to build an overlay for this, so that nothing of yours is ever altered, but I would much rather do it the way you would. If there is a recommended procedure, or a tool such as the lexicographer's grind program, that you could point me to, or if you could tell me which pairs of relations must always be updated together, that would help me more than anything else.
+
 WordNet's license and copyright notice are carried in the repositories, and I cite Miller (1995) and your 1998 volume throughout.
 
 Thank you for WordNet, and for your time.
