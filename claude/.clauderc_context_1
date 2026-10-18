@@ -8,24 +8,10 @@
 # entry's context pure — no cross-repo bleed from reading multiple repos'
 # docs in the same pass.
 #
-# Each entry should carry a source_hash line: sha256 of the primary docs it
-# was distilled from. Before trusting a cached entry, re-hash those files —
-# match means skip re-reading them; mismatch means the entry is stale and
-# needs re-deriving. Recompute with:
-#   sha256sum <files listed in source_files>
-#
-# Extraction (once seeded in .clauderc, see ctxdir() there):
-#   awk '/^## VAPMIP$/{f=1;next} /^## /{f=0} f' .clauderc_context_1
-#
-# Cody: papers under active repos may contain known errors pending your own
-# corrections (flagged 2026-07-07, corrections deferred until this file
-# system is settled). Entries below describe STATE AND STRUCTURE as of the
-# read date — treat specific numeric/technical claims as provisional until
-# you've done your pass and this note is removed.
-
-## NOTE (2026-10-16): cleared on purpose
-All per-repo entries were cleared by Cody's instruction at the end of the VAPMIP-paper session (after ContextPlease was pushed; the pre-clear copy is ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-16, commit e60a845).
-NEXT SESSION: start from the context primer
-    ContextPlease/claude/hist_prime/VAPMIP/CONTEXT_PRIMER_2026-10-16_SEMANTIC_ORBWEAVER.md
-(the semantic orbweaver pathway, Phase 43: orbweaver monad into the semantic part of the sentence constructor on the original semantic prime hash; no boxkite there; semantic web weighted heavier than the context boxkite; discussion first, nothing built). Stub page: VAPMIP/docs/wiki/Tuning-the-Engine/43_semantic_orbweaver_pathway_construction.md.
-Repopulate entries here ONE REPO AT A TIME as the work needs them (see the header rules above).
+# Each entry should carry a source_hash line (sha256 of the docs it was distilled from).
+# Extraction:  awk '/^## VAPMIP
+source: SemPriCon/ (VAPMIP repo, pushed 2026-10-18: 29b2d2d assessment, 6ec2b3d gitignore, ba5acaf paper+notebooks); primer ContextPlease/claude/hist_prime/VAPMIP/CONTEXT_PRIMER_2026-10-18_SEMPRICON.md
+CURRENT (2026-10-18): VAPMIP/SemPriCon/ = work dir for the white paper "The Golden-Ratio Monad" (the May-2026 C monad, PtolC @ eb28ce8, answered "what is your name" with holcus·same·stuff·seemy). DONE: Fresh Start record (store monad_wordnet_v4_20260519.bin = DIRTY/PASS, POISON.md + ASSESSMENT.md + assessment.json in SemPriCon/dirty/, bin gitignored AFTER push); unmodified source at src/PtolC_eb28ce8; read-only reader + assessor + line-for-line Python port (tools/monad_py.py, replies 8/8 byte-identical to the compiled binary, learned state exact); 6 executed notebooks; paper (paper/The_Golden_Ratio_Monad.md/.pdf, 41 pp, generated: python3 paper/make_paper.py [--check|--cached]; paper/build_pdf.sh). Cody files it on arXiv (spelling: arXiv) when happy. THE CODE IS AUTHORITATIVE to the paper.
+FINDINGS: (1) store has 0 non-ASCII words; C tokenizer (isalpha, C locale) discards non-ASCII bytes -> multilingual could not enter this build. (2) first word holcus = display label of slot 24639 = the slot of the word "in" (holcus beats in by 1.2e-6 in E); slot is 5th hub (18,268 links); chosen by nearest-E-to-Omega selector, not by prompt. (3) identity text (PTOLEMY_IDENTITY, -i) IS in the store: 646/646 edges present (chance ~14). (4) address collapse: float seed loses fractional bits; every word >=8 letters -> slot 0 (49,018/76,719 WordNet lemmas); 7 letters -> 64 slots. (5) slot displays highest-E arrival; only 5.1% of WordNet lemmas are their slot's label (tree->typhon, water->defrg, is->nanti, name->emite). (6) other limits in paper 17.
+NEXT: modify (never rewrite) toward a semantic prime-concept hash: concept key BEFORE monad_word_coords; WordNet = weighting/calibration/fallback; orbweaver context only for new functionality. Then a 5-language test: living languages, none Indo-European, no shared roots/heavy contact, concrete basic-vocabulary nouns, ASCII transliteration, forms <=6 letters (address resolution), loans checked vs WOLD/etymological dictionaries; predictions pre-registered BEFORE the run. Languages NOT yet chosen. Literature in the paper is cited-not-fetched: verify before filing.
+RULES: store read-only; monad3_c.bin + anything ptol.c uses untouched; assessments pushed before bins are gitignored.
