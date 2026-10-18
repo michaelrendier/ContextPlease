@@ -93,7 +93,7 @@ Rule: keep the Gutenberg header and the Wikipedia footer when these files are co
 The August 2026 commercial deal terms (COMMERCIAL_TERMS.md: exclusive licence to the highest bidder, 5 or 10 years, 10-year price 2.5x the 5-year, 50/50 split with the
 Ryan White Foundation, attorney requirement) and a draft BSL-style LICENSE.md were committed to the PUBLIC repo michaelrendier/FourthAgePapers as
 DataStorageNoLocation/ in commit 7488acf ("paper stub"). They were removed from the tree on 2026-10-18 (merge of DataStorageNoLocation into HyperindexingSystem) and are NOT in the
-merged project, but THEY REMAIN IN GIT HISTORY. Cody's 2026-10-14 position: no prices, terms or motive in a repo. Scrubbing = git filter-repo + force push on a public repo: NOT done, his decision.
+merged project, but THEY REMAIN IN GIT HISTORY. Cody's 2026-10-14 position: no prices, terms or motive in a repo (going forward: nothing is hidden by rewriting; the record stays). History is NEVER rewritten (Cody, 2026-10-18: "you are never allowed to rewrite history. period."): no scrub, no force push. The removal was an ordinary commit.
 Private copies: ~/Desktop/SpaceClaude/FourthAgePapers_removed_drafts_2026-10-18/ (outside any repo).
 
 @LIC_OPEN_ITEMS

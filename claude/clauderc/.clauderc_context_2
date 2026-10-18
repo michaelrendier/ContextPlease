@@ -504,3 +504,21 @@ THINGS MEASURED THAT THE NEXT AGENT SHOULD NOT RE-DERIVE:
 NOT DONE / OPEN: robots route for MAST and HEASARC (honour + buckets, ask helpdesks, Fornax/CANFAR, or a documented-API exception); CRDS
 reference files named in headers are recorded not fetched; Gaia scaffold not in the manifest; ESO, ALMA and Chandra not wired into the
 downloader; the hallway explorer and Tesla/Protocols are documentation only.
+
+---
+
+## 2026-10-18 — "you are never allowed to rewrite history. period."
+
+Said by Cody while the DataStorageNoLocation → HyperindexingSystem merge was being pushed, after the model had found the August commercial terms in the
+public FourthAgePapers history (commit 7488acf) and had listed a history scrub as an option "for his decision". Recorded verbatim, because it is a rule of the
+whole project, not a remark:
+
+  "you are never allowed to rewrite history. peroid. every commit message, every mistake, every realization the model handed me wrong information stays in
+  everything. i am specifically dropping every bit of this documentation for the purposes of any researchers coming through here...it's not so people feel i
+  have integrity, it's becasue others are going to see a mistake and make it work...it's because i want as much help in this work as i can get...and while
+  doing this all alone for the most part so far, documentation is the only feedback mechanism i have to leave in place."
+
+Consequences applied the same hour: no amend/rebase/filter-repo/force-push, and never offered as an option; the merge was done with ordinary commits only
+(0cad267, 7166d87, 9e01620 on FourthAgePapers); the removed draft terms files are still in history and in a private copy; the earlier note calling a scrub "Cody's
+decision" was corrected by a NEW entry, not edited out of the past. A removal from a tree is an ordinary commit. Model errors made in this conversation stay recorded as
+errors (e.g. that several dozen requests went to MAST and HEASARC before their robots.txt was read; that a `--help` probe was a bad probe of a script with no argparse).
