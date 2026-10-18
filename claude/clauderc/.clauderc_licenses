@@ -39,6 +39,8 @@ UD-EWT (Universal Dependencies English Web Treebank), used to train the tagger o
 @LIC_BASILE_LIBRARY_OF_BABEL
 ValaQuenta basile engine: only the IMAGE algorithm is published, under CC BY-SA-NC.  [KNOWN]
 Never vendor that code into GPL repos (NC is incompatible with GPL). Reimplement from the paper's description, cite it.
+2026-10-18 (Cody): the Basile work is personal reference, not load bearing; ValaQuenta/.gitignore lists modules/basile, notebooks/basile, tests/test_basile.py, docs/api/modules/basile.rst, wiki/basile.md, wiki/toolbox/39_basile.md.
+CAVEAT: FourthAgePapers/HyperindexingSystem/paper/test_listings.py line 19 imports ValaQuenta.modules.basile unguarded, so it fails in a clean clone.
 
 @LIC_ZORK_INFOCOM
 Infocom/Zork parser = built-against prior work, never Post-Hoc, never vendored.  [KNOWN]  README Prerequisites item 10.
@@ -80,6 +82,19 @@ the skill publishes the classification table (names + scroll archetypes), not RO
 @LIC_ANDROID_SDK
 Android SDK (/home/rendier/Android/Sdk) and AndroidX/Material libraries used by android/PtolemySeeder: Android SDK licence + Apache-2.0 for AndroidX.  [MEMORY]
 APK builds bundle those libraries; carry their NOTICE files if an APK is published.
+
+@LIC_HYPERINDEXING_TEST_INPUTS
+FourthAgePapers/HyperindexingSystem/reengineer/ and corpus/ hold third-party test inputs (committed 2026-10-18, commit 0cad267):
+  Jupiter.html, Pythagorean_theorem.html: saved Wikipedia pages, CC BY-SA 4.0 (attribution and licence line are inside each page; one-way compatible into GPL v3).  [MEMORY: confirm]
+  pg1001.txt (twice: corpus/ and reengineer/): Project Gutenberg #1001, Longfellow's Inferno; Gutenberg licence header kept intact in the file; public domain in the US.
+Rule: keep the Gutenberg header and the Wikipedia footer when these files are copied; cite them in the paper's references.
+
+@LIC_PUBLIC_HISTORY_EXPOSURE
+The August 2026 commercial deal terms (COMMERCIAL_TERMS.md: exclusive licence to the highest bidder, 5 or 10 years, 10-year price 2.5x the 5-year, 50/50 split with the
+Ryan White Foundation, attorney requirement) and a draft BSL-style LICENSE.md were committed to the PUBLIC repo michaelrendier/FourthAgePapers as
+DataStorageNoLocation/ in commit 7488acf ("paper stub"). They were removed from the tree on 2026-10-18 (merge of DataStorageNoLocation into HyperindexingSystem) and are NOT in the
+merged project, but THEY REMAIN IN GIT HISTORY. Cody's 2026-10-14 position: no prices, terms or motive in a repo. Scrubbing = git filter-repo + force push on a public repo: NOT done, his decision.
+Private copies: ~/Desktop/SpaceClaude/FourthAgePapers_removed_drafts_2026-10-18/ (outside any repo).
 
 @LIC_OPEN_ITEMS
 1. PTorrent root GPL v3 vs core/curses LGPL-3.0-or-later (see LIC_PTORRENT_SPLIT).
