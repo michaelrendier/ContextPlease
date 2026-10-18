@@ -44,6 +44,8 @@ sitemap is what **powers the actual crawl**. Nothing is evaluated and nothing is
 | the common node table, frontier queue, chunk-cycle runner, sitemap writers, crawl-plan derivation | **designed, not built** (`references/surface-map.md`) |
 
 See `references/surface-map.md` for the node record, the states, the walls, the chunk cycles and the outputs.
+**Tie to Tesla (Cody, 2026-10-17):** the walker lives in Phaleron (`WalkTheHalls`) and the protocols are stubbed against
+PtolemyDesktop's Tesla Face; only what Huchra's Lens needs is built, the rest is documented in `references/tesla-protocol-stubs.md`.
 
 ## The generalised wall
 

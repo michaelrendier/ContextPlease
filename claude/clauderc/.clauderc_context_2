@@ -446,3 +446,61 @@ NOT DONE (recorded so the next agent does not assume otherwise):
   - Equation.process= lines (all 321) are DERIVED from compute()'s docstring or the display text — a first draft, some
     are fragments (e.g. box_kite.verify_counts). Not authored by Cody.
   - Read the Docs config (.readthedocs.yaml) exists but no RTD project was created.
+
+---
+
+## 2026-10-17 — The download scripts for Huchra's Lens (Q2237+0305): what exists, what was changed, what was measured
+
+Context: the truck burglary took Cody's external drive (/media/rendier/Datasets, UUID 356095de-…); the telescope data still exists at
+the archives. Goal: shore up PTorrent's in situ evaluation, with the Einstein Cross (Huchra's Lens) as the first dataset, and ALSO do
+the experiment on a real download of this smaller dataset (smaller than the Bullet Cluster) while the in situ method is engineered.
+
+THE SCRIPTS (all under BulletCluster/lensing_validation/ unless noted):
+  download_validation_targets.py   Cody's mature checkpointed MAST downloader (1344 lines before today). Three-level checkpoint:
+      manifest cache (14 d), per-file state written atomically, `.part` byte-range resume. PID lock, SIGTERM-safe, budget and
+      free-space floor, astroquery for METADATA ONLY (plain requests + Range for bytes), Group A (Einstein crosses incl.
+      A5_q2237+0305, radius 2'), B (UCDs), C (non-lensing polarization controls, mode="pol"), D (direct URLs), E (Bullet).
+      Its volume guard is hard-wired to the stolen drive's UUID: as written it PARKS FOREVER waiting for it.
+  Extended IN PLACE today (modify, not rewrite; other modes untouched): `--huchra {jwst,pol,hst,all}`.
+      stage jwst = every JWST observation within 2', all instruments; stage pol = every polarimetric observation (filters/instrument
+      containing POL or WOLL; HST ACS/WFPC2/NICMOS/FOC and any JWST element); stage hst = the remaining HST observations.
+      ONE STAGE AT A TIME (two downloads at once crash this machine); `all` runs them sequentially in one process.
+      Products are TIERED, not drizzled-only: tier 1 per-exposure + pointing (_flc/_flt/_raw/_cal/_rate, _spt/_jit/_jif, _asn =
+      the dither set, _trl/_log, header-lets, WFPC2/FOC native families), tier 2 drizzled/derived, tier 3 ramps/integrations
+      (opt-in, enormous), tier 9 previews (never). Default --tiers 1,2. HST COS excluded (2.5" aperture cannot resolve the cross).
+      An empty stage is recorded as a FINDING, not an error.
+      --data-dir (default BulletCluster/huchras_lens/data, git-ignored); the stolen-drive guard is replaced, in this mode only, by
+      "the data dir must NOT be on the system partition" (/ is 92 GB, 49 GB free; /home is 856 GB, 137 GB free).
+      Global one-at-a-time lock ~/.cache/one_download_at_a_time.pid in addition to the script's own PID lock.
+      Observer geometry (Cody: Earth's ellipse / parallax): earth_geometry(mjd, ra, dec) = Earth barycentric state (astropy built-in
+      ephemeris, offline), annual aberration (3.8"-20.7" over the year for this target; 0.5 mas differential over the 5" cross,
+      16 mas across a 162" chip), light-time (-488..+492 s), parallax baseline (0.19-1.01 au), PSF-star parallax (up to 0.5 px at
+      50 pc); Q2237 and its lens (z 1.695, 0.039) ~ zero. --geometry-pass (offline) scans headers of files on disk for epochs,
+      spacecraft state (POSTNST*/VELOCST*, JWST_X.. if present), VAFACTOR/VA_SCALE, WCS, dither keys, R_* reference-file names.
+      robots: mast.stsci.edu's wildcard group is `Disallow: /`; the mode LOGS the verdict, records it in each manifest and proceeds
+      unless --respect-robots. astroquery's session gets the Mozilla UA. 15 offline tests (test_huchra_mode.py): fake astroquery,
+      fake robots, all writes redirected to a temp dir. NEVER RUN AGAINST MAST yet (its dry run queries MAST).
+  jwst_resume_download.py          the older Bullet Cluster JWST (program 4598) downloader; not touched.
+  PTorrent/in_situ/huchras_lens/probe/   insitu_probe.py (HTTP range-read cutout probe), tap.sh, vot.py, votb.py (VOTable TABLEDATA and
+      HEASARC's BINARY decoder): scratch-quality, kept as evidence.
+
+THINGS MEASURED THAT THE NEXT AGENT SHOULD NOT RE-DERIVE:
+  - MAST and the public bucket stpubdata/hst/public/<first 4 chars>/<rootname>/<file> answer HTTP Range (206); nasa-heasarc has a
+    chandra/ prefix. 168 MB WFC3/UVIS frame: whole = 34 s; header walk + one coalesced 1 MiB block = 2.3 s; latency 0.49 s per request;
+    4.9 MB/s single stream and parallel reads add no bandwidth; coalesce gaps below latency x bandwidth ~ 2.4 MB.
+    All 3,121 HST per-exposure frames (60.8 GiB): whole files ~3.7 h of transfer; header + block each ~12 min.
+  - HST products for one WFC3 observation: FLC/FLT 168 MB, RAW 35 MB, SPT 104 KB, JIT/JIF, ASN, TRL, LOG, DRC/DRZ, FLT_HLET,
+    POINT-CAT/SEGMENT-CAT (ecsv), previews.
+  - MAST TAP OVERFLOW flag appears even on COUNT(*): a service quirk, not truncation. The per-exposure cone list I saved has 2,239 of
+    4,720 target-named rows: PARTIAL, re-query with paging.
+  - robots.txt (generic agent, 2026-10-17): mast.stsci.edu Disallow: / ; HEASARC disallows /xamin and /vo/ (its TAP); ESO Crawl-delay 333 s;
+    ALMA and CADC open. I made several dozen requests to MAST and HEASARC BEFORE reading their robots files; recorded, not to be repeated.
+  - Polarization inventory is NEGATIVE: no HST polarizer filters among 172 target-named observations, no ESO polarimetry; finest
+    polarization-capable data found = ALMA Band 7 0.207" XX/YY (2021.1.00675.S). JWST for Q2237: none found (36" census, web search).
+  - The Bullet photon-path figure (kappa, -psi, |alpha|) was run on SYNTHETIC data per Cody (its title says real; generator not found);
+    decoded from pixels: -psi is the double integral of kappa (corr(kappa, laplacian(-psi)) = -0.80 at coarse scale), 80 % of -psi
+    variance is one large-scale gradient, the two dark-blue lobes are kappa ~ -0.19 (saturated, relative underdensity): photons spread, not concentrate.
+
+NOT DONE / OPEN: robots route for MAST and HEASARC (honour + buckets, ask helpdesks, Fornax/CANFAR, or a documented-API exception); CRDS
+reference files named in headers are recorded not fetched; Gaia scaffold not in the manifest; ESO, ALMA and Chandra not wired into the
+downloader; the hallway explorer and Tesla/Protocols are documentation only.

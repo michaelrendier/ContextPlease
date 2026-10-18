@@ -1,0 +1,34 @@
+# .clauderc_context_1 — per-directory current-state context, AUTHORITATIVE
+#
+# One entry per top-level directory/repo. Live-edited in place, not a log —
+# when something changes, overwrite the stale part, don't append a new dated
+# block (that's .clauderc_context_2's job, for historical/poignant material).
+#
+# Populated ONE REPO AT A TIME (Cody's instruction, 2026-07-07) to keep each
+# entry's context pure — no cross-repo bleed from reading multiple repos'
+# docs in the same pass.
+#
+# Each entry should carry a source_hash line (sha256 of the docs it was distilled from).
+# Extraction:  awk '/^## VAPMIP$/{f=1;next} /^## /{f=0} f' .clauderc_context_1
+
+## NOTE (2026-10-17): cleared on purpose
+All per-repo entries were cleared by Cody's instruction after everything was pushed (pre-clear copy: ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-17).
+NEXT SESSION starts on PTorrent, then the primer
+    ContextPlease/claude/hist_prime/PTorrent/CONTEXT_PRIMER_2026-10-17_INSITU_EVALUATION_EINSTEIN_CROSS.md
+(shore up PTorrent in situ dataset evaluation so telescope data need not be re-downloaded after the truck burglary; the data still exists at its archives; starting pad = the most-cited Einstein cross; nothing built).
+
+## PTorrent
+2026-10-17: 19 domain bins (c, foundations, mathematics, meaning, physics, python, sedenion, war + holcus_ copies; phone foundations/meaning/fermat) moved bin_archive/clean -> dirty with a POISON.md each (copies in ContextPlease/claude/monad_bin/poison_notes/). New sanitised monad_mathematics.bin and monad_physics.bin are in bin_archive/clean (built by VAPMIP/Wernicke/sanitize/build_bins.py; 75 of 341 corpus URLs returned no text). Fetched page text is local in corpus_text/ (gitignored). Env vars for corpus lists and bins are in ~/.clauderc (PTORRENT_BINS, CORPUS_*_LIST, BIN_*_OLD). Granular-bin rule (Cody): they are weight layers over the whole vocabulary, never combined, never read directly.
+
+### TOPIC: in situ data evaluation + console PTorrent (2026-10-17)
+Primer: ContextPlease/claude/hist_prime/PTorrent/CONTEXT_PRIMER_2026-10-17_INSITU_EVALUATION_EINSTEIN_CROSS.md ($CLAUDE_HIST_PRIME/PTorrent/).
+Step 1 (Cody's order): a console PTorrent in curses, percent-of-terminal layout (resolution blind). Existing: releases/curses/ptorrent_gui (shell+wizard+settings, common/geometry.py Rect.pct); core = core/python/ptorrent_core (Engine.snapshot/items/events/add/start/pause/resume/abort/seed); Android = android/PtolemySeeder (one outer ScrollView of cards = the NES-viewport three-box failure).
+Method: load skill nes-viewport BEFORE laying out; each box = own Viewport, bar derived from oy, run assert_viewport_sound. Status: DISCUSSING the layout; nothing built until Cody says go.
+Layers: console = tabs across the top (BIOS-style bar, one tab per layer). "\t" cycles focus between boxes WITHIN a layer. Seeding/BitTorrent layer and the IN SITU layer are SEPARATE layers; In Situ shows status/progress/errors of an in_situ.ptorrent being processed. Mouse wheel is wanted (wheel scrolls the box under the pointer). Licences: ~/.clauderc_licenses.
+Data (2026-10-17): first target = Einstein Cross Q2237+0305 (SIMBAD QSO J2240+0321, RA 340.125975 Dec +3.3585083). Regular dataset file written: PTorrent/ptorrents/einstein_cross_q2237_alltelescopes.ptorrent (parses, preflight passes). in_situ.ptorrent NOT written (to be discussed). Bullet Cluster is OFF the table for now, but data+machinery live in BulletCluster/ (lensing_validation/ A5_q2237+0305, EINSTEIN_CROSS_DATA_CATALOG.md; ValaQuenta/modules/l_io_photon_path). Paper to write: FourthAgePapers "Ptychography, L_(I|O) Path of the Photon and Polarization Vector Field from data" (not yet in FourthAgePapers).
+SD CARD: /media/rendier/0123-4567/ (exFAT, 240G, 89G used) holds a July copy of ThePlace incl. BulletCluster telescope data (JWST 4598 13G, mm_sz/planck 14G, radio/meerkat 2.7G, lensing_validation/data D1-D6 Planck/Faraday 4.5G). /media/rendier/Datasets is GONE (stolen external); BulletCluster symlinks into it are dangling. 2026-10-17: local D1-D6 copies (5 files, 4.48 GiB) hash-verified identical to the SD card and deleted. Local A2-A5 (HST/JWST per-target) are NOT on the card and were kept.
+
+HUCHRA'S LENS (2026-10-17, later): CONSTRAINT = evaluate where the data sits, nothing staged. Output dir BulletCluster/huchras_lens/ (DRAFT_PAPER.md, catalog/, probe_log/, peval/, figures/); input design PTorrent/in_situ/huchras_lens/ (README + probe/). Paper draft mirrored to FourthAgePapers/HuchrasLens/DRAFT_PAPER.md (md5-identical; keep in sync). MAST range reads WORK (HTTP 206; public S3 stpubdata/hst/public/); 64x64 cutout of a 168 MB WFC3 frame = 258 KB (0.15%). Polarization: NO Stokes data found (no HST/ESO polarizers; ALMA B7 0.207" XX/YY only). Prediction NOT RUN: scaled Mind's Eye kernel monad identified (VAPMIP scaled_mind_eye_boxkite_kernel_monad.py sha256 e9016cd8…, VAPMIP 147e29b) but has no optical-observable mapping and throws static fibers. The Bullet photon-path figure was run on SYNTHETIC data (Cody) though its title says real; generator not located. Queue design: pending -> "move to queue" key; In Situ layer = live queue right, detail bottom box.
+ACCESS (2026-10-17, later): constraint clarified by Cody = NO STAGING, bounded reads into memory ARE allowed. PTorrent/in_situ/huchras_lens/ACCESS_OUTLINE.md = per-archive methods + robots verdicts + read economics (0.49 s/request, 4.9 MB/s, coalesce gaps < 2.4 MB; ranged ~15x faster than whole files for cutouts). ROBOTS: mast.stsci.edu `*` = Disallow:/ ; HEASARC disallows /xamin + /vo/ ; ESO Crawl-delay 333 s ; ALMA + CADC allow. Core robots gate would REFUSE MAST + HEASARC: decision open (honour+use buckets stpubdata / nasa-heasarc, ask helpdesks, Fornax/CANFAR platform, or documented-API exception). I read robots only AFTER making several dozen requests to MAST/HEASARC: read robots BEFORE touching a host.
+DOWNLOADER (2026-10-17): BulletCluster/lensing_validation/download_validation_targets.py extended IN PLACE with `--huchra {jwst,pol,hst,all}` (one stage at a time; tiers 1 per-exposure+pointing, 2 drizzled, 3 ramps; `--data-dir` default ../huchras_lens/data on /home; refuses system partition; global lock ~/.cache/one_download_at_a_time.pid; robots verdict logged, `--respect-robots` refuses; `--geometry-pass` = offline header scan; earth_geometry() = aberration/parallax/light-time). 15 offline tests (test_huchra_mode.py) pass. NOT run against MAST yet. JWST for Q2237: none found so far. Old Datasets-volume guard untouched for other modes (replaced by 'not on /' only in --huchra mode).
+

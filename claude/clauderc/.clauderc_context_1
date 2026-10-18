@@ -11,11 +11,9 @@
 # Each entry should carry a source_hash line (sha256 of the docs it was distilled from).
 # Extraction:  awk '/^## VAPMIP$/{f=1;next} /^## /{f=0} f' .clauderc_context_1
 
-## NOTE (2026-10-17): cleared on purpose
-All per-repo entries were cleared by Cody's instruction after everything was pushed (pre-clear copy: ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-17).
-NEXT SESSION starts on PTorrent, then the primer
-    ContextPlease/claude/hist_prime/PTorrent/CONTEXT_PRIMER_2026-10-17_INSITU_EVALUATION_EINSTEIN_CROSS.md
-(shore up PTorrent in situ dataset evaluation so telescope data need not be re-downloaded after the truck burglary; the data still exists at its archives; starting pad = the most-cited Einstein cross; nothing built).
-
-## PTorrent
-2026-10-17: 19 domain bins (c, foundations, mathematics, meaning, physics, python, sedenion, war + holcus_ copies; phone foundations/meaning/fermat) moved bin_archive/clean -> dirty with a POISON.md each (copies in ContextPlease/claude/monad_bin/poison_notes/). New sanitised monad_mathematics.bin and monad_physics.bin are in bin_archive/clean (built by VAPMIP/Wernicke/sanitize/build_bins.py; 75 of 341 corpus URLs returned no text). Fetched page text is local in corpus_text/ (gitignored). Env vars for corpus lists and bins are in ~/.clauderc (PTORRENT_BINS, CORPUS_*_LIST, BIN_*_OLD). Granular-bin rule (Cody): they are weight layers over the whole vocabulary, never combined, never read directly.
+## NOTE (2026-10-18): cleared on purpose
+All per-repo entries were cleared by Cody's instruction after everything was pushed (pre-clear copy: ContextPlease/claude/archive/.clauderc_context_1.pre-2026-10-18).
+The 2026-10-17 conversation (Huchra's Lens in situ read, the console UI design, the licences file, the walk-the-hallway skill, the Yellow Pages naming, the downloader) is captured in
+    ContextPlease/claude/hist_prime/PTorrent/CONTEXT_PRIMER_2026-10-17_HUCHRAS_LENS_IN_SITU_AND_THE_HALLWAY.md   ($CLAUDE_HIST_PRIME/PTorrent/)
+and the download scripts in ~/.clauderc_context_2 (entry dated 2026-10-17). Licences by work used: ~/.clauderc_licenses.
+NEXT: Cody is going back to the SEMANTIC ORBWEAVER discussion. When PTorrent / Huchra's Lens resumes, start from that primer and ask the robots question first (section 8, item 1).
