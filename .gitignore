@@ -6,3 +6,6 @@ __pycache__/
 # compiled check binaries
 claude/scratchpad/**/sizecheck
 claude/scratchpad/**/sedmul
+
+# Refsdal prediction papers: kept locally, not tracked
+claude/references/refsdal_predictions/
