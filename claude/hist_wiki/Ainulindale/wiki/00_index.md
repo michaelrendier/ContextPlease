@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-09-23
+Last updated: 2026-10-15
 
 ## The Monad
 
@@ -20,6 +20,11 @@ Last updated: 2026-09-23
 | [20_three_phase_architecture.md](20_three_phase_architecture.md) | Three-Phase Architecture — H=xp, capacitor, eddy currents |
 | [21_chladni_zipf_riemann.md](21_chladni_zipf_riemann.md) | Chladni · Zipf · Riemann — node lines, Zipf=primes, equidistance |
 | [22_constant_facets.md](22_constant_facets.md) | Constant Facets — π, φ, i, e derived from the RedBlue Geometries Engine; Euler's identity as theorem; π as constant of the exactly flat boundary (2026-06-08) |
+| [126_the_circle_catalogue.md](126_the_circle_catalogue.md) | The Circle Catalogue — every unit circle, the six drawings and the seventh (ℓ_p); heartbeat ½ radius, imaginary circle, each value as σ_RB; engine `GenerationalLineage/engine/toolsets/circle.py` |
+| [127_names_of_the_null_operator.md](127_names_of_the_null_operator.md) | Names of the Null Operator — chronology of Ĥ_RB → ∅_RB / 0_RB, dates and census |
+| [128_vapmip_paper_citation_pass_2026_10_16.md](128_vapmip_paper_citation_pass_2026_10_16.md) | Citation pass for the VAPMIP paper — built-against and Post-Hoc works, copies, what could not be fetched |
+| [129_veritasium_spider_silk_the_orbweaver_impetus.md](129_veritasium_spider_silk_the_orbweaver_impetus.md) | Veritasium, Is spider web really stronger than steel? — the orb-weaver impetus (built-against), transcript copy |
+| [130_ring_circle_operators.md](130_ring_circle_operators.md) | **2026-10-20** — The sedenion as circle-modifying operators. 15 slot-circles through e₀, each rotating every other exactly in place; n anticommuting circles close to so(n+1); 63 of 105 pairs anticommute, 42 (the Assessor pairs) deform; the sedenion first scales at four slots; smallest generating set of the operator ring = five circles; UNS = Add : Scale : Sign with Sign split into 15 quarter turns. Code `VAPMIP/RingCircle/`. |
 
 ## Provenance & Citations
 
@@ -140,6 +145,7 @@ Last updated: 2026-09-23
 
 | [122_the_prime_gauge_field.md](122_the_prime_gauge_field.md) | **2026-09-21** — Runs the local-scale (Weyl-shaped) gauge question 121 left open. Engine `ValaQuenta/modules/prime_gauge_field/`. `A=grad(log\|Gamma\|)` is flat for any holomorphic scalar (Poincaré lemma, not Γ-specific — generalizes the earlier Schwarzian-zero result). `A=(Re Γ, Im Γ)` read as a genuine ℝ² connection, not a gradient, carries real curvature: `F(s)=2·Im(Γ'(s))`, exact, verified against finite differences. The pre-registered vacuum-locus prediction is **half right**, checked on 2000 random points: flat on the real axis (matches — Γ real-valued, trivial phase) AND on σ=−1 (Γ's own pole line — not predicted, reported as new rather than retrofitted). |
 | [123_sigma_rb_mass_gap_calibration.md](123_sigma_rb_mass_gap_calibration.md) | **2026-09-23** — **Three σ's, do not conflate:** σ_ζ (h_rb_hat's Re(s) coupling, [[14_redblue_hamiltonian]]'s facets), σ-strata (σ₀..σ₄, [[25_sedenion_manual]] — where "mass gap → string theory" actually lives, via compactification, not a facet), σ_RB (the real `tilt=Re`/`axis=Im` object, `oblique_gear_test.py`). Calibration: Δ (BAO/Yang-Mills mass gap) fed into σ_RB's mean tilt — `σ_self` is **provably strut-blind** (exact algebra, verified 12 digits) and lands in the σ_ζ=½ QM/Riemann facet, not string theory. Correction filed against T7 (drift depends on the mean too, not struts-only — OPEN whether Δ-specific or chaos). The rectifier law: an energy-unnormalized embedding's "leak" chased to an exact closed form — flat plateau below a sign-flip threshold, then a verified **inverse-first-power** decay (slope −0.9985), not inverse-square. OPEN/THEORETICAL, not `:CALCULATED`. |
+| [125_addition_matrix_rotors_and_the_factor_search_law.md](125_addition_matrix_rotors_and_the_factor_search_law.md) | **2026-10-14** — The addition matrix as rotors (ℤ/10ᵏ = ℤ/2ᵏ × ℤ/5ᵏ), the closed-form law of the factor search ((v₂+1)(v₅+1)·4·10ᶜ unit-group torsors, ×10 per digit), and the K = 0 address of the final answer (unique, not isolated); engine `addition_matrix`. |
 
 ## Roadmap & TODO
 

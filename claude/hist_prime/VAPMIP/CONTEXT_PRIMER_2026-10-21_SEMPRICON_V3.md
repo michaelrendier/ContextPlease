@@ -1,0 +1,11 @@
+# SemPriCon primer — 2026-10-21 (Fresh Start to v3.0, four mechanisms, SpecTools, firing plans)
+
+STATE. VAPMIP commit 256b5d9 (pushed): v2.0 bins archived in `SemPriCon/dirty/v2.0/` (gitignored `dirty/**/*.bin`, sha256 in MANIFEST_v2.0.tsv), assessments in `clean/archive/v2.0/`, `clean/` empty of bins. **v3.0 bins NOT built**; Cody wants the v3.0 experiment set discussed first ("Exploratory Surgery" style). Next experiment idea: assign English words to the Chinese idea slots (not a hard encoding to primes).
+
+FOUR MECHANISMS (wiki Tuning-the-Semantic-Prime-Concept-Engine 12–16): M1 English→½ line (eb28ce8 as it ran); M2 Chinese single characters → exact zeros, dictionary order (radical, strokes, key, code point), E from golden hash of the key component; M3/M4 = M1/M2 as angles on the π/2 equator of UNS (radial complex spherical polar). Selftests: M3 0 diffs on 47,233 words, 8/8 replies identical; M4 0 diffs on 97,518 characters. M2 probes vs shuffled baseline: compounds within 0.2 % of ring ×4.2, shared gloss ×6.2, variants 82 % vs 3.7 %; the signal is structure (radical co-membership), the ring is a flat proxy; basins need a learned bin.
+
+SPECTOOLS. `SemPriCon/SpecTools/README.md` indexes every tool; `zeros/zeros_exact.py` + `zeros_exact_25000.tsv` (sha256 0a51f4fc…2ee1; 1–2 h to rebuild, checkpointed); `bin_creation/` recipes by version. The engine's own `generate_zeros` is off by up to 1.94 against the exact table.
+
+FIRING PLANS. Brackets carry firing orders: `(R I | 2 1)` fires the imaginary octonion first. Operator reading is associative (only order matters); element reading is not. Written-order binary plans reach 6/22/90 of 3!/4!/5! orders (separable permutations). Code `SedenionSpectralRelativity/firing_plan.py` (15 checks), port in `GenerationalLineage/engine/bracketing_firing_order.py` tool 4, notebooks SSR 02 / GL 03, wiki pages in both, update notes in ValaQuenta and Ainulindale wikis. ValaQuenta module not yet updated. Open: emerger's five brackets as plans; "fire and add"; inverse leaves; four-slot ring-circle tables not re-run.
+
+RING CIRCLE. `VAPMIP/RingCircle/`, wiki Ring-Circle-Operators (VAPMIP, SSR, Ainulindale 130): 15 circles, 63 anticommuting + 42 deforming pairs, smallest generating set 5 circles, UNS = Add:Scale:Sign with Sign split into 15 quarter turns.

@@ -405,3 +405,29 @@ vq_docs()  { ( cd "$VALE" && .venv/bin/python docs/gen_api.py && .venv/bin/pytho
 # ~/.bashrc (same variable name, different value). If GitHub says 401, `source ~/.bashrc` and retry BEFORE diagnosing.
 # The current GITHUB_TOKEN (ends JgP) has repo + workflow scope, so Actions workflows and Pages can be pushed/enabled.
 # Never touch PTOL_SEED_TOKEN.
+
+# ============================================================
+# EVERY REQUEST GETS A MOZILLA USER AGENT (Cody, 2026-10-14)
+# Most automated-access blocks (HTTP 403) disappear with a browser-style User-Agent. Use `fetch` (or curl -A "$CLAUDE_UA") for every
+# outbound HTTP request; in Python set the same header. Public, freely available works only: a paywall, login or CAPTCHA page is a stop, not an obstacle.
+# ============================================================
+export CLAUDE_UA='Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0'
+fetch() { curl -sL -m "${FETCH_TIMEOUT:-60}" -A "$CLAUDE_UA" "$@"; }
+
+# ── NLP data (2026-10-17) ─────────────────────────────────────────────────────
+export NLP_DATA="$HOME/nlp_data"          # Princeton WordNet 3.0/3.1 distributions (SQL, Prolog, SemCor 1.6, glosstag, morphosemantic links, SUMO), VerbNet 3.4, SemLink, PropBank, spaCy wheels; MANIFEST.md lists every file
+export NLTK_DATA="$HOME/nltk_data"        # the NLTK data collection `all` (122 packages, 3.5 GB); also the default path
+
+# ============================================================
+# GRANULAR CORPORA + THEIR BINS (Cody 2026-10-17: "the corpus used is in PTorrent")
+# Corpus files are [TAG] URL lists (not text); the .bin is a bag-of-words monad checkpoint (pickle) with no word order.
+# ============================================================
+export PTORRENT_BINS="$PTORRENT/bin_archive"              # clean/ = geometric init + trained copies; dirty/ = polluted states (README.md there)
+export PTORRENT_CORPUS_DIR="$PTORRENT/android/PtolemySeeder/app/src/main/assets"   # english/foundations/meaning/war/python/mathematics/physics .txt + corpus_list.json
+export PTORRENT_DESCRIPTORS="$PTORRENT/ptorrents"         # mathematics.ptorrent, physics.ptorrent, python, c_posix, framenet ... (spec: $PTORRENT/wiki/PTorrent-File-Spec.md)
+export CORPUS_MATHS_LIST="$PTORRENT_CORPUS_DIR/mathematics_corpus.txt"   # 174 URLs: Wikipedia 121, MathWorld 26, DLMF 13, Clay 8 ... (copies: VAPMIP/mathematics_corpus.txt, VAPMIP/code-corpora/)
+export CORPUS_PHYSICS_LIST="$PTORRENT_CORPUS_DIR/physics_corpus.txt"     # 167 URLs: Wikipedia 107, HyperPhysics 31, Feynman Lectures 22 ...
+export BIN_MATHS_OLD="$PTORRENT_BINS/dirty/monad_mathematics.bin"   # POISONED, moved to dirty 2026-10-17 (note: dirty/monad_mathematics.POISON.md); new sanitised bin: BIN_MATHS_NEW
+export BIN_PHYSICS_OLD="$PTORRENT_BINS/dirty/monad_physics.bin"   # POISONED, moved to dirty 2026-10-17; new sanitised bin: BIN_PHYSICS_NEW
+# others in $PTORRENT_BINS/clean: monad_english(36.7M) englishwordnet foundations meaning python c war sedenion, phone_* (adb pulls); dirty/: wordnet (POLLUTED, PDF OCR), sedenion burn stages, phone_20260601_*
+# the fetched page TEXT behind these bins was not found on disk (2026-10-17); re-fetch needs the Mozilla UA rule.

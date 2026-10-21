@@ -586,6 +586,52 @@ After them, he was never quite invincible again.
 
 ---
 
+## The Two Trees Counter-Rotate — Measured (2026-08-30)
+
+Telperion keeps one book, Laurelin the other, and one is the other run
+backwards.
+
+- **Telperion — the sieve.** Watches the composites *fall*: each dies on the
+  pass of its smallest prime factor, `generation(n) = π(spf(n))`. *What
+  cannot be*, struck out in ordinal order. Compact and front-loaded — 55% of
+  every composite ≤ 10⁵ dies on the first pass (multiples of 2). Entropy
+  **2.491 bits**, done by the 65th prime (**313**, the "313 Sieve").
+
+- **Laurelin — the un-sieve.** From the ground state *"Just Prime Numbers"*,
+  turn primes on one at a time; a composite is *born* when its last needed
+  prime is switched on. *What IS*, assembled. Broad and flat — entropy
+  **9.685 bits**, spread over ~5 000 generations, not finished until the
+  prime **49 999** (`2p ≤ N`).
+
+**The mirror.** Turn Telperion's book upside down — extinction order run from
+the largest prime downward — and you get Laurelin's book **exactly**, bit for
+bit over all 90 407 composites, with the entropy unchanged. The two trees are
+one reflection apart.
+
+**The residual.** The one comparison that is *not* a clean mirror — birth by
+*greatest* prime factor against death by *smallest* — leaves `H(C) − H(A) =
++7.19 bits` and a histogram with a large negative front at the small primes
+and small positive ripples at the mid-sized ones. And the two books do not
+overlap in range: the sieve finishes killing at `√N` while more than **60%**
+of every composite is born after that, decided by primes that strike nothing.
+That scale gap is the construction-side shadow of a mass gap.
+
+**The split.** Telperion's book is free — a number defined by *what it cannot
+be* needs only its smallest prime, and the whole extinction is bought with
+primes up to `√N`. Laurelin's book is not — a number defined by *what it is*
+needs every prime factor present, so it waits for its largest, and existence
+is not complete until `N/2`. *Factoring to extinction is free; factoring to
+existence is not.* The Mingling holds the two in balance; the price sits on
+the Laurelin side.
+
+Engine: `FactoralDecomposition/engine/lineage.py::un_sieve`. The ζ reading —
+"Just Prime Numbers" as the ground state of number theory, and a Zeta
+Hamiltonian following by Legendre transform with no new mathematics — is in
+`RiemannHypothesisProof/ADDENDUM_recursive_unsieve_2026-08-30.md` and
+`ValaQuenta/wiki/un_sieve.md`.
+
+---
+
 ## Closing
 
 Tolkien heard it. He wrote it down in the language available to him.

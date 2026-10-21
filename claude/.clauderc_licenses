@@ -1,0 +1,105 @@
+# .clauderc_licenses — what to include with what code, depending on the extant work it uses
+#
+# Created 2026-10-17 (Cody: "keep all of them there; just names of what to include with
+# what code, depending on already extant work used"). NAMES + OBLIGATIONS ONLY, not legal
+# advice, not full texts (full texts live in the repo files named below).
+# Live-edited in place. When a new third-party work enters a repo, add its block here FIRST.
+# Mirror to ContextPlease/claude/clauderc/ after every edit.
+# Pull a block:   awk '/^@LIC_X$/{f=1;next} /^@LIC_/{f=0} f' ~/.clauderc_licenses
+#
+# STATUS TAGS:  [SEEN]  = read in this repo's files        [KNOWN] = from his stated position
+#               [MEMORY]= my recollection of the upstream wording; VERIFY at the source before publishing
+
+@LIC_DEFAULT
+All of Cody's code and maths: GNU GPL v3.0 (repo root LICENSE, or COPYING in PTorrent).  [KNOWN 2026-09-28/10-14]
+Exceptions, both proprietary:  VAPMIP (Monad)  and  POE.
+  VAPMIP/LICENSE = short-term licensing statement only; VAPMIP/LICENSE-GPL-3.0.txt covers the harness parts
+  (harness.py, PtolC/monad_harness.c/.h) and the console UI plugin to PtolemyDesktop.
+  POE/LICENSE = proprietary, not for sale or licensing.
+Commit trailer (Claude Code attribution, from the session reminder):  Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+
+@LIC_PTORRENT_SPLIT
+PTorrent root has COPYING (GPL v3 text).  [SEEN]
+PTorrent/core/python/README.md and PTorrent/releases/curses/README.md both say "LGPL-3.0-or-later".  [SEEN]
+  => the repo root (GPL v3) and the core/curses READMEs (LGPL) DISAGREE. Open item for Cody; do not "fix" silently.
+  A new console file that modifies releases/curses/ptorrent_gui keeps that package's stated licence.
+
+@LIC_WORDNET
+Applies to: anything that contains, derives from, or reads WordNet 3.0 data (monad_boxkite_wordnet.pkl, WordNet bins).  [SEEN]
+Include: WORDNET_LICENSE.txt verbatim on ALL copies (repo, derived data, docs); a THIRD-PARTY NOTICES entry (NOTICE file).
+Do not: use "Princeton" / "Princeton University" in advertising or publicity about distribution.
+Cite: Miller 1995 CACM 38(11) 39-41; Fellbaum (ed.) 1998 MIT Press.
+Repos carrying it today: PTorrent (NOTICE + WORDNET_LICENSE.txt), VAPMIP (NOTICE + WORDNET_LICENSE.txt).
+
+@LIC_NLTK
+NLTK code is Apache-2.0 (compatible with GPL v3, one-way).  [MEMORY]  NLTK data packages carry their own licences.
+UD-EWT (Universal Dependencies English Web Treebank), used to train the tagger offline (93.9 %):  licence is CC BY-SA 4.0 for most treebank text  [MEMORY].
+  => a tagger model trained on it may carry share-alike/attribution duties. FLAG: confirm before shipping the model.
+
+@LIC_BASILE_LIBRARY_OF_BABEL
+ValaQuenta basile engine: only the IMAGE algorithm is published, under CC BY-SA-NC.  [KNOWN]
+Never vendor that code into GPL repos (NC is incompatible with GPL). Reimplement from the paper's description, cite it.
+2026-10-18 (Cody): the Basile work is personal reference, not load bearing; ValaQuenta/.gitignore lists modules/basile, notebooks/basile, tests/test_basile.py, docs/api/modules/basile.rst, wiki/basile.md, wiki/toolbox/39_basile.md.
+CAVEAT: FourthAgePapers/HyperindexingSystem/paper/test_listings.py line 19 imports ValaQuenta.modules.basile unguarded, so it fails in a clean clone.
+
+@LIC_ZORK_INFOCOM
+Infocom/Zork parser = built-against prior work, never Post-Hoc, never vendored.  [KNOWN]  README Prerequisites item 10.
+
+@LIC_PYTHON_DEPS
+Permissive, GPL-v3-compatible:  numpy / scipy / matplotlib / astropy / astroquery (BSD-3 or BSD-style),  requests (Apache-2.0),
+  sympy (BSD-3).  [MEMORY]
+Core PTorrent runtime is stdlib only: nothing to carry. Keep it that way.
+Rule: Apache-2.0 deps are GPL-v3-compatible but NOT GPL-v2-compatible; BSD/MIT fine in both.
+
+@LIC_ARCHIVE_DATA_ACKNOWLEDGEMENTS
+Public archive data is not "licensed code", but each archive asks for an acknowledgement line and a data citation in any
+paper or release that uses it. [MEMORY] wording; VERIFY exact text on the archive's own acknowledgement page before publishing.
+  HST / JWST (MAST, STScI):  "Based on observations made with the NASA/ESA Hubble Space Telescope, obtained from the Mikulski Archive
+        for Space Telescopes (MAST) at the Space Telescope Science Institute", plus programme IDs; cite the MAST DOI of the data used.
+  Chandra:  acknowledge the Chandra Data Archive / CXC; cite ObsIDs (and the Chandra DOI for the dataset).
+  XMM-Newton:  acknowledge the XMM-Newton Science Archive (ESA); cite ObsIDs.
+  ESO:  "Based on observations collected at the European Southern Observatory under ESO programme(s) <ID>"  (IDs are in dbo.raw prog_id).
+  ALMA:  "ADS/JAO.ALMA#<project code>"  (e.g. ADS/JAO.ALMA#2021.1.00675.S) plus the ALMA/ESO/NRAO/NAOJ line.
+  Planck (PLA):  ESA/Planck Collaboration; cite the data-release paper for the map used.
+  SIMBAD:  "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France"; cite Wenger et al. 2000 A&AS 143 9.
+  VizieR / CDS TAP:  cite Ochsenbein, Bauer & Marcout 2000 A&AS 143 23.
+  HEASARC:  "This research has made use of data obtained from the HEASARC, provided by NASA's Goddard Space Flight Center."
+  OpenAlex (citation counts):  CC0; state the query date. Counts are from OpenAlex/INSPIRE and undercount vs ADS.
+Standing protocol: every download of another person's work also goes to ContextPlease/claude/references/INDEX.md and ~/.clauderc_citations.
+
+@LIC_PUBLISHED_PAPERS_FIGURES
+Figures/tables reproduced from other authors: need that publisher's permission or an open licence; computed-from-their-data figures are ours
+but cite the data source. Paper clauderc standing sections: assistant note first, :CALCULATED suffix, GL section before GL results, ContextPlease appendix.
+
+@LIC_FIRMWARE_AND_VENDOR_FILES
+/home/rendier/Projects/BIOS/ (HP BIOS capsule S301LAAS.215, ACPI_3_Errata_A.pdf): vendor-proprietary / third-party documents.  [SEEN existence]
+Reference only. Never commit them to a repo, never vendor extracted strings into published code.
+
+@LIC_NES_ROMS
+/home/rendier/Games/console/nes (626 ROMs) used only as a local test corpus for the nes-viewport skill. Never redistribute or commit ROMs;
+the skill publishes the classification table (names + scroll archetypes), not ROM data.
+
+@LIC_ANDROID_SDK
+Android SDK (/home/rendier/Android/Sdk) and AndroidX/Material libraries used by android/PtolemySeeder: Android SDK licence + Apache-2.0 for AndroidX.  [MEMORY]
+APK builds bundle those libraries; carry their NOTICE files if an APK is published.
+
+@LIC_HYPERINDEXING_TEST_INPUTS
+FourthAgePapers/HyperindexingSystem/reengineer/ and corpus/ hold third-party test inputs (committed 2026-10-18, commit 0cad267):
+  Jupiter.html, Pythagorean_theorem.html: saved Wikipedia pages, CC BY-SA 4.0 (attribution and licence line are inside each page; one-way compatible into GPL v3).  [MEMORY: confirm]
+  pg1001.txt (twice: corpus/ and reengineer/): Project Gutenberg #1001, Longfellow's Inferno; Gutenberg licence header kept intact in the file; public domain in the US.
+Rule: keep the Gutenberg header and the Wikipedia footer when these files are copied; cite them in the paper's references.
+
+@LIC_PUBLIC_HISTORY_EXPOSURE
+The August 2026 commercial deal terms (COMMERCIAL_TERMS.md: exclusive licence to the highest bidder, 5 or 10 years, 10-year price 2.5x the 5-year, 50/50 split with the
+Ryan White Foundation, attorney requirement) and a draft BSL-style LICENSE.md were committed to the PUBLIC repo michaelrendier/FourthAgePapers as
+DataStorageNoLocation/ in commit 7488acf ("paper stub"). They were removed from the tree on 2026-10-18 (merge of DataStorageNoLocation into HyperindexingSystem) and are NOT in the
+merged project, but THEY REMAIN IN GIT HISTORY. Cody's 2026-10-14 position: no prices, terms or motive in a repo (going forward: nothing is hidden by rewriting; the record stays). History is NEVER rewritten (Cody, 2026-10-18: "you are never allowed to rewrite history. period."): no scrub, no force push. The removal was an ordinary commit.
+Private copies: ~/Desktop/SpaceClaude/FourthAgePapers_removed_drafts_2026-10-18/ (outside any repo).
+
+@LIC_OPEN_ITEMS
+1. PTorrent root GPL v3 vs core/curses LGPL-3.0-or-later (see LIC_PTORRENT_SPLIT).
+2. UD-EWT share-alike on the trained tagger (see LIC_NLTK).
+3. Verify every [MEMORY] acknowledgement string at its archive before a paper goes out.
+4. Any console UI borrowing structure from other console torrent clients (rTorrent GPL-2.0, tremc GPL-3.0, Deluge GPL-3.0+): design STRUCTURE
+   (layout, tab names, key conventions) is not copyrightable; copying CODE is. If code is ever copied, the host licence must be compatible and the
+   notice kept. Currently: design reference only, no code copied.

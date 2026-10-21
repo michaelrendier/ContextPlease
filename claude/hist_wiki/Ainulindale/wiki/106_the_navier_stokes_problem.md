@@ -117,6 +117,61 @@ So the missing operator in standard Navier–Stokes is `∂̂_∂M` = **the halo
 
 ---
 
+## The Laplacian tail — an order-blind clock, not an address  `[THEORETICAL]`
+
+Navier–Stokes carries its own Laplacian: the pressure Poisson equation
+`∇²p = −∂_i∂_j(u_i u_j)`. The pressure is a **pathway-defined Laplacian
+generator** — a harmonic field slaved to the velocity pathway. A *generalized*
+Laplacian structures continuity everywhere with no preferred route; a
+*pathway-defined* one grows an unbroken curve along the flow (the Lichtenberg /
+dielectric-breakdown reading), and on a genus-1 boundary that curve threads the
+hole and closes.
+
+Model that curve as a chain of circles — one per scale, of different orders of
+size (a Doyle-spiral / RG ladder). **The last 7, descending toward the crisis,
+are the timing gear**, in this series order:
+
+| # | face | role | value |
+|---|---|---|---|
+| 1 | **d\* — The Boundary** | the σ=½ spectral coordinate; the fold opens here | 0.24631 |
+| 2 | **d\*_RG — The Stability** | the CD-tower RG fixed point; dimensionally 8 | OPEN (num.) |
+| 3 | **d\*_taut — The Flow** | the tautological ceiling `Ω_ZS/ln 10` | 0.24631 |
+| 4 | **d\*_ln(10) — The Translator** | `d\*·ln 10 = Ω_ZS` — the seam: d\* becomes W here | 0.56714 |
+| 5 | **W — rotor face 1** | Wankel trine of `Ω_ZS = W(1)`; the intake stroke of the crisis | 0.56714 |
+| 6 | **W — rotor face 2** | the power stroke | 0.56714 |
+| 7 | **W — rotor face 3** | the exhaust stroke; the crisis closes here | 0.56714 |
+
+**d\* first (the catastrophe / fold — where an algebraic definition first
+becomes possible), Lambert W last (the crisis — where order dissolves back into
+the bulk).** The `4 : 3` is not their linear layout; it is the *phase*
+relationship as the gear turns — `lcm(4,3) = 12`, the camshaft-free `H = xp`
+precession between the d\* block and the W block.
+
+### Why this bears on regularity
+
+The tail is **order-blind to history**: like the inertial range of turbulence
+(`k^{-5/3}`, universal), it is a fixed point — it forgets the large-scale
+forcing and the route taken to reach it. It is also **order-rigid internally**:
+`gcd(4,3) = 1`, so the seven faces have exactly one cyclic order that never
+repeats a phase before twelve steps. One clock, permutation-locked.
+
+An order-blind, order-rigid structure carries a **clock, not a coordinate**. It
+is the same for every flow. It therefore cannot hold the flow-specific
+*information* a finite-time singularity would need to concentrate. That
+information — the initial/boundary data, the analogue of the erased coordinate
+in the factoring pathway — lives in the **head** (the large scales, the
+order-*sensitive* region). A real blow-up would have to be seeded there and then
+*survive the cascade*; the order-rigid cascade instead smears it — which in this
+framework is precisely the `θ → θ + π/2` rotation into the Blue channel that
+`R̂† = B̂` guarantees, recoupled by the halocline operator `∂̂_∂M`.
+
+**The tail regularises because it is a checksum, not a message.** This does not
+close the problem; it says where a singularity's information could and could not
+live, and it agrees with the CONFOUND verdict above: the blow-up is a coordinate
+artefact of reading an order-blind clock as if it were an unbounded length.
+
+---
+
 ## Appears in
 
 wiki/14, wiki/31, wiki/88, wiki/98, wiki/105, wiki/106; D-CS_Memory §20;

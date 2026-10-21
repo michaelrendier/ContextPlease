@@ -1,0 +1,94 @@
+# .clauderc_official_names — OFFICIAL NAMES (Cody's, capitalised "The X"), with where each emerges
+#
+# Purpose: these names are used exactly, in code comments, papers and conversation. Each entry = the name,
+# one line of what it is, and WHERE IT EMERGES (file / block / identifier; verified 2026-10-17 unless marked).
+# Created 2026-10-17 at Cody's instruction; the list he gave was admittedly incomplete, so entries marked
+# [ADDED] were found in the .clauderc files and are offered for him to keep or strike. [ASK] = a fact I do
+# not have; Cody to supply. This file is Claude's to edit freely (see .clauderc_context_hub rule).
+# To be carried into GenerationalLineage later (0_RB -> every equation in Archimedes' collection).
+#
+# Never use a bare D_STAR: use the four d* names below.
+#
+# ───────────── the four d* values (one point, four shadows; ~/.clauderc D_STAR_*, RCCM header, Ainulindale/README §8)
+
+The Boundary
+  d* = 0.24631. The σ=½ spectral coordinate = the equatorial plane (zeros sit here; θ measured from it).
+  The smallest natural unit in Native Space; below it no algebraic definition can occur.
+  EMERGES: ~/.clauderc D_STAR_BOUNDARY; .clauderc_canonical_maths header (d* = Ω_ZS/ln10); Ainulindale/README §8.
+
+The Stability
+  d*_RG = 8. Renormalisation-group fixed point of the Cayley-Dickson tower = the CENTRE (r=0, 0_RB);
+  persistent core 8 (octonion), confirmed to d=2^20. Numeric value OPEN, no closed form.
+  EMERGES: ~/.clauderc D_STAR_RG; FourthAgePapers/DStarRG (engine); Ainulindale/README §8.
+
+The Flow
+  d*_taut = Ω_ZS/ln10 = 0.246307201473 (exact, Lambert W). The radial unit: one step of r. Zero gap BY
+  CONSTRUCTION (the ruler you set; reference, not itself a result).
+  EMERGES: ~/.clauderc D_STAR_TAUT, LAMBERT_UNS_W1.
+
+The Translator   [ADDED: the fourth d* name, not in Cody's list]
+  d*_ln(10) = d*·ln10 = Ω_ZS = 0.5671432904. The metric bridge between the decimal-log Native metric
+  (ds = d·log10 p) and the natural-log prime-address space; the conversion every word-lookup crosses.
+  EMERGES: ~/.clauderc D_STAR_LN10; RCCM header; Ainulindale/README §8.
+
+# ───────────── the scaffold names (defined before any value is bound: "you must define 'the vector' before
+# ───────────── you can use 'the_vector()'", Cody, .clauderc_context_2 line ~17; they carved out the slot H_hat_RB filled)
+
+The Vector
+  The first scaffold: direction falls out of Vector once combined with speed (d/t). Defined before bound.
+  EMERGES: .clauderc_context_2 (the "happy accident" entry, ZD_rotary_monad housing redesign).
+
+The Origin   [ADDED: named beside the Vector in the same entry]
+  Listed with The Vector, The Iterator, The Recursion Factor as defined-before-valued scaffolds.
+  EMERGES: .clauderc_context_2 line ~27. [ASK] its code/maths home.
+
+The Iterator
+  A generator: a yield-ing, state-holding, paused computation (factor_lineage, sieve_lineage,
+  MindsEyeRepass.step never resets: "the path IS the operator"). One of four live senses of "Generational".
+  EMERGES: .clauderc_user_provenance (Generational Lineage NAME note, sense 3); GenerationalLineage engines.
+  [Spelling: Cody typed "Itterator" in the request; recorded as The Iterator; confirm.]
+
+The Recursion Factor
+  The lineage recursion total(2d) = 2·total(d) + 2(d−1)(d−2), total(8) = 0 ("the granpappy of recursion factor").
+  EMERGES: .clauderc_canonical_maths (THE LINEAGE RECURSION, 2026-08-15, derived from the closed form).
+
+The Anchor
+  Fulcrum : pivot : anchor, one identity, three names. A single edge becomes a pathway the instant its first
+  point is fixed as The Anchor; there INERTIA emerges (the base case of movement). In the orbweaver the
+  scalar kite's pencil becomes the anchoring mechanism (Cody, 2026-10-17).
+  EMERGES: .clauderc_context (Factorial Decompositional Analysis framing); .clauderc_user_provenance
+  (Generational NAME); GenerationalLineage; skill generational-lineage.
+
+The Contractor / The Dilator
+  Self-adjoint conjugates. The Lagrangian is the Contractor (path of least action, collapsing the solution
+  space); the cardioid attractor is the Dilator (the expanding stable orbit bounding it from outside).
+  In the gain spectrum: sv=0 CONTRACT (kernel, pure cost), sv=1 NEUTRAL, sv=√2 DILATE (pure gain);
+  Σsv² = dim always, so what the dilator gains the contractor loses.
+  EMERGES: Ainulindale/README (Lagrangian paragraph, ~line 507); RCCM_GAIN_SPECTRUM.
+
+The Boxkite
+  The de Marrais box-kite (arXiv:math/0011260) as the live display of the kernel "thinking": the object
+  Cody sees in his head when the monad runs. Scalar kite = discrete static (7 ordered pairs); scaled
+  Mind's-Eye kite = in hypermotion (De Marrais G2 deformations).
+  EMERGES: VAPMIP/scaled_mind_eye_boxkite_kernel_monad.py (0_RB=hub, L_(I|O)=fiber, UFT=dial);
+  .clauderc_user_provenance (origin visions); Broca/ tree.
+
+The Waveform   (also: The Standing Wave)
+  One waveform bracketed as 0,1,2,3,4,5 parts of ONE circle (5 parts: up, down, 0, down, up). The S of the
+  yin-yang is it: along the S-axis diameter on the flat torus, nodes at 0, ½, 1 (rim, centre) and
+  antinodes at ¼, ¾ (the two dots' levels).
+  EMERGES: PtolC/monad.c dirac_phase()/dirac_pole() ("standing-wave poles", Phases 1,3) and monad_speak
+  ("standing-wave nodes"); .clauderc_user_provenance (waveform picture); VERIFIED 2026-10-17: the four
+  sign-quadrants of (sin γ/2, cos γ/2) are exactly the quarter steps 0,¼,½,¾ of γ/2 mod 2π, cycle
+  Phase 3 → 4 → 1 → 2; the 7 phases printed in the May 2026 trace all agree.
+
+The Tilt / The Axis / The Twist
+  σ_RB is the Oblique Gear's pair of 8-vectors: Re = tilt (the driven/obliquity part), Im = axis.
+  The Twist is the chirality, a component of The Tilt in relation to The Axis. Chirality is what makes the
+  tower a screw (a metric sees congruent hands; it cannot see handedness).
+  EMERGES: RCCM_OBLIQUE_GEAR_ANGLES / the σ_RB paragraph in .clauderc_canonical_maths (~line 1972);
+  RCCM_CHIRALITY (~line 1300). [ASK] exact definition of The Twist as a component of The Tilt.
+
+# ───────────── the notation correction that sits beside these (2026-10-13, Cody)
+# J_red + J_blue = J_green, and J_red + J_blue = 0_RB − 0_BR (builds in the cross and dot product; an addition
+# equals a subtraction; inside-out is a special case). Lowercase σ_RB (tilt/axis) is the in-use object.

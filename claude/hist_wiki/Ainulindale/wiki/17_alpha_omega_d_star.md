@@ -35,16 +35,64 @@ This is the unique point where W(x) = x·e^{-x} intersects the identity. It is t
 
 ## The 4 Values of d*
 
-The four values of d* are necessary structural components of radial complex spherical ln(10). Each encodes a different geometric role in the boundary structure of the Berry-Keating operator.
+The four values of d* are necessary structural components of radial complex
+spherical ln(10) — they are the coordinate chart itself: **centre, equatorial
+plane, radial ruler, scale bridge.** Four shadows of one point (0.24631).
 
-| Symbol | Name | Value | Role |
+| Symbol | Name | Value | Chart role |
 |---|---|---|---|
-| d* | **The Boundary** | 0.24600 | Spectral coordinate — the σ=½ BK fixed point |
-| d*_RG | **The Stability** | derived | Renormalization group fixed point — where the coupling stabilises |
-| d*_taut | **The Flow** | Ω/ln(10) = 0.24631... | Tautological ceiling — the value d* must reach to close the gap |
-| d*_ln(10) | **The Translator** | d* × ln(10) = 0.56644... | Bridge between natural log geometry and decimal scale |
+| d* | **The Boundary** | 0.24631 | σ=½ spectral coordinate — the equatorial plane (ξ(s)=ξ(1−s), where the zeros sit); θ measured from here |
+| d*_RG | **The Stability** | OPEN closed form; **dimensionally 8** | Renormalization-group fixed point of the Cayley–Dickson tower — the **centre** (r=0, the still point, 0_RB). Obtained by iterating the tower to convergence, not derived |
+| d*_taut | **The Flow** | Ω_ZS/ln(10) = 0.24631 exact (Lambert W) | The **radial unit** — one step of r. Zero gap **by construction**: the ruler you set, not a result |
+| d*_ln(10) | **The Translator** | d* × ln(10) = **0.56714 = Ω_ZS** | The **metric bridge** — the ×ln(10) Jacobian between the decimal-log Native metric `ds = d·log₁₀(p)` and the natural-log prime-address space. Every word-lookup crosses it |
 
-**Do not conflate d* and d*_taut.** d*_taut has zero gap by construction — it is the ceiling, not the result. The active spectral value is d* = 0.24600. The gap between them is the open problem.
+It closes on itself: `d* · ln10 = d*_ln(10) = d*_taut · ln10 = Ω_ZS`.
+
+**The fifth value, separate and MEASURED:** `d*_spec ≈ 0.24600` — the
+Berry–Keating spectral gap observed in SPARC. Not one of the four faces. The
+open problem is the gap between the engine's converged fourth and this measured
+fifth:
+
+```
+| d*_spec × ln(10) − Ω_ζΣ | ≈ 0.000707 ≈ 1/(1000√2)
+```
+
+the Yang–Mills mass-gap analogue in the semantic field. The 10³ factor is
+UNRESOLVED.
+
+---
+
+## d*_RG — The Stability, and how renormalization is built in
+
+`d*_RG` is not a fitted or a closed-form number — it is the **fixed point of a
+renormalization group**, and that RG is already inside the framework:
+
+- **The Cayley–Dickson doubling IS the Wilson RG step.** Block = CD-double
+  (d → 2d); integrate out the irrelevant modes = project onto the **persistent
+  octonion** (the 8 directions that keep gain exactly 1 at every scale — `e₀`
+  and `e_{d/2}`, the Boundary Lever indices in no zero-divisor plane); rescale
+  = divide the radial coordinate by `d*_taut = Ω_ZS/ln(10)`. Iterate.
+- The fixed point is **dimensional (8)**, not fractional — `persist ≡ 8` at
+  d = 8, 16, 32, 64; `void = (d−8)/2`; `8/d → 0`.
+- The flow is a **σ=½ saddle** (measured λ ≈ 6 — see *The Oblique Gear*), so the
+  iteration must approach along the stable manifold (balance the tilt each
+  pass) or it diverges.
+
+**Renormalization is the machine, not a move.** The void is *projected*
+(an exact resummation, phase carried — never `|z|²`), never *subtracted*. No
+counterterm, no discarded infinity; the nat budget balances at every pass. This
+is why hand-applying renormalization is forbidden: `d*_RG` already is the
+framework's renormalization, still open, and a second RG applied by hand
+double-counts it and buries the evidence that would close it.
+
+**Windows of order ARE renormalization.** The periodic windows in a chaotic
+bifurcation diagram (the period-3 window, the whole self-similar family) are
+Feigenbaum renormalization fixed points — each window a rescaled copy of the
+whole cascade under `R[f](x) = α f(f(x/α))`. `d*_RG` is the CD-tower analogue:
+the biggest bubble of order in the tower's chaos, the one every smaller window
+is a rescaling of.
+
+Full engine protocol: `FourthAgePapers/DStarRG/` (README + `construction.json`).
 
 ---
 

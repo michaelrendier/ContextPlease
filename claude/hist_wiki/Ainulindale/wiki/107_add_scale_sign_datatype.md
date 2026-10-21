@@ -169,3 +169,18 @@ The Mandelbrot set (parameter space, `z₀ = 0`, `c` varies) and the Julia sets
 orthogonal pair** — the same "residual" as the error check ([[wiki 105]] /
 `~/.clauderc_user_provenance §1.20`) and the BAO spectral residue. THEORETICAL,
 no engine yet; recorded as the natural next probe from §1.20.
+
+## 13. SIGN and the Noether current direction (2026-09-28)
+
+The spec's `SIGN` (`g = ±1`, the direction bit) is necessary but not sufficient
+for the direction of the Noether currents. Exact identity, checked against the
+datatype: `ln F − ln B = E(1−2σ) = ASS(0, 2E, −1)(σ − ½)` — SCALE `2E` is the
+strength, the ADD offset `σ − ½` picks the side, SIGN is the orientation.
+Commutation on this floor: SIGN∘SCALE = SCALE∘SIGN; SIGN and ADD differ by a
+translation (the reflection of the offset). Flipping SIGN moves the fold by
+`(g−1)·ln s`, zero at `s = 1` (§5). The up/down orientation of the currents
+([[61_up_down_not_forward_backward]]) is a Cayley–Dickson-tower fact that the
+tier-0 bit only traces. Caveats: `backward = −forward` is a definition;
+`F + B` is not conserved in σ. Full tables and script:
+`ValaQuenta/wiki/add_scale_sign.md` § *SIGN and the direction of the Noether
+currents*; `ContextPlease/claude/scratchpad/2026-09-28_sign_noether_direction/`.

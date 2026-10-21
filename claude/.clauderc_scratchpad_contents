@@ -19,7 +19,7 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-10-12
+# Last regenerated: 2026-10-21
 
 - README.md
 - migrate_datasets.sh
@@ -113,8 +113,6 @@
     README.md
     collatz_probe.py
 
-2026-08-22_barycenter_sigma/
-
 2026-08-22_fractal_decomp/
     README.md
     result.txt
@@ -132,10 +130,6 @@
 
 2026-08-22_parkour_orthogonal/
     README.md
-
-2026-08-22_pathway/
-
-2026-08-22_pathway_equals_i/
 
 2026-08-22_qm_gr_by_tree/
     README.md
@@ -492,6 +486,36 @@
     README.md
     ord.py
 
+2026-10-12_demarrais_deformation_battery/
+    README.md
+    cdalg.py
+    make_record.py
+    output_part1.txt
+    output_part2.txt
+    output_part2b.txt
+    output_part3.txt
+    output_part4.txt
+    output_part5.txt
+    output_part6a.txt
+    output_part6b.txt
+    output_part6c.txt
+    output_part7.txt
+    output_part8.txt
+    part1.py
+    part2.py
+    part2b.py
+    part3.py
+    part4.py
+    part5.py
+    part6.py
+    part6b.py
+    part6c.py
+    part7.py
+    part8.py
+    results_part1.json
+    results_part2.json
+    zdscan.py
+
 2026-10-12_midline4/
     Midline.py
     MidlineIndex.py
@@ -501,17 +525,280 @@
     midline4.py
     test_midline.py
 
+2026-10-12_pencil_tearoff_test/
+    README.md
+    output.txt
+    test.py
+
+2026-10-12_projected_address_lens/
+    output.txt
+    probe.py
+
+2026-10-12_windspeed_deformation_proxy/
+    README.md
+    output.txt
+    output2.txt
+    test.py
+    test2.py
+
+2026-10-13_boxkite_monad_voice/
+    README.md
+    bk_try.py
+
+2026-10-13_extinction_by_annihilator_intersection/
+    README.md
+    extinction.py
+    output.txt
+    output_tests2.txt
+    output_tests3.txt
+    tests2.py
+    tests3.py
+
+2026-10-13_jred_jblue_battery/
+    README.md
+    anticomm.py
+    jb.py
+    jgreen.py
+    muscle2.py
+    output_anticomm.txt
+    output_jb.txt
+    output_jgreen.txt
+    output_muscle2.txt
+    output_trine.txt
+    trine.py
+
+2026-10-13_lambert_dynamics_uns/
+    README.md
+    lambert_uns.py
+    output_lambert_uns.txt
+
+2026-10-13_monad_energy/
+    README.md
+    energy.py
+    output_energy.txt
+
+2026-10-13_nltk_extraction_pipeline/
+    README.md
+    extract.py
+    hearst.py
+    neutron_generation_overview.txt
+    perceptron_ewt.pkl
+    tagger_train.py
+    topic_bag.py
+
+2026-10-13_paper_pdf_build/
+    19_Dimensional_Scalar_WordNet_Context_Propagation_v4.0_2026-10-13.pdf
+    README.md
+    header.tex
+
+2026-10-13_portals_inventory_moving_kite/
+    README.md
+    common.py
+    ders.npy
+    g2decomp.py
+    genealogy.py
+    genealogy2.py
+    invariants.py
+    lambert3.py
+    make_addendum.py
+    output_g2decomp.txt
+    output_genealogy.txt
+    output_genealogy2.txt
+    output_invariants.txt
+    output_lambert3.txt
+    output_portals.txt
+    output_spinor_braid.txt
+    portals.py
+    spinor_braid.py
+
+2026-10-13_princeton_email/
+    EMAIL_PRINCETON_WORDNET.prev-2026-10-13.txt
+    EMAIL_PRINCETON_WORDNET.prev-2026-10-17.txt
+    EMAIL_PRINCETON_WORDNET.txt
+    READ_BEFORE_SENDING_Princeton_email.txt
+
+2026-10-13_strut_components_friction/
+    README.md
+    cross.py
+    output_cross.txt
+    output_overlap.txt
+    output_struts.txt
+    overlap.py
+    struts.py
+
+2026-10-13_wsd_lesk_vs_ppr/
+    README.md
+    output.txt
+    wsd.py
+
+2026-10-14_addition_matrix_followups/
+    README.md
+    chase_borderline_cell.py
+    output_chase_borderline_cell.txt
+
+2026-10-14_addition_matrix_orbits/
+    README.md
+    law_and_address.py
+    orbits.py
+    output_law_and_address.txt
+    output_orbits.txt
+
+2026-10-14_all_monads_benchmark/
+    bench_monads.py
+    child.py
+    child2.py
+    compiled.py
+    gen_docs.py
+    results.json
+    results_compiled.json
+    results_console_loader.json
+    results_extra.json
+    results_orbweaver_via.json
+    rows.json
+    run.log
+    run_extra.log
+    tables.md
+    transcripts.md
+
+2026-10-14_collatz_gl_rerun/
+    README.md
+    bl_tables.json
+    dfs_fp.py
+    fixed_lineages.py
+    gl_collatz.py
+    gl_collatz_results.json
+    lyndon_chase.py
+    lyndon_chase2.py
+    matched_controls.py
+    output_fixed_lineages.txt
+    output_gl_collatz.txt
+    output_lyndon_chase.txt
+    output_lyndon_chase2.txt
+    output_matched_controls.txt
+
+2026-10-14_poe_servo_ring/
+    beam_geometry.py
+    output_beam_geometry.txt
+
+2026-10-15_circle_unit_session/
+    README.md
+    p10_output.txt
+    p10_seventh_circle_factoring.py
+    p11_build_wiki.py
+    p12_gl_page.py
+    p1_heartbeat.py
+    p1_output.txt
+    p2_output.txt
+    p2_unit_circles.py
+    p2b_chase.py
+    p2b_output.txt
+    p3_fisqrt.py
+    p3_output.txt
+    p3b_output.txt
+    p3b_sigma_chase.py
+    p4_dipole_normal.py
+    p4_output.txt
+    p5_output.txt
+    p5_translation.py
+    p6_output.txt
+    p6_zeta_lobes.py
+    p6b_output.txt
+    p7_normed_circles.py
+    p7_output.txt
+    p8_output.txt
+    p8_sigma_scan.csv
+    p8_sigma_scan.py
+    p9_imaginary.py
+    p9_output.txt
+    tables.json
+    tables.md
+
+2026-10-15_null_operator_names/
+    n1_census.json
+    n1_census.py
+    n1_output.txt
+    n2_earliest.json
+    n2_first_appearance.py
+    n2_first_appearance.tsv
+    n2_output.txt
+    n3_contexts.py
+    n3_output.txt
+    n4_output.txt
+    n4_timeline.py
+    n4_timeline_raw.tsv
+    n5_family_share.py
+    n5_output.txt
+    t1_battery.py
+    t1_ledger.json
+    t1_output.txt
+    t2_output.txt
+    t2_rerun_jred_jblue.py
+    t3_output.txt
+
+2026-10-15_vapmip_paper/
+    q1_output.txt
+    q1_surface.json
+    q1_surface.py
+    q2_output.txt
+    q2_twin.json
+    q2_twin.py
+    q2b_norm.py
+    q3_conservation.py
+    q3_output.txt
+    q3b_chance.py
+    q3b_output.txt
+    q4_eyes.py
+    q4_output.txt
+    q5_output.txt
+    q5_parser.py
+    q6_nonmono.py
+    q6_output.txt
+    q7_output.txt
+    q7_question_into_kernel.py
+
+2026-10-17_T0_trace/
+    T0_trace_Wv.txt
+    T0_trace_hv.txt
+    first_word_sweep.txt
+    monad_eb28ce8.c
+
+2026-10-18_name_engine_workbench/
+    README.md
+
+2026-10-20_sempricon_zh_probes_zeros_ringcircle/
+    README.md
+    en1_a.py
+    en1_b.py
+    en1_c.py
+    en1_dict.py
+    rc_all.log
+    rc_min.py
+    rc_part1.log
+    zeros25000.log
+    zeros25000b.log
+    zh_key.py
+    zh_lab1.py
+    zh_lab2.py
+    zh_probe1.py
+
+2026-10-20_slingshot_tests/
+    README.md
+    RESULTS.md
+    slingshot_tests.py
+
+2026-10-21_sempricon_fresh_start_firing_plans/
+    README.md
+    fp_triples.py
+    mknb.py
+
 addition_matrix_sudoku/
     factor_search.py
 
 spectral_primes/
     build_and_test.py
 
-2026-10-14_poe_servo_ring/
-    beam_geometry.py, output_beam_geometry.txt
-2026-10-14_addition_matrix_followups/
-    chase_borderline_cell.py, output_chase_borderline_cell.txt, README.md
-
-2026-10-15_circle_unit_session/  — circle/unit-circle session (p1–p7 + README.md): heartbeat ½-radius circle, UNS-constant circle table, fast-inv-sqrt, dipole→normal, wire/gravity/Mandelbrot translation, zeta lobes, ℓ_p circles. No GL code written.
-
-2026-10-15_vapmip_paper/  — evidence for the VAPMIP paper on ptol.c + ptolemy_monad.py: q1 surface, q2 twin+projection parity, q3 conservation claim test, q4 eyes/monotone, q5 parser tables, q6 U-shape. Generator: VAPMIP/paper/.
+youtube_Uvy5Cs9FDLg/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
