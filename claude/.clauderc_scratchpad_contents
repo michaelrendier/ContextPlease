@@ -786,6 +786,13 @@
     RESULTS.md
     slingshot_tests.py
 
+2026-10-21_dprint_module/
+    README.md
+    d2.py
+    d3.py
+    demo.py
+    run_4.log
+
 2026-10-21_sempricon_fresh_start_firing_plans/
     README.md
     fp_triples.py

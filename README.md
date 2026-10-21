@@ -195,6 +195,20 @@ agent.
 
 ---
 
+## 5b. The ContextPlease Protocol
+
+**ContextPlease archives every `.clauderc*` file.** Those files are used in other places than this repository (the live copies sit in Cody's home directory and drive his sessions), so this repository exists to give them Git versioning and one unified collection space of their own. A quick clone and anyone can jump in by feeding the proper files to the model of their choice.
+
+The purpose is **historical access to the files Cody designed for Claude to use on his machine.** They are archived regularly, before `context_1` is cleared, so what was true at each point stays recoverable.
+
+A protocol pass: mirror the live `~/.clauderc*` files into `claude/`; write a primer into `claude/hist_prime/<repo>/`; mirror the scratchpad into `claude/scratchpad/` and regenerate `.clauderc_scratchpad_contents`; mirror the wikis into `claude/hist_wiki/`; commit and push.
+
+## 5c. The dPrint protocol (all code Claude writes)
+
+A global flag (1 on, 0 off) switches a **live stream of variable assignments** to stdout: every time any Python object is assigned a new value, its name and value print, so the point where a value diverges from expectation is visible at once. Object creation shows **parentage** as well as values. Plain variables and loops that iterate changes across a set of fields are inspectable all the way down while the flag is on. GUI code needs it only where it changes the information within that piece of GUI. Built 2026-10-21 as `ValaQuenta/PythonPath/DPrint.py`, a standalone stdlib file importable from any program via `PYTHONPATH` (`import DPrint as DP`; `DP.print` checkpoints, `DP.watch` the automatic feed, `DPRINT=1`/`0`, `DPRINT_SCOPE`, `python -m DPrint script.py`); tests in `ValaQuenta/Testing/test_DPrint.py`. `VAPMIP/SemPriCon/tools/dprint.py` is the older interim form. Falsy values print as themselves.
+
+---
+
 ## 6. The layout
 
 **A snapshot taken 2026-09-28. Additional stubs — new files, directories, or whole per-agent sets — may appear

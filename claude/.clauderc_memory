@@ -152,3 +152,17 @@ CI NOW POSSIBLE on every repo (workflow scope): ValaQuenta docs+tests+Pages (.gi
 GenerationalLineage ci.yml (Core + Extended). Pages was enabled via the API for ValaQuenta only.
 NOT DONE / NOT ASSUMED: provenance labels unset (wiki/provenance_review.md); Equation.process= lines are derived drafts;
 17 notebooks unexecuted since 2026-07-28; code/ and addenda/ docstrings incomplete; no Read the Docs project exists.
+
+══════════════════════════════════════════════════════════════════
+STANDING PROTOCOLS ADDED 2026-10-21
+══════════════════════════════════════════════════════════════════
+
+ContextPlease Protocol (Cody, 2026-10-21): ContextPlease archives EVERY one of the .clauderc* files. They are in use elsewhere than ContextPlease (on Cody's machine, live in ~), so the Protocol keeps Git versioning and one unified collection space in its own repo. A quick clone and anyone can jump in by feeding the proper files to a model of their choice. Its purpose is historical access to the files Cody designed for Claude to use on his machine; they are archived regularly BEFORE context_1 is cleared. A pass = mirror the live files, add a primer to hist_prime, mirror scratchpad + regenerate its manifest, mirror the wikis to hist_wiki, commit and push.
+
+dPrint protocol (Cody, 2026-10-21 extension; origin 2026-10-19): ALL code Claude writes carries it. A global flag (1 on, 0 off) switches a live stream of variable assignments to stdout: every time any Python object is assigned a new value, the name and the value print, so Cody can see exactly where values diverge from expectation. Object creation prints PARENTAGE (class and bases) as well as values. Plain variables and loops that iterate changes across a set of fields are inspectable all the way down while the flag is on. GUI code needs dprint only where it changes the information within that piece of GUI. Plan: an importable ValaQuenta module `DPrint` (`import DPrint as DP`, one call `DP.print(...)`), with optional in-scope flagging (class / method / function) to limit output to the scope causing trouble. DESIGN DISCUSSED 2026-10-21, NOT WRITTEN: build only on Cody's go. Until it exists, use SemPriCon/tools/dprint.py.
+
+TESTING (Cody, 2026-10-21): tests are kept out of new code. ValaQuenta/Testing/ holds test suites for work done in ValaQuenta ONLY, in ValaQuenta API Code Reference style (reST field lists, no narrative); suites are run from the scratchpad (mirrored in ContextPlease). No retro-fitting of existing code, which keeps its inline tests. dPrint flag name settled: DPRINT = 0 (off) / 1 (on).
+dPrint: BUILT 2026-10-21: ValaQuenta/PythonPath/DPrint.py (standalone stdlib single file, on PYTHONPATH via ~/.clauderc; `import DPrint as DP`; DP.print checkpoint, DP.watch automatic feed, DPRINT=1/0, DPRINT_SCOPE, `python -m DPrint script.py`); tests ValaQuenta/Testing/test_DPrint.py (10 pass); README ValaQuenta/PythonPath/README.md.
+
+WORKING METHOD (Cody, 2026-10-21): "just start writing tools". Toolsets/toolboxes everywhere are the practice. Any function called more than once is pulled into its own function/method. Early code (e.g. Ptolemy2 APISniff.py) is 'hacky': repetitive, sometimes computationally heavy, but functional; never disparage it.
+
