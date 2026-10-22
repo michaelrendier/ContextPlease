@@ -804,6 +804,12 @@ addition_matrix_sudoku/
 spectral_primes/
     build_and_test.py
 
+youtube_AACwyjlk8ko/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+
 youtube_Uvy5Cs9FDLg/
     CONTEXT.md
     oembed.json
