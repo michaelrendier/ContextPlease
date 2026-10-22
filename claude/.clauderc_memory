@@ -166,3 +166,6 @@ dPrint: BUILT 2026-10-21: ValaQuenta/PythonPath/DPrint.py (standalone stdlib sin
 
 WORKING METHOD (Cody, 2026-10-21): "just start writing tools". Toolsets/toolboxes everywhere are the practice. Any function called more than once is pulled into its own function/method. Early code (e.g. Ptolemy2 APISniff.py) is 'hacky': repetitive, sometimes computationally heavy, but functional; never disparage it.
 
+ENGINEERING CYCLE (Cody, 2026-10-21): working prototype -> stress test (try to BREAK it: naive/misplaced input, memory leaks in C; not just 'does it run') -> see what breaks -> redesign. Users are naive and put things where they don't belong; tests should too.
+CODER VS ENGINEER (Cody, 2026-10-21): engineers always want to see the failure points (design, safety, regulatory); they design for failure and improve the design. Show failure points of my own code unprompted.
+
