@@ -2091,3 +2091,17 @@ MEASURED: J_red/J_blue is the Z2 grading by chi_4 (red*red->red, red*blue->blue,
 xy+yx = -2<x,y>e0 for all 84 ZD diagonals (friction = the real part, in e0). Each strut has its own polar u (ptol's pair = u=4, 3 of 21 struts). Strut = 2 components (+/- pairs), partner spaces N+ (+) N- = blue_u half.
 Stabiliser SU(2) of a strut diagonal fixes the strut and rotates its 4 partners rigidly in N(y)=S3 (the muscle). OPEN: J_red x J_blue = d* (0.24600 vs 0.24631); hypercomplex_zeta j_red==j_blue.
 @END
+
+@RCCM_RIEMANN_TWO_TREES_HEARTBEAT
+(2026-11-08; full text: ThePlace/RiemannHypothesisProof/docs/RIEMANN_CANONICAL_MATHS.md = Ainulindale wiki/131; images: docs/IMAGE_CATALOG.md)
+SPACE: Cayley w=(s-1)/s, |w|=1 <=> sigma=1/2 (equator), poles s=1 (N), s=0 (S); mirror s->1-s is w->1/w. u=ln x (Screw axis), tau=ln y (sieve time), U=u/tau.
+TWO TREES: every integer prime (Telperion, spf, death tau=ln spf) | composite (Laurelin, gpf, birth tau=ln gpf) | {0,1} Mingling; B+R+M=1 exact (9592+90407+2=100001 at 1e5). Order of approach coincides only for prime powers.
+EXTINCTION FLOW: Phi(x,y)~x w(U)/ln y (Buchstab, (U w)'=w(U-1), w=1/U on [1,2], ->e^-gamma); Psi(x,y)~x rho(U) (Dickman, U rho'=-rho(U-1)); Laplace: rho^=e^{-E1(s)}/s, 1+w^=e^{E1(s)}, s rho^(1+w^)=1.
+STRAGGLERS (composites with all factors > y): composite share of survivors at size x = 1 - 1/(U w(U)); y=313 measured 0.248 (pred 0.260) at 1e6, 0.366 (0.375) at 1e7. 65 primes (<=313) decide primality only below 317^2=100489; survivors density prod(1-1/p)=0.0965.
+HEARTBEAT: T(x)=psi(x) (weight Lambda), L(x)=floor(x)-1-psi(x): T+L=floor(x)-1 exact => W_L=-W_T up to 2/sqrt(x). W_T=(psi-x)/sqrt(x) = H(u) = -2 sum_{gamma>0} cos(gamma u - arg rho)/|rho| (von Mangoldt). Tone = two equal counter-rotating circles r=1/|rho|, area pi/|rho|^2.
+  sum_{g>0} 1/(1/4+g^2)=1+gamma_E/2-ln(4pi)/2=0.0230957 ; <H^2>=2+gamma_E-ln4pi=0.046191. pi of wiki/96: int_0^2pi sin^2 = int cos^2 = pi (unit-sinusoid power), NOT the area of the real tones. Single prime step in W units ln p/sqrt(p), max at p=e^2 (2/e).
+ADD/SCALE/SIGN (READING): step du multiplies tone by e^{(1/2+i g)du} = SCALE e^{du/2} o rotation g du; SIGN = conjugation / half-turn.
+PATH OF FIRST K PRIMES: log P_K(1/2+it)=sum -ln(1-p^-s): jagged tangle for K<=65 then outward log-spiral ~ Ei((1-s)ln x); torus radius sqrt(sum 1/p)=1.42/1.65/1.70/1.75 at K=65/1e4/1e5/1e6; Euler product at 1/2 does not converge (|P| crosses 1 17x in 1e6 primes at t=gamma1).
+PRECISION: zero heights need ~2 decimals for x<=2e6 (delta_gamma * ln x <~ 0.1). N-BALL (naive V_{ku}(1) vs Dickman rho): fails; OPEN for other forms.
+PANCAKE COIL (POE): 17 turns, pitch 0.8mm, 38/10 mm, taps 17/5/3/1 turns = 3.58uH/258nH/95nH/11.5nH; L=mu0 N^2 D/(1+2.46 rho); taps<->zeros 2/6/10/34.
+@END
