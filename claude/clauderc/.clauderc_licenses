@@ -103,3 +103,17 @@ Private copies: ~/Desktop/SpaceClaude/FourthAgePapers_removed_drafts_2026-10-18/
 4. Any console UI borrowing structure from other console torrent clients (rTorrent GPL-2.0, tremc GPL-3.0, Deluge GPL-3.0+): design STRUCTURE
    (layout, tab names, key conventions) is not copyrightable; copying CODE is. If code is ever copied, the host licence must be compatible and the
    notice kept. Currently: design reference only, no code copied.
+
+@LIC_NRAO
+Applies to: anything using data from the NRAO archive (VLA/EVLA, VLBA, GBT; the HE 0435-1223 VLA 12B-030 request, 2026-10-25).  [SEEN: the portal's "Data Acknowledgements" notice, relayed by Cody 2026-10-25]
+Include, verbatim, in papers, docs and releases that use the data:
+  "The National Radio Astronomy Observatory and Green Bank Observatory are facilities of the U.S. National Science Foundation operated under cooperative agreement by Associated Universities, Inc."
+Where it lives: BulletCluster/NOTICE (Data acknowledgements). Mirror the wording into any paper that uses VLA data.
+
+@LIC_ALMA_DATA
+Applies to: ALMA data (HE 0435-1223, programme 2024.1.00291.S, downloaded 2026-10-22).  [MEMORY] VERIFY at the ALMA archive's acknowledgement page before publishing.
+Usual form: cite the data as ADS/JAO.ALMA#2024.1.00291.S and add the ALMA partnership statement (ESO, NSF/NRAO, NINS/NAOJ). Check the data-rights notice in each member's README.
+
+@LIC_MAST_STSCI
+Applies to: JWST and HST data from MAST (HE 0435-1223; Dust targets).  [MEMORY] VERIFY the wording at the MAST acknowledgement page before publishing.
+Usual form: state the data were obtained from the Mikulski Archive for Space Telescopes (STScI, operated by AURA under NASA contract NAS 5-03127 for JWST / NAS 5-26555 for HST) and give the programme IDs (JWST 1198, 2046; HST 9744, 12889, 13732, and for Dust 5773, 13926, 16674, 1245, 2739).

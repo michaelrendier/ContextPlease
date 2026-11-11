@@ -169,3 +169,5 @@ WORKING METHOD (Cody, 2026-10-21): "just start writing tools". Toolsets/toolboxe
 ENGINEERING CYCLE (Cody, 2026-10-21): working prototype -> stress test (try to BREAK it: naive/misplaced input, memory leaks in C; not just 'does it run') -> see what breaks -> redesign. Users are naive and put things where they don't belong; tests should too.
 CODER VS ENGINEER (Cody, 2026-10-21): engineers always want to see the failure points (design, safety, regulatory); they design for failure and improve the design. Show failure points of my own code unprompted.
 
+SEMPRICON v3.0 EXPERIMENT RULES (Cody, 2026-10-21): Idea Map = Chinese slots; the TestMonad (modified historic monad) always speaks ENGLISH; English words are assigned to Chinese idea slots and WordNet edges may be used once a slot is identified. Assess english bin as English, chinese bin as Chinese, combined bin as the assignment experiment; never Indonesian/Finnish, never English tests on Chinese. Discuss assessments before running. TestMonad changes: documented in the SemPriCon wiki, additions in, removals deprecated and left.
+

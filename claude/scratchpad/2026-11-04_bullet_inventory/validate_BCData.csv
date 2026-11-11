@@ -1,0 +1,343 @@
+file,bytes,status,detail
+Planck/COM_CompMap_Compton-SZMap_R2.01.tgz,12214821823,n/a,
+Planck/HFI_SkyMap_545_2048_R2.02_full.fits,603990720,OK,hdus=2 implied=603990720 actual=603990720
+Planck/HFI_SkyMap_857_2048_R2.02_full.fits,603990720,OK,hdus=2 implied=603990720 actual=603990720
+Planck/wget_545.log,814001,n/a,
+Planck/wget_ymap.log,0,n/a,
+Planck/wget_ymap_nilc.log,0,n/a,
+Planck/wget_ymap_tgz.log,19218040,n/a,
+Planck/COM_CompMap_YSZ_R2.01/milca_ymaps.fits,603990720,OK,hdus=2 implied=603990720 actual=603990720
+HST/resume_hst.log,6182,n/a,
+HST/resume_hst.py,3531,n/a,
+HST/10200/mastDownload/HST/j90701020/j90701020_drz.fits,219263040,OK,hdus=5 implied=219263040 actual=219263040
+HST/10200/mastDownload/HST/j90701010/j90701010_drz.fits,219286080,OK,hdus=5 implied=219286080 actual=219286080
+HST/10200/mastDownload/HST/j90702010/j90702010_drz.fits,219234240,OK,hdus=5 implied=219234240 actual=219234240
+HST/10200/mastDownload/HST/j90702020/j90702020_drz.fits,219286080,OK,hdus=5 implied=219286080 actual=219286080
+MeerKAT/MGCLS_Table2_compact_catalogue.fits,67956480,OK,hdus=2 implied=67956480 actual=67956480
+MeerKAT/MGCLS_Table4_diffuse.fits,17280,OK,hdus=2 implied=17280 actual=17280
+MeerKAT/wget_catalogue.log,80,n/a,
+MeerKAT/wget_catalogue2.log,101838,n/a,
+MeerKAT/synthetic/synthetic_I_particle.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_I_wave.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_Q_particle.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_Q_wave.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_U_particle.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_U_wave.fits,209718720,OK,hdus=1 implied=209718720 actual=209718720
+MeerKAT/synthetic/synthetic_freqs_particle.dat,10417,n/a,
+MeerKAT/synthetic/synthetic_freqs_wave.dat,10417,n/a,
+MeerKAT/synthetic/synthetic_meta_particle.txt,234,n/a,
+MeerKAT/synthetic/synthetic_meta_wave.txt,230,n/a,
+MeerKAT/MGCLS_DR1/Table1_MGCLS_targets.csv,4253,n/a,
+MeerKAT/MGCLS_DR1/Table2_MGCLS_compactcat_DR1.fits,67956480,OK,hdus=2 implied=67956480 actual=67956480
+MeerKAT/MGCLS_DR1/Table4_MGCLS_diffuse.fits,17280,OK,hdus=2 implied=17280 actual=17280
+MeerKAT/MGCLS_DR1/enhanced/frequency_cubes/Bullet_aFix_pol_I_15arcsec_fcube_cor.fits.gz,533073902,OK(gz),hdus=2
+MeerKAT/MGCLS_DR1/enhanced/frequency_cubes/Bullet_aFix_pol_I_Farcsec_fcube_cor.fits.gz,559959072,OK(gz),hdus=5
+MeerKAT/MGCLS_DR1/enhanced/5pln_cubes/Bullet_aFix_pol_I_15arcsec_5pln_cor.fits.gz,138563624,OK(gz),hdus=2
+MeerKAT/MGCLS_DR1/enhanced/5pln_cubes/Bullet_aFix_pol_I_Farcsec_5pln_cor.fits.gz,137268334,OK(gz),hdus=2
+MeerKAT/MGCLS_DR1/basic/Bullet.APSCal.1pln.fits.gz,122259991,OK(gz),hdus=3
+JWST/astroquery_install.log,1214,n/a,
+JWST/download_mosaics.log,19851,n/a,
+JWST/download_mosaics.py,4988,n/a,
+JWST/download_mosaics_run.log,7627,n/a,
+JWST/dust_confound_test.py,16119,n/a,
+JWST/field_lines.py,13435,n/a,
+JWST/final_dm_lio_polarization.py,10145,n/a,
+JWST/headless_shot.py,1938,n/a,
+JWST/l_io_lensing.py,8980,n/a,
+JWST/l_io_polarization_composite.py,7879,n/a,
+JWST/make_background.py,9595,n/a,
+JWST/overlay_layers_on_background.py,7010,n/a,
+JWST/pixel_polarization_map.py,6381,n/a,
+JWST/pixel_vector_field.py,6175,n/a,
+JWST/prep_jwst.py,8743,n/a,
+JWST/ptychography_polarization.py,8042,n/a,
+JWST/resume_jwst.py,2411,n/a,
+JWST/source_extract.py,12870,n/a,
+JWST/topo_map.py,17311,n/a,
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f356w/jw04598-o002_t010_nircam_clear-f356w_i2d.fits,1585152,BAD,AstropyUserWarning: File may have been truncated: actual file length (1585152) is smaller than the expected si
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f115w/jw04598-o002_t010_nircam_clear-f115w_i2d.fits,241664,BAD,AstropyUserWarning: File may have been truncated: actual file length (241664) is smaller than the expected siz
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f090w/jw04598-o002_t010_nircam_clear-f090w_i2d.fits,1218087360,OK,hdus=10 implied=1218087360 actual=1218087360
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f200w/jw04598-o002_t010_nircam_clear-f200w_i2d.fits,1220405760,OK,hdus=10 implied=1220405760 actual=1220405760
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f356w/jw04598-o001_t001_nircam_clear-f356w_i2d.fits,396420480,OK,hdus=10 implied=396420480 actual=396420480
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f444w/jw04598-o002_t010_nircam_clear-f444w_i2d.fits,160337920,BAD,AstropyUserWarning: File may have been truncated: actual file length (160337920) is smaller than the expected 
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f277w/jw04598-o001_t001_nircam_clear-f277w_i2d.fits,396501120,OK,hdus=10 implied=396501120 actual=396501120
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f444w/jw04598-o001_t001_nircam_clear-f444w_i2d.fits,396339840,OK,hdus=10 implied=396339840 actual=396339840
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f200w/jw04598-o001_t001_nircam_clear-f200w_i2d.fits,1908005760,OK,hdus=10 implied=1908005760 actual=1908005760
+JWST/4598/mastDownload/JWST/jw04598-o002_t010_nircam_clear-f410m/jw04598-o002_t010_nircam_clear-f410m_i2d.fits,289373760,OK,hdus=10 implied=289373760 actual=289373760
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f410m/jw04598-o001_t001_nircam_clear-f410m_i2d.fits,396339840,OK,hdus=10 implied=396339840 actual=396339840
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f115w/jw04598-o001_t001_nircam_clear-f115w_i2d.fits,1905310080,OK,hdus=10 implied=1905310080 actual=1905310080
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f150w/jw04598-o001_t001_nircam_clear-f150w_i2d.fits,713146368,BAD,AstropyUserWarning: File may have been truncated: actual file length (713146368) is smaller than the expected 
+JWST/4598/mastDownload/JWST/jw04598-o001_t001_nircam_clear-f090w/jw04598-o001_t001_nircam_clear-f090w_i2d.fits,1905128640,OK,hdus=10 implied=1905128640 actual=1905128640
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_cal.fits,117570240,OK,hdus=9 implied=117570240 actual=117570240
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_i2d.fits,118693440,OK,hdus=9 implied=118693440 actual=118693440
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_o001_crf.fits,117688320,OK,hdus=9 implied=117688320 actual=117688320
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_rate.fits,83969280,OK,hdus=7 implied=83969280 actual=83969280
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_rateints.fits,83963520,OK,hdus=8 implied=83963520 actual=83963520
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca1_uncal.fits,50388480,OK,hdus=6 implied=50388480 actual=50388480
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_cal.fits,117573120,OK,hdus=9 implied=117573120 actual=117573120
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_i2d.fits,119096640,OK,hdus=9 implied=119096640 actual=119096640
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_o001_crf.fits,117691200,OK,hdus=9 implied=117691200 actual=117691200
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_rate.fits,83969280,OK,hdus=7 implied=83969280 actual=83969280
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_rateints.fits,83963520,OK,hdus=8 implied=83963520 actual=83963520
+JWST/4598/mastDownload/misc/jw04598001001_04101_00001_nrca3_uncal.fits,50388480,OK,hdus=6 implied=50388480 actual=50388480
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_cal.fits,117570240,OK,hdus=9 implied=117570240 actual=117570240
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_i2d.fits,118693440,OK,hdus=9 implied=118693440 actual=118693440
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_o001_crf.fits,117691200,OK,hdus=9 implied=117691200 actual=117691200
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_rate.fits,83969280,OK,hdus=7 implied=83969280 actual=83969280
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_rateints.fits,83963520,OK,hdus=8 implied=83963520 actual=83963520
+JWST/4598/mastDownload/misc/jw04598001001_04101_00005_nrca1_uncal.fits,50388480,OK,hdus=6 implied=50388480 actual=50388480
+JWST/4598/mastDownload/misc/jw04598001001_19101_00001_nrca1_cal.fits,117573120,OK,hdus=9 implied=117573120 actual=117573120
+JWST/4598/mastDownload/misc/jw04598001001_19101_00001_nrca1_i2d.fits,118693440,OK,hdus=9 implied=118693440 actual=118693440
+JWST/4598/mastDownload/misc/jw04598001001_19101_00001_nrca1_o001_crf.fits,117691200,OK,hdus=9 implied=117691200 actual=117691200
+JWST/4598/mastDownload/misc/jw04598001001_19101_00001_nrca1_rate.fits.part,39845888,BAD,AstropyUserWarning: File may have been truncated: actual file length (39845888) is smaller than the expected s
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_cal.fits,117573120,OK,hdus=9 implied=117573120 actual=117573120
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_i2d.fits,21467136,BAD,AstropyUserWarning: File may have been truncated: actual file length (21467136) is smaller than the expected s
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_o001_crf.fits,117694080,OK,hdus=9 implied=117694080 actual=117694080
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_rate.fits,83969280,OK,hdus=7 implied=83969280 actual=83969280
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_rateints.fits,83963520,OK,hdus=8 implied=83963520 actual=83963520
+JWST/4598/mastDownload/misc/jw04598001001_19101_00003_nrca2_uncal.fits,50388480,OK,hdus=6 implied=50388480 actual=50388480
+JWST/prepped/EB_decomp_ALL.png,120976,n/a,
+JWST/prepped/EB_decomp_BG.png,119239,n/a,
+JWST/prepped/EB_decomp_CL.png,115981,n/a,
+JWST/prepped/background_cache.npz,61115869,n/a,
+JWST/prepped/field_lines_ALL.png,1276089,n/a,
+JWST/prepped/field_lines_BG.png,1242606,n/a,
+JWST/prepped/field_lines_BG.svg,162249,n/a,
+JWST/prepped/field_lines_CL.png,1255660,n/a,
+JWST/prepped/gradient_report.txt,1206,n/a,
+JWST/prepped/profile_CENTROID_ALL.npz,1570,n/a,
+JWST/prepped/profile_CENTROID_BG_ONLY.npz,1570,n/a,
+JWST/prepped/profile_CENTROID_CLUSTER.npz,1570,n/a,
+JWST/prepped/profile_DM_SE_ALL.npz,1570,n/a,
+JWST/prepped/profile_DM_SE_BG_ONLY.npz,1570,n/a,
+JWST/prepped/profile_DM_SE_CLUSTER.npz,1570,n/a,
+JWST/prepped/profile_GAS_NW_ALL.npz,1570,n/a,
+JWST/prepped/profile_GAS_NW_BG_ONLY.npz,1570,n/a,
+JWST/prepped/profile_GAS_NW_CLUSTER.npz,1570,n/a,
+JWST/prepped/profile_GAS_SE_ALL.npz,1570,n/a,
+JWST/prepped/profile_GAS_SE_BG_ONLY.npz,1570,n/a,
+JWST/prepped/profile_GAS_SE_CLUSTER.npz,1570,n/a,
+JWST/prepped/source_catalog.fits,149760,OK,hdus=2 implied=149760 actual=149760
+JWST/prepped/topo_map.svg,3848750,n/a,
+JWST/prepped/topo_map_comparison.png,573136,n/a,
+JWST/prepped/dust_confound/dust_confound_EB.png,1851285,n/a,
+JWST/prepped/dust_confound/dust_confound_report.json,2970,n/a,
+JWST/prepped/l_io/alpha1.npy,109952,n/a,
+JWST/prepped/l_io/alpha2.npy,109952,n/a,
+JWST/prepped/l_io/deflection_mag.npy,109952,n/a,
+JWST/prepped/l_io/final_dm_lio_polarization.png,3104256,n/a,
+JWST/prepped/l_io/final_dm_lio_polarization_annotated.png,3180342,n/a,
+JWST/prepped/l_io/kappa.npy,109952,n/a,
+JWST/prepped/l_io/l_io_deficit.json,468,n/a,
+JWST/prepped/l_io/l_io_slingshot_map.png,318226,n/a,
+JWST/prepped/l_io/psi.npy,109952,n/a,
+JWST/prepped/l_io/three_layers_on_background.png,5740139,n/a,
+JWST/prepped/centroid_cutouts/f090w_CENTROID_cutout.fits,132903360,OK,hdus=1 implied=132903360 actual=132903360
+JWST/prepped/centroid_cutouts/f090w_DM_SE_cutout.fits,132903360,OK,hdus=1 implied=132903360 actual=132903360
+JWST/prepped/centroid_cutouts/f090w_GAS_NW_cutout.fits,132903360,OK,hdus=1 implied=132903360 actual=132903360
+JWST/prepped/centroid_cutouts/f090w_GAS_SE_cutout.fits,132903360,OK,hdus=1 implied=132903360 actual=132903360
+JWST/prepped/centroid_cutouts/f277w_CENTROID_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f277w_DM_SE_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f277w_GAS_NW_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f277w_GAS_SE_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f444w_CENTROID_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f444w_DM_SE_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f444w_GAS_NW_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/centroid_cutouts/f444w_GAS_SE_cutout.fits,32748480,OK,hdus=1 implied=32748480 actual=32748480
+JWST/prepped/radial_profiles/f090w_CENTROID_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f090w_DM_SE_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f090w_GAS_NW_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f090w_GAS_SE_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f277w_CENTROID_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f277w_DM_SE_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f277w_GAS_NW_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f277w_GAS_SE_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f444w_CENTROID_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f444w_DM_SE_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f444w_GAS_NW_profile.npz,3092,n/a,
+JWST/prepped/radial_profiles/f444w_GAS_SE_profile.npz,3092,n/a,
+JWST/prepped/pixel_field/E1_ALL.npy,56583068,n/a,
+JWST/prepped/pixel_field/E1_BG.npy,56583068,n/a,
+JWST/prepped/pixel_field/E1_CL.npy,56583068,n/a,
+JWST/prepped/pixel_field/E2_ALL.npy,56583068,n/a,
+JWST/prepped/pixel_field/E2_BG.npy,56583068,n/a,
+JWST/prepped/pixel_field/E2_CL.npy,56583068,n/a,
+JWST/prepped/pixel_field/composite_viewer.html,6554,n/a,
+JWST/prepped/pixel_field/l_io_polarization_composite.png,10228513,n/a,
+JWST/prepped/pixel_field/l_io_polarization_composite_annotated.png,10262691,n/a,
+JWST/prepped/pixel_field/polarization_giant_ALL.png,5157843,n/a,
+JWST/prepped/pixel_field/polarization_giant_ALL_annotated.png,5194122,n/a,
+JWST/prepped/pixel_field/polarization_giant_BG.png,4440204,n/a,
+JWST/prepped/pixel_field/polarization_giant_BG_annotated.png,4475990,n/a,
+JWST/prepped/pixel_field/polarization_giant_CL.png,4535755,n/a,
+JWST/prepped/pixel_field/polarization_giant_CL_annotated.png,4573646,n/a,
+JWST/prepped/pixel_field/polarization_giant_legend.png,75445,n/a,
+JWST/prepped/pixel_field/ptychography_polarization_BG.png,9627232,n/a,
+JWST/prepped/pixel_field/ptychography_polarization_BG_annotated.png,9652996,n/a,
+JWST/prepped/pixel_field/quiver_ALL.png,1238400,n/a,
+JWST/prepped/pixel_field/quiver_BG.png,1291411,n/a,
+JWST/prepped/pixel_field/quiver_CL.png,1250299,n/a,
+JWST/prepped/pixel_field/vector_field_plain_BG.png,222465,n/a,
+JWST/prepped/pixel_field/vector_field_plain_BG_annotated.png,250634,n/a,
+JWST_scaffold_level3/SCAFFOLD_FIRST.md,1457,n/a,
+JWST_scaffold_level3/run_state/jwst.done,0,n/a,
+JWST_scaffold_level3/run_state/jwst.log,13214,n/a,
+JWST_scaffold_level3/run_state/wrapper.lock,0,n/a,
+JWST_scaffold_level3/run_state/wrapper.log,215,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f090w_cat.ecsv,3321723,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f090w_i2d.fits,1905122880,OK,hdus=10 implied=1905122880 actual=1905122880
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f090w_segm.fits,238291200,OK,hdus=3 implied=238291200 actual=238291200
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f115w_cat.ecsv,3552672,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f115w_i2d.fits,1905307200,OK,hdus=10 implied=1905307200 actual=1905307200
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f115w_segm.fits,238314240,OK,hdus=3 implied=238314240 actual=238314240
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f150w_cat.ecsv,3673983,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f150w_i2d.fits,1905304320,OK,hdus=10 implied=1905304320 actual=1905304320
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f150w_segm.fits,238314240,OK,hdus=3 implied=238314240 actual=238314240
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f200w_cat.ecsv,4049161,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f200w_i2d.fits,1907634240,OK,hdus=10 implied=1907634240 actual=1907634240
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f200w_segm.fits,238605120,OK,hdus=3 implied=238605120 actual=238605120
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f277w_cat.ecsv,1955046,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f277w_i2d.fits,396345600,OK,hdus=10 implied=396345600 actual=396345600
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f277w_segm.fits,56715840,OK,hdus=3 implied=56715840 actual=56715840
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f356w_cat.ecsv,2569255,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f356w_i2d.fits,396429120,OK,hdus=10 implied=396429120 actual=396429120
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f356w_segm.fits,56727360,OK,hdus=3 implied=56727360 actual=56727360
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f410m_cat.ecsv,2362055,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f410m_i2d.fits,396348480,OK,hdus=10 implied=396348480 actual=396348480
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f410m_segm.fits,56718720,OK,hdus=3 implied=56718720 actual=56718720
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f444w_cat.ecsv,2116059,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f444w_i2d.fits,396348480,OK,hdus=10 implied=396348480 actual=396348480
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_nircam_clear-f444w_segm.fits,56715840,OK,hdus=3 implied=56715840 actual=56715840
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f115w_cat.ecsv,1534456,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f115w_i2d.fits,128891520,OK,hdus=10 implied=128891520 actual=128891520
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f115w_segm.fits,18486720,OK,hdus=3 implied=18486720 actual=18486720
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f150w_cat.ecsv,1531620,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f150w_i2d.fits,128880000,OK,hdus=10 implied=128880000 actual=128880000
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f150w_segm.fits,18478080,OK,hdus=3 implied=18478080 actual=18478080
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f200w_cat.ecsv,1618727,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f200w_i2d.fits,128880000,OK,hdus=10 implied=128880000 actual=128880000
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_clear-f200w_segm.fits,18478080,OK,hdus=3 implied=18478080 actual=18478080
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f115w-gr150c_c1d.fits,1471680,OK,hdus=3 implied=1471680 actual=1471680
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f115w-gr150c_x1d.fits,56136960,OK,hdus=8 implied=56136960 actual=56136960
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f115w-gr150r_c1d.fits,1785600,OK,hdus=3 implied=1785600 actual=1785600
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f115w-gr150r_x1d.fits,89556480,OK,hdus=8 implied=89556480 actual=89556480
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f150w-gr150c_c1d.fits,1958400,OK,hdus=3 implied=1958400 actual=1958400
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f150w-gr150c_x1d.fits,48585600,OK,hdus=8 implied=48585600 actual=48585600
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f200w-gr150c_c1d.fits,1967040,OK,hdus=3 implied=1967040 actual=1967040
+JWST_scaffold_level3/data/jwst/jw04598-o001_t001_niriss_f200w-gr150c_x1d.fits,48723840,OK,hdus=8 implied=48723840 actual=48723840
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f090w_cat.ecsv,1707049,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f090w_i2d.fits,1217975040,OK,hdus=10 implied=1217975040 actual=1217975040
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f090w_segm.fits,174098880,OK,hdus=3 implied=174098880 actual=174098880
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f115w_cat.ecsv,1742664,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f115w_i2d.fits,1217571840,OK,hdus=10 implied=1217571840 actual=1217571840
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f115w_segm.fits,174041280,OK,hdus=3 implied=174041280 actual=174041280
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f200w_cat.ecsv,2390076,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f200w_i2d.fits,1220293440,OK,hdus=10 implied=1220293440 actual=1220293440
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f200w_segm.fits,174430080,OK,hdus=3 implied=174430080 actual=174430080
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f356w_cat.ecsv,1430301,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f356w_i2d.fits,289440000,OK,hdus=10 implied=289440000 actual=289440000
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f356w_segm.fits,41425920,OK,hdus=3 implied=41425920 actual=41425920
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f410m_cat.ecsv,1420848,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f410m_i2d.fits,289379520,OK,hdus=10 implied=289379520 actual=289379520
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f410m_segm.fits,41417280,OK,hdus=3 implied=41417280 actual=41417280
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f444w_cat.ecsv,1554696,n/a,
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f444w_i2d.fits,289238400,OK,hdus=10 implied=289238400 actual=289238400
+JWST_scaffold_level3/data/jwst/jw04598-o002_t010_nircam_clear-f444w_segm.fits,41397120,OK,hdus=3 implied=41397120 actual=41397120
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f150w_cat.ecsv,2597273,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f150w_i2d.fits,1291533120,OK,hdus=10 implied=1291533120 actual=1291533120
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f150w_segm.fits,184610880,OK,hdus=3 implied=184610880 actual=184610880
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f210m_cat.ecsv,3119709,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f210m_i2d.fits,1291533120,OK,hdus=10 implied=1291533120 actual=1291533120
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f210m_segm.fits,184610880,OK,hdus=3 implied=184610880 actual=184610880
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f300m_cat.ecsv,1625373,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f300m_i2d.fits,306653760,OK,hdus=10 implied=306653760 actual=306653760
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f300m_segm.fits,43891200,OK,hdus=3 implied=43891200 actual=43891200
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f444w_cat.ecsv,1596067,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f444w_i2d.fits,306512640,OK,hdus=10 implied=306512640 actual=306512640
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_nircam_clear-f444w_segm.fits,43871040,OK,hdus=3 implied=43871040 actual=43871040
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_cat.ecsv,2214782,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_i2d.fits,128977920,OK,hdus=10 implied=128977920 actual=128977920
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f277w_segm.fits,18506880,OK,hdus=3 implied=18506880 actual=18506880
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_cat.ecsv,2335358,n/a,
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_i2d.fits,128977920,OK,hdus=10 implied=128977920 actual=128977920
+JWST_scaffold_level3/data/jwst/jw06882-o049_t025_niriss_clearp-f356w_segm.fits,18506880,OK,hdus=3 implied=18506880 actual=18506880
+Chandra/4984/acisf04984N004_cntr_img2.fits.gz,137046,OK(gz),hdus=6
+Chandra/4984/acisf04984N004_cntr_img2.jpg,683789,n/a,
+Chandra/4984/acisf04984N004_evt2.fits.gz,12544609,OK(gz),hdus=7
+Chandra/4984/acisf04984_001N004_bpix1.fits.gz,78845,OK(gz),hdus=6
+Chandra/4984/acisf04984_001N004_fov1.fits.gz,8202,OK(gz),hdus=2
+Chandra/4984/pcadf04984_001N001_asol1.fits.gz,17255665,OK(gz),hdus=2
+Chandra/4984/wget.log,156,n/a,
+Chandra/4984/wget_sec.log,0,n/a,
+Chandra/5361/acisf05361N004_cntr_img2.fits.gz,142305,OK(gz),hdus=6
+Chandra/5361/acisf05361N004_cntr_img2.jpg,701628,n/a,
+Chandra/5361/acisf05361N004_evt2.fits.gz,13389467,OK(gz),hdus=7
+Chandra/5361/acisf05361_001N004_bpix1.fits.gz,82178,OK(gz),hdus=6
+Chandra/5361/acisf05361_001N004_fov1.fits.gz,8532,OK(gz),hdus=2
+Chandra/5361/pcadf05361_001N001_asol1.fits.gz,18753458,OK(gz),hdus=2
+Chandra/5361/wget.log,156,n/a,
+Chandra/5361/wget_sec.log,0,n/a,
+Chandra/5355/acisf05355N004_cntr_img2.fits.gz,77953,OK(gz),hdus=6
+Chandra/5355/acisf05355N004_cntr_img2.jpg,523579,n/a,
+Chandra/5355/acisf05355N004_evt2.fits.gz,4628164,OK(gz),hdus=7
+Chandra/5355/acisf05355_000N004_bpix1.fits.gz,43486,OK(gz),hdus=6
+Chandra/5355/acisf05355_000N004_fov1.fits.gz,8067,OK(gz),hdus=2
+Chandra/5355/pcadf05355_000N001_asol1.fits.gz,6327694,OK(gz),hdus=2
+Chandra/5355/wget.log,156,n/a,
+Chandra/5355/wget_sec.log,0,n/a,
+Chandra/5357/acisf05357N004_cntr_img2.fits.gz,135022,OK(gz),hdus=6
+Chandra/5357/acisf05357N004_cntr_img2.jpg,705091,n/a,
+Chandra/5357/acisf05357N004_evt2.fits.gz,12647946,OK(gz),hdus=7
+Chandra/5357/acisf05357_000N004_bpix1.fits.gz,79311,OK(gz),hdus=6
+Chandra/5357/acisf05357_000N004_fov1.fits.gz,8540,OK(gz),hdus=2
+Chandra/5357/pcadf05357_000N001_asol1.fits.gz,18086518,OK(gz),hdus=2
+Chandra/5357/wget.log,156,n/a,
+Chandra/5357/wget_sec.log,0,n/a,
+Chandra/4985/acisf04985N004_cntr_img2.fits.gz,78421,OK(gz),hdus=6
+Chandra/4985/acisf04985N004_cntr_img2.jpg,512058,n/a,
+Chandra/4985/acisf04985N004_evt2.fits.gz,4756213,OK(gz),hdus=7
+Chandra/4985/acisf04985_000N004_bpix1.fits.gz,40291,OK(gz),hdus=6
+Chandra/4985/acisf04985_000N004_fov1.fits.gz,7679,OK(gz),hdus=2
+Chandra/4985/pcadf04985_000N001_asol1.fits.gz,6310690,OK(gz),hdus=2
+Chandra/4985/wget.log,156,n/a,
+Chandra/4985/wget_sec.log,0,n/a,
+Chandra/5356/acisf05356N004_cntr_img2.fits.gz,150910,OK(gz),hdus=6
+Chandra/5356/acisf05356N004_cntr_img2.jpg,727266,n/a,
+Chandra/5356/acisf05356N004_evt2.fits.gz,15519616,OK(gz),hdus=7
+Chandra/5356/acisf05356_000N004_bpix1.fits.gz,91770,OK(gz),hdus=6
+Chandra/5356/acisf05356_000N004_fov1.fits.gz,7787,OK(gz),hdus=2
+Chandra/5356/pcadf05356_000N001_asol1.fits.gz,22188651,OK(gz),hdus=2
+Chandra/5356/wget.log,156,n/a,
+Chandra/5356/wget_sec.log,0,n/a,
+Chandra/554/acisf00554N004_cntr_img2.fits.gz,78069,OK(gz),hdus=7
+Chandra/554/acisf00554N004_cntr_img2.jpg,520087,n/a,
+Chandra/554/acisf00554N004_evt2.fits.gz,9739769,OK(gz),hdus=8
+Chandra/554/acisf00554_000N004_bpix1.fits.gz,35629,OK(gz),hdus=7
+Chandra/554/acisf00554_000N004_fov1.fits.gz,8281,OK(gz),hdus=2
+Chandra/554/pcadf00554_000N001_asol1.fits.gz,5969853,OK(gz),hdus=2
+Chandra/554/wget.log,156,n/a,
+Chandra/554/wget_sec.log,0,n/a,
+Chandra/5358/acisf05358N004_cntr_img2.fits.gz,83258,OK(gz),hdus=6
+Chandra/5358/acisf05358N004_cntr_img2.jpg,545833,n/a,
+Chandra/5358/acisf05358N004_evt2.fits.gz,5092035,OK(gz),hdus=7
+Chandra/5358/acisf05358_000N004_bpix1.fits.gz,45619,OK(gz),hdus=6
+Chandra/5358/acisf05358_000N004_fov1.fits.gz,6931,OK(gz),hdus=2
+Chandra/5358/pcadf05358_000N001_asol1.fits.gz,7372580,OK(gz),hdus=2
+Chandra/5358/wget.log,156,n/a,
+Chandra/5358/wget_sec.log,0,n/a,
+Chandra/3184/acisf03184N004_cntr_img2.fits.gz,146848,OK(gz),hdus=6
+Chandra/3184/acisf03184N004_cntr_img2.jpg,651055,n/a,
+Chandra/3184/acisf03184N004_evt2.fits.gz,13501700,OK(gz),hdus=7
+Chandra/3184/acisf03184_000N004_bpix1.fits.gz,74322,OK(gz),hdus=6
+Chandra/3184/acisf03184_000N004_fov1.fits.gz,7727,OK(gz),hdus=2
+Chandra/3184/pcadf03184_000N001_asol1.fits.gz,19760990,OK(gz),hdus=2
+Chandra/3184/wget.log,156,n/a,
+Chandra/3184/wget_sec.log,0,n/a,
+Chandra/4986/acisf04986N004_cntr_img2.fits.gz,95878,OK(gz),hdus=6
+Chandra/4986/acisf04986N004_cntr_img2.jpg,609588,n/a,
+Chandra/4986/acisf04986N004_evt2.fits.gz,6658806,OK(gz),hdus=7
+Chandra/4986/acisf04986_000N004_bpix1.fits.gz,55148,OK(gz),hdus=6
+Chandra/4986/acisf04986_000N004_fov1.fits.gz,7912,OK(gz),hdus=2
+Chandra/4986/pcadf04986_000N001_asol1.fits.gz,9462352,OK(gz),hdus=2
+Chandra/4986/wget.log,156,n/a,
+Chandra/4986/wget_sec.log,0,n/a,
