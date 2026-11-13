@@ -206,7 +206,7 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix session_20260928"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -1148,6 +1148,22 @@ mertens_envelope, sieve_extinction.
 See wiki/archimedes_screw.md, Ainulindale/wiki/83_the_archimedes_screw.md,
 notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
 sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
+"
+
+export CTX_PTYCHO_WEAK_LENSING="
+ptycho_weak_lensing -- Ptycho-Weak-Lensing. v0.1 (2026-11-12). confidence_floor=THEORETICAL (:CALCULATED).
+numpy only (float64/complex128, FFT with zero padding). Modules/ptycho_weak_lensing/{maths,tools,manifest.json}; notebook 21; wiki ptycho_weak_lensing.md + Ainulindale 132.
+
+WHAT: weak gravitational lensing as a SPIN-2 inverse problem. kappa -> psi (Poisson) -> gamma = D kappa (D=(k1^2-k2^2+2ik1k2)/|k|^2, |D|=1)
+-> g = gamma/(1-kappa) -> eps = (eps_s+g)/(1+g* eps_s); KS inverse kappa_E+i kappa_B = D* gamma, reduced-shear iteration; nulls (45-degree rotation,
+shuffle, B floor); calibration (m,c); flat-LCDM efficiency D_ls/D_s and Sigma_cr. Polarization Q+iU is the same spin-2 operator (E/B).
+PTYCHOGRAPHY: pointing = probe window M_j, object = one real kappa (B=0), update kappa += alpha Re[D* M_j (eps_j - eta_j D kappa)]/eta_j (ePIE/Kaczmarz).
+MEASURED (synthetic merger 128^2): Gaussian halo 1e-3; KS round trip 1.5e-4; mass sheet 4e-16; pure-E pol 2.8e-5; ptycho with 3/9 pointings missing:
+corr 0.923 vs naive 0.864 (density 12), 0.825 vs 0.701 (density 3); full coverage = same fixed point. Modulus-only (|gamma|) GS: residual 5e-4 but corr 0.80 only
+from an informative start, global sign undetermined, flat/random starts stall = OPEN (multi-window modulus ptychography not built).
+LIMITS: synthetic only; no PSF/shape-measurement bias model, photo-z, cluster-member dilution, intrinsic alignment. GR does not rotate polarization (independent probe).
+NEXT: real-data control (Frontier Fields / UNCOVER-MARS / Clowe), real multi-band efficiencies, multi-window modulus ptychography, polarization-shear correlator.
+Targets: Euclid DR1 (2026-11-12) covers MACS J0416 among 20 tested lens fields.
 "
 
 export CTX_EMERGER="

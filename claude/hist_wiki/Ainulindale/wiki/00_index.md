@@ -1,5 +1,5 @@
 # AINULINDALE — WIKI INDEX
-Last updated: 2026-10-15
+Last updated: 2026-11-08
 
 ## The Monad
 
@@ -25,6 +25,8 @@ Last updated: 2026-10-15
 | [128_vapmip_paper_citation_pass_2026_10_16.md](128_vapmip_paper_citation_pass_2026_10_16.md) | Citation pass for the VAPMIP paper — built-against and Post-Hoc works, copies, what could not be fetched |
 | [129_veritasium_spider_silk_the_orbweaver_impetus.md](129_veritasium_spider_silk_the_orbweaver_impetus.md) | Veritasium, Is spider web really stronger than steel? — the orb-weaver impetus (built-against), transcript copy |
 | [130_ring_circle_operators.md](130_ring_circle_operators.md) | **2026-10-20** — The sedenion as circle-modifying operators. 15 slot-circles through e₀, each rotating every other exactly in place; n anticommuting circles close to so(n+1); 63 of 105 pairs anticommute, 42 (the Assessor pairs) deform; the sedenion first scales at four slots; smallest generating set of the operator ring = five circles; UNS = Add : Scale : Sign with Sign split into 15 quarter turns. Code `VAPMIP/RingCircle/`. |
+| [131_riemann_canonical_maths.md](131_riemann_canonical_maths.md) | **2026-11-08** — Riemann Canonical Maths: the space (Cayley sphere, UNS), ζ structure, the Two Trees partition, the extinction flow (Buchstab ω / Dickman ρ, Laplace reciprocity, the stragglers' equation 1−1/(Uω(U))), wheels and the path of the first K primes, the Heartbeat H(u) from the two sets, wind, pancake coil, 0_RB lines, π catalogue (∫sin²=π is wiki 96), n-ball test; each item labelled ESTABLISHED / OURS-CALCULATED / READING / OPEN. Code `RiemannHypothesisProof/rhp/`. |
+| [132_ptycho_weak_lensing.md](132_ptycho_weak_lensing.md) | **2026-11-12** — Ptycho-Weak-Lensing engine: weak lensing as a spin-2 inverse problem (Kaiser–Squires, E/B, nulls, calibration), pointings as ptychographic probes with the B = 0 object constraint (gap-filling), intensity-only variant (OPEN), polarization Q+iU through the same E/B. Code `ValaQuenta/modules/ptycho_weak_lensing/`, notebook 21. |
 
 ## Provenance & Citations
 
