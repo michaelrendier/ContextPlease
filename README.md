@@ -207,6 +207,11 @@ A protocol pass: mirror the live `~/.clauderc*` files into `claude/`; write a pr
 
 A global flag (1 on, 0 off) switches a **live stream of variable assignments** to stdout: every time any Python object is assigned a new value, its name and value print, so the point where a value diverges from expectation is visible at once. Object creation shows **parentage** as well as values. Plain variables and loops that iterate changes across a set of fields are inspectable all the way down while the flag is on. GUI code needs it only where it changes the information within that piece of GUI. Built 2026-10-21 as `ValaQuenta/PythonPath/DPrint.py`, a standalone stdlib file importable from any program via `PYTHONPATH` (`import DPrint as DP`; `DP.print` checkpoints, `DP.watch` the automatic feed, `DPRINT=1`/`0`, `DPRINT_SCOPE`, `python -m DPrint script.py`); tests in `ValaQuenta/Testing/test_DPrint.py`. `VAPMIP/SemPriCon/tools/dprint.py` is the older interim form. Falsy values print as themselves.
 
+
+## 5d. The Fourth Age Protocol
+
+The rules for papers, engines and notebooks in `FourthAgePapers` (the paper rule, the two prime directives restated for papers, the writing rules of the `cs-paper-code-conventions` skill, the working rules and the use cases) are collected in [`FOURTH_AGE_PROTOCOL.md`](FOURTH_AGE_PROTOCOL.md) (draft, 2026-11-14; its section 6 lists what is still to be supplied).
+
 ---
 
 ## 6. The layout
@@ -220,8 +225,8 @@ ContextPlease/
 ├── README.md        this file
 ├── TaKnight.txt     a standalone guide for keeping an AI on the rails, written for one person (2026-09-02)
 ├── claude/          Claude's set — live, in use (below)
-└── gemini/          gemini-cli's set — a skeleton: .geminirc, _canonical_maths, _context_1, _context_2, _memory,
-                     _ValaQuenta, plus USAGE.md
+└── gemini/          Gemini's set — fully mirrored (2026-11-13): 14 .geminirc* files, persistent scratchpad,
+                     hist_prime, hist_todo, hist_wiki, hooks, references, skills, and USAGE.md
 ```
 
 ### `claude/` — the twelve `.clauderc*` files
