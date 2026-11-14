@@ -40,6 +40,13 @@ MANIFEST = list of `{"url","dest","size"?,"sha256"?}`. MAST file URL: `https://m
 - `TELESCOPE_DPRINT=1` turns on the dPrint feed.
 - Tested 2026-10-20 on a small file: full fetch, then truncated `.part` resume, identical bytes.
 
+### 2b. Fault tolerance (added 2026-11-14, after the 2026-11-13/14 incidents)
+Incidents that taught it: an older SATA drive fell and was not unmounted; the USB 3 controller died on resume from a lid-close suspend (`xhci_hcd: HC died`), taking the drive with it; `gvfsd-google` (the desktop's Google-Drive mount) was OOM-killed three times, once at 5 GB resident; the machine did not reboot (up 5 days), it suspended and its USB bus reset.
+`telescope_download.py` now: writes STATE atomically (temp + fsync + rename); fsyncs each finished file and its directory; discards the last 16 MB of a `.part` on resume; with `--require-mount PATH` **waits and never writes** when the drive is not mounted (no ghost directory on the internal disk); treats a dropped or truncated connection as retryable (a short read is not a size mismatch); waits for the network with back-off without using up retries; pauses while `STATE.json.PAUSE` exists (`touch` / `rm`); exits 130 on SIGINT/SIGTERM after saving state; caps address space (`--max-mem-mb`, default 1536) and runs at nice 10 / idle I/O priority. Tested with a local server (SIGTERM mid-file then resume, mount guard, pause file, server killed and restarted: all passed, hashes equal).
+`run_download.sh MANIFEST STATE MOUNT LOG [args]` runs it under `systemd-inhibit` (sleep, idle, lid switch) so a lid-close cannot suspend the machine mid-download.
+`verify_downloads.py MANIFEST STATE` checks every file (exists, manifest size, sha256 equal to the recorded one), checkpointed, read-only, low priority; it repairs nothing.
+Do not use the GNOME Google-Drive mount for large files (it buffers in memory); download the Drive zips in the browser or with `rclone`.
+
 ## 3. Notifications (how the 15-minute updates reach Cody)
 A script cannot call Claude's tools. Run the download with `run_in_background`, then watch its stdout with the Monitor tool (each `[status]` line wakes the session and gets relayed). Optionally call PushNotification. This only works while the session is open; the STATE `.status` file is the fallback to read later.
 
