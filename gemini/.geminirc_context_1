@@ -1,25 +1,126 @@
-# .geminirc_context_1 — SKELETON. Live per-repo current state.
-# NOT bash. Do not source.
-#
-# ONE entry per repo/directory, keyed by a `## RepoName` heading. This file
-# is LIVE-EDITED: entries are overwritten as things change. It answers
-# "what is true now". For "what happened", use .geminirc_context_2, which is
-# append-only.
-#
-# Pull a single entry cheaply, instead of reading the whole growing file:
-#     ctxdir VAPMIP
-#
-# DELIBERATELY EMPTY. Per ContextPlease/README.md section 7, context is
-# EARNED, not copied. Inheriting another agent's conclusions means inheriting
-# its mistakes with no way to tell which are which. Write your own as you
-# verify things.
-#
-# Entry template:
-#
-# ## RepoName
-# source_files: the 2-4 files that actually matter here
-# verified: YYYY-MM-DD — what you personally ran, not what a doc claimed
-# state: current working-tree / build / data state
-# claims: each with ESTABLISHED | THEORETICAL | CONJECTURE | OPEN
-# flagged: known-wrong things left in place per Directive #2, and WHY
-# open: what the next agent should pick up
+# .geminirc_context_1 — per-directory current-state context for Gemini
+# One entry per top-level repository. Edited in place, not an append log.
+# Keyed `## RepoName`. Use `ctxdir RepoName` to inspect one repo at a time.
+# Written 2026-11-13 during initial onboarding and comprehensive repository survey.
+
+## Ainulindale
+Branch: main (dirty: 11 files). Remote: https://github.com/michaelrendier/Ainulindale.git
+WHAT IT IS: The birthplace and theoretical core of The Work. Contains the complete mathematical
+dissertation and conceptual evolution spanning First Age, Second Age, and Third Age CS Drafts.
+Houses the comprehensive wiki (pages 00 through 135+).
+CURRENT STATE (2026-11-13): Cody is actively revamping the wiki pages, updating "notepad wikis" to
+"reference authoritative to calculated code" style.
+- Wiki 133 ("Canonical Maths Ainulindalë") written 2026-11-13 as the authoritative mathematical reference.
+- Letter collision disambiguations formalized: α_fs (fine structure) vs A_fermat (Fermat structural constant) vs α_NN (neural); σ_ζ (Re s = 1/2) vs σ-stratum vs σ_RB; Ω_ζΣ (Lambert W(1)) vs ω_H (e^π) vs Ω(n).
+- The Four Faces of d* chart in UNS: d* (0.24631, Boundary), d*_RG (dim 8, Stability), d*_taut (0.246307..., Flow), d*_ln10 (0.56714..., Translator). Measured d*_spec = 0.24600 quarantined.
+- J chain relation clarified: J_red + J_blue = 0_RB - 0_BR (Noether current balance, forward action balanced by conjugate return flow 0_BR).
+- Untracked/modified: Gemini historical scripts reorganized into AgeFirst/.../Gemini/; active updates in wikis 125-132.
+
+## ValaQuenta
+Branch: main (clean). Remote: https://github.com/michaelrendier/ValaQuenta.git
+WHAT IT IS: The executable mathematical engine. Pure Python implementations of the mathematics,
+fully testable and runnable. Packaged as GPL-3.0-only (`pip install -e .`).
+CURRENT STATE:
+- Serves as the ROOT Python environment for all project work.
+- Key modules: `angular_rank` (16D oscilloscope, 12 equations), `box_kite` (octahedral charts, Assessors, PSL(2,7) labeling), `cayley_dickson` (tower algebras, basis multiplication), `h_rb_hat` (Null Operator / Hamiltonian), `oblique_gear` (precession stroke, crank angles), `archimedes_screw` (zeros winding), `sigma_cavitation`, `hamiltonian`.
+- Standardized logging & inspection tool: `ValaQuenta/PythonPath/DPrint.py` (built 2026-10-21, `import DPrint as DP`), implementing the project-wide dPrint protocol.
+- Sphinx documentation built at docs/ (HTML published to GitHub Pages). Full pytest test suite (73+ tests).
+
+## VAPMIP
+Branch: main (dirty: 1 file). Remote: https://github.com/michaelrendier/VAPMIP.git
+WHAT IT IS: "The World" — Monad semantic field engine, LSHS (Locality Sensitive Hyperindex Sieve),
+PtolC (ASCII & Unicode C implementations), and SemPriCon (Semantic Prime-Concept Engine).
+CURRENT STATE:
+- SemPriCon v3.0: Chinese-as-Baseline ("Idea Map"), English words mapped to Chinese idea slots on the σ_RB = 1/2 critical line.
+- C implementations: `src/PtolC_unicode`, `monad.c`, `tokenizer.c`, `dprint.h`.
+- SpecTools/: Reference toolset including the 25,000 Backlund exact zeros table (`zeros_exact_25000.tsv`), agreeing with RHP reference table to 3.6e-12 (1 ulp).
+- Rule: NEVER touch `~/.ptolemy/monad_wordnet.bin`. PTOL_SEED_TOKEN belongs exclusively to the Monad.
+
+## RiemannHypothesisProof (RHP)
+Branch: main (clean). Remote: https://github.com/michaelrendier/RiemannHypothesisProof.git
+WHAT IT IS: Rigorous mathematical computations and numerical verifications concerning Riemann zeros,
+explicit formulas, and the Two-Trees correspondence.
+CURRENT STATE:
+- Reference zero table: `data/zeros_25000_hp.tsv` (25,000 γ values computed to 32 digits via mpmath `siegelz`, Backlund count certified).
+- Zero waves: Zero-tone harmonics = -2 cos(γ u - arg ρ)/|ρ|; heartbeat H(u) reconstructs (ψ(x) - x)/√x with correlation > 0.99 at 3,066 zeros.
+- Explicit formula verification ledger (`rhp/ledger.py`): 14/14 checks green (Guinand-Weil residuals 1e-14..1e-10; Weil/Hasse-Davenport Fermat counts 4.6e-13).
+- Chebyshev bias ψ(x;4,1) - ψ(x;4,3) reconstructed from L(χ_-4) zeros.
+- Ping test: Prime vs composite discrimination from zero sums validated.
+
+## ContextPlease
+Branch: main (dirty). Remote: https://github.com/michaelrendier/ContextPlease.git
+WHAT IT IS: Manual Transmission Context Continuity repository. Dedicated Git-versioned collection
+for all context files, persistent scratchpads, session primers, and historical documentation.
+CURRENT STATE:
+- Claude environment (`claude/`): Full suite of 12 `.clauderc*` files, active scratchpad (64+ work packages, latest: `2026-11-13_ainulindale_audit`), `hist_prime/`, `hist_wiki/`, `references/`, `skills/`.
+- Gemini environment (`gemini/`): Initialized and fully mirrored 2026-11-13. Contains `.geminirc`, `.geminirc_canonical_maths`, `.geminirc_ValaQuenta`, `.geminirc_memory`, `.geminirc_context_1`, `.geminirc_context_2`, `.geminirc_context`, `.geminirc_context_hub`, `.geminirc_ctx`, `.geminirc_citations`, `.geminirc_user_provenance`, `.geminirc_official_names`, `.geminirc_licenses`, persistent `scratchpad/`, `hist_prime/`, `hist_todo/`, `hist_wiki/`, `references/`, and `skills/`.
+
+## BulletCluster
+Branch: main (dirty: 2 files). Remote: https://github.com/michaelrendier/BulletCluster.git
+WHAT IT IS: Gravitational lensing analysis, observational astrophysics data ingestion, and
+Refsdal supernova time-delay predictions.
+CURRENT STATE:
+- Downloader pipeline: JWST resume downloader (`jwst_resume_download.py`) and HST Huchra's Lens mode (`huchras_lens/`).
+- Telescope data streams to `/media/rendier/Telescope Data/` with overflow to `/media/rendier/TheSDCard/` (Claude on right screen monitors these downloads; do not disturb).
+- Offline geometry pass computes Earth barycentric aberration, light-time, and parallax baselines.
+
+## FourthAgePapers
+Branch: main (clean). Remote: https://github.com/michaelrendier/FourthAgePapers.git
+WHAT IT IS: LaTeX and Markdown manuscripts, formal writeups, figures, and research releases.
+Houses DStarRG engine and BoundaryLever manuscripts.
+CURRENT STATE:
+- Clean main branch. Worktree active at `_worktrees/FourthAgePapers_scalar-context-propagation`.
+- Standing permission: FourthAgePapers is allowed thematic WIP branches; other repos remain main-only.
+
+## TuringStack
+Branch: main (clean). Remote: https://github.com/michaelrendier/TuringStack.git
+WHAT IT IS: UDEO (Unified Dimensional Entropy Oracle) — zero-divisor attack class exploring
+vulnerabilities and structural properties of modular forms.
+CURRENT STATE:
+- Embargo date: 2026-11-25 (CVE exploit specifics embargoed; general theoretical findings are publishable).
+
+## PTorrent
+Branch: main (clean). Remote: https://github.com/michaelrendier/PTorrent.git
+WHAT IT IS: Monad bag-of-words binary checkpoints, descriptors (`.ptorrent`), and corpora.
+CURRENT STATE:
+- Bin archive partitioned into `clean/` (geometric init + sanitised) and `dirty/` (poisoned/polluted historical states).
+
+## PtolemyDesktop
+Branch: x86_64-lenovo-thinkpad-x1carbon-6th-i7 (clean). Remote: https://github.com/michaelrendier/PtolemyDesktop.git
+WHAT IT IS: Desktop application interface for Ptolemy/Monad; holds the Archimedes formulary
+`CANONICAL_MATHS.md` (503 rows across foundations, physics, and engineering).
+
+## SedenionSpectralRelativity (SSR)
+Branch: main (clean). Remote: https://github.com/michaelrendier/SedenionSpectralRelativity
+WHAT IT IS: Sedenion algebra relativity calculations, firing plans `(R I | 2 1)`, and ring-circle operators.
+
+## GenerationalLineage
+Branch: main (clean). Remote: https://github.com/michaelrendier/GenerationalLineage.git
+WHAT IT IS: Systematic lineage tracking of models, equations, concepts, and tests.
+Four senses of "Generational": (1) model lineage, (2) mathematical induction / CD doubling, (3) generators/iterators holding state ("path IS operator"), (4) conceptual heritage.
+
+## AbrikosovTree
+Branch: two-trees (clean). Remote: https://github.com/michaelrendier/AbrikosovTree.git
+WHAT IT IS: Abrikosov vortex lattices, Two-Trees geometry, and zeta index precession.
+Candidate home for the swap-twist handedness mathematics (gyroscope precession in `defactor_probe.py`).
+
+## MultiplicationMatrixExplorer & MultiplicationMatrixAnimator
+Branches: main. Remotes: michaelrendier/MultiplicationMatrixExplorer.git & Animator.
+WHAT IT IS: High-dimensional multiplication table explorers, interactive visualizers, and
+animations of Cayley-Dickson algebras.
+
+## ArdaQuenta
+Branch: main. Remote: michaelrendier/ArdaQuenta.git
+WHAT IT IS: World-building, narrative framing, and ontological taxonomy.
+
+## POE
+Branch: main. Remote: michaelrendier/POE.git
+WHAT IT IS: Proprietary hardware / electronics / pancake coil geometry (17 turns, 4 taps <-> Riemann zeros 2, 6, 10, 34).
+
+## DeriveCancerDrugs & MedicineIsAlwaysFree
+Branches: master. Remotes: michaelrendier/DeriveCancerDrugs.git & MedicineIsAlwaysFree.git
+WHAT IT IS: Open science research applying boundary constraint engineering to molecular targets.
+
+## SemanticWordEngine
+Branch: main. Remote: michaelrendier/SemanticWordEngine.git
+WHAT IT IS: Core NLP semantic engine components and dictionary structures.

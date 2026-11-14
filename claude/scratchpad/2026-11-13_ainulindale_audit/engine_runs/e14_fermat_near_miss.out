@@ -1,0 +1,17 @@
+=== e14: FERMAT NEAR-MISS PRECISION ===
+
+  Homer³ blackboard (S07E06)
+    1782^12 + 1841^12 vs 1922^12
+    residual      = -7.002122345306086915e+29
+    sig figs agree= 9.5598
+    10-digit blind = False  [FAIL (visible at 10 digits)]
+
+  Wizard of Evergreen Terrace (S10E02)
+    3987^12 + 4365^12 vs 4472^12
+    residual      = 1.211886809373872631e+33
+    sig figs agree= 10.7226
+    10-digit blind = True  [PASS (invisible at 10 digits)]
+
+  Reference (exact solutions):
+    trivial n=1: residual = 2.0
+    Pythagorean n=2: residual = 0.0

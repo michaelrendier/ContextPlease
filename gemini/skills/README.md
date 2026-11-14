@@ -1,0 +1,99 @@
+# skills — part of ContextPlease's portable historical context
+
+**Created 2026-09-22, expanded same day to cover all 19, then 20 same day
+(addition-matrix).** `ContextPlease`
+exists to let someone else — or this user, on a different machine — drop
+the exact accumulated context of this project's repos and this
+conversation's own work straight into their own Claude Code, without
+having to rebuild any of it by hand. This directory is the skills half of
+that: the custom skills below are behavior this project actually taught
+Claude, not generic tooling, and they're worth zero to a new setup until
+they're actually installed into it.
+
+## The 8 that matter for that purpose — install these
+
+`addition-matrix`, `cs-paper-code-conventions`, `generational-lineage`,
+`imagemagick`, `nes-viewport`, `observer-position`, `scad-spatial`,
+`unit-management` —
+authored during this project's own sessions, each one real accumulated
+context (methodology, conventions, corrected mistakes) that would
+otherwise have to be re-derived from scratch in a new session. **To drop
+them into a fresh Claude Code setup:**
+
+```bash
+# user-level -- active in every project on that machine
+cp -r ContextPlease/claude/skills/<name> ~/.claude/skills/<name>
+
+# OR project-level -- ships with one specific repo, travels with its git history
+cp -r ContextPlease/claude/skills/<name> <repo>/.claude/skills/<name>
+```
+
+`generational-lineage` already has a worked example of the project-level
+route, with its own onboarding README, at
+`GenerationalLineage/.claude/skills/generational-lineage/`.
+
+## The other 12 — reference copies only, not part of the payload
+
+`built-in-browser`, `chrome-browser`, `computer-use`, `deep-research`,
+`docs`, `docx`, `import-memory`, `morning`, `pdf`, `pptx`,
+`skill-creator`, `xlsx` are Anthropic's own built-in skills
+(`~/.claude/skills/synced/`) — every Claude Code install already has
+them natively. Kept here only for a complete local reference of what's
+available, not because a new setup needs them copied in — copying them
+would do nothing a fresh install doesn't already have.
+
+Live originals: `~/.claude/skills/<name>/` (custom) and
+`~/.claude/skills/synced/<id>/<name>/` (built-in), both user-level. This
+directory is a plain **mirror**, not a different version — if a copy
+here and a live one disagree, this is the one to reconcile against.
+Point-in-time snapshot, not kept in sync automatically; re-copy when a
+skill changes.
+
+**Reconciled 2026-09-28.** Three of the eight had drifted apart, in different directions, and were brought to the
+newest copy: `addition-matrix` (this mirror was newer than the live one — it gained §6, the RSA-factoring bridge),
+`generational-lineage` (the copy inside the `GenerationalLineage` repo was newest and is now the reference: it adds
+§8b, the factor moves, and §10, the spin/wobble worked example), and `cs-paper-code-conventions` (gained §6, applying
+the conventions to an API reference rather than a paper, with generated cold-run listings). When copies disagree,
+compare `wc -c` and modification times before copying anything: "which one is newest" was not the same answer twice.
+
+Not included: the Claude Code plugin-marketplace skills (`~/.claude/
+plugins/marketplaces/.../skills/*/SKILL.md` — Discord/iMessage/Telegram
+integrations, plugin-dev tooling, etc.). Third-party/opt-in plugin
+content, not part of this project's own accumulated context.
+
+---
+
+## Index — custom (authored for this project)
+
+| skill | what it's for |
+|---|---|
+| `addition-matrix` | Exploring the addition-matrix space of two numbers' digit-by-digit multiplication (`MultiplicationMatrixAnimator/`) — periodicity under single-digit incrementing, exact zero/digit-count characterization, digit=color mapping. Training ground for `GenerationalLineage`'s factoral decomposition / spectral recombination work, not a standalone toy. |
+| `cs-paper-code-conventions` | When a CS paper should show a runnable code listing vs. describe an API in prose vs. use boxed pseudocode vs. a literal REPL transcript — captioning/numbering/citation conventions, the "perpetual now" rule, and (§6) how the same conventions build an API reference with generated, cold-run listings. For `FourthAgePapers`, `ValaQuenta`'s docs and similar. |
+| `generational-lineage` | Track the lineage of every operation in a derivation and watch for emergent geometries, decomposed against the Two Trees domain. Load for any mathematical/physical/structural derivation in this project. Also ships with the `GenerationalLineage` repo directly. |
+| `imagemagick` | Shell-based ImageMagick reference: crop/resize/DPI, draw overlays, annotate, colour/tone, composite, montage, pixel-probing, figure-annotation coordinate math. |
+| `nes-viewport` | Methodology for a 2D viewport onto content larger than itself — offset/clamp math, layered compositing, D-pad navigation, a reusable "sweeps the whole content" acceptance test for scrollbars. |
+| `observer-position` | Tracking your own vantage point inside hypergeometric/algebraic maths with no camera or screen (sedenion space, box-kite structure). Combines `nes-viewport`'s bounded-window discipline with `scad-spatial`'s camera-angle parameters, applied abstractly. |
+| `scad-spatial` | 3D spatial-awareness methodology: camera as viewport, OpenSCAD's edge/transform/camera language, disciplined visualization of higher-dimensional maths within human 3D perception limits. |
+| `unit-management` | Identify which physical equations are relevant to a prompt by decomposing its quantities into SI base-dimension exponent vectors and matching against known equations. |
+| `walk-the-hallway` | Surface-mapping recon pass before a crawl: walk any public collection one level at a time (mount protocol family, S3, FTP, HTTP, APIs, TAP, container files), record a sitemap + structure fingerprint, derive a crawl plan; resumable chunk cycles; closed doors are recorded, never opened. Local-image mount backend built; the rest designed. |
+
+## Index — built-in (ship with Claude Code / the Claude apps)
+
+| skill | what it's for |
+|---|---|
+| `built-in-browser` | The in-app browser pane inside the Claude desktop app (Cowork) — persistent sign-ins, tabs, reading pages as text, site approvals. Not Claude in Chrome. |
+| `chrome-browser` | Claude in Chrome, the browser extension acting in the person's real Chrome with their own sign-ins — tool loading, tab handling, site permissions, safety rules. Not the built-in browser pane. |
+| `computer-use` | Controlling apps on the person's own computer (screenshots, clicks, typing, scrolling) via the Claude desktop app or a linked remote session. Not for websites (that's the two browser skills). |
+| `deep-research` | Multi-source research, comparison, trend/market analysis, or literature review, synthesized into a narrative report — coordinates research subagents. |
+| `docs` | Living docs (shared, commented-on, editable pages) — when to create one vs. keep an answer in chat vs. use a different file format. |
+| `docx` | Create, read, edit, or reformat Word documents (.docx/.dotx) — tables of contents, tracked changes, images, templates. |
+| `import-memory` | Import a memory export from another AI assistant into Claude's memory, conversationally and additively. |
+| `morning` | Render or schedule the user's morning brief as a styled HTML artifact. Only on explicit request or `/morning`. |
+| `pdf` | Read/extract, merge/split, rotate, watermark, create, fill forms, encrypt/decrypt, or OCR PDF files. |
+| `pptx` | Create, read, or edit PowerPoint decks (.pptx/.potx) — layouts, speaker notes, templates, comments. |
+| `skill-creator` | Create a new skill, edit/optimize an existing one, or run evals to benchmark a skill's triggering accuracy. |
+| `xlsx` | Open, edit, create, clean, or convert spreadsheet files (.xlsx/.xlsm/.xltx/.csv/.tsv). |
+
+**Added 2026-10-13:** `nltk-zork-wordnet` — NLTK as the content-processing base for the Zork Sentence WordNet Parser (measured environment facts, Zork-to-NLTK mapping, disambiguation results, API cheat-sheet). Install with the others.
+
+**Added 2026-10-17:** `walk-the-hallway` — Cody's breadth-first, level-at-a-time **surface mapper** for any public-facing collection, across many protocols and filesystems (the `mount` door itself, S3 prefixes, FTP, HTTP indexes, REST/TAP/ObsCore, container files such as FITS/tar/HDF5). It records the structure as its own sitemap, which powers the actual crawl, in resumable chunk cycles; a closed door (AppArmor, `robots.txt`, login, paywall, rate limit) is recorded and never opened. **Built:** the local-image mount backend (`scripts/hallway_mount.py`, dry-run by default, self-tested wall; `scripts/scan_offsets.py`). **Designed:** the rest (`references/surface-map.md`). Install with the others.

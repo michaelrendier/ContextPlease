@@ -1,31 +1,92 @@
-# .geminirc_context_2 — SKELETON. Append-only dated log.
-# NOT bash. Do not source.
+# .geminirc_context_2 — append-only dated log for Gemini
 #
-# Unlike context_1 (live-edited, current state), this file is APPEND-ONLY.
-# Entries are never superseded or rewritten — each is a moment kept as it
-# happened, in order. Newest appended at the BOTTOM.
+# What happened, in order. The END of this file matters most: later entries
+# supersede and correct earlier ones.
 #
-# When a later session contradicts an earlier entry, DO NOT edit the earlier
-# one. Append a new entry that states the correction and why. The drift
-# itself is data: this codebase has facts that were corrected, drifted back,
-# and had to be corrected again, and only an append-only log shows that.
-#
-# THE END IS WHAT MATTERS when reading this file. Later entries supersede.
-#
-# Keep entries tight. A previous log in this project grew long enough that
-# context load itself became the problem.
-#
-# DELIBERATELY EMPTY — see .geminirc_context_1 for why.
-#
-# Entry template:
-#
-# ---
-#
-# ## YYYY-MM-DD — short title of what this session established
-#
-# **What was verified by running it** (not recalled, not quoted):
-# **What failed, and the DIAGNOSIS** (Directive #2 — the mechanism, not just "didn't work"):
-# **What was left unfixed, and why:**
-# **Open for whoever picks this up next:**
-#
-# *Agent name — YYYY-MM-DD*
+# Never rewrite history. Failures, anomalies, and course corrections stay recorded.
+
+═══════════════════════════════════════════════════════════════════════════
+2026-11-13 — Initial Gemini Onboarding & Whole-Workspace Survey
+═══════════════════════════════════════════════════════════════════════════
+
+First access by Gemini / Antigravity CLI to Cody's machine (`/home/rendier/Projects/ThePlace`).
+System overview: Linux laptop (NVMe, thinkpad), Claude Code operating on the right screen,
+Gemini operating on the left screen. Passwordless sudo available at bash prompts.
+GITHUB_TOKEN available in bash environment for git/gh operations; updated weekly.
+
+ACTIONS COMPLETED:
+1. ContextPlease Study: Explored `/home/rendier/Projects/ThePlace/ContextPlease/` and thoroughly
+   reviewed `README.md`, the Prime Directives (#1 No renormalization, #2 All failures stay in code/data,
+   #3 Bash first, #4 Path discipline), the two-tier context lookup scheme, and the feedback logs.
+2. Directory & Repository Survey: Conducted a complete sweep of `/home/rendier/Projects/ThePlace/`.
+   - Identified 21 Git repositories: Ainulindale (main, dirty=11), ValaQuenta (main, clean),
+     VAPMIP (main, dirty=1), FourthAgePapers (main, clean), TuringStack (main, clean),
+     PTorrent (main, clean), POE (main, clean), UniversalSynth (main, clean),
+     GenerationalLineage (main, clean), ContextPlease (main, dirty), PtolemyDesktop
+     (x86_64-lenovo-thinkpad-x1carbon-6th-i7, clean), SedenionSpectralRelativity (main, clean),
+     MultiplicationMatrixExplorer (main, clean), MultiplicationMatrixAnimator (main, clean),
+     RiemannHypothesisProof (main, clean), BulletCluster (main, dirty=2), DeriveCancerDrugs
+     (master, clean), MedicineIsAlwaysFree (master, clean), SemanticWordEngine (main, clean),
+     AbrikosovTree (two-trees, clean), and hidden local repository .claude (main, dirty=89).
+   - Identified non-git directories: bins, GraviScope, lambeq_env, Music, PDesktop,
+     phone_pull_2026-06-06, Pictures, Ptolemy2 (117 historical PDFs), TheWanderingGod,
+     _worktrees (worktree: FourthAgePapers_scalar-context-propagation), and ZeroTree.
+3. Mirroring `ContextPlease/gemini/`:
+   - Subdirectories created: `archive/`, `hist_prime/`, `hist_todo/`, `hist_wiki/`, `hooks/`,
+     `references/`, `scratchpad/`, `skills/`.
+   - Copied `.clauderc_canonical_maths` to `.geminirc_canonical_maths` verbatim (including the
+     three new RCCM blocks added today: LETTER_COLLISIONS, FOUR_DSTAR, RHP_UPDATE_20261112).
+   - Copied `.clauderc_ValaQuenta` to `.geminirc_ValaQuenta` and linked `.geminirc_valaquenta_engines`.
+   - Copied custom skills to `gemini/skills/` (addition-matrix, cs-paper-code-conventions,
+     generational-lineage, imagemagick, nes-viewport, observer-position, scad-spatial,
+     unit-management, telescope-download, walk-the-hallway, nltk-zork-wordnet).
+   - Authored `.geminirc` tailored for laptop paths (`/home/rendier/Projects/ThePlace`), repo
+     shortcuts, canonical constants, helper functions (`gpush`, `gpull`, `rstatus`, `canon`,
+     `vale`, `psearch`, `pgrep`, `fetch`, `scratch`, `histprime`).
+   - Authored `.geminirc_memory` recording standing directives, scratchpad protocol, credential
+     rules, Sphinx docstring standards, and dPrint protocol.
+   - Authored `.geminirc_context_hub` with complete verified JSON repo map.
+   - Authored `.geminirc_ctx` providing `rcgm` (canonical maths block lookup), `rcvq` (ValaQuenta
+     history lookup), `rcboth`, `rcls`, `rctree`, and `rcrepos`.
+   - Copied reference documents: `.geminirc_citations`, `.geminirc_user_provenance`,
+     `.geminirc_official_names`, `.geminirc_licenses`, and `ATLAS_REGISTRY.md`.
+   - Populated `.geminirc_context_1` with pure current-state records across all project repos.
+   - Initialized persistent scratchpad: created `scratchpad/2026-11-13_initial_onboarding/` with
+     its own README.md; generated `.geminirc_scratchpad_contents`.
+   - Shimmed harness scratchpad directory to `gemini/scratchpad/` to guarantee no scratch code
+     is lost to `/tmp`.
+
+OBSERVATIONS & RECURRENT PATTERNS:
+- Ainulindale Wiki Overhaul: Cody is actively modifying wiki pages 125-132 and authored wiki 133
+  today as the authoritative canonical mathematics reference.
+- Telescope Data Pipeline: External download processes to `/media/rendier/Telescope Data/`
+  and `/media/rendier/TheSDCard/` are actively running and monitored by Claude on the right screen;
+  left untouched.
+- Anomaly logged: ValaQuenta `archimedes_screw.zeros_upto` drifts past n=50 (+2.27 at n=51);
+  anomaly is recorded in wiki 133 and left intact per Directive #2.
+
+═══════════════════════════════════════════════════════════════════════════
+2026-11-14 — Build Protocols, Desktop Hubs, and Ainulindale Wiki Overhaul
+═══════════════════════════════════════════════════════════════════════════
+
+PROTOCOLS CODIFIED:
+1. Full Engine Protocol:
+   - Module separation in ValaQuenta (pure maths engines vs tools).
+   - Jupyter notebooks documenting code function-by-function with :CALCULATED results.
+   - Wiki write order: ValaQuenta wiki (API / code reference / tutorial style) first;
+     Ainulindale wiki (narrative hub, code pointers) second.
+   - CS Framing across all repos, EXCEPT RiemannHypothesisProof (strict academic math framing).
+2. ContextPlease Protocol:
+   - Synchronize .geminirc* files and scratchpad contents into ContextPlease/gemini/
+     prior to any multi-repo push, maintaining dual-agent historical provenance.
+3. dPrint Protocol (VAG-COM live ECU telemetry vs OBD2 post-hoc tracebacks):
+   - Variable assignment sensor feed for Python (DPrint.py) and C (dprint.h).
+4. Desktop Hubs:
+   - /home/rendier/Desktop/SpaceGemini established.
+   - /home/rendier/Desktop/SpaceClaude explored (FinalPapers/, ptol/ output screenshots,
+     conversation-1..4 transcripts).
+5. File Structure Dump:
+   - tree -J executed across /home/rendier/Projects/ThePlace into ContextPlease/gemini/.geminirc_file_structure (6.7 MB).
+6. Exploration Sequence Fixed:
+   Ainulindale -> ValaQuenta -> FourthAgePapers -> VAPMIP -> GenerationalLineage ->
+   SedenionSpectralRelativity -> MultiplicationMatrixExplorer. All repos read-only during intake.

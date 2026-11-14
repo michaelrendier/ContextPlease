@@ -49,7 +49,9 @@ Exceptions the author has named: an **analysis result** or a **code paper** carr
 - **Testing refines the design question** in front of it; it is not licence to refactor.
 - **Correct the maths, do not grade the ambition**: the Clay modules exist to probe the reach of ∅_RB, not to win prizes; never imply ∅_RB solves or subsumes an established open programme (Langlands, GUT).
 - **Tell the author when he is wrong**; he uses it as an input to his own improvement loop.
-- **Branches** (policy of 2026-09-23, under review 2026-11-14): `FourthAgePapers` branches are earned by code size and open development history; small result scripts stay on `main`; no `main` merge of a branch without asking.
+- **Branches** (author, 2026-11-14): current work or machinery that is **large, or in progress,** may have its own branch, to keep the kinds of code separate (code purity is the purpose); small result scripts stay on `main`; no `main` merge of a branch without asking.
+- **Overlapping papers are not merged**; each pair gets a line in both READMEs saying how they differ.
+- **Noether-framed papers stay as written** (that is where the maths started); the retired-premise note goes beside the claim.
 - **Outbound requests** carry a Mozilla user agent; public works only; a login or paywall is a stop. Downloads of another person's work follow the Literature Download Protocol. One cross and one telescope download at a time.
 - **Credentials**: only the GitHub token; never the Monad's seed token.
 - **Notation**: write the subscripted form of any letter that collides (α_fs, A_fermat, α_NN; σ_ζ, σ-strata, σ_RB; Ω_ζΣ, ω_H; d* and its four faces). `Ĥ_RB` is the maths name; `0_RB` / `∅_RB` is VAPMIP / Monad notation.
@@ -68,9 +70,12 @@ Exceptions the author has named: an **analysis result** or a **code paper** carr
 | Two stubs share an idea | say so in both READMEs; ask before merging them |
 | Noether current / balance wording is met | the premise is retired (s ↔ 1 − s is a discrete involution); use the J_red + J_blue = J_green balance language and ledger X-4 |
 
-## 6. Not sourced: for the author to supply or correct
+## 6. Recorded 2026-11-14, and what is still not sourced
+
+- `CryptoVulnerability`: a CVE application went to MITRE (legacy web interface) many months ago; MITRE asked that a public-facing link exist and that the vulnerability not be shared before a CVE is assigned; waiting on MITRE. Not shared until then.
+- Huchra's Lens was removed from FourthAgePapers (the target did not meet the BulletCluster requirements).
+
+Still to be supplied or corrected by the author:
 
 - The full list of prime directives and protocols beyond the two stated in `README.md` §1 and the standing feedback above (the author notes that more were defined than were shared with Gemini).
-- The branch rule for stubs and drafts (see `FourthAgePapers/AUDIT_2026-11-14.md` §6).
-- The disclosure state of the embargoed paper (`CryptoVulnerability`).
 - What "done" means for a paper with a prediction that has not been run (kept open, or reported as untested).

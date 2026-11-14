@@ -1,0 +1,22 @@
+# .geminirc_context — coarse chronological session through-line for Gemini
+#
+# NEWEST ENTRIES FIRST. Summaries of major session events and outcomes.
+# For detailed blow-by-blow, see .geminirc_context_2. For current state by repo,
+# see .geminirc_context_1.
+
+═══════════════════════════════════════════════════════════════════════════
+2026-11-13 — Onboarding & Workspace Initialization
+═══════════════════════════════════════════════════════════════════════════
+- Gemini given first access to Cody's machine (`/home/rendier/Projects/ThePlace`).
+- Studied ContextPlease manual transmission protocol and Prime Directives.
+- Completed comprehensive survey of 21 Git repositories and 11 non-git directories.
+- Fully initialized and mirrored `ContextPlease/gemini/` matching `ContextPlease/claude/`:
+  - Created `.geminirc`, `.geminirc_memory`, `.geminirc_canonical_maths` (copied verbatim),
+    `.geminirc_ValaQuenta` / `.geminirc_valaquenta_engines` (copied verbatim), `.geminirc_context_hub`,
+    `.geminirc_ctx`, `.geminirc_context_1`, `.geminirc_context_2`, `.geminirc_citations`,
+    `.geminirc_user_provenance`, `.geminirc_official_names`, `.geminirc_licenses`.
+  - Mirrored directories: `scratchpad/`, `hist_prime/`, `hist_todo/`, `hist_wiki/`,
+    `hooks/`, `references/`, `skills/`.
+  - Initialized persistent scratchpad session: `scratchpad/2026-11-13_initial_onboarding/`.
+- Harness scratchpad shimmed to `ContextPlease/gemini/scratchpad/` (never `/tmp`).
+- Noted active Ainulindale wiki overhaul by Cody and active telescope downloads monitored by Claude.

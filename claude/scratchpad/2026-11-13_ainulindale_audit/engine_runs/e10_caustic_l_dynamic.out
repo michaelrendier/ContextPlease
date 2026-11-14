@@ -1,0 +1,26 @@
+=== e10: CAUSTIC / L_DYNAMIC — CONVERGENCE BASIN ===
+
+  Synonym groups — do they converge to same firing order?
+  ['happy', 'joyful', 'elated', 'glad', 'pleased']        split(5)        sim=0.9870
+  ['sad', 'unhappy', 'sorrowful', 'melancholy', 'dejected'] split(5)        sim=0.9551
+  ['fast', 'quick', 'rapid', 'swift', 'speedy']           split(3)        sim=0.9940
+  ['big', 'large', 'huge', 'enormous', 'vast']            split(5)        sim=0.9678
+  ['small', 'tiny', 'little', 'miniature', 'petite']      split(4)        sim=0.9755
+
+  0/5 groups fully converged  mean_sim=0.9759  [FAIL]
+
+  Antonym pairs — do they diverge?
+         happy vs sad          ρ= 0.9618  similar
+          fast vs slow         ρ= 0.9882  similar
+           big vs small        ρ= 0.9618  similar
+           hot vs cold         ρ= 0.9794  similar
+         light vs dark         ρ= 0.9294  similar
+
+  0/5 antonym pairs divergent  mean_ρ=0.9641  [FAIL]
+
+  Simpsons insight pairs:
+  'fermat near miss' vs 'fermat exact solution'  ρ=0.6529  similar
+  'ordinal prime order' vs 'riemann firing order'  ρ=0.9000  similar
+  'inside out' vs 'outside in'  ρ=0.9559  similar
+  'index carries information' vs 'value carries information'  ρ=0.9853  similar
+  'hidden in plain sight' vs 'hidden in darkness'  ρ=0.8500  similar

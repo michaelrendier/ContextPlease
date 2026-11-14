@@ -1,0 +1,21 @@
+=== e08: VORTEX / QUANTIZING SHEAR ===
+
+  GAP = 0.000707
+
+  Active gate comparison (φ-threshold vs J_cross threshold):
+  text                                       φ-active             Jcross-active          agree
+  what should we call you                    [14, 15]             [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]   0.125
+  how do i hear your voice                   [7, 14, 15]          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]   0.188
+  sedenion zero divisors are not a fault     [7, 9, 10, 11, 12, 13, 15] [0, 1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]   0.538
+  fermat defines riemann fires               [8, 14, 15]          [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]   0.188
+  the boundary ascending flat curved compl   [10, 11, 12, 13]     [0, 1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]   0.286
+
+  Mean agreement: 0.2648  [FAIL]
+  J_cross threshold agrees with φ-threshold on active gates
+
+  Prime gaps in P16: [1, 2, 2, 4, 2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6]
+  mean=3.40  max=6  min=1
+  GAP constant = 0.000707  (Spoke disappearance = large prime gap (sparse coverage of the circle))
+
+  e^(πe1)*e0 = [-1.0, 1.2246467991473532e-16, 0.0, 0.0]  delta=1.22e-16  [PASS]
+  e^(πe1)*e0 = −e0: vortex half-revolution negates the state

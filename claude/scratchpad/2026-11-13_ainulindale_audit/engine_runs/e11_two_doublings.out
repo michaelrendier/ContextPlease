@@ -1,0 +1,15 @@
+=== e11: TWO DOUBLINGS EXPOSE ALL PATHWAYS ===
+
+  Pathway counts at each Cayley-Dickson level:
+  level    n      paths        new_paths      lower_paths
+  1        2      2            2              0
+  2        4      12           10             2
+  3        8      56           44             12
+  4        16     240          184            56
+
+  Pathway growth from base level (0 = base, 1 = +1 doubling, 2 = +2 doublings):
+  base=level1(n=2):  +0=    2  +1=   12  +2=   56  ratios: 6.000 → 4.667
+  base=level2(n=4):  +0=   12  +1=   56  +2=  240  ratios: 4.667 → 4.286
+  base=level3(n=8):  +0=   56  +1=  240  +2=  992  ratios: 4.286 → 4.133
+
+  J₂ = 4th doubling cross-term: PASS  (upper half maps to lower: True)

@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+# Context lookup for the Gemini two-tier scheme.
+#
+#   REFERENCE (equations, timeless)  ->  .geminirc_canonical_maths   @RCCM_<NAME>
+#   HISTORY   (dissertation, dated)  ->  .geminirc_ValaQuenta        @RCVQ_<NAME>
+#
+# Both files carry matching @<TIER>_<NAME> ... @END blocks. Reference tells you
+# what is true; history tells you how it was established, what was refuted, and
+# what is still untested.
+#
+#   rcgm FANO_SEDENION     equations only
+#   rcvq FANO_SEDENION     provenance, corrections, open leads
+#   rcboth FANO_SEDENION   both, reference first
+#   rcls                   list every block in both tiers
+#
+# Enable by sourcing:   source /home/rendier/Projects/ThePlace/ContextPlease/gemini/.geminirc_ctx
+
+_GEMINI_DIR="/home/rendier/Projects/ThePlace/ContextPlease/gemini"
+_GEMINI_CM="${GEMINIRC_CANONICAL_MATHS:-$_GEMINI_DIR/.geminirc_canonical_maths}"
+_GEMINI_VQ="${GEMINIRC_VALAQUENTA:-$_GEMINI_DIR/.geminirc_ValaQuenta}"
+
+_rc_block() {
+    local file="$1" tag="$2"
+    awk -v t="@${tag}" '
+        $0 ~ "^"t"$" { on=1; next }
+        on && /^@END$/ { exit }
+        on { print }
+    ' "$file"
+}
+
+rcgm() {
+    [ -z "$1" ] && { echo "usage: rcgm <NAME>   (rcls to list)" >&2; return 2; }
+    local out; out=$(_rc_block "$_GEMINI_CM" "RCCM_${1^^}")
+    [ -z "$out" ] && { echo "no @RCCM_${1^^} in canonical maths" >&2; return 1; }
+    printf '%s\n' "$out"
+}
+
+# Alias for compatibility with Claude convention
+rccm() { rcgm "$@"; }
+
+rcvq() {
+    [ -z "$1" ] && { echo "usage: rcvq <NAME>   (rcls to list)" >&2; return 2; }
+    local out; out=$(_rc_block "$_GEMINI_VQ" "RCVQ_${1^^}")
+    [ -z "$out" ] && { echo "no @RCVQ_${1^^} in ValaQuenta" >&2; return 1; }
+    printf '%s\n' "$out"
+}
+
+rcboth() {
+    [ -z "$1" ] && { echo "usage: rcboth <NAME>" >&2; return 2; }
+    echo "── REFERENCE ─────────────────────────────────────────"
+    rcgm "$1"
+    echo "── HISTORY ───────────────────────────────────────────"
+    rcvq "$1"
+}
+
+rcls() {
+    echo "REFERENCE  ($_GEMINI_CM)"
+    grep -o '^@RCCM_[A-Z0-9_]*' "$_GEMINI_CM" | sed 's/^@RCCM_/    /'
+    echo "HISTORY    ($_GEMINI_VQ)"
+    grep -o '^@RCVQ_[A-Z0-9_]*' "$_GEMINI_VQ" | sed 's/^@RCVQ_/    /'
+}
+
+# Housekeeping: refresh the file-structure index. Run once per session, not per file.
+rctree() {
+    ( cd /home/rendier/Projects/ThePlace \
+      && tree -Ja -I '.git|node_modules|__pycache__|.venv|*.pyc' . \
+         > ContextPlease/gemini/.geminirc_file_structure \
+      && echo "refreshed: $(ls -lh ContextPlease/gemini/.geminirc_file_structure | awk '{print $5}')" )
+}
+
+rcfind() {
+    [ -z "$1" ] && { echo "usage: rcfind <filename-fragment>" >&2; return 2; }
+    grep -o "\"name\":\"[^\"]*$1[^\"]*\"" \
+        /home/rendier/Projects/ThePlace/ContextPlease/gemini/.geminirc_file_structure \
+        | sed 's/"name":"//;s/"$//' | sort -u
+}
+
+rcrepos() {
+    python3 - <<'PY'
+import subprocess, json, pathlib, re
+root = pathlib.Path("/home/rendier/Projects/ThePlace")
+out = []
+for g in sorted(root.glob("*/.git")) + sorted(root.glob("*/*/.git")):
+    d = g.parent
+    def q(*a):
+        try: return subprocess.run(["git","-C",str(d),*a],capture_output=True,text=True).stdout.strip()
+        except Exception: return ""
+    out.append({"name":d.name,"local":str(d),
+                "github":q("remote","get-url","origin"),
+                "branch":q("rev-parse","--abbrev-ref","HEAD")})
+p = pathlib.Path("/home/rendier/Projects/ThePlace/ContextPlease/gemini/.geminirc_context_hub")
+if p.exists():
+    t = p.read_text()
+    new = "export THEPLACE_REPOS='" + json.dumps(out, indent=2) + "'"
+    t = re.sub(r"export THEPLACE_REPOS='\[.*?\n\]'", new, t, flags=re.S)
+    p.write_text(t)
+    print(f"repo map refreshed: {len(out)} repos")
+PY
+}

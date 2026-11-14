@@ -1,0 +1,17 @@
+=== e15: FUTURAMA THEOREM = TWO DOUBLINGS ===
+
+  Fresh elements needed to restore any permutation:
+
+  n      trials   max_fresh    all≤2    avg_cycles   max_cycles
+  10     500      1            True     1.98         4         [PASS]
+  16     500      1            True     2.35         5         [PASS]
+  4      500      1            True     1.09         2         [PASS]
+  6      500      1            True     1.45         3         [PASS]
+  8      500      1            True     1.69         3         [PASS]
+
+  Cayley-Dickson analogy:
+    Cross-term 1: -conj(d)*b  (first doubling: R→C)
+    Cross-term 2: b*conj(c)   (second doubling: C→H or H→O)
+    Analogy:      fresh X ↔ first cross-term (introduces the new dimension)
+    Analogy:      fresh Y ↔ second cross-term (completes the involution)
+    Two fresh elements in Futurama = two cross-terms in Cayley-Dickson. Both are the minimal addition needed to express the full inverse/restoration.

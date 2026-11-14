@@ -1,0 +1,16 @@
+=== e16: PENROSE SWAP / (I|O) STRUCTURE ===
+
+  (I|O)² ≠ identity (not self-inverse): PASS
+  (I|O)² ≠ (I|O)⁻¹:                    PASS
+
+    'what should we call you'  period=4  io2=identity:False  io2=io_inv:False
+    'sedenion zero divisors'  period=4  io2=identity:False  io2=io_inv:False
+    'fermat defines riemann fires'  period=4  io2=identity:False  io2=io_inv:False
+    'hack the planet'  period=4  io2=identity:False  io2=io_inv:False
+
+  GAP = 0.000707 as error check (100 trials each):
+    perturbation < GAP → same firing order:     100/100 = 100.00%  PASS
+    perturbation > GAP → different firing order: 8/100 = 8.00%  FAIL
+
+  Many-to-one (variant inputs → same firing order):
+    5 inputs → 5 unique firing orders  FAIL

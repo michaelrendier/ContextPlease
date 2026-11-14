@@ -1,70 +1,59 @@
 # gemini/ — usage
 
-Skeleton instance of the ContextPlease scheme. **Read
-`../README.md` first** — it carries the Prime Directives, the environment
-traps, and the writing conventions. This file only covers what is specific to
-using this directory.
+Instance of the ContextPlease scheme for Gemini / Antigravity CLI.
+**Read `../README.md` first** — it carries the Prime Directives, environment traps,
+and writing conventions. This file covers what is specific to `gemini/`.
 
-## Status
+## File Index
 
-| File | Format | State |
-|---|---|---|
-| `.geminirc` | bash | **usable** — root, 3 repo paths, helpers, environment facts |
-| `.geminirc_ValaQuenta` | bash | skeleton — index empty, `ctxengine` works |
-| `.geminirc_memory` | prose | **usable** — directives, git hygiene, feedback log |
-| `.geminirc_canonical_maths` | prose | **stub — copy from `../claude/`, do not paraphrase** |
-| `.geminirc_context_1` | prose | deliberately empty |
-| `.geminirc_context_2` | prose | deliberately empty |
-| `.geminirc_file_structure` | JSON | not generated yet |
+| File | Format | State | Purpose |
+|---|---|---|---|
+| `.geminirc` | **bash** | **active** | Project root (`/home/rendier/Projects/ThePlace`), repo paths, helper functions (`gpush`, `rstatus`, `canon`, `vale`, `psearch`…), canonical constants |
+| `.geminirc_memory` | prose | **active** | Standing directives (#1 No renormalization, #2 All failures stay in code/data), git/credential rules, persistent scratchpad rules |
+| `.geminirc_canonical_maths` | prose | **authoritative** | Authoritative equations and notation — **start any derivation here** (synced verbatim from `.clauderc_canonical_maths`) |
+| `.geminirc_ValaQuenta` | **bash** | **active** | Engine index (`ctxengine <module>`), history tier pairing with canonical maths |
+| `.geminirc_valaquenta_engines`| symlink | **active** | Symlink to `.geminirc_ValaQuenta` for naming compatibility |
+| `.geminirc_ctx` | **bash** | **active** | Lookup helpers: `rcgm` (canonical maths block), `rcvq` (ValaQuenta history), `rcboth`, `rcls`, `rctree`, `rcrepos` |
+| `.geminirc_context_1` | prose | **active** | One *current-state* entry per repository, keyed `## RepoName` |
+| `.geminirc_context_2` | prose | **active** | **Append-only** dated log; what happened, in chronological order |
+| `.geminirc_context` | prose | **active** | Coarse chronological through-line (newest entry first) |
+| `.geminirc_context_hub` | **bash** | **active** | Hand-maintained policy and repository map (`THEPLACE_REPOS`) |
+| `.geminirc_citations` | prose | **active** | Live queue of published work formalizing independently engineered concepts |
+| `.geminirc_user_provenance` | prose | **active** | Cody Michael Allison's original work vs established prior art |
+| `.geminirc_official_names` | prose | **active** | Canonical names ("The Boundary", "The Stability", "The Flow", "The Translator") |
+| `.geminirc_licenses` | prose | **active** | Licensing policy per codebase and third-party dependency |
+| `.geminirc_scratchpad_contents` | prose | **active** | File manifest of `scratchpad/` |
+| `ATLAS_REGISTRY.md` | prose | **active** | Quick reference table of key concepts, files, and locations |
+| `scratchpad/` | directory | **active** | Persistent scratchpad storage (never `/tmp`) |
+| `skills/` | directory | **active** | Custom skills (addition-matrix, cs-paper-code-conventions, generational-lineage…) |
 
-## Load it
+## Sourcing
+
+To load into a shell session:
 
 ```bash
-source /storage/emulated/0/ThePlace/ContextPlease/gemini/.geminirc
-source /storage/emulated/0/ThePlace/ContextPlease/gemini/.geminirc_ValaQuenta
+source /home/rendier/Projects/ThePlace/ContextPlease/gemini/.geminirc
 ```
 
-Those two only. Never `source .geminirc*` — the glob would catch
-`.geminirc_file_structure`, which is JSON and would execute as commands.
-Note that `bash -n` will *not* protect you here: an all-comment prose file
-passes it, and a populated one fails it. Parseability says nothing about
-whether a file should be sourced. Use the names.
+Only `.geminirc` (which sources `.geminirc_ctx`) and `.geminirc_ValaQuenta` are bash.
+Never `source .geminirc*` via glob — `.geminirc_file_structure` is JSON.
 
-Then:
+## Quick Lookup Helpers
 
 ```bash
-cdrepo vapmiP              # jump to a repo (case-insensitive)
-ctxdir VAPMIP              # one repo's current-state entry
-ctxengine _crosscutting    # read this first, once the index is populated
+rcgm FANO_SEDENION        # print canonical equations for block
+rcvq FANO_SEDENION        # print historical context and open leads
+rcboth FANO_SEDENION      # print both reference and history
+rcls                      # list all available RCCM and RCVQ blocks
+canon                     # print key canonical constants
+rstatus                   # sweep git status across all 20+ project repos
+ctxdir Ainulindale        # print current-state context for one repo
+scratch my_check          # create & cd to dated persistent scratchpad dir
 ```
 
-## First-run checklist
+## Persistent Scratchpad Rule
 
-1. `cp ../claude/.clauderc_canonical_maths ./.geminirc_canonical_maths`
-   — verbatim. The mathematics is not per-agent and a paraphrase introduces
-   notation drift, which has caused real errors here.
-2. Fill in the remaining repo paths in `.geminirc` from
-   `../claude/.clauderc`. Paths are stable and shared; **URLs must stay
-   clean** — several local git remotes have plaintext PATs in them.
-3. Generate the structure snapshot when you need it:
-   ```bash
-   tree -J -I '.git' "$THEPLACE" > .geminirc_file_structure
-   ```
-4. Survey `ValaQuenta/modules/` yourself and populate
-   `VALAQUENTA_ENGINE_INDEX`. Do **not** copy the claude index — it records
-   what that agent verified, and some of its entries name modules that are
-   absent from this working copy.
-5. Leave `context_1` and `context_2` empty until you have verified something
-   yourself.
-
-## Why the two context files are empty
-
-Not an oversight. Context here is earned by running things, not inherited.
-Copying another agent's conclusions means copying its mistakes with no way to
-tell which are which — and this project has a documented history of claims
-that were confidently recorded, drifted, and turned out false when someone
-finally measured them.
-
-Write `context_1` when you know the current state of a repo. Append to
-`context_2` when a session establishes something. Both want the diagnosis of
-failures, not just the successes — see Directive #2.
+The AI harness scratchpad is shimmed to:
+`/home/rendier/Projects/ThePlace/ContextPlease/gemini/scratchpad/YYYY-MM-DD_<topic>/`
+All temporary scripts, checks, and calculations must be preserved here with a `README.md`.
+Never rely on `/tmp` (wiped on reboot).

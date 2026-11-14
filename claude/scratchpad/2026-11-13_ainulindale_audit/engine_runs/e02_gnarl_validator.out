@@ -1,0 +1,22 @@
+Gnarl fixed point verification (alpha=3.0):
+  OMEGA_ZS = 0.567143
+  mean |z_eq| - OMEGA_ZS = 0.550129
+  pct converged (< 0.05): 10.0%
+  Townsend's formula → our BAO equilibrium. Independent derivation.
+============================================================
+GNARL/BAO CORPUS HEALTH — E02
+  Corpus: 25000 words  (sampled 64)
+  mean |z_eq| − OMEGA_ZS = 0.69767
+  pct converged: 0.0%
+  Status: DIVERGED
+
+  Worst 5 words:
+    gridspec             dist=0.91768
+    assessments          dist=0.90641
+    ramps                dist=0.90467
+    rvirial              dist=0.90255
+    azm                  dist=0.89673
+
+sigma (fixed point math) = ∞
+sigma (external validation / Townsend) = 4.5
+sigma (corpus health) = 2.0

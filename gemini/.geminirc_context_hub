@@ -1,0 +1,146 @@
+#!/usr/bin/env bash
+# ~/.geminirc_context_hub / ContextPlease/gemini/.geminirc_context_hub
+# Hand-maintained policy + repository map for Gemini.
+# Answers "what exists and what are the rules".
+# Regenerate repo map dynamically with `rcrepos`.
+
+export GEMINI_CONTEXT_HUB="/home/rendier/Projects/ThePlace/ContextPlease/gemini"
+export GEMINI_FILE_INDEX="$GEMINI_CONTEXT_HUB/.geminirc_file_structure"
+
+# ============================================================
+# REPO MAP — Verified 2026-11-13 from git status & remotes.
+# ============================================================
+export THEPLACE_REPOS='[
+  {
+    "name": "AbrikosovTree",
+    "local": "/home/rendier/Projects/ThePlace/AbrikosovTree",
+    "github": "https://github.com/michaelrendier/AbrikosovTree.git",
+    "branch": "two-trees"
+  },
+  {
+    "name": "Ainulindale",
+    "local": "/home/rendier/Projects/ThePlace/Ainulindale",
+    "github": "https://github.com/michaelrendier/Ainulindale.git",
+    "branch": "main"
+  },
+  {
+    "name": "ArdaQuenta",
+    "local": "/home/rendier/Projects/ThePlace/ArdaQuenta",
+    "github": "https://github.com/michaelrendier/ArdaQuenta.git",
+    "branch": "main"
+  },
+  {
+    "name": "BulletCluster",
+    "local": "/home/rendier/Projects/ThePlace/BulletCluster",
+    "github": "https://github.com/michaelrendier/BulletCluster.git",
+    "branch": "main"
+  },
+  {
+    "name": "ContextPlease",
+    "local": "/home/rendier/Projects/ThePlace/ContextPlease",
+    "github": "https://github.com/michaelrendier/ContextPlease.git",
+    "branch": "main"
+  },
+  {
+    "name": "DeriveCancerDrugs",
+    "local": "/home/rendier/Projects/ThePlace/DeriveCancerDrugs",
+    "github": "https://github.com/michaelrendier/DeriveCancerDrugs.git",
+    "branch": "master"
+  },
+  {
+    "name": "FourthAgePapers",
+    "local": "/home/rendier/Projects/ThePlace/FourthAgePapers",
+    "github": "https://github.com/michaelrendier/FourthAgePapers.git",
+    "branch": "main"
+  },
+  {
+    "name": "GenerationalLineage",
+    "local": "/home/rendier/Projects/ThePlace/GenerationalLineage",
+    "github": "https://github.com/michaelrendier/GenerationalLineage.git",
+    "branch": "main"
+  },
+  {
+    "name": "MedicineIsAlwaysFree",
+    "local": "/home/rendier/Projects/ThePlace/MedicineIsAlwaysFree",
+    "github": "https://github.com/michaelrendier/MedicineIsAlwaysFree.git",
+    "branch": "master"
+  },
+  {
+    "name": "MultiplicationMatrixExplorer",
+    "local": "/home/rendier/Projects/ThePlace/MultiplicationMatrixExplorer",
+    "github": "https://github.com/michaelrendier/MultiplicationMatrixExplorer.git",
+    "branch": "main"
+  },
+  {
+    "name": "POE",
+    "local": "/home/rendier/Projects/ThePlace/POE",
+    "github": "https://github.com/michaelrendier/POE.git",
+    "branch": "main"
+  },
+  {
+    "name": "PTorrent",
+    "local": "/home/rendier/Projects/ThePlace/PTorrent",
+    "github": "https://github.com/michaelrendier/PTorrent.git",
+    "branch": "main"
+  },
+  {
+    "name": "PtolemyDesktop",
+    "local": "/home/rendier/Projects/ThePlace/PtolemyDesktop",
+    "github": "https://github.com/michaelrendier/PtolemyDesktop.git",
+    "branch": "x86_64-lenovo-thinkpad-x1carbon-6th-i7"
+  },
+  {
+    "name": "RiemannHypothesisProof",
+    "local": "/home/rendier/Projects/ThePlace/RiemannHypothesisProof",
+    "github": "https://github.com/michaelrendier/RiemannHypothesisProof.git",
+    "branch": "main"
+  },
+  {
+    "name": "SedenionSpectralRelativity",
+    "local": "/home/rendier/Projects/ThePlace/SedenionSpectralRelativity",
+    "github": "https://github.com/michaelrendier/SedenionSpectralRelativity",
+    "branch": "main"
+  },
+  {
+    "name": "SemanticWordEngine",
+    "local": "/home/rendier/Projects/ThePlace/SemanticWordEngine",
+    "github": "https://github.com/michaelrendier/SemanticWordEngine.git",
+    "branch": "main"
+  },
+  {
+    "name": "TuringStack",
+    "local": "/home/rendier/Projects/ThePlace/TuringStack",
+    "github": "https://github.com/michaelrendier/TuringStack.git",
+    "branch": "main"
+  },
+  {
+    "name": "UniversalSynth",
+    "local": "/home/rendier/Projects/ThePlace/UniversalSynth",
+    "github": "https://github.com/michaelrendier/UniversalSynth.git",
+    "branch": "main"
+  },
+  {
+    "name": "ValaQuenta",
+    "local": "/home/rendier/Projects/ThePlace/ValaQuenta",
+    "github": "https://github.com/michaelrendier/ValaQuenta.git",
+    "branch": "main"
+  },
+  {
+    "name": "VAPMIP",
+    "local": "/home/rendier/Projects/ThePlace/VAPMIP",
+    "github": "https://github.com/michaelrendier/VAPMIP.git",
+    "branch": "main"
+  }
+]'
+
+# ============================================================
+# CONTEXT RULES & POLICY FOR GEMINI
+# ============================================================
+# 1. Scratchpad: Any transient/experimental code or scratch calculations
+#    MUST be placed in $GEMINI_SCRATCH/YYYY-MM-DD_<topic>/. Never /tmp.
+# 2. Context Continuity: ContextPlease archives all .geminirc* files.
+# 3. No Renormalization / No Fitted Parameters: Standing Directive #1.
+# 4. Failures Stay in Code & Data: Standing Directive #2. Never rewrite history.
+# 5. Git / Tokens: GITHUB_TOKEN is the only token to use.
+# 6. Authority Order: (1) Cody's latest statement; (2) 0_RB specification;
+#    (3) Canonical maths / wiki / code.

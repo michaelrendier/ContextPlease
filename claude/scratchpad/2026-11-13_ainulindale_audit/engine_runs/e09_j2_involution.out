@@ -1,0 +1,9 @@
+=== e09: J₂ INVOLUTION ===
+
+  J₂² = identity:          PASS
+  J₂ automorphism:         FAIL  (256 failures)
+    first failure pairs: [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4)]
+  Known ZD pairs verified: FAIL  (0/14)
+  Total ZD pairs found:    FAIL  found=0  expected=42
+  J₂ maps ZD→ZD:           PASS  (0/0)
+  Non-associativity:       CONFIRMED  (1848/4096 triples fail assoc)

@@ -1,0 +1,18 @@
+=== e07: OBSERVER FIXED POINT ===
+
+  OMEGA_ZS = 0.5671432904097838
+
+  Gnarl convergence from sedenion starting points:
+  text                                           r_eq        Δω    steps  conv
+  what should we call you                     1.57646   1.00932     5000  False
+  how do i hear your voice                    1.31582   0.74867     5000  False
+  sedenion zero divisors                      1.58286   1.01571     5000  False
+  fermat defines riemann fires                1.14457   0.57742     5000  False
+  the observer is the fixed point             1.38787   0.82073     5000  False
+  sigma equals one half                       1.44273   0.87559     5000  False
+
+  Converged: 0/6
+  (none converged)
+  All near OMEGA_ZS (Δ<0.1): True  [FAIL]
+
+  Random starts (50 trials): 0 converged

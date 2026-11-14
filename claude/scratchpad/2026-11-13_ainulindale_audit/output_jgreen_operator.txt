@@ -1,0 +1,7 @@
+OP-1 H=X+X^† self-adjoint: |H-H^†| = 0.0e+00
+OP-2 A=X-X^† anti-self-adjoint: |A+A^†| = 0.0e+00 ; i*A self-adjoint: 0.0e+00
+OP-3 reading (a): 0_RB:=H, 0_BR:=H^† -> 0_RB-0_BR = 0.0e+00  (H is self-adjoint, so the difference is identically 0)
+OP-4 reading (a'): 0_RB:=X (red term), 0_BR:=X^† -> 0_RB-0_BR = A = signed J_red+J_blue exactly: |A-(X-Xd)| = 0.0e+00 ; |A| = 32.48
+OP-5 dot/cross: H = 2 Re-part (symmetric, 'dot'), A = 2i Im-part (antisymmetric, 'cross'); H and A are never equal: |H-A| = 47.19, |H|=34.23 |A|=32.48
+OP-6 H as the sum of its own two terms is a tautology: J_red+J_blue=H holds by DEFINITION (old notation), and equals 0_RB only if 0_RB:=H (Cody 2026-11-13: H_hat_RB elsewhere, 0_RB in the Monad).
+OP-7 the three candidate J_green: (i) H=X+X^† [self-adjoint, symmetric]; (ii) X-X^† [anti-self-adjoint, cross]; (iii) [J_blue,J_red] trine commutator (sedenion test, trine.py). (i)!=(ii) by OP-5; they agree only if the 'minus' is the orientation sign on J_blue (JG-4).

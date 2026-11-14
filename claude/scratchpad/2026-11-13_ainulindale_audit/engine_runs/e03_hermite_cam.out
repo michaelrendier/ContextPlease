@@ -1,0 +1,32 @@
+============================================================
+HERMITE H₁₆ SEDENION CAM CALIBRATION — E03
+============================================================
+
+Dim   Op               H₁₆ zero   E_target
+--------------------------------------------
+e0   identity          -4.6887    0.56714
+e1   negate            -3.8694    0.46804
+e2   bind              -3.1770    0.38429
+e3   name              -2.5462    0.30799
+e4   apply             -1.9518    0.23609
+e5   abstract          -1.3803    0.16695
+e6   branch            -0.8230    0.09954
+e7   iterate           -0.2735    0.03308
+e8   recurse            0.2735    0.03308
+e9   allocate           0.8230    0.09954
+e10  query              1.3803    0.16695
+e11  dereference        1.9518    0.23609
+e12  compose            2.5462    0.30799
+e13  parallelize        3.1770    0.38429
+e14  interrupt          3.8694    0.46804
+e15  emit               4.6887    0.56714
+
+H₁₆ spacing statistics:
+  Mean gap:        0.6252
+  Normalised var:  0.0203
+  Wigner-Dyson ratio: 1.0203  (GUE = π/2 ≈ 1.5708, Poisson = 2.0)
+
+  Uniform E-values = untrained engine
+  Hermite-spaced E-values = calibrated CAM
+  sigma (H₁₆ zeros) = ∞
+  sigma (sedenion calibration) = 3.5

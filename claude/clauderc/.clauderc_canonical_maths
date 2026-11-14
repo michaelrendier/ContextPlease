@@ -2105,3 +2105,33 @@ PATH OF FIRST K PRIMES: log P_K(1/2+it)=sum -ln(1-p^-s): jagged tangle for K<=65
 PRECISION: zero heights need ~2 decimals for x<=2e6 (delta_gamma * ln x <~ 0.1). N-BALL (naive V_{ku}(1) vs Dickman rho): fails; OPEN for other forms.
 PANCAKE COIL (POE): 17 turns, pitch 0.8mm, 38/10 mm, taps 17/5/3/1 turns = 3.58uH/258nH/95nH/11.5nH; L=mu0 N^2 D/(1+2.46 rho); taps<->zeros 2/6/10/34.
 @END
+
+@RCCM_LETTER_COLLISIONS
+(2026-11-13, Cody; full page Ainulindale/wiki/133_canonical_maths.md section 0; RHP docs/GLOSSARY.md.) Write the subscripted form, never a bare letter.
+alpha:  alpha_fs = 1/137.035999 fine-structure constant (only the SOURCE of the 'same in every version' discipline; NOT an ingredient of the horizon) |
+        A_fermat = capital Alpha_pi, Fermat-side structural constant, NOT alpha_fs; VALUE OPEN (original derivation: d=0 endpoint x=T/T_P=1, the ceiling; older wiki 17: 1/137.036 'domain floor') |
+        alpha_NN = neural fine-structure constant g^2/(4 pi hbar_NN ln r), runs per tower layer.
+sigma:  sigma_zeta = Re s (critical line 1/2) | sigma-stratum sigma_0..sigma_4 = sedenion nested-inclusion levels | sigma_RB[k] = psi[k] conj psi[k^4], oblique-gear tilt (Re)/axis (Im), + sigma_self.
+Omega:  Omega_zetaSigma = W(1) = 0.5671432904 | omega_H = e^pi = 23.14069 | Omega(n) = prime factors with multiplicity.
+Names:  H_hat_RB is the operator's name in the maths everywhere (full rename NOT done); 0_RB (= emptyset_RB) is VAPMIP-only notation for the Null Operator = where the Monad starts all-NULL; same object. Sigma_RB (sum) = historical renotating artefact (sum was H_hat_RB).
+@END
+
+@RCCM_FOUR_DSTAR
+(2026-11-13; Ainulindale wiki 17 + 133 sec 2.2; RHP docs/four_dstar_2026-11-12.md.) Chart for ln10 in radial complex spherical polar coordinates (UNS = /ln10); all four NECESSARY (a reading, not a theorem), four shadows of 0.24631:
+  d*        Boundary   0.24631                   equatorial plane (sigma_zeta=1/2)
+  d*_RG     Stability  dim 8; numeric OPEN; NO CLOSED FORM   centre (r=0, 0_RB); CD doubling = Wilson RG step, project onto persistent octonion, rescale / d*_taut
+  d*_taut   Flow       Omega/ln10 = 0.246307201473          radial unit (one step of r)
+  d*_ln(10) Translator d* ln10 = Omega_zS = 0.56714329     scale bridge decimal-log <-> natural-log
+closure d* ln10 = d*_ln(10) = d*_taut ln10 = Omega. d*_spec = 0.24600 is MEASURED, not one of the four (GAP = 0.000707357533 ~ 1/(1000 sqrt2), 10^3 OPEN).
+RHP (CALCULATED): at X*=e^Omega=1/Omega=1.7632: log10 X* = d* = d*_taut (digits gained per iteration); ln X* = Omega (mean prime gap); gap/digits = ln10 at every X (PNT). One crossing, two coordinates: digits (Riemann/entropy) vs gap count (Fermat/inertia). d*_RG untouched.
+W values: W0(0)=0, W0(1)=Omega, W0(-1/e)=W-1(-1/e)=-1 (double root, fold); 3 distinct/4 with multiplicity; rule making 3=4 is Cody's to state.
+@END
+
+@RCCM_RHP_UPDATE_20261112
+(Full: Ainulindale wiki 133 sec 5-6; RHP primers 2026-11-08/11/12; RHP docs/.) ZERO TABLES: reference = RHP data/zeros_25000_hp.tsv (25,000 gamma, 32 digits, gamma_25000 = 21942.5924; Backlund exact); VAPMIP SemPriCon zeros_exact_25000.tsv agrees to 3.6e-12 (1 ulp); short literal lists in ValaQuenta/AbrikosovTree agree to <=1e-6. ANOMALY: ValaQuenta archimedes_screw.zeros_upto exact to n=50 then +2.27 (n=51), +2.81 (n=60), +1.84 (n=100) -- logged, not edited.
+WAVES: zero-tone = -2cos(gamma u - arg rho)/|rho|; heartbeat rebuilds (psi-x)/sqrt x, corr .77/.93/.98/.993 at 10/100/1000/3066 zeros. PING: perfect balanced accuracy primes vs non-prime-powers to n~1e3 (3066 tones) / ~1e4 (25000); 65 wheels exact below 317^2=100489; complementary not one cause.
+EXPLICIT FORMULAS (two-sided): Guinand-Weil 9e-14..1.25e-10; Weil/Hasse-Davenport Fermat counts over GF(p^k) 4.6e-13; |J|=sqrt p 8e-14; ledger rhp/ledger.py 14/14. Fermat finite-tone wave: 2g=(n-1)(n-2) Frobenius eigenvalues, exceptional primes finite to Weil threshold n=2..20. Fermat cubic (cond 27, CM Z[w]): a_p=0 for p=2 mod 3; 21 exact zeros to t=30 (4.043044, 6.048935, 8.21765, 9.429199, 10.908728).
+CHEBYSHEV: psi(x;4,1)-psi(x;4,3) from L(chi_-4) zeros; zeta has pole (x), Fermat character has a MEAN (-sqrt x): the mean is the horizon. KLEIN: {s->1-s, s->conj s} holds 6e-32 (xi), 1e-31 (Lambda chi_-4); L_4 is a 4-cycle (L_k^2=-I). Zeros GUE-rigid (spacing var .16), primes scattered (.69-.74). Beurling: PNT needs more than multiplicative structure.
+J CHAIN TEST (record sec 9): X+X^dag self-adjoint (dot) != X-X^dag (cross); J_red+J_blue=0_RB-0_BR holds only with signed J_blue and 0_RB,0_BR the two ordered terms; with 0_RB:=H, 0_BR:=H^dag the difference is 0. NOT established as stated; awaits Cody's definition of 0_BR.
+OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs charx; d*_RG closed form (none known).
+@END

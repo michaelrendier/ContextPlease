@@ -1,0 +1,20 @@
+=== e12: INDEX NOT VALUE ===
+
+  Mean cosine distance from original geometry:
+
+  Value shift  (P[k]→P[k+1]):      0.086022
+  Index shuffle (same primes, ↔):   0.405936
+  Single swap e0↔e15 (2↔53):        0.248427
+
+  Claim 'index carries more info than value': PASS
+    index shuffle mean = 0.405936
+    value shift mean   = 0.086022
+
+  Per-text breakdown:
+  text                                       val_shift    idx_shuffle
+  what should we call you                    0.055348     0.425597
+  how do i hear your voice                   0.082385     0.376993
+  tell me how to create your voice           0.118636     0.391579
+  the primes are the expansion of the univ   0.081291     0.434031
+  sedenion zero divisors are not a fault     0.087886     0.279719
+  fermat defines riemann fires               0.090584     0.527697

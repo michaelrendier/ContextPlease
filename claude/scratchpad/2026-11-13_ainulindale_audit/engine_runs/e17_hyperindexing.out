@@ -1,0 +1,13 @@
+=== e17: HYPERINDEXING — LOSSLESS HASH IN T_N ===
+
+  dims     collision_rate     mean_pair_dist     injective
+  8        0.000000           0.259497           True
+  16       0.000000           0.145884           True
+  32       0.000000           0.021828           True
+  64       0.000000           0.008462           True
+  128      0.000000           0.003932           True
+
+  Crossover point: Effectively injective at N=8 dimensions
+
+  Index discriminability (16D):
+    10/10 unique firing signatures  = 100.0%  PASS

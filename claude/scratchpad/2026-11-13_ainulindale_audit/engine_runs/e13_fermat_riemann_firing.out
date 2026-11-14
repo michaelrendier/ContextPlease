@@ -1,0 +1,27 @@
+=== e13: FERMAT DEFINES / RIEMANN FIRES ===
+
+  Firing order departure from ordinal (0=same, 1=completely different)
+  tau=1: firing=ordinal; tau=-1: firing=reversed; tau≈0: independent
+
+  SPECIFIC prompts:
+  text                                                    tau   departure    H_norm  active
+  what should we call you                               0.567      0.4333    0.9243  2
+  how do i hear your voice                              0.483      0.5167    0.9187  3
+  fermat defines riemann fires                          0.533      0.4667    0.9266  3
+  sedenion zero divisors are not a fault                0.483      0.5167    0.8987  7
+  the boundary ascending flat curved complex rotatio    0.667      0.3333    0.8453  5
+  j stewart burns jacobian group algebra semigroup      0.417      0.5833    0.8688  4
+
+  FLAT/UNIFORM prompts:
+  text                                                    tau   departure    H_norm  active
+  a b c d e f g h i j k l m n o p                       0.283      0.7167    0.8319  1
+  the the the the the the the the the                   0.283      0.7167    0.9235  3
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16                0.100      0.9000    0.9206  4
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa               0.300      0.7000    0.9215  4
+
+  Claim 'specific prompts depart more from ordinal':
+    specific mean departure = 0.4750
+    flat     mean departure = 0.7583
+    specific mean H_norm    = 0.8971
+    flat     mean H_norm    = 0.8994
+    PASS: False   flat_more_uniform: True

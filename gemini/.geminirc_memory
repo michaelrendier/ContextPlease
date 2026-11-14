@@ -1,61 +1,101 @@
-# .geminirc_memory — SKELETON. Cross-cutting state and standing feedback.
-# NOT bash. Do not source. Read it.
+# .geminirc_memory — persistent context, portable across machines/failures
+# This is the durable memory file for Gemini. Read this at the start of every session.
+# Update it as things change — prune stale entries rather than letting them rot.
 #
-# Holds ONLY material with no single home directory: standing feedback, git
-# hygiene, decisions that span repos. Anything scoped to one repo belongs in
-# .geminirc_context_1 under that repo's own heading instead — keeping each
-# directory's context self-contained is the whole point of the split.
-#
-# Format: dated entries, most recent state first per topic. Prune stale
-# entries rather than letting them rot. Be explicit about what is CONFIRMED
-# vs HYPOTHESIS vs FAILED.
+# Format: dated entries, most recent state first per topic. Keep entries
+# honest about what's confirmed vs hypothesis vs failed.
 
-=========================================================================
-STANDING RULES  (do not delete — these are not observations, they are law)
-=========================================================================
+═══════════════════════════════════════════════════════════════════════════
+HOW TO USE THIS FILE (meta)
+═══════════════════════════════════════════════════════════════════════════
 
-The four Prime Directives are in ContextPlease/README.md section 1.
-Summarised so they cannot be missed:
+- This file holds CROSS-CUTTING material only — things with no single home
+  directory (standing feedback, git/credential hygiene, the repo map itself).
+  Anything scoped to one repo lives in .geminirc_context_1 under that repo's
+  own heading instead.
+- Canonical equations/notation live in .geminirc_canonical_maths.
+- When a hypothesis is tested and fails, record the failure and WHY.
 
-  1. No renormalization, no fitted parameters, EVER. Report disagreement
-     rather than closing a gap. If you cannot say where a number came
-     from, you fitted it.
-  2. All failures stay in code and data — with their diagnosis. They are
-     how boundaries get explored. Do not tidy them away.
-  3. Bash first.
-  4. Always display /storage/emulated/0/ThePlace. Never /mnt/sdcard/.
+═══════════════════════════════════════════════════════════════════════════
+STANDING DIRECTIVES (Law — do not violate)
+═══════════════════════════════════════════════════════════════════════════
 
-=========================================================================
-GIT / CREDENTIALS — handle with care
-=========================================================================
+#1 — NO RENORMALIZATION, NO FITTED PARAMETERS. EVER.
+No fudge factors, no free constants tuned so a result matches a target.
+Results fall out of the mathematics as written, or they do not. Report
+disagreements immediately.
 
-Several repo `origin` remotes under $THEPLACE have GitHub PATs embedded in
-plaintext (ghp_... visible via `git remote -v`). NEVER copy a remote URL
-verbatim into a file that gets committed or pushed — always use the clean
-https://github.com/... form. Flagged 2026-07-07; not known to be rotated.
+#2 — ALL FAILURES STAY IN THE CODE AND THE DATA.
+Do not delete, silence, or tidy away a failing test, a broken branch, a NaN,
+or an anomalous result. Cody uses failures to explore boundaries.
+NEVER REWRITE HISTORY (Cody, 2026-10-18): No amend/rebase/filter-repo/force-push.
+Every commit message, every mistake, and every realization stays.
 
-=========================================================================
-FEEDBACK LOG — how Cody wants this worked
-=========================================================================
+#3 — BASH FIRST.
+Prefer the shell. Reach for it as the default instrument.
 
-- Prefer `tree`, scoped and filtered, over brute-force `find`. Find-
-  everything is slow and noisy.
-- When Cody uses vivid or absolute language ("EXACT", "it's working"),
-  treat it as describing a SPECIFIC case precisely — not as licence to
-  generalise that property to adjacent tests.
-- Do not reconstruct a mechanism from a verbal description repeatedly when
-  it keeps failing. Go find and run the original implementation instead.
-- Python first for all testing. C (ptol.c, monad.c) only after a Python
-  result justifies it, or when C-level testing is the actual point.
-- Context purity matters more than coverage. Do not load everything.
-  Cody paces work deliberately; overloading a session has caused real
-  problems before.
-- For append-only logs, the END is what matters. Later entries supersede
-  and frequently correct earlier ones.
+#4 — PATH DISCIPLINE.
+Working root is /home/rendier/Projects/ThePlace on the laptop (NVMe).
+The /storage/emulated/0 form applies only when a session is on the phone.
 
-=========================================================================
-REPO / SESSION HOUSEKEEPING
-=========================================================================
+═══════════════════════════════════════════════════════════════════════════
+PERSISTENT SCRATCHPAD (Cody directive: NOT /tmp)
+═══════════════════════════════════════════════════════════════════════════
 
-TODO — populate as you work. Always re-check with `git status` before
-trusting any entry here; working-tree notes go stale fastest.
+SCRATCHPAD IS NEVER /tmp.
+Any harness-provided /tmp path or internal scratch directory MUST be shimmed
+or substituted with:
+  /home/rendier/Projects/ThePlace/ContextPlease/gemini/scratchpad/YYYY-MM-DD_<topic>/
+Every scratchpad subdirectory contains a README.md explaining the piece of work,
+scripts, and generated data. The scratch work is PROVENANCE for the manuals and
+papers Cody writes. /tmp is wiped on reboot; the persistent scratchpad is git-tracked.
+
+═══════════════════════════════════════════════════════════════════════════
+GIT / CREDENTIALS — HYGIENE
+═══════════════════════════════════════════════════════════════════════════
+
+- GITHUB_TOKEN is the ONLY token Gemini ever uses for git push/pull operations.
+- PTOL_SEED_TOKEN belongs exclusively to THE MONAD and must never be read,
+  tested, exported, or sent anywhere.
+- Several repo `origin` remotes under $THEPLACE have GitHub PATs embedded in
+  plaintext in the URL. NEVER copy a remote URL verbatim into a committed file.
+  Always use clean https://github.com/michaelrendier/<repo>.git URLs.
+- A running shell's $GITHUB_TOKEN can be stale if rotated in ~/.bashrc.
+  If GitHub returns 401, re-source ~/.bashrc before diagnosing.
+
+═══════════════════════════════════════════════════════════════════════════
+FEEDBACK LOG & PROTOCOLS
+═══════════════════════════════════════════════════════════════════════════
+
+- APT REMOVE --PURGE ALWAYS REQUIRES CODY'S EXPLICIT APPROVAL.
+  Every time, no standing permission, no exceptions.
+
+- VENVS ARE YOURS. Cody (2026-08-15): "you don't have to ask permission to alter
+  these environments to suit their repos." Build them to comply with standards.
+
+- VALAQUENTA IS THE ROOT PYTHON ENV. Anything used in python3 work in ANY repo
+  gets installed into ValaQuenta first, then repo-specific installs follow.
+
+- TEST BEFORE PAPER, ALWAYS. Test it first, discuss results, then write up.
+
+- ! box_kite.basis_mul RETURNS (SIGN, INDEX), NOT (INDEX, SIGN).
+  Unpack as: `s, k = basis_mul(i, j)`.
+
+- ! \b DOES NOT WORK IN THIS BOX'S grep — fails in BOTH -E and BRE.
+  Use a shell case glob or a character class.
+
+- DOCSTRINGS INSTRUCT FUNCTION — they do not keep a record.
+  Standard: Native Sphinx reST field lists (:param x: :type x: :returns: :rtype: :raises Err:).
+  No Google or NumPy format. Docstrings instruct the caller; wikis hold the record.
+
+- dPrint protocol: ALL code written carries it. A global flag (1 on, 0 off)
+  switches a live stream of variable assignments to stdout.
+  Built at ValaQuenta/PythonPath/DPrint.py (`import DPrint as DP`, `DP.print`, `DP.watch`).
+
+- MOZILLA USER AGENT ON ALL OUTBOUND REQUESTS:
+  Use $GEMINI_UA / $CLAUDE_UA ('Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0').
+  Public, freely available works only; paywalls, logins, and CAPTCHAs are a stop, not an obstacle.
+
+- ContextPlease Protocol: ContextPlease archives every .*rc* file.
+  Live copies sit in user directories or workspace roots; ContextPlease gives
+  them Git versioning and a unified collection space.

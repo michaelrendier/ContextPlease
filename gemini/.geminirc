@@ -1,61 +1,286 @@
 #!/usr/bin/env bash
-# .geminirc — SKELETON. Environment shortcuts for AI sessions in ThePlace.
+# ~/.geminirc / ContextPlease/gemini/.geminirc — Gemini environment
+# Bash-first protocol shortcuts, repo paths, canonical constants, persistent scratchpad.
+# Safe to source directly:
+#     source /home/rendier/Projects/ThePlace/ContextPlease/gemini/.geminirc
 #
-# STATUS: skeleton. Paths below are real and verified; everything marked
-# TODO is deliberately empty — see ContextPlease/README.md section 7.
-#
-# This file IS bash and is safe to source:
-#     source /storage/emulated/0/ThePlace/ContextPlease/gemini/.geminirc
-#
-# Its sibling .geminirc_file_structure is JSON and MUST NEVER be sourced —
-# it passes `bash -n` and would execute as commands. Source by name, never
-# by glob. See README.md section 3.
+# Do NOT source .geminirc_file_structure (JSON). Source by explicit name only.
 
-# ── Root ─────────────────────────────────────────────────────────────────
-# ALWAYS display this form. Android reports /mnt/sdcard/ThePlace for the same
-# location; never show that form, not even when echoing back a traceback.
-export THEPLACE="/storage/emulated/0/ThePlace"
-export CONTEXTPLEASE="$THEPLACE/ContextPlease"
+# ============================================================
+# PROJECT ROOT
+# ============================================================
 
-# ── Reference documents: paths only, NOT sourced ─────────────────────────
-_G="$CONTEXTPLEASE/gemini"
-export GEMINIRC_MEMORY="$_G/.geminirc_memory"
-export GEMINIRC_CANONICAL_MATHS="$_G/.geminirc_canonical_maths"
-export GEMINIRC_CONTEXT_1="$_G/.geminirc_context_1"
-export GEMINIRC_CONTEXT_2="$_G/.geminirc_context_2"
-export GEMINIRC_FILE_STRUCTURE="$_G/.geminirc_file_structure"   # JSON. Never source.
+export PROJ="/home/rendier/Projects/ThePlace"
+export THEPLACE="$PROJ"
+export CONTEXTPLEASE="$PROJ/ContextPlease"
+export GEMINI_DIR="$CONTEXTPLEASE/gemini"
 
-# ── Repo paths (github.com/michaelrendier) ───────────────────────────────
-# URLs here must stay CLEAN. Several local `git remote -v` entries have
-# plaintext PATs (ghp_...) baked into the origin URL — never copy
-# `git remote get-url origin` output into a file that gets committed.
-export REPO_VAPMIP_PATH="$THEPLACE/VAPMIP"                # the world: monad, LSHS, PtolC
-export REPO_VALAQUENTA_PATH="$THEPLACE/ValaQuenta"        # the engines: runnable maths
-export REPO_AINULINDALE_PATH="$THEPLACE/Ainulindale"      # the music: theory, wikis
-# TODO: remaining repos — copy from ../claude/.clauderc, they are shared.
+# ============================================================
+# REPO SHORTCUTS
+# ============================================================
 
-# ── Environment facts (verified 2026-07-28; see README.md section 3) ──────
-# PATH leaks Termux binaries: `command -v gcc` can resolve OUTSIDE the proot.
-#   Verify with `dpkg -l`, or check the path resolves under /usr.
-# $THEPLACE cannot hold the exec bit: chmod +x silently no-ops there.
-#   Build in place, copy to /root/bin, chmod THERE.
-# Python is PEP-668 managed on arm64: use `apt install python3-<pkg>`, not pip.
-export ROOTFS_BIN="/root/bin"      # where built binaries must live to run
+export AIN="$PROJ/Ainulindale"
+export VALE="$PROJ/ValaQuenta"
+export VAPMIP_DIR="$PROJ/VAPMIP"
+export FAP="$PROJ/FourthAgePapers"
+export TURING="$PROJ/TuringStack"
+export PTORRENT="$PROJ/PTorrent"
+export POE_DIR="$PROJ/POE"
+export USYNTH="$PROJ/UniversalSynth"
+export DATASETS="$PROJ/DataSets"
+export ADDPAPERS="$AIN/AddPapers"
+export GLL="$PROJ/GenerationalLineage"
+export CTXPLZ="$PROJ/ContextPlease"
+export PTOLDESK="$PROJ/PtolemyDesktop"
+export SSR="$PROJ/SedenionSpectralRelativity"
+export MMA="$PROJ/MultiplicationMatrixAnimator"
+export MME="$PROJ/MultiplicationMatrixExplorer"
+export RHP="$PROJ/RiemannHypothesisProof"
+export BULLET="$PROJ/BulletCluster"
+export SWE="$PROJ/SemanticWordEngine"
+export ARDA="$PROJ/ArdaQuenta"
+export ABRIKOSOV="$PROJ/AbrikosovTree"
+export CANCER="$PROJ/DeriveCancerDrugs"
+export MEDICINE="$PROJ/MedicineIsAlwaysFree"
 
-# ── Helpers ──────────────────────────────────────────────────────────────
-# Pull ONE repo's current-state entry instead of reading the whole file.
-ctxdir() {
-  [ -r "$GEMINIRC_CONTEXT_1" ] || { echo "context_1 not populated"; return 1; }
-  awk -v d="## $1" '$0==d{f=1;next} /^## /{f=0} f' "$GEMINIRC_CONTEXT_1"
-}
-
+# Dynamic repo jumper
 cdrepo() {
-  local var="REPO_$(echo "$1" | tr '[:lower:]' '[:upper:]')_PATH"
-  local path="${!var}"
-  [ -z "$path" ] && { echo "no repo path var for '$1'"; return 1; }
-  cd "$path" || return 1
+    local target="$(echo "$1" | tr '[:upper:]' '[:lower:]')"
+    case "$target" in
+        ain|ainulindale) cd "$AIN" ;;
+        vale|valaquenta) cd "$VALE" ;;
+        vapmip) cd "$VAPMIP_DIR" ;;
+        fap|fourthagepapers) cd "$FAP" ;;
+        turing|turingstack) cd "$TURING" ;;
+        ptorrent) cd "$PTORRENT" ;;
+        poe) cd "$POE_DIR" ;;
+        usynth|universalsynth) cd "$USYNTH" ;;
+        datasets) cd "$DATASETS" ;;
+        gll|generationallineage) cd "$GLL" ;;
+        ctxplz|contextplease) cd "$CTXPLZ" ;;
+        gemini) cd "$GEMINI_DIR" ;;
+        claude) cd "$CTXPLZ/claude" ;;
+        ptoldesk|ptolemydesktop) cd "$PTOLDESK" ;;
+        ssr|sedenionspectralrelativity) cd "$SSR" ;;
+        mma|multiplicationmatrixanimator) cd "$MMA" ;;
+        mme|multiplicationmatrixexplorer) cd "$MME" ;;
+        rhp|riemannhypothesisproof) cd "$RHP" ;;
+        bullet|bulletcluster) cd "$BULLET" ;;
+        swe|semanticwordengine) cd "$SWE" ;;
+        arda|ardaquenta) cd "$ARDA" ;;
+        abrikosov|abrikosovtree) cd "$ABRIKOSOV" ;;
+        cancer|derivecancerdrugs) cd "$CANCER" ;;
+        medicine|medicineisalwaysfree) cd "$MEDICINE" ;;
+        *)
+            if [ -d "$PROJ/$1" ]; then
+                cd "$PROJ/$1"
+            else
+                echo "cdrepo: unknown repository '$1'" >&2
+                return 1
+            fi
+            ;;
+    esac
 }
 
-# Prefer `tree` scoped to what you need over brute-force `find`.
-#   tree -L 2 "$THEPLACE"
-#   tree -P '*.md|*.py' -I '__pycache__' DIR
+# ============================================================
+# REFERENCE DOCUMENTS (Paths only, NOT sourced)
+# ============================================================
+
+export GEMINIRC_MEMORY="$GEMINI_DIR/.geminirc_memory"
+export GEMINIRC_CANONICAL_MATHS="$GEMINI_DIR/.geminirc_canonical_maths"
+export GEMINIRC_VALAQUENTA="$GEMINI_DIR/.geminirc_ValaQuenta"
+export GEMINIRC_CONTEXT_1="$GEMINI_DIR/.geminirc_context_1"
+export GEMINIRC_CONTEXT_2="$GEMINI_DIR/.geminirc_context_2"
+export GEMINIRC_CONTEXT="$GEMINI_DIR/.geminirc_context"
+export GEMINIRC_CITATIONS="$GEMINI_DIR/.geminirc_citations"
+export GEMINIRC_USER_PROVENANCE="$GEMINI_DIR/.geminirc_user_provenance"
+export GEMINIRC_OFFICIAL_NAMES="$GEMINI_DIR/.geminirc_official_names"
+export GEMINIRC_LICENSES="$GEMINI_DIR/.geminirc_licenses"
+export GEMINIRC_SCRATCHPAD_CONTENTS="$GEMINI_DIR/.geminirc_scratchpad_contents"
+export GEMINIRC_FILE_STRUCTURE="$GEMINI_DIR/.geminirc_file_structure"   # JSON dump. NEVER source.
+
+# ============================================================
+# PERSISTENT SCRATCHPAD (Cody directive: NOT /tmp)
+# ============================================================
+# Gemini's scratch work has archival and provenance value.
+# Any harness-provided /tmp path is shimmed to point here.
+export GEMINI_SCRATCH="$GEMINI_DIR/scratchpad"
+scratch() {
+    local target="$GEMINI_SCRATCH/$(date +%F)_${1:-scratch}"
+    mkdir -p "$target" && cd "$target"
+}
+
+# ============================================================
+# CONTEXT PRIMERS + TODO HISTORY
+# ============================================================
+export GEMINI_HIST_PRIME="$GEMINI_DIR/hist_prime"
+export GEMINI_HIST_TODO="$GEMINI_DIR/hist_todo"
+export GEMINI_HIST_WIKI="$GEMINI_DIR/hist_wiki"
+
+histprime() {
+    mkdir -p "$GEMINI_HIST_PRIME/${1:-_root}" && cd "$GEMINI_HIST_PRIME/${1:-_root}"
+}
+
+# ============================================================
+# PYTHON PATH
+# ============================================================
+export PYTHONPATH="$PROJ:$PROJ/ValaQuenta/PythonPath:${PYTHONPATH}"
+
+# ============================================================
+# AINULINDALE CANONICAL CONSTANTS
+# Exact values from canonical_maths / wiki 133 — never retype or fit.
+# ============================================================
+
+# The Four Faces of d* (Chart for ln 10 in Universal Native Space)
+export D_STAR_BOUNDARY="0.24631"            # d*        "The Boundary"   sigma=1/2 spectral coordinate = equatorial plane
+export D_STAR_RG="8"                        # d*_RG     "The Stability"  RG fixed point of CD tower = centre (r=0, 0_RB). DIMENSIONAL: core = 8 (octonion)
+export D_STAR_RG_NUMERIC="OPEN"             #           numerical value: OPEN, no closed form
+export D_STAR_RG_SUPERSEDED="0.24682"       #           superseded early estimate
+export D_STAR_TAUT="0.246307201473"         # d*_taut   "The Flow"       = OMEGA_ZS/ln(10), exact (Lambert W). Radial unit.
+export D_STAR_LN10="0.5671432904097838"     # d*_ln(10) "The Translator" = d* x ln(10) = OMEGA_ZS. Metric bridge decimal-log <-> natural-log
+# The fifth measured value (Berry-Keating gap observed in SPARC, quarantined)
+export D_STAR_SPEC="0.24600"
+export D_STAR="0.24600"                     # legacy env var
+
+# Lambert W values (The machinery: 4 d* : 3 distinct W values)
+export LAMBERT_W0="0"                                  # W(0)    vacuum fixed point
+export LAMBERT_W1="0.5671432904097838"                 # W(1) = OMEGA_ZS; idle point
+export LAMBERT_W_BRANCH="-1"                           # W0(-1/e) = -1 : fold / saddle-node
+export LAMBERT_W_BRANCH_M1="-1"                        # W-1(-1/e) = -1 : second sheet double root
+export LAMBERT_UNS_W1="0.24630720147342258"            # W(1)/ln10 = d*_taut (The Flow)
+export LAMBERT_UNS_BRANCH="-0.43429448190325183"       # W(-1/e)/ln10 = -log10(e) = -1/ln10
+export LOG10_E="0.43429448190325183"
+
+# Other canonical constants
+export OMEGA_ZS="0.5671432904097838"
+export GAP="0.000707357533249"
+export GAP_APPROX="1/(1000*sqrt(2))"       # ~ 0.035%
+export N_STAR="5.2570"                       # n-ball volume peak
+export V16="0.2353"                          # V(16) != D_STAR
+export ZD_PAIRS="84"                         # diagonals = 42 Assessors x 2
+export ZD_CLASSES="42"                       # Assessors (canonical classes)
+export ZD_PRIMITIVE="168"                    # primitive unit ZDs = 42x4 = |PSL(2,7)|
+export ZD_COMPOSITE="168"                    # deprecated alias of ZD_PRIMITIVE
+export ZD_ORDERED_PAIRS="336"                # ordered annihilating pairs = 84x4
+export ZD_BOX_KITES="7"                      # octahedral charts, 6 Assessors each
+export ZD_GROUP="PSL(2,7)"                   # order 168 = Aut(Fano) = GL(3,2) (NOT G2)
+export PG32_POINTS="15"                      # pure imaginaries as PG(3,2) points
+export PG32_LINES="35"                       # multiplication triplets
+export PG32_PLANES="15"                      # Fano planes (15, NOT 32)
+
+# ============================================================
+# ⚠ CREDENTIAL RULE (Cody directive)
+# ============================================================
+# GITHUB_TOKEN is the ONLY token to use for git operations.
+# PTOL_SEED_TOKEN belongs to THE MONAD and must never be touched.
+# Re-source ~/.bashrc if GITHUB_TOKEN gives 401 (rotation).
+
+gpush() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    if [ -z "$repo" ]; then
+        echo "gpush: not in a git repo and no repo name given" >&2
+        return 1
+    fi
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpush: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
+}
+
+gpull() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+    if [ -z "$branch" ] || [ "$branch" = "HEAD" ]; then
+        echo "gpull: could not determine current branch (detached HEAD?)" >&2
+        return 1
+    fi
+    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" "$branch"
+}
+
+# ============================================================
+# REPO STATUS SWEEP
+# ============================================================
+
+rstatus() {
+    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth \
+                GenerationalLineage ContextPlease PtolemyDesktop SedenionSpectralRelativity ArdaQuenta \
+                MultiplicationMatrixExplorer MultiplicationMatrixAnimator RiemannHypothesisProof \
+                BulletCluster DeriveCancerDrugs MedicineIsAlwaysFree SemanticWordEngine AbrikosovTree; do
+        local path="$PROJ/$repo"
+        if [ -d "$path/.git" ]; then
+            local branch count
+            branch=$(git -C "$path" rev-parse --abbrev-ref HEAD 2>/dev/null)
+            count=$(git -C "$path" status --porcelain 2>/dev/null | wc -l)
+            printf "%-28s  %-12s  %s dirty files\n" "$repo" "$branch" "$count"
+        fi
+    done
+}
+
+# ============================================================
+# VALAQUEST — quick Python engine runner
+# ============================================================
+
+vale() {
+    python3 -c "$@"
+}
+
+# ============================================================
+# CANONICAL MATH CHECK
+# ============================================================
+
+canon() {
+    echo "d* (Boundary) = $D_STAR_BOUNDARY"
+    echo "d*_RG (Stability) = $D_STAR_RG (dim 8, numeric: $D_STAR_RG_NUMERIC)"
+    echo "d*_taut (Flow) = $D_STAR_TAUT  (= Omega/ln 10)"
+    echo "d*_ln10 (Translator) = $D_STAR_LN10  (= Omega)"
+    echo "d*_spec (Quarantined) = $D_STAR_SPEC"
+    echo "OMEGA_ZS     = $OMEGA_ZS   (Lambert W(1))"
+    echo "GAP          = $GAP  (~ 1/(1000*sqrt(2)))"
+    echo "n*           = $N_STAR       (n-ball peak)"
+    echo "V(16)        = $V16          (!= d*)"
+    echo "ZD:          $ZD_PAIRS diagonals / $ZD_CLASSES Assessors / $ZD_PRIMITIVE primitive (=|PSL(2,7)|)"
+    echo "             $ZD_ORDERED_PAIRS ordered pairs / $ZD_BOX_KITES box-kites / group $ZD_GROUP (NOT G2)"
+    echo "PG(3,2):     $PG32_POINTS points / $PG32_LINES lines / $PG32_PLANES Fano planes"
+    echo ""
+    echo "Canonical reference: $GEMINIRC_CANONICAL_MATHS"
+}
+
+# ============================================================
+# SEARCH & GREP (skips .git, __pycache__, .venv)
+# ============================================================
+
+psearch() {
+    local pattern="$1"
+    local glob="${2:-*}"
+    grep -r --include="$glob" -l "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".venv" --exclude-dir=".archive" 2>/dev/null
+}
+
+pgrep() {
+    local pattern="$1"
+    local glob="${2:-*.py}"
+    grep -r --include="$glob" -n "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".venv" --exclude-dir=".archive" 2>/dev/null
+}
+
+# ============================================================
+# USER-AGENT & FETCH
+# ============================================================
+export GEMINI_UA='Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0'
+fetch() { curl -sL -m "${FETCH_TIMEOUT:-60}" -A "$GEMINI_UA" "$@"; }
+
+# ============================================================
+# CONTEXT HELPERS
+# ============================================================
+
+ctxdir() {
+    [ -r "$GEMINIRC_CONTEXT_1" ] || { echo "context_1 not populated"; return 1; }
+    awk -v d="## $1" '$0 ~ d{f=1;next} /^## /{f=0} f' "$GEMINIRC_CONTEXT_1"
+}
+
+# Source .geminirc_ctx if present
+[ -r "$GEMINI_DIR/.geminirc_ctx" ] && . "$GEMINI_DIR/.geminirc_ctx"

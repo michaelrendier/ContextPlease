@@ -1,0 +1,28 @@
+=================================================================
+TRIANGLE INEQUALITY AVERAGE SIMILARITY — E04
+=================================================================
+
+Word A         Word B         Relation          TIA    |Δaddr|
+-----------------------------------------------------------------
+prime          number         RELATED        0.4770     0.0000
+prime          galaxy         DISTANT        0.4770     0.0001
+hydrogen       helium         RELATED        0.4770     0.0000
+hydrogen       philosophy     DISTANT        0.4770     0.0001
+sedenion       octonion       RELATED        0.4772     0.0010
+sedenion       banana         DISTANT        0.4772     0.0009
+riemann        zeta           RELATED        0.4766     0.0014
+riemann        kitchen        DISTANT        0.4766     0.0014
+identity       compose        OPERATOR-PAIR   0.4773     0.0011
+negate         emit           OPERATOR-PAIR   0.4769     0.0001
+chaos          higgs          SAME-e0        0.4770     0.0000
+observe        sentience      SAME-e8        0.4769     0.0001
+
+TIA at σ=½ is inherently balanced — the formula was written
+for fractals. It is the Holcus semantic similarity metric.
+
+sigma (TIA formula) = ∞
+sigma (semantic claim) = 3.5
+
+Mean TIA (related): 0.4770
+Mean TIA (distant): 0.4769
+Separation:         0.0001  (positive = TIA correctly distinguishes)
