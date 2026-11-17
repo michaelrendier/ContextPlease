@@ -53,7 +53,7 @@ ADDRESS: K=(p'q'-N)/10^n is an integer; true factorisation is exactly K=0 (pair+
 NOT a factoring method. Explorer (MultiplicationMatrixExplorer): toolsets/{law,torsor,treeaut,closedform}.py + wiki/core_functionality.md + wiki/toolbox/ + factor-panel law lines
 + tests/. Follow-ups DONE: closed form holds for every N, p=2(k<=10),3,5,7,11; Aut(binary tree depth n) is a 2-group of order 2^(2^n-1) (brute n<=3), affine maps on Z/2^n
 (order 2^(2n-1)) lie in it -> power-of-two cycles; on Z/5^m lengths 1,4,20,100,500; no tested guide (overflow, size bound, smallest p') prefers the true child before the last
-level (scatter |z|<~2; two borderline cells chased, both signs). Paper stub FourthAgePapers/AdditionMatrixOrbits (9 pp, make_paper --check True; NOT a Fourth Age paper).
+level (scatter |z|<~2; two borderline cells chased, both signs). Paper stub FourthAgePapers/AdditionMatrixOrbits (9 pp, make_paper --check True; a workbench-kind Fourth Age paper, no prediction).
 TuringStack/wiki/Digit-by-Digit-Factor-Search-Law-2026-10-14.md (white-hat, no CVE). VAPMIP: docs/wiki/Lyndon-Factorisation.md + lyndon_conjugation.py (STUB: Duval core verified on
 2046 words; conjugates()/inflection_frame() raise NotImplementedError; combinatorial 'conjugate' = rotation, may differ from grammatical sense). CollatzShift: B-L window audit
 (2514 listed fixed points sound; printed block = ours minus {102} plus {144}; still OPEN); Rozier 2018 added to ledger; README updated.

@@ -28,7 +28,7 @@ We describe three small, self-checking Python programs (standard library only, a
 
 ## 0. Scope and labels
 
-**Not a Fourth Age paper.** This directory sits in the `FourthAgePapers` repository for historical reasons. The author's Fourth Age template ("One Paper, One Claim") asks for a pre-registered prediction. This paper is a results-and-code paper: it makes **no prediction**, nothing in it is pre-registered, and it is not an instance of that template.
+**A Fourth Age paper of the workbench kind.** `FourthAgePapers` holds two kinds of paper: hypotheses under test (One Claim, One Engine, One Set of Notebooks, One Wiki, a prediction written down first) and the author's workbench papers for anything headed for arXiv that is not Ainulindalë or VAPMIP work. This is the second kind: a results-and-code paper that makes no prediction.
 
 **Labels.** Each result carries a label.
 
