@@ -11,3 +11,7 @@
 **Results.** 25 value routes within tolerance; the identity route returns none; the sedenion route `sedenion_exp_period` (exp(θ·e₁₅) by the project's own Cayley–Dickson product, first return to −1) lands at 1.8e-14. A test confirms no route body reads `math.pi`.
 
 **Labels.** Routes ESTABLISHED; the `circle_in` classification is this engine's own bookkeeping.
+
+## Second pass (2026-11-16): the modular route and the n-ball
+
+Two routes were added (28 in all). **π from the volume of a 3-ball** counted on a grid (error 1.3e-4). **π from the Heegner number 163:** ln(640320³ + 744)/√163, where 640320³ is the j-invariant of an elliptic curve with complex multiplication; the error is 2.2e-31 because e^{π√163} misses that integer by 7.5e-13. Ramanujan's and the Chudnovskys' series are exact identities, not approximations (only a truncated sum is). Their speed is readable in the project's native units: digits gained per term = π√d/ln 10 − log₁₀(1728) for d = 163 (14.197 measured against 14.182) and − log₁₀(256) for Ramanujan's d = 58 series (7.998 against 7.983): the decade coordinate of e^{π√d}, less a fixed integer's. The 0.015 left over is the slow correction from the factorials and is not analysed.
