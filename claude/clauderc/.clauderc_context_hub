@@ -197,3 +197,6 @@ export CLAUDE_SATELLITES='[
 # AUDIT COMMAND — run periodically; anything beyond the four above is drift.
 #   find /home/rendier/Projects/ThePlace -maxdepth 4 -type d -name .claude \
 #     -exec sh -c 'printf "%s: " "$1"; find "$1" -type f -printf "%P "; echo' _ {} \;
+
+# ContextPlease Protocol (2026-10-21): ContextPlease archives every .clauderc* file (they are used elsewhere than ContextPlease) so Git versioning and a unified collection space live in their own repo; clone it and feed the files to any model. Purpose: historical access to the files Cody designed for Claude on his machine; archived before context_1 is cleared.
+

@@ -67,6 +67,8 @@ histprime() { mkdir -p "$CLAUDE_HIST_PRIME/${1:-_root}" && cd "$CLAUDE_HIST_PRIM
 # ============================================================
 
 export PYTHONPATH="$PROJ:${PYTHONPATH}"
+# DPrint (dPrint protocol: import DPrint as DP) lives in ValaQuenta/PythonPath, standalone, importable from any program
+export PYTHONPATH="$PROJ/ValaQuenta/PythonPath:${PYTHONPATH}"
 
 # ============================================================
 # AINULINDALE CANONICAL CONSTANTS

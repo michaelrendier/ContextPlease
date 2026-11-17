@@ -19,7 +19,7 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-10-20
+# Last regenerated: 2026-10-21
 
 - README.md
 - migrate_datasets.sh
@@ -765,9 +765,38 @@
 2026-10-18_name_engine_workbench/
     README.md
 
+2026-10-20_sempricon_zh_probes_zeros_ringcircle/
+    README.md
+    en1_a.py
+    en1_b.py
+    en1_c.py
+    en1_dict.py
+    rc_all.log
+    rc_min.py
+    rc_part1.log
+    zeros25000.log
+    zeros25000b.log
+    zh_key.py
+    zh_lab1.py
+    zh_lab2.py
+    zh_probe1.py
+
 2026-10-20_slingshot_tests/
+    README.md
     RESULTS.md
     slingshot_tests.py
+
+2026-10-21_dprint_module/
+    README.md
+    d2.py
+    d3.py
+    demo.py
+    run_4.log
+
+2026-10-21_sempricon_fresh_start_firing_plans/
+    README.md
+    fp_triples.py
+    mknb.py
 
 addition_matrix_sudoku/
     factor_search.py
@@ -775,8 +804,20 @@ addition_matrix_sudoku/
 spectral_primes/
     build_and_test.py
 
+youtube_AACwyjlk8ko/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+
 youtube_Uvy5Cs9FDLg/
     CONTEXT.md
     oembed.json
     transcript.json
     transcript.txt
+
+2026-11-16_circle_atlas/
+    CONTEXT.md
+    mknb.py
+    sweep.py
+

@@ -1,0 +1,28 @@
+# ~/.clauderc_file_structure — Claude-maintained repo registry
+# Counterpart to ~/.clauderc (paths/constants) and ~/.clauderc_context (context, TBD).
+# Sourced the same way. Mine to edit freely — no permission needed.
+#
+# Purpose: canonical (local_path, github_url) pairs, one per tracked repo.
+# .clauderc's REPO SHORTCUTS section gives quick $VARS for cd/scripts;
+# this file is the fuller record — local disk location + remote origin
+# together, so a repo's identity doesn't require re-deriving `git remote -v`.
+
+# ============================================================
+# AINULINDALE REPO
+# local:  /media/rendier/0123-4567/ThePlace/Ainulindale
+# github: https://github.com/michaelrendier/Ainulindale
+# ============================================================
+
+export AINULINDALE_REPO_LOCAL="/media/rendier/0123-4567/ThePlace/Ainulindale"
+export AINULINDALE_REPO_GITHUB="https://github.com/michaelrendier/Ainulindale"
+
+# JSON form, for anything that wants to parse rather than split on env vars.
+export AINULINDALE_REPO='{"name":"Ainulindale","local":"/media/rendier/0123-4567/ThePlace/Ainulindale","github":"https://github.com/michaelrendier/Ainulindale"}'
+
+# Local structure (as of 2026-06-30): AgeFirst/Second/Third/Fourth (paper drafts
+# by era), wiki/ (75 numbered pages + index, sequential), outreach/, tribute/,
+# Gemini/ (external review correspondence), media/, archive/.
+#
+# Repo structure: origin = local disk, git remote = github.com/michaelrendier/Ainulindale,
+# branch main. NOTE (2026-06-30): working tree has uncommitted wiki changes —
+# modified 00_index.md and 72_the_cosmic_telescope.md, untracked 73/74/75 — not yet pushed.
