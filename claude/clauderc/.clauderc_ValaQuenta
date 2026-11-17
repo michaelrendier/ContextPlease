@@ -1171,7 +1171,7 @@ circle_atlas -- The Circle Atlas (H_hat_RB and The Complete Shape of Mathematics
 numpy only. Modules/circle_atlas/{maths,tools,manifest.json}; notebook 22; wiki circle_atlas.md + Ainulindale 137. Reuses tier8_sedenion.cd_mul, box_kite.zero_divisor_pairs, hypergon_constructibility, pi_derivations.
 Atlas registry row 6 (name qualified: always 'The Circle Atlas', never 'the atlas').
 
-WHAT: a MAPPING ALGORITHM (not a fit). 24 viewports (19 below + sphere, hypersphere, field_axis, native_units, kite_spectrum) (waveform, Hamiltonian, Lagrangian, Berry-Keating, cardioid, epicycles, Smith, Apollonian, inversion, Hopf, roots of unity,
+WHAT: a MAPPING ALGORITHM (not a fit). 25 viewports (19 below + sphere, hypersphere, field_axis, native_units, kite_spectrum) (waveform, Hamiltonian, Lagrangian, Berry-Keating, cardioid, epicycles, Smith, Apollonian, inversion, Hopf, roots of unity,
 sedenion, ADD:SCALE:SIGN, prime wheels, ring, BAO ring [constructed], polygons, normalising retraction, winding) each run as TO (enter fixed-point space; residual from |z|=1) and
 FROM (exit; the FIBRE of choices; a relation, not an inverse). Each carries a pi route (pi_derivations). signposts(), gaps(), census(), import_probe(), sign_carriers().
 MEASURED 2026-11-16: 18/19 close to numerical zero; Berry-Keating xp raw = hyperbola (residual 6.4), closes (2e-16) under Wick t->it (recorded failure kept). Lagrangian FROM: L, 3L, L+dF/dt share
