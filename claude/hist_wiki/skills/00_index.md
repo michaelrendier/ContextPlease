@@ -10,3 +10,4 @@ nltk-zork-wordnet, observer-position, scad-spatial, unit-management) get theirs 
 |---|---|---|
 | walk-the-hallway | [walk-the-hallway.md](walk-the-hallway.md) | breadth-first surface mapper for any public-facing collection and protocol (mount family, S3, FTP, HTTP, APIs, TAP, container files); records its own sitemap to power the real crawl; resumable chunk cycles; generalised AppArmor/robots wall. Built: local-image mount backend |
 | spatial-simulation | [spatial-simulation.md](spatial-simulation.md) | one viewport model for 2D pane, OpenSCAD camera and Blender camera; Blender 4.x bpy recipes; simulate → export → render (supersedes nes-viewport and scad-spatial, which are kept) |
+| zork-mapping | [zork-mapping.md](zork-mapping.md) | the graph-paper lattice method for Infocom/ZIL games: read ZIL rooms and exits, 3x3 per room, SVG and ASCII/Unicode maps, level colours, viewer rules |
