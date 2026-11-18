@@ -14,6 +14,8 @@ description: >
   "follow tail", pane/box that shows content larger than its frame.
 ---
 
+> **Superseded 2026-11-17 by the `spatial-simulation` skill** (2D pane + 3D camera + Blender + simulation pipeline). This file is kept unchanged below.
+
 # 2D NES Viewport — ergonomics & content‑interaction methodology
 
 A viewport is a fixed rectangle showing part of a larger content **map**. The NES

@@ -14,6 +14,8 @@ description: >
   through a manifold rather than reading a frequency table.
 ---
 
+> **Superseded 2026-11-17 by the `spatial-simulation` skill** (2D pane + 3D camera + Blender + simulation pipeline). This file is kept unchanged below.
+
 # 3D SCAD spatial awareness — the camera is the viewport
 
 The 3D camera is the exact analogue of the 2D pane in `nes-viewport`: a fixed
