@@ -1674,3 +1674,11 @@ CORRECTIONS 2026-10-13 (Cody): orb-weaver/topic-shift are DESIGN TARGETS not aut
 (57 KB, Aug 8), STALE vs ~/.clauderc_canonical_maths (maintained); reported to Cody, unchanged.
 @END
 "
+
+export CTX_WITCHES_HAT="
+THE WITCH'S HAT ENGINE (core), ValaQuenta/modules/witches_hat, 2026-11-17 (wiki witches_hat.md, notebook 24, tests 11).
+Core = tooling: plain data out, no rendering; the spatial-simulation skill bridges to renderers. snapshot(shape,n,size,depth,E,aim,spread).
+Findings: point focus only at aim 0 and E = 0 (separatrix); E<0 reflects at sqrt(-E/2); aim offset gives a ring caustic sqrt(sin d)((n-2)/n)^(1/4);
+size and depth drop out. Fermion exchange-hole hats are craters (no outer wall) and are NOT the Higgs quartic (failed identification). Zeta zero pair
+correlation = 1-D fermion kernel (rms 0.066 vs 0.36 Poisson). Holcus prediction = ask the maths (Circle Atlas viewports), not self-written.
+"
