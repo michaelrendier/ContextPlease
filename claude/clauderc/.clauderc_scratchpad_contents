@@ -823,3 +823,4 @@ youtube_Uvy5Cs9FDLg/
 
 
 2026-11-16 (pass 2): 2026-11-16_circle_atlas/{exp1,exp2}.py kite-spectrum/anchor experiments; make_notebook_catalog.py (NOTEBOOK_CATALOG.ipynb builder); twin_wheels_COPY.py
+- claude/scratchpad/2026-11-17_scaffold_gallery/ : gallery.html (interactive raw|false-colour viewer of every JWST scaffold; <base> points at FourthAgePapers worktree WitchesHat/scaffolds), make_gallery.py, gallery_template.html
