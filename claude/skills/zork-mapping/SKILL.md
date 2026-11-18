@@ -32,5 +32,11 @@ Descriptions: `LDESC`, else the strings the ACTION routine prints under `M-LOOK`
 - Background colour = **level**: the start room's level (the surface, around the white house) is white; up is lighter (yellow, cyan ...), underground darker (blue, purple, brown ...). Levels come from a walk over UP/DOWN exits (first assignment wins; inconsistent vertical exits in a game can mislabel a room).
 - `describe.py` / `--descriptions FILE`: plain text of room names and descriptions.
 
-## 4. Rules for the viewers (planned)
+## 4. Level colours, the explorer, the story-file reader
+- `levels.py`: **white = ground level (the start room's level)**; going up, bright colours in rainbow order (red, orange, yellow, green, blue, violet); going down, dark colours in the same rainbow order. The background of a room square tells its elevation; the explorer's left panel is the legend.
+- `mapfile.py`: `NAME.map.json` (canvas lines, room squares, per-room name/description/items/exits with destination numbers, levels). `explorer.py`: Python curses, current room centred, percentage panels (left legend, right room list + details, bottom status + function-key strip modelled on TheDraw's bottom line), F5 open, F6 map a game. Tested on a fake screen and in a pty.
+- `zmachine.py` / `mapper.py`: read rooms and exits from a story file. Directions: the dictionary's direction words carry the property number in their data bytes. Exits: property sizes 1 UEXIT, 2 NEXIT, 3 FEXIT, 4 CEXIT, 5 DEXIT (byte 0 = destination). Rooms = every child of the rooms object. Start = the first `store HERE, <room>` (bytes `0D 10 xx`) after the initial PC. Validated: Zork I story file = ZIL source, 110/110 rooms identical.
+- Build order (author): console -> QGraphicsScene rendering the SVG -> PyQt6 -> OpenGL 3-D.
+
+## 5. Rules for the viewers
 Curses and PyQt6 viewers: the map is larger than the viewport; the **current room is centred**; all geometry in **percentages** so a bigger window adds viewport, not map scale (see the `spatial-simulation` skill, nes-viewport section: clamp, derive indicators, never store them). Left palette = the adventure-toolkit hand mapper; right sidebar (collapsible) = room parts; bottom status box (collapsible).
