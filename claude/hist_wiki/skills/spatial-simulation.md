@@ -17,3 +17,6 @@ One viewport model for three frames (a 2D scroll pane, an OpenSCAD camera, a Ble
 - The Blender here has no OpenImageDenoiser: `use_denoising = False`, else the run aborts.
 - Top-down camera at elevation 90° is a TRACK_TO singularity; use 89.5°.
 - Never `pkill -f` / `pgrep -f` a pattern that appears in the shell command that runs it (it kills the shell, exit 144).
+
+## Update 2026-11-17: Minkowski recognition (author: 'the action lives in Minkowski space')
+Added `assets/minkowski.py` and SKILL.md §6: signature (−,+,+), boosts, light cones (the null cone is the Witch's Hat), worldlines and proper time, simultaneity slices, the observer's past-cone viewport, Wick rotation to Euclidean paths in −V (brim to hilltop in finite Euclidean time, speed √(2·depth)), and `assert_minkowski_sound()` (six checks, all pass). Three layers for QFT-faithful renders: semiclassical Lorentzian paths, Euclidean instanton paths, lattice field configurations; every picture says which.

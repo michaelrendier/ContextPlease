@@ -12,8 +12,10 @@ description: >
   dimension; turning a calculation (potential, path family, field, lattice) into
   a render or turntable; scripting Blender from Python (`blender -b -P`); proving
   that a render frames the whole model; writing a simulator whose output is
-  meant to be looked at. Built 2026-11-17 from the Witch's Hat simulator.
-version: 1.0.0
+  meant to be looked at; anything in Minkowski spacetime (light cones, worldlines,
+  boosts, the path of action, Wick rotation). Built 2026-11-17 from the Witch's Hat
+  simulator; Minkowski recognition added the same day.
+version: 1.1.0
 ---
 
 # Spatial simulation: viewport, camera, Blender, and the maths behind them
@@ -43,7 +45,7 @@ never stored; clamp after every move; `max_oy = max(0, ch − vh)`; thumb
 CLAMP / FLUSH / THUMB / SWEEP.
 
 3D details (CSG, transforms, `$fn`, CLI camera, canonical `$vpr` poses, `projection`):
-`references/scad_openscad-camera.md`, code `assets/camera.py`, `assets/hyperview.scad`,
+`references/scad_openscad-camera.md`, code `assets/camera.py`, `assets/minkowski.py`, `assets/hyperview.scad`,
 `assets/render.sh`.
 
 ## 2. What a human can perceive (the budget)
@@ -102,6 +104,32 @@ vortex), classical paths and their abbreviated action, the author's cone.
 Picking the next element of a sequence can be treated as steering a path through a manifold:
 score a candidate by curvature/jerk of the path, conserved invariants and silhouette continuity,
 with frequency as the tie-breaker (details in the superseded scad-spatial note; `references/scad_nd-to-3d.md`).
+
+## 6. Minkowski space (the action lives here)
+
+The Lagrangian, the action and the Standard-Model fields are Lorentzian: the viewport is **pseudo-Euclidean**. Signature (−, +, +): s² = −(c dt)² + dx² + dy². Use `assets/minkowski.py`.
+
+| Euclidean viewport (§1) | Minkowski viewport |
+|---|---|
+| distance, preserved by rotations | interval s², preserved by **boosts** (hyperbolic rotations, rapidity η = atanh(v/c)) |
+| frustum (a cone around the view axis) | the observer's **past light cone**: what is seen is on or inside it (`past_cone_viewport`) |
+| pose = eye position + orientation | pose = an event + a unit timelike 4-velocity; changing the frame is a boost |
+| "same distance" = a circle | "same interval" = a hyperbola; null (s² = 0) = the 45° lines |
+| a model point is in frame or not | an event pair is **timelike / null / spacelike**, and that class is frame-independent (`classify`) |
+| straight line = shortest | a free worldline **maximises** proper time τ; τ ≤ t always (`worldline`) |
+| slice at constant z | **simultaneity slice**: tilts with the frame, t = t₀ + vx/c² (`simultaneity_slice`) |
+
+Rules for a Minkowski render:
+1. Plot **ct** (same units as x) so the light cone is exactly 45°; scale them differently and the cone lies.
+2. The null cone of an event is the **hat** of `Ainulindale/wiki/29`: tip = the event, surface = the null geodesics, brim = where a constant-time slice cuts it (`light_cone`).
+3. Never draw a Euclidean circle where an invariant hyperbola belongs; never draw a worldline outside the cone (`worldline` raises if v ≥ c).
+4. Simultaneity is not absolute: two events on one horizontal line in one frame are not in another. If a figure shows "at the same time", name the frame.
+5. 3D with time: (x, y, ct) with ct vertical; a boost shears/tilts the slices, it does not rotate the picture.
+6. **Wick rotation** t → −iτ turns signature (−, +, +) into (+, +, +): a Lorentzian path in V becomes a Euclidean path in **−V**. For the Mexican hat the brim (the minimum of V) is the crest of −V and the hilltop is its bottom: a particle released at rest inside the brim rolls to the hilltop in finite Euclidean time with speed √(2·depth) (the bounce / instanton path from the brim to the point). `euclidean_path` computes it; the Lorentzian paths of the Witch's Hat engine are the other half of the same picture. Render them as two layers, labelled Lorentzian and Euclidean, never mixed.
+
+Acceptance test, `assert_minkowski_sound()`: the interval is invariant under boosts (v = 0.1, 0.6, 0.95); a light ray stays null after a boost; the causal class is frame-independent; proper time never exceeds coordinate time; the ring of a past light cone is visible from its apex; slices tilt with velocity. All six hold (2026-11-17).
+
+Layers for QFT-faithful renders: (1) the semiclassical paths (stationary phase of the path integral): Lorentzian paths in V on the Minkowski diagram; (2) the Euclidean paths in −V (instantons/bounces); (3) for a true field theory, the field configurations on a lattice in Euclidean time, with the weight e^{−S_E}. Say which layer a picture is.
 
 ## Extending
 
