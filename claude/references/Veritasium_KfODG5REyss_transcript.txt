@@ -1,0 +1,2149 @@
+[00:00] - This is liquid helium.
+[00:01] It's currently sitting at
+negative 269 degrees Celsius.
+[00:05] That's just four degrees
+above absolute zero.
+[00:08] But watch what happens if
+you start cooling it down.
+[00:13] It starts to boil violently.
+[00:15] - (laughs) That's aggressive.
+[00:17] - [Derek] There
+are bubbles everywhere.
+[00:20] That is until 2.17 Kelvin.
+[00:23] At that point, something strange happens.
+[00:26] (dramatic suspenseful music)
+[00:29] The helium has transformed
+into a superfluid.
+[00:33] - Ooh. It's completely still again.
+[00:37] - What we've got is a beaker
+[00:39] with a leak tight aerogel base.
+[00:42] - [Derek] This beaker holds
+the liquid helium well,
+[00:45] but the moment it turns superfluid,
+[00:48] it starts to leak through.
+[00:51] - Oh, the transition below is happening.
+[00:52] Yeah, it's dripping.
+[00:53] - Yeah, it's dripping on the right.
+[00:55] (inspirational music)
+[00:57] - [Derek] And the colder it
+gets, the faster it pours.
+[01:01] - Oh wow! That's gorgeous.
+[01:03] So fast.
+[01:06] - That's spectacular.
+[01:08] superfluid helium can do
+things that seem impossible.
+[01:11] If you put it in a cup,
+[01:12] a thin film climbs up and over the walls,
+[01:16] so it empties itself.
+[01:18] You can also use superfluid helium
+[01:20] to create a fountain with no moving parts.
+[01:23] It is powered solely by light.
+[01:26] Scientists spent 30 years
+looking at this liquid
+[01:28] without realizing what they had created.
+[01:30] - This is really one
+of the great phenomenon
+[01:32] in 20th century physics.
+[01:34] - And it makes you look at
+matter in a different way.
+[01:36] It allows us to explore the boundary
+[01:39] of quantum and regular matter.
+[01:42] So we teamed up with
+the gravity laboratory
+[01:44] at Nottingham University
+to recreate the experiments
+[01:47] and to find out what really happens
+[01:49] when you just keep cooling down.
+[01:59] The obsession with cooling things down
+[02:00] as much as possible began in the 1800s.
+[02:04] People noticed that when
+you let a gas expand
+[02:06] against a piston, its temperature drops.
+[02:10] That's because as the
+particles hit the piston,
+[02:12] they give it a little push
+[02:13] and transfer some of their
+energy to the piston.
+[02:16] So the particles slow down and
+their temperature decreases.
+[02:21] Lord Kelvin learned of this
+[02:22] and realized it offered a
+tantalizing possibility,
+[02:26] that of an absolute temperature scale.
+[02:30] Imagine that you let the
+gas expand an extreme amount
+[02:33] to the point where all the
+particles effectively stop.
+[02:37] The particles no longer
+exert any force on the piston
+[02:40] and they have no more energy left to give.
+[02:43] This would be the absolute
+coldest you could get,
+[02:47] absolute zero.
+[02:51] Kelvin quickly computed what
+temperature it corresponded to
+[02:54] and found it was around
+negative 273 degrees Celsius.
+[02:59] People speculated what strange things
+[03:01] might happen down there, a
+place with no thermal motion.
+[03:05] Kelvin himself suggested that metals,
+[03:07] which are normally great
+conductors of electricity,
+[03:09] might turn into perfect insulators
+[03:12] and not conduct any electricity at all.
+[03:15] But there was only one way to find out
+[03:18] and that was you had to get there.
+[03:20] Fortunately, the race to absolute zero
+[03:22] was already well underway.
+[03:25] It had started by
+accident 25 years earlier.
+[03:28] In 1823, Michael Faraday
+was playing around
+[03:31] with chlorine hydrate
+[03:32] and his scientific mentor
+suggested that heating it
+[03:35] in a sealed tube might lead
+to some interesting results.
+[03:39] So Faraday sealed it
+up, warmed it in water,
+[03:44] and watched as a yellow
+atmosphere emerged.
+[03:48] Then as the pressure increased
+to around four atmospheres,
+[03:51] he noticed that a bright
+yellow fluid formed.
+[03:54] He had just turned chlorine
+gas into chlorine liquid.
+[03:59] Faraday then went on a
+bit of a liquefying spree,
+[04:02] liquefying six more
+gases within five weeks.
+[04:05] But just as he was hitting
+his stride, he hit a wall.
+[04:09] Some gases like ethylene
+refused to liquefy
+[04:12] no matter how much he squeezed them.
+[04:16] To see why you need to zoom into a gas.
+[04:19] There you'd find a bunch of
+particles whizzing around
+[04:21] as fast as tiny bullets.
+[04:24] And while it might not seem like it,
+[04:25] the particles also attract each other.
+[04:29] It's just that they're so spread out
+[04:30] that they meet relatively little,
+[04:32] and when they do, they're going so fast
+[04:34] that they mostly just
+bounce off each other.
+[04:37] In some cases though, if you
+squeeze the particles together
+[04:40] by increasing the pressure,
+you can get those particles
+[04:43] to stick together and
+slide past each other.
+[04:45] In other words, you get a liquid.
+[04:47] This is what happened
+with Faraday's chlorine,
+[04:50] but that doesn't work for all gases.
+[04:52] If the attraction between
+particles isn't strong enough
+[04:55] and the particles are too hot,
+[04:56] then no amount of squeezing
+can get them to liquefy.
+[05:00] And this is what happened with ethylene.
+[05:03] Luckily, there is another way.
+[05:06] If you cool the gas down,
+the particles will slow
+[05:09] and eventually they
+start sticking together
+[05:11] and sliding past each other
+and you get your liquid.
+[05:16] So to liquefy more tricky gases,
+[05:19] Faraday needed colder temperatures
+and he got a lucky break.
+[05:23] A French inventor had
+discovered how to make dry ice,
+[05:26] which was about negative
+79 degrees Celsius.
+[05:28] So 20 years after his
+initial chlorine success,
+[05:31] he tried again.
+[05:33] Faraday put ethylene gas in
+a glass tube with a bend,
+[05:36] compressed it using pumps,
+[05:38] and then lowered the bend into
+a bath of dry ice and ether.
+[05:41] As the dry ice cooled,
+[05:43] the ethylene, a clear
+colorless liquid formed.
+[05:46] Faraday used the same technique
+[05:48] and liquefied five more gases
+[05:50] pursuing ever colder
+temperatures in the process
+[05:53] and getting all the way down
+to negative 110 degrees Celsius
+[05:56] or 163 Kelvin.
+[05:58] But six gases still resisted his attempts,
+[06:01] including oxygen, hydrogen and nitrogen.
+[06:04] He just couldn't get cold enough.
+[06:06] Over the following decades,
+[06:08] scientists all over the world picked up
+[06:10] where Faraday had left off.
+[06:11] Liquefying a new gas became
+a matter of national pride
+[06:16] and the race to absolute zero was on.
+[06:20] In 1883, two Polish scientists
+liquefied oxygen and nitrogen
+[06:24] and the record low
+temperature fell to 77 Kelvin.
+[06:27] 15 years later, James Dewar
+liquified hydrogen at 20 Kelvin
+[06:31] before freezing it at 14.
+[06:34] By the turn of the 20th century,
+[06:35] there was just one gas
+left standing, helium,
+[06:39] but some thought helium might
+be impossible to liquefy.
+[06:43] And there was good reason to think that
+[06:45] because to turn a gas into a liquid,
+[06:47] its particles have to attract each other.
+[06:50] But helium is a very simple element.
+[06:53] Its most common isotope
+consists of two protons,
+[06:56] two neutrons and two electrons.
+[06:58] Electrons form shells around
+the nucleus and helium,
+[07:01] like all noble gases,
+has a full outer shell.
+[07:05] So it isn't really seeking to
+gain or lose any electrons,
+[07:08] and as a result,
+[07:09] it doesn't really bind
+together with anything.
+[07:12] That made people wonder
+[07:14] whether helium atoms
+attract each other at all.
+[07:16] And if they didn't, you
+could cool down helium
+[07:19] as much as you wanted, but
+you would never get a liquid.
+[07:22] And even if the atoms
+did attract each other,
+[07:25] well, the attraction might be so small
+[07:27] that its liquefaction
+temperature could be much colder
+[07:30] than anyone could practically reach.
+[07:34] So when Heike Kamerlingh
+Onnes set his sights
+[07:37] on liquefying helium, he knew
+he was in for a challenge.
+[07:41] Onnes had joined the race
+to absolute zero in 1882,
+[07:44] and since then he'd been building
+[07:46] an industrial scale laboratory in Leiden,
+[07:49] complete with chemists,
+technicians, glassblowers,
+[07:51] and massive liquefiers.
+[07:54] By 1906, he too had liquefied hydrogen,
+[07:56] and from then on, he
+dedicated himself fully
+[07:59] to liquefying helium.
+[08:02] But working with helium came
+with two major problems.
+[08:06] For one thing, just
+getting it was difficult.
+[08:09] Remember, helium doesn't
+react with anything,
+[08:12] so there are no compounds
+you can get helium from,
+[08:15] and the air only contains
+around five parts per million.
+[08:19] So on earth, there's almost no helium,
+[08:22] which is at least a little surprising
+[08:24] because in the universe,
+helium is everywhere.
+[08:26] It's the second most abundant
+element after hydrogen.
+[08:30] The issue is just how light helium is.
+[08:33] Release any helium and
+it mixes into the air.
+[08:36] Over hundreds of thousands
+of years, it slowly drifts up
+[08:39] to the top of the atmosphere
+where it gets heated up
+[08:42] by the sun and it speeds up.
+[08:44] Now, a small fraction ends up going faster
+[08:47] than 11 kilometers per second,
+[08:48] which is Earth's escape
+velocity, the velocity required
+[08:52] to escape Earth's gravitational well.
+[08:55] And so it escapes into space.
+[08:57] A much larger fraction gets
+ionized by solar radiation
+[09:00] and then gets carried away
+[09:02] by the polar winds along
+the Earth's magnetic field
+[09:04] before ultimately merging
+with the solar wind.
+[09:07] And either way, the outcome is the same.
+[09:09] The helium is lost to space forever.
+[09:13] So if I pop this balloon, that
+helium is effectively gone.
+[09:16] (balloon pops)
+[09:18] As a result, pure helium at
+the time was hard to come by
+[09:22] and the world's total
+supply was likely less
+[09:24] than 50 party balloons worth.
+[09:27] So Onnes had to get his
+helium from a different source
+[09:31] and he turned to sand,
+[09:33] specifically two large
+bags of Monazite sand.
+[09:37] That's because Monazite is a mineral
+[09:39] that contains around 5% thorium by weight
+[09:42] and thorium is radioactive.
+[09:45] When it decays, it spits
+out an alpha particle,
+[09:47] which is two protons and two neutrons.
+[09:50] In other words, the nucleus of helium.
+[09:53] That nucleus then gets slowed
+down by the surrounding rock
+[09:56] where it steals two electrons
+and becomes a helium atom.
+[10:00] So over millions of years,
+you get this buildup
+[10:02] of helium atoms trapped inside the rock.
+[10:06] In fact, basically all the
+helium we have on earth today
+[10:09] comes from radioactive decay.
+[10:11] It's essentially a radioactive fossil,
+[10:13] although now we mostly get
+it from natural gas wells
+[10:16] where it accumulates over the eons.
+[10:18] But Onnes didn't have that luxury.
+[10:21] He had to liberate it from the sand.
+[10:24] So he recruited four chemists.
+[10:26] They heated up the sand
+to release the gas,
+[10:29] exploded it with oxygen,
+[10:31] cooled it with liquid air
+to freeze out impurities,
+[10:34] burned over copper oxide
+to get rid of the hydrogen,
+[10:37] and last of all,
+compressed it over charcoal
+[10:40] to absorb any remaining impurities.
+[10:42] After several months,
+[10:44] Onnes had about 25 party
+balloons of pure helium,
+[10:48] an estimated 80% of the world supply.
+[10:52] Onnes quickly conducted
+careful experiments
+[10:54] to try and tease out
+[10:56] whether helium atoms
+attract each other at all.
+[10:58] - Kamerlingh Onnes did a lot of work
+[11:02] and I think he was becoming
+more and more convinced
+[11:05] that helium can in fact be liquefied.
+[11:08] - It seemed like the helium
+atoms did attract each other
+[11:11] just ever so slightly.
+[11:13] So how do two neutral atoms
+[11:15] that don't react with
+anything attract each other?
+[11:18] Well, a helium atom is just a nucleus
+[11:20] with two electrons around
+it, but in reality,
+[11:23] you never know exactly
+where those electrons are.
+[11:25] So a more accurate
+picture looks like this,
+[11:28] a nucleus with an
+electron cloud around it.
+[11:31] But that cloud isn't always
+perfectly evenly distributed.
+[11:35] At any particular instant,
+[11:36] there's slightly more
+negative charge on one side
+[11:39] than the other.
+[11:40] And now if there's another
+helium atom close enough,
+[11:42] well, this charge imbalance
+can induce a charge imbalance
+[11:46] on that atom.
+[11:48] And now the two exert a force
+of attraction on each other.
+[11:52] This is known as a van der Waals force,
+[11:56] and it's why every atom
+attracts every other
+[11:59] if you get it close enough.
+[12:01] But helium holds its two
+electrons very tightly,
+[12:04] so the cloud hardly budges
+[12:05] and the van der Waals force is tiny,
+[12:07] the smallest of any element,
+but perhaps it's just enough.
+[12:13] The second problem with helium is that
+[12:15] no one knew exactly how
+cold it would have to get
+[12:18] to liquefy, only that it had to be colder
+[12:20] than liquid hydrogen,
+possibly much colder.
+[12:23] And that's the issue
+[12:24] because the rate at
+which heat transfers in
+[12:27] from the environment depends
+on the temperature difference.
+[12:30] The bigger the gap, the more heat flows in
+[12:33] and cooling something down
+to possibly a few degrees
+[12:36] above absolute zero
+[12:37] while the room it's in
+is 290 degrees above it,
+[12:41] well, that's a humongous gap.
+[12:44] Fortunately, Dewar had already invented
+[12:46] one key piece of apparatus.
+[12:49] Essentially, one glass
+flask nested inside another
+[12:53] with a vacuum in between.
+[12:55] This limited heat conduction
+[12:57] to a small connection point at the top.
+[12:59] Convection got ruled out
+entirely due to the vacuum
+[13:02] and optionally by covering the insides
+[13:04] with a silver coating, you
+could also reflect radiation.
+[13:08] This reduced heat losses
+by a factor of 30,
+[13:11] and it's the basic design behind
+every thermos flask today.
+[13:15] But for Onnes, it still
+wasn't good enough.
+[13:20] So he nested several Dewar
+flasks inside each other.
+[13:24] The helium would go in the inner one,
+[13:26] a bath of liquid hydrogen
+would sit around that,
+[13:29] and a bath of liquid air around that.
+[13:32] So each layer acted as a
+heat shield for the next,
+[13:35] and the helium would see a wall
+of 20 Kelvin instead of 300,
+[13:39] cutting the radiated heat
+coming in by a factor of 50,000.
+[13:44] To measure the temperature
+inside the inner vessel,
+[13:47] Onnes inserted a small glass bulb,
+[13:49] filled with dilute helium gas
+held at a constant volume.
+[13:54] A thin capillary connected this to
+[13:56] what was essentially a pressure
+meter outside the liquefier,
+[14:00] because for a gas at a constant volume,
+[14:02] the temperature is directly
+proportional to the pressure.
+[14:06] So if you first measure
+the baseline pressure
+[14:08] at a temperature you know,
+[14:09] like the freezing point of
+water around 273 Kelvin,
+[14:12] you could set that to 100%.
+[14:16] Then if you later measure a pressure
+[14:18] that's only 10% of that amount,
+[14:19] then the temperature must
+also be 10% of the original
+[14:24] or around 27 Kelvin.
+[14:26] By using this trick, Onnes
+could measure the temperature
+[14:29] even at a few degrees above absolute zero.
+[14:32] Now in their case, they
+read off a level of mercury,
+[14:35] but for simplicity, we'll animate
+it as a temperature scale.
+[14:39] Onnes finally had everything ready.
+[14:42] At Professor Weinfurtner's
+Gravity Laboratory,
+[14:45] we got to see the setup we'd use.
+[14:47] - [Casper] Is this also what
+it would have looked like
+[14:49] back in the day when Onnes was doing it?
+[14:51] - [Dr. Chris] Yeah, so this is actually
+[14:52] a really similar setup
+to Kamerlingh Onnes.
+[14:55] - [Derek] The biggest difference is that
+[14:56] we only have two dewars
+nested inside each other.
+[14:59] The outer one will be
+filled with liquid nitrogen
+[15:01] and the inner one is
+where the helium will go.
+[15:04] By the 10th of July 1908,
+Onnes decided to go for it.
+[15:08] He arrived at his lab around 5:30 AM
+[15:11] where his technicians
+were already hard at work.
+[15:15] They prepared 75 liters of
+liquid air the day before
+[15:18] and Onnes now ordered them to
+start making liquid hydrogen.
+[15:22] By 1:30 PM they had 20 liters,
+[15:24] which was enough to launch
+their attack on helium.
+[15:31] They started by filling the outer vessels.
+[15:35] - First step, we're gonna
+fill the outer dewar
+[15:38] with liquid nitrogen.
+[15:40] That's going to precool the whole system
+[15:42] down to about 77 Kelvin.
+[15:44] Once we're full, we'll
+start filling with helium.
+[15:47] So we've used about 25 liters of nitrogen
+[15:53] to get to that point.
+[15:54] Now consider how big the dewar is,
+[15:56] that probably holds, you
+know, less than 10 liters.
+[16:02] - [Derek] With the liquid
+air and hydrogen in place,
+[16:04] they started to cool the liquefier.
+[16:07] After 30 minutes, it
+had cooled to 93 Kelvin.
+[16:11] Now it was time to start
+cycling the helium.
+[16:14] A pump compressed it to 100 atmospheres
+[16:16] before it went to the liquefier,
+[16:18] where it got pre-cooled
+to around 15 Kelvin.
+[16:21] The gas was then rapidly
+expanded into the inner vessel,
+[16:25] greatly increasing the
+distance between atoms.
+[16:29] But remember, helium atoms do
+slightly attract each other,
+[16:32] so moving them apart costs energy
+[16:35] and they pay for this with
+some of their kinetic energy,
+[16:38] causing the particles to slow down
+[16:40] and their temperature to drop.
+[16:44] The gas then got pumped
+back to the compressor,
+[16:47] but the smart thing was that
+[16:48] they let this colder gas
+cool the incoming helium,
+[16:51] slightly lowering its
+temperature before it expanded.
+[16:54] And by doing this over and over,
+[16:56] the incoming helium got colder and colder.
+[17:04] - [Casper] It's so faint.
+- Yeah.
+[17:06] - [Casper] It feels like a
+ghostly fluid or something.
+[17:08] - You know, it's not
+liquid that's escaping.
+[17:10] It's more of kind of a super dense vapor.
+[17:13] It's only 10 degrees inside,
+but it's dropping fast.
+[17:18] - [Derek] A little after 6:30 PM,
+[17:20] Onnes and his team had
+gotten down to six degrees
+[17:22] above absolute zero.
+[17:24] That is closer than anyone
+had ever gotten before,
+[17:28] and they kept going.
+[17:29] But just below five Kelvin, the
+temperature stopped falling,
+[17:34] so they started to worry that
+perhaps something was wrong.
+[17:39] But then a chemist in the room
+remarked, "It's so stable,
+[17:42] it's almost as if the
+thermometer is submerged
+[17:45] in a bath of liquid."
+[17:48] So they rushed to the
+apparatus, but still saw nothing
+[17:52] until Onnes grabbed a torch
+and shot it from a low angle,
+[17:56] and they saw a reflection.
+[17:59] After the surface had once been seen,
+[18:01] it was no more lost sight of.
+[18:03] Onnes wrote, "It stood out sharply defined
+[18:06] like the edge of a knife
+against a glass wall."
+[18:10] They had just made liquid helium.
+[18:13] (uplifting music)
+[18:17] - That's really cool.
+[18:18] - It's just hitting the light
+on it while it's yeah.
+[18:21] - So beautiful. 
+- It's a helium kettle.
+[18:24] (everybody laughs)
+[18:26] - Four degrees
+above absolute zero.
+[18:29] - You can see that
+really faint liquid level
+[18:31] on the inside, that's the liquid helium.
+[18:33] - Oh wow. Okay.
+[18:34] So the refractive index of liquid helium
+[18:37] is very close to air, is it?
+[18:38] - [Dr. Chris] 1.025.
+[18:39] Okay. So yeah, really, really
+difficult to see by eye.
+[18:42] - [Derek] Wow.
+[18:44] - Isn't it crazy to think that that is
+[18:46] about four degrees above absolute zero?
+[18:50] It doesn't look like it.
+[18:51] - There's nothing
+that would tip you off.
+[18:53] - Yeah.
+[18:56] - [Derek] Back in Leiden,
+everyone was elated.
+[18:58] For the next hour, they
+ran basic experiments
+[19:01] until by 8:30 PM only 10
+milliliters were left.
+[19:05] But then Onnes thought, "Well,
+we've made liquid helium.
+[19:08] Why not make solid helium?"
+[19:10] So he was going to cool it down,
+[19:13] and the way you can
+cool down any liquid is
+[19:15] by pumping on it.
+[19:17] - When we pump on it,
+[19:18] we're removing all of the
+hottest atoms from the system,
+[19:20] which takes about a
+third of the fluid away.
+[19:22] So we initially take the level
+way higher than we need it
+[19:25] so it can drop down.
+[19:28] - [Derek] So Onnes started
+his pumps and so did we.
+[19:32] - Are we ready?
+[19:33] - Yeah, on three, two, one, go.
+[19:37] - Oh, wow. Okay.
+[19:38] (suspenseful music)
+[19:44] - Oh wow.
+It's gone down so much.
+[19:46] It's gone down like,
+what, five centimeters?
+[19:49] - Yeah, immediately.
+[19:50] - Immediately.
+- Because we're removing
+[19:52] all the hottest atoms from the system.
+[19:55] So we're just shy of 3.5 K.
+[19:57] - [Derek] This rapidly evaporating helium
+[19:59] is quickly cooling down.
+[20:01] - So we're about 2.6 K.
+[20:04] We're below 2.3 K.
+[20:07] - Okay. Oh, it's
+going super fast, super fast.
+[20:10] - [Derek] It keeps boiling
+until right at 2.17 Kelvin,
+[20:13] it abruptly stops and the
+liquid goes eerily quiet.
+[20:19] There it is.
+[20:20] - Ooh. It's completely still again.
+[20:24] Man, you can hardly see it. It
+feels like a mirror surface.
+[20:28] It's crazy how smooth that is.
+[20:32] - [Derek] Onnes pumped his
+helium down to 1.7 Kelvin,
+[20:35] colder than outer space,
+but it didn't freeze.
+[20:39] Instead, it just sat
+there, remarkably still.
+[20:43] Onnes concluded it must just freeze
+[20:45] at some lower temperature,
+[20:46] and since everyone was
+exhausted, they called it a day.
+[20:50] Little did he know what sat
+there evaporating in his flask.
+[21:02] Onnes still wanted to freeze helium,
+[21:05] so over the next two years,
+he tried several more times,
+[21:08] getting all the way down to one Kelvin,
+[21:11] but all his attempts failed.
+[21:14] This led him to wonder
+whether helium will not remain
+[21:16] perhaps liquid even if it is
+cooled to the absolute zero.
+[21:21] And indeed, scientists later
+discovered this is true.
+[21:24] If you take any substance
+[21:26] and keep cooling it down,
+eventually it always freezes,
+[21:29] except for helium.
+[21:32] Somehow it's the only
+substance that never freezes
+[21:35] by just cooling it down.
+[21:37] So Onnes was wise when he gave up
+[21:40] on trying to freeze helium.
+[21:42] Instead, he set out to finally
+test Kelvin's prediction
+[21:44] that the electrical conductivity
+[21:46] of metals should stop near absolute zero.
+[21:49] In other words, that their
+electrical resistance
+[21:51] should become effectively infinite.
+[21:53] To do this, he submerged
+different metals in liquid helium
+[21:57] and measured their resistance.
+[21:58] He started with gold and platinum,
+[22:01] but their resistance just
+kept slowly decreasing
+[22:04] until finally settling on a steady value.
+[22:07] Then on the 8th of April,
+1911, he measured mercury
+[22:11] and wrote down just three words,
+[22:14] "Kwik nagenoeg nul",
+[22:17] "Mercury practically zero."
+[22:20] As you cooled down, its
+resistance slowly decreased
+[22:23] until around 4.2 Kelvin,
+[22:26] where it suddenly plummets
+to what appeared to be zero.
+[22:30] Electricity that flowed
+with no apparent losses,
+[22:34] the exact opposite of what
+Kelvin had hypothesized,
+[22:37] Onnes had just discovered
+superconductivity.
+[22:43] - So that's the story most people know.
+[22:45] - Okay.
+[22:45] - What most people don't know
+is that later that same day,
+[22:48] he also cooled down the
+helium more and he wrote,
+[22:52] "Right before the helium
+reached the coldest temperature,
+[22:56] which was 1.8 Kelvin, the
+boiling suddenly stopped."
+[23:02] - Um. He noticed.
+[23:04] - He noticed.
+[23:05] - So what did Onnes do after
+seeing this sudden change?
+[23:09] Almost nothing.
+[23:11] He guessed at an ordinary
+explanation and moved on.
+[23:15] But helium kept dropping clues.
+[23:18] When they measured its density,
+[23:19] they discovered it had a
+curious peak around 2.17 Kelvin.
+[23:23] And when they measured the latent heat,
+[23:26] they found that around
+the same temperature,
+[23:27] something happened to the helium,
+[23:29] which was perhaps even discontinuous.
+[23:32] Yet the biggest smoking
+gun of all happened
+[23:34] when they measured a property
+known as the specific heat,
+[23:37] which is how much energy it takes
+[23:39] to heat up one gram by one Kelvin.
+[23:42] They found that as the
+temperature dropped,
+[23:44] the specific heat declined
+[23:46] until they approached 2.17 Kelvin,
+[23:49] where it suddenly shot up.
+[23:51] This was as clear a sign as any
+[23:53] that something was
+happening at this point.
+[23:57] - But they knew what this was.
+[23:58] This was condensation happening,
+[24:00] you know, experimental error.
+[24:03] So they had these points,
+but they wrote like,
+[24:06] "We felt justified in disregarding
+these irregular points",
+[24:10] and they only published
+the part above 2.61 Kelvin,
+[24:14] which neatly fit the
+formula they had for it.
+[24:19] - Onnes brushed off hint after hint,
+[24:22] even while seeing it
+happen with his own eyes.
+[24:25] One day, Onnes put one container
+[24:27] of liquid helium inside another,
+[24:29] and he noticed that below 2.17 Kelvin,
+[24:32] if one level started higher,
+it always quickly evened out.
+[24:37] He even remarked how
+strikingly fast it happened.
+[24:40] He thought it was too
+fast for distillation,
+[24:42] but since he had no better
+explanation, he stuck with that.
+[24:47] If only he had raised his container,
+[24:49] he might have discovered the truth.
+[24:51] Here, we've got a polymer
+cup. This is our container.
+[24:56] - So we got the bowl loaded up.
+[24:59] It's way at the bottom,
+[25:00] and I think what we're going
+to try and do is lift it up.
+[25:02] - Yeah.
+- The colder we get,
+[25:04] the better this effect is gonna be,
+[25:06] and it's a super subtle
+effect at the best of times.
+[25:09] We want to get down to about 1.5, 1.55 K.
+[25:13] I'm gonna try and raise it
+just above the fluid surface.
+[25:18] - [Casper] Whoa.
+[25:19] - [Dr. Chris] Can you see that?
+[25:20] - [Casper] Yeah, yeah.
+[25:21] - Yeah, no,
+you see like waves almost.
+[25:25] - [Dr. Chris] Yeah.
+- [Casper] Yeah.
+[25:26] Ah, you can really see a pulse down there.
+[25:31] - If you look at the bottom,
+you can see it's dripping.
+[25:34] And if we speed it up, you
+can see it keeps dripping.
+[25:38] More and more liquid helium
+is going to the bottom.
+[25:41] What's happening is that somehow
+the helium is climbing up
+[25:45] and over the walls, literally
+emptying itself out.
+[25:50] This was not distillation.
+[25:52] Something far stranger was happening.
+[25:57] Onnes's successors grew suspicious
+[25:59] of the specific heat
+data, so they remeasured
+[26:03] and they became convinced
+it wasn't an error.
+[26:06] This was real.
+[26:07] Something was happening at 2.17 Kelvin.
+[26:10] Since the curve resembled
+the Greek letter Lambda,
+[26:13] they called this the Lambda point
+[26:15] and they suggested that a phase transition
+[26:17] must be happening here.
+[26:19] But not an ordinary phase transition,
+[26:22] this would be a phase transition
+[26:23] to a more exotic kind of matter,
+[26:26] from a normal liquid to something else.
+[26:29] But what?
+[26:31] Figuring out what's really happening
+[26:33] when there are so many different
+clues can be confusing.
+[26:36] If not, outright impossible.
+[26:38] The same is still true today.
+[26:40] Recently, I came across this
+story where scientists used AI
+[26:44] to design viruses not found in nature,
+[26:46] but depending on where you read the story,
+[26:48] you might have a completely
+different reaction.
+[26:50] If you read IFLS first,
+[26:52] you might think this is an
+exciting scientific breakthrough,
+[26:55] AI designing a virus
+that can kill bacteria.
+[26:59] If you'd seen this first,
+[27:00] you'd get a more complete,
+albeit complex picture,
+[27:04] 16 viruses from scratch,
+but with possible downsides.
+[27:07] And if you saw this New
+York Post article first,
+[27:10] you'd most likely focus
+on what could go wrong.
+[27:13] So three headlines,
+[27:14] but three completely
+different conclusions.
+[27:16] Most people just get their
+news from one source,
+[27:19] and as a result, their
+takeaway is a little bit
+[27:21] like the luck of the draw,
+[27:23] which outlet did you happen to see first?
+[27:25] That's why we use today's
+sponsor, Ground News.
+[27:28] They're a website and app
+that brings a data-driven
+[27:30] and objective approach
+to reading the news.
+[27:32] They pull thousands of stories daily,
+[27:35] and for each, they break
+down the political leaning,
+[27:37] how factual the reporting is,
+and who owns the reporting.
+[27:40] For example, with the AI virus story,
+[27:42] it immediately tells you
+[27:43] that over 200 news outlets reported on it
+[27:46] and that it got covered fairly evenly
+[27:48] across the political spectrum.
+[27:50] Below that, you can also see
+the factuality, ownership,
+[27:53] and even who broke the news
+first, Forbes in this case.
+[27:56] The bias comparison feature
+highlights specific differences
+[27:59] in the contents of the articles,
+[28:01] but my favorite feature might
+be their blind spot feed.
+[28:03] It shows you stories
+that are under-reported
+[28:05] by one side of the political
+spectrum or the other.
+[28:08] Trying to figure all these
+differences out by yourself
+[28:11] for every story would be a full-time job.
+[28:13] That's what makes Ground News so valuable.
+[28:15] Their data-driven approach helps make
+[28:17] these stories digestible in seconds.
+[28:19] So if you, like us, care
+about getting to the truth,
+[28:22] go to ground.news/VE or scan this QR code.
+[28:26] Our link gets you 40%
+off their vantage plan.
+[28:29] I'd like to thank Ground News
+[28:30] for sponsoring this part of the video,
+[28:32] and now back to what was happening
+[28:34] when you keep cooling down helium.
+[28:36] The answer started to take
+shape throughout the 1930s.
+[28:40] - So in 1935, there was
+this graduate student
+[28:43] called Don Misener, and he
+needed to do some experiments
+[28:47] for his coursework to get enough credit.
+[28:50] And he was aware of everything
+that was happening in helium,
+[28:53] but he realized that no one
+had measured its viscosity.
+[28:56] So he's like, "Oh, that's
+weird. I will measure it."
+[29:00] - [Derek] So how do you
+measure the viscosity?
+[29:02] - There are two ways.
+[29:04] You have a disc
+[29:08] and you try to see what the
+resistance of the liquid is.
+[29:13] Another way is to have a small capillary,
+[29:19] and then you push the liquid through that,
+[29:23] and the viscosity you measure
+[29:27] between the two methods
+should be exactly the same.
+[29:33] - Misener chose a variation
+of the first method.
+[29:36] He submerged a cylinder
+[29:37] that was connected through a
+torsion fiber in liquid helium.
+[29:41] He then rotated the cylinder and let go,
+[29:43] causing the cylinder to swing
+back and forth to oscillate.
+[29:47] Now, by watching how long it oscillated,
+[29:49] he could determine the viscosity.
+[29:51] The longer it oscillated,
+[29:52] the less friction it must experience,
+[29:54] so the lower the viscosity.
+[29:55] And what he found was that at 4.2 Kelvin,
+[29:58] the viscosity was about 14%
+that of air, already tiny.
+[30:02] Then, as he decreased the temperature,
+[30:04] the viscosity slowly increased
+[30:07] until at the transition
+point, it suddenly plummeted,
+[30:10] not to zero, but to about 5% that of air.
+[30:14] This caught the attention of Jack Allen,
+[30:16] a 27-year-old physicist
+who'd just come to Cambridge.
+[30:19] Allen had inherited a helium liquefier
+[30:21] from someone who could no longer use it,
+[30:23] and now he resolved to use it
+[30:25] to unravel the mysteries of helium.
+[30:27] Of course, he could use some help,
+[30:29] and Misener seemed like
+the perfect PhD student,
+[30:32] so Allen convinced him, and together,
+[30:34] they continued studying
+helium's viscosity.
+[30:37] Only now they turn to the
+second method of studying it,
+[30:40] which works something like this.
+[30:42] I've got a tube filled with
+two layers of glycerol.
+[30:45] Now, if I let it flow,
+what's gonna happen?
+[30:47] Well, you'd expect the layers
+to drop, which they do,
+[30:51] but not in a straightforward way.
+[30:53] It doesn't maintain its shape.
+[30:54] Instead, it stretches out in the middle.
+[30:57] What's happening is that if you zoom in,
+[30:59] you'd find that the molecules
+near the wall get stuck,
+[31:02] they experience friction,
+[31:03] and then the molecules sliding past them
+[31:05] experience friction with those molecules.
+[31:07] The internal friction is
+basically what viscosity is.
+[31:11] In general, if you make
+the channel smaller,
+[31:13] the flow rate should decrease,
+[31:15] and if you push on the
+liquid, it should increase.
+[31:18] Now, by carefully keeping
+track of how things change
+[31:20] when you alter these parameters,
+[31:22] you can determine the viscosity.
+[31:24] In November of 1937,
+[31:26] Allen and Misener did a
+version of this experiment
+[31:28] with liquid helium at around 1 Kelvin.
+[31:30] They let it flow through
+one wide capillary
+[31:33] and one narrow one, and they
+found that the flow speed
+[31:36] through both was almost the same,
+[31:38] despite the narrow one
+having a surface area
+[31:40] a thousand times as small.
+[31:42] Even weirder was that
+the speed hardly changed
+[31:45] when the pressure increased.
+[31:47] They concluded that any
+known formula cannot,
+[31:49] from our data, give a
+value of the viscosity,
+[31:51] which would have much meaning.
+[31:53] As far as they could tell, the
+viscosity was non-existent.
+[31:58] - They know they've got gold
+on their hands here, right?
+[32:00] They know this is like
+a bombshell of a result.
+[32:05] - [Derek] So they spent the
+next three weeks making sure
+[32:07] they hadn't made any mistakes.
+[32:09] They repeated all the experiments
+[32:10] and did all the other
+measurements they needed,
+[32:12] ready to write it up.
+[32:14] - But then on the last day,
+[32:16] one of Kapitsa's old students walks in
+[32:19] with a letter from Kapitsa.
+[32:21] - Who's Kapitsa?
+[32:22] Well, remember that Allen
+had inherited that liquefier
+[32:25] from someone who couldn't use it anymore?
+[32:27] Well, that was Soviet
+physicist Pyotr Kapitsa.
+[32:31] He built the liquefier and
+ran the lab before Allen.
+[32:35] But then during a trip back
+home in the summer of 1934,
+[32:38] Stalin had his passport confiscated.
+[32:42] He was to work and stay
+in the Soviet Union,
+[32:44] where for the past few years,
+[32:45] Kapitsa had been rebuilding his lab,
+[32:48] telling almost no one exactly
+what he was working on.
+[32:51] But Allen and Misener
+were about to find out.
+[32:56] - He had done the same sort of experiment,
+[32:59] found the viscosity was vanishingly small,
+[33:02] and send a note to the editor of Nature
+[33:05] that he would be very grateful
+if they could publish it
+[33:08] as soon as possible.
+[33:10] Don't bother to send the
+proofs to me here to Moscow.
+[33:13] It takes too much time.
+[33:15] He had just scooped his old lab.
+[33:17] - He knew what he had
+and he raced to publish.
+[33:20] Allen and Misener were freaking out,
+[33:23] but over the next four days,
+[33:24] they wrote up all their results
+and also sent it to Nature.
+[33:29] On the 8th of January, 1938,
+[33:31] the two papers appeared side by side,
+[33:33] reporting the vanishingly small viscosity,
+[33:37] perhaps even zero.
+[33:39] And then in analogy to superconductors,
+[33:41] Kapitsa called it a superfluid.
+[33:45] This was the breakthrough
+everyone had been waiting for
+[33:48] because it finally began to explain
+[33:50] some of the strange
+things they'd been seeing.
+[33:53] Above 2.17 Kelvin, helium
+is just a normal fluid
+[33:57] and it has internal friction or viscosity,
+[33:59] so when it flows through tiny cracks,
+[34:01] part of it gets stuck to the walls.
+[34:04] Now, in the case of the bucket,
+[34:05] the bottom is made of a polymer aerogel,
+[34:07] which is filled with microscopic channels
+[34:10] up to tens of nanometers across.
+[34:12] That's so small that the
+helium gets fully clamped
+[34:15] to the walls, it can't flow through.
+[34:18] But as you cool down below 2.17 Kelvin,
+[34:21] the helium transforms,
+[34:24] and now it can suddenly
+pass through tiny cracks
+[34:26] with no friction, so it leaks
+straight through the bottom.
+[34:33] It also explained what was
+happening with the little cup.
+[34:36] How?
+[34:37] Well, remember those van der Waals forces
+[34:39] that cause every atom
+to attract every other?
+[34:42] Well, between helium
+atoms, they're very weak,
+[34:45] but the atoms in the walls of the cup
+[34:47] have many more electrons
+in their outer shell,
+[34:49] so the charge imbalances become larger.
+[34:52] And as a result,
+[34:53] the helium atoms are much more
+strongly drawn to the wall
+[34:56] than to each other.
+[34:57] So they climb up the wall
+[34:59] and within seconds wet the entire surface
+[35:02] with a layer that's around
+30 nanometers thick.
+[35:06] And because the bottom of this thin sheet
+[35:08] is below the liquid layer,
+it now acts as a siphon.
+[35:12] Normal fluid can't flow through
+[35:14] because it experiences
+friction, but superfluid can,
+[35:18] so it flows up and over the walls
+[35:21] until it drips out the bottom.
+[35:23] (suspenseful music)
+[35:31] But for all the idea of
+a superfluid explained,
+[35:34] it also raised a much
+more fundamental question.
+[35:37] How do you get a superfluid?
+[35:39] - Like if it is actually zero,
+[35:41] I want you to think
+about how crazy that is.
+[35:43] Right, because if we think back to,
+[35:45] okay, what is this viscosity?
+[35:47] It's internal friction
+between the molecules.
+[35:49] So if you have actually zero viscosity,
+[35:52] it means that you have like
+a billion, billion particles
+[35:56] all traveling through this pipe
+[35:58] and not a single one is
+bouncing off of anything
+[36:02] and losing some energy or
+bouncing into each other
+[36:04] and losing energy.
+[36:05] They all must flow perfectly
+[36:09] and somehow not lose a
+single bit of energy.
+[36:12] It seems preposterous. (chuckles)
+[36:15] - [Derek] Within two months
+of the nature papers,
+[36:17] Fritz London proposed
+a possible mechanism.
+[36:19] There was this forgotten
+paper from 13 years earlier.
+[36:23] It predicted that if you
+just kept cooling down
+[36:25] a certain type of particle,
+[36:26] then the atoms would fall
+into an exotic state.
+[36:29] And the author of that forgotten paper was
+[36:31] none other than Albert Einstein.
+[36:34] To understand what Einstein had predicted,
+[36:36] consider this plane of particles.
+[36:38] They're not interacting
+[36:39] and they're free to move
+around in every direction
+[36:42] with different velocities and
+different kinetic energies.
+[36:45] Now at room temperature,
+[36:46] you can just think of
+them as point particles,
+[36:49] but if you start cooling them down,
+[36:51] what Einstein realized is that,
+[36:53] well, this is no longer the case
+[36:55] because now quantum theory
+starts to play a role.
+[36:57] And according to that theory,
+[36:58] particles aren't just particles,
+[37:00] they also have a wave-like character.
+[37:02] - So-called wave particle duality,
+[37:04] the quantum wave function
+tells you the likelihood
+[37:08] of where it would be found
+[37:08] if you were to try to
+measure its location.
+[37:11] - [Derek] The important thing
+here is that the wavelength
+[37:13] of these waves or how
+spread out they are is equal
+[37:16] to Planck's constant over their momentum
+[37:18] or mass times velocity.
+[37:20] - [David] So if you're
+cooling these particles down,
+[37:22] they on average have less and
+less momentum per particle,
+[37:25] their quantum wavelength or
+the de Broglie wavelength gets longer.
+[37:30] And so eventually the sort
+of quantum state associated
+[37:33] with each of those seemingly
+independent particles starts
+[37:36] to smoosh out and overlap.
+[37:38] This distinguishability in
+space starts to melt away.
+[37:43] - What happens next depends
+[37:45] on which kind of particle
+you're cooling down.
+[37:47] Every particle in the
+universe is one of two kinds.
+[37:50] It's either a boson or a fermion.
+[37:53] Fermions are most of the
+particles you're familiar with,
+[37:55] like protons, neutrons and electrons,
+[37:57] and bosons are particles like photons.
+[38:00] You can see the difference
+between bosons and fermions
+[38:03] by looking at two
+indistinguishable particles.
+[38:06] Now, one particle just
+has its own wave function,
+[38:10] but if you take two of them together,
+[38:12] something special happens.
+[38:13] They get a combined wave function
+[38:15] that describes both of them together.
+[38:18] In the case of bosons, if you
+could see that wave function,
+[38:21] you'd see it's the same on both sides,
+[38:24] that is it's symmetric.
+[38:27] But if those particles are fermions,
+[38:28] then their combined wave
+function is the opposite
+[38:31] on both sides.
+[38:32] It's anti-symmetric.
+[38:35] Now I want you to think
+about what this means
+[38:36] if you try to move those
+particles together.
+[38:39] In the case of the bosons,
+[38:41] the two sides of the wave function add up
+[38:43] and you just get two bosons
+in the same place or state.
+[38:46] But now try doing the same for fermions.
+[38:49] You get one peak to
+overlap with one valley
+[38:52] and they'd cancel out.
+[38:54] But that would suggest
+that all of a sudden
+[38:55] there's a 0% probability of
+finding the particles anywhere,
+[38:59] which doesn't make any sense.
+[39:01] They have to be somewhere.
+[39:02] So what this is really telling us
+[39:04] is that two indistinguishable fermions
+[39:06] can never occupy the same quantum state.
+[39:09] This is known as Pauli's
+exclusion principle,
+[39:12] and it's why particles
+like electrons can never be
+[39:14] in exactly the same state.
+[39:16] If the particles you're
+cooling down are fermions,
+[39:19] then they start filling up the
+energy states like a ladder
+[39:21] from lowest to the higher states,
+[39:24] with only one fermion per quantum state.
+[39:27] But bosons don't have this restriction.
+[39:29] They're very happy to share
+the same quantum state.
+[39:33] When you keep cooling them down,
+[39:34] more and more of them
+start to occupy lower
+[39:36] and lower energy levels.
+[39:39] And Einstein realized there comes a point
+[39:41] where a macroscopic
+portion suddenly condenses
+[39:44] into the lowest energy
+state or ground state,
+[39:48] which in this case is just
+when they're completely still.
+[39:51] - These little particles
+could actually act in a way
+[39:55] where they would sort of lose,
+[39:56] so to speak, their individuality,
+[39:59] that they could act as a single
+coherent state of matter,
+[40:03] a whole new state of
+matter that had no analog.
+[40:07] - This became known as a
+Bose-Einstein Condensate
+[40:10] after Bose whose work
+Einstein was building on.
+[40:13] But Einstein doubted this
+could happen in real life.
+[40:16] He wrote, "The theory is pretty,
+[40:18] but is there also some truth to it?"
+[40:22] 13 years later, London
+believed there might be
+[40:24] and that perhaps
+[40:25] superfluid helium was a
+Bose-Einstein Condensate.
+[40:29] At first, that might seem impossible
+[40:31] because helium is made
+up of protons, neutrons
+[40:34] and electrons, and every
+one of those is a fermion.
+[40:36] So you'd expect helium
+to be a fermion too.
+[40:39] And remember, fermions
+can't share the same state,
+[40:42] but helium is not a fermion.
+[40:46] Bosons and fermions differ
+in one other fundamental way,
+[40:49] their intrinsic angular momentum or spin.
+[40:52] For bosons, this is
+always an integer number,
+[40:55] zero, one, two, three, and so on.
+[40:57] But fermions always have a
+half integer spin, like a half.
+[41:01] So what happens if you have
+multiple fermions together,
+[41:04] say in one atom?
+[41:06] Well, now you have to
+add their spins together
+[41:08] to get an overall spin for the atom,
+[41:10] and then use that to see whether
+it's a boson or a fermion.
+[41:14] In the case of helium, which
+has six half spin particles,
+[41:18] then no matter how you add them up,
+[41:20] you always end up with an integer number.
+[41:23] As a result, helium
+atoms behave as bosons.
+[41:27] And as you cool them
+down below 2.17 Kelvin,
+[41:30] a macroscopic fraction
+of the atoms condense
+[41:32] into the lowest energy state.
+[41:34] They lose their individuality
+[41:37] and about a trillion trillion
+atoms all behave as one.
+[41:42] Normally, you think of wave functions
+[41:44] as these teeny tiny things,
+[41:45] but here it's literally
+the size of the container.
+[41:49] It's as if after the transition,
+[41:51] the helium has turned into one big atom
+[41:55] with all these atoms behaving as one.
+[42:02] - This is quantum mechanics
+with your own eyes.
+[42:06] - And it makes you look at
+matter in a different way.
+[42:08] It allows us to explore
+the boundary of quantum
+[42:11] and regular matter.
+[42:14] So it seems like we've solved it.
+[42:16] The atoms are in the lowest energy state.
+[42:19] They've lost their
+individuality and act as one,
+[42:21] so they can't scatter
+[42:23] and they flow with zero internal friction.
+[42:28] That's how I first understood superfluids
+[42:30] and how I'd explain it to
+anyone who wanted to know.
+[42:33] I mean, it made sense and we were all happy.
+[42:36] The only problem is that it's wrong.
+[42:39] I mean, the first issue is that in a BEC,
+[42:41] all the atoms occupy the state
+[42:43] where the particles are at rest,
+[42:45] but in a superfluid, well, they flow.
+[42:48] Maybe that issue could be excused
+[42:50] because you could imagine
+moving along with the superfluid
+[42:53] and finding a frame in which
+it effectively stands still,
+[42:56] but there's an even bigger problem,
+[42:58] which is that in a non-interacting
+Bose-Einstein condensate,
+[43:01] even the tiniest push can
+excite any of the atoms.
+[43:05] So if you'd try to let it flow,
+[43:07] the smallest disturbance would knock atoms
+[43:09] out of the ground state.
+[43:11] They would scatter and the
+flow would lose energy.
+[43:13] So clearly a BEC alone isn't enough.
+[43:17] You need something else, but what?
+[43:20] Fortunately, Kapitsa knew exactly
+[43:22] who could solve the problem.
+[43:24] Unfortunately, he had been
+locked inside Stalin's prison
+[43:27] for the last year.
+[43:29] - This was right around the
+time of Stalin's great terror
+[43:32] where he was executing or imprisoning
+[43:36] all the enemies of state,
+[43:37] whether they were real or imaginary.
+[43:40] - [Derek] But in the case of Lev Landau,
+[43:41] the physicist Kapitsa was thinking about,
+[43:44] it seems like there was some truth to it.
+[43:46] Landau was known as a genius theorist
+[43:49] who cared deeply about
+elevating Soviet physics.
+[43:52] He was the head of the physics department
+[43:53] and personally trained
+[43:54] some of the best
+physicists of the century.
+[43:57] But around the mid 1930s,
+[43:59] he became disillusioned
+with Stalin's regime.
+[44:02] He reportedly told one colleague
+[44:03] that Soviet officials
+were "born subhuman."
+[44:06] And according to KGB Files, he was accused
+[44:09] of heading a counter-revolutionary
+organization.
+[44:13] Landau was arrested on
+the 28th of April 1938
+[44:16] and taken to the Lubyanka Prison.
+[44:20] The first day he was forced
+to stand for seven hours,
+[44:23] followed by six days of
+12-hour persuasion sessions.
+[44:27] After two months,
+[44:28] Landau broke and wrote
+a six-page confession.
+[44:31] It reads, "We came to the conclusion
+[44:33] that the party had degenerated
+[44:34] and that the Soviet
+government no longer acted
+[44:37] in the interests of workers,
+[44:38] but in the interests of
+a small ruling group.
+[44:41] The interests of the country
+demanded the overthrow
+[44:43] of the existing government."
+[44:45] - That's a pretty,
+pretty strong confession.
+[44:48] - Um hm!
+[44:49] This confession at a time where
+people were being executed
+[44:52] for no reason should have
+meant the end for Landau.
+[44:56] But fortunately for him, he
+had someone defending him.
+[44:59] The morning Landau got arrested,
+[45:00] Kapitsa immediately wrote to Stalin.
+[45:03] His character, to put it simply, is nasty.
+[45:05] He is a bully and a brawler,
+[45:07] but I find it very hard to believe
+[45:09] that Landau was capable
+of anything dishonest.
+[45:12] Landau is young
+[45:13] and he still has much to
+accomplish in science.
+[45:16] No one else can write about all of this,
+[45:17] which is why I'm writing to you.
+[45:20] Now, Stalin never replied.
+[45:22] So a year later,
+[45:24] Kapitsa wrote to one of
+Stalin's closest allies.
+[45:26] He told him how he had
+discovered superfluidity
+[45:29] and that no theorist other
+than Landau could explain it.
+[45:33] Three weeks later, Kapitsa
+was summoned to the prison.
+[45:36] As he recalled, "I was
+summoned at 1:00 AM.
+[45:38] They escorted me to a big
+office occupied by two men.
+[45:42] Do you understand for
+whom you are pleading?
+[45:44] He's a most dangerous criminal,
+[45:46] a spy who confessed to everything."
+[45:48] We talked till four in the morning.
+[45:50] Towards the end, one of them
+said, "All right, Kapitsa,
+[45:53] if you pledge your word for Landau,
+[45:55] then give us a written guarantee.
+[45:56] If anything happens, you
+will be held responsible."
+[46:00] Kapitsa wrote the letter
+and two days later,
+[46:03] Landau turned up at the institute,
+[46:05] ready to get back to what he
+loved doing most, physics.
+[46:11] Kapitsa had put his neck on the line.
+[46:13] Now it was up to Landau to
+prove he was up to the task,
+[46:16] and superfluid helium had
+only gotten more interesting.
+[46:20] Back in January 1938, just
+days after the Nature papers,
+[46:24] Allen was studying how
+superfluid helium conducts heat.
+[46:27] To do this, he packed some Emery powder,
+[46:30] basically fine sand, in a
+glass bulb with an open bottom.
+[46:33] To see what was happening, he
+shone his pocket torch at it.
+[46:37] And according to him,
+[46:38] as the Emery powder tube came into view,
+[46:41] helium spurted out the top of the tube.
+[46:44] It continued to spurt as long
+[46:46] as the light shone on
+the powder and ceased
+[46:48] when a card cut off the light.
+[46:50] Allen later showed this
+fountain with no moving parts
+[46:53] to the Royal Society,
+[46:55] during which famous writer H.G. Wells
+[46:57] crawled under the table
+looking for a hidden pump,
+[47:00] but found nothing.
+[47:02] - Yeah, so we had this
+kind of specialist made.
+[47:04] It's a single piece of glass.
+[47:05] There are no seams in it whatsoever.
+[47:07] The filtered disc is fused in,
+[47:09] and then it's just filled
+with carbon stones,
+[47:12] and we just hit it with a bright light
+[47:13] that heats it up, drives
+the fountain flow.
+[47:15] - [Casper] Amazing. Fingers crossed.
+[47:18] - You guys ready?
+[47:20] Three, two, one. Torch it.
+[47:24] Whoa! Yeah.
+[47:32] Let's go. That is huge.
+[47:34] What? That's absurd.
+[47:37] - That's awesome. 
+- Woo. Let's go.
+[47:46] - [Derek] So what was happening?
+[47:47] How could light cause
+the helium to shoot out?
+[47:52] - Any theory now had to
+take into consideration
+[47:56] all these phenomena.
+[47:59] So for theoreticians
+was a really heavy task.
+[48:04] - [Derek] Landau spent the
+next eight years working on it.
+[48:07] He started by considering
+a superfluid flowing
+[48:09] at absolute zero, and he realized
+what London had left out,
+[48:13] the forces between atoms.
+[48:16] In a Bose-Einstein condensate,
+[48:17] there are no forces between particles,
+[48:19] and as a result, a push
+can knock a single atom
+[48:22] out of the lowest energy state,
+resulting in easy friction.
+[48:26] But in liquid helium,
+this is not the case.
+[48:28] The atoms interact, so if you push on one,
+[48:31] you're pushing on a bunch of them.
+[48:33] Landau realized that this rigidity meant
+[48:35] that the only way you
+can create excitations
+[48:37] in a superfluid and
+lose energy in the flow
+[48:40] is through the collective
+motion of the atoms.
+[48:43] He argued that these excitations
+come in two main flavors.
+[48:47] The first is that if you push hard enough,
+[48:49] you get the atoms to bump into each other
+[48:51] and create ripples throughout the fluid,
+[48:53] basically sound waves,
+[48:54] just a quantized version
+of them called phonons.
+[48:58] Similar to how photons
+are particles of light,
+[49:00] these are particles of sound.
+[49:03] The second kind of excitation
+is something known as a roton,
+[49:06] because originally people
+thought of them as tiny whirls,
+[49:10] but now they're seeing
+more like a patch of atoms
+[49:13] that suddenly orders themselves
+into a crystal lattice
+[49:15] just for a split second.
+[49:17] You can think of them almost
+as tiny ghosts of a solid.
+[49:20] And just like a phonon
+[49:21] creating a roton costs
+both energy and momentum.
+[49:25] So Landau argued that these phonons
+[49:27] and rotons were the only way
+[49:29] that the flow could lose energy.
+[49:32] - And you're like, okay,
+well, it's quite easy,
+[49:34] you know, to make a sound wave.
+[49:36] Like all I have to do
+is knock on it, right?
+[49:38] That in terms of like
+how much energy it takes
+[49:41] to create a phonon, it
+can be very little energy.
+[49:44] It can be as little energy as you want,
+[49:46] but you don't just have
+to conserve energy.
+[49:48] You also have to conserve momentum.
+[49:50] So when you push on it
+[49:52] or when the liquid bumps into something,
+[49:54] it both needs to satisfy
+conservation of energy
+[49:57] and conservation of momentum.
+[49:59] And there is a very nice
+relationship that tells you exactly
+[50:04] how the momentum of a phonon corresponds
+[50:06] to the energy of a phonon,
+[50:08] and it's connected with the
+speed of sound in a material.
+[50:12] And so the only way you can
+satisfy both constraints is
+[50:15] if the flow is going at
+least the speed of sound,
+[50:19] which in helium two is very fast.
+[50:21] It's about, I think, 220
+or 240 meters per second.
+[50:25] Rotons, he realizes, can get
+created a little bit easier.
+[50:29] I think the modern value is
+about 60 meters per second,
+[50:32] but that's still a lot.
+[50:33] - In Landau's theory, below
+about 60 meters per second,
+[50:37] the flow can't create a
+single phonon or roton.
+[50:40] The atoms all stay in the ground state
+[50:42] and no energy is lost.
+[50:43] So it's not that the
+friction is vanishingly small
+[50:46] in a superfluid.
+[50:47] Landau proved that it's strictly zero.
+[50:50] Friction is forbidden.
+[50:52] In practice, other excitations
+are created at lower speeds
+[50:55] and therefore the actual flow rate
+[50:57] at which superfluidity
+breaks down is lower.
+[51:00] But if the friction is actually zero,
+[51:02] that implies something else.
+[51:04] You should be able to get a
+superfluid flowing in a loop,
+[51:07] and once it's going,
+[51:08] it should just keep going like
+a perpetual motion machine.
+[51:12] In 1964, two physicists
+at Yale tested this.
+[51:15] They got superfluid helium circling
+[51:17] in a stack of thin rings and waited.
+[51:20] And what they found was that no matter
+[51:22] whether they waited five
+minutes or more than 12 hours,
+[51:26] the flow was just as strong.
+[51:29] - But then, you know,
+if the friction is zero,
+[51:32] how is it possible that Misener,
+[51:33] you know, when he did his
+like torsion experiment,
+[51:36] he didn't measure zero.
+[51:37] - The liquid wasn't just
+passing over liquid,
+[51:40] like you had like a cylinder
+of something in there?
+[51:42] - Yep. Yep.
+[51:43] - I don't know. Is it
+coming from the wire?
+[51:45] Is it coming from the cylinder?
+[51:47] - No.
+[51:48] - The different materials?
+What is it coming from?
+[51:49] - Your instinct
+[51:51] is that Misener must have
+done something wrong.
+[51:54] He didn't.
+[51:55] Both experiments are true.
+How can both be true?
+[51:59] - You're measuring different things.
+[52:00] I don't know, but how are you
+measuring different things?
+[52:03] This is where the second part
+of Landau's work comes in.
+[52:06] So far, Landau had only looked
+at a fluid at absolute zero,
+[52:10] but every real experiment
+happened at higher temperatures.
+[52:14] So next he considered
+[52:15] what if it flows at
+some finite temperature?
+[52:18] To do this, he built on the work of Tisza,
+[52:21] who suggested that
+helium below 2.17 Kelvin
+[52:24] acts as a mixture of two fluids.
+[52:26] One is the superfluid. It's
+effectively at absolute zero.
+[52:30] It carries no heat and
+flows without friction.
+[52:33] You can think of this
+as the background fluid.
+[52:36] And the second is the normal fluid,
+[52:38] which is made up of
+the phonons and rotons.
+[52:40] It carries all the heat and has viscosity.
+[52:43] At absolute zero, the
+whole fluid is superfluid,
+[52:46] but as it heats up,
+[52:47] part of the superfluid
+turns into normal fluid.
+[52:50] The superfluid fraction decreases
+[52:52] and the normal fraction increases
+[52:54] until at 2.17 Kelvin, the
+superfluid component is zero.
+[53:00] - Now, if you were to look at
+one atom in the fluid and say,
+[53:02] "Is that superfluid or normal fluid?"
+[53:05] Well, it's hard to tell
+[53:06] because the superfluid atoms
+are constantly exchanging
+[53:09] energy with the normal fluid atoms.
+[53:11] - Sure.
+- So any one atom
+[53:12] is constantly bouncing up and
+down between these two modes.
+[53:16] - Now, only the superfluid can
+flow through tiny channels.
+[53:19] So when Allen and Misener pushed helium
+[53:21] through their capillaries,
+[53:22] they only measured the superfluid part
+[53:24] and they found a zero viscosity.
+[53:26] But Misener's torsion
+experiment sat in a mixture
+[53:29] of both fluids.
+[53:30] So the cylinder felt the
+viscosity from the normal fluid.
+[53:34] Misener hadn't made a mistake,
+[53:36] they were just measuring different things.
+[53:39] And once you know what you're looking for,
+[53:40] you can also physically see the effect.
+[53:43] Just below the transition
+temperature, say at 2.15 Kelvin,
+[53:46] only around 13% of the
+helium is superfluid.
+[53:49] So only that 13% can
+leak through the bottom
+[53:52] and you get a drip.
+[53:54] But if you cool it down to 1.5 Kelvin,
+[53:56] well now around 89% is superfluid.
+[53:59] That's almost seven times as much helium
+[54:01] that can flow through, so it
+just pours out the bottom.
+[54:06] It even explains how light
+can power a fountain.
+[54:10] When the light hits the rocks,
+[54:11] the rocks absorb some of the photons
+[54:13] and heat up a little bit.
+[54:15] This causes part of the superfluid
+[54:16] to turn into normal fluid,
+[54:19] but now the superfluid density
+is lower inside the fountain,
+[54:22] so more superfluid immediately rushes in
+[54:25] through the bottom to
+restore the proportions.
+[54:27] That bottom, however, is just
+like the bottom of the bucket.
+[54:30] It only allows superfluid through.
+[54:32] So the normal fluid can't go out that way.
+[54:35] The only way the excess
+helium can go is up and out.
+[54:39] And so you end up with this,
+[54:41] a fountain powered solely by light.
+[54:43] The heat from the light gets turned
+[54:45] into the mechanical energy
+of the spouting helium.
+[54:49] But the two fluids do
+more than make fountains.
+[54:52] They change how helium transfers heat.
+[54:55] Take a bath of liquid helium
+below the lambda point
+[54:57] with a heater on one side.
+[54:59] - The helium atoms that are
+in contact with that hot face-
+[55:03] - Yeah.
+- Are gonna gain energy.
+[55:04] They're gonna jump up this ladder.
+[55:05] - Yeah.
+- So they're gonna be part
+[55:06] of the normal fluid.
+- Right.
+[55:07] - So my normal fluid is gonna
+flow away from the heater,
+[55:13] carrying all of the heat and the entropy
+[55:16] that's imparted into the fluid away.
+[55:18] But as the normal fluid flows away-
+[55:20] - Yeah.
+[55:21] - The superfluid flows back to replace it.
+[55:23] - Right.
+[55:24] - And the overall density of
+the fluid remains constant.
+[55:28] - Sure.
+- So this is a two-fluid
+[55:31] thermomechanical counterflow.
+[55:33] They basically flow through each other
+[55:34] like they weren't even there.
+[55:35] - But you can take this one step further.
+[55:37] Imagine changing the temperature
+[55:39] of the heat source periodically.
+[55:41] What is going to happen?
+[55:43] Well, the amount of normal fluid created
+[55:44] will also change periodically.
+[55:47] So you get these fluctuations
+in the normal fluid
+[55:49] and superfluid densities.
+[55:51] They spread out and travel away,
+[55:54] almost like a sort of sound.
+[55:56] - When we think of first
+sound, regular sound,
+[55:59] that's density waves in the air driven
+[56:02] by tiny pressure gradients.
+[56:04] - [Derek] But with a superfluid,
+you can get density waves
+[56:07] in the normal and superfluid components.
+[56:09] And since the normal fluid
+carries all the heat,
+[56:11] that means you get temperature waves.
+[56:14] - [Dr. Chris] And they can
+spread out like sound waves.
+[56:16] So we call temperature waves
+in helium second sound.
+[56:19] - The crazy thing about it is
+[56:21] it's a completely new
+mode of heat transport,
+[56:24] unlike anything else
+in the universe, right?
+[56:27] Yeah, when I heard that, I
+was like, "That's crazy."
+[56:29] So you always think of
+[56:31] conduction, convection, and radiation.
+[56:34] And now helium gets a fourth.
+[56:38] - This is a combination of second sound
+[56:40] and thermal counterflow,
+and it is effective,
+[56:43] around a thousand times
+more conductive than copper,
+[56:45] which is one of the best
+thermal conductors we know of.
+[56:48] It finally helps explain one last thing
+[56:50] you've been seeing this whole time,
+[56:52] that is why does the
+boiling suddenly stop?
+[56:56] Well, above 2.17 Kelvin,
+[56:58] helium boils just like a normal liquid.
+[57:02] - Say, for example, I've
+got a bucket of water
+[57:06] and I take a red hot
+poker and I dump it in.
+[57:08] The bubbles aren't gonna
+form anywhere in the bucket.
+[57:10] They're gonna form around that poker
+[57:12] because you've got this
+high temperature region
+[57:15] where you've dumped in
+enough energy locally
+[57:19] to vaporize the water
+[57:21] and then that's where the
+bubbles are gonna form.
+[57:22] The amount of energy it takes to do this
+[57:25] is the latent heat of vaporization.
+[57:26] In water, that is about
+2,200 joules per gram.
+[57:33] In helium, it's about 23 joules per gram.
+[57:37] So if you've got helium
+in its liquid state,
+[57:42] a tiny thermal fluctuation is enough
+[57:45] to locally vaporize a small pocket,
+[57:48] which then forms a bubble.
+[57:49] And that's why boiling is so constant,
+[57:52] because tiny thermal fluctuations
+[57:53] will form bubbles very, very easily.
+[57:57] - But as you cool helium
+down below 2.17 kelvin,
+[58:00] thermal counterflows take over.
+[58:02] They transfer heat so effectively
+[58:04] that the entire liquid almost immediately
+[58:06] reaches the same temperature.
+[58:08] So there are no hotspots
+[58:10] and no places for bubbles to form,
+[58:12] the boiling suddenly stops.
+[58:16] This lack of boiling paired
+[58:17] with its unparalleled heat transfer
+[58:20] also makes superfluid
+helium the ideal coolant
+[58:22] at one or two Kelvin,
+[58:24] and that's why CERN uses
+around 700,000 liters of it
+[58:27] to cool the LHC's 9,000
+superconducting magnets.
+[58:32] - There is still one thing
+that bothers me though, Chris,
+[58:37] which is that, you know,
+if you take any substance
+[58:40] and you keep cooling it
+down, it always freezes.
+[58:44] But helium never does,
+[58:46] yet it does liquefy, which
+is the annoying part.
+[58:49] So because it liquefies,
+[58:51] it means that there is some
+attraction between the atoms.
+[58:54] And so you'd expect, you know,
+[58:55] I can just keep cooling it
+down more and more and more
+[58:58] until eventually the kinetic energy
+[59:00] becomes arbitrarily small
+[59:03] and like the attractive
+energy must be much larger
+[59:05] and so it must form a solid.
+[59:07] - Yes, so this is the
+kind of intuitive picture
+[59:12] that you would expect.
+[59:13] Well, you can't answer
+that in an intuitive way.
+[59:17] You have to bring in quantum mechanics.
+[59:19] - [Derek] Because according
+to quantum mechanics,
+[59:21] the more precisely you
+know a particle's position,
+[59:24] the less you know about its
+momentum and vice versa.
+[59:27] This is known as Heisenberg's
+uncertainty principle,
+[59:29] and mathematically it tells you
+[59:31] that the uncertainty in position delta x
+[59:33] times the uncertainty in momentum delta p
+[59:35] is greater than or
+equal to h bar over two.
+[59:38] For simplicity, let's just
+say it's around h bar.
+[59:42] - Let's say I've got an atom in a liquid
+[59:45] and it has some freedom.
+[59:46] It can move around, but you
+know, it's very closely packed in
+[59:50] with all of its neighboring atoms.
+[59:51] Let's say that it occupies
+some spherical volume
+[59:55] with a radius r.
+[59:57] Well, we can say that
+that r is the uncertainty
+[60:00] in its position.
+[60:02] So if the uncertainty in the momentum
+[60:05] is gonna look like h-bar,
+Planck's constant, over r.
+[60:11] - [Derek] But if it's got
+an uncertainty in momentum,
+[60:13] it means it must be jiggling
+around inside that sphere.
+[60:16] - We know if it's jiggling,
+we can say it's got an energy.
+[60:20] Well, we know what it's momentum is.
+[60:21] It's Planck's constant over r.
+[60:25] So how do we get the
+energy? Well, it's easy.
+[60:27] We say it's the momentum
+squared over twice the mass.
+[60:31] Now, helium being such a light atom,
+[60:35] that mass term is very small.
+[60:38] So that means that the energy that it has,
+[60:40] because it's confined,
+is very, very large.
+[60:44] Now, this is what we call
+the zero point energy.
+[60:47] This is the energy it cannot get rid of.
+[60:49] It's nothing to do with thermal energy.
+[60:51] It's not because there's a
+temperature in the liquid.
+[60:53] In fact, when you're in the liquid state,
+[60:56] that zero point energy
+accounts for more than 98%
+[61:00] of the total energy in the fluid.
+[61:03] - Wait, what?
+[61:04] - [Dr. Chris] It is enormous.
+[61:05] - That is crazy. I had no clue.
+[61:07] - [Derek] This zero
+point energy is too large
+[61:10] for the atoms ever to lock down in place.
+[61:13] So helium never freezes
+just by cooling it down.
+[61:17] - So when you're thinking of
+this kind of ladder of states,
+[61:20] this kind of BEC picture, like, you know,
+[61:22] everything's macroscopically
+occupying this bottom state,
+[61:25] we think, the intuition is
+to think of it as like ladder
+[61:29] where each rung is nice and evenly spaced.
+[61:33] But the way to think of it
+[61:34] in terms of this zero point energy is that
+[61:35] that first rung is 10
+stories off the floor.
+[61:40] And then the thermal states
+stack up on top of that.
+[61:43] - Oh, that's so good.
+[61:45] - But there is one way in
+which you can freeze helium,
+[61:47] which was discovered by Onnes's successor.
+[61:50] That is by cooling helium
+down to about one Kelvin
+[61:52] and by increasing the
+pressure to 25 atmospheres.
+[61:56] If you do that, helium finally freezes.
+[61:59] As for Onnes, he died
+in 1926 at the age of 72.
+[62:04] He had been making superfluid
+helium for 18 years,
+[62:07] looking at it, seeing hint after hint,
+[62:10] and yet he never realized
+[62:11] what he'd been staring at the entire time.
+[62:14] Now, you might look at this
+[62:15] and think Onnes was a little
+stupid or ignorant to miss it
+[62:19] and to not put the pieces together,
+[62:21] but I don't think that's the case.
+[62:22] Instead, I think it reveals
+a fundamental feature
+[62:25] of being human.
+[62:26] I think it goes to show
+a lot of people think
+[62:29] you got to see it to believe it.
+[62:30] And I think often you have to
+believe it in order to see it.
+[62:35] It makes me think a lot about Kuhn's
+[62:38] "The Structure of Scientific Revolutions,"
+[62:41] because it focuses a lot on,
+[62:43] you know, you have the existing science,
+[62:44] you have the existing paradigms,
+[62:45] you have the existing formulas
+[62:46] that these things are supposed to follow.
+[62:49] And how often would the data
+point going off the line
+[62:53] just be some error, someone
+messed up, condensation,
+[62:56] just something happening?
+[62:58] It's easy to write those things off.
+[62:59] So I have a lot of sympathy
+[63:01] and I don't think, "Oh,
+how could they miss it?"
+[63:03] I kind of think like, "No,
+that's actually how we operate."
+[63:06] Especially, you know,
+[63:08] I don't know if scientists are supposed
+[63:09] to be a little bit more observant
+[63:11] or a little bit more skeptical,
+but at the same time,
+[63:13] you know, you're up against
+so much chaos in the world
+[63:16] that you do kind of sometimes just see,
+[63:21] "Yeah, yeah, that fits the,
+yeah, that fits the data,
+[63:23] you know, like that's, you know",
+[63:25] and they sort of ignore
+things that don't fit
+[63:27] because you're looking for something.
+[63:29] I don't know.
+- Yeah.
+[63:30] But I think probably especially
+if you are a scientist,
+[63:34] it's these unexpected things
+[63:36] that can end up having
+the biggest breakthrough
+[63:38] because those are the things that,
+[63:40] you know, disconfirm
+your view of reality.
+[63:44] - And the thing is, often all the signs
+[63:46] for the breakthrough are there,
+[63:48] it's just that we're
+not ready to see them.
+[63:50] So it makes you wonder what
+signs are we missing right now?
+[63:54] You know, I used to think
+[63:55] that the reason someone
+didn't make the breakthrough
+[63:57] was because maybe they
+weren't smart enough
+[63:59] or they didn't work hard enough
+or didn't get lucky enough.
+[64:02] But now I feel like I've
+always missed something.
+[64:05] Just look at Onnes. He
+had all of those things.
+[64:07] He was an experimental genius,
+had an immense work ethic,
+[64:10] and even discovered superconductivity,
+[64:12] one of the biggest breakthroughs
+of the 20th century.
+[64:15] He got three out of three.
+[64:18] So perhaps sometimes making the
+breakthrough doesn't require
+[64:21] any extra intelligence,
+hard work or even luck.
+[64:24] Maybe all it takes is for us to let go
+[64:27] of the way we believe the world to be
+[64:29] and instead, just for a moment,
+[64:31] try to see it as it really is.
+[64:33] What if that is all it takes?
+[64:36] And Onnes, well, he may
+have missed superfluidity,
+[64:39] but he changed cold
+temperature physics forever.
+[64:42] And in 1913, he received
+the Nobel Prize in physics
+[64:45] for his achievements at
+finding out what happens
+[64:48] when you just keep cooling down.
+[64:51] (logo whooshing)
+[64:54] Hey, two quick final things.
+[64:56] First, this video would
+not have been possible
+[64:57] without the help of
+Professor Weinfurtner's
+[64:59] Gravity Laboratory at
+Nottingham University
+[65:02] and the funding provided to them
+[65:03] to run their superfluid experiments.
+[65:05] So I want to give a big
+thank you to all of them
+[65:07] for helping us recreate these experiments.
+[65:10] The second thing is
+that we didn't even get
+[65:13] to show you their research
+[65:14] because while it might
+seem like we've solved
+[65:17] all the mysteries of superfluids,
+[65:18] it turns out we're just getting started
+[65:20] because really weird things happen
+[65:23] when you start rotating them.
+[65:24] And this rotation or the
+physics of it can play a role
+[65:27] in everything from neutron stars
+[65:29] to simulating rotating black
+holes to a black hole bomb.
+[65:34] And because if you look closely enough,
+[65:36] you can kind of see the entire universe
+[65:38] in a drop of superfluid.
+[65:40] So let us know if you want us
+to make a part two on that.
