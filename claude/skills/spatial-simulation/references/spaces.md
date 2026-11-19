@@ -19,6 +19,7 @@ Every space below is described with the same eight fields: points · axes · mot
 
 ## 1. Minkowski space (see SKILL.md §6)
 Points: events (ct, x, y). Axes: ℝ. Motions: boosts, rotations, translations (Poincaré). Invariant: s² = −(ct)² + x² + y². Views: spacetime diagram (45° light cones), observer's past cone. Test: `assert_minkowski_sound()` in `assets/minkowski.py`. Status: ESTABLISHED; implemented as an asset.
+**Length and time (2026-11-19, Ainulindale wiki 140):** with a conversion field v(q), length and time are one quantity measured with two rulers; a path is null when length = v · time; in the transit ruler ρ = ∫ds/v every radial path is a 45° line; the Penrose swap of time and space is the sign change of v² (real → imaginary time), and the Penrose arctan of a time and the Smith-chart tanh of a length are one map under ρ → it (tested in `ValaQuenta/modules/witches_hat/length_time.py`).
 **What it is and is not in the Standard-Model engine (2026-11-19):** `ValaQuenta/modules/lagrangian_sm` does not carry Minkowski space; the metric η = diag(+,−,−,−) appears only in two comparison helpers (`compare.py`). The path-of-action engine's Lorentzian signature is the **homogeneous mode** (spatially uniform field) of the Minkowski action ∫d⁴x[½(∂_tφ)² − V], i.e. motion in field space against time; its Euclidean signature is the Wick rotation t → −iτ (motion in −V). A full field-theory Minkowski picture (φ(x, t)) is not built.
 
 ## 2. De Sitter space dS_n

@@ -1701,3 +1701,9 @@ Earlier error corrected: the SM index-2 stationary path does NOT cross the hillt
 OPEN: the tip distance is an important number per Cody; its dependence on E, g, hat shape and on the choice of natural units is the thing to study; gauge space and equation space definitions to confirm (see skill spatial-simulation spaces.md).
 @END
 
+@RCVQ_LENGTH_TIME
+STATUS 2026-11-19. Cody: "one more test ... a definition of how length and time are the same thing, and how that factors into the Penrose space swap of time and space; both emergent from any space; to fully describe the space you have to know how long it takes to get from A to B, necessitating a length and a time." BUILT: modules/witches_hat/length_time.py, Testing/test_witches_hat_length_time.py (8 pass), Ainulindale wiki 140, figure images/140_length_time.svg (generator in ContextPlease scratchpad 2026-11-19_lagrangian_sm/length_time_figure.py).
+RESULT: the hat's potential is the conversion field v = sqrt(2(E-V)); every path is null in the optical metric; the transit ruler makes radial paths 45-degree lines; t = dW/dE (and dB/dE = -tau across the swap); least-action and least-time paths differ (35 % in the hat) and v -> 1/v swaps them; E=0 hilltop at infinite time, finite length; Penrose arctan(time) and Smith tanh(log-length) are one map under rho -> i t. Tolerance failures chased: optimiser convergence (inversion), quadrature near a sqrt endpoint (wall transit).
+OPEN: the Schwarzschild-style Lorentzian swap needs the Eisenhart-Duval lift (not tested); the static <-> time-dependent swap-partner conjecture (original L_dynamic as the swap image of the static hat) untested; whether Smith z -> 1/z and v -> 1/v are the same inversion.
+@END
+

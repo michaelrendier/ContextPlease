@@ -2161,3 +2161,15 @@ OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs
   measured (witches_hat.action.moving_hat_exchange): static hat dE ~ 1e-12; hat moving at u=0.6: energy rises 0.913, ends +0.383; identity dE = integral dV/dt dt to 1e-11.
   also measured (no aim): between one pair of events on the SM hat there are 3 stationary paths (S 0.7742 idx0, 0.7906 idx1, 10.88 idx2); closest approach to the hilltop ~ offset^0.504 (funnel, not a caustic; nearest caustic 0.51 brim radii).
 @END
+
+@RCCM_LENGTH_TIME
+(2026-11-19; Ainulindale wiki 140; ValaQuenta/modules/witches_hat/length_time.py.) Length and time as one thing.
+  conversion field v(q) = sqrt(2(E - V(q))) (in relativity v = c). transit length rho = integral ds/v (tortoise coordinate): length measured in time; d rho = dt for anything moving at v.
+  optical metric g = -v^2 dt^2 + |dq|^2: every classical path at energy E is a NULL curve (length = v dt). In (rho, t) a radial path is a 45-degree line (measured 4e-12).
+  conjugacy t = dW/dE (W = integral p dq, the Jacobi length), measured 4e-8 on a bent path; across the swap dB/dE = -tau (B barrier action, tau Euclidean time), 1e-8.
+  two rulers: least ACTION weights ds by v, least TIME by 1/v; different paths unless v is constant (hat, E=0.05: time excess 35 %; constant v: 1e-16); v -> 1/v exchanges them exactly.
+  swap: where v^2 < 0 the optical metric is Euclidean (real time -> imaginary time, Wick). Turning circle: finite transit (E=0, brim->r=sqrt2: ln(1+sqrt2) = 0.881374). E=0 hilltop: rho ~ ln r (infinite time), W finite (0.43096): an i+ point.
+  Penrose arctan(time) and Smith tanh(log-length) are one map under rho -> i t: tanh(ix/2) = i tan(x/2); 2 arctan(tanh(x/2)) = arctan(sinh x) (Gudermannian); Gamma = (s-1)/(s+1) = tanh(ln s / 2).
+  NOT shown: the Schwarzschild-style swap (the optical metric goes (-,+) -> (+,+)); the Eisenhart-Duval lift; CONJECTURE: static hat v^2(rho) and time-dependent v^2(t) are swap partners (original L_dynamic as the swap image of the static hat).
+@END
+
