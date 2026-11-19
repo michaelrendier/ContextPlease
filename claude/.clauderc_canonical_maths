@@ -2170,6 +2170,7 @@ OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs
   two rulers: least ACTION weights ds by v, least TIME by 1/v; different paths unless v is constant (hat, E=0.05: time excess 35 %; constant v: 1e-16); v -> 1/v exchanges them exactly.
   swap: where v^2 < 0 the optical metric is Euclidean (real time -> imaginary time, Wick). Turning circle: finite transit (E=0, brim->r=sqrt2: ln(1+sqrt2) = 0.881374). E=0 hilltop: rho ~ ln r (infinite time), W finite (0.43096): an i+ point.
   Penrose arctan(time) and Smith tanh(log-length) are one map under rho -> i t: tanh(ix/2) = i tan(x/2); 2 arctan(tanh(x/2)) = arctan(sinh x) (Gudermannian); Gamma = (s-1)/(s+1) = tanh(ln s / 2).
+  zeros of v: a SIMPLE zero (v ~ kappa|r - r_h|) is at infinite transit time, rho ~ (1/kappa) ln distance (horizon property): hat E=0 hilltop kappa = 1.0000; Schwarzschild f = 1 - 2M/r kappa = 1/(2M) = 0.5 (M = 1); a SQUARE-ROOT zero (the turning circle) is at finite transit time. Author's reading (INTERPRETATION): the horizon IS the time distortion, an exterior space; we are on the interior side at the end of the black hole's life and exit through the white hole (WitchesHat/README sec 11).
   NOT shown: the Schwarzschild-style swap (the optical metric goes (-,+) -> (+,+)); the Eisenhart-Duval lift; CONJECTURE: static hat v^2(rho) and time-dependent v^2(t) are swap partners (original L_dynamic as the swap image of the static hat).
 @END
 
