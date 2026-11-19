@@ -206,7 +206,7 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix session_20260928"
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928 circle_atlas pi_derivations"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
@@ -1150,6 +1150,52 @@ notebooks/engines/14_archimedes_screw.ipynb, RiemannHypothesisProof/PAPER.md
 sections 6.4 and 12.5, ~/.clauderc_canonical_maths (ARCHIMEDES SCREW block).
 "
 
+export CTX_PTYCHO_WEAK_LENSING="
+ptycho_weak_lensing -- Ptycho-Weak-Lensing. v0.1 (2026-11-12). confidence_floor=THEORETICAL (:CALCULATED).
+numpy only (float64/complex128, FFT with zero padding). Modules/ptycho_weak_lensing/{maths,tools,manifest.json}; notebook 21; wiki ptycho_weak_lensing.md + Ainulindale 132.
+
+WHAT: weak gravitational lensing as a SPIN-2 inverse problem. kappa -> psi (Poisson) -> gamma = D kappa (D=(k1^2-k2^2+2ik1k2)/|k|^2, |D|=1)
+-> g = gamma/(1-kappa) -> eps = (eps_s+g)/(1+g* eps_s); KS inverse kappa_E+i kappa_B = D* gamma, reduced-shear iteration; nulls (45-degree rotation,
+shuffle, B floor); calibration (m,c); flat-LCDM efficiency D_ls/D_s and Sigma_cr. Polarization Q+iU is the same spin-2 operator (E/B).
+PTYCHOGRAPHY: pointing = probe window M_j, object = one real kappa (B=0), update kappa += alpha Re[D* M_j (eps_j - eta_j D kappa)]/eta_j (ePIE/Kaczmarz).
+MEASURED (synthetic merger 128^2): Gaussian halo 1e-3; KS round trip 1.5e-4; mass sheet 4e-16; pure-E pol 2.8e-5; ptycho with 3/9 pointings missing:
+corr 0.923 vs naive 0.864 (density 12), 0.825 vs 0.701 (density 3); full coverage = same fixed point. Modulus-only (|gamma|) GS: residual 5e-4 but corr 0.80 only
+from an informative start, global sign undetermined, flat/random starts stall = OPEN (multi-window modulus ptychography not built).
+LIMITS: synthetic only; no PSF/shape-measurement bias model, photo-z, cluster-member dilution, intrinsic alignment. GR does not rotate polarization (independent probe).
+NEXT: real-data control (Frontier Fields / UNCOVER-MARS / Clowe), real multi-band efficiencies, multi-window modulus ptychography, polarization-shear correlator.
+Targets: Euclid DR1 (2026-11-12) covers MACS J0416 among 20 tested lens fields.
+"
+
+export CTX_CIRCLE_ATLAS="
+circle_atlas -- The Circle Atlas (H_hat_RB and The Complete Shape of Mathematics). v0.1 (2026-11-16). confidence_floor=THEORETICAL (:CALCULATED).
+numpy only. Modules/circle_atlas/{maths,tools,manifest.json}; notebook 22; wiki circle_atlas.md + Ainulindale 137. Reuses tier8_sedenion.cd_mul, box_kite.zero_divisor_pairs, hypergon_constructibility, pi_derivations.
+Atlas registry row 6 (name qualified: always 'The Circle Atlas', never 'the atlas').
+
+WHAT: a MAPPING ALGORITHM (not a fit). 25 viewports (19 below + sphere, hypersphere, field_axis, native_units, kite_spectrum) (waveform, Hamiltonian, Lagrangian, Berry-Keating, cardioid, epicycles, Smith, Apollonian, inversion, Hopf, roots of unity,
+sedenion, ADD:SCALE:SIGN, prime wheels, ring, BAO ring [constructed], polygons, normalising retraction, winding) each run as TO (enter fixed-point space; residual from |z|=1) and
+FROM (exit; the FIBRE of choices; a relation, not an inverse). Each carries a pi route (pi_derivations). signposts(), gaps(), census(), import_probe(), sign_carriers().
+MEASURED 2026-11-16: 18/19 close to numerical zero; Berry-Keating xp raw = hyperbola (residual 6.4), closes (2e-16) under Wick t->it (recorded failure kept). Lagrangian FROM: L, 3L, L+dF/dt share
+one stationary path (fibre, not inverse). Sedenion: 15 exact circles, 84 zero-divisor circles, 336 annihilating ordered pairs, 0/300 random circle-point pairs have zero product.
+SIGN (theta->-theta) is carried by the whole second octonion e8..e15 (e_k x = x* e_k on the first octonion), not by e7 or e1. Import probe: 69 load, 0 fail. Census over repos in notebook 22.
+GAPS: no pi route for Apollonian, inversion, BAO ring, retraction; elliptic curves/modular forms; string cardioid superstrings; wing/bell motion; point->circle (polar blow-up is a candidate,
+INTERPRETATION); 5:5:5 and 2:11:2 are choices (no symmetry support); BAO/CMB with data; gauge U(1) circles.
+SECOND PASS 2026-11-16: n-ball V_n peak n=5 (area n=7); S^1,S^3,S^7 closed under product (4e-16), S^15 NOT (norm defect 0.366). Axis = any u in S^14 (field), exp(theta u) exact; 15 axes one basis. Re(exp(theta e_k)z)=r cos-y_k sin, L(e_k)^2=-1 all k.
+Native units z=10^a e^{i pi b} (ln10 decades, pi half-turns), ln10/pi transcendental (Baker). BOX-KITE SPECTRUM: L_d skew, lines 0(x4) sqrt2(x8) 2(x4) for ALL 84 zero-divisor diagonals (one signature; cannot tell kites), flow torus (ratio sqrt2);
+nullspace names the 4 partners = kite (84/84). From an ANCHOR (the string): sigma(L_a L_b) splits 84 into 7 classes (2,2,4,4 inside; 8,32,32 outside). THREE CONSTRUCTS (KITE_CONSTRUCTS): De Marrais kite (static, symmetric, Blackjack); Scalar Boxkite (7 ordered pairs, string from pivot);
+Scaled Boxkite / Mind's Eye (G2-carried, tetrahedra grab the anchor) -- NOT computed, never apply string machinery to it. Sister paper: FourthAgePapers/TwinPrimeWheels (twin centres as zero points; results, no prediction).
+NEXT: Archimedes-catalogue coverage (every equation: perturbation of a point/line/circle?), De Marrais kite as epicycle pathway, the 15-operation reading, a pi route per new viewport, bring the 1,305 C files and 457 notebooks into the census.
+"
+
+export CTX_PI_DERIVATIONS="
+pi_derivations -- The Pi Derivation Toolset (beside the 0_RB toolset, h_rb_hat). v0.1 (2026-11-16). confidence_floor=ESTABLISHED (:CALCULATED).
+stdlib + numpy. Modules/pi_derivations/{maths,tools,manifest.json}; notebook 23; wiki pi_derivations.md + Ainulindale 138. Tests grep route bodies: none may read math.pi.
+
+WHAT: 28 routes to pi (+ball3_lattice, heegner_163; series_speed: Ramanujan/Chudnovsky digits/term = pi sqrt(d)/ln10 - log10(1728 or 256)) each from its own inputs, labelled circle_in = none/orbit/constructed/dual/path/library/identity. EMERGENT pi = cos_zero (2 x first zero of the cosine power series;
+no diameter/circumference/angle/polygon). Cody's rule: a circle causes pi to be found; add a pi route for every new circle transform; find literal pi everywhere.
+FINDING: ValaQuenta/modules/constants derive_pi(): _PI = math.pi is the input; (2/pi)*pi = 2 is an identity for any pi (filed 'identity', returns no value); Basel is the dual of U(1) ('dual').
+Routes with orbit/path/none inputs: oscillator_period, jacobi_conjugate_point (Lagrangian conjugate point at T=pi), residue_square (dz/z round a SQUARE), smith_arc_length, sedenion_exp_period (exp(theta e15) by cd_mul).
+"
+
 export CTX_EMERGER="
 emerger -- The Emerger (Sedenion Bracketing & Firing Order). v0.1 (2026-09-01).
 confidence_floor=THEORETICAL. Pure Python 3, Fraction throughout. First-pass
@@ -1628,3 +1674,22 @@ CORRECTIONS 2026-10-13 (Cody): orb-weaver/topic-shift are DESIGN TARGETS not aut
 (57 KB, Aug 8), STALE vs ~/.clauderc_canonical_maths (maintained); reported to Cody, unchanged.
 @END
 "
+
+export CTX_WITCHES_HAT="
+THE WITCH'S HAT ENGINE (core), ValaQuenta/modules/witches_hat, 2026-11-17 (wiki witches_hat.md, notebook 24, tests 11).
+Core = tooling: plain data out, no rendering; the spatial-simulation skill bridges to renderers. snapshot(shape,n,size,depth,E,aim,spread).
+Findings: point focus only at aim 0 and E = 0 (separatrix); E<0 reflects at sqrt(-E/2); aim offset gives a ring caustic sqrt(sin d)((n-2)/n)^(1/4);
+size and depth drop out. Fermion exchange-hole hats are craters (no outer wall) and are NOT the Higgs quartic (failed identification). Zeta zero pair
+correlation = 1-D fermion kernel (rms 0.066 vs 0.36 Poisson). Holcus prediction = ask the maths (Circle Atlas viewports), not self-written.
+"
+
+@RCVQ_LAGRANGIAN_SM
+STATUS 2026-11-19. Cody asked for an L_SM engine (Full Engine Protocol) and a deep comparison of L_SM, L_NN (VAPMIP) and L_(I|O)/L_dynamic. BUILT: ValaQuenta/modules/lagrangian_sm (maths.py, compare.py, tools.py, manifest, proof_locale), notebook 25, wiki/lagrangian_sm.md, toolbox 42, Ainulindale wiki 139, Testing/test_lagrangian_sm.py (20). Packages added to the ValaQuenta .venv and requirements: particle (PDG tables), uncertainties.
+FINDINGS (measured on the code): coded L_NN bias term == -V_SM exactly for mu^2>0 (the only term-for-term identity); coded L_matter == SM scalar-gauge seagull g^2 psi^2 A^2/8 x constant (8/n) = Higgs-sector, NOT a Dirac term; L_kinetic quadratic in A vs SM quartic; L_coupling psi^1 vs Yukawa psi^2 (mean-field reading); polar_lagrangian does NOT apply 1/phi to L_bias; mu^2<0 is a bowl as coded. L_(I|O) integrand constant e^-E. => 'term-for-term isometric' = hat exactly + seagull form + four-sector naming; not the gauge kinetic, Dirac or Yukawa terms; 19 parameters vs 4.
+HISTORY CORRECTION: the original L_dynamic (wiki 51, 2026-06-12) is L_standard + integral J_red d(J_blue)/dt (time-dependent background), NOT integral J_red J_blue ds; the 2026-06-17 rename moved the name only. (I|O) was also the April 2026 Inside-Out inversion inner product (claude.ai archive SMNNIP_TODO sec 3); wiki 100 item 1 conflates 'L_NN / L_dynamic'.
+RECOMMENDATION recorded: carrier = SM Higgs hat (identical to the L_NN hat); operation = original L_dynamic read as a time-dependent background (finite-temperature Higgs potential is the established version); L_(I|O) as defined cannot show a path (flat).
+ANOMALIES chased: SM anomaly cancellation -> SU(5) 5bar+10 embedding; tree m_W/m_Z offsets -> Delta r=0.0364; one-loop lambda zero scale -> y_t sensitivity, not quotable; path-of-action test failures -> 1/N^2 discretisation, Richardson for the cubic term, caustic order, three stationary paths (physical), quad cancellation in the Euclidean tau (replaced by ODE); my Majorana count 40 -> 28. witches_hat engine had never been registered and its proof_locale was a Circle Atlas copy: fixed.
+OPEN: finite-temperature (time-dependent) hat paths; local action profile along paths; two-loop running; toolbox pages missing for ptycho_weak_lensing, pi_derivations, circle_atlas; wiki 04/52/64/100 still carry the pre-correction L_dynamic framing (not edited).
+Scratchpad: ContextPlease/claude/scratchpad/2026-11-19_lagrangian_sm/ (anomaly_chase.py reproduces every chase).
+@END
+

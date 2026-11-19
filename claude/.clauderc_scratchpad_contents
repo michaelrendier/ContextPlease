@@ -19,7 +19,7 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-10-21
+# Last regenerated: 2026-11-19 (added 2026-11-19_lagrangian_sm/)
 
 - README.md
 - migrate_datasets.sh
@@ -815,3 +815,20 @@ youtube_Uvy5Cs9FDLg/
     oembed.json
     transcript.json
     transcript.txt
+
+2026-11-16_circle_atlas/
+    CONTEXT.md
+    mknb.py
+    sweep.py
+
+
+2026-11-16 (pass 2): 2026-11-16_circle_atlas/{exp1,exp2}.py kite-spectrum/anchor experiments; make_notebook_catalog.py (NOTEBOOK_CATALOG.ipynb builder); twin_wheels_COPY.py
+- claude/scratchpad/2026-11-17_scaffold_gallery/ : gallery.html (interactive raw|false-colour viewer of every JWST scaffold; <base> points at FourthAgePapers worktree WitchesHat/scaffolds), make_gallery.py, gallery_template.html
+- claude/scratchpad/2026-11-18_particle_views/ : particle_views.html (the Witch's Hat three parts, SM vs VAPMIP Lagrangians, 8 stills + L_(I|O) graph), render_plane.py, export_plane.py
+
+2026-11-19_lagrangian_sm/
+    README.md
+    anomaly_chase.py
+    make_nb.py
+    make_proof_locale.py
+
