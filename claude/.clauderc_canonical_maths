@@ -2174,3 +2174,10 @@ OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs
   NOT shown: the Schwarzschild-style swap (the optical metric goes (-,+) -> (+,+)); the Eisenhart-Duval lift; CONJECTURE: static hat v^2(rho) and time-dependent v^2(t) are swap partners (original L_dynamic as the swap image of the static hat).
 @END
 
+@RCCM_HBAR_HAT
+(2026-11-19; Ainulindale wiki 141; ValaQuenta/modules/witches_hat/semiclassical.py.) Where hbar comes from in the hat V = -mu^2 r^2/2 + lam r^4/4 (E = 0). R = mu/sqrt(lam), V0 = mu^4/(4 lam), tau0 = R/sqrt(2 V0), natural action unit S0 = V0 tau0 = (sqrt2/4) mu^3/lam.
+  W_direct = (2 mu^3/3 lam)(1 - 2^(-3/2)) ; W_wall = (2 mu^3/3 lam) 2^(-3/2) ; W_total = 2 mu^3/(3 lam). In S0: W_wall = 2/3, sheet spacing 2 W_wall = 4/3, tip height (2/3)(2 sqrt2 - 1) = 1.218951, GAP above the hilltop (4 sqrt2 - 5)/3 = 0.218951 (mu, lam independent).
+  exact thresholds (a new bound state at E = 0): hbar_n = 0.34117, 0.13082, 0.08091, 0.05857, 0.04590, 0.03774 ; W_total = pi hbar_n (n + gamma), gamma = 0.622 ... 0.6235 for all n (measured; plain two-turning-point rule gives 1/2, off 24 % at n = 0, 2.7 % at n = 4). Weyl: N(hbar) = 1/(6 hbar^2) (phase-space volume 2 pi^2/3).
+  CONJECTURE (untested): brim-sourced interference of the two tip sheets, hbar_k = W_wall/(pi (k + 1/4)) = 0.3001, 0.1200, 0.0667. INTERPRETATION: PhiSpiral closure e^{i pi} e^{i phi} e^{i(pi - phi)} = 1 as a closed-loop phase 2 pi n; hbar = the unit that makes S_loop = 2 pi.
+@END
+

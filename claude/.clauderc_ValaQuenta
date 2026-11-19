@@ -1708,3 +1708,11 @@ ADDED 2026-11-19 (horizon): zeros of the conversion field classified (simple zer
 OPEN: the Schwarzschild-style Lorentzian swap needs the Eisenhart-Duval lift (not tested); the static <-> time-dependent swap-partner conjecture (original L_dynamic as the swap image of the static hat) untested; whether Smith z -> 1/z and v -> 1/v are the same inversion.
 @END
 
+@RCVQ_HBAR_HAT
+STATUS 2026-11-19. Cody: "do that update ... h_bar emergence is always welcome." (after recalling that L_dynamic/L_(I|O) was compared to Feynman's path integral). RESOLVED: the comparison is about L_(I|O); explicit text in tier6_physics Engine 8 (feynman_path_integral: the Lichtenberg identification, THEORETICAL); structural, not an identity (a sum over paths of e^{iS/hbar} against a line integral along one path with the flat integrand e^-E).
+BUILT: modules/witches_hat/semiclassical.py, Testing/test_witches_hat_semiclassical.py (4 pass), Ainulindale wiki 141; updates appended to FourthAgePapers/PhiSpiral (paper_draft, 01_predictions: candidate test NOT registered) and to the Witch's Hat parent paper sec 8.
+RESULT: the tip height above the hilltop is exactly (4 sqrt2 - 5)/3 = 0.218951 depth-units; sheet spacing 4/3 of S0 = V0 tau0; exact thresholds hbar_n and gamma = 0.622..0.6235 (measured, not derived); Weyl N = 1/(6 hbar^2).
+ANOMALY CHASED: first threshold run used an outer radius of 1.55 R (n=0 read 0.296); converged by 2.2-2.6 R (0.3412); default now 2.6 R.
+OPEN: derive gamma; the brim-sourced interference ladder (untested); which loop PhiSpiral's three operators are (author).
+@END
+
