@@ -26,6 +26,8 @@ sm_eq = {
  "running": ("One-loop running of the gauge couplings and the scales where pairs meet.", steps(("gauge_initial", "couplings at M_Z"), ("b_i", "41/10, -19/6, -7"), ("crossings", "solve 1/α_i = 1/α_j"))),
  "compare": ("L_SM, L_NN, L_(I|O) and L_dynamic side by side, measured.", steps(("measured_exponents", "double each field and read the degree"), ("bias_conventions", "hat or bowl"), ("one_over_phi_on_bias", "is 1/φ applied"), ("lio_integrand", "is J_red J_blue constant"))),
  "exponents": ("The degree of each term in the fields, Standard Model against the coded L_NN.", steps(("evaluate", "each term at field amplitude a and 2a"), ("log ratio", "n = log2(f(2a)/f(a))"))),
+ "loops": ("Each particle's one-loop (Coleman-Weinberg) term in the Higgs potential at h = v.", steps(("particle_content_for_potential", "field-dependent masses m_i(h) and degrees of freedom n_i"), ("coleman_weinberg", "n m^4/(64 pi^2) [ln(m^2/mu^2) - c]"))),
+ "hat_temperature": ("The hat at temperature T: brim radius and depth in the high-temperature expansion.", steps(("D, E, T0", "from m_W, m_Z, m_t and v"), ("V(h,T)", "D (T^2 - T0^2) h^2 - E T h^3 + lam_T h^4/4"), ("minimise", "global minimum is the brim"))),
  "hat": ("The SM Higgs hat as a model dict for the path-of-action tools.", steps(("higgs_sector", "λ, μ²"), ("witches_hat.lagrangian_sm", "wrap as a model"))),
 }
 out = {"engine": "lagrangian_sm", "display": "L_SM: the Standard Model Lagrangian",
