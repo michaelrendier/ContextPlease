@@ -1693,3 +1693,11 @@ OPEN: finite-temperature (time-dependent) hat paths; local action profile along 
 Scratchpad: ContextPlease/claude/scratchpad/2026-11-19_lagrangian_sm/ (anomaly_chase.py reproduces every chase).
 @END
 
+@RCVQ_WITCHES_HAT_V2
+STATUS 2026-11-19. WitchesHat Lagrangians v2.0 (FourthAgePapers branch witches-hat, WitchesHat/papers/figures/lagrangians/v2.0/; v1.0 kept beside it). Cody: "don't build something that looks like my image ... find that shape in the maths ... lightning striking out of the clouds of the brim, curving due to the potential, all coming together at the tip ... the distance that tip is from the potential is going to be an important number".
+ENGINE (ValaQuenta/modules/witches_hat/action.py): ray_bundle (vectorised RK4, optional moving hat), brim_bundle (every brim point, every direction; kept by closest approach to the hilltop), tip_report (tip position, height, SHEETS), cone_tip_height (exact radial cone), natural_units. Convention: z_V = (V - brim level)/V0; a path's cone rises by W/(V0 tau0), tau0 = R/sqrt(2 V0); hilltop at 1.
+MEASURED (SM hat, mu=lam=1): tip 0.0015 R from the hilltop; height 0.2189 depth ABOVE the hilltop at E = 0 (exact 0.2190), rising with E (0.312 at E=0.01, 0.822 at 0.10); W_tip = 0.4310 = (2/3)[(1-r^2/2)^(3/2)]; the action is MULTIVALUED at the tip: sheets 0.4310 and 0.9025 = 0.4310 + 2 x 0.2357 (out to the wall at r = sqrt2 and back), lattice 0.431 + n x 0.4714. L_NN g=0.2: tip 0.0244-0.0505 R from the tilted hilltop, gap 0.42 (spread +-0.335 across sources: the brim is not level), 6-7 sheets; tip offset grows with g (0.0007 R at 0.05, 0.0505 at 0.2, 0.0686 at 0.4). Moving hat u=0.25: tip in hat frame 0.0079 R, gap 0.196, sheared in the lab frame. L_(I|O) on the same bundle (E_J = 1): z_tip 0.9785 (below the hilltop by 0.0215; E_J is free), profile straight in arc length.
+Earlier error corrected: the SM index-2 stationary path does NOT cross the hilltop (r_min 0.41).
+OPEN: the tip distance is an important number per Cody; its dependence on E, g, hat shape and on the choice of natural units is the thing to study; gauge space and equation space definitions to confirm (see skill spatial-simulation spaces.md).
+@END
+

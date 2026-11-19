@@ -13,9 +13,13 @@ description: >
   a render or turntable; scripting Blender from Python (`blender -b -P`); proving
   that a render frames the whole model; writing a simulator whose output is
   meant to be looked at; anything in Minkowski spacetime (light cones, worldlines,
-  boosts, the path of action, Wick rotation). Built 2026-11-17 from the Witch's Hat
-  simulator; Minkowski recognition added the same day.
-version: 1.1.0
+  boosts, the path of action, Wick rotation); any of the other spaces (De Sitter, Hilbert,
+  Fano plane, sedenion space with bracketing and firing order, Mandelbrot-Julia, gauge space =
+  orthogonal Smith charts / Apollonian gasket, equation space, the Higgs field space) and anything
+  whose axes are not lines but hypercomplex fields; rendering the bundle of paths of a
+  Lagrangian on the hat. Built 2026-11-17 from the Witch's Hat simulator; Minkowski recognition
+  added the same day; spaces and the v2.0 rendering rules added 2026-11-19.
+version: 1.2.0
 ---
 
 # Spatial simulation: viewport, camera, Blender, and the maths behind them
@@ -130,6 +134,24 @@ Rules for a Minkowski render:
 Acceptance test, `assert_minkowski_sound()`: the interval is invariant under boosts (v = 0.1, 0.6, 0.95); a light ray stays null after a boost; the causal class is frame-independent; proper time never exceeds coordinate time; the ring of a past light cone is visible from its apex; slices tilt with velocity. All six hold (2026-11-17).
 
 Layers for QFT-faithful renders: (1) the semiclassical paths (stationary phase of the path integral): Lorentzian paths in V on the Minkowski diagram; (2) the Euclidean paths in −V (instantons/bounces); (3) for a true field theory, the field configurations on a lattice in Euclidean time, with the weight e^{−S_E}. Say which layer a picture is.
+
+## 7. Other spaces, and axes that are fields (2026-11-19)
+
+A space is described by eight things: points · axes · motions · invariant · views · acceptance test · repo engine · status. The central rule: **an axis is (algebra, field, view), not a line**. A coordinate may be a complex number, a quaternion, an octonion or sedenion, a function over another space, or a pencil of circles; declare which real components are shown and how the rest enter (colour, slice, small-multiple, time). Each costs viewer budget: ℂ two real axes, ℍ four, 𝕆 eight, 𝕊 sixteen (§2). Pair with `observer-position`.
+
+| space | axes | motions | status |
+|---|---|---|---|
+| Minkowski (§6) | ℝ | boosts | ESTABLISHED, asset |
+| De Sitter | ℝ embedding, or (t, r) patch | SO(1,n), dilation | ESTABLISHED, recipe |
+| Hilbert | ℂ amplitudes; functions in L² | unitary U(n), projection | ESTABLISHED, recipe |
+| Fano plane | none (7 points, 7 lines) | PSL(2,7), order 168 (measured) | ESTABLISHED |
+| Sedenion (+ bracketing, firing order) | 16 algebra units; bracketing is state | multiplication order | ESTABLISHED + engines `emerger`, `bracketing_firing_order`; 84 zero divisors measured |
+| Mandelbrot–Julia | two ℂ planes (c and z) | iterate, travel in c, zoom | ESTABLISHED, recipe |
+| Gauge space (orthogonal Smith charts, Apollonian gasket) | two orthogonal pencils of circles | Möbius group, z → 1/z, scale | RECORD + AUTHOR |
+| Equation space (σ = 0 permutation space of 0_RB) | operator slots, hypercomplex | re-bracket, re-order | STUB |
+| Higgs field space (the hat) | ℝ⁴ ≅ ℂ², O(4); brim = S³ | classical paths, time-dependent hat | ESTABLISHED, engine |
+
+Full entries, measured facts and the repo engines: `references/spaces.md`. Rendering rules settled in use (show the maths exactly; one natural vertical scale; report the tip number; cutaway views; size budget; versioned names kept with the paper): `references/spaces.md` §10.
 
 ## Extending
 
