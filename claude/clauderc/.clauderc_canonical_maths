@@ -179,7 +179,11 @@ J_blue(sigma) = sum_{n=1}^inf a_n n^{-(1-sigma)}      [reverse Dirichlet series]
 
 L_(I|O) = integral( J_red . J_blue ) ds
   [Renamed from L_dynamic per Ainulindale/README.md 2026-06-17 -- this
-  file had not been updated to match until now.] "Thought" -- not the
+  file had not been updated to match until now.  NOTE 2026-11-19: the rename
+  moved the NAME, not the content: the original L_dynamic (wiki 51, 2026-06-12)
+  is L_standard + integral J_red d(J_blue)/dt dlambda, a time-dependent
+  background; see @RCCM_L_DYNAMIC_ORIGINAL.  Also (I|O) was in use in April 2026
+  for the Inside-Out inversion inner product (SMNNIP_TODO sec 3).] "Thought" -- not the
   output of thinking, the act itself. The path integral / interaction
   term missing from a J_red-only system. I = Inside = ZD = Mind's Eye =
   origin = past; | = zero-divisor crossing, the boundary that imparts
@@ -2134,4 +2138,53 @@ EXPLICIT FORMULAS (two-sided): Guinand-Weil 9e-14..1.25e-10; Weil/Hasse-Davenpor
 CHEBYSHEV: psi(x;4,1)-psi(x;4,3) from L(chi_-4) zeros; zeta has pole (x), Fermat character has a MEAN (-sqrt x): the mean is the horizon. KLEIN: {s->1-s, s->conj s} holds 6e-32 (xi), 1e-31 (Lambda chi_-4); L_4 is a 4-cycle (L_k^2=-I). Zeros GUE-rigid (spacing var .16), primes scattered (.69-.74). Beurling: PNT needs more than multiplicative structure.
 J CHAIN TEST (record sec 9): X+X^dag self-adjoint (dot) != X-X^dag (cross); J_red+J_blue=0_RB-0_BR holds only with signed J_blue and 0_RB,0_BR the two ordered terms; with 0_RB:=H, 0_BR:=H^dag the difference is 0. NOT established as stated; awaits Cody's definition of 0_BR.
 OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs charx; d*_RG closed form (none known).
+@END
+
+@RCCM_SM_LAGRANGIAN
+(2026-11-19; ValaQuenta/modules/lagrangian_sm; Ainulindale wiki 139.) The Standard Model, as built and checked by the engine. ESTABLISHED.
+  L_SM = -1/4 G G - 1/4 W W - 1/4 B B + sum psibar i gamma D psi + |D H|^2 - V(H) - Yukawa(Q H u, Q H~ d, L H e) + h.c. (+ theta_QCD term)
+  D = d - i g_s T^A G^A - i g T^a W^a - i g' Y B ;  V = -mu^2 H+H + lam (H+H)^2 ;  Q = T3 + Y
+  multiplets (SU3,SU2,Y): Q_L (3,2,1/6) u_R (3,1,2/3) d_R (3,1,-1/3) L_L (1,2,-1/2) e_R (1,1,-1) H (1,2,1/2); 3 generations; 45 Weyl fermions, 12 gauge bosons, 4 real scalars
+  anomaly conditions (all = 0): U1^3, SU3^2 U1, SU2^2 U1, grav^2 U1; Witten: even number of doublets. Given multiplets, Y_H=1/2 and Yukawa invariance they FIX the hypercharges:
+  Y_L = -1/2, Y_Q = 1/(2 N_c); N_c=3 gives Q_u=2/3, Q_d=-1/3, proton uud = 1. SOURCE of the cancellation: the 15 Weyl fermions are exactly 5bar + 10 of SU(5), Y = diag(-1/3,-1/3,-1/3,1/2,1/2) traceless, A(10)+A(5bar) = +1-1 = 0.
+  parameters (counted): 19 = 3 gauge + 2 Higgs + theta_QCD + 13 flavour (9 masses, 3 angles, 1 phase); 26 with Dirac neutrinos; 28 with Majorana. The FORM is derived; group, content, N_c=3 are observed; the numbers are measured.
+  broken phase (H=(0,(v+h)/sqrt2)): m_W = g v/2, m_Z = sqrt(g^2+g'^2) v/2, photon 0; m_h^2 = 2 lam v^2; v = (sqrt2 G_F)^(-1/2) = 246.22 GeV; lam = 0.1291; y_f = sqrt2 m_f / v
+  tree m_W,m_Z differ from PDG by -0.16%, +0.35%: the electroweak correction Delta r = 0.0364. One-loop gauge crossings 1e13, 2e14, 1e17 GeV: no single unification scale. One-loop lam->0 scale is not quotable (y_t sensitivity).
+@END
+
+@RCCM_L_DYNAMIC_ORIGINAL
+(2026-11-19; Ainulindale git b294c3f wiki/51 'The Dynamic Geodesic', cefcf96 wiki/52 sec 3; both 2026-06-12.)
+  L_dynamic = L_standard + integral J_red . d(J_blue)/dt dlambda   (CONJECTURE) -- forward momentum coupled to the changing potential in real time along the path; slingshot term L_sling ~ v dg/dt.
+  words (wiki 52): 'Lagrangians are not clean. More action here, balanced by less action elsewhere. The integral is still extremised, but locally the path is messy.'
+  L_(I|O) = integral J_red J_blue ds (renamed 2026-06-17) is a DIFFERENT object: no L_standard, no time derivative; its integrand is the constant e^-E (wiki 64 sec 2).
+  established home of the original: mechanics in a time-dependent background. Hamilton's principle holds; energy is not conserved: dE/dt = dV/dt at fixed q; energy is borrowed and returned along the path.
+  measured (witches_hat.action.moving_hat_exchange): static hat dE ~ 1e-12; hat moving at u=0.6: energy rises 0.913, ends +0.383; identity dE = integral dV/dt dt to 1e-11.
+  also measured (no aim): between one pair of events on the SM hat there are 3 stationary paths (S 0.7742 idx0, 0.7906 idx1, 10.88 idx2); closest approach to the hilltop ~ offset^0.504 (funnel, not a caustic; nearest caustic 0.51 brim radii).
+@END
+
+@RCCM_LENGTH_TIME
+(2026-11-19; Ainulindale wiki 140; ValaQuenta/modules/witches_hat/length_time.py.) Length and time as one thing.
+  conversion field v(q) = sqrt(2(E - V(q))) (in relativity v = c). transit length rho = integral ds/v (tortoise coordinate): length measured in time; d rho = dt for anything moving at v.
+  optical metric g = -v^2 dt^2 + |dq|^2: every classical path at energy E is a NULL curve (length = v dt). In (rho, t) a radial path is a 45-degree line (measured 4e-12).
+  conjugacy t = dW/dE (W = integral p dq, the Jacobi length), measured 4e-8 on a bent path; across the swap dB/dE = -tau (B barrier action, tau Euclidean time), 1e-8.
+  two rulers: least ACTION weights ds by v, least TIME by 1/v; different paths unless v is constant (hat, E=0.05: time excess 35 %; constant v: 1e-16); v -> 1/v exchanges them exactly.
+  swap: where v^2 < 0 the optical metric is Euclidean (real time -> imaginary time, Wick). Turning circle: finite transit (E=0, brim->r=sqrt2: ln(1+sqrt2) = 0.881374). E=0 hilltop: rho ~ ln r (infinite time), W finite (0.43096): an i+ point.
+  Penrose arctan(time) and Smith tanh(log-length) are one map under rho -> i t: tanh(ix/2) = i tan(x/2); 2 arctan(tanh(x/2)) = arctan(sinh x) (Gudermannian); Gamma = (s-1)/(s+1) = tanh(ln s / 2).
+  zeros of v: a SIMPLE zero (v ~ kappa|r - r_h|) is at infinite transit time, rho ~ (1/kappa) ln distance (horizon property): hat E=0 hilltop kappa = 1.0000; Schwarzschild f = 1 - 2M/r kappa = 1/(2M) = 0.5 (M = 1); a SQUARE-ROOT zero (the turning circle) is at finite transit time. Author's reading (INTERPRETATION): the horizon IS the time distortion, an exterior space; we are on the interior side at the end of the black hole's life and exit through the white hole (WitchesHat/README sec 11).
+  NOT shown: the Schwarzschild-style swap (the optical metric goes (-,+) -> (+,+)); the Eisenhart-Duval lift; CONJECTURE: static hat v^2(rho) and time-dependent v^2(t) are swap partners (original L_dynamic as the swap image of the static hat).
+@END
+
+@RCCM_HBAR_HAT
+(2026-11-19; Ainulindale wiki 141; ValaQuenta/modules/witches_hat/semiclassical.py.) Where hbar comes from in the hat V = -mu^2 r^2/2 + lam r^4/4 (E = 0). R = mu/sqrt(lam), V0 = mu^4/(4 lam), tau0 = R/sqrt(2 V0), natural action unit S0 = V0 tau0 = (sqrt2/4) mu^3/lam.
+  W_direct = (2 mu^3/3 lam)(1 - 2^(-3/2)) ; W_wall = (2 mu^3/3 lam) 2^(-3/2) ; W_total = 2 mu^3/(3 lam). In S0: W_wall = 2/3, sheet spacing 2 W_wall = 4/3, tip height (2/3)(2 sqrt2 - 1) = 1.218951, GAP above the hilltop (4 sqrt2 - 5)/3 = 0.218951 (mu, lam independent).
+  exact thresholds (a new bound state at E = 0): hbar_n = 0.34117, 0.13082, 0.08091, 0.05857, 0.04590, 0.03774 ; W_total = pi hbar_n (n + gamma), gamma = 0.622 ... 0.6235 for all n (measured; plain two-turning-point rule gives 1/2, off 24 % at n = 0, 2.7 % at n = 4). Weyl: N(hbar) = 1/(6 hbar^2) (phase-space volume 2 pi^2/3).
+  CONJECTURE (untested): brim-sourced interference of the two tip sheets, hbar_k = W_wall/(pi (k + 1/4)) = 0.3001, 0.1200, 0.0667. INTERPRETATION: PhiSpiral closure e^{i pi} e^{i phi} e^{i(pi - phi)} = 1 as a closed-loop phase 2 pi n; hbar = the unit that makes S_loop = 2 pi.
+@END
+
+
+@RCCM_RELATIVITY
+(2026-11-19; Ainulindale wiki 143; ValaQuenta/modules/relativity/.) Einstein's relativity is FOUR SPACES, each with its own JURISDICTION (set of legal operations; test = bracketing_firing_order.jurisdiction_violation reused). Cody: "relativity is a different space...different jurisdictions...it should not be following a L_SM layout" (first layout was L_SM-shaped; corrected).
+  minkowski (SR): global boost, translation, add vectors anywhere, global simultaneity, global E-p conservation legal; curvature/tides illegal. curved (GR): local frames, geodesics, parallel transport, covariant conservation, curvature legal; global boost, global simultaneity, adding vectors at different events, global E-p conservation illegal. tangent: SR legal at one event (Gamma removable 10.04 -> 0, Kretschmann 4.8e-5 at r=10M stays). metric: where Einstein's equations live; lapse N is a Lagrange multiplier, dS/dN = 0 -> 3 a adot^2/(8 pi G) = a^3 rho; linearised Riemann gauge invariant. CROSSINGS = ops legal in one space and illegal in another.
+  measured: Mercury 42.98"/cy, solar limb 1.751", GPS +38.5 us/day, Pbdot -2.40e-12 (elements from memory), deflection 4M/b (1 + 15 pi M/(16 b)) (the 15pi/4 first written was WRONG), perihelion ratio -> 1 as p grows, R_trtr = -2M/r^3 and xi'' = 2M/r^3 xi (1.00002), Euclidean horizon period 8 pi M, R00 = Laplacian Phi, TT wave iff w^2 = k^2.
+  INTERPRETATION bridge: boost with Doppler factor p has beta = (p^2-1)/(p^2+1), triple (p^2-1, 2p, p^2+1) (p=2: 3-4-5); boost(p) o boost(q) = boost(pq); rational boosts = prime factorisation of the Doppler factor (arithmetic ESTABLISHED, reading not). Conversion field v(q) of wiki 140 as 1+1 metric -v^2 dt^2 + dx^2, R = -2 v''/v; hat E=0: simple zero kappa=1 at the hilltop, sqrt zero at sqrt 2. NOT shown: relativity from the Null Operator; Navier-Stokes, QM, strings are separate jurisdictions, not built here.
 @END

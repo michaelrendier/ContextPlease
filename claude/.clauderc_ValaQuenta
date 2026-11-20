@@ -1716,3 +1716,7 @@ ANOMALY CHASED: first threshold run used an outer radius of 1.55 R (n=0 read 0.2
 OPEN: derive gamma; the brim-sourced interference ladder (untested); which loop PhiSpiral's three operators are (author).
 @END
 
+
+@RCVQ_RELATIVITY
+(2026-11-19) Full Engine Protocol for relativity built: modules/relativity (maths, minkowski, curved, tangent, metric, crossings, bridge, checks, tools, manifest), registered in __main__, proof_locale/relativity.json, Testing/test_relativity.py (31 pass), notebook 26 (executed), wiki ValaQuenta/wiki/relativity.md + toolbox 43 + Ainulindale 143, 46 registered modules (_register_all). Own-code errors caught by the tests: Thomas-Wigner boost sign (stored boost has -gamma beta in column 0), perihelion event (periapsis is a DOWNWARD crossing of u'=0), deflection coefficient 15pi/16. Organised by SPACE not by content (Cody). Open: Kerr beyond horizons, Penrose-Carter, ADM, numerical relativity; Hulse-Taylor elements to verify; whether the Null Operator reaches GR is the Equation Space question.
+@END
