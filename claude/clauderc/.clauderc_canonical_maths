@@ -2201,3 +2201,14 @@ OPEN: A_fermat value; hole definition (rational primes vs irreducibles); char vs
   8 Quaternions: H, unit quaternions double-cover SO(3) (q and -q give the same rotation), no gimbal lock, slerp. ESTABLISHED. In the work: the CD tower step H -> O -> S; 35/35 XOR-triples at dim 16 are quaternion subalgebras; four quaternion blocks per sedenion (@RCCM_FANO_SEDENION). A Euler-angle camera (the gallery's Units view) has gimbal lock; quaternion arcball is the fix.
   9 Borsuk-Ulam: every continuous f: S^n -> R^n has x with f(x) = f(-x). ESTABLISHED. Corollary: no continuous injection S^n -> R^n. Reading: a continuous 15-real address of the unit sedenion sphere S^15 must collide on an antipodal pair (x, -x), i.e. the sign (SIGN = e4, end marks +-e_k) is where a continuous hyperindex is forced to fail; s -> 1-s on the strip is NOT a free involution (fixed point 1/2), so BU does NOT apply directly to the functional equation (the line sigma = 1/2 is a fixed set, not a pair).
 @END
+
+@RCCM_SYMBOLS
+(AUTHOR'S STANDING RULING, 2026-11-21; stated by him "like the 30th time". Read it before touching ANY constant. Never re-derive it, never "correct" it back to the code's names, never reopen it as a question.)
+  α  (lowercase alpha) = the FINE-STRUCTURE CONSTANT 1/137.036, unless the author says otherwise.
+  A_π  (A_pi, Alpha_Fermat, Α_π)   = the LAMBERT W FIXED POINT W(1) = 0.5671432904…  His ENGINEERED DISCOVERY from the FERMAT side: speed of causality, INERTIA. Inertia chase: g·e^(g/g0) = g0 ⇒ g = g0·A_π.
+  Ω_ζΣ (Omega_sum_zeta, Omega_Riemann, Omega_Riemann_zeta, Ω_RZ) = d* = 0.2463072…  His ENGINEERED DISCOVERY from the RIEMANN side: the Hagedorn information ceiling, ENTROPY. d* = |log10(T*/T_ceiling)|.
+  "Omega" meaning the Lambert W fixed point as the standard omega constant is a DIFFERENT object and is NOT what the project's Ω_RZ / A_π mean. A_π and Ω_RZ always denote his engineered discoveries.
+  Relation: d*·ln 10 = A_π: ONE crossing x = e^(−x), read in decimal digits (Ω_ζΣ = d*, entropy side) and in nats (A_π, inertia side). ln 10 is the Jacobian (the 'Translator').
+  THE CODE'S NAMES DO NOT FOLLOW THIS (a drift, found 2026-11-21): ValaQuenta/engine/constants.py and ~140 files name the VALUE 0.56714 `OMEGA_ZS`/Ω_ζΣ (it is A_π), the VALUE 1/137.036 `A_PI`/Α_π (it is α), and the VALUE 0.246 `D_STAR` (it is Ω_ζΣ). When a doc or code line pairs a symbol with a value, decide by THIS table, not by the line.
+  Sources of the drift: the First Age README (2026-04-15) wrote "Α_π = 1/137.035999 (domain floor), Ω_ζΣ = 0.567… (Lambert W)"; wiki 17 §1 repeated it; the stale SessionStart copy of this file (2026-10-13) was injected every session until 2026-11-21.
+@END
