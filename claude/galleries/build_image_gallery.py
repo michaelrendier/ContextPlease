@@ -5,7 +5,7 @@ CONFIG: repo (path), name, slug, port, tagline, groups[{name, match, blurb}] (fi
         titles[{match, title}] (optional regex overrides, \\1 groups allowed), notes[{match, desc}] (description when none is found), also_scan[dirs] (external folders whose byte-identical copies are listed as 'also at').
 Writes <repo>/image_gallery/<slug>.html (+ serve_gallery.sh, favicon.png). Images are NOT copied: the page links them by relative path, so serve from the repo root (serve_gallery.sh does)."""
 import os, re, sys, json, hashlib, subprocess, datetime, collections, base64, urllib.parse
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE); import contact
 cfg = json.load(open(sys.argv[1])); REPO = os.path.abspath(os.path.expanduser(cfg["repo"])); OUT = os.path.join(REPO, cfg.get("out_dir", "image_gallery")); SCAN = [os.path.join(REPO, x) for x in cfg.get("scan", [""])]
 IMG = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"); PRUNE = {".git", ".venv", "node_modules", "__pycache__", "site-packages", "_build", "image_gallery", "holcus_paths_gallery"}
 EXC = [re.compile(p) for p in cfg.get("exclude", [])]; GRP = [(g, re.compile(g["match"])) for g in cfg["groups"]]; TIT = [(re.compile(t["match"]), t["title"]) for t in cfg.get("titles", [])]; NOTES = [(re.compile(t["match"]), t["desc"]) for t in cfg.get("notes", [])]
@@ -107,7 +107,7 @@ groups = [g for g in groups if g["count"]] + ([dict(name="Other", blurb="", coun
 os.makedirs(OUT, exist_ok=True)
 fav = open(os.path.join(HERE, "favicon_datauri.txt")).read().strip(); open(os.path.join(OUT, "favicon.png"), "wb").write(base64.b64decode(fav.split(",", 1)[1]))
 data = dict(name=cfg["name"], tagline=cfg.get("tagline", ""), built=datetime.date.today().isoformat(), thumb_bright=bool(cfg.get("thumb_bright")), repo=os.path.basename(REPO), groups=groups, items=items, port=cfg.get("port", 8800))
-tpl = open(os.path.join(HERE, "image_gallery_template.html")).read().replace("/*DATA*/", json.dumps(data, ensure_ascii=False)).replace("%%FAVICON%%", fav).replace("%%TITLE%%", cfg["name"])
+tpl = open(os.path.join(HERE, "image_gallery_template.html")).read().replace("/*DATA*/", json.dumps(data, ensure_ascii=False)).replace("%%FAVICON%%", fav).replace("%%CT_CSS%%", contact.CSS).replace("%%CT_TOP%%", contact.top()).replace("%%CT_BOTTOM%%", contact.bottom()).replace("%%TITLE%%", cfg["name"])
 open(os.path.join(OUT, cfg["slug"] + ".html"), "w").write(tpl)
 sh = os.path.join(OUT, "serve_gallery.sh")
 open(sh, "w").write(f'''#!/bin/bash

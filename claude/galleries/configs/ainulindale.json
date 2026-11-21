@@ -8,7 +8,8 @@
  ],
  "tagline": "Images in the Ainulindalë repository: the Gemini simulator screenshots, the Witch's Hat animations, the wiki figures, the original Master Key figures and the First Age Gemini art. Repository header images are not included.",
  "exclude": [
-  "^media/sedenion\\.png$"
+  "^media/sedenion\\.png$",
+  "^AgeFirst/original_2026/offhand/"
  ],
  "groups": [
   {

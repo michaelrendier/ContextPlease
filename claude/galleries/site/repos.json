@@ -1,0 +1,194 @@
+[
+ {
+  "name": "VAPMIP",
+  "description": "Virtual Action Potential Monad Information Propagation: Teaching the Maths to speak English.",
+  "pushed": "2026-11-21",
+  "header": "VAPMIP.jpg",
+  "galleries": 2,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "ValaQuenta",
+  "description": "A Heavy Mathematics Derivation Engine",
+  "pushed": "2026-11-21",
+  "header": "ValaQuenta.jpg",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "Ainulindale",
+  "description": "This started out as a 'peresistent memory' for Gemini.  In order to create memory, it turns out that in order to create actual memory, i needed to create a program capable of thought...as it seems that memory is simply The Pathway takein by Thought away from Birth...",
+  "pushed": "2026-11-21",
+  "header": "Ainulindale.jpg",
+  "galleries": 1,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "RiemannHypothesisProof",
+  "description": "Some maths i tripped over while stumbling around in the dark.",
+  "pushed": "2026-11-21",
+  "header": "RiemannHypothesisProof.jpg",
+  "galleries": 1,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "FourthAgePapers",
+  "description": "One Paper per Claim. One Engine per paper. Jupyter Notebooks included along side. One Wiki Page Per Claim.",
+  "pushed": "2026-11-21",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "SedenionSpectralRelativity",
+  "description": "Using the Sedenion Braketing and Firing Order Engine to explore relationships to the Emmy Noether Sedenion, in multiple 'spectrums'....",
+  "pushed": "2026-11-21",
+  "header": "SedenionSpectralRelativity.jpg",
+  "galleries": 2,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "GenerationalLineage",
+  "description": "The Generational Lineage Engine — the decomposition line (descent, free) and the Emerger (ascent, work); operator/number/process factoring against the two trees",
+  "pushed": "2026-11-21",
+  "header": "",
+  "galleries": 1,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "AbrikosovTree",
+  "description": "The Un-Extinctable (Extinguishable?) Bulk. The Primes are the leaves that can not fall off the tree.",
+  "pushed": "2026-11-21",
+  "header": "AbrikosovTree.jpg",
+  "galleries": 1,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "BulletCluster",
+  "description": "Interogation of every telescope worth of data that resolved the Bullet Cluster for Ptychography of the Shape of the Space, not a map of where 'stuff' is. Hypercomplex Turbulent Flow. Two Surface Ripples interacting.",
+  "pushed": "2026-11-21",
+  "header": "BulletCluster.jpg",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "UniversalSynth",
+  "description": "A sonification engine for mathematics",
+  "pushed": "2026-11-13",
+  "header": "UniversalSynth.jpg",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "PtolemyDesktop",
+  "description": "Using my Monad: Virtual Action Potential MonadIn formation Propagation model ( https://github.com/michaelrendier/VAPMIP ) to create a new type of AI Research Assistant Composting Desktop. Everything runs through the Monad.",
+  "pushed": "2026-11-17",
+  "header": "PtolemyDesktop.jpg",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "PTorrent",
+  "description": "A corpus distribution protocol for on-device knowledge seeding. BitTorrent-inspired. GNU GPL v3.",
+  "pushed": "2026-10-18",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "TeleGraviScope",
+  "description": "Create a localized disruption to a gravitational 'bubble' to create an Earth Based Gravitational Lense Telescope.",
+  "pushed": "2026-06-01",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "AISensoryServer",
+  "description": "A (currently) Android sensory bank based off the Samsung Galaxy A51 5G sensors and cameras, using Phyphox to do the hard work of sensor communications and dumping a \"Current State\" file...which can be poled by any AI given access.  1 entry per sensor with it's always current value.",
+  "pushed": "2026-05-26",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "Ptolemy2",
+  "description": "the last version of Ptolemy before i started having Claude help...",
+  "pushed": "2026-09-29",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "TuringStack",
+  "description": "My Exploit Research Repository, seeded with UDEO, breaking of Modular Form (One Way) Encryption of Sha-1",
+  "pushed": "2026-10-15",
+  "header": "TuringStack.jpg",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "ArdaQuenta",
+  "description": "A simple display engine for multiple view points to equations concurrently",
+  "pushed": "2026-10-15",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "DeriveCancerDrugs",
+  "description": "The Potential exists to derive molecular complexes from the Cancer itself to treat the specific type of Cancer.",
+  "pushed": "2026-10-15",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "ContextPlease",
+  "description": "Manual Transmission context continuity",
+  "pushed": "2026-11-21",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "SemanticWordEngine",
+  "description": "DEPRECATED, superseded by VAPMIP (github.com/michaelrendier/VAPMIP). I map the meaning of words onto the smallest irreducable parts of mathematics.  The Primes.  I use the Riemann Zeta Function, (what it is), Fermat's Last Theorem (what it can not be) and the Noether Current (what it means), to identify the actual conceptual meanings of every…",
+  "pushed": "2026-10-17",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "POE",
+  "description": "Ptolemy On Everything",
+  "pushed": "2026-10-21",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "MedicineIsAlwaysFree",
+  "description": "My work over 20 some odd years of using phytocannabinoids in Food and Topicals as Medicine.",
+  "pushed": "2026-10-15",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "MultiplicationMatrixExplorer",
+  "description": "A 1 step at a time multiplication 'addition matrix' explorer. in example: two 10 digit numbers resulting in a 10 row by 20 column matrix.",
+  "pushed": "2026-11-20",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ },
+ {
+  "name": "ZorkMapper",
+  "description": "a mapping utility for infocom z machine games.",
+  "pushed": "2026-11-18",
+  "header": "",
+  "galleries": 0,
+  "visibility": "PUBLIC"
+ }
+]
