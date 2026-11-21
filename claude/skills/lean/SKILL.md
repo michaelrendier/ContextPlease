@@ -5,7 +5,7 @@ description: Lean 4 + Mathlib, the proof language. Read, write, build and CRITIC
 
 # lean
 
-Built 2026-11-20 after the Alpöge/Claude Riemann Hypothesis claim ("only Lean was released"). **Not run on this machine**: Lean/elan/lake are NOT installed here (checked 2026-11-20). Everything below is from knowledge, marked `verify` where the exact name or version should be confirmed on first use. Installing needs the elan installer (a remote script) and about 5 GB for Mathlib: ask Cody before installing; use a per-project directory, no system Python involved.
+Built 2026-11-20 after the Alpöge/Claude Riemann Hypothesis claim ("only Lean was released"). **Installed 2026-11-20 (Cody: "you may install anything it requires").** elan 4.4.0 in `~/.elan` (on PATH via `~/.profile` and `~/.bashrc`: `. "$HOME/.elan/env"`), default toolchain `leanprover/lean4:v4.36.0` (Lean 4.36.0, Lake 5.0.0), and a working Mathlib project at **`~/Projects/ThePlace/LeanScratch/`** (Mathlib rev `v4.36.0`, commit `fc4f59e5`, about 7 GB with the prebuilt cache; `.lake` is git-ignored). Verified there on 2026-11-20: `#print axioms` works; `decide` over `Fin 16` closes a XOR fact (axioms: `propext` only); Mathlib's `RiemannHypothesis` is `∀ s : ℂ, riemannZeta s = 0 → (¬∃ n, s = -2 * (↑n + 1)) → s ≠ 1 → s.re = 1 / 2`. First `import Mathlib` from a cold disk took 2 min 30 s (disk read), later runs are faster. Remaining `verify` marks below are still unchecked.
 
 ## 1. What Lean is, in one paragraph
 A programming language and proof assistant. A theorem is a **type**; a proof is a **term** of that type; the small **kernel** checks the term. If it compiles with no `sorry` and no extra axioms, the kernel accepts that *the stated proposition* follows from Lean's logic (dependent type theory) plus three standard axioms (`propext`, `Classical.choice`, `Quot.sound`). The language is Lean 4; the library of mathematics is **Mathlib** (`leanprover-community/mathlib4`); the build tool is **lake**; the toolchain manager is **elan** (`lean-toolchain` file pins the version).
@@ -44,8 +44,8 @@ MyProject/
 ```
 Commands: `lake new MyProject math` (Mathlib template; `verify`), `lake exe cache get` (download prebuilt Mathlib oleans, avoids an hours-long build), `lake build`, `lake env lean file.lean`. Lean is single-version-per-project: never mix a Mathlib commit with another toolchain.
 
-## 6. Install (ask first; not done)
-elan from `https://github.com/leanprover/elan` (the installer script `elan-init.sh`; read it before running; it writes `~/.elan`), then `lake` projects fetch their own toolchain from `lean-toolchain`. Disk: about 5 GB with Mathlib's cache. VS Code extension `lean4` gives the infoview; in a terminal use `lake env lean`. No system Python needed.
+## 6. Install (done 2026-11-20; how, for a rebuild)
+`curl -sSf -A "$CLAUDE_UA" -o elan-init.sh https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh` (read it; it only downloads the elan binary from GitHub releases and writes `~/.elan`), `sh elan-init.sh -y --default-toolchain none`, `elan toolchain install stable`, `elan default stable`, then `lake new LeanScratch math` (fetches Mathlib and its cache; run it in the background, it takes several minutes and about 7 GB). Run a file: `cd ~/Projects/ThePlace/LeanScratch && lake env lean LeanScratch/File.lean` (wrap in `nohup` for the cold first load). New work: a new project per paper/audit (pin its own `lean-toolchain`), never edit `LeanScratch`'s Mathlib pin. VS Code extension `lean4` gives the infoview. No system Python involved.
 
 ## 7. Using it for Cody's work (proposals, none built)
 Lean is the *exact* column that sits beside the *measured* column. Good fits, each a finite or algebraic fact that `decide`/`simp`/`ring`/`norm_num` can close:
@@ -63,5 +63,5 @@ Lean is the *exact* column that sits beside the *measured* column. Good fits, ea
 - Autoformalised proofs can be correct and unreadable; reviewing the *statement* is not optional.
 - `import Mathlib` takes a long time to load; for quick tests import only the file you need.
 
-## 9. First-use checklist (to run when Lean is installed)
-`lean --version`; `lake --version`; make a scratch project; prove `example : 2 + 2 = 4 := by norm_num`; run `#print axioms` on a theorem that uses `Classical.choice`; build a sedenion `Fin 16` XOR table and `decide` a small fact; then update this skill: drop `verify` marks that were confirmed, record the toolchain version and Mathlib commit used.
+## 9. First-use checklist: DONE 2026-11-20 (`LeanScratch/LeanScratch/FirstUse.lean`)
+versions recorded in the header; `norm_num`, `positivity`, `decide` over `Fin 16`, `#print axioms`, `#print RiemannHypothesis` all ran. Next: a `.lean` twin of one ledger line (the 84 zero-divisors, or the 35 quaternion XOR-triples) and a dry-run audit of a real release once the Alpöge archives are obtained (`alpo.ge`, 14 compressed archives; ask Cody before downloading about 250,000 pages of Lean).
