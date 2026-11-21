@@ -1,0 +1,395 @@
+So Tony, you and I posted today a video
+about AI progress on Yang Meals. And
+literally as I was pressing the publish
+button, thinking, "Oh, this is going to
+be great. It's really newsy and stuff."
+You sent me a message on WhatsApp
+saying, "The Reman hypothesis false."
+And I'm like, part of me was like, "Oh,
+did it have to be now?"
+>> Sorry, Betty. You should have dillydally
+making that video, mate. You took too
+long.
+>> I did take a while to edit it. I And AI
+is moving so quickly now that uh But
+like but like come on man the reman
+hypothesis I was trying to describe to
+my wife who who hasn't got a massive
+interest in mathematics how important
+this was and I I said this was like
+finding toot and car's tomb sort of
+level of amazingness.
+>> How did she react because I'm going to
+compare it to my wife's reaction and I
+just told her
+>> her reaction was there goes my weekend.
+>> Do you know how mine go? She goes her
+reaction was I said oh they've sold the
+re they've proved the reven hypothesis.
+read. Oh, that's so exciting. Like that
+really start.
+>> Yeah. Well, she's taking a Nikki.
+>> Oh, right. I was going to say, did she
+know what it was? No, she had no Okay.
+Okay. She was patronizing you basically.
+Okay.
+>> Yeah, exactly. Yeah. Well, it's it's
+wild, isn't it? It's wild.
+>> What's happened? How did you find out?
+Because you found out before me.
+Obviously, I was so busy making this
+other video that I didn't see social
+media. How did you find out what
+happened?
+>> Yeah. my my former PhD student who now
+is a colleague with me at Nottingham. He
+he texted me he texted me. He just said
+uh yeah they they've solved uh called
+solve the reman hypothesis. Do you want
+to know what my reaction was?
+>> Yeah.
+>> FFS. [laughter]
+I wasn't like I just wasn't very happy
+about it.
+>> Why?
+>> I just it's just like it's you know it's
+it's the holy grail of of mathematical
+proofs, right? and
+and it's just gone. I mean, well, has it
+gone? We don't know yet. We don't know
+any details yet, but but let's say it
+has, right? It's just that's it. I don't
+know. There's a It feels like, you know,
+when you I mean, I I'm not a number
+theorist, but, you know, it whenever
+people talk about what something to
+prove, can we prove, you know, something
+let's let's prove something in mathemat.
+The first thing you think about is the
+Reman hypothesis. It's it's just it's so
+iconic. It's always my example I use
+when I say to people imagine solving the
+reman hypothesis when I would talk about
+fame and glory of mathematics and things
+like that. So yeah, it's the completely
+it's completely iconic. It's it's it's
+so inspirational in terms of a problem.
+I mean I don't know why it's it's so
+much more so than some of the other
+other problems but it is it just seems
+maybe it's because it's related to prime
+numbers. Everybody thinks prime numbers
+are cool, right? You know I mean you can
+say a number to me and and I'll often oh
+I wonder if that's prime. It's just a
+weird nerdy thing like you know and then
+you you start to ask yourself and it
+it's related to prime numbers. Okay. And
+may maybe that's why people get so
+excited about it but it is so iconic and
+you know it's it it's more than the than
+the you know it's bigger than scoring a
+goal in a World Cup final. It's bigger
+than than uh winning the Champions
+League. In mathematical terms it's it's
+a legendary problem. Bernard Ree and
+he's such an iconic sort of figure in in
+uh [laughter]
+in in mathematics as well.
+>> How would you explain the problem to
+someone who you know wasn't deep in
+mathematics?
+>> Well, I mean that's a that's a tough
+one, isn't it? Because it it is quite a
+sort of bespoke mathematical problem. I
+mean we're talking to number file
+viewers here so they know if we say
+something about the remon za function
+and the location of its of its zeros
+then that has mean but you know if
+somebody's not into math then they're
+not going to they're not going to care
+about that. What I would say is is that
+it tells us something about the
+distribution of prime numbers and for
+some reason it seems to touch every so
+many other branches of mathematics and
+physics all over. It's this it's this
+ubiquitous mathematical problem that
+just touches everything.
+>> I mean I do get occasional emails and
+you probably do too and most
+mathematicians do from people saying or
+claiming to have solved the reman
+hypothesis and they haven't but this one
+this claim has been taken seriously
+pretty much straight away and that's
+because of the pedigree of it. Do you
+want to tell us who and how and what is
+behind it?
+>> Yes, of course it's it's our old friend
+Leavant again, right? to Levantel Poer
+and and working with Claude to uh I mean
+what a team they seem to be every single
+clay problem they're they're going after
+it various collaborators but this
+Leavant seems to be in there and you
+know Navier Stokes Yang Mills now now
+now this I mean it's literally building
+up I know he's going to go next because
+I don't can't go any higher and so they
+they they've been working on this
+problem
+>> you say they who who's going to go down
+in the history books. Will Leavant go
+down in the history books? Did is it AI?
+Is it is it is it a computer? Did it?
+Claude, you say Claude like it's a
+person. This is AI. Like, is is he the
+man? Is he is he the immortal man that
+solved the Reman hypothesis? Or did no
+human do it? I don't I don't know what
+to say or think. I
+>> I I mean, I don't know. Right. So, but
+but I think I think it's clear clear
+from sort of his communications things
+he says that he is interacting with
+Claude in a way that is is not trivial,
+right? It's not just like he's whacked
+into a um you know an LM LLM and just
+said oh solve the reman hypothesis for
+me this come on right this is this is
+sophisticated interaction lots of
+prompts you know this this is a
+sophisticated he is using AI
+in the most powerful way for mathematics
+that that one can imagine he's clearly a
+trailblazer in this respect right I mean
+I think he will go down in history as as
+a as somebody who's just cracking
+mathemat used this new tool in a way
+that others just haven't caught up with
+yet. I mean, it's remarkable. It's
+always his name attached to these
+things.
+>> I'll read something he wrote, Tony, in
+his statement he released today. He
+said, "Claude and I have had a great
+time together with such breadth in
+recent months, but this time Claude far
+outpaced me near the finish line." No,
+Claude flew and danced and sparkled near
+that finish line. It's getting a bit
+purple with the pros there, but
+>> he obviously sees almost Claude as
+I don't want to say human, but he he
+he's anthropomorphizing Claude to some
+extent there. So, he has this very clear
+he has a very strong relationship with
+this with this AI that and admires it. I
+mean, it is hard not to admire what the
+AI is doing. There's no doubt about it.
+I think it has to have the right person
+to talk talk with. If it doesn't, then
+it's not going to be prompted in the
+right directions. It's, you know, I
+still think you need that human
+intervention. Lavant seems to be the
+most impressive person at doing that
+from what we can tell at least given his
+sheer prolific uh nature of his of his
+results that just coming out time and
+time again.
+>> His statement says the precise timing is
+horrible. He's referring to the fact
+that an anthropic just had its IPO just
+sort of went public and all the shares
+are being sold and and and a lot of
+cynical people will say, "Oh, it's
+interesting time to announce this when
+you want the share price to go up and
+stuff like that." But he's he calls this
+a cynical view and he's very insistent
+that there was no uh deliberate timing.
+The timing just happened. This is when
+the answer got spat out at him from the
+from the computer. He he's very
+insistent that there's no
+>> one, isn't it? I mean, I just I haven't
+got the the uh the post in front of me,
+but I did look at it, but I think the
+last event that he he lists dates all
+the events and how different proven,
+right? And the last one, isn't it isn't
+it the the 11th? No, I I'm reading the
+dates the wrong way around.
+>> It was on the I think it happened on the
+weekend and I think he called the boss
+of Anthropic and said I've got the Reman
+hypothesis and they're kind of and he
+thought this was as late as he could
+leave announcing it without appearing to
+be trying to play funny with the uh with
+the stock the stock market and the
+float. But uh there's going to be a lot
+of comments about it. Uh he's ready for
+it. There's also going to be a lot of
+comments about you know is he the savior
+of mathematics? Is he the hero of
+mathematics or is he the destroyer of
+mathematics? And I think that's probably
+going through his head too. Here's
+another statement from him. Tony, it is
+natural to feel that this is an end in
+my case, a loss of a principle guiding
+light. But what I saw during the course
+of progress so amazed me that I believe
+it is one dawn across science of
+something far greater. So he thinks this
+is this is he's opening a whole new can
+of worms for mathematics. He thinks
+>> Yeah. Right. So So I think that sounded
+really sarky, didn't it? I said I didn't
+mean it to sound like that. I mean,
+look, it it's so he's obviously a
+somebody who's been inspired by by this
+holy grail of mathematical problems as
+so many other mathematicians have,
+right? So, it's inspired him. He is
+where he is today largely because of
+things like the dreaming about the the
+Reman hypothesis and he's been lucky
+enough to to you know to to alongside
+this incredible tool that that he's
+helped develop solve it, right? And does
+he it's understandable that he feels a
+sort of not a sadness to that but but um
+is it I don't know it's just like it's
+your life's goal and then you achieve it
+and then then what next right you know
+it's like going into space what do you
+do when you get home right
+>> a lot of astronauts who went to the moon
+had that feeling as they were coming
+back from the moon it's like what what
+am I going to do now
+>> yeah exactly was just going down to
+little just doesn't have the same appeal
+as as that right but at the same time
+what does it mean next though I I think
+we don't know the answer to that that's
+the reality this is all ready we got
+caught on the hot by this right we were
+putting out young mills video banging on
+about young mills when suddenly AI just
+overtaken us and was talking about even
+hypothesis right so so you know this is
+all moving so quickly it's moving to so
+quickly for too quickly for number val
+it's moving too quickly for mathematics
+we don't know what the next problem to
+dream about is right you know previously
+it was things like reman hypothesis were
+built over all this time it's 150 years
+old or whatever60 60 years old. It's
+been around for ages and people have
+been dreaming about it for ages and so
+it was a slow bayet. Now we're entering
+a new age. What what are going to be the
+things that we need to dream about? Is
+it even going to be us that are dreaming
+about them or is it just the AI that
+dreams about them?
+>> Tony, I'm I've got the statement here
+again from Lavant and he hasn't released
+the proof itself, which I think is
+thousands of pages and involves all
+sorts of incredible mathematics that he
+didn't even think would be involved. But
+he's not releasing that. He says, "It
+would be obviously inappropriate to
+attempt to post some massive unreadable
+travesty of slop. I've decided to only
+present lean." Can you explain what a
+mathematician means when they talk about
+lean? Yeah, lean is is basically this
+this sort of language that that of
+mathematical proofs whereas if you so
+you you you write the mathematical proof
+in this in this language lean and what's
+really clever about it is is if you it
+won't compile essentially and I'm no
+expert on this but it my understanding
+is it won't compile unless the proof is
+correct unless the proof is
+self-consistent and makes sense. So
+that's that's the gist of lean right. So
+so getting a lean a lean proof to
+compile is is the goal right in in this
+sense. So if it compiles then the proof
+should work. But what can often happen
+actually is when you when you trans so
+obviously lean is not a human language
+it's a computer language to some extent
+right so if you want to you want to
+translate that into human language right
+and sometime and often in these AI
+proofs that that translation is done
+itself by the AI and sometimes it can
+mistransate actually right so and and
+actually this happened with the um Navio
+Stokes proof so the Navio Stokes proof
+the lean proof and the and the uh Navier
+Stokes and and a sort of human let's
+call it the human proof even the human
+language proof we're not quite aligned.
+Um that doesn't mean that the lean proof
+is wrong or anything. It's just that the
+translation of gone. So so we do have to
+be a bit careful sometimes with with
+these things but but yeah so that's
+that's my rough understanding of what
+lean is amazing. Any any last words
+before you uh go off into the night and
+cry over uh having
+>> no more no more nations to conquer? I'm
+off to the cinema raising. I'm gonna be
+thinking about bloody reman hypothesis.
+What's going on, mate? What's going on?
+I don't know. Just they need to leave us
+something to do, right? Or we need to
+figure out what we do in this in this in
+this post AI world. All right. Well, we
+I'm sure we will talk again about this
+and I'm hoping to talk to some other
+people in the, you know, about reman
+hypothesis because it's such a big deal.
+Uh but yeah, I wanted to get your first
+reaction and uh I also wanted to explain
+to you why our young meals video is
+probably tanking right now. [laughter]
+It'll probably be the opposite of radio
+be the opposite of everyone will be
+wanting to hear about reman hypothesis.
+>> Is the reman hypothesis going to fall
+soon?
+>> No, they have clear the AI companies
+have clearly I I'm sure they have
+secretly devoted much more time to the
+re hypothesis than what they've
+disclosed. Um and they couldn't touch
+it. I mean something beyond current AI
+is needed. So maybe some combination of
+humans and AIs in 2050 or something will
+make a further progress. Who knows?
+really important information about the
+prime numbers.
+>> What information? What does it tell you
+that you don't already know?
+>> Um, well, it tells us things we already
+suspect because we sort of believe the
+reman hypothesis true, but the things we
+can't prove. So, for example, how many
+primes are there up to a trillion? We
+have a formula for that that we believe
+is true.
