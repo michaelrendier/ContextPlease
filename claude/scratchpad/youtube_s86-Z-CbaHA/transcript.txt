@@ -1,0 +1,389 @@
+Hey, Vsauce. Michael here. There's a famous way
+to seemingly create chocolate out of nothing.
+Maybe you've seen it before. This chocolate bar is
+4 squares by 8 squares, but if you cut it like this
+and then like this and finally like this
+you can rearrange the pieces like so
+and wind up with the same 4 by 8
+bar but with a leftover piece, apparently created
+out of thin air. There's a popular animation of this illusion
+as well. I call it an illusion because
+it's just that. Fake. In reality,
+the final bar is a bit smaller. It contains
+this much less chocolate. Each square along the cut is shorter than it was in
+the original,
+but the cut makes it difficult to notice right away. The animation is
+extra misleading, because it tries to cover up its deception.
+The lost height of each square is surreptitiously
+added in while the piece moves to make it hard to notice.
+I mean, come on, obviously you cannot cut up a chocolate bar
+and rearrange the pieces into more than you started with.
+Or can you? One of the strangest
+theorems in modern mathematics is the Banach-Tarski
+paradox.
+It proves that there is, in fact, a way to take an object
+and separate it into 5
+different pieces.
+And then, with those five pieces, simply
+rearrange them. No stretching required into
+two exact copies of the original
+item. Same density, same size,
+same everything.
+Seriously. To dive into the mind blow
+that it is and the way it fundamentally questions math
+and ourselves, we have to start by asking a few questions.
+First, what is infinity?
+A number? I mean, it's nowhere
+on the number line,  but we often say things like
+there's an infinite "number" of blah-blah-blah.
+And as far as we know, infinity could be real.
+The universe may be infinite in size
+and flat, extending out for ever and ever
+without end, beyond even the part we can observe
+or ever hope to observe.
+That's exactly what infinity is. Not a number
+per se, but rather a size. The size
+of something that doesn't end. Infinity is not the biggest
+number, instead, it is how many numbers
+there are. But there are different sizes of infinity.
+The smallest type of infinity is
+countable infinity. The number of hours
+in forever. It's also the number of whole numbers that there are,
+natural number,  the numbers we use when counting
+things, like 1, 2, 3, 4, 5, 6
+and so on. Sets like these are unending,
+but they are countable. Countable means that you can count them
+from one element to any other in a
+finite amount of time, even if that finite amount of time is longer than you
+will live
+or the universe will exist for, it's still finite.
+Uncountable infinity, on the other hand, is literally
+bigger. Too big to even count.
+The number of real numbers that there are,
+not just whole numbers, but all numbers is
+uncountably infinite. You literally cannot count
+even from 0 to 1 in a finite amount of time by naming
+every real number in between. I mean,
+where do you even start? Zero,
+okay.  But what comes next? 0.000000...
+Eventually, we would imagine a 1
+going somewhere at the end, but there is no end.
+We could always add another 0. Uncountability
+makes this set so much larger than the set of all whole numbers
+that even between 0 and 1, there are more numbers
+than there are whole numbers on the entire endless number line.
+Georg Cantor's famous diagonal argument helps
+illustrate this. Imagine listing every number
+between zero and one. Since they are uncountable and can't be listed in order,
+let's imagine randomly generating them forever
+with no repeats. Each number regenerate can be paired
+with a whole number. If there's a one to one correspondence between the two,
+that is if we can match one whole number to each real number
+on our list, that would mean that countable
+and uncountable sets are the same size. But we can't do that,
+even though this list goes on for
+ever. Forever isn't enough. Watch this.
+If we go diagonally down our endless list
+of real numbers and take the first decimal of the first number
+and the second of the second number, the third of the third and so on
+and add one to each, subtracting one
+if it happens to be a nine, we can generate a new
+real number that is obviously between 0 and 1,
+but since we've defined it to be different
+from every number on our endless list and at least one place
+it's clearly not contained in the list.
+In other words, we've used up every single whole number,
+the entire infinity of them and yet we can still
+come up with more real numbers. Here's something else that is true
+but counter-intuitive. There are the same number
+of even numbers as there are even
+and odd numbers. At first, that sounds ridiculous. Clearly, there are only half
+as many
+even numbers as all whole numbers, but that intuition is wrong.
+The set of all whole numbers is denser but
+every even number can be matched with a whole number.
+You will never run out of members either set, so this one to one correspondence
+shows that both sets are the same size.
+In other words, infinity divided by two
+is still infinity.
+Infinity plus one is also infinity.
+A good illustration of this is Hilbert's paradox
+up the Grand Hotel. Imagine a hotel
+with a countably infinite number of rooms. But now,
+imagine that there is a person booked into every single room.
+Seemingly, it's fully booked, right? No.
+Infinite sets go against common sense.
+You see, if a new guest shows up and wants a room,
+all the hotel has to do is move the guest in room number 1
+to room number 2. And a guest in room 2 to room 3 and 3 to 4 and 4 to
+5 and so on.
+Because the number of rooms is never ending
+we cannot run out of rooms. Infinity
+-1 is also infinity again.
+If one guest leaves the hotel, we can shift
+every guest the other way. Guest 2 goes to room 1,
+3 to 2, 4 to 3 and so on, because we have an
+infinite amount of guests. That is a never ending supply of them.
+No room will be left empty. As it turns out,
+you can subtract any finite number from infinity
+and still be left with infinity. It doesn't care.
+It's unending. Banach-Tarski hasn't left our sights yet.
+All of this is related. We are now ready to move on
+to shapes. Hilbert's hotel can be applied
+to a circle. Points around the circumference can be thought of as
+guests. If we remove one point from the circle
+that point is gone, right? Infinity tells us
+it doesn't matter. The circumference of a circle
+is irrational. It's the radius times 2Pi.
+So, if we mark off points beginning from the whole,
+every radius length along the circumference going clockwise
+we will never land on the same point twice,
+ever. We can count off each point we mark
+with a whole number. So this set is never-ending,
+but countable, just like guests and rooms in Hilbert's hotel.
+And like those guests, even though one has checked out,
+we can just shift the rest. Move them
+counterclockwise and every room will be filled
+Point 1 moves to fill in the hole, point 2
+fills in the place where point 1 used to be, 3 fills in 2
+and so on. Since we have a unending supply of numbered points,
+no hole will be left unfilled.
+The missing point is forgotten. We apparently never needed it
+to be complete. There's one last needo consequence of infinity
+we should discuss before tackling Banach-Tarski. Ian Stewart
+famously proposed a brilliant dictionary.
+One that he called the Hyperwebster. The Hyperwebster
+lists every single possible word of any length
+formed from the 26 letters in the English alphabet.
+It begins with "a," followed by "aa,"
+then "aaa," then "aaaa."
+And after an infinite number of those, "ab,"
+then "aba," then "abaa", "abaaa,"
+and so on until "z, "za,"
+"zaa," et cetera, et cetera, until the final entry in
+infinite sequence of "z"s. Such
+a dictionary would contain every
+single word. Every single thought,
+definition, description, truth, lie, name,
+story. What happened to Amelia Earhart would be
+in that dictionary, as well as every single thing that
+didn't happened to Amelia Earhart.
+Everything that could be said using our
+alphabet. Obviously, it would be huge,
+but the company publishing it might realize that they could take
+a shortcut. If they put all the words that begin with
+a in a volume titled "A,"
+they wouldn't have to print the initial "a." Readers would know to just add the "a,"
+because it's the "a" volume. By removing the initial
+"a," the publisher is left with every "a" word
+sans the first "a," which has surprisingly
+become every possible word. Just one
+of the 26 volumes has been decomposed into the entire thing.
+It is now that we're ready to investigate this video's
+titular paradox. What if we turned an object,
+a 3D thing into a Hyperwebster?
+Could we decompose pieces of it into the whole thing?
+Yes. The first thing we need to do
+is give every single point on the surface of the sphere
+one name and one name only. A good way to do this is to name them after how they
+can be reached by a given starting point.
+If we move this starting point across the surface of the sphere
+in steps that are just the right length, no matter how many times
+or in what direction we rotate, so long as we never
+backtrack, it will never wind up in the same place
+twice. We only need to rotate in four directions to achieve this paradox.
+Up, down, left and right around
+two perpendicular axes. We are going to need
+every single possible sequence that can be made
+of any finite length out of just these four rotations.
+That means we will need lef, right,
+up and down as well as left left,
+left up, left down, but of course not
+left right, because, well, that's backtracking. Going left
+and then right means you're the same as you were before you did anything, so
+no left rights, no right lefts and no up downs and
+no down ups. Also notice that I'm writing the rotations in order
+right to left, so the final rotation
+is the leftmost letter. That will be important later on.
+Anyway. A list of all possible sequences of allowed rotations that are finite
+in lenght is, well,
+huge. Countably infinite, in fact.
+But if we apply each one of them to a starting point
+in green here and then name the point we land on
+after the sequence that brought us there, we can name
+a countably infinite set of points on the surface.
+Let's look at how, say, these four strings on our list would work.
+Right up left. Okay, rotating the starting point this way takes
+us here. Let's colour code the point based on the final rotation in its string,
+in this case it's left and for that we will use
+purple. Next up down down.
+That sequence takes us here. We name the point DD
+and color it blue, since we ended with a down
+rotation. RDR, that will be this point's name,
+takes us here. And for a final right rotation,
+let's use red. Finally, for a sequence that end with
+up, let's colour code the point orange.
+Now, if we imagine completing this process for
+every single sequence, we will have a countably infinite number of points
+named
+and color-coded. That's great, but
+not enough. There are an uncountably
+infinite number of points on a sphere's surface.
+But no worries, we can just pick a point we missed.
+Any point and color it green, making it
+a new starting point and then run every sequence
+from here. After doing this to an
+uncountably infinite number of starting point we will have indeed
+named and colored every single point on the surface
+just once. With the exception
+of poles. Every sequence has two poles of rotation.
+Locations on the sphere that come back to exactly where they started.
+For any sequence of right or left
+rotations, the polls are the north and south poles.
+The problem with poles like these is that more than one sequence can lead us
+to them.
+They can be named more than once and be colored
+in more than one color. For example, if you follow some other sequence to the
+north or south pole,
+any subsequent rights or lefts will
+be equally valid names. In order to deal with this we're going to just count them out
+of the
+normal scheme and color them all yellow. Every sequence has two,
+so there are a countably infinite amount
+of them. Now, with every point on the sphere given just
+one name and just one of six colors, we are ready to take the entire sphere
+apart. Every point on the surface corresponds to a unique line of points
+below it
+all the way to the center point. And we will be dragging
+every point's line along with it. The lone center point
+we will set aside. Okay, first we cut out and extract all the yellow
+poles, the green starting points, the
+orange up points, the blue down points
+and the red and purple left and right points.
+That's the entire sphere. With just
+these pieces you could build the whole thing. But take a look at the left piece.
+It is defined by being a piece composed of
+every point, accessed via a sequence ending
+with a left rotation. If we rotate this piece
+right, that's the same as adding an "R" to
+every point's name. But left and then right
+is a backtrack, they cancel each other out. And look what happens when you
+reduce
+them away. The set becomes the same
+as a set of all points with names that end with L,
+but also U, D and every point reached
+with no rotation. That's the full set of starting points.
+We have turned less than a quarter of the sphere into nearly three-quarters
+just by rotating it. We added nothing. It's like the Hyperwebster. If we had the right
+piece
+and the poles of rotation and the center point, well, we've got the entire sphere
+again, but with stuff left over. To make a second copy,
+let's rotate the up piece down. The
+down ups cancel because, well, it's the same as going nowhere
+and we're left with a set of all starting points, the entire
+up piece, the right piece and the left piece, but there's a problem here.
+We don't need this extra set of starting points. We still haven't
+used the original ones. No worries, let's just start over.
+We can just move everything from the up piece
+that turns into a starting point when rotated down.
+That means every point whose final rotation is up. Let's put them
+in the piece. Of course, after rotating points named
+UU will just turn into points named U, and that would give us a copy here
+and here. So, as it turns out, we need to move
+all points with any name that is just a string of Us.
+We will put them in the down piece and rotate the up
+piece down, which makes it congruent to the up right
+and left pieces, add in the down piece along with some up
+and the starting point piece and, well, we're almost done.
+The poles of rotation and center are missing
+from this copy, but no worries. There's a countably
+infinite number of holes, where the poles of rotations used to be,
+which means there is some pole around which we can rotate this sphere such that
+every pole hole orbits around without hitting another.
+Well, this is just a bunch of circles with one point missing.
+We fill them each like we did earlier. And we do the same for the centerpoint.
+Imagine a circle that contains it inside the sphere
+and just fill in from infinity and look what we've done.
+We have taken one sphere and turned it into two identical spheres
+without adding anything.
+One plus one equals 1. That took
+a while to go through, but the implications are huge.
+And mathematicians, scientists and philosophers are still debating them.
+Could such a process happen in the real world?
+I mean, it can happen mathematically and math allows us to abstractly predict and
+describe a lot of things in the real world
+with amazing accuracy, but does the Banach-Tarski paradox
+take it too far? Is it a place where math and physics
+separate? We still don't know.
+History is full of examples of mathematical concepts developed in the
+abstract
+that we did not think would ever apply to the real world
+for years, decades, centuries, until eventually science caught up and
+realized they were totally applicable
+and useful. The Banach-Tarski paradox could actually happen in our real-world,
+the only catch of course is that the five pieces you cut your object into
+aren't simple shapes. They must be infinitely complex
+and detailed. That's not possible to do in the real world, where measurements can
+only get so small
+and there's only a finite amount of time to do anything, but math says it's
+theoretically valid and some scientists
+think it may be physically valid too.
+There have been a number of papers published suggesting
+a link between by Banach-Tarski
+and the way tiny tiny sub-atomic particles
+can collide at high energies and turn into more particles
+than we began with.
+We are finite creatures. Our lives
+are small and can only scientifically consider a small part of
+reality. What's common for us is just
+a sliver of what's available. We can only see so much of the electromagnetic
+spectrum.
+We can only delve so deep into extensions of space.
+Common sense applies to that which we can
+access. But common sense is just that.
+Common. If total sense
+is what we want, we should be prepared to accept that we shouldn't call infinity
+weird or strange.
+The results we've arrived at by accepting it are valid,
+true within the system we use to understand, measure, predict and order the
+universe.
+Perhaps the system still needs perfecting, but at the end of day,
+history continues to show us that the universe isn't strange.
+We are.
+And as always,
+thanks for watching.
+Finally, as always, the description is full of links to learn more.
+There are also a number of books linked down there that really helped me
+wrap my mind kinda around Banach-Tarski.
+First of all, Leonard Wapner's "The Pea and the Sun." This book is fantastic and it's full of
+lot of the preliminaries needed
+to understand the proof that comes later. He also talks a lot about the
+ramifications
+of what Banach-Tarski and their theorem might mean for mathematics.
+Also, if you wanna talk about math and whether it's discovered or invented,
+whether
+it really truly will map onto the universe, Yanofsky's
+"The Outer Limits of Reason" is great.
+This is the favorite book of mine that I've read this entire year. Another good one is E.
+Brian Davies'
+"Why Beliefs Matter." This is actually Corn's favorite book,
+as you might be able to see there. It's delicious and full of lots of great
+information about the limits of what we can know
+and what science is and what mathematics is.
+If you love infinity and math, I cannot more highly recommend Matt Parker's
+"Things to Make and Do in the Fourth Dimension." He's hilarious and this book
+is
+very very great at explaining some pretty awesome things.
+So keep reading, and if you're looking for something to watch,
+I hope you've already watched Kevin Lieber's film on
+Field Day. I already did a documentary about Whittier, Alaska over there.
+Kevin's got a great short film about putting things out on the Internet
+and having people react to them. There's a rumor that Jake Roper might be doing
+something on Field Day soon.
+So check out mine, check out Kevin's and
+subscribe to Field Day for upcoming Jake Roper action, yeah?
+He's actually in this room right now, say hi, Jake. [Jake:] Hi. Thanks for filming this, by
+the way.
+Guys, I really appreciate who you all are.
+And as always,
+thanks for watching.
