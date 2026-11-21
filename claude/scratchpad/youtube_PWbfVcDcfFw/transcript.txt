@@ -1,0 +1,866 @@
+I am standing on the Harvard Bridge in
+Boston, Massachusetts, United States.
+Well, in the video I am.
+I'm recording the audio
+in post because I don't
+want to talk into the wind.
+This bridge is famous for its
+length being measured in smoots.
+A smoot was the height of Oliver Smoot,
+a student at MIT in 1958,
+who lay himself across the bridge
+over and over to measure its length.
+I said in the previous Cursed Units
+video that I wouldn't talk about
+joke units like smoots, but
+I just happened to be in Boston,
+so I might as well take the
+opportunity while I'm on
+the other side of the globe.
+According to the markings,
+the whole bridge is 364.4 smoots
+plus or minus an ear.
+Apparently the "e" in "ear" was
+originally spelt as an epsilon,
+like an error term, although
+it looks like that detail
+has disappeared in refurbishments.
+Now, if you ask me,
+I would have expected
+a much larger measurement uncertainty
+than 1 ear. But maybe Mr Smoot had
+especially large ears, I don't know.
+Though, I'd rather not criticise
+Smoot for the quality of his work,
+because the entire endeavour was
+effectively a hazing ritual
+for his fraternity Lambda Chi Alpha.
+Smoot was chosen for the task of
+measuring the Harvard Bridge
+because he was the shortest
+in the class, and would have to
+lay down and get up the most.
+As someone living outside the US
+where we don't typically have
+college fraternities,
+this sounds like a cult.
+But here's the thing.
+The smoot is not a cursed unit,
+at least not in my opinion.
+It was designed for a single
+purpose with an appropriate
+level of precision, and has
+remained pretty much unchanged
+ever since. It's just a length,
+it doesn't have much physical
+complexity or significance.
+And it hasn't been used in any
+absurd or inappropriate ways either
+(with the exception of the
+hazing ritual of course).
+The smoot hasn't existed for
+long enough to do anything cursed.
+No, the real cursed units of length are
+the ones that have history behind them.
+The ones that have been repeatedly
+revised and replaced until they are
+just a simulacrum of
+their original design.
+The real cursed units are
+the ones we don't question
+because they're so common,
+the ones we take for granted.
+The real cursed units of length
+are the foot and the mile,
+because for some reason,
+a mile is exactly 5280 feet.
+Now, it wasn't always this way.
+The mile used to be a
+perfectly round 5000 feet.
+So what went wrong? Why did humanity
+decide to change the ratio between
+two of the most commonly used units
+of length to a large multiple of 11?
+To understand where these units
+came from, and how they got warped
+beyond recognition, we need to go
+all the way back to ancient Rome.
+In the Roman empire, a pace (or passus)
+was the distance of 2 footsteps,
+and a foot was defined
+as a fifth of a pace.
+The roads of the Roman empire were
+delineated with stone markers
+placed every 1000 paces.
+These were engraved with the number
+of miles from a particular city,
+a mile being a thousand paces.
+This is the origin of the
+word "milestone",
+and the word "mile" derives from
+the Latin "mille" meaning "thousand".
+Wait a minute, if mille is a thousand
+then where did word million come from?
+What...? Anyway.
+1000 paces in a mile, 5 feet in
+a pace, so 5000 feet in a mile.
+Perfectly sensible. And this system
+spread across Europe thanks to
+the dominance of the Roman Empire.
+But then, around 1000 AD,
+a different standard emerged
+from the agricultural sector
+of England, which would also
+spread to the rest of Europe
+via the British Empire.
+An acre was a long stretch of land
+that's approximately the area
+a pair of oxen can plough in a day.
+An acre is one chain by one furlong,
+a furlong being 10 chains.
+A chain is 4 rods, and a rod
+is a long metal stick used for
+surveying land for tax purposes.
+Another perfectly sensible
+system, I think.
+So what went wrong? Well,
+the first thing that went wrong
+was someone measured the length of
+one of those metals rods in feet,
+and got 16 and a half feet.
+A nice round 33 divided by 2.
+And this became the standard
+definition of the rod in the
+English legal system somewhere
+around 1400 or 1500 AD.
+There seems to be disagreement on the
+history of why everyone suddenly found
+feet so important when the taxation
+system was previously using rods.
+The British isles were invaded
+quite a lot during the middle ages,
+and every invader seemed to want to
+introduce their own units.
+But for some reason,
+despite the foot being
+formalised in a statute, the mile
+took another century to settle down.
+A "mile" stayed as a generally vague
+long unit until, during the reign of
+Queen Elizabeth I, it was pinned down
+to a value of 8 furlongs.
+Once again, there's not a lot of
+good data on why the mile was
+changed to this value in particular.
+One explanation is that the furlong
+was conflated with the Roman stadion
+which was an 8th of a mile.
+I found an article claiming that
+Wycliffe's translation of the
+Christian Bible into English directly
+translates "stadion" into "furlong",
+and perhaps this
+solidified the connection.
+Whatever the case, a mile is now
+8 furlongs, a furlong is 10 chains,
+a chain is 4 rods, and
+a rod is 16 and a half feet.
+So in total, one mile is 5280 feet.
+Then that entire system got
+transported to America where
+it got baked into United States
+law and bureaucracy, and then
+curled up and hid itself from the
+metric system emerging in Europe,
+and that's where we are today.
+So in short, feet and miles are
+related in such a horrible way
+because they are each
+independently grafted onto
+another incompatible set of units
+that has mostly fallen out of usage.
+This brings me to what I think is
+the most cursed US customary unit,
+the acre-foot, a unit of volume still
+used today for water reservoir capacity.
+An acre-foot is about
+twelve hundred cubic metres.
+It's a foot times a chain
+times a furlong, and it's a
+horrible merger of two systems that
+never should have been combined.
+...Wait, why are we in
+the screen transition?
+Go back, I'm not done
+with imperial units!
+You see, the acre-foot is not the most
+common imperial unit of volume.
+Not by a long shot. Probably
+the most common one is the gallon,
+which is used for volumes
+of liquids like water or fuel.
+But we have to be careful here,
+because there are two different
+systems of units we
+could be talking about:
+imperial units, and US customary units,
+and they have different gallons.
+Imperial units are the ones used
+in the UK and few other places,
+with the word "imperial" referring
+to the British Empire.
+US customary units are a
+separate system which
+Americans often incorrectly
+refer to as "imperial units."
+They have some overlap,
+notably feet and miles
+(well, almost; we'll get to that later)
+but there are some big differences
+as well. Both systems have a unit
+called the gallon, and the two
+gallons are not the same. At all.
+The imperial gallon is about
+1.2 times the US gallon.
+That's a pretty big difference!
+How did that happen?
+Well, prior to the 1800s, there were
+a lot of different types of gallon,
+usually used for measuring
+various alcohols.
+The modern imperial unit
+evolved from the ale gallon,
+while the modern US unit
+evolved from the wine gallon.
+Let's see how these came to be defined.
+The wine gallon is defined as
+231 cubic inches.
+That's 3 times 7 times 11.
+Now, I searched far and wide,
+and only found one vaguely convincing
+explanation for this number,
+from a website which references
+a 1706 English statute.
+231 cubic inches could be the volume
+of some standardised container,
+which might have been a cylinder with
+height 6 inches and diameter 7 inches.
+Well, almost. The volume of a cylinder
+involves a factor of pi,
+an irrational number.
+To get 231, you have to use the classic
+approximation pi=22/7. Fantastic.
+It's likely that the wine gallon
+existed before this definition,
+and the numbers 6 and 7 were chosen
+to match it for historical consistency
+(and not because they would
+become a meme in 2025).
+Or perhaps the whole standard
+wine cylinder thing is just
+grasping at straws. I have no idea.
+Anyway, let's see if the
+imperial gallon is any better.
+An ale gallon is the volume
+of 10 pounds of water.
+Well that sounds very reasonable,
+except for one minor detail:
+the pound has absolutely no relation to
+any of the other units I've mentioned.
+It evolved from the Roman libra
+(from which we get the symbol lb),
+and I would have expected that
+the Roman libra was some object
+based on the foot, similarly to
+how we define the gram to be the
+mass of a cubic centimetre of water.
+But no. As far as I can tell,
+it's just some random weight.
+Which means imperial gallons do not
+have a nice ratio with cubic inches,
+not even one involving pi.
+The imperial gallon
+is about 277.4 cubic inches,
+and that number doesn't have
+any special historical origin.
+There's a bunch of other units
+of volume derived from gallons,
+but since the US and imperial gallon
+come from different units,
+these derivations are also different.
+For example, a fluid ounce is
+the volume of an ounce of water,
+an ounce being a 16th of a pound.
+This means that a fluid ounce is
+a 160th of an imperial gallon,
+but also a 128th of a US gallon,
+with these ratios originating
+from the ale and wine gallons
+I described earlier.
+So at least the fluid ounce is
+uniform between the two systems.
+But wait a minute... didn't I say
+that the imperial gallon is
+1.2 times the US gallon? 128 times 1.2
+is not 160. It's about 154.
+So the fluid ounce is not uniform!
+The US fluid ounce is about 4% bigger
+than the imperial fluid ounce.
+It's not 20% like the gallon, but I
+think 4% is still pretty substantial.
+So to recap, gallons are different
+in the US and the UK, so the ratio
+between gallons and fluid ounces in
+each system attempts to correct this.
+But the correction is wrong,
+so fluid ounces are still different
+between the two systems!
+Quarts and pints are defined in terms
+of the gallon using the same ratios
+in both systems, which means they
+are off by a factor of 1.2 as well.
+Meanwhile, cups, tablespoons and
+teaspoons are all over the place.
+Conventionally a tablespoon is half
+a fluid ounce, but then there's
+disagreement on how many teaspoons
+are in a tablespoon. Today, however,
+it seems like cookbook authors and
+utensils manufacturers have accepted
+that everything should just be in
+millilitres, aka cubic centimetres,
+and this has lead to a new
+metricised system of volumes.
+Unfortunately, even after converting
+to metric, we're still inconsistent:
+a "metric cup" is often
+250 millilitres,
+but the "US legal cup" used
+for food labels is 240.
+Fortunately, everyone seems to agree
+on the smaller metricised units:
+a teaspoon is exactly 5ml, and a
+tablespoon is exactly 15ml.
+...Unless you are in Australia,
+where our tablespoon is 20ml!
+This is a weird instance where Australia
+is somehow more British than the UK.
+The unit of 1 teaspoon originated
+from the British fluid drachm
+which was a quarter of a tablespoon,
+but teaspoons had experienced
+a sort of inflation in 1800s,
+so the US ended up changing the ratio
+to a third instead of a quarter.
+And when everything got metricised,
+the rest of the world followed them.
+But not us. We stuck with the empire,
+because it's 4 teaspoons
+in a tablespoon, not three!
+We derived the exact value of the
+teaspoon from the US system,
+but derived the teaspoon-tablespoon
+ratio from the imperial system.
+And just to prove that this is a real
+thing and I'm not talking bollocks,
+I took a trip to supermarket.
+This is a 15ml tablespoon,
+and this is a 20ml tablespoon.
+...Look, I'm sorry. We're really sorry.
+Australia is normally good with units.
+This is like the only weird one I swear.
+No, I'm still not done. I need to
+go back to pounds for a second.
+In the first Cursed Units video,
+I explained how physical constants
+need to be translated between
+different units, and gave an example
+where I put the gravitational
+constant in feet and pounds.
+This apparently left a lot of
+viewers very confused, because
+they had been taught that the pound
+was a unit of force like the Newton,
+not a unit of mass like the kilogram.
+This was my mistake, but also
+everyone else's mistake,
+and also just the mistake of humanity
+in general, because it turns out that
+there is both a pound-force
+and a pound-mass!
+A pound-force is the gravitational
+force exerted by an object with a
+mass of 1 pound-mass on Earth.
+Historically, mass and weight
+were conflated with one another,
+which is why we have this confusion.
+But notice that the relation between
+the pound-mass and pound-force
+is not the same as the relation
+between mass and force units
+in the metric system.
+A Newton is exactly 1 kilogram
+times a metre per second squared.
+In other words, a Newton is the
+force required to accelerate a
+1 kilogram object by
+1 metre per second every second.
+The pound-force on the other hand is
+the pound-mass times the gravitational
+acceleration at the Earth's surface.
+This is only useful if the force
+you are describing is gravity,
+and specifically gravity on Earth.
+On the moon, a pound-mass weighs
+a lot less than a pound-force.
+Now, around 1900 there were already
+derived units based on the pound-force,
+things like the pound-foot for torque
+and pounds-per-square-inch for pressure.
+So eventually various fields and
+industries came around to the idea
+that we shouldn't be using
+the pound-mass anymore,
+and a new unit of mass was
+invented, called the slug.
+A slug is the mass of an object which
+accelerates by 1 foot per second
+every second when you apply a
+force of 1 pound-force to it.
+Since gravity at the Earth's surface
+is about 32 feet per second squared,
+a slug is about 32 times the pound-mass.
+The consequence of all of this is
+a lot of YouTube commenters patiently
+explaining to me that, in fact,
+the pound-mass does not exist, and
+I should be using the slug instead.
+Now, the reason I made this mistake
+is because, as I have mentioned,
+I grew up in Australia where
+everything is metric. But that
+also means I have no touchstone
+on how common these units are.
+I've seen a lot of people argue
+that when you see the word "pound"
+you should always assume that
+it's a force. I've also seen
+a lot of people remark that they
+have never seen the slug before,
+or that it's barely ever used.
+So I actually have no idea
+how Americans measure mass!
+By the way, there's another mass unit
+derived from the pound-force
+using the inch instead of the foot.
+It's called the "slinch" along with
+a bunch of other ridiculous names.
+But confusingly, for a fixed force,
+mass has an inverse relationship
+with acceleration.
+So the slinch is 12 times bigger
+than the slug, not smaller.
+We can never reach the bottom
+of the abyss that is
+customary and historical units.
+We could talk about how miles
+are different from nautical miles,
+a 60th of a degree
+of the Earth's circumference,
+from which the knot is derived.
+We could talk about the
+British Thermal Unit being
+the energy required to raise 1 pound
+of water by 1 degree Fahrenheit.
+Ah, but the heat capacity of water
+depends very slightly on temperature
+and pressure, so what conditions
+are using to define the BTU?
+You could be half a percent off.
+We could talk about how the calorie
+is actually a thousand calories
+depending on who you're speaking to.
+We could talk about how we divide
+the day into 24 parts, then 60, then 60
+again, and then 1000s, and somehow
+this awful system is the only system
+that we all agree on across the globe.
+Just kidding, we don't agree. Add this
+Computerphile interview with Tom Scott
+to your "watch later" list.
+During the metric revolution there was
+attempt to introduce decimal time,
+but it didn't catch on. But that's
+not the worst failed decimalisation;
+did you know that there exist
+tape measures delineated in
+tenths of a foot? This was
+brought to my attention by
+Alexander The Ok in his video on
+the horrific units of oil drilling,
+which he cites as a major reason for
+him leaving the industry. Add that
+to your "watch later" list as well.
+We could talk about how both
+of the words "inch" and "ounce"
+come from the Latin word
+"uncia" meaning "twelfth",
+but an ounce is a 16th of
+a pound and not a 12th.
+RobWords talks about this in his video
+on the etymology of different units.
+Add that to your "watch later" list.
+Hey, the word "pound" also refers
+to British currency right?
+That's because it was the value of
+a pound of silver, minted into
+240 pennies or 20 shillings.
+Except now the shilling is
+deprecated and there's 100 pennies
+in a pound, because the government
+got sick of all the ridiculous
+coinage and shifted to decimal.
+Did you know that Britain
+used to have a 2 shilling coin,
+and also a 2-and-a-half shilling coin?
+You should watch this old video
+by BritMonkey who talks
+about predecimal currency.
+I'm giving you a lot of
+homework, aren't I?
+A lot of British homework as well.
+I suppose this video has become
+pretty much exclusively about
+the British empire.
+My point is, it is well-understood
+that customary units suck.
+Miles, gallons, furlongs and fathoms
+may have once represented real things.
+But now they are so abstracted,
+and have transformed so much,
+that they are effectively arbitrary.
+These units are not a product of
+science and mathematics, nor are they
+really a product of our biological
+proportions or perception. Rather,
+they are an emergent feature
+of the uncontrollable
+turbulence of human history.
+If you're a Brit then you might
+look at the US and say
+"Aha, they keep using silly units,"
+despite the fact that all your
+road signs are still in miles.
+And if you're an American you
+might look at the UK and say
+"Aha, this is all your fault!
+It was your empire that introduced
+all these silly units."
+But no, it's everyone's fault
+that we keep using them.
+We are all complicit in this!
+Why are we like this?
+Why do we cling so unquestioningly
+to such archaic units?
+In short, it's because
+standardisation is just difficult.
+And to demonstrate the difficulties
+of standardisation in a case where
+standardisation actually worked,
+I now want to talk about the metre.
+Which, by the way, is spelt
+like this, America.
+If you don't use it then you shouldn't
+get to decide how it's spelt.
+The metre is not a cursed unit.
+In fact, I think the metre is
+the least cursed unit in existence,
+and the metre not being cursed
+is a foundational achievement
+of the field of metrology.
+But by examining how it came to be
+defined, we can learn a lot about
+why it's so complicated to get
+precise standards for units.
+It also has a rather strange
+property regarding gravity
+that I want to ramble about for a bit.
+If you've been bored in school
+and fiddled around with a calculator
+in class, you might have accidentally
+discovered that pi squared is about 9.8.
+This is approximately the
+gravitational acceleration
+at the Earth's surface in
+metres per second squared,
+as printed on every high school physics
+formula sheet around the world.
+And it's very close, only
+about half a percent off.
+Mathematical coincidences like
+this happen all the time,
+but still you might suspect that
+there's something deeper going on here.
+You might have heard somewhere that
+the metre is one 40-millionth of
+the Earth's circumference, and think
+that g=pi^2 is a consequence of that.
+But unfortunately the maths doesn't
+work out. The gravitational constant
+and the Earth's mass pop up in
+your equations and never cancel.
+So g=pi^2 has to be
+a coincidence, right?
+Amazingly, this is not a coincidence.
+There is an older definition of the
+metre where this equation is exact.
+In the 16 and 1700s a popular standard
+unit of length was the length of
+a seconds pendulum, a pendulum
+that swings once every second.
+This is because the swinging rate
+of a pendulum doesn't depend on
+the mass of the pendulum or
+the swinging height, mostly.
+It only depends on the length, and that
+makes it a very consistent time-keeper.
+The pendulum in a pendulum clock
+for instance gradually loses energy
+and swings lower and lower over time,
+but despite this it still
+swings at almost the same frequency,
+so the clock doesn't go out of time.
+If you go through the physics,
+it turns out that the half-period
+of a pendulum is pi times the
+square root of the length divided by
+the gravitational acceleration.
+If we define 1 metre to be the length
+such that this half-period is 1 second,
+then we can rearrange to find that
+the constant g is pi^2 metres per
+second squared. Mystery solved!
+This definition of the metre is
+pretty good, because measuring out
+a metre only requires that you
+have some way of measuring time,
+which you can do with a sundial.
+This means that people on opposite
+sides of the world can calibrate
+their instruments without ever having
+to communicate with each other.
+There's no need to ship
+metre-sticks around the world.
+But there's a couple of slightly
+cursed details to this definition.
+Firstly, the swinging rate of
+a pendulum depends on the
+strength of gravity, which varies
+across the Earth's surface.
+It's the pound-force-pound-mass
+problem all over again.
+Secondly this equation for the
+period relies on an approximation
+which assumes that the angle the
+pendulum swings out is quite small.
+It's not too significant; if you stay
+within an angle of about 15 degrees,
+your metre measurement should be
+off by less than 1 percent.
+But that's still big enough to notice if
+you're doing super precise measurements.
+It's also kind of awkward
+on a theoretical level:
+the figure of pi times the square-root
+of L over g is only as accurate as
+possible when the swinging angle of
+the pendulum is as small as possible.
+So the ideal theoretical metre is
+the length of a seconds pendulum
+with a swinging angle of zero,
+which means it's not swinging at all.
+Because of this, at the end of the
+1700s the metre was standardised
+to a more precise value.
+It was now defined to be
+one 40 millionth of the
+Earth's circumference,
+specifically measured along a
+line of longitude through Paris.
+This specific distance was
+chosen because it happens to be
+coincidentally very close to
+the pendulum definition,
+which makes this a very old example
+of backwards compatibility.
+It might seem strange to replace
+the pendulum definition with
+something that most people could
+not feasibly measure on their own.
+But by this point in time it was
+now possible to ship metre-sticks
+around the world, so the
+French Academy of Sciences
+decided to just do one big expedition
+to measure out this distance
+as precisely as possible, and then
+manufacture a standard metre-long
+metal bar which other
+institutions could copy.
+With the engineering of the early 1900s,
+it was possible to create and measure
+standard metre-sticks to within
+a micrometre of error,
+a millionth of the full length.
+But this still wasn't enough.
+By the mid 1900s physicists were
+probing even smaller length scales
+to investigate quantum mechanics,
+so the metre had to be redefined again.
+At one point it was 1,650,763.73
+wavelengths of krypton 86 radiation.
+Today, we have come full circle
+and defined it in terms of
+the second again, but now the metre
+is one 299,792,458th of the distance
+light travels in a second
+in a vacuum, and a second
+is defined as 9,192,631,770
+periods of caesium 133 radiation.
+Once again, actually realising this
+length physically is absurdly difficult,
+but once you have one realisation
+it can be easily copied.
+And once again, these particular
+numbers have been chosen
+because of backwards compatibility.
+The metre of today is still within a
+micrometre of the standard metre-stick
+from the 1900s, and still within a few
+millimetres of the original
+pendulum definition.
+This is the grand achievement of SI,
+the International System of Units:
+a traceable chain of calibrations
+linking every realisation of a unit
+to its standard definition.
+Today, we take standardised
+measurement for granted.
+We don't have to worry about whether
+our rulers are calibrated correctly,
+or whether someone on the other side
+of the globe has a different
+convention for how long 1 second is.
+And the reason for this is a lot of
+people fighting to make it that way.
+The scientific study of measurement
+is called "metrology",
+and it's not a small area of study.
+The International System of Units
+is established and maintained by an
+enormous number of organisations.
+The standardisation of SI is so
+successful that even customary units
+like the foot are now calibrated
+using metric standards.
+Sometimes we can't agree on how
+to do this; I said earlier that
+imperial and US customary
+units have the same foot,
+but technically there is a tiny
+difference. The international foot
+is defined to be 0.3048 metres, but the
+US survey foot, which has been used for
+mapping and land surveying, was defined
+so that 1 metre is 39.37 inches,
+which makes the survey foot
+approximately 0.3048006 metres.
+Thats a difference of half a micrometre.
+NIST, the US National Institute
+of Standards and Technology,
+officially deprecated the survey foot
+in 2022, but many people still
+hold on to that extra micrometre.
+Every so often I see an imperial
+unit apologist in the comments,
+claiming that feet and inches
+are easier to understand
+and that makes them superior.
+I don't agree with this;
+I think being familiar with a unit is
+just a sign that you've used it a lot.
+But the point is, it doesn't matter.
+Every time you measure something with
+a tape-measure, or weigh something on
+a scale, or do really anything to do
+with measurement, you're probably
+using an instrument that was
+manufactured to metric standards and
+then converted to customary units.
+And this isn't because the
+metric system is superior.
+It's because there is an international
+infrastructure that ensures that
+all your rulers are the same,
+and it just so happens that
+this infrastructure is built around
+the metric system.
+All of the researchers
+who develop methods to
+standardise and calibrate units,
+all of the engineers who put those
+units into physical appliances,
+and all of the lawmakers who encode
+those units into public policy are
+the reason that we don't have to worry
+about being ripped off at
+the supermarket, or getting
+pharmaceuticals with the wrong dosage,
+or having spaceships
+accidentally crash into Mars.
+Actually that's a lie, we still
+have to worry about our spaceships
+crashing into Mars, because that's what
+happened to the Mars Climate Orbiter!
+You see, NASA commissioned a piece
+of software from Lockheed Martin to
+correct the spaceship's trajectory
+after certain manoeuvres,
+and they used pound-force when
+NASA was expecting Newtons.
+So the ship went off course and
+approached Mars at too steep an angle
+and burned up in the atmosphere.
+[sigh] If only we could convince the
+rest of America to change to metric.
+Ah, but who am I kidding,
+that's never going to happen.
+An international standard
+decreed by a highly
+centralised and bureaucratic committee?
+That's way too socialist
+for them to handle!
+Unless I'm abducted by aliens,
+there will be more videos
+in the Cursed Units series.
+For a start, I'm only familiar
+with customary units from
+English-speaking countries,
+so there are probably billions
+of people across the world
+that grew up with whole systems of
+units that I'm completely unaware of.
+Also, Alexander's video on oilfield
+units demonstrates there are entire
+industries that use their own esoteric
+standards of measurement as well.
+So if you know a cursed unit from
+your home nation or industry,
+then I'd love to hear about it.
+Put it in the comments and I might
+bring it up in a follow-up video.
+And it's not all customary units.
+I still need to talk about decibels,
+sheet resistance, electron-volts,
+and all sorts of other fun things.
+So stay tuned for that!

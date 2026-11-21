@@ -1,0 +1,521 @@
+After posting my previous video on cursed 
+units, and after it got a massive spike in  
+views for no discernible reason, I discovered 
+that kilowatt-hours are extremely polarising.
+A lot of commenters argued that 
+kWh was a perfectly sensible  
+unit for ordinary people who measure 
+their appliances in watts and hours,  
+while the alternative unit 
+megajoules is much less intuitive.
+But there were also a lot of other 
+commenters who sympathised with me,  
+saying they had given the same arguments to their 
+friends and family and were treated like lunatics,  
+and that the oppressed joule-appreciators 
+should rise up against cursed units!
+The truth is I actually don't feel 
+strongly one way or the other.
+I just find it fun to play around with notational  
+standards given to us by history, 
+and make a caricature out of it.
+My goal is to teach you 
+something about mathematics,  
+not to claim that these are 
+signs of societal dysfunction.
+Wait a second. People are saying they've 
+seen kilowatt hours per thousand hours?
+Isn't that just Watts? Wait, I 
+need to check this for myself.
+EUROPE!
+The best explanation of this I've found is from a 
+user on the electrical engineering Stack Exchange,  
+who suggests that for a long time people 
+conflated wattage with lightbulb brightness.
+This meant that when converting from older 
+incandescent bulbs to more efficient LED bulbs,  
+someone might swap out their old 40W lamp 
+with a new 40W LED lamp and get flashbanged.
+So manufacturers described the 
+brightness in watts, and the  
+efficiency in kilowatt-hours per thousand hours.
+This of course would never have 
+been a problem if anyone cared  
+about lumens or candela, the 
+actual units for brightness.
+But you know what, it simplifies 
+nicely, so it's not the worst.
+There's also kWh/annum, 
+which is what my fridge has.
+That's seconds, hours and 
+years all in the same unit.
+You know what else was polarising 
+in the last video? The music.
+And I intend to keep it that way.
+[music]
+Anyway, here's some more cursed units.
+The radian is a unit of angle such that 
+360 degrees is equal to 2pi radians.
+This is so that if you have a circle with a 
+radius of 1 unit of length, let's say 1 metre,  
+then an angle of x radians subtends an arc 
+length of x metres along the circumference.
+That's pretty neat, and what's also neat is 
+that if the radius of the circle changes,  
+then this arc length changes proportionally,  
+so we could think of a radian as a being 
+1 metre of arc length per metre of radius.
+A metre per metre. Hmm.
+So... a radian is just... 1?
+When units completely cancel out like 
+this, we call them dimensionless.
+Radians are quite special here; if we used 
+a different measure of angle like degrees,  
+we would get a different number.
+The fact that the radian is the unique angle 
+that gives 1 is the reason why in mathematics we  
+commonly assume that everything is in radians, 
+and don't write any units for angle at all.
+This has some weird run-on effects: there 
+are angular versions of momentum and force,  
+which are called angular momentum and torque,  
+and since these depend on the radius as 
+well they pick up an extra unit of length.
+If we continue ignoring radians, then torque 
+inexplicably has the same units as energy.
+There's also a 3D variant of radians: 
+a steradian is a solid angle subtending  
+an area on the surface of a sphere 
+equal to the square of the radius.
+So, by the same reasoning, steradians should be 
+measured in square metres per... metre squared.
+Which is a different thing 
+but also the same thing.
+But are radians really dimensionless? I don't 
+think so, because there's another conflicting  
+way that we could make angles dimensionless: 
+just take the number 1 to be one revolution.
+This is the more sensible option 
+for describing the frequency of  
+something rotating, where we use units 
+like rpm, revolutions per minute.
+So we have two different standards 
+which are off by a factor of 2pi,  
+and this results in 2pi's popping up all over 
+the place in any equations relating to rotation.
+So angles aren't really dimensionless, 
+we just like to pretend that they are.
+But now let's look at a unit that dimensionless, 
+but we like to pretend that it isn't.
+A mole is a unit of quantity equal to the 
+number of atoms in 12 grams of carbon.
+If you're thinking "isn't that 
+just number," you're correct!
+It's called Avogadro's number, and 
+it's approximately 6 times 10^23.
+Despite the fact that the mole 
+is very clearly dimensionless,  
+it's still counted as an SI base unit.
+The perpetrator here is chemistry, and 
+when it comes to shoddy units in chemistry,  
+trust me, the mole is the tip of the iceberg.
+First let me state that while you can 
+multiply, divide and take powers of units,  
+more complicated functions like exponentials and 
+logarithms only apply to dimensionless quantities.
+You can see this in complicated 
+equations in other areas of science;  
+the units have to cancel before we 
+can apply weird functions to them.
+After all, it doesn't make sense to 
+take the logarithm of a litre, right?.
+Except that's exactly what pH is!
+The acidity of a solution in water is determined 
+by the concentration of hydrogen ions.
+You need to measure this in moles per 
+litre and then take minus the base 10  
+logarithm of that, and that's the pH... ughhh...
+So what's actually going on 
+here is that we're secretly  
+dividing by a constant 1 mole per 
+litre to make the units work out.
+And this is very important, because 
+if we measured the concentration in  
+different units we'd have to convert this 
+1 mole per litre to those units as well.
+This is why the whole study of 
+dimensional analysis exists,  
+when you conflate units you get the wrong results.
+Chemistry literature has a bad habit of 
+randomly forgetting figures of mol/L,  
+which makes the dimensional 
+analysis really annoying.
+This all culminates in the reaction quotient, 
+a quantity which, by some interpretations,  
+has different units depending 
+on the chemical reaction!
+Now apparently the pH of pure water is 7, 
+and this figure confused me for a long time.
+pH is determined by the concentration of hydrogen  
+ions in a solution, but surely pure 
+water doesn't have any ions, right?
+Well, as it turns out water self-ionises,  
+meaning water molecules randomly split 
+up into ions and then randomly recombine.
+The presence of these temporary 
+ions is what gives water a pH of 7.
+But why 7? What's special about 7? Wouldn't 
+that change with temperature or pressure?
+Well, it turns out that the pH of pure water  
+is exactly 7... when the water is 
+somewhere around 24.87 degrees C.
+So the choice of 7 as neutral 
+is completely artificial.
+Going back to moles, the fact 
+that we use a special unit for  
+what's actually just a number isn't too weird.
+It's quite common for two 
+units with the same dimension  
+to behave differently because of context.
+For instance, Hertz and Becquerels are units of 
+frequency that are both equal to inverse seconds.
+The only difference between them is that Hertz is 
+used to describe periodic processes like waves,  
+where the time between each event is the same, 
+while Becquerels is used to describe random  
+processes like radioactive decay, where the 
+time needs to be averaged over many events.
+They're technically the same unit, but they have  
+different contextual meanings and 
+so you would never conflate them.
+Now, Becquerels originate from the study of 
+radiation, and radiation dosage is another  
+situation where you have multiple units with the 
+same dimension measuring incompatible things.
+Grays and Sieverts both have dimensions 
+of joules per kilogram, that is radiation  
+energy per unit mass, but the former is 
+"absorbed dose" which is simply total energy,  
+while the latter is "equivalent dose" 
+which has an extra factor depending on  
+the type of radiation to describe 
+how much it damages living things.
+Again, these units have the same dimensions, but 
+you can't just interchange one for the other.
+However, the study of radiation 
+does also have some redundant units.
+A rad for example is 1 hundredth of a 
+gray, and they both measure absorbed dose.
+We could have just called the rad a "centigray", 
+but no, it gets its own special name.
+The historical reason for this 
+is the separation between two  
+competing systems of units, the 
+SI system and the CGS system.
+This is a whole can of worms, a can of 
+worms that deserves its own section.
+CGS is a system of units based on 
+the centimetre, gram and second.
+It was an old attempt at standardisation 
+that was eventually supplanted by the SI  
+system which instead established metres and 
+kilograms as the base units of length and mass.
+But the usage of centimetres and grams is not 
+the biggest difference between CGS and SI.
+The biggest difference is that while the 
+SI system now has about 7 base units,  
+CGS insists on describing everything in 
+terms of centimetres, grams and seconds,  
+even when it reasonably shouldn't.
+This causes a big problem with electricity.
+First I need to give some background 
+on how we measure electricity.
+There's two ways that we could 
+connect it to length, mass and time.
+The first is to look at the electrostatic 
+force between two charged objects.
+This force is modelled by Coulomb's law,  
+which we can use to define the 
+Coulomb, the SI unit of charge.
+The second is to look at the magnetic 
+force between two current-carrying wires.
+This force is modelled by Ampere's force law 
+(not to be confused with the two other laws  
+named after Ampere), which we can use to 
+define the Ampere, the SI unit of current.
+Now, current is just moving charges, so we want 
+to define these in such a way that an Ampere is  
+just a Coulomb per second, one Coulomb's worth of 
+electrons travelling through a wire every second.
+In order to do that, we need to 
+introduce some physical constants  
+to make the units work out called the 
+electric permittivity and permeability.
+But CGS works differently. In CGS, there are no  
+constants, because everything is 
+centimetres, grams and seconds.
+The CGS unit of charge is the Franklin 
+(also called the statcoulomb) which is  
+the charge on these objects such that 
+if they are placed 1cm apart then the  
+force between them is 1 dyne, the dyne 
+being the derived unit of force in CGS.
+Rearranging, we get that 1 Franklin is a 
+centimetre times the square root of a dyne.
+This approach is called 
+electrostatic units, or ESU.
+Meanwhile, the CGS unit of current is 
+the Biot (also called the abampere)  
+which is the current through these wires 
+such that if they are placed 1cm apart,  
+the force between them is 2 
+dynes per centimetre of length,  
+because for some reason physicists have an 
+obsession with throwing factors of 2 around.
+Rearranging, we get that 1 Biot 
+is just a square root of a dyne.
+This approach is called 
+electromagnetic units, or EMU.
+Okay, we now have CGS variants 
+of the Coulomb and Ampere.
+We know that an Ampere is a Coulomb per second,  
+so naturally a Biot should be 
+a Franklin per second, right?
+Well, no. The units don't work out.
+A Franklin per second is a new unit 
+called a statampere, a dyne^1/2 cm s^-1.
+And a Biot second is a new unit 
+called an abcoulomb, a dyne^1/2 s.
+That's okay, it just means that we need to  
+multiply by some constant in order 
+to get between these two schemes.
+This constant must have units of centimetres 
+per second, which means it's a speed.
+Can you guess what speed this is?
+It's the speed of light!
+[music]
+This fact was discovered around the mid 
+1800s and no one could make sense of it  
+since the entire study of electricity was in 
+a serious state of disarray, probably in no  
+small part due to the confusion between the 
+two variations of units I've just described.
+This was eventually disentangled in a series 
+of papers by James Clerk Maxwell, who connected  
+all of the results of the time into a single 
+theory, which we now call Maxwell's equations.
+Using this theory Maxwell derived a model for a 
+wave of propagating electric and magnetic fields,  
+and derived that the speed of this wave should be 
+this ratio between the static and magnetic units,  
+which by this point in time had been measured 
+to be very close to the speed of light.
+It was already well known that 
+light had wavelike properties,  
+so this was the smoking gun that confirmed 
+that light was in fact an electromagnetic wave.
+Now, that's a fascinating bit of 
+history that's totally not cursed.
+But what is cursed is that the speed of 
+light is 300 million metres per second.
+Oh, uh, sorry, CGS. That's 30 
+billion centimetres per second.
+Which means the two variants of CGS are 
+different by 10 orders of magnitude!
+This massive disparity of scales is part of 
+what makes electricity so counterintuitive.
+I think this is at the core of why electric 
+quantities have all sorts of special names,  
+unlike say velocity and acceleration which 
+always are expressed as derived units.
+In addition to Amperes and Coulombs, we 
+have Volts for voltage, Ohms for resistance,  
+Farads for capacitance, Henrys for inductance, 
+Webers for magnetic flux and Teslas for magnetic  
+field strength, and each one of these units 
+can be thought of in about 10 different ways.
+To be honest, I respect the boldness of CGS, 
+trying to reduce everything down to three units.
+It reminds me of Planck units, 
+where you define the speed of  
+light to have a value of 1 so that length 
+and time collapse to the same dimension.
+And then you do the same with 3 other constants,  
+and as long as you're consistent you get a 
+system that's entirely dimensionless numbers.
+These are pretty useful for simplifying 
+calculations in certain parts of physics,  
+but be careful because if you pick different 
+constants you get different results.
+CGS has, for the most part, been supplanted by SI,  
+but it's still quite common to see 
+centimetres and grams being used in  
+a couple of smaller fields of science that 
+like to bask in their old-fashionedness.
+Which leads me, of course, to materials science.
+I'm going to build for you a unit that 
+only a couple of people suggested in the  
+comments of the previous video, because 
+only a couple of people know about it.
+This is going to be a unit for 
+describing a property of a substance.
+So before I go into it, just as a warmup, let 
+me go through the example of heat capacity.
+Specific heat capacity is measured 
+in joules per gram degree C,  
+so given a certain a number of grams 
+of a substance, how many joules of  
+energy do we need to put into it to raise its 
+temperature by a certain number of degrees C.
+Each substance has its own number attached 
+to this unit, for example water has a heat  
+capacity of 4.18 J/gC, while tin 
+has a heat capacity of 0.21 J/gC.
+Makes sense? Okay.
+Let's now build a unit to describe the 
+diffusion of gas through a substance.
+How easy is it for air to get through a membrane?
+Well, the amount of air that 
+gets through can measured as  
+a number of molecules, so we'll use moles, right?
+Ehh... I'll use moles for now, 
+but we'll come back to this later.
+The next thing to consider is surface area:  
+the bigger the surface area of the 
+membrane, the more air can get through.
+Let's measure this in square centimetres, so 
+our unit is now moles per square centimetre.
+Makes sense so far?
+The next unit is time: if we keep the 
+air pressure on each side consistent,  
+air will flow through at a uniform rate.
+So our unit should be in moles per 
+second per square centimetre. Okay.
+The next unit is thickness: the thicker the 
+membrane, the less air will get through.
+This is an inverse relationship, so it goes on 
+the top of the fraction instead of on the bottom.
+We're going to measure the 
+thickness in centimetres.
+Okay, I know a lot of people who 
+watched the previous video are  
+going to be shouting at their screen 
+saying "Cancel the centimetres!"
+If you are one of those people, 
+then I think you missed the point.
+We saw that quantities like fuel 
+efficiency and the Hubble parameter  
+could have their units simplified, and 
+that sometimes lead to interesting results.
+But that doesn't mean we should simplify 
+them; it's way more intuitive to measure  
+fuel efficiency in gallons per mile than 
+in square millimetres, and for the Hubble  
+parameter kilometres per second per megaparsecs 
+is a direct description of how it's measured.
+At the end of that video I mentioned that I used 
+nanometres per square root nanometre in a research  
+paper, and a lot of commenters suggested writing 
+it as just square root nanometres, unironically.
+Yes, it's certainly interesting that you 
+can write it as square root nanometres,  
+but actually writing that in a 
+research paper would be silly.
+I was trying to describe a relationship 
+between two lengths, so why would I obscure  
+that relationship by cancelling those lengths?
+It's fun to play around with units, but in 
+practice you should always use the units  
+that best describe the physical 
+quantities that they represent.
+Usually, it's the most commonplace units 
+that are the ones that are best at doing this
+(the only exception being kWh/1000h 
+which is an inexcusable abomination).
+So no, we're not going to cancel the centimetres.
+You can do that in your own time,  
+but right now we're building a 
+sensible unit for sensible people.
+Right, the next thing to consider is pressure.
+If we increase the difference in 
+air pressure between the two sides  
+of the membrane, more air will get forced through.
+This turns out to be a linear relationship,  
+so we need to put pressure on 
+the bottom of the fraction.
+Now, the CGS unit of pressure is the barye,  
+not be confused with the bar 
+which is a million times bigger.
+But we're not going to use either of these,  
+or the SI standard Pascal, because this 
+is a sensible unit for sensible people.
+So we're going to use the only sensible option:
+centimetres of mercury.
+What is a centimetre of mercury, I hear you ask?
+It's the amount of pressure that will push 
+liquid mercury 1 centimetre up a tube. Great!
+This unit is a holdover from that time in history 
+when we used mercury for basically everything,  
+before realising that it's 
+both toxic and volatile.
+The best combination of properties.
+And finally, moles. We don't 
+like moles. Moles are silly.
+So let's replace them with centimetres 
+cubed STP, the number of air molecules  
+that fill a cubic centimetre at some 
+standard temperature and pressure.
+Oh, and uh...
+multiply everything by 10 to the minus 10.
+This is the barrer, a unit of 
+gas permeability used in the  
+study of membranes, particularly contact lenses.
+And I had to check through some research papers 
+to make sure that this unit is actually used,  
+because when I first heard about it 
+I was certain it had to be a joke.
+It contains four different 
+variations of 'centimetres',  
+two of which aren't even related to length.
+And centimetres of mercury isn't 
+even the most common unit of mercury;  
+it's way more standard to 
+use millimetres of mercury!
+Which would be called torrs if they were the 
+same thing, which for some reason they aren't?
+I've intentionally avoided talking about joke 
+units like smoots or beard-seconds in this video.
+I'm not just gonna repeat jan 
+Misali's "a joke about measurement".
+No, the whole point of this is to understand 
+how we use units in practice, in the real world.
+And this, this monstrosity, is 
+a real unit used by real people.
+That being said, I do genuinely 
+think the barrer has its place.
+If it were completely absurd, 
+people wouldn't use it.
+The main reason the barrer is so complicated  
+is that permeability is related 
+to a lot of different factors.
+Sure, using centimetres of mercury and 
+cubic centimetres STP is weird and esoteric,  
+but even if we replaced everything with SI 
+units we'd still have something pretty cursed.
+Notation standards only make 
+up half of the cursedness;
+the other half is the complexity 
+of the science itself.
+There are so many other interesting ways 
+units can get frighteningly bizarre that  
+I haven't touched on yet, so there may be a 
+Cursed Units part 3 in the distant future.
+Maybe then I'll finally talk about imperial units.
+For now though, I'm just going to go ahead and 
+crown the Hubble parameter and the barrer as the  
+King and Queen of Cursed Units, and then go 
+and hit my head against a rock for a while.
+[music practice]
+I need to make sure that's the
+loudest note, the bottom C sharp.
+Nope, that was a B flat. [laughs]

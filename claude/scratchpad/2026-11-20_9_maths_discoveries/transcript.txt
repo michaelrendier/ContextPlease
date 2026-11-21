@@ -1,0 +1,1456 @@
+Nov 19, 2026  #mathematics #mathdocumentary #paradox
+What happens when rigorous mathematical proof directly contradicts everyday human intuition? 
+
+From shapes with infinite surface area that can hold a finite amount of paint, to cylinders that geometry proves are completely flat, this 1-hour documentary special explores 9 profound mathematical discoveries and paradoxes that challenge our understanding of space, numbers, and reality.
+
+Every chapter is derived from first principles and visualized through custom mathematical motion geometry (Manim).
+
+    ---
+
+    ⏱️ CHAPTER TIMESTAMPS:
+
+    00:00 - The Frontiers of Mathematics (Prologue)
+    00:27 - Discovery 1: What Curvature Actually Means (Differential Geometry)
+    12:42 - Discovery 2: Primes Have A Favorite Team (Chebyshev’s Bias)
+    21:45 - Discovery 3: Why There Are Only 5 Perfect Solids (Euler Characteristic)
+    31:22 - Discovery 4: The Monty Hall Paradox & Bayesian Truth
+    41:36 - Discovery 5: The Basel Problem & The Geometry of Light (Σ 1/n²)
+    51:49 - Discovery 6: Gabriel's Horn (Finite Volume, Infinite Area)
+    57:36 - Discovery 7: The Banach-Tarski Paradox (Decomposing Infinity)
+    58:46 - Discovery 8: Quaternions & The Algebra of 4D Space
+    59:57 - Discovery 9: The Borsuk-Ulam Antipodal Theorem
+    01:01:01 - Epilogue & What Lies Beyond
+
+🔬 THE 9 MATHEMATICAL FRONTIERS COVERED:
+    1. Gauss’s Theorema Egregium: Why a cylinder has zero intrinsic curvature.
+    2. Dirichlet & Chebyshev: The hidden asymmetric race between 4k+1 and 4k+3 primes.
+    3. Platonic Solids: Why 3D Euclidean space permits exactly five regular polyhedra.
+    4. Probability Spaces: Why switching doors doubles your win probability.
+    5. Euler's Basel Sum: How π unexpectedly emerges from the sum of reciprocal squares.
+    6. Torricelli’s Trumpet: The calculus contradiction of painting an infinite trumpet.
+    7. Axiom of Choice: How non-measurable sets allow 1 sphere to become 2 identical spheres.
+    8. Hamilton’s Quaternions: Solving gimbal lock through 4-dimensional spatial rotations.
+    9. Topology: Why there are always two antipodal points on Earth with identical temperature and pressure.
+
+    ---
+
+    Produced with Manim Community Edition.
+    Hardware mastered at 1080p 30fps.
+
+    Subscribe to Awashyak for deep dives into theoretical computer science, topology, and geometry.
+
+ #mathematics #mathdocumentary #paradox #manim #3Blue1Brown #geometry #steam
+How this was made
+Made with AI
+Sounds or visuals were altered or fully generated. Learn more
+
+
+
+
+Chapter 1: The Frontiers of Mathematics (Prologue)
+Chapter 2: Discovery 1: What Curvature Actually Means (Differential Geometry)
+0:27
+27 seconds
+Six shapes. A straight line. A tiny circle. A circle so enormous we can only see a sliver of it. A sphere. A
+0:36
+36 seconds
+cylinder. A saddle. How curved is each one? Not a little or a lot. Exactly. Is
+0:44
+44 seconds
+there a number for it? Your eyes already sense the differences. Some shapes bend sharply, some barely bend at all. One of
+0:51
+51 seconds
+them bends upward in one direction and downward in another. But looks more curved is not a measurement. And there's
+0:59
+59 seconds
+a catch. One of these six shapes is hiding a secret. You can hold it in your hands. It is obviously bent. And yet,
+1:07
+1 minute, 7 seconds
+one precise measure of how a surface curves, a measure we'll build step by step, comes out to exactly zero. Let's find out which one and why.
+1:18
+1 minute, 18 seconds
+Let's start with the simplest possible motion, a point moving along a straight line. Notice what never changes, its
+1:25
+1 minute, 25 seconds
+direction. This arrow shows which way it's heading, and it just stays put at every moment, the same direction. Now,
+1:34
+1 minute, 34 seconds
+let's bend the path gently. The point keeps moving, but watch the arrow. It's turning. This arrow is called the
+1:42
+1 minute, 42 seconds
+tangent. It shows the direction the curve is heading right now at this exact spot. And here is the idea that
+1:49
+1 minute, 49 seconds
+everything else will build on. A curve is curved wherever its direction is changing. Straight means the direction
+1:56
+1 minute, 56 seconds
+never changes. Curved means the direction is turning. But turning isn't enough. We want to know how much. So
+2:04
+2 minutes, 4 seconds
+let's compare two curves. In both, the point travels the same distance, one unit along the path. On this gentle
+2:11
+2 minutes, 11 seconds
+curve, the arrow swings a little. On this tight curve, over the very same distance, it swings a lot. So, here's
+2:19
+2 minutes, 19 seconds
+our measurement. Curvature is how much the direction turns for each unit of distance traveled along the curve.
+2:26
+2 minutes, 26 seconds
+Turning per distance. That's all it is.
+2:29
+2 minutes, 29 seconds
+In symbols, pick a fixed reference direction, say the horizontal axis, and let theta be the angle the arrow makes
+2:36
+2 minutes, 36 seconds
+with it. Let s be the distance traveled along the curve. Curvature is the rate at which theta changes as s grows.
+2:44
+2 minutes, 44 seconds
+Curves can wiggle in endlessly complicated ways.
+2:48
+2 minutes, 48 seconds
+So let's study the simplest curve that turns at a perfectly steady rate, the circle. Here's a tiny circle. Walk one
+2:56
+2 minutes, 56 seconds
+unit along it and the arrow swings wildly. A medium circle, the arrow swings less. And on a huge circle, you
+3:03
+3 minutes, 3 seconds
+can walk and walk and the arrow barely moves. Smaller circle, sharper turning.
+3:08
+3 minutes, 8 seconds
+Bigger circle, Chandler turning. But can we make that exact? Walk once all the way around a circle and your direction turns through one full rotation. 2 pi
+3:17
+3 minutes, 17 seconds
+radians. How far did you walk? The circumference. 2 pi * the radius. Turning per distance. 2 pi / 2i r.
+3:26
+3 minutes, 26 seconds
+The 2 pies cancel and what's left is simply 1 / r. Curvature equals 1 / the radius. Does that make sense? Cut the
+3:35
+3 minutes, 35 seconds
+radius in half and the curvature doubles. Make the radius a thousand times bigger and the curvature becomes a thousand times smaller. Let the radius
+3:43
+3 minutes, 43 seconds
+grow without bound and the curvature shrinks towards zero. So a straight line is the limiting case of ever larger circles. As r goes to infinity, 1 / r
+3:52
+3 minutes, 52 seconds
+goes to zero. And this isn't only about circles. At any point on a smooth curve where the curvature isn't zero, there is
+4:00
+4 minutes
+one circle that hugs the curve better than any other. The circle that just barely kisses it. Mathematicians call it the osculating circle from the Latin for
+4:09
+4 minutes, 9 seconds
+kiss. Its radius is one over the curvature of the curve at that point.
+4:13
+4 minutes, 13 seconds
+But where the curvature is exactly zero, the flat middle of an Sbend, say, no ordinary circle fits. It would need an infinite radius. That's the straight
+4:22
+4 minutes, 22 seconds
+line limit again. So the circle is our ruler for measuring bending. So far a curve has a single curvature at each
+4:29
+4 minutes, 29 seconds
+point. It has only one way to bend. But a surface is different.
+4:34
+4 minutes, 34 seconds
+Stand on a surface and you can walk in many directions. Take one point. Now slice the surface with a flat plane that stands straight up from it like a knife.
+4:44
+4 minutes, 44 seconds
+The cut leaves a curve on the surface.
+4:47
+4 minutes, 47 seconds
+And a curve is something whose curvature we know how to measure. Now turn the knife around the point. Every direction gives a different slice and a different
+4:56
+4 minutes, 56 seconds
+curvature. Watch the number as we rotate. It rises. It falls. There is a direction where it is largest and a
+5:03
+5 minutes, 3 seconds
+direction where it is smallest. These two extreme values are the principal curvatures. We'll call them K1 and K2.
+5:11
+5 minutes, 11 seconds
+At most points, those two directions are at right angles to each other. One small agreement. We'll choose one side of the surface to call up. If a slice bends
+5:20
+5 minutes, 20 seconds
+toward that side, its curvature counts as positive. If it bends away, negative.
+5:26
+5 minutes, 26 seconds
+So, at every point of a surface, two numbers. Can we combine them into a single number that tells us something deep about the surface itself? Let's
+5:34
+5 minutes, 34 seconds
+meet three surfaces and see what their two numbers are.
+5:38
+5 minutes, 38 seconds
+First, the sphere. Choose any point, slice through it in any direction, you always get a circle of the same radius, R. Rotate the slicing plane, and the
+5:47
+5 minutes, 47 seconds
+curvature never changes. It stays at 1 / R. So, the sphere bends the same amount in every direction, and its two
+5:54
+5 minutes, 54 seconds
+principal curvatures are equal. K1= K2 = 1 / R. To make the signs come out right, we point up inward toward the center.
+6:03
+6 minutes, 3 seconds
+Both slices bend toward that side, so both numbers are positive. Now, here's an idea. Multiply the two numbers. 1 / r
+6:11
+6 minutes, 11 seconds
+* 1 / r 1 / r 2 positive. This product has a name, the Gaussian curvature. We
+6:19
+6 minutes, 19 seconds
+write it with a capital K. K= K1 * K2. A smaller sphere has a bigger K. A tennis ball is more curved than the Earth.
+6:28
+6 minutes, 28 seconds
+Second, the cylinder with radius R. Slice around it and you get a circle.
+6:33
+6 minutes, 33 seconds
+Slice along it and you get a straight line. Point up inward toward the axis and that circle bends toward it.
+6:41
+6 minutes, 41 seconds
+Curvature + 1 / R. But slice along its length and you get a perfectly straight line. Curvature zero. turn the slicing
+6:49
+6 minutes, 49 seconds
+plane from the circular direction toward the straight one and the curvature slides smoothly from 1 / r down to zero.
+6:58
+6 minutes, 58 seconds
+Those two extremes are the principal curvatures. K1 is 1 / r and k2 is zero.
+7:04
+7 minutes, 4 seconds
+Multiply them zero. The cylinder bends but only in one direction. Its Gaussian curvature is zero. Third, the saddle.
+7:14
+7 minutes, 14 seconds
+Slice it from front to back and you get a curve bending upward. Slice it from side to side and it bends downward. One
+7:22
+7 minutes, 22 seconds
+slice bends toward our chosen up. The other bends away. Turn the slicing plane between them and the curvature sweeps
+7:29
+7 minutes, 29 seconds
+from + one through 0 to minus one. For the saddle on screen, those extremes are the principal curvatures. K1 is + one
+7:38
+7 minutes, 38 seconds
+and K2 is minus one. One positive, one negative. their product is negative. So the sign of K tells you the character of
+7:47
+7 minutes, 47 seconds
+the surface. Positive, both directions bend the same way like a bowl or a sphere. Zero, at least one principal curvature is zero at that point.
+7:57
+7 minutes, 57 seconds
+Negative, the two directions bend opposite ways, a saddle. One detail worth noticing, flip up on the sphere
+8:05
+8 minutes, 5 seconds
+from inward to outward and both numbers change sign. plus 1 / r becomes minus 1 / r twice. Their product doesn't change.
+8:14
+8 minutes, 14 seconds
+Minus * minus is plus. The same holds on any surface. The sign of k doesn't depend on our choice of side. It belongs to the surface.
+8:24
+8 minutes, 24 seconds
+We found something odd. The cylinder is clearly bent and yet its Gaussian curvature is zero. Let's make that strange fact visible.
+8:35
+8 minutes, 35 seconds
+Here is a flat sheet like paper. flat has no bending in any direction. Both principal curvatures are zero. So K is
+8:42
+8 minutes, 42 seconds
+zero. Now roll it up. No stretching, no tearing, just rolling. We get a cylinder. And as we just computed, K1 is
+8:51
+8 minutes, 51 seconds
+now 1 / R with up pointing inward. The sheet has changed shape in space. One of
+8:58
+8 minutes, 58 seconds
+our two numbers has changed. But look at what did not change. The grid squares are still the same size. The triangle
+9:06
+9 minutes, 6 seconds
+sides are the same length. The angles are the same. The circle we drew is still every point at the same distance from its center, measured along the
+9:14
+9 minutes, 14 seconds
+sheet. So, its radius, its length, and its angles are unchanged. Even though out in the room, it may no longer look like a circle. Everything you could
+9:23
+9 minutes, 23 seconds
+measure while staying on the surface, distances, angles, is unchanged.
+9:29
+9 minutes, 29 seconds
+Imagine an ant living on this sheet, unable to look out into the room.
+9:34
+9 minutes, 34 seconds
+Nothing it can measure in its own neighborhood would tell it whether the sheet is flat or rolled. Not one local measurement.
+9:41
+9 minutes, 41 seconds
+This is the distinction we've been circling. Exttrinsic bending is how a surface sits and bends in the space around it. Something you can only see
+9:49
+9 minutes, 49 seconds
+from outside. Intrinsic curvature is the curvature that distances and angles measured along the surface itself can
+9:56
+9 minutes, 56 seconds
+detect. The cylinder has extrinsic bending but no intrinsic curvature.
+10:02
+10 minutes, 2 seconds
+The principal curvatures K1 and K2 are exttrinsic. They depend on how the surface sits in space. And K1 jumped
+10:09
+10 minutes, 9 seconds
+from 0 to 1 / R when we rolled the sheet. But their product, the Gaussian curvature, did not. And that is no
+10:17
+10 minutes, 17 seconds
+accident. It is Gaus's theorem egregium, the remarkable theorem. The Gaussian curvature depends only on measurements
+10:24
+10 minutes, 24 seconds
+made within the surface. It is intrinsic.
+10:28
+10 minutes, 28 seconds
+Now compare this to a sphere. Try to flatten an orange peel onto a table. It tears or it stretches. Every flat map of
+10:36
+10 minutes, 36 seconds
+the Earth distorts something. That's not a failure of the map makers. It's because K is not zero. The ant can even
+10:43
+10 minutes, 43 seconds
+test for K. Walk a small triangle using the straightest possible paths. On a sphere, the three angles add up to more
+10:50
+10 minutes, 50 seconds
+than 180°. On a sheet or a cylinder, exactly 180. On a saddle, less. One
+10:58
+10 minutes, 58 seconds
+honest qualification. Zero Gaussian curvature at a single point is not enough to call a surface flat. When K is zero throughout a whole neighborhood,
+11:06
+11 minutes, 6 seconds
+the surface is locally flat there. That patch can be laid flat without stretching. It does not mean the whole surface is a plane. Join the two edges
+11:14
+11 minutes, 14 seconds
+of our rolled sheet and the ant can set off along a locally straight path, a geodic, and walk straight around the cylinder back to exactly where it began.
+11:23
+11 minutes, 23 seconds
+To the ant, that path never turns. From out in the room, it looks like a circle.
+11:28
+11 minutes, 28 seconds
+A straight path on a plane never closes up like that. Locally, the two look identical. Globally, they are different surfaces.
+11:36
+11 minutes, 36 seconds
+Now look again at the six shapes we started with. The straight line, curvature zero. The tiny circle, large
+11:43
+11 minutes, 43 seconds
+curvature, one over a small radius. The enormous circle, small curvature, nearly zero, nearly a straight line. The
+11:51
+11 minutes, 51 seconds
+sphere, both directions bend the same way, positive Gaussian curvature. The cylinder, one direction bends, the other
+11:58
+11 minutes, 58 seconds
+is straight, and any patch of it can be laid flat without stretching. Zero. The saddle, two directions bending opposite
+12:05
+12 minutes, 5 seconds
+ways. Negative. Curvature for a curve is how fast its direction turns. For a surface, it takes two numbers. And when
+12:13
+12 minutes, 13 seconds
+we combine them, we get one that the surface can feel from the inside without ever stepping out. And that leaves us with a strange question. The ant never needed to see the room around it.
+12:24
+12 minutes, 24 seconds
+Everything it needed was measurable from within its own world. So what if a space doesn't sit inside anything bigger? What
+12:31
+12 minutes, 31 seconds
+would it mean for three-dimensional space itself to be curved? And how would you measure that if you could never step outside it?
+Chapter 3: Discovery 2: Primes Have A Favorite Team (Chebyshev’s Bias)
+12:42
+12 minutes, 42 seconds
+2 3 5 7 13. The primes, the numbers that cannot be built by multiplying smaller whole numbers. Look at where they land.
+12:53
+12 minutes, 53 seconds
+Sometimes two apart, sometimes after a long empty stretch. No simple rule tells you where the next one will be. For over
+13:02
+13 minutes, 2 seconds
+2,000 years, that irregularity has been the heart of the mystery. But irregular does not mean unbiased. So here is a
+13:09
+13 minutes, 9 seconds
+stranger question than where the primes are. Do the primes have a favorite? In 1853, Poffnudi Chbachev wrote a letter
+13:17
+13 minutes, 17 seconds
+describing a curious pattern. If you sort the primes into two families, one family seems to edge ahead of the other.
+13:24
+13 minutes, 24 seconds
+Not by much, not always, but often enough to be suspicious. It took mathematicians well over a century to describe the phenomenon precisely, and
+13:33
+13 minutes, 33 seconds
+part of the explanation still rests on a conjecture nobody has proved. Let's meet the two families. Take any prime except
+13:41
+13 minutes, 41 seconds
+two. It is odd, and an odd number divided by four leaves a remainder of either 1 or three. It cannot leave zero or two because then it would be even.
+13:51
+13 minutes, 51 seconds
+Here is the picture. Write the whole numbers in rows of four. The column of remainder two is all even. So is the column of remainder zero. The multiples
+13:59
+13 minutes, 59 seconds
+of four. Apart from the prime two itself, nothing in those columns can be prime. Only two columns are left. 5 13
+14:08
+14 minutes, 8 seconds
+17 29 remainder 1. We'll color them blue. 3 7 11 19 23 remainder 3 we'll
+14:18
+14 minutes, 18 seconds
+color them orange in symbols P is congruent to 1 mod 4 or P is congruent to three mod 4 mod 4 just means look at
+14:27
+14 minutes, 27 seconds
+the remainder after dividing by four and the prime 2 it is even so it belongs to neither team it never scores do both
+14:36
+14 minutes, 36 seconds
+teams keep growing they do in 1837 direct proved that each team has infinitely many primes Neither one ever
+14:43
+14 minutes, 43 seconds
+runs out. To turn this into a race, we need to count. Pick a limit x. The symbol p of xa 4a 1 counts how many
+14:52
+14 minutes, 52 seconds
+blue primes are at most x. pi of x 4a 3 counts the orange ones. This pi has
+15:00
+15 minutes
+nothing to do with the circle. It simply means count the primes. Let's start with x equal to 10. 3 orange 5 blue 7 orange.
+15:10
+15 minutes, 10 seconds
+Two sits out. Orange has two, blue has one. Now let X grow. Every time the limit passes a prime, that prime drops
+15:19
+15 minutes, 19 seconds
+into its team's tally. At 30, orange has five and blue has four. At 100, orange
+15:25
+15 minutes, 25 seconds
+13, blue 11. At 1,000, 87 to 80. At 10,000, 619 to 609. At a million, each
+15:35
+15 minutes, 35 seconds
+team has about 39,000. And orange leads by 147. At a 100 million, each team has
+15:42
+15 minutes, 42 seconds
+almost 2.9 million primes and the gap is only 446.
+15:47
+15 minutes, 47 seconds
+A dead heat nearly. But look at who is ahead at every checkpoint. We have stopped at orange every time. Is that a
+15:56
+15 minutes, 56 seconds
+coincidence? To track the race with one number, take the difference. D ofx= of xa 4a 3 minus p of xa 4a 1.
+16:07
+16 minutes, 7 seconds
+Orange count minus blue count. Positive orange leads. Zero a tie. Negative blue
+16:14
+16 minutes, 14 seconds
+leads. Watch D as X grows. Three arrives orange. D is 1. Five arrives blue. Back
+16:22
+16 minutes, 22 seconds
+to zero. 7 and 11 both orange. D reaches two. 13 blue 1. 17 blue zero again. Zero
+16:33
+16 minutes, 33 seconds
+or above. Zero or above. Out to a thousand, out to 10,000. The walk never dips below the line. Orange stays ahead or tied all the way to 26,860.
+16:46
+16 minutes, 46 seconds
+And then at 26,861, a blue prime arrives. 1473 blue, 1472
+16:56
+16 minutes, 56 seconds
+orange. For the first time, blue is in the lead. It lasts for two whole numbers. 26,863 is orange and the race is tied again.
+17:07
+17 minutes, 7 seconds
+Was that a fluke? No. Blue pulls ahead again at 616,841.
+17:13
+17 minutes, 13 seconds
+And in 1914, Littlewood proved that the lead changes hands infinitely often.
+17:18
+17 minutes, 18 seconds
+John Leachch identified the first blue lead in 1957.
+17:23
+17 minutes, 23 seconds
+Now count every integer limit from 3 through 100 million. Orange leads at about 99.966% of them. Blue leads about 300ths of 1%.
+17:34
+17 minutes, 34 seconds
+The rest are ties, a tendency, not a law. So orange leads almost all the time. You might guess it simply owns a bigger share of the primes. It doesn't.
+17:45
+17 minutes, 45 seconds
+In 1896, Deval Busan proved that both teams have exactly the same long run share.
+17:53
+17 minutes, 53 seconds
+of xa 4a 1 is asmtoic to p of xa 4a 3 which is asmtoic to x / 2 log x. That wavy symbol means the ratio tends to 1.
+18:05
+18 minutes, 5 seconds
+Divide one team's count by the others and as x grows you get closer and closer to one. Here are the ratios we computed.
+18:13
+18 minutes, 13 seconds
+2 at 10, about 1.18 at 100, 1.09 at a,00and 1.04 at a million and 1.00 00002
+18:22
+18 minutes, 22 seconds
+at 100 million. So the teams are equal in the long run and yet orange leads almost every time. How? Because those
+18:31
+18 minutes, 31 seconds
+are two different questions. The ratio asks how big is the gap compared with the whole race. The lead asks which side
+18:40
+18 minutes, 40 seconds
+of zero is the gap on. Under the generalized remon hypothesis, the natural scale for the race's fluctuations is about the roo of x
+18:48
+18 minutes, 48 seconds
+/ log x. The counts themselves grow like X over log X. So the gap fades to nothing next to the race, yet it still
+18:57
+18 minutes, 57 seconds
+has a sign. Equal density is a statement about size. Race leading is a statement about sign. The gap is the part the
+19:05
+19 minutes, 5 seconds
+prime number theorem leaves out. So let's make it visible. Turn the race into a walk. Every orange prime takes
+19:12
+19 minutes, 12 seconds
+one step up. Every blue prime takes one step down. After X, the height of the walk is exactly D of X. There is a clean
+19:20
+19 minutes, 20 seconds
+way to write that step. Define a function called kai. It sends a number to + one if it leaves remainder one to
+19:27
+19 minutes, 27 seconds
+minus one if it leaves remainder three and to zero if it is even. Add kai over all the primes up to x and you get blue minus orange. Our walk upside down.
+19:37
+19 minutes, 37 seconds
+Functions like this are called deirishlay characters. Deirish packaged kai into an l function. 1 - 1 3 s + 1 5
+19:47
+19 minutes, 47 seconds
+s - 1 over 7 s and so on. At s = 1, that famous series= /4. What matters for
+19:56
+19 minutes, 56 seconds
+us are its zeros. In the weighted prime power formula, each zero contributes an oscillating term. If the generalized
+20:03
+20 minutes, 3 seconds
+remon hypothesis is true, those terms have square root scale. Now the bias itself. Look at squares. For any odd
+20:12
+20 minutes, 12 seconds
+prime p, p^ squ leaves remainder one. So when the explicit formula counts prime powers, the squares of odd primes all
+20:20
+20 minutes, 20 seconds
+contribute on the blue side. When we separate prime powers from ordinary primes, that contribution leaves a lower order offset in the opposite direction.
+20:28
+20 minutes, 28 seconds
+It favors orange in the prime only race.
+20:31
+20 minutes, 31 seconds
+Its scale is about the roo of x over log x. Add the waves to that offset and the walk wobbles around a baseline
+20:38
+20 minutes, 38 seconds
+above zero. Blue gets ahead only when the waves briefly line up against it.
+20:43
+20 minutes, 43 seconds
+Here is the honest status. Deerlay's theorem, the prime number theorem, and Littlewood's sign changes are proven.
+20:50
+20 minutes, 50 seconds
+The picture of waves around an offset and the figure 99.59% derived by Rubenstein and Sarnac in 1994
+20:57
+20 minutes, 57 seconds
+rest on two unproven hypotheses. The generalized remon hypothesis and the grand simplicity hypothesis about the
+21:04
+21 minutes, 4 seconds
+zeros. Back to the two teams. Same share of the primes, same long run size, and yet hiding in the air, an offset from
+21:13
+21 minutes, 13 seconds
+squares that always land on blue, and a chorus of zeros whose waves decide who leads. Chevy noticed a pattern in the
+21:21
+21 minutes, 21 seconds
+primes. More than a century later, Rubenstein and Sarnac described its statistical shape using the zeros of an L function, and nobody has yet proved
+21:30
+21 minutes, 30 seconds
+the two hypotheses that complete the picture. So, here is the question I cannot put down. This race has two teams. What happens when there are three or 10? Who leads then?
+Chapter 4: Discovery 3: Why There Are Only 5 Perfect Solids (Euler Characteristic)
+21:45
+21 minutes, 45 seconds
+Open a set of role- playinging dice.
+21:47
+21 minutes, 47 seconds
+Four [music] sides, 6 8 12 20. Every face is equally likely because no face is special. Now look at a virus.
+21:57
+21 minutes, 57 seconds
+Adenoiruses, herpes viruses, and many others wrap their genes in a 20-faced shell. [music] Why? A small genome codes
+22:05
+22 minutes, 5 seconds
+only a few proteins, so the shell repeats one piece, and symmetry closes it. In methane, four hydrogen atoms
+22:13
+22 minutes, 13 seconds
+around a carbon spread as far apart as they can to the corners of a tetrahedrin.
+22:18
+22 minutes, 18 seconds
+Fluorite often grows as ocahedra, pyite as cubes. Buckminister Fuller's domes subdivide an icosahedron. Dice, viruses,
+22:27
+22 minutes, 27 seconds
+molecules, minerals, buildings, the same few shapes over and over. What are they?
+22:34
+22 minutes, 34 seconds
+Take a regular polygon. Equal sides, equal angles. Join copies edge to edge, and the [music] flat sheet curls up and
+22:41
+22 minutes, 41 seconds
+closes into a solid. Call the solid regular when every face is the same regular polygon and every corner looks alike. That sounds like a loose rule.
+22:51
+22 minutes, 51 seconds
+Any polygon, any number at a corner, it should give endless solids. [music] It does not. More than 2,000 years ago,
+22:59
+22 minutes, 59 seconds
+Greek geometers already knew the complete list. Exactly five, [music] not four, not six. So why exactly five? Here
+23:08
+23 minutes, 8 seconds
+they are. The tetrahedrin, four triangles, three at every corner.
+23:13
+23 minutes, 13 seconds
+[music] The cube, six squares, three at every corner. The ocahedron, eight triangles, four at every corner. The
+23:21
+23 minutes, 21 seconds
+dodcahedron, 12 pentagons, three at every corner. The icosahedron 20 triangles, five at every corner. Two
+23:29
+23 minutes, 29 seconds
+conditions to find them. Every face is the same regular polygon and every corner looks alike. The same number of faces meet at each one. [music]
+23:38
+23 minutes, 38 seconds
+Both matter. Glue two tetrahedra together along a face. Every face is an equilateral triangle and the solid is
+23:45
+23 minutes, 45 seconds
+convex. But three triangles meet at each tip and four around the middle. The corners differ so it is not regular.
+23:53
+23 minutes, 53 seconds
+[music]
+23:53
+23 minutes, 53 seconds
+The table has the counts. Look at the edge column. The cube and ocahedron share 12 edges. The docahedron and
+24:00
+24 minutes
+iicosahedron share 30. That is no accident and we will return to it. For now, keep two numbers for each solid.
+24:08
+24 minutes, 8 seconds
+The sides of a face and the faces at a corner. Call them P and Q. Five solids, five [music] pairs. Why these and no others?
+24:17
+24 minutes, 17 seconds
+Zoom into one corner of the cube. Three squares meet here. Cut along one edge and lay them flat around the vertex.
+24:25
+24 minutes, 25 seconds
+Each square gives a right angle 90°. Three make 270. A gap of 90° remains.
+24:32
+24 minutes, 32 seconds
+Close it and the corner springs up into three dimensions. [music] The tetrahedrin three triangles 60 each 180. The ocahedron four triangles 240.
+24:43
+24 minutes, 43 seconds
+The iicasahedron 5 300. The docahedron three pentagons at 108 324.
+24:51
+24 minutes, 51 seconds
+Every corner has a gap. The angles always add up to less than 360. [music] Why must they? If they reached exactly
+25:00
+25 minutes
+360, the faces would lie flat around the point. No corner, just a floor. And more than that would force the surface to
+25:07
+25 minutes, 7 seconds
+crumple. So the corner could not be convex. Here is the reason. Slice the corner off with a plane, leaving a small
+25:14
+25 minutes, 14 seconds
+pyramid over a polygon. Its triangles carry 180° each. along the base. They spend more than the polygon itself uses.
+25:23
+25 minutes, 23 seconds
+What remains for the tip is less than 360. [music] So the secret sits at every corner. The angles must leave a gap. Now we turn
+25:33
+25 minutes, 33 seconds
+that gap into mathematics. Let P be the number of sides of each face and Q the number of faces at each vertex. A
+25:41
+25 minutes, 41 seconds
+polygon has at least three sides and a corner needs at least three faces. So P and Q are at least three. A regular pgon
+25:48
+25 minutes, 48 seconds
+has interior angle alpha equal to p - 2 * 180 / p. At a vertex, q of them meet and their total must stay below 360.
+25:59
+25 minutes, 59 seconds
+Substitute alpha, divide by 180, multiply by p, expand, [music] collect terms on one side, and add four
+26:08
+26 minutes, 8 seconds
+to both. The left side is a rectangle with two strips removed, and it factors.
+26:13
+26 minutes, 13 seconds
+Pus 2 * q - 2 is less than 4. Notice the strict sign [music] equal to 4 means exactly 360° flat, no
+26:22
+26 minutes, 22 seconds
+[music] corner. Now P minus 2 and Q minus 2 are whole numbers, each at least one with product below four. If P is 6
+26:31
+26 minutes, 31 seconds
+or more, P minus 2 is already four or more. So the product is too big. Three hexagons fill exactly 360, a flat
+26:39
+26 minutes, 39 seconds
+honeycomb. The same goes for Q. Six triangles lie flat. So P and Q are three, four or five. [music]
+26:47
+26 minutes, 47 seconds
+Nine pairs. 33 gives one. 3 4 and 43 give two. 35 and 53 give three. All
+26:55
+26 minutes, 55 seconds
+below four. These survive. 44 gives exactly four. A flat grid. 45 needs 450°.
+27:03
+27 minutes, 3 seconds
+54 needs 432. They overlap. 55 gives nine. Nothing fits. [music]
+27:10
+27 minutes, 10 seconds
+Five pairs survive. Exactly five. Five pairs survive. Do they give five solids?
+27:16
+27 minutes, 16 seconds
+[music]
+27:16
+27 minutes, 16 seconds
+Here's the match. Three triangles at a vertex, the tetrahedrin. Three squares, the cube. [music] Four triangles, the ocahedron. Three pentagons, the dodcahedron.
+27:28
+27 minutes, 28 seconds
+Five triangles, the iicasahedron.
+27:31
+27 minutes, 31 seconds
+Mind the order. The first number is the sides of a face. [music] The second is the faces at a corner. 34 is the
+27:38
+27 minutes, 38 seconds
+octahedron. 43 is the cube. [music] But a surviving pair is only a permission slip. The inequality says a
+27:45
+27 minutes, 45 seconds
+corner can exist, not that a whole solid closes up. For that, we build [music] three triangles and one more close the
+27:52
+27 minutes, 52 seconds
+tetrahedrin. Three squares extend to six, a cube. Four triangles make a pyramid, and a second pyramid beneath it
+27:59
+27 minutes, 59 seconds
+gives the ocahedron. [music] Five triangles make a pentagonal pyramid. Wrap it in a band of 10 triangles. Cap it with another pyramid.
+28:07
+28 minutes, 7 seconds
+20 faces, the iicasahedron.
+28:10
+28 minutes, 10 seconds
+Three pentagons grow into a bowl of six, and two bowls interlock, the dodcahedron.
+28:16
+28 minutes, 16 seconds
+Uklid constructed all five, each inside a sphere, and coordinates confirm them today. Once the pair is chosen, nothing
+28:23
+28 minutes, 23 seconds
+is left to choose. The solid is determined up to size. [music] There is a second road to the same answer, and it starts with counting. For
+28:31
+28 minutes, 31 seconds
+a convex polyhedrin, let V, E, and F be the numbers of vertices, edges, and faces. Cube 8 - 12 + 6 [music] is 2.
+28:41
+28 minutes, 41 seconds
+Tetrahedrin 4 - 6 + 4 2. Docahedin 20 -
+28:47
+28 minutes, 47 seconds
+30 + 12 2. This is Oilers's formula. V - E + F
+28:53
+28 minutes, 53 seconds
+[music]
+28:53
+28 minutes, 53 seconds
+= 2. Why? Remove one face and flatten the rest into a plain drawing. Adding a
+29:00
+29 minutes
+diagonal adds one edge and one face. So the count holds. Peeling boundary triangles holds it too until one triangle remains. 3 - 3 + 1 is 1.
+29:10
+29 minutes, 10 seconds
+Restore the removed face [music] 2. Now count edges. Each face has P edges, but each edge borders two faces. PF= 2E.
+29:20
+29 minutes, 20 seconds
+Each vertex has Q edges and each edge has two Ns. QV= 2E. So V is 2 E over Q
+29:29
+29 minutes, 29 seconds
+and F [music] is 2 E over P. Put them into Oilers's formula. E * 1 over P + 1
+29:35
+29 minutes, 35 seconds
+over Q - 1/2 = 1. E is positive, so 1 / P + 1 / Q must exceed 1/2. Multiply by 2
+29:44
+29 minutes, 44 seconds
+PQ, rearrange, add 4. PUS 2 * Q - 2 is less than 4. [music]
+29:51
+29 minutes, 51 seconds
+The same inequality from counting alone with no angles at all. And it explains the coincidence. Swap P and Q and V and
+29:59
+29 minutes, 59 seconds
+F trade places while E stays. So the cube and ocahedron share 12 edges and the docahedron and iicosahedron share
+30:06
+30 minutes, 6 seconds
+30. Back to the beginning. [music] The rule looked loose. Any regular polygon, any number at a corner. It
+30:13
+30 minutes, 13 seconds
+seemed to promise endless solids. But the rule hides a limit at every corner.
+30:19
+30 minutes, 19 seconds
+The angles around it must leave a gap fewer than 360°.
+30:24
+30 minutes, 24 seconds
+Triangles can meet three, four, or five at a point. Squares three. [music] Pentagons three. Hexagons none. Six
+30:32
+30 minutes, 32 seconds
+triangles, four squares, or three hexagons fill the full turn. And a full turn is flat. [music] That leaves five corners and each closes into a solid.
+30:42
+30 minutes, 42 seconds
+This is very old mathematics. Uklid's elements builds all five in its 13th book and closes with an argument that there are no others resting on the same
+30:51
+30 minutes, 51 seconds
+fact. [music] A solid corner takes less than four right angles. They carry Plato's name because the Timus links
+30:58
+30 minutes, 58 seconds
+four of them to fire, earth, air, and water, and the fifth to the heavens.
+31:02
+31 minutes, 2 seconds
+[music]
+31:03
+31 minutes, 3 seconds
+So why exactly five? Because the angle of a polygon and the number of polygons at a corner balance in only five ways.
+31:12
+31 minutes, 12 seconds
+There is no sixth. There was never room for one. Five perfect solids and a gap at every corner.
+Chapter 5: Discovery 4: The Monty Hall Paradox & Bayesian Truth
+31:22
+31 minutes, 22 seconds
+Dana has driven four hours for this. Her old car died last month. And behind one of these three doors is a new one. She
+31:30
+31 minutes, 30 seconds
+has chosen door one. She feels good about it. And then the host, who knows what is behind every door, walks to door
+31:38
+31 minutes, 38 seconds
+three and opens it. A goat. Would you like to switch? The audience splits. Half shout stay.
+31:48
+31 minutes, 48 seconds
+Half shout switch. Rewind. Here is the situation exactly. Three closed doors. Behind one, a car.
+31:57
+31 minutes, 57 seconds
+Behind the other two, goats. Dana can't see inside any of them. The host knows what's behind every door. And his rules
+32:05
+32 minutes, 5 seconds
+are exact. He always opens a door the contestant did not choose. He always opens one that hides a goat. And he always offers the switch.
+32:15
+32 minutes, 15 seconds
+Two doors left. Dana's and door two.
+32:19
+32 minutes, 19 seconds
+stay or switch. It feels like a coin flip. Two doors, one car, 50/50.
+32:27
+32 minutes, 27 seconds
+It isn't. Under these rules, staying wins one time in three. Switching wins two times in three, twice as often.
+32:35
+32 minutes, 35 seconds
+[music] Nothing moved. Nothing changed behind the doors. So, why would one of two closed doors deserve twice the
+32:43
+32 minutes, 43 seconds
+chance of the other? The answer isn't really about goats. It's about what a piece of information is worth and how that information got to you. Let's give
+32:52
+32 minutes, 52 seconds
+the intuition its due because it isn't foolish. Two closed doors identical. You can't see inside either. So why wouldn't
+33:00
+33 minutes
+they be equal? Because I can't tell them apart is not the same as they're equally likely. And still possible is not the
+33:07
+33 minutes, 7 seconds
+same as equally likely either. Go back to the beginning. Before the host moved, [music] the car was placed with no
+33:14
+33 minutes, 14 seconds
+preference. Each door one chance in three. Your door one/3. The two doors you didn't choose together 2/3.
+33:24
+33 minutes, 24 seconds
+Now door three opens and a quiet assumption slips in that the game has restarted with two doors and a clean slate. That the probability simply spreads evenly over whatever is left.
+33:36
+33 minutes, 36 seconds
+But it didn't restart. Your choice was made among three doors. Door one still carries that history.
+33:43
+33 minutes, 43 seconds
+So, there are two different things. The probability before the host acts and what the host's action tells us. The mistake is to throw away the first and
+33:52
+33 minutes, 52 seconds
+listen only to the second. You're in good company. When a columnist answered this puzzle correctly in a national magazine in 1990, thousands of readers
+34:01
+34 minutes, 1 second
+wrote in to say she was wrong. One caution, this is a mathematical puzzle with fixed rules. We'll come back to the
+34:09
+34 minutes, 9 seconds
+real show. So, let's stop arguing and play the game. Every possible game.
+34:17
+34 minutes, 17 seconds
+You choose door one. The car is equally likely to be behind any of the three doors. Three cases, each one/3.
+34:25
+34 minutes, 25 seconds
+Case one. The car is behind door one.
+34:28
+34 minutes, 28 seconds
+Your door. The host can open door two or door three. Both hide goats. Whichever he opens, if you stay, you win. If you
+34:36
+34 minutes, 36 seconds
+switch, you lose. Case two. The car is behind door two. The host can't open door two. That's the car. He can't open
+34:44
+34 minutes, 44 seconds
+door one. That's yours. He must open door three. Stay and you lose. Switch and you win. Case three. The car is
+34:53
+34 minutes, 53 seconds
+behind door three. He must open door two. Stay loses. Switch wins. Now count.
+34:59
+34 minutes, 59 seconds
+[music]
+35:00
+35 minutes
+Staying wins in one case out of three. Switching wins in two. 1/3 2/3.
+35:07
+35 minutes, 7 seconds
+One trap to avoid in case one, the host has two choices. Don't treat those as two extra separate worlds. Both live
+35:14
+35 minutes, 14 seconds
+inside the same one-third slice. The car is behind your door. If he picks by coin flip, each choice carries one sixth. The
+35:22
+35 minutes, 22 seconds
+equally likely things are the prize locations. The host's choices are not.
+35:27
+35 minutes, 27 seconds
+And notice what switching really is. It wins exactly when your first pick was wrong. And your first pick is wrong two
+35:34
+35 minutes, 34 seconds
+times in three. Here's the same truth seen another way. Your door, one chance in three. The other two doors as a pair,
+35:42
+35 minutes, 42 seconds
+two chances in three. Put a bracket around the pair. Now, the host must open one door from that pair. And it must
+35:50
+35 minutes, 50 seconds
+show a goat. If the car sits in the pair, his hand is forced. He opens the other door, the goat. What he never does
+35:57
+35 minutes, 57 seconds
+is open the car. So, his action can't make the car leave the pair. The pair held 2/3 before he opened anything. A
+36:05
+36 minutes, 5 seconds
+goat then comes out of it, never the car. When it's over, one door has been shown empty, and the 2/3 that belonged to the pair rests on the one that's
+36:14
+36 minutes, 14 seconds
+still closed. That isn't magic. The host didn't transfer probability. The car never moved. His action only removed a
+36:23
+36 minutes, 23 seconds
+door. And because he knew where the car was, the door he removed was chosen in a way that tells us something. Meanwhile,
+36:30
+36 minutes, 30 seconds
+door one learns nothing. The host would have shown you a goat whether or not your door held the car. His action says nothing about your door. It speaks only
+36:39
+36 minutes, 39 seconds
+about the other two. That's the asymmetry. Your door sits outside the host's reach. The other door sits inside
+36:46
+36 minutes, 46 seconds
+it. Now, let's make this exact. You hold door one. The host opens door three.
+36:52
+36 minutes, 52 seconds
+What's the probability the car is behind door one given what we just saw? That's [music] conditional probability. And B
+36:59
+36 minutes, 59 seconds
+theorem tells us how to compute it. The probability of A given B equals the probability of B given A times the probability of A divided by the
+37:07
+37 minutes, 7 seconds
+probability of B. Here B is the host opening door 3. To use it, we need the host's rules. If the car is behind door
+37:15
+37 minutes, 15 seconds
+1, he picks door two or door three at random, 1/2. Behind door two, he must open door three. One. Behind door three,
+37:23
+37 minutes, 23 seconds
+he can't open it. Zero. Each location starts at 1/3. Multiply 1/6 1/3 zero.
+37:32
+37 minutes, 32 seconds
+Add them 1/2. That's the total chance of seeing door three open. Divide door 1/3.
+37:39
+37 minutes, 39 seconds
+Door 2 2/3 door 3 zero. Same answer. But look at what we needed. How the host
+37:47
+37 minutes, 47 seconds
+behaves. Change that and the answer changes. A host who opens door three whenever he can leaves doors one and two
+37:54
+37 minutes, 54 seconds
+even. And a host who knows nothing opens an unchosen door at random and just happens to reveal a goat. 50/50.
+38:03
+38 minutes, 3 seconds
+Same doors, same goat, a different way of getting there and a different probability.
+38:08
+38 minutes, 8 seconds
+Now make it bigger. 100 doors, one car, 99 goats. You pick one. One chance in a 100. Be honest. You don't believe you
+38:17
+38 minutes, 17 seconds
+got it right. The host, who knows where the car is, opens 98 of the other doors.
+38:23
+38 minutes, 23 seconds
+Everyone a goat. Two doors remain. Yours and a single other. Is this 50/50?
+38:30
+38 minutes, 30 seconds
+Your door started with one chance in a 100. Nothing the host did gave it any reason to improve. The other 99 doors
+38:37
+38 minutes, 37 seconds
+held 99 chances in 100. And the host, who knew cleared away 98 of them, deliberately leaving the one that had to
+38:44
+38 minutes, 44 seconds
+stay if the car was among them. Stay one in 100. Switch 99 in 100. Same rules,
+38:52
+38 minutes, 52 seconds
+only bigger. The host still knows he never opens your door. He never reveals the car. The weakness of your first choice, which hid in the three door
+39:00
+39 minutes
+version, has nowhere to hide here. In general, with N doors, where the host opens all but one of the unchosen ones,
+39:07
+39 minutes, 7 seconds
+staying wins one in N. Switching wins n minus one in N. The structure never changed. Only the size did. This puzzle
+39:16
+39 minutes, 16 seconds
+has a history. Statistician Steve Selvin posed a version in 1975 and named it for Monty Hall, host of Let's Make a Deal.
+39:23
+39 minutes, 23 seconds
+In 1990, Marilyn Vos Savon answered it in her parade column, Switch, and the Mail poured in. Hall himself later said
+39:31
+39 minutes, 31 seconds
+the real show didn't work this way. He controlled the game. What we've solved is the puzzle, not the television show.
+39:38
+39 minutes, 38 seconds
+Return to Dana's moment. She'd made a choice. Someone who knew more than she did gave her a true piece of information. The lesson isn't always
+39:46
+39 minutes, 46 seconds
+switch. It's this. New information does not automatically make what remains equally likely. Possible isn't the same
+39:55
+39 minutes, 55 seconds
+as probable. And to update a belief correctly, you have to ask not only what you were told, but how you came to be told it. That's conditional probability.
+40:06
+40 minutes, 6 seconds
+That's Beijian reasoning. And you meet it wherever an informed process filters what you see. Take a medical test. This
+40:14
+40 minutes, 14 seconds
+is a simplified illustration with madeup numbers, not medical advice and not a Monty Hall problem. Suppose the base
+40:21
+40 minutes, 21 seconds
+rate is one person in 100. The test's sensitivity is 90%. It catches 90% of the people who have the condition. Its
+40:30
+40 minutes, 30 seconds
+specificity is 95%, it correctly clears 95% of the people who don't and wrongly flags the other five. Test 10,000
+40:38
+40 minutes, 38 seconds
+people. 100 have the condition. 90 test positive. 99,900 don't. 495 test
+40:46
+40 minutes, 46 seconds
+positive anyway. 585 positives. 90 of them truly have it. About 15%. The
+40:53
+40 minutes, 53 seconds
+chance of having the condition given a positive test. Real evidence. But what it means depends on the base rate and on
+41:01
+41 minutes, 1 second
+how the test ers. Investigators ruling out suspects, search teams clearing areas, fraud analysts reviewing flagged
+41:09
+41 minutes, 9 seconds
+cases. Each must ask what the process was likely to show them. Back to the three doors. Your first choice had one
+41:17
+41 minutes, 17 seconds
+chance in three. The host's knowledge didn't change that. It changed everything else. So the next time someone who knows more than you reveals
+41:25
+41 minutes, 25 seconds
+something true, ask what you've been told. And then ask what they were always going to show you, no matter what.
+Chapter 6: Discovery 5: The Basel Problem & The Geometry of Light (Σ 1/n²)
+41:37
+41 minutes, 37 seconds
+1 + 1/4 + 1 9th + 116th add them forever.
+41:44
+41 minutes, 44 seconds
+Every number here is a rational fraction. Every operation is elementary arithmetic. There are no curves, no
+41:52
+41 minutes, 52 seconds
+angles, no signs, and no triangles. Yet, if you add these reciprocal squares all
+42:00
+42 minutes
+the way to infinity, the sum does not stop at a clean whole number or a tidy fraction. It converges to one of the
+42:08
+42 minutes, 8 seconds
+most astonishing values in the history of science. P^2 / 6 approximately
+42:16
+42 minutes, 16 seconds
+1.644 934.
+42:20
+42 minutes, 20 seconds
+Pi the constant of the circle the ratio of circumference to diameter.
+42:27
+42 minutes, 27 seconds
+How can adding rigid whole number squares produce the fundamental number of smooth curvature? Where is the circle
+42:35
+42 minutes, 35 seconds
+height? This question was first posed in 1644 by Italian mathematician Petro Mangoli
+42:43
+42 minutes, 43 seconds
+in Bolognia. For nearly a century, it defeated every scholar in Europe. In the
+42:50
+42 minutes, 50 seconds
+late 17th century, it reached Yakaba Bernoli in Basil, Switzerland, lending the puzzle its eternal name, the Basel problem.
+43:00
+43 minutes
+Yakob knew the series had to converge.
+43:03
+43 minutes, 3 seconds
+He proved it by comparing each reciprocal square 1 / n^2 with a slightly larger fraction 1 / n * n -1.
+43:14
+43 minutes, 14 seconds
+That fraction splits into a telescoping pair 1 / n -1 - 1 /n. Watch what happens
+43:22
+43 minutes, 22 seconds
+when you write out the terms. 1 - a half + a half - a3 plus a3 - a 4th. Every
+43:31
+43 minutes, 31 seconds
+internal number collides with its opposite and annihilates. The entire infinite sum telescopes down to exactly
+43:39
+43 minutes, 39 seconds
+two. Because reciprocal squares are strictly smaller, the Bosle sum was locked below two. But what was its exact
+43:48
+43 minutes, 48 seconds
+value? Yakob tried adding the numbers by hand, but the series converges with agonizing slowness. 100 terms gives 1.6350.
+43:59
+43 minutes, 59 seconds
+Adding 10,000 terms requires computing 10,000 denominators by hand only to guarantee four decimal places. In 1705,
+44:09
+44 minutes, 9 seconds
+Yakob died without ever 30 years later in St. Petersburg, 27year-old Leanhard Oiler took up the challenge.
+44:19
+44 minutes, 19 seconds
+Oiler had a secret. Before finding a proof, he used his own acceleration formulas to compute the Basel sum to 20
+44:29
+44 minutes, 29 seconds
+decimal places. 1.64493 4668.
+44:37
+44 minutes, 37 seconds
+When he tested p^2 / 6, all 20 decimal places matched. He already knew
+44:44
+44 minutes, 44 seconds
+the answer was true. Now he had to prove why.
+44:50
+44 minutes, 50 seconds
+Oiler made a move that shocked the mathematical world. He abandoned discrete counting numbers entirely and
+44:57
+44 minutes, 57 seconds
+looked at a continuous wave, the sign function. Take sine of x and divide it
+45:04
+45 minutes, 4 seconds
+by x. Look at the curve at the origin. 0 / 0 should fail. But as x approaches 0,
+45:13
+45 minutes, 13 seconds
+the ratio sinx /x reaches exactly 1.
+45:19
+45 minutes, 19 seconds
+Everywhere else the wave oscillates and dies away, rippling across the axis. Where does this curve touch zero?
+45:28
+45 minutes, 28 seconds
+Sine of x is zero at every nonzero multiple of pi positive pi negative pi 2 pi - 2 pi 3 pi and so on forever.
+45:40
+45 minutes, 40 seconds
+Oiler realized these roots are the gates of p. Now came Oilers's audacious leap.
+45:48
+45 minutes, 48 seconds
+In elementary algebra, if a polomial equals 1 at x= 0 and has roots at r1 and
+45:56
+45 minutes, 56 seconds
+r2, you can write it as a product of factors 1 - x / r1 * 1 - x / r2.
+46:05
+46 minutes, 5 seconds
+Oiler asked, can we treat an infinite wave like an infinite polomial?
+46:11
+46 minutes, 11 seconds
+Watch what happens when you pair the roots. Take the roots at positive and negative. Their factors are 1 -
+46:19
+46 minutes, 19 seconds
+x / * 1 + x / multiply them together and the cross terms vanish
+46:26
+46 minutes, 26 seconds
+leaving 1 - x^2 over 2. Now pair 2i and - 2i 1 - x^2 over
+46:35
+46 minutes, 35 seconds
+4^ 2 3 1 - x^2 over 9 2 Oiler wrote the entire sync wave as an
+46:43
+46 minutes, 43 seconds
+infinite product of these quadratic factors treating an infinite wave like a finite polomial was a bold leap of faith
+46:52
+46 minutes, 52 seconds
+a step that took mathematicians over a century to formally justify under Carl Vierstros but Oiler verified his
+46:59
+46 minutes, 59 seconds
+intuition by testing ing it on coine immediately reproducing livenets's famous series for pi 4.
+47:07
+47 minutes, 7 seconds
+Now comes the moment of revelation.
+47:11
+47 minutes, 11 seconds
+Oiler knew that the same function sinx has another famous representation.
+47:18
+47 minutes, 18 seconds
+Its tailaylor series expansion. Sin of x = x - x cubed / 6 + x 5 over 120. Divide
+47:28
+47 minutes, 28 seconds
+by x and you get 1 - x^2 / 6 + x 4 over
+47:35
+47 minutes, 35 seconds
+120. Focus on the coefficient in front of x^2. It is exactly - 16. Now look at
+47:44
+47 minutes, 44 seconds
+oiler's infinite product. If you expand these infinite brackets, how do you generate an x squar term? You choose the
+47:52
+47 minutes, 52 seconds
+x squar term from one bracket and the number one from every other bracket. Add them all together and the total x^2
+47:59
+47 minutes, 59 seconds
+coefficient is -1 /^2 - 1 / 4^2 - 1 over 9 2. Factor out
+48:09
+48 minutes, 9 seconds
+1 2. Inside the parenthesis sits 1 + 1/4 + 1 9th + 116th the basel sum.
+48:20
+48 minutes, 20 seconds
+These two expressions are two different portraits of the exact same wave. Their coefficients must be equal. - 16 =
+48:30
+48 minutes, 30 seconds
+-1^2 * the basel sum multiply by 2. The
+48:37
+48 minutes, 37 seconds
+sum of reciprocal squares equ=^2 / 6. Oilers's proof was brilliant, but
+48:45
+48 minutes, 45 seconds
+it left mathematicians asking a deeper question.
+48:49
+48 minutes, 49 seconds
+Why was a circle there at all? Was there a purely geometric reason why reciprocal
+48:57
+48 minutes, 57 seconds
+squares connect to pi? In 2007, Swedish mathematician Johan Westland formalized
+49:05
+49 minutes, 5 seconds
+an answer using nothing more than geometry and light.
+49:10
+49 minutes, 10 seconds
+Imagine an infinite line of lighouses spaced at odd whole numbers along a flat shoreline. Because light obeys the
+49:19
+49 minutes, 19 seconds
+inverse square law, the brightness you receive from each lighthouse falls off as 1 / distance squared. Summing their
+49:27
+49 minutes, 27 seconds
+brightness gives the sum of odd reciprocal squares. 1 over 1 2 + 1 over
+49:34
+49 minutes, 34 seconds
+3^ 2 + 1 over 5^ 2. Now place a circular mirror between the shore and the
+49:41
+49 minutes, 41 seconds
+observer. Using elementary circle geometry, Wesland showed that two symmetrical lighouses at plus and minusd
+49:50
+49 minutes, 50 seconds
+can be geometrically folded into a single lighthouse on a circle of half the diameter.
+49:57
+49 minutes, 57 seconds
+Repeating this folding compresses the infinite line of lighouses directly onto the perimeter of a circle. The total
+50:05
+50 minutes, 5 seconds
+brightness along the line equals the brightness around the circle exactly^2 over 8. And because the total Basel sum
+50:14
+50 minutes, 14 seconds
+is 4/3 of the odd sum, it gives p^2 / 6. The circle was not an algebraic
+50:22
+50 minutes, 22 seconds
+coincidence. It was the projection engine of inverse. Oiler's solution was only the beginning of a grander story.
+50:31
+50 minutes, 31 seconds
+Pick two whole numbers completely at random from the infinite sea of integers.
+50:38
+50 minutes, 38 seconds
+What is the probability that they share no common factors that they are co-prime?
+50:44
+50 minutes, 44 seconds
+The answer is exactly 6 over pi squared about 60.8%.
+50:50
+50 minutes, 50 seconds
+Pi governs the statistical randomness of prime numbers. In physics, when Max Plunk and Ludvig Boltzman calculated the
+50:59
+50 minutes, 59 seconds
+total heat radiated by a glowing black body, the integral over all photon frequencies led directly to Oiler's zeta
+51:08
+51 minutes, 8 seconds
+family. Pi to the 4th over 90. A century after Oiler, Bernhard Reman extended
+51:15
+51 minutes, 15 seconds
+this series into the complex plane, defining the remon zeta function. Its non-trivial zeros hold the deepest
+51:22
+51 minutes, 22 seconds
+secrets of prime numbers. The celebrated Reman hypothesis unsolved to this day.
+51:30
+51 minutes, 30 seconds
+What began in 1644 as an innocent question about counting squares revealed that arithmetic, geometry, and physics
+51:38
+51 minutes, 38 seconds
+are singing the same note. The whole numbers and the circle are two sides of the very same universe.
+Chapter 7: Discovery 6: Gabriel's Horn (Finite Volume, Infinite Area)
+51:50
+51 minutes, 50 seconds
+Imagine a geometric horn. It begins wide at one end and stretches along the
+51:56
+51 minutes, 56 seconds
+coordinate axis forever, narrowing into an infinitely thin funnel. You can fill
+52:03
+52 minutes, 3 seconds
+this entire shape to the brim with 3.14 L of paint, but you could never paint
+52:11
+52 minutes, 11 seconds
+its outside surface even if you possessed all the paint in the universe. This is the painters paradox.
+52:20
+52 minutes, 20 seconds
+How can a finite volume of liquid be held inside a container whose surface area is infinite? If the liquid fills
+52:29
+52 minutes, 29 seconds
+the container, does it not physically touch every single point of the interior wall? How can finite paint coat an infinite surface?
+52:40
+52 minutes, 40 seconds
+Discovered in 1641 by Italian physicist Evangelista Torricelli decades before Newton and the horn is generated by the
+52:50
+52 minutes, 50 seconds
+simplest reciprocal curve in mathematics y= 1 /x
+52:56
+52 minutes, 56 seconds
+we anchor the curve at x= 1 where y = 1 and follow it as x marches toward
+53:04
+53 minutes, 4 seconds
+positive infinity the curve falls toward the horizontal axis.
+53:10
+53 minutes, 10 seconds
+getting closer and closer to zero, but never touching it. Now take this
+53:16
+53 minutes, 16 seconds
+infinite curve and revolve it 360° around the horizontal axis. Every point
+53:23
+53 minutes, 23 seconds
+on the curve traces out a perfect circle of radius 1 /x.
+53:29
+53 minutes, 29 seconds
+The resulting surface resembles a trumpet of infinite length, Gabriel's horn.
+53:37
+53 minutes, 37 seconds
+To measure its properties, we use the method of exhaustion. We slice the horn perpendicular to the axis to find the
+53:45
+53 minutes, 45 seconds
+total volume. We add up the volumes of all these infinite decimal circular discs from x = 1 to infinity.
+53:57
+53 minutes, 57 seconds
+This gives the improper integral * the integral of 1 /x^2 with respect to x.
+54:07
+54 minutes, 7 seconds
+The anti-derivative of 1 /x^2 is -1 /x.
+54:13
+54 minutes, 13 seconds
+When we evaluate from 1 to a finite cutoff b, we get pi * the quantity 1 - 1
+54:22
+54 minutes, 22 seconds
+/ b. Now take the limit as b reaches toward infinity. The term 1 / b vanishes
+54:32
+54 minutes, 32 seconds
+into zero. The infinite sum collapses to a crisp finite constant exactly pi cubic units.
+54:43
+54 minutes, 43 seconds
+Despite extending into infinity, the volume of Now let us compute the surface
+54:49
+54 minutes, 49 seconds
+area. The formula for the surface area of a solid of revolution multiplies the
+54:56
+54 minutes, 56 seconds
+circumference of each circle 2i /x by the slant arclength element d s. This
+55:03
+55 minutes, 3 seconds
+produces the integral of 2 /x * the of 1 + 1 /x 4th power.
+55:13
+55 minutes, 13 seconds
+Look closely at that square root term.
+55:16
+55 minutes, 16 seconds
+Because 1 /x to 4th is strictly positive. The square root is always greater than 1. That means our surface
+55:24
+55 minutes, 24 seconds
+area is strictly greater than 2i * the integral of 1 /x.
+55:30
+55 minutes, 30 seconds
+And what is the integral of 1 /x? It is the natural logarithm of x. As x goes to
+55:38
+55 minutes, 38 seconds
+infinity, the natural logarithm climbs without bound. The surface area of Gabriel's horn does not converge. It
+55:46
+55 minutes, 46 seconds
+diverges to positive infinity. How do we resolve the paradox?
+55:52
+55 minutes, 52 seconds
+In the physical universe, paint is made of atoms. A molecule of paint has a diameter of roughly 1 nanometer. When X
+56:02
+56 minutes, 2 seconds
+reaches 1 billion, the radius of the horn narrows below the size of a single molecule. Physical paint cannot enter
+56:11
+56 minutes, 11 seconds
+the throat. In the real world, the horn cannot be filled.
+56:16
+56 minutes, 16 seconds
+In pure mathematics, paint has zero thickness. Volume is a three-dimensional measure. Surface area is a
+56:25
+56 minutes, 25 seconds
+two-dimensional measure. If you spread a finite three-dimensional volume over an infinite two-dimensional area, the
+56:32
+56 minutes, 32 seconds
+thickness of the paint must approach zero as 1 /x.
+56:38
+56 minutes, 38 seconds
+Finite paint can coat an infinite surface only if the coat is infinitely thin.
+56:45
+56 minutes, 45 seconds
+This reveals a profound truth of geometry. Lower dimensional boundaries can wander. Torchelli's trumpet proved
+56:54
+56 minutes, 54 seconds
+that infinity does not behave like ordinary numbers. It forced mathematicians to realize that our
+57:01
+57 minutes, 1 second
+physical intuition about size, capacity, and boundary breaks down when continuous curves stretch toward the infinite.
+57:11
+57 minutes, 11 seconds
+3.14 units of volume, infinite surface area. Gabriel's horn stands as a
+57:19
+57 minutes, 19 seconds
+monument to mathematical elegance, proving that inside the infinite, the impossible is simply exact.
+Chapter 8: Discovery 7: The Banach-Tarski Paradox (Decomposing Infinity)
+57:36
+57 minutes, 36 seconds
+Take a solid sphere of pure gold, the size of an orange. Slice it with an
+57:43
+57 minutes, 43 seconds
+infinitely sharp knife into exactly five pieces. Do not stretch them. Do not melt them. Our physical intuition breaks
+57:53
+57 minutes, 53 seconds
+because we live in an atomic world. A physical gold coin is not a continuous block. It is an arrangement of roughly
+58:01
+58 minutes, 1 second
+10 to the 23rd. Imagine two rotations in three-dimensional space. Call the first
+58:08
+58 minutes, 8 seconds
+rotation a turn around. Now apply these rotations to the actual surface of the
+58:15
+58 minutes, 15 seconds
+sphere. Pick a single point. Spin it with all infinite combination. We have
+58:22
+58 minutes, 22 seconds
+dissected the sphere into five disjoint pieces. Piece 1 2 3 4 and five. Plus
+58:32
+58 minutes, 32 seconds
+could you do this with a two-dimensional coin? No. In one and two dimensions,
+58:39
+58 minutes, 39 seconds
+rotations commute. Stefan Bano proved that in the
+Chapter 9: Discovery 8: Quaternions & The Algebra of 4D Space
+58:47
+58 minutes, 47 seconds
+on October 16th, 1843, the Irish mathematician William Rowan Hamilton was walking along the Royal Canal in Dublin.
+58:55
+58 minutes, 55 seconds
+For over 10 years, he had been obsessed.
+58:58
+58 minutes, 58 seconds
+In two dimensions, complex numbers are geometric poetry. Multiplying by the imaginary unit I rotates any vector by
+59:06
+59 minutes, 6 seconds
+90°. Multiplying by cosine theta plus before quitterians navigation used the method formulated by Leonard Oiler.
+59:14
+59 minutes, 14 seconds
+Oiler angles any orientation in space can be described as three successive rotations. Yaw. How do four dimensions
+59:22
+59 minutes, 22 seconds
+rotate a three-dimensional vector? We represent an axis of rotation as a three-dimensional unit vector u and the
+59:30
+59 minutes, 30 seconds
+angle of turn as theta. Here lies the most mindbending property of quitterians. Look at Hamilton's sandwich
+59:37
+59 minutes, 37 seconds
+formula again. If you negative, the minus signs cancel.
+59:42
+59 minutes, 42 seconds
+In 1985, computer scientist Ken Shoemake realized something profound. Because quitterians live on a four-dimensional
+59:50
+59 minutes, 50 seconds
+sphere, you can interpolate between any two orientations by Right now, wherever you are standing on
+Chapter 10: Discovery 9: The Borsuk-Ulam Antipodal Theorem
+59:59
+59 minutes, 59 seconds
+Earth, think about the exact opposite point on the planet. Dig a straight tunnel through thousands of miles of
+1:00:06
+1 hour, 6 seconds
+molten iron. Imagine the equator of the Earth as a simple one-dimensional loop, a circle S1. At every point around this
+1:00:15
+1 hour, 15 seconds
+circle, there is a temperature T of Now take the leap into two dimensions. the surface of our planet, the two sphere
+1:00:23
+1 hour, 23 seconds
+S2. And instead of just temperature, measure two quantities at once, temperature and barometric. Imagine the northern hemisphere of Earth.
+1:00:32
+1 hour, 32 seconds
+Topologically, a hemisphere is identical to a flat solid two-dimensional disc.
+1:00:38
+1 hour, 38 seconds
+The boundary of this disc is the consequences of Bors Ulam stretch far beyond weather maps. 5 years after
+1:00:45
+1 hour, 45 seconds
+Borsuch's proof, mathematicians Arthur Stone and John Tuki realized it unlocked the answer to in physics. We often think
+1:00:53
+1 hour, 53 seconds
+of reality as governed by dynamic equations. Navier Stokes equations, thermodynamic flux and chaotic turbulence.
+Chapter 11: Epilogue & What Lies Beyond
+

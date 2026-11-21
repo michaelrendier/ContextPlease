@@ -1,0 +1,501 @@
+There's a website called "What If" where
+cartoonist and engineer Randall Monroe
+answers ridiculous hypothetical 
+questions with precise scientific detail.
+If you're like me, the family's 
+resident science kid who gets all the
+science-based Christmas gifts, then you've 
+probably already seen this in book form.
+There's one particular article I want 
+to draw your attention to: Droppings.
+If you went outside and lay down 
+on your back with your mouth open,  
+how long would you have to 
+wait until a bird pooped in it?
+Monroe answers this question with a single 
+equation containing a lot of funny units,  
+like poops per bird per hour, in which everything 
+cancels out to give a single figure of 195 years.
+On the topic of weird unit cancellation, Randall 
+then goes on a tangent into a very commonly  
+used unit which has a similar sort of strange 
+cancellation: gas mileage, or fuel efficiency.
+I recommend just reading the article since it's 
+very short, but let me give a quick rundown.
+In the US fuel efficiency is 
+measured in miles per gallon;  
+how many miles can you drive on a gallon of fuel.
+But in Europe and also here 
+in Australia it's measured  
+in the reciprocal form, litres per 100 kilometres.
+That is, how many litres do you 
+need to drive 100 kilometres.
+But a litre is a unit of volume equal 
+to a thousand cubic centimetres,  
+and a kilometre is a unit of length equal to 
+a thousand metres, so canceling things out,
+we find that one litre per 100 kilometres is 
+actually equal to 0.01 square millimetres.
+You can do the same thing with gallons per 
+mile, the reciprocal of miles per gallon, and  
+a typical gas mileage of say 20 miles per gallon 
+corresponds to about 0.1 square millimetres.
+There's a nice physical 
+interpretation of this unit:  
+imagine driving alongside a thin tube 
+of fuel that feeds into your fuel tank.
+Your gas mileage is the precise 
+cross-sectional area of the tube  
+chosen so that the fuel in your tank always 
+stays at the same level as you keep driving.
+Units are weird, and in my undergraduate studies 
+I encountered a lot of particularly cursed units.
+This video looks at four of them, 
+which gradually build in cursedness.
+Let's start with another unit 
+in common usage: kilowatt hours.
+When we say something like "miles per gallon" or  
+"metres per second" we have 
+a simple intuition for that.
+How many miles can you 
+drive on one gallon of fuel?
+How many metres is something moving each second?
+But just as you can divide 
+units you can also multiply,  
+and this has a different sort of intuition.
+If your washing machine is running at a power  
+consumption of 2 kilowatts and it runs 
+for 5 hours over the course of a week,  
+the total amount of energy it uses in that week 
+is the product of the two, 10 kilowatt hours.
+Like miles per gallon though we 
+can do some unit cancellation.
+A watt is actually a joule per second – how 
+many joules of energy is something using  
+every second – so we've got energy 
+divided by time multiplied by time.
+And since there's 1000 watts in a 
+kilowatt and 3600 seconds in an hour,  
+one kilowatt hour is actually 
+equal to 3.6 megajoules.
+You can maybe see now why I 
+think kilowatt hours are cursed.
+Let's say you wanted to estimate 
+the distance from your house to  
+the beach and let's say it takes 
+you 20 minutes to drive there,  
+and accounting for traffic your average 
+speed is about 60 kilometres per hour.
+Since distance is speed times time,  
+you convert the 20 minutes into a third of 
+an hour and multiply by 60 km/h to get 20 km.
+That's what a normal person would do.
+Writing 'kilowatt hours' is like 
+multiplying the 60 km/h by 20  
+minutes and then writing your answer 
+as 1200 kilometre-per-hour-minutes.
+We'll see more of this cancellation later 
+in the video, but first I want to say  
+something about this general process 
+of multiplying and dividing units.
+Most physical constants have units.
+For example, the gravitational 
+constant which relates mass to  
+gravitational force has units of cubic 
+metres per kilogram per second squared.
+Let's see where this unit comes from.
+The gravitational force between 
+two objects is proportional to  
+their masses and inversely proportional to 
+the square of the distance between them.
+That means that the gravitational force between 
+two objects is equal to the product of their  
+masses divided by the distance between 
+them squared, and then multiplied by  
+some conversion constant G, which we don't know 
+yet but is the same for every pair of objects.
+To verify this you can either do an extremely 
+precise measurement with extremely precise  
+equipment or you can do a bunch of maths 
+to this model to derive the orbits of the  
+planets and then do some astronomy to see if it 
+lines up with the actual orbits of the planets.
+If you do this and you're working entirely in SI  
+units you'll get that G is 
+about 6.67 times 10^(-11).
+But there's a problem: the units 
+in this equation don't match up.
+We've got force on the left and mass 
+squared over length squared on the right,  
+so let's rearrange things to 
+get this constant G by itself.
+Now we can see that G is actually in units of  
+force times length squared 
+divided by mass squared.
+If we then use the fact that force 
+is mass times acceleration and  
+acceleration is velocity divided by time 
+and velocity is length divided by time,  
+we get units of length cubed divided 
+by mass divided by time squared.
+And this isn't just a technicality; if 
+we're working with different units the  
+gravitational constant will need 
+to be converted into those units.
+For example, if we were measuring mass in pounds 
+and length in feet we wouldn't get 6.67*10^(-11).
+Instead we would get 1.07*10^(-9).
+This process of only looking at the units in 
+an equation is called dimensional analysis,  
+and amazingly it can actually be used to figure  
+out what equation you should 
+be using in the first place.
+There's a good Numberphile video on this 
+that I've linked in the description.
+Okay, those examples were both pretty quick.
+The next one is going to 
+take a bit longer to explain.
+It's called the Hubble constant, and it's 
+measured in kilometres per second per megaparsec.
+Oh boy.
+Let's start with some history.
+During the 1920s, physicist Alexander 
+Friedmann derived a model for the shape of  
+the universe based on Einstein's field equations 
+suggesting that the Universe could be expanding,  
+a result supported by the fact that distant 
+galaxies always seem to be moving away from us.
+Several years later, multiple 
+researchers including Georges  
+Lemaître and Edwin Hubble independently 
+found estimates for the rate of expansion.
+The idea is as follows.
+Take a sample of a whole 
+bunch of distant galaxies,  
+and for each galaxy measure two things: how 
+far away it is, and how fast it is moving away.
+If the universe is expanding then we 
+would expect galaxies further away to  
+be moving away faster, so take all the 
+galaxies and plot them on a graph with  
+velocity on the y-axis and distance on the x-axis.
+The galaxies tend to fall along a 
+straight line and the slope of this line,  
+now called the Hubble constant, describes 
+the rate of expansion of the universe.
+If you do all the measurements you 
+get a slope of approximately 70.
+70 what?
+70 kilometres per second per megaparsec!
+That means if a galaxy is one megaparsec away,  
+it's moving at roughly 70 
+kilometres per second away from us.
+If a galaxy is 10 megaparsecs away it's moving at  
+roughly 700 kilometres per 
+second away from us, etc.
+Okay, but why megaparsecs? What is a parsec?
+It's about 3x10^16 metres, and to explain 
+why we're using parsecs I need to explain  
+how you actually measure the 
+distance to a far away galaxy.
+If you look at something in the sky and it 
+looks small, it's hard to tell if it looks  
+small because it's actually just small, or 
+if it looks small because it's far away.
+The way you get around this is by pointing 
+two different telescopes in two different  
+locations at the same object and measuring 
+the difference in the angle between them.
+You can then do some trigonometry 
+to figure out the distance.
+The way we define a parsec is as follows:  
+the distant object is one parsec away 
+if the angle between the two telescopes  
+is one arcsecond and the distance between 
+the telescopes is one astronomical unit.
+What is an arcsecond? It's a 
+60th of a 60th of a degree.
+And what's an astronomical unit?
+It's the distance between the Earth and the Sun.
+How did we get two telescopes that far apart?
+Well it's easy – you actually 
+only need one telescope.
+Just take one observation in January 
+and a second observation in July,  
+so you have two observations with a distance 
+between them of... 2 astronomical units.
+I don't know where the 2 factors in.
+Obviously I'm brushing over a lot of details here!
+So, if you're an astronomer and you're 
+doing lots of measurements on a daily basis,  
+it makes sense to record distances using parsecs,  
+because it follows directly from 
+how you measure things in practice.
+The speed of galaxies on the other hand 
+is calculated using redshift, the Doppler  
+effect for light, and for this there's not really 
+any reason to use anything other than SI units.
+So when we're comparing velocity and distance we  
+get a figure in kilometres 
+per second per megaparsec.
+But once again, we can do 
+the gallons per mile trick!
+We're dividing velocity by length and 
+velocity is length divided by time,  
+so if we convert the two lengths 
+into the same unit we get that  
+the Hubble constant is about 2.3 
+times 10^(-18) inverse seconds.
+You can check this by yourself: type into 
+Google "70 km s^-1 Mpc^-1" in this format,  
+and it will convert it for 
+you into 2.3*10^(-18)...
+Hertz?!
+Okay, I have something else to explain.
+Hertz is a measure of frequency, 
+and it's equal to inverse seconds.
+Why? Well, let me give an example.
+Let's say a sound wave has 
+a frequency of 100 hertz.
+That means 100 waves are 
+entering your ear every second.
+A different way to measure this would be 
+to measure the time interval between two  
+consecutive waves, which in this example 
+would be one hundredth of a second.
+So you can see that the period 
+of a periodic process measured  
+in seconds is the reciprocal of 
+the frequency measured in hertz.
+So to make sense of the Hubble constant, let's 
+flip it upside down to get a number in seconds.
+Converting gives about 14 billion years.
+Which is a very rough approximation 
+for the age of the universe.
+Now, the intuition behind this is as follows.
+Suppose a galaxy is moving away from us.
+If we assume it's always been 
+moving at the same speed,  
+then at some point in the past it 
+must have been right next to us.
+How long ago was this?
+Well, time is distance divided by speed,  
+so it will be the distance to the 
+galaxy divided by its velocity.
+But this is just the reciprocal 
+of the Hubble constant!
+So the Galaxy began its journey 
+away from us 14 billion years ago.
+But this is true for every galaxy.
+That means 14 billion years ago, 
+all the galaxies in the universe  
+were on top of each other, and that 
+sounds an awful lot like the big bang.
+Now, as it turns out, this explanation 
+is actually completely wrong.
+The rate of expansion of the universe 
+has changed dramatically over time,  
+so there's no reason to expect Galaxies 
+have always been moving at the same speed.
+The Hubble constant is not 
+actually constant in time,  
+but rather constant across all 
+galaxies at each fixed point in time.
+This is why it's sometimes called 
+the Hubble parameter instead.
+What makes this so particularly 
+cursed though is that the actual age  
+of the universe is about 13.7 billion 
+years, which in an absurd coincidence  
+is extremely close to the 14 billion 
+figure provided by the Hubble constant!
+Why are these two numbers similar?
+There is no reason for these 
+two numbers to be similar!
+Is there an intuition for the 
+Hubble constant measured in hertz?
+Sure, it's how many times the universe can expand  
+from the big bang up to the size of 
+this today in the span of a second.
+Right... I guess some ways of writing units 
+just don't have a nice interpretation.
+Now, as we saw in the gravity example,  
+units sometimes just pop out of 
+equations without any explanation.
+In this context it's often more natural 
+to write negative exponents for division,  
+so instead of writing m^3/kg/s^2, 
+we write m^3 kg^(-1) s^(-2).
+But this raises a question: 
+if we can get negative powers,  
+then can we get fractional powers? 
+Can we get irrational powers?
+As it turns out, yes.
+Occasionally you need to describe a 
+relationship which follows a complicated  
+power law, and that power carries 
+over to the exponent on the units.
+There's one particular example 
+that I want to go through,  
+one which I encountered while writing 
+an assignment for an optics course.
+It's called polarisation mode dispersion and  
+it has units of picoseconds 
+per square root kilometre.
+The speed of light in a vacuum is constant,  
+but inside a substance like glass light 
+slows down, and the amount by which it  
+slows down depends on properties of the 
+light like frequency and polarisation.
+This is why a prism can be used 
+to split light into its component  
+colours – each colour is a different 
+frequency and moves at a different  
+speed through the prism resulting in 
+it bending in a different direction.
+This is a big problem for optical fibres 
+which use light to carry information.
+A single pulse of light can be split 
+up into component frequencies which  
+all move at different speeds through the fibre.
+The overall effect of this is that 
+the pulse gradually changes shape  
+and spreads out as it travels, 
+an effect called dispersion.
+Dispersion limits the rate of information 
+transfer because you need to send pulses  
+far enough apart so that they don't blur together.
+Dispersion is measured in units 
+of time, typically picoseconds.
+If you send a perfectly narrow pulse through the 
+fibre, the dispersion is essentially the delay  
+between the front of the pulse and the back 
+of the pulse reaching the end of the fibre.
+There are a couple of 
+different kinds of dispersion.
+The one I've just described 
+is chromatic dispersion,  
+where the different frequencies 
+move at different speeds.
+This builds up linearly over the length of 
+a fibre, so it's measured in picoseconds per  
+kilometre – how much does the pulse broaden 
+in picoseconds for every kilometre traveled.
+Depending on the fibre there are ways to 
+counteract this, but once you've accounted for  
+it you run into a different kind of dispersion 
+called polarisation mode dispersion, or PMD.
+Light is made up of oscillating 
+electric and magnetic fields,  
+and the angle of these oscillations 
+is called the polarisation.
+PMD occurs when different polarisations 
+move at different speeds through the fibre.
+This seems strange; if the fibre is 
+perfectly cylindrical then surely  
+it doesn't matter whether the light is 
+oscillating vertically or horizontally.
+But that's the point – it's hard to 
+make something perfectly cylindrical.
+Remember that optical fibres need 
+to stretch over many kilometres,  
+so over that vast length there's probably going  
+to be some small impurities which make one 
+polarisation slightly slower than another.
+But unlike chromatic dispersion which is 
+measured in picoseconds per kilometre,  
+PMD is measured in picoseconds 
+per square root kilometre.
+Why is this? Let's construct a simple 
+model and try and understand it.
+Let's send a pulse of light down the 
+fibre made of only two polarisations,  
+one vertical and one horizontal.
+Let's define the dispersion as the time 
+taken for the vertical one to reach the  
+end minus the time taken for the 
+horizontal one to reach the end.
+So, if the horizontal one moves faster then the 
+delay between them is positive and if the vertical  
+one moves faster then the 
+delay between them is negative.
+We're interested in the absolute 
+value of the dispersion,  
+but keeping track of the sign 
+is also going to be important.
+Now there's going to be random 
+impurities in the fibre,  
+tiny defects from the manufacturing process.
+Each impurity will randomly cause the 
+vertical and horizontal polarisations to  
+move either faster or slower, making the 
+dispersion either increase or decrease.
+Let's be super rough and assume that the 
+dispersion has a 50% chance of increasing by  
+some fixed amount every metre, and a 50% chance of 
+decreasing by the same fixed amount every metre.
+What we now have is something 
+called a random walk.
+What we're interested in is how far this random 
+walk moves away from zero, and the expected value  
+of this quantity turns out to be proportional to 
+the square root of the length of the random walk.
+I'm not going to delve into the 
+details of why this is because  
+this video is already long enough as 
+it is, but it's not too hard to prove.
+So what this means is that the total absolute 
+dispersion measured in units of time is on  
+average equal to some constant times the 
+square root of the length of the fibre.
+in order for the units to cancel out this 
+constant, which is the PMD of the fibre,  
+has to be in units of time 
+divided by square root length.
+Which is why if you look up a specification for 
+an optical filer online, under polarisation mode  
+dispersion you will find a quantity measured 
+in picoseconds per square root kilometre.
+I have seen other strange exponents on units.
+While doing research for this video I 
+found a paper on pulsar scintillation  
+(whatever that is) which involves 
+something called a scattering measure,  
+measured in units of parsecs 
+times meters to the minus 20/3!
+I personally find picoseconds per 
+square root kilometres more cursed  
+though, just because square roots 
+themselves are also kind of janky.
+Funnily enough the optics assignment wasn't the 
+only encounter I had with random walks in 2021.
+I was also doing a research task involving 
+stretching polymers, specifically DNA,  
+and from Monte Carlo simulations I 
+found that the sidewards deviation  
+of a DNA molecule also followed a random 
+walk depending on the length of the DNA.
+Which makes sense because a polymer 
+has the literal shape of a random walk.
+But what's weird about this random walk is 
+that the length is measured in nanometres  
+while the sidewards deviation 
+is also measured in nanometres.
+And so with a bit of hand waving I was 
+able to include in my research paper the  
+most cursed unit I have ever written: 
+nanometres per square root nanometre.
+Have you encountered any other cursed 
+units? Put them in the comments.
+I want to see the most ridiculous 
+units known to science.
+I think all the places where science is 
+mathematically beautiful are massively  
+overrepresented, and sometimes it's 
+just fun to see all of the places  
+where the universe is completely 
+gross and inexplicably awkward.
+If you share the same sentiment 
+then subscribe, because you can  
+expect more cursed mathematics 
+from this channel in the future.
