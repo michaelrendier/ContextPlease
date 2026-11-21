@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Galleries</title><link rel="icon" href="%%FAVICON%%">
+<style>
+:root{--bg:#f4f6fb;--fg:#1b2033;--mut:#5a6483;--card:#fff;--line:#d9deee;--acc:#3b5bdb;--warn:#c9760f;--chk1:#e9ecf5;--chk2:#f7f8fc}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0d1020;--fg:#e6e9f5;--mut:#98a2c3;--card:#161b33;--line:#2a3257;--acc:#8fa6ff;--warn:#ffb86b;--chk1:#1b2140;--chk2:#141932}}
+:root[data-theme=dark]{--bg:#0d1020;--fg:#e6e9f5;--mut:#98a2c3;--card:#161b33;--line:#2a3257;--acc:#8fa6ff;--warn:#ffb86b;--chk1:#1b2140;--chk2:#141932}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,sans-serif}[hidden]{display:none!important}
+header{display:flex;gap:12px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5;flex-wrap:wrap}header img{width:32px;height:32px;border-radius:6px}h1{font-size:20px;margin:0}
+.sp{flex:1}nav a{margin-right:12px;font-size:14px}a{color:var(--acc)}input,button,select{font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:5px 10px}button{cursor:pointer}
+main{max-width:1400px;margin:0 auto;padding:18px}h2{font-size:18px;margin:30px 0 8px}.sub{color:var(--mut);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}.card h3{margin:0 0 4px;font-size:16px}
+.chip{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:1px 9px;font-size:12px;margin:2px 4px 2px 0;background:var(--card);color:var(--fg);text-decoration:none}.chip:hover,.chip.on{border-color:var(--acc);color:var(--acc)}.chip.p{border-color:var(--warn);color:var(--warn)}
+.btn{display:inline-block;background:var(--acc);color:#fff;border-radius:8px;padding:5px 12px;text-decoration:none;font-size:14px;margin:8px 8px 0 0}.btn.o{background:none;color:var(--acc);border:1px solid var(--acc)}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--card)}td,th{border-bottom:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+code,pre{font:13px ui-monospace,monospace;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 5px}pre{padding:8px 10px;overflow:auto}
+#cat{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:10px}.it{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--fg)}.it:hover{border-color:var(--acc)}
+.th{height:130px;background:conic-gradient(var(--chk1) 25%,var(--chk2) 0 50%,var(--chk1) 0 75%,var(--chk2) 0) 0 0/14px 14px;display:flex;align-items:center;justify-content:center}.th img{max-width:100%;max-height:100%;object-fit:contain}
+.it b{display:block;font-size:12px;line-height:1.3;padding:5px 8px 0}.it small{display:block;color:var(--mut);padding:0 8px 6px;font-size:11px}
+.note{border-left:3px solid var(--warn);padding:6px 12px;background:var(--card);border-radius:0 8px 8px 0;margin:10px 0}
+</style></head><body>
+<header><img src="%%FAVICON%%" alt=""><h1>Galleries: index and README</h1><span class="sp"></span><nav><a href="#image">Image galleries</a><a href="#interactive">Interactive</a><a href="#atlases">Atlases</a><a href="#catalog">All images</a><a href="#readme">README</a></nav><button id="th">☾ / ☀</button></header>
+<main>
+<p class="sub">One entry point to every gallery of the repositories. Image galleries are built from the images each repository generates; interactive galleries are single pages. Everything is local: this page and the galleries are served from <code>127.0.0.1</code> only.</p>
+<div id="warn" class="note" hidden><b>Open this page through the server</b> (the catalog reads each gallery at run time, which a <code>file://</code> page cannot do). Run <code>~/Projects/ThePlace/galleries/serve_all.sh</code>, or <code>cd ~/Projects/ThePlace &amp;&amp; python3 -m http.server 8760 --bind 127.0.0.1</code> and open <code>http://127.0.0.1:8760/galleries/index.html</code>. The links below still work as plain files, but without favicons and the combined catalog.</div>
+<h2 id="image">Image galleries <span class="sub" id="imgcount"></span></h2><div class="grid" id="imgcards"></div>
+<h2 id="interactive">Interactive galleries and viewers</h2><div class="grid" id="intercards"></div>
+<h2 id="atlases">The atlases</h2><p class="sub">Every atlas has a unique name (<code>ContextPlease/claude/ATLAS_REGISTRY.md</code>); never say "the atlas" alone. Where an image set exists, its gallery is linked.</p><div id="atl"></div>
+<h2 id="catalog">All images, one catalog</h2><p class="sub">Search across every image gallery. Click an image to open it in its gallery's viewer.</p>
+<div><input id="q" placeholder="search title, group, path, description" size="40"> <span id="gchips"></span></div><div id="cat"></div><p class="sub" id="catsub"></p>
+<h2 id="readme">README: how the galleries are made and named</h2>
+<h3>Naming and grouping</h3><ul><li>Each gallery is named for what it shows (<em>Abrikosov Atlas Gallery</em>, <em>Riemann–Fermat Atlas Gallery</em>, <em>Holcus 16D Paths Gallery</em>); the file is <code>&lt;repo&gt;/image_gallery/&lt;Name&gt;.html</code> (the Holcus gallery: <code>VAPMIP/holcus_paths_gallery/</code>).</li><li>Groups follow the folder or file-name pattern of the images (an atlas per folder, a series per prompt); a group has a one-line blurb. Renaming or regrouping is a one-line edit in that gallery's <code>gallery_config.json</code>.</li><li>Identical files (same bytes) appear once, with the other paths listed as <em>also at</em>.</li></ul>
+<h3>What each image page shows</h3><p>Title, group, type, pixel size and file size, the date and commit it was added, where it is mentioned in the docs, the script that writes it, and a description (from the repository's own catalogue or captions, or the docstring of the writing script). The viewer zooms (wheel), pans (drag), steps (← →), and deep-links (<code>#img=N</code>, <code>#g=Group</code>).</p>
+<h3>Left out on purpose</h3><ul><li>Repository header images and application icons.</li><li>The TOTP enrolment code in VAPMIP (a secret).</li><li>Images embedded inside notebooks (they are not separate files).</li></ul>
+<h3>Proprietary</h3><div class="note">The <b>VAPMIP Gallery</b> and the <b>Holcus 16D Paths Gallery</b> stay in the VAPMIP repository. This index only links to them and reads them at run time through the local server; it contains no VAPMIP image data.</div>
+<h3>Rebuild and add</h3><pre>cd ~/Projects/ThePlace/ContextPlease/claude/galleries
+python3 build_image_gallery.py configs/&lt;name&gt;.json      # one gallery
+python3 build_index.py                                  # this index
+# new gallery: copy a config in configs/, set repo, name, slug, port, groups; add a row in build_index.py</pre>
+<h3>Ports (each gallery can also run alone from its own launcher)</h3><table id="ports"></table>
+</main>
+<script>
+const CFG=/*CFG*/;const $=id=>document.getElementById(id);const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+if(location.protocol==="file:")$("warn").hidden=false;
+$("th").onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()==="#0d1020";r.dataset.theme=d?"light":"dark"};
+const ALL=[];let GSEL=null;const DATA={};
+function card(g,d){const base=g.page.split("/")[0],n=d?d.items.length:"?";return `<div class="card"><h3>${esc(g.name)}</h3><div class="sub">${esc(base)} · ${n} images${d?" · "+d.groups.length+" groups":""} ${g.proprietary?'<span class="chip p">proprietary: stays in VAPMIP</span>':""}</div><p class="sub">${d?esc(d.tagline):"Not loaded (serve the page over http to read its data)."}</p>${d?d.groups.map(x=>`<a class="chip" href="../${g.page}#g=${encodeURIComponent(x.name)}">${esc(x.name)} ${x.count}</a>`).join(""):""}<div><a class="btn" href="../${g.page}">Open gallery</a><a class="btn o" href="../${g.page.replace(/[^/]+$/,"serve_gallery.sh")}" title="its own launcher (port ${g.port})">launcher · ${g.port}</a></div></div>`}
+function draw(){const q=$("q").value.toLowerCase();const rows=ALL.filter(i=>(GSEL===null||i.gi===GSEL)&&(!q||(i.title+" "+i.group+" "+i.path+" "+i.desc).toLowerCase().includes(q)));
+ $("cat").innerHTML=rows.slice(0,600).map(i=>`<a class="it" href="../${i.page}#img=${i.id}" target="_blank" rel="noopener"><div class="th"><img loading="lazy" src="${i.src}" alt=""></div><b>${esc(i.title)}</b><small>${esc(CFG.img[i.gi].name)} · ${esc(i.group)}</small></a>`).join("");$("catsub").textContent=rows.length+" images"+(rows.length>600?" (first 600 shown; refine the search)":"")}
+async function load(){let tot=0;
+ const out=await Promise.all(CFG.img.map(async g=>{try{const r=await fetch("../"+g.page);if(!r.ok)throw 0;const t=await r.text();const m=t.match(/const D=(.*?);const \$=/s);return JSON.parse(m[1])}catch(e){return null}}));
+ $("imgcards").innerHTML=CFG.img.map((g,i)=>card(g,out[i])).join("");
+ out.forEach((d,gi)=>{if(!d)return;const g=CFG.img[gi],base=g.page.split("/")[0];tot+=d.items.length;d.items.forEach(it=>ALL.push({gi,id:it.id,title:it.title,group:it.group,path:it.path,desc:it.desc||"",page:g.page,src:"../"+base+"/"+it.url}))});
+ $("imgcount").textContent=tot?"· "+tot+" images in "+CFG.img.length+" galleries":"";
+ $("gchips").innerHTML=`<span class="chip on" data-g="">all</span>`+CFG.img.map((g,i)=>`<span class="chip" data-g="${i}">${esc(g.name)}</span>`).join("");
+ $("gchips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>{GSEL=c.dataset.g===""?null:+c.dataset.g;$("gchips").querySelectorAll(".chip").forEach(x=>x.classList.toggle("on",x===c));draw()});draw();
+ $("atl").innerHTML=`<table><tr><th>Atlas</th><th>Maps</th><th>Where</th><th>Image set</th></tr>`+CFG.atlases.map(a=>{const g=CFG.img.find(x=>x.name===a.gallery);return `<tr><td><b>${esc(a.name)}</b></td><td>${esc(a.maps)}</td><td><code>${esc(a.where)}</code></td><td>${g?`<a href="../${g.page}">${esc(g.name)}</a>`:"<span class='sub'>none yet</span>"}</td></tr>`}).join("")+`</table>`}
+$("intercards").innerHTML=CFG.inter.map(g=>`<div class="card"><h3>${esc(g.name)}</h3><div class="sub">${esc(g.repo)}</div><p class="sub">${esc(g.blurb)}</p><a class="btn" href="../${g.page}">Open</a></div>`).join("");
+$("ports").innerHTML="<tr><th>Gallery</th><th>Own port</th><th>Launcher</th></tr>"+CFG.inter.filter((g,i,a)=>a.findIndex(x=>x.port===g.port)===i).map(g=>`<tr><td>${esc(g.name.replace(/ report| shear field| polarization field/,""))}</td><td>${g.port}</td><td><code>${esc(g.repo)}/…/serve_gallery.sh</code></td></tr>`).join("")+CFG.img.map(g=>`<tr><td>${esc(g.name)}</td><td>${g.port}</td><td><code>${esc(g.page.replace(/[^/]+$/,"serve_gallery.sh"))}</code></td></tr>`).join("")+"<tr><td><b>This index (all galleries)</b></td><td>8760</td><td><code>galleries/serve_all.sh</code></td></tr>";
+$("q").oninput=draw;load();
+</script></body></html>

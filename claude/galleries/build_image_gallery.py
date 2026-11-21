@@ -6,8 +6,8 @@ CONFIG: repo (path), name, slug, port, tagline, groups[{name, match, blurb}] (fi
 Writes <repo>/image_gallery/<slug>.html (+ serve_gallery.sh, favicon.png). Images are NOT copied: the page links them by relative path, so serve from the repo root (serve_gallery.sh does)."""
 import os, re, sys, json, hashlib, subprocess, datetime, collections, base64, urllib.parse
 HERE = os.path.dirname(os.path.abspath(__file__))
-cfg = json.load(open(sys.argv[1])); REPO = os.path.abspath(os.path.expanduser(cfg["repo"])); OUT = os.path.join(REPO, "image_gallery")
-IMG = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"); PRUNE = {".git", ".venv", "node_modules", "__pycache__", "site-packages", "_build", "image_gallery"}
+cfg = json.load(open(sys.argv[1])); REPO = os.path.abspath(os.path.expanduser(cfg["repo"])); OUT = os.path.join(REPO, cfg.get("out_dir", "image_gallery")); SCAN = [os.path.join(REPO, x) for x in cfg.get("scan", [""])]
+IMG = (".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"); PRUNE = {".git", ".venv", "node_modules", "__pycache__", "site-packages", "_build", "image_gallery", "holcus_paths_gallery"}
 EXC = [re.compile(p) for p in cfg.get("exclude", [])]; GRP = [(g, re.compile(g["match"])) for g in cfg["groups"]]; TIT = [(re.compile(t["match"]), t["title"]) for t in cfg.get("titles", [])]; NOTES = [(re.compile(t["match"]), t["desc"]) for t in cfg.get("notes", [])]
 def walk(root):
     for d, dirs, files in os.walk(root):
@@ -18,7 +18,7 @@ def md5(p):
     with open(p, "rb") as fh:
         for b in iter(lambda: fh.read(1 << 20), b""): h.update(b)
     return h.hexdigest()
-files = sorted(p for p in walk(REPO) if p.lower().endswith(IMG) and not any(e.search(os.path.relpath(p, REPO)) for e in EXC))
+files = sorted(p for sc in SCAN for p in walk(sc) if p.lower().endswith(IMG) and not any(e.search(os.path.relpath(p, REPO)) for e in EXC))
 rels = [os.path.relpath(p, REPO) for p in files]
 # duplicates (same bytes) collapse to one entry, the other paths listed
 by = collections.OrderedDict()
@@ -88,6 +88,16 @@ for k, paths in by.items():
             fp = os.path.join(REPO, gen[0][0]); mdoc = ast.get_docstring(ast.parse(open(fp, errors="ignore").read())) if fp.endswith(".py") else None
             if mdoc: desc = "Written by `" + gen[0][0] + "`: " + " ".join(mdoc.strip().split("\n\n")[0].split())[:420]
         except Exception: pass
+    if cfg.get("svg_meta") and rel.endswith(".svg"):
+        try:
+            sv = open(p, errors="ignore").read(); texts = re.findall(r'<text[^>]*?fill="([^"]*)"[^>]*>([^<]*)</text>', sv); prompt = texts[0][1] if texts else ""
+            words = [t for f, t in texts if f == "#2a2a2a"]; nodes = re.findall(r'<circle cx="([\d.]+)" cy="([\d.]+)" r="2.5"', sv)
+            amp = [round(((float(a) - 250) ** 2 + (float(b) - 260) ** 2) ** .5 / 210, 3) for a, b in nodes][:16]
+            ep = re.search(r"_(\d{10})\.svg$", rel); when = datetime.datetime.fromtimestamp(int(ep.group(1))).strftime("%Y-%m-%d %H:%M") if ep else ""
+            title = (prompt or title or humanize(rel)) + (" · " + when if when else "")
+            desc = ("Prompt: **" + prompt + "**" + ("\n- spoke words (the prompt hashed onto the 16 spokes): " + " · ".join(words) if words else "") +
+                    ("\n- node distances from the centre (outer ring = 1.0), spokes in file order: " + ", ".join(map(str, amp)) if amp else "") + ("\n- written " + when if when else "") + "\n- original output of `ptol.c -s` (the 16-spoke sedenion path paper); unmodified copy.")
+        except Exception: pass
     items.append(dict(id=len(items), path=rel, url=urllib.parse.quote(rel), title=title or humanize(rel), group=grp, type=rel.rsplit(".", 1)[-1].lower(), w=w, h=h, frames=n, bytes=st.st_size,
                       mtime=datetime.date.fromtimestamp(st.st_mtime).isoformat(), added=d, commit=hh, commit_msg=sub, also=paths[1:] + also.get(k, []), generated_by=[f"{r[0]}:{r[1]}" for r in gen],
                       referenced_in=[dict(file=r[0], line=r[1], text=r[2]) for r in doc], desc=desc))
@@ -96,7 +106,7 @@ groups = [dict(name=g["name"], blurb=g.get("blurb", ""), count=sum(1 for x in it
 groups = [g for g in groups if g["count"]] + ([dict(name="Other", blurb="", count=sum(1 for x in items if x["group"] == "Other"))] if any(x["group"] == "Other" for x in items) else [])
 os.makedirs(OUT, exist_ok=True)
 fav = open(os.path.join(HERE, "favicon_datauri.txt")).read().strip(); open(os.path.join(OUT, "favicon.png"), "wb").write(base64.b64decode(fav.split(",", 1)[1]))
-data = dict(name=cfg["name"], tagline=cfg.get("tagline", ""), built=datetime.date.today().isoformat(), repo=os.path.basename(REPO), groups=groups, items=items, port=cfg.get("port", 8800))
+data = dict(name=cfg["name"], tagline=cfg.get("tagline", ""), built=datetime.date.today().isoformat(), thumb_bright=bool(cfg.get("thumb_bright")), repo=os.path.basename(REPO), groups=groups, items=items, port=cfg.get("port", 8800))
 tpl = open(os.path.join(HERE, "image_gallery_template.html")).read().replace("/*DATA*/", json.dumps(data, ensure_ascii=False)).replace("%%FAVICON%%", fav).replace("%%TITLE%%", cfg["name"])
 open(os.path.join(OUT, cfg["slug"] + ".html"), "w").write(tpl)
 sh = os.path.join(OUT, "serve_gallery.sh")
