@@ -1,0 +1,530 @@
+It's the most physics-y of the
+Millennium prizes, which is the the
+famous Yang-Mills problem.
+So there is some suggestion that OpenAI
+has solved it partially, but nobody's
+seen the proof yet. Well, nobody
+publicly has seen the proof. There's
+just a very select committee of people
+that have seen it. Um, so yeah, it's
+it's that that's that's the that's the
+new thing. I think to sort of understand
+the problem, we should go all the way
+back to the to the early '50s. So Robert
+Mills and Chen Ning Yang, or Frank Yang
+as he sometimes went by, they were
+trying to sort of model the forces
+inside the nucleus of an atom. So the
+forces between protons and and neutrons.
+Um, and they were they were kind of
+doing it with a with a sort of
+generalization of of electromagnetism.
+So, you know, we have the
+electromagnetic force, um, which
+describes, you know, the the the forces
+between electromagnetic charges. And
+that's described by something called a
+gauge theory, where you have the
+electromagnetic potential. And they
+wanted to generalize that into something
+very similar, but but somewhat more
+complicated. So it's a slightly more
+complicated type of gauge theory. And
+actually the the the story goes that
+when Yang presented his his model
+in Princeton,
+uh, Pauli was it Wolfgang Pauli, famous
+for his exclusion principle. Uh, well,
+he was certainly excluding Yang because
+when when Yang was given his talk, Pauli
+just started shouting at him. And he was
+he [laughter] was like, um, so so the
+reason he was shouting at him was
+because he'd actually had a similar
+idea. And he'd noticed that that if you
+that the that this theory should include
+a very light field, in fact a massless
+field. Now, a massless field, if it's a
+force carrier, should mediate an
+infinitely long force, long-range force.
+And of course, there is no such
+infinitely long-range force at work
+inside an atom. It's a very short-range
+force. So, um, so Pauli was shouting at
+Yang, said, where's your massless
+particle? Where's the massless particle?
+You know,
+what's happened to it? To point where
+Yang, Yang didn't know the answer. So he
+just, he stood there quiet, didn't know
+what to say anything, just sat down.
+Pauli just kept shouting and eventually
+Oppenheimer had to intervene, calm
+things down a little bit. The irony of
+that of that story is in some ways they
+were they were both right.
+So
+on the one hand, Pauli was absolutely
+right to ask about where was the the
+massless field. Um
+but Yang was also right in that this
+theory that he came up with, this this
+this Yang-Mills theory, this is
+generalization of electromagnetism, it
+it does actually have a role to play in
+the in the in the forces inside the
+nucleus. So so there are there are two
+forces uh at work inside a nucleus.
+We've got the the weak nuclear force and
+we've got the strong nuclear force. Both
+of them can be described by a Yang-Mills
+type force, okay?
+Uh in the case of the of the weak
+nuclear force,
+the problem we we we understand the
+problem of where the massless particle
+went, right? So what happens with the
+weak nuclear force is the Higgs there
+should be a massless particle, but the
+Higgs comes along
+and gives that the force carrier a mass
+which shuts down the range of the force.
+So the Higgs saves the day. Actually,
+the Higgs answers Pauli's question,
+okay?
+Now, what about the strong nuclear
+force? Now there is no Higgs doing
+anything here.
+So the force carrier coming from
+Yang-Mills theory that applies to the
+strong nuclear force
+is the gluon. It's called the gluon and
+it is in fact massless.
+So it is. So you say, well, why isn't it
+mediating a long-range force? And
+well, it has this funny property, right?
+So because it's this sort of weird
+generalization of electromagnetism, it
+turns out the gluon, unlike the photon,
+by the way, interacts with itself. So it
+will pull on itself, right? So even
+though it's massless, as um it it it
+will pull on itself and that sort of
+helps shut down the range of the force,
+okay? But it has this other weird
+property is that as you go to to very
+very high energies, it pulls on itself
+and less and less. It gets weaker and
+weaker and weaker. As you go to low
+energies, it gets pulls on itself more
+and more and more and gets stronger and
+stronger and stronger. And that shuts
+down the force.
+So what's this got to do with the
+millennium problem?
+>> I feel like we're doing one of our
+physics videos at the moment, but
+>> Yeah, okay. So that
+>> What's the What's the problem? Yeah.
+What
+>> what has any of this got to do with the
+millennium problem? So the millennium
+problem then asks the following Well,
+asks two questions. So the first
+question it asks is is are these
+Yang-Mills theories consistent
+in some sense? Are Do they even exist?
+So what does that mean? So that that
+that basically means um is certain
+properties that you can assign to it
+that make sense. So you take the full
+quantum theory of this Yang-Mills theory
+and you ask the question, for example,
+uh does it have a unique vacuum state?
+So can I define a vacuum state of this
+where you know literally the the lowest
+energy state where nothing happens? Is
+that state of the system unique? Can I
+define it? Does it respect the
+symmetries of nature? So for example, if
+I if I rotate space, does it look the
+same? Or if I translate space, does it
+look the same? So it should have these
+sorts of properties. The other thing you
+can demand is is that the all the other
+states should be lie above it in energy.
+So it should be the lowest The vacuum
+should be the lowest energy state. There
+shouldn't be anything living below it.
+Um that's the sort of thing you need.
+The other things that you would have
+that it should it should make sense on
+all scales that I could I can make sense
+of it. I can make sense of it in a box.
+I can make sense of it when the box goes
+to infinite size. Uh it doesn't matter
+what scale I look at, I can still make
+sense of it. Um the other things that
+you would look for, you want to be able
+to define all the states and principle
+of the system. Um again, at all scales,
+in all situations. When you do quantum
+mechanics, probabilities is all part of
+the game. You want when you combine
+these states that the corresponding
+probabilities are all sensible
+probabilities. They They lie between
+zero and one. They don't become negative
+or get bigger than one or anything weird
+like that. That's not allowed to happen.
+That would be inconsistent. That would
+mean the theory didn't really exist as a
+full theory. So these are the kinds of
+tests that you want to apply to to to
+Yang Mills to say it exists as a theory.
+Okay? that's the first part of the
+millennium problem to prove that
+there is a second part which is the mass
+gap
+which is the statement
+that
+above you've got the vacuum state
+but the next states up there's actually
+a gap in energy
+between them. So there's a finite gap in
+energy. There's not infinitesimally
+small. The the gap to the next state is
+is is is actually finite. So you get
+these states called glueballs which are
+combinations of these gluons and they
+they should have literally finite
+energy, not arbitrarily small.
+So this is this is not something that
+happens in electro magnetism by the way.
+I can take a photon state, a single
+photon and I can dial its energy down
+down down until it's arbitrarily close
+to zero. So there's no mass gap in
+electromagnetism.
+But the millennium problem asks you to
+prove that there is a mass gap
+for one of these more exotic Yang Mills
+theories.
+>> This is and this is a mathematical
+problem. This isn't something you go to
+the Large Hadron Collider to check. It's
+something that you can just do on pen
+and paper.
+>> Yeah. So there was actually one more
+thing I didn't say about the existence
+thing. The other thing is it should
+match you should be able to match the
+theory to the
+to to the to the known limits where we
+can do the calculation. So for example
+we when the coupling gets very weak,
+when the interactions get are not so
+strong, we can use our standard
+sort of techniques to to sort of
+describe the theory and you should be
+able to match everything in that limit.
+So that's to some extent what the Large
+Hadron Collider is trying to play with.
+So yes, that's not enough to probe the
+full extent of the theory. This is a
+mathematical problem. It's an existence
+problem.
+And similarly the question of the mass
+gap as well because you know you might
+find states of of Yang Mills that are
+that have a gap to the vacuum
+you know an energy gap to the vacuum but
+that doesn't prove that there are that
+all states have an energy gap to the
+vacuum, right? It might be that some
+don't. So it's definitely a mathematical
+problem
+and it's a very well defined one as
+well.
+So in terms of
+what the Open AI has done,
+we don't know for sure because we
+haven't really seen anything, right?
+Because they haven't released the paper,
+but what the claim seems to be that
+they've proven the first half of the
+problem. So that they've proven
+existence [snorts] of Yang Mills. So
+that all these wonderful set of
+criterias that it needs to hold that
+they do hold. They haven't apparently
+shown the mascot, but we don't know for
+sure because we haven't seen it. Um
+it's apparently a one over paper of over
+1,000 pages.
+[sighs and gasps]
+It's been
+handed to
+to David Gross, who's a Nobel Prize
+winning physicist. He worked on the Yang
+Mills theory in the 1970s. He he he
+showed for example that Yang Mills
+theories get weaker and weaker and
+weaker as you go to higher energies. He
+won the Nobel Prize for that.
+Um
+>> Is but he's keeping Stump is it?
+>> So so what he's done is so he got
+so
+Open AI appointed him to sort of look
+into they gave him the proof.
+Um he's then appointed a a team, a
+committee of other physicists to look at
+the proof with him. There's Arthur Jaffe
+who
+was one of the authors on the on the
+clay problem when they when they defined
+the clay problem. There's Eagle Klebanov
+and there's Nikita Nekrasov. So these
+are all very eminent physicists, but
+there are other
+physicists who are not included in this.
+A very notable example is Ed Witten, who
+has
+who has said well they should release
+it.
+It's a bit of a strange situation that
+we find in ourselves in that we have
+this team that are going to go through
+it very carefully and try to translate
+it into sort of a coherent
+uh scientific language for the for the
+scientific community. Uh meanwhile we
+just have to wait for them to do that.
+Um so that's that's that's where we're
+at.
+>> You're a physicist. You've got a great
+interest in finding out what happens
+here. How do you feel about the
+>> Yeah so
+so I was a bit torn when I was thinking
+of so my instant reaction is that's not
+right. They should just they should just
+uh release release it.
+Um but I see how
+what's happened in the mathematical
+community, even though this is a math
+stroke physics problem, it's a bit more
+physicsy. I've seen what's happened in
+the mathematical community where they
+just when they did this this the you
+know the the dump of 700 odd
+proofs
+that just this isn't this I feel isn't
+helpful to the community. So having some
+guard rails in there doesn't necessarily
+seem bad bad thing, but then who gets to
+choose who the guards are? That's Look,
+I'm not going to pretend that David
+Gross isn't isn't a very well qualified,
+very eminent physicist. Of course he is.
+But yeah, nevertheless that that seems a
+little strange. But then again, there is
+all there is some to some extent
+precedent here, right? So for example,
+you get these these large
+collaborations, I don't know, like
+Planck the Planck satellite
+collaboration.
+So
+they get access to the Planck data. So
+the Planck you know it's looking at the
+cosmic microwave background.
+The Planck people, if you're on Planck,
+you get access to Planck's data before
+it's the public releases and then you're
+you have this sort of window of time
+where you work with it, okay?
+That's what happens. Now I guess the
+difference here is is that I could in
+principle if I wanted to apply to be on
+Planck
+or Euclid or one of these other
+experiments, right?
+And there's a bit more of a sort of
+natural democratic process to get in
+onto these things and then you can be
+part of it. Whereas this is really just
+one person was picked out by OpenAI and
+then he picked his team, which
+I don't know, there's something about
+that doesn't seem quite right,
+especially when you've got somebody as
+eminent as as Ed Witten who's not
+involved in it, right? And and others of
+course. So
+>> But it's OpenAI's proof, you know, they
+you know like if you came up with it,
+you would decide who you would chat to
+in the coffee room about it and who you
+wouldn't.
+Like isn't it isn't it their
+prerogative? If they've if they've come
+up with it so to speak, shouldn't they
+decide who they want to share it with
+and check with before they go public?
+>> Well, I think there's a broader question
+here which is what do we need to do with
+all these AI proofs? So so one thing I
+should mention of course is that
+there was
+somebody else working on this. Of course
+there's other plenty of people working
+on it, but there was somebody else made
+significant advances of course,
+it's our old friend, Levon, Almasian,
+who was of course involved in the
+in the Navier-Stokes problem, guy works
+for Anthropic.
+He was working with Sussman on this
+problem. He was using AI to do it. They
+put a load of stuff on GitHub. Wasn't,
+you know, they they they declared that
+it wasn't a completed, you know, they
+did it wasn't the final story, but and
+then that seems to have triggered a
+response from from [laughter] again. So
+I shouldn't laugh. It's but it's there's
+there's definitely I think we're in a
+stage at the moment where
+where the scientific community, but
+mathematics, physics, all of them
+are trying to figure out how to manage
+this this new world of AI and how we
+should
+you know, go forward
+because
+I I don't think we quite know. So they
+they done something here that's
+different to what they did for
+Navier-Stokes.
+Obviously,
+is it entirely satisfactory? I don't
+know. Probably not.
+Are the people that that the
+that that have the paper, are they are
+they people that that I trust with, you
+know, in in in the sense that
+they will definitely understand the
+physics deeply? Yes, 100%. Yeah, I don't
+know. I I I I don't have the answer to
+this. I think I think this is one of the
+things where AI is happening so quickly
+that we don't know what to do with what
+it's giving us in in in a reasonable
+time. We haven't learned how to how to
+handle it yet. Yeah, so we've got this
+corporate battle going on and and
+honestly, we just care about the science
+at some level, right?
+So it's it's it's it's so foreign to the
+way academia works in some sense and and
+yet
+and yet it's happening and it and it's
+dominant in in as well.
+We should always, I think, whenever
+you know, an AI and this is going to be
+more and more common, comes up with a
+proof
+and we we did this for Navier-Stokes, we
+should do it now. We should we should
+definitely give credit to the humans
+that have
+built towards this result. I think
+there's two in particular that I want to
+highlight in the case of Young Mills.
+Again, we haven't seen the proof, so we
+can't say everything, but we can at
+least give a flavor.
+So the first one I want to mention is is
+Ken Wilson.
+So Ken Wilson again the Nobel Prize
+winning physicist. So as I as I
+mentioned before with with young Mills
+it gets you know the the gluons talk to
+each other more and more quietly as you
+go to higher energy. The interactions
+are much more weaker as you go to higher
+energy. So but you want to be able to
+understand the theory at all scales. So
+you've got to figure out what to do at
+lower energies when it's when you know
+when when the gluons are interacting
+strongly when they're showering at each
+other.
+And Ken Wilson came up with this idea of
+of lattice gauge theory to try to handle
+this. And so what you do is you break
+spacetime up into a lattice with
+different points.
+And then he he figured out how to define
+a sort of version of this theory this
+this this this gauge theory um on on
+this lattice. A guy called Balaban he
+then developed this even further. So he
+he he he created this system called
+blocking where you involves you you have
+your lattice and then you rescale the
+lattice and then you rescale the lattice
+again and he was able to take you know
+keep control of the calculation as he
+was moving between these limits. Um
+and then you might try to take the
+lattice spacing and all of this to zero
+size as well to try to reach the
+continuum. Um
+again and he showed that things like
+that when he did that things remained
+stable. He was able to keep control of
+the calculations and apparently they
+have built on Balaban's work in
+particular. That's one of the things
+that that came out from the Grosses
+committee that this is that is largely
+based on Balaban's work. So that seems
+to have been what they've done and and
+actually Leonardo Pogge said as well
+that that this that they built on
+Balaban as well at what they'd done. So
+so it seems that Balaban was on well on
+the way to to to there were lots of
+things that Balaban didn't do. Balaban
+didn't um you know he he was always
+working in a box for example and you you
+you you need to be able to define the
+theory not just in a box but over
+infinitely large amount of space. He he
+didn't show that um you know that all
+the states were consistent. Um
+there were lots of things that you that
+you would require in the proof that that
+Balaban didn't show but nevertheless I
+think the core of his ideas building
+these lattices, showing how you can move
+between different lattice sizes in a
+consistent way is what what built
+towards the the final answer.
+>> Hey there. I know there was a lot of
+physics in today's episode, and if
+that's the kind of stuff you like, you
+might want to check out our sister
+channel, 60 Symbols, where I interview
+physicists. Tony, well, he's one of
+them. There's plenty more there, and
+I'll put a link to that channel down in
+the description below. I will also link
+below to some other videos we've been
+doing recently about the breakthroughs,
+the wins, and the losses being caused by
+AI at the moment in the world of
+mathematics.
