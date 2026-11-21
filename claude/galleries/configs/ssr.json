@@ -1,0 +1,37 @@
+{
+ "repo": "~/Projects/ThePlace/SedenionSpectralRelativity",
+ "name": "Sedenion Spectral Relativity Gallery",
+ "slug": "Sedenion_Spectral_Relativity_Gallery",
+ "port": 8771,
+ "tagline": "SVGs drawn by the sedenion engines: Fano wobble, the bracketing and firing engines, spectrographs, and the 1 + 1 pictures.",
+ "exclude": [
+  "EquationSpace/gallery/"
+ ],
+ "groups": [
+  {
+   "name": "Fano wobble",
+   "match": "^fano_wobble",
+   "blurb": "The Fano plane wobble: σ = ½, primes as words, the zero-divisor boundary, 1 + 1."
+  },
+  {
+   "name": "1 + 1 and arithmetic",
+   "match": "1_plus_1|question_answer|arithmetic",
+   "blurb": "What is 1 + 1 in the sedenion engines."
+  },
+  {
+   "name": "Engines and spectra",
+   "match": "engine|spectr|bifurcation|emerger|holcus_voice|resonator|universal_native",
+   "blurb": "Engine and spectrograph outputs."
+  },
+  {
+   "name": "Boundaries",
+   "match": "zd_boundary",
+   "blurb": "The zero-divisor boundary."
+  },
+  {
+   "name": "Portraits",
+   "match": "michael_rendier|o_captain\\.svg",
+   "blurb": "Portraits."
+  }
+ ]
+}

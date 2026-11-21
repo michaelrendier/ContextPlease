@@ -1,0 +1,30 @@
+{
+ "repo": "~/Projects/ThePlace/AbrikosovTree",
+ "name": "Abrikosov Atlas Gallery",
+ "slug": "Abrikosov_Atlas_Gallery",
+ "port": 8767,
+ "tagline": "Renders of the three Abrikosov atlases: the Cayley–Dickson lattice planes (ℝ, ℂ, ℍ, 𝕆, 𝕊, T₃₂ …), the same tower in UNS coordinates, and the zero-divisor tree.",
+ "exclude": [],
+ "groups": [
+  {
+   "name": "Cayley–Dickson lattice atlas",
+   "match": "atlas_abrikosov_cd_lattice/",
+   "blurb": "The Cayley–Dickson tower drawn plane by plane on the vortex lattice."
+  },
+  {
+   "name": "Cayley–Dickson UNS atlas",
+   "match": "atlas_abrikosov_cd_uns/",
+   "blurb": "The same tower in Universal Native Space coordinates."
+  },
+  {
+   "name": "Zero-divisor tree atlas",
+   "match": "atlas_abrikosov_zd_tree/",
+   "blurb": "The zero-divisor tree."
+  },
+  {
+   "name": "Overview renders",
+   "match": "^render/[^/]+$",
+   "blurb": "Top-level renders."
+  }
+ ]
+}

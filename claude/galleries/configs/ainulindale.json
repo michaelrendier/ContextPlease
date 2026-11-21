@@ -1,0 +1,158 @@
+{
+ "repo": "~/Projects/ThePlace/Ainulindale",
+ "name": "Ainulindalë Gallery",
+ "slug": "Ainulindale_Gallery",
+ "port": 8768,
+ "also_scan": [
+  "~/Desktop/SpaceGemini"
+ ],
+ "tagline": "Images in the Ainulindalë repository: the Gemini simulator screenshots, the Witch's Hat animations, the wiki figures, the original Master Key figures and the First Age Gemini art. Repository header images are not included.",
+ "exclude": [
+  "^media/sedenion\\.png$"
+ ],
+ "groups": [
+  {
+   "name": "Gemini simulators (screenshots)",
+   "match": "gemini_simulators/",
+   "blurb": "Screenshots of the Gemini-built interactive simulators (Alpha–Omega Hamiltonian, black/white hole, Fermat–Planck, Hamiltonian convergence, hairy horizon, zeta unmapping, horizon invariance). Copies in ~/Desktop/SpaceGemini are listed as 'also at'."
+  },
+  {
+   "name": "Witch's Hat animations",
+   "match": "media/animations/",
+   "blurb": "The hat potential and its triptychs."
+  },
+  {
+   "name": "Wiki figures",
+   "match": "^wiki/images/[^/]+$",
+   "blurb": "Figures drawn for wiki pages (length–time, sedenion cavitation, the zero-divisor graph)."
+  },
+  {
+   "name": "Master Key of Reality (original figures)",
+   "match": "MasterKey/",
+   "blurb": "The original 2026 Master Key figures."
+  },
+  {
+   "name": "First Age Gemini art",
+   "match": "FirstDraft/FirstAge/Gemini/|ResearchPaper/canvas",
+   "blurb": "Gemini images from the First Age drafts."
+  },
+  {
+   "name": "Cosmic waltz (Gemini, saved page)",
+   "match": "offhand/",
+   "blurb": "Assets saved with a Gemini page."
+  },
+  {
+   "name": "ptol output",
+   "match": "^ptol_",
+   "blurb": "One ptol.c paper (SVG and bitmap) for a DNA prompt."
+  }
+ ],
+ "titles": [
+  {
+   "match": "gemini_simulators/Gem_AO_Ham2\\.png",
+   "title": "Alpha–Omega Hamiltonian System · error correction off"
+  },
+  {
+   "match": "gemini_simulators/Gem_AO_Ham\\.png",
+   "title": "Alpha–Omega Hamiltonian System · error correction on"
+  },
+  {
+   "match": "gemini_simulators/Gem_BW2\\.png",
+   "title": "Black Hole / White Hole transition · collapsing spacetime"
+  },
+  {
+   "match": "gemini_simulators/Gem_BW\\.png",
+   "title": "Black Hole / White Hole transition · cosmic expansion"
+  },
+  {
+   "match": "gemini_simulators/Gem_FP1\\.png",
+   "title": "Fermat–Planck phase transition · low exponent"
+  },
+  {
+   "match": "gemini_simulators/Gem_FP\\.png",
+   "title": "Fermat–Planck phase transition · high exponent"
+  },
+  {
+   "match": "gemini_simulators/Gem_Ham_1\\.png",
+   "title": "Hamiltonian Convergence · spiral"
+  },
+  {
+   "match": "gemini_simulators/Gem_Ham_2\\.png",
+   "title": "Hamiltonian Convergence · five arms"
+  },
+  {
+   "match": "gemini_simulators/Gem_virus\\.png",
+   "title": "The Hairy Horizon"
+  },
+  {
+   "match": "gemini_simulators/Gem_Z_RF\\.png",
+   "title": "Riemann Zeta Unmapping"
+  },
+  {
+   "match": "gemini_simulators/yass2\\.png",
+   "title": "Horizon Invariance · Riemann–Fermat (2)"
+  },
+  {
+   "match": "gemini_simulators/yass3\\.png",
+   "title": "Horizon Invariance · Riemann–Fermat (3)"
+  },
+  {
+   "match": "gemini_simulators/yass\\.png",
+   "title": "Horizon Invariance · Riemann–Fermat (1)"
+  }
+ ],
+ "notes": [
+  {
+   "match": "gemini_simulators/Gem_AO_Ham2\\.png",
+   "desc": "A Gemini-built simulator screenshot: six nodes around a hexagon with the Alpha–Omega Hamiltonian readouts (alpha limit, entropy, Hamiltonian balance); the error-correction switch is off."
+  },
+  {
+   "match": "gemini_simulators/Gem_AO_Ham\\.png",
+   "desc": "The same simulator with error correction active: the correction field and the entropy field are drawn, the Hamiltonian balance readout is held."
+  },
+  {
+   "match": "gemini_simulators/Gem_BW2\\.png",
+   "desc": "Simulator screenshot of the black-hole/white-hole transition at the collapsing-spacetime end: event horizon marked, causality and time-dilation controls."
+  },
+  {
+   "match": "gemini_simulators/Gem_BW\\.png",
+   "desc": "The expansion end of the same transition: a glowing cosmic-expansion core inside the horizon rings."
+  },
+  {
+   "match": "gemini_simulators/Gem_FP1\\.png",
+   "desc": "Simulator screenshot: a lattice of points and the Planck-energy ring at a low Fermat exponent."
+  },
+  {
+   "match": "gemini_simulators/Gem_FP\\.png",
+   "desc": "The same simulator at a high exponent: the lattice fills the field and the ring closes."
+  },
+  {
+   "match": "gemini_simulators/Gem_Ham_1\\.png",
+   "desc": "Simulator screenshot: points converging into a spiral under rotation and entropy controls; event horizon marked."
+  },
+  {
+   "match": "gemini_simulators/Gem_Ham_2\\.png",
+   "desc": "The same simulator with natural markers on: five arms form."
+  },
+  {
+   "match": "gemini_simulators/Gem_virus\\.png",
+   "desc": "Simulator screenshot: a horizon disc with the integration speed, entropy pressure and horizon scale controls."
+  },
+  {
+   "match": "gemini_simulators/Gem_Z_RF\\.png",
+   "desc": "Simulator screenshot: the zeta spiral with the zeros plotted and an unmapping-factor control (below, the line spectrum)."
+  },
+  {
+   "match": "gemini_simulators/yass2\\.png",
+   "desc": "Simulator screenshot: a Riemann wave crossing the event horizon between the Riemann-space and Fermat-space lattices."
+  },
+  {
+   "match": "gemini_simulators/yass3\\.png",
+   "desc": "The same simulator, third state."
+  },
+  {
+   "match": "gemini_simulators/yass\\.png",
+   "desc": "The same simulator, first state."
+  }
+ ]
+}
