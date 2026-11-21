@@ -39,3 +39,6 @@ Generative composition seeded by the corpus (style model over the NES subset: tr
 - A MIDI file with no tempo event plays at 120 bpm.
 - `note on` with velocity 0 is a note off (handled).
 - Do not assume channel 10 (index 9) is drums outside General MIDI files.
+
+## 7. This machine's P-105 setup (verified 2026-11-21; details in `~/Projects/Yamaha/README.md`)
+Linux Mint 22.1 on PipeWire (PulseAudio layer, not JACK). ALSA client 20 "Digital Piano" (`20:0`); a systemd user service `fluidsynth.service` (default-GM.sf3) is client 128; `~/Projects/Yamaha/p105_setup.sh synth` connects 20:0 to it. Only audio sink: HDMI. Installed: lmms, audacity, musescore3 (headless: `QT_QPA_PLATFORM=offscreen musescore3 -o out.pdf in.mid|in.musicxml`), pianobooster, rosegarden, fluidsynth, qjackctl, carla, a2jmidid, lilypond, timidity. Sheet-music path: `smf.py` quantise → music21 (venv in `~/Projects/Yamaha/.venv`) → MusicXML → MuseScore → PDF; `pdfunite` to join (reduction first, full score after).
