@@ -1,0 +1,23 @@
+# PRIMER 2026-11-20: the Alpöge/Claude Riemann Hypothesis claim, set against RiemannHypothesisProof; the mass-gap number checked
+
+**Assistant note.** Written by a transformer language model (Claude Sonnet 5.5). The claim below was made with a model of the same family; the author of this primer cannot verify it and has a conflict of interest in describing it. Everything about the claim is **secondhand**: the note (`alpo.ge/remark.pdf`) and the Lean code were not read; Nature's article was behind a login; one outlet (nacionale.com) returned 403. Sources read: pasqualepillitteri.it (the only one with method detail), shattered.io, the Numberphile reaction transcript (`scratchpad/youtube_sMZMpsHeFKc/`).
+
+## The news (2026-11-20, unverified)
+- Levent Alpöge (Anthropic technical staff; Harvard Society of Fellows) posted a four-page note "Remark" saying he believes he has, working with Claude, discovered a proof of RH, with the method reaching GRH (Extended RH "with more time"). The note says there is no readable text (250,000+ pages generated; a human version could be produced mechanically; publishing it would be "slop"); the proof is released as Lean code (14 compressed archives on his site).
+- Method (Pasquale only, not checked against the note): Stepanov's method (the elementary proof of the Weil bound over finite fields) with multiplicity obtained "natively automorphic" through a chain of theta lifts between definite unitary groups, chain length about √X; also Iwasawa towers, Chowla–Selberg, Bost's slope inequality, a relative trace formula, a weakened Vandiver conjecture.
+- Status: Andrew Sutherland (MIT) reportedly compiled the Lean code on Nov 20; the correctness of the *statement* (that it is RH/GRH as usually stated) is being examined by Lean experts (Glazer, Bloom quoted); no mathematician has certified the argument; Nature quotes Granville ("garbled") and Maynard ("historic milestone if it fully checks out"). A second claim (GRH, Alessandro Masullo, human-written, posted by Ravi Vakil) appears only in the search summary, not in any page I could read. Timing concerns (Anthropic's Nasdaq debut that day) are in the note; Alpöge calls the cynical reading false.
+- Context (unverified): in August 2026 Anthropic reported raising the proven share of zeros on the critical line from 41.6% to 67.2%.
+
+## Against RiemannHypothesisProof
+- RHP does **not** claim RH. Its open step is the Berry–Keating self-adjointness conjecture (equivalently ζ as a mode whose nodal set is the equator). That is the Hilbert–Pólya direction: a spectral operator. The reported proof is arithmetic-geometric (Stepanov, automorphic multiplicity): a different route.
+- If the proof stands, RH is true, and RHP's "conditional" rows (the ones true only if RH holds) become unconditional. It would **not** supply the self-adjoint operator: RH true does not give Hilbert–Pólya. RHP's own findings (½ over-determined by independent routes; Chebyshev bias from L(χ₋₄) zeros; GUE rigidity) are consistent either way.
+- One correction to the Equation Space work: the Rubinstein–Sarnak limit law there assumes GRH **and** Linear Independence of the zero ordinates; a proved GRH would leave only LI assumed.
+- Nothing in the reported method uses a Lagrangian, the equator, or σ_RB.
+- Standing posture: nothing in the RHP papers should be edited until the claim is checked; keep "RH: open" in the status line and note the claim with its date and its unverified status.
+
+## The mass-gap number (Δ = Ω_ζΣ − d*·ln10), checked 2026-11-20
+- Δ = ln10 · (Ω/ln10 − 0.24600) exactly: it is the difference between the closed-form d* (0.24630720…) and the **measured** d*_spec = 0.24600, times ln10. With the closed-form d* it is zero by construction; with 0.24631 (rounded) it is −6.4×10⁻⁶. Its sign depends on the fifth digit of a measured value; d*_spec is not one of the four named faces of d*.
+- Stated precision of 0.24600 (5 s.f.) gives Δ = 0.000707 ± 0.000012, so Δ > 0 survives *if* the measured value is right to its stated digits.
+- The closed form 1/(1000√2) (0.035% match) is not evidence: 32 forms 1/(a√b) with a ≤ 3000, b ≤ 200 match within the same tolerance.
+- The "BAO" link: no 147 Mpc scale or BAO data enter; x_BAO = exp(1/Ω) = 5.83 is a number-theoretic coordinate.
+- Clay's Yang–Mills problem asks for a quantum gauge theory on ℝ⁴ satisfying the axioms with a mass gap; a dimensionless number from ζ-side constants constructs no gauge theory. The 2026-11-03 evaluation already put the identification at about 1.5σ; the correction pass called it "a named subtraction, not a spectral residue."
