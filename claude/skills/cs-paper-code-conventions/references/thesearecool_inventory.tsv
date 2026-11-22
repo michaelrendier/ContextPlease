@@ -1,0 +1,517 @@
+# Inventory of the PDFs under ~/Desktop/Desktop Archive/thesearecool/ (2026-11-22): path relative to that directory, pages, structure detected (paper = has an Abstract, or Introduction and Conclusion headings), numbered/known section headings found.
+path	pages	kind	sections
+Blockchain-master/0x_white_paper.pdf	16	paper	abstract,appendix,introduction,references,summary
+Blockchain-master/20160404-XBRLUS-Blockchain.pdf	136	other	
+Blockchain-master/3Party-OW-iftach.pdf	36	other	
+Blockchain-master/3dsecure.pdf	7	other	introduction,references
+Blockchain-master/A Brief Survey of Cryptocurrency Systems.pdf	8	other	
+Blockchain-master/A Decentralized Noise Pollution Monitoring.pdf	8	other	
+Blockchain-master/A Dissection of Bitcoin - Paul Huang.pdf	71	other	introduction,summary
+Blockchain-master/A Fast and Scalable Cryptocurrency Protocol.pdf	71	paper	abstract,conclusions,implementation,introduction,references,related work
+Blockchain-master/A Key Backup Scheme Based on Bitcoin.pdf	15	paper	conclusion,introduction,references
+Blockchain-master/A New Look at the Refund Mechanism in the bitcoin payment protocol.pdf	20	paper	conclusion,discussion,introduction,references
+Blockchain-master/A Novel Method for Decentralised Peer-to-Peer Software License.pdf	9	other	
+Blockchain-master/A Privacy-preserving Community-based P2P OSNs.pdf	7	other	evaluation
+Blockchain-master/A Programmer’s Guide to Ethereum and Serpent.pdf	20	other	introduction,references
+Blockchain-master/A Proof-of-Stake protocol for bitcoin subchains.pdf	16	other	discussion,evaluation,implementation,introduction,references
+Blockchain-master/A Provably Secure Proof-of-Stake Blockchain Protocol.pdf	27	paper	abstract,introduction,references
+Blockchain-master/A Secure Sharding Protocol For Open Blockchains.pdf	14	other	
+Blockchain-master/A Survey of Distributed Consensus Protocols for Blockchain.pdf	34	other	
+Blockchain-master/A Survey of Distributed Message Broker Queues.pdf	8	paper	abstract,implementation
+Blockchain-master/A Survey on Consensus Mechanisms.pdf	40	other	
+Blockchain-master/A Survey on Security and Privacy Issues of Bitcoin.pdf	26	other	conclusions
+Blockchain-master/A Technical Survey on Decentralized Digital Currencies.pdf	37	other	
+Blockchain-master/A closer look at SQRL.pdf	25	paper	abstract,background,conclusion,future work,introduction,motivation,references,related work
+Blockchain-master/A multi-party protocol for constructing the public parameters of the Pinocchio zk-SNARK.pdf	25	paper	abstract,introduction,references
+Blockchain-master/AFullyHomomorphicSchema_craig-paper.pdf	8	other	references
+Blockchain-master/AFullyHomomorphicSchema_craig-thesis.pdf	209	paper	abstract,introduction
+Blockchain-master/A_Distributed_Public_Key_Infrastructure_for_the_Web_Backed_by_a_Blockchain.pdf	48	paper	abstract,appendix,background,discussion,evaluation,introduction,methodology,overview
+Blockchain-master/An Inquiry into Money Laundering Tools.pdf	14	other	
+Blockchain-master/An Ultra-low Latency and Failure Resilient Distributed File System for Shared Storage Cloud Database.pdf	14	other	architecture,conclusion
+Blockchain-master/An empirical analysis of smart contracts.pdf	16	paper	conclusions,design,introduction,methodology,references
+Blockchain-master/Analysis of hashrate-based double-spending.pdf	13	paper	abstract,conclusions,introduction
+Blockchain-master/Analysis of the Bitcoin UTXO set.pdf	13	other	introduction,references
+Blockchain-master/Analysis of the Blockchain Protocol in Asynchronous Networks.pdf	40	paper	abstract,introduction,references,related work
+Blockchain-master/Andrew_Keys.pdf	37	other	
+Blockchain-master/Anonymity of Bitcoin Transactions.pdf	10	other	discussion,results
+Blockchain-master/Anonymous Byzantine Consensus.pdf	7	other	
+Blockchain-master/Anonymous-Identities-for-Permissioned-Blockchains2.pdf	20	other	
+Blockchain-master/Application of the Blockchain For Authentication.pdf	9	paper	abstract,introduction
+Blockchain-master/Architecture of the Hyperledger Blockchain Fabric.pdf	4	other	references
+Blockchain-master/ArchitectureoftheHyperledge.pdf	4	other	references
+Blockchain-master/AsicBoostWhitepaperrev5.pdf	10	other	introduction,references
+Blockchain-master/Asicboost.pdf	13	other	summary
+Blockchain-master/Authentication, Blind Signatures.pdf	6	other	introduction
+Blockchain-master/AutonomousNEXT_TokenMania.pdf	78	other	appendix,discussion,overview,problem
+Blockchain-master/Avalanche vs The new IOTA consensus algorithm, with a touch of Spacemesh - NEAR Protocol.pdf	7	other	
+Blockchain-master/BAIN_BRIEF_Blockchain_in_Financial_Markets.pdf	12	other	
+Blockchain-master/BTRUST.pdf	30	paper	background,conclusion,introduction,references
+Blockchain-master/Beyond economics of proof of work cryptocurrency.pdf	31	paper	abstract,introduction,references
+Blockchain-master/Bitcoin A First Legal Analysis.pdf	13	paper	conclusion,introduction,method
+Blockchain-master/Bitcoin CapacityScalability Roadmap.pdf	2	other	
+Blockchain-master/Bitcoin Developer Reference.pdf	43	other	appendix,architecture,introduction,references
+Blockchain-master/Bitcoin History  Pre-Blockchain Digital Currencies.pdf	5	other	
+Blockchain-master/Bitcoin and Beyond.pdf	37	other	
+Blockchain-master/Bitcoin as a Transaction Ledger.pdf	51	other	introduction,references
+Blockchain-master/Bitcoin mining is vulnerable.pdf	18	paper	conclusion,discussion,introduction,problem,references,related work
+Blockchain-master/Bitcoin's Security Model_ A Deep Dive - CoinDesk.pdf	9	other	
+Blockchain-master/Bitcoin-NG A Scalable Blockchain Protocol.pdf	16	other	
+Blockchain-master/Bitcoin_Technical_Background_and_Data_analysis.pdf	39	other	introduction,method,references,summary
+Blockchain-master/Bitcoins the hard way_ Using the raw Bitcoin protocol.pdf	32	other	conclusion
+Blockchain-master/Bitcoin’s Security Model Revisited.pdf	26	other	conclusions,references,related work
+Blockchain-master/Block Size Increase.pdf	18	paper	abstract,conclusion,references
+Blockchain-master/BlockChain-In-Capital-Markets.pdf	24	other	introduction
+Blockchain-master/Blockchain A Graph Primer.pdf	16	other	references
+Blockchain-master/Blockchain Anomaly.pdf	11	paper	abstract
+Blockchain-master/Blockchain Consensus Protocols in the Wild.pdf	24	paper	abstract,conclusion,introduction,overview,references
+Blockchain-master/Blockchain Consensus.pdf	4	other	introduction,related work
+Blockchain-master/Blockchain Meets Database Design and Implementation of a Blockchain Relational Database.pdf	14	paper	abstract,conclusion
+Blockchain-master/Blockchain Technology in canada economy.pdf	28	other	
+Blockchain-master/Blockchain-Based_Distributed_Trust_and_Reputation_Management_Systems_A_Survey.pdf	25	other	discussion
+Blockchain-master/Blockchain-Free Cryptocurrencies.pdf	24	paper	abstract,conclusion,discussion,introduction,references,related work
+Blockchain-master/Blockchain-Risks-and-Opps-PDF.pdf	60	other	appendix,architecture,design,limitations,references
+Blockchain-master/Blockchain-Technology-report.pdf	26	paper	conclusion,introduction
+Blockchain-master/BlockchainPKI.pdf	19	paper	abstract,conclusion,introduction,references
+Blockchain-master/Blockchain_QuorumHyperledger_20160922.pdf	4	other	
+Blockchain-master/Blockchains and Smart Contracts for.pdf	12	other	conclusions
+Blockchain-master/BlockfreightWhitepaperFinalDraft.pdf	13	other	discussion,introduction
+Blockchain-master/Blockstack A Global Naming and Storage System.pdf	15	other	architecture
+Blockchain-master/Breaking Ethereum 😈.pdf	24	other	
+Blockchain-master/Btc_anonimity.pdf	10	other	discussion,results
+Blockchain-master/Buchman_Ethan_201606_MAsc.pdf	109	paper	abstract,background,conclusion,introduction
+Blockchain-master/Building the Hyperconnected Future on Blockchains-Dubai2017.pdf	32	other	references
+Blockchain-master/Bulletproofs  Efficient Range Proofs for confidential transactions.pdf	40	paper	abstract,introduction,references
+Blockchain-master/Butterfly Cipher.pdf	18	paper	appendix,conclusion,introduction
+Blockchain-master/Byteball.pdf	49	paper	abstract,conclusion,introduction,references
+Blockchain-master/Byzantine Agreement.pdf	5	other	
+Blockchain-master/Byzantine Fault Tolerance, from Theory to Reality.pdf	18	other	conclusions,references
+Blockchain-master/Byzantine firing squad.pdf	8	paper	abstract,introduction,references
+Blockchain-master/CURRENCY VERSUS TRUST-LESS TRANSFER TECHNOLOGY.pdf	21	paper	abstract,introduction,references
+Blockchain-master/Can We Afford Integrity by Proof-of-Work.pdf	17	paper	abstract,discussion,introduction,limitations,references,related work,results
+Blockchain-master/Centrally Banked Cryptocurrencies.pdf	14	other	
+Blockchain-master/Certified Management of Financial Contracts.pdf	3	other	
+Blockchain-master/ChainLink A Decentralized Oracle Network.pdf	38	paper	abstract,conclusion,introduction,references
+Blockchain-master/Chainspace A Sharded Smart Contracts Platform.pdf	16	other	references
+Blockchain-master/Ciphertext-Policy Attribute-Based Encryption.pdf	15	other	discussion
+Blockchain-master/Coco Framework whitepaper.pdf	27	other	conclusion
+Blockchain-master/Communication Complexity of Byzantine Agreement.pdf	43	other	introduction,references,related work
+Blockchain-master/Composing financial contracts.pdf	13	other	evaluation
+Blockchain-master/Computational Verifiable Secret Sharing Revisited.pdf	24	paper	abstract,future work,introduction,references
+Blockchain-master/Computing Arbitrary Functions of Encrypted Data.pdf	8	other	references
+Blockchain-master/Confidentiality+and+Privacy+Summary.pdf	4	other	
+Blockchain-master/Consensus does not Make Bitcoin Safer (1).pdf	3	other	
+Blockchain-master/Core Concepts, Challenges, and Future Directions.pdf	39	paper	conclusion,introduction,references,summary
+Blockchain-master/Credit-Suisse-Blockchain-Trust-Disrupter.pdf	135	other	overview
+Blockchain-master/Cryptography and Protocols in hyperledger fabric.pdf	46	other	references,summary
+Blockchain-master/DIGIcash_Chaum.BlindSigForPayment.1982.PDF	6	other	
+Blockchain-master/DIRECTIVE OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL.pdf	44	other	
+Blockchain-master/DOUBLE SPEND RACES.pdf	35	other	references
+Blockchain-master/Danger of Private Blockchain.pdf	4	paper	abstract,conclusion,introduction,references
+Blockchain-master/Data Insertion in Bitcoins Blockchain.pdf	19	paper	conclusion,introduction,related work
+Blockchain-master/Deanonymisation techniques.pdf	135	paper	abstract,architecture,introduction
+Blockchain-master/Defining the Ethereum Virtual Machine for Interactive Theorem Provers.pdf	15	paper	conclusion,introduction,references,related work
+Blockchain-master/Digital Assets on Public Blockchains.pdf	37	paper	abstract,conclusion,references
+Blockchain-master/Digital_Economy_Outlook_smart_contract.pdf	5	other	
+Blockchain-master/Dissecting Ponzi schemes on Ethereum.pdf	32	paper	conclusions,introduction,references
+Blockchain-master/Distributed Double Spending Prevention.pdf	15	other	introduction,references
+Blockchain-master/Distributed Systems and consensus.pdf	79	other	
+Blockchain-master/Distributed ledger technologies in post trading.pdf	35	paper	abstract,conclusions,introduction,references
+Blockchain-master/Do you need a Blockchain.pdf	7	other	background
+Blockchain-master/Dos_attack_bitcoin.pdf	15	other	introduction,methodology,references,related work
+Blockchain-master/Double-spending Prevention for bitcoin 0 confirmation transactions.pdf	19	paper	conclusions,introduction,references
+Blockchain-master/Drivechains_Sidechains_and_Hybrid_2-way_peg_Designs_R9.pdf	31	paper	conclusion,introduction,references
+Blockchain-master/EOS_Report.pdf	25	other	conclusions
+Blockchain-master/Easy impossibility proofs for distributed consensus problems.pdf	14	other	
+Blockchain-master/Eclipse Attacks.pdf	18	paper	conclusion,introduction
+Blockchain-master/Efficient Zero-Knowledge Contingent Payments in Cryptocurrencies Without Scripts.pdf	25	other	introduction,references
+Blockchain-master/Elliptic Curve Cryptography in Practice.pdf	16	paper	conclusions,introduction,references
+Blockchain-master/Equilibria in the Tangle.pdf	27	paper	abstract,conclusions,references
+Blockchain-master/Ethereum security _Suicidal Contracts at Scale.pdf	14	other	introduction,problem,related work
+Blockchain-master/Ethereum_virtual_machine.pdf	14	other	overview
+Blockchain-master/Ethereum_white_paper-a_next_generation_smart_contract_and_decentralized_application_platform-vitalik-buterin.pdf	36	other	conclusion
+Blockchain-master/Evaluating_the_Red_Belly_Blockchain.pdf	10	other	references
+Blockchain-master/Evaluation of Logic-Based Smart Contracts for Blockchain Systems.pdf	17	paper	conclusion,introduction,references
+Blockchain-master/Execution of Smart Contracts with arm trustZone.pdf	48	paper	abstract,architecture,background,conclusion,design,evaluation,future work,implementation,introduction,methodology,related work
+Blockchain-master/Experiences with Scaling.pdf	29	other	
+Blockchain-master/FSDC Paper_FinTech_E.pdf	69	paper	conclusion,introduction
+Blockchain-master/Factom_Whitepaper.pdf	38	paper	abstract,conclusion,design
+Blockchain-master/Fedcoin+-+R3+Perspective.pdf	7	other	conclusion
+Blockchain-master/Formal Verification of Smart Contracts.pdf	6	other	conclusion
+Blockchain-master/GLOBAL BLOCKCHAIN BENCHMARKING STUDY.pdf	121	other	architecture
+Blockchain-master/Ghost protocol.pdf	31	paper	conclusion,introduction,references
+Blockchain-master/Goldman-Sachs-report-Blockchain-Putting-Theory-into-Practice.pdf	88	other	
+Blockchain-master/GolemNanopayments.pdf	25	paper	abstract,conclusion,introduction,references
+Blockchain-master/Google’s Globally-Distributed Database.pdf	14	other	conclusions,evaluation,implementation,references
+Blockchain-master/HASHGRAPH.pdf	27	paper	conclusions,introduction,references
+Blockchain-master/Hawk.pdf	31	other	
+Blockchain-master/How to Time-Stamp a Digital Document.pdf	13	paper	abstract,introduction,references,summary
+Blockchain-master/How to backdoor defi Hellman.pdf	17	other	background,conclusion,discussion,references
+Blockchain-master/Hyperledger Whitepaper.pdf	20	paper	abstract,architecture,background,conclusion,references
+Blockchain-master/Hyperledger scalability.pdf	18	other	
+Blockchain-master/IBM_lab2.pdf	18	other	overview
+Blockchain-master/IBM_lab3.pdf	5	other	overview
+Blockchain-master/ICO smart contracts Documentation.pdf	53	other	background,design,introduction
+Blockchain-master/IOTA_Whitepaper.pdf	28	paper	abstract,references
+Blockchain-master/Impossibility of Distributed Consensus with One Faulty Process.pdf	9	paper	conclusion,introduction,references
+Blockchain-master/Information Propagation in the Bitcoin Network.pdf	10	other	
+Blockchain-master/Initial Coin Offerings and the Value of Crypto Tokens .pdf	24	paper	conclusion,introduction,references
+Blockchain-master/Integrity-Forum-2017-Kim-Kang-blockchain-technology.pdf	22	other	discussion,introduction,references
+Blockchain-master/Introduction to Corda for Hyperledger Project 2016-12-08 v2.pdf	11	other	
+Blockchain-master/Introduction to Hyper-ledger Fabric.pdf	40	other	
+Blockchain-master/Is Stellar As Secure As You Think.pdf	9	other	
+Blockchain-master/JohnDavies_BlockchainDisruptiveServiceOrJustAnotherBuzzWord.pdf	37	other	
+Blockchain-master/KEVM A Complete Semantics of the Ethereum Virtual Machine.pdf	33	paper	abstract,background,conclusion,future work,introduction,references,related work
+Blockchain-master/Kadena-ConfidentialityWhitepaper-Aug2016.pdf	9	paper	abstract,conclusion,motivation
+Blockchain-master/Keyless Signatures Infrastructure.pdf	9	paper	conclusions,design,introduction,references,results
+Blockchain-master/LOCALITY IN DISTRIBUTED GRAPH ALGORITHMS.pdf	9	other	references
+Blockchain-master/Linking the cash and securities leg in post-trade settlement..pdf	24	other	references
+Blockchain-master/MEV-btc-tx-ordering.pdf	28	other	
+Blockchain-master/Majority is not Enough_selfish_mining.pdf	18	paper	conclusion,discussion,introduction,problem,references,related work
+Blockchain-master/Making BFT Protocols Really Adaptive.pdf	10	other	
+Blockchain-master/Malleability of the blockchain’s entropy.pdf	20	other	references
+Blockchain-master/Mastering_Bitcoin-Antonopoulos.pdf	298	other	introduction
+Blockchain-master/MetaAnalysis of Alternative Consensus Protocols for Blockchains.pdf	14	other	
+Blockchain-master/Mixing Confidential Transactions.pdf	22	other	introduction,overview,references,related work
+Blockchain-master/MultiChain-White-Paper.pdf	17	other	background
+Blockchain-master/Multiparty-Computations-Technion-2014–.pdf	63	other	
+Blockchain-master/NaPo_Blockchain_webb.pdf	114	other	introduction
+Blockchain-master/Nodes in the Bitcoin Network Comparative study and survey.pdf	14	other	conclusion
+Blockchain-master/Non-determinism in Byzantine Fault-Tolerant Replication.pdf	20	paper	abstract,conclusion,discussion,introduction,references,related work
+Blockchain-master/NxtWhitepaper_v122_rev4.pdf	28	paper	abstract,introduction,references
+Blockchain-master/On Bitcoin Security in the Presence of Broken Crypto Primitives.pdf	17	other	related work
+Blockchain-master/On Scaling Decentralized Blockchains.pdf	16	paper	conclusion,introduction,references
+Blockchain-master/On The Longest Chain Rule and Programmed Self-Destruction of Crypto Currencies.pdf	89	other	
+Blockchain-master/On the Danger of Private Blockchains.pdf	4	paper	abstract,conclusion,introduction,references
+Blockchain-master/On the Instability of Bitcoin Without the Block Reward.pdf	26	paper	abstract,appendix
+Blockchain-master/On the Privacy Provisions of Bloom Filters in Lightweight.pdf	11	other	
+Blockchain-master/Ontology of Blockchain Technologies.pdf	58	paper	background,conclusion,introduction,methodology,motivation,references,results
+Blockchain-master/Overview of Blockchain and big data.pdf	17	paper	abstract,conclusion,overview
+Blockchain-master/PBFT vs Proof-of-Authority Applying the CAP Theorem to Permissioned Blockchain.pdf	11	paper	abstract,background,conclusion,introduction,references
+Blockchain-master/PBFT vs Proof-of-Authority.pdf	11	paper	abstract,background,conclusion,introduction,references
+Blockchain-master/Paxos Systems.pdf	10	other	evaluation
+Blockchain-master/Payment Channels that Go Faster than Lightning.pdf	24	other	background
+Blockchain-master/Performance and Scalability of Blockchain.pdf	46	paper	abstract,background,conclusion,discussion,introduction,method,references
+Blockchain-master/Permissioned-distributed-ledgers.pdf	66	other	introduction
+Blockchain-master/PolkaDotPaper.pdf	21	paper	conclusion,design,introduction
+Blockchain-master/PonzICO Let s Just Cut to the Chase.pdf	12	paper	abstract,conclusion,references
+Blockchain-master/Practical Byzantine Fault Tolerance and Proactive Recovery.pdf	64	paper	appendix,conclusion,implementation,introduction,overview,related work
+Blockchain-master/Practical Byzantine Fault Tolerance.pdf	14	other	
+Blockchain-master/Privacy on the Blockchain Unique Ring Signatures.pdf	43	paper	abstract,background,conclusions,evaluation,implementation,introduction,motivation,references,summary
+Blockchain-master/Privacy on the Blockchain ring signatures.pdf	43	paper	abstract,background,conclusions,evaluation,implementation,introduction,motivation,references,summary
+Blockchain-master/Private Key Recovery Combination Attacks.pdf	26	paper	conclusion,introduction,references
+Blockchain-master/Private-BlockChain-in-automotive-Safety.pdf	12	paper	abstract,conclusion,introduction
+Blockchain-master/Project Ubin  SGD on Distributed Ledger.pdf	44	other	appendix,architecture,background,summary
+Blockchain-master/Project-Hamilton-Phase-1-Whitepaper.pdf	44	paper	conclusion,discussion,introduction,references,related work
+Blockchain-master/Proof of Activity.pdf	19	paper	abstract,conclusion,discussion,introduction,motivation,references
+Blockchain-master/Proof of Idle.pdf	2	other	
+Blockchain-master/Proof of Luck.pdf	6	other	
+Blockchain-master/Proof of Work Without All the Work.pdf	37	paper	abstract,conclusion,introduction,references,related work
+Blockchain-master/Proof-of-Work vs. BFT Replication.pdf	14	paper	conclusion,introduction,references
+Blockchain-master/Quorum Whitepaper v0.1.pdf	8	paper	conclusion,introduction
+Blockchain-master/R3+Report-+Fedcoin.pdf	37	other	conclusion,summary
+Blockchain-master/R3_Confidentiality_and_Privacy_Report.pdf	32	paper	appendix,conclusion,introduction
+Blockchain-master/RING CONFIDENTIAL TRANSACTIONS.pdf	34	paper	conclusion,introduction,references
+Blockchain-master/Recent_Results_on_Fault-Tolerance_Consensus_in_Message-Passing_Networks.pdf	27	paper	abstract,conclusion,introduction,references
+Blockchain-master/Refinement and Verification of CBC Casper.pdf	13	other	
+Blockchain-master/Refund attacks on bitcoin payment protocol.pdf	18	paper	background,conclusion,discussion,introduction,references
+Blockchain-master/Research on Anonymization and De-anonymization in the Bitcoin System.pdf	14	other	references
+Blockchain-master/Roadmap_for_Blockchain_Standards_report.pdf	24	paper	background,conclusion,introduction,methodology,references
+Blockchain-master/Robustly Reconfigurable Consensus and Applications.pdf	64	paper	abstract,design,evaluation,implementation,introduction,references
+Blockchain-master/Safer smart contracts through type-driven.pdf	65	paper	abstract,conclusion,discussion,implementation,introduction
+Blockchain-master/Scaling Byzantine Fault-Tolerant Replication to Wide Area Networks.pdf	10	other	
+Blockchain-master/Secure High-Rate Transaction Processing in bitcoin.pdf	31	paper	conclusion,introduction,references
+Blockchain-master/Secure Multiparty Computations.pdf	18	paper	abstract
+Blockchain-master/Secure sampling of public parameters for succinct zero knowledge proofs.pdf	18	other	
+Blockchain-master/Smart Contract Templates_barclays.pdf	15	paper	abstract,introduction,references,summary
+Blockchain-master/Smart Contracts - 12 Use Cases for Business and Beyond - Chamber of Digital Commerce.pdf	56	other	introduction,overview,references,results
+Blockchain-master/Smart Contracts Make Bitcoin Mining Pools Vulnerable.pdf	17	other	background,introduction,references,related work
+Blockchain-master/Smart-Contract-Security.pdf	14	other	conclusion
+Blockchain-master/SmartCast - An Incentive Compatible Consensus Protocol Using Smart Contracts.pdf	15	paper	abstract,background,conclusion,implementation,introduction,references
+Blockchain-master/Smart_Contract_based_PKI_and_Identity_System.pdf	6	other	
+Blockchain-master/Snowflake to Avalanche A Novel Metastable Consensus Protocol Family for crypto.pdf	21	other	evaluation,implementation
+Blockchain-master/Sonm_whitepaper.pdf	32	paper	abstract,introduction,references,results
+Blockchain-master/SpaceMint.pdf	35	other	design
+Blockchain-master/State Channels - an explanation.pdf	3	other	
+Blockchain-master/Step by Step Towards Creating a Safe Smart Contract.pdf	15	paper	abstract,background,conclusion,introduction,references
+Blockchain-master/Survey_Sharding_in_Blockchains.pdf	28	paper	conclusions,evaluation,introduction
+Blockchain-master/Swap A Peer-to-Peer Protocol for.pdf	10	paper	abstract
+Blockchain-master/The Bitcoin Backbone Protocol.pdf	44	paper	abstract,introduction,references
+Blockchain-master/The Blockchain as a Software Connector.pdf	10	other	
+Blockchain-master/The EigenTrust Algorithm for Reputation Management in P2P Networks.pdf	12	other	discussion
+Blockchain-master/The EigenTrust Algorithm.pdf	14	paper	conclusion,introduction,references,results
+Blockchain-master/The Evolution of the Bitcoin Economy.pdf	46	paper	abstract,conclusions,introduction,references
+Blockchain-master/The Honey Badger of BFT Protocols.pdf	15	other	appendix
+Blockchain-master/The Mini-Blockchain Scheme.pdf	13	paper	abstract,conclusion,introduction,references,summary
+Blockchain-master/The Problem with ASICBOOST.pdf	13	other	summary
+Blockchain-master/The-Blockchain-Landscape-.pdf	21	other	conclusion,references
+Blockchain-master/The-Fintech-2-0-Paper.pdf	20	other	
+Blockchain-master/Thesis_Defense.pdf	40	other	appendix,future work
+Blockchain-master/Threshold Fully Homomorphic Encryption.pdf	40	paper	abstract,introduction,references
+Blockchain-master/Threshold-optimal DSA ECDSA signatures and an application to Bitcoin wallet security.pdf	42	paper	conclusion,design,implementation,introduction,references
+Blockchain-master/Timing and Lattice Attacks on a Remote ECDSA.pdf	47	paper	abstract,conclusion,introduction,problem,references
+Blockchain-master/Toward a 12-second Block Time - Ethereum Blog.pdf	22	other	introduction,overview
+Blockchain-master/Turning a PKI Around with Blockchains.pdf	33	paper	architecture,background,conclusions,design,discussion,evaluation,introduction,references,related work
+Blockchain-master/Twins White-Glove Approach for BFT Testing by Libra team.pdf	18	other	references,related work
+Blockchain-master/Untangling Blockchain A Data Processing View.pdf	20	other	implementation
+Blockchain-master/Using Paxos to Build a Scalable Consistent.pdf	12	other	
+Blockchain-master/Using_Blockchain_to_Protect_Personal_Data.pdf	5	other	
+Blockchain-master/VButerin AODA.pdf	38	other	
+Blockchain-master/Weak Curves In Elliptic Curve Cryptography.pdf	9	paper	abstract,conclusion,references
+Blockchain-master/Why Your Encrypted Database Is Not Secure.pdf	7	other	
+Blockchain-master/Why and How zk-SNARK Works.pdf	65	paper	abstract,conclusions,introduction
+Blockchain-master/XML Compression via DAGs.pdf	12	other	experiments
+Blockchain-master/ZEN Technical notes on a financial engine.pdf	21	other	introduction,references,summary
+Blockchain-master/a Blockchain Protocol Based on Synchronous Timestamps of Compass Satellite.pdf	11	other	
+Blockchain-master/a memory bound graph-theoretic proof-of-work.pdf	13	paper	abstract,conclusion,introduction,motivation,references
+Blockchain-master/adversary in blockchain.pdf	7	other	
+Blockchain-master/atomically-trading-roger.pdf	19	paper	background,conclusion,discussion,introduction,references
+Blockchain-master/bank-2020---blockchain-powering-the-internet-of-value---whitepaper.pdf	50	other	introduction,overview
+Blockchain-master/bc as conector.pdf	10	other	
+Blockchain-master/beigepaper An Ethereum Technical Specification.pdf	25	paper	abstract,references
+Blockchain-master/bigchaindb-whitepaper.pdf	65	paper	architecture,conclusion,experiments,introduction,references
+Blockchain-master/bitcoin economic study.pdf	25	other	conclusion,methodology
+Blockchain-master/bitcoin white paper.pdf	9	paper	conclusion,introduction,references
+Blockchain-master/bitcoin-p2p-fanti.pdf	58	other	summary
+Blockchain-master/bitcoin-protocol.pdf	44	other	
+Blockchain-master/bitcoin_manipulation_market.pdf	26	paper	abstract,introduction,references
+Blockchain-master/bitfury_white_paper_on_blockchain_auditability.pdf	40	other	conclusion,references
+Blockchain-master/bitfury_whitepaper_shared_send_untangling_in_bitcoin_8_24_2016(1).pdf	25	paper	abstract,conclusion,experiments,references
+Blockchain-master/bitfury_whitepaper_shared_send_untangling_in_bitcoin_8_24_2016.pdf	25	paper	abstract,conclusion,experiments,references
+Blockchain-master/bitsniffer.pdf	10	paper	abstract,background,future work,implementation,motivation,references,results
+Blockchain-master/blockchain oportunities and risk .pdf	44	paper	abstract,introduction,overview,references
+Blockchain-master/blockstack.pdf	15	other	architecture
+Blockchain-master/blurred-lines-how-fintech-is-shaping-financial-services.pdf	36	paper	appendix,conclusion,introduction
+Blockchain-master/clique vs aura POA.pdf	11	paper	abstract,background,conclusion,introduction,references
+Blockchain-master/coinshuffle.pdf	21	paper	background,conclusion,design,introduction,problem,references,related work
+Blockchain-master/corda-introductory-whitepaper-final.pdf	15	paper	abstract,conclusion,introduction,summary
+Blockchain-master/corda-technical-whitepaper.pdf	56	paper	abstract,background,conclusion,introduction,overview
+Blockchain-master/counterparty-lib-cheatsheet_9.55.pdf	2	other	
+Blockchain-master/dagcoin-v41.pdf	6	paper	abstract,conclusion
+Blockchain-master/decentralizedapplicationswithethereum-sample.pdf	23	other	conclusion
+Blockchain-master/digital_assets_on_public_blockchains-1.pdf	37	paper	abstract,conclusion,references
+Blockchain-master/ecdsa_bitcoin.pdf	26	paper	abstract,background,introduction,references
+Blockchain-master/eclipse attack BTC.pdf	18	paper	conclusion,introduction
+Blockchain-master/embracing-innovation-in-government.pdf	116	other	introduction,summary
+Blockchain-master/enigma_full.pdf	14	paper	abstract,design,motivation,references
+Blockchain-master/equibit.pdf	11	paper	conclusion,introduction
+Blockchain-master/ethereum-homestead.pdf	123	other	architecture,introduction
+Blockchain-master/ethereum_evm_illustrated.pdf	116	other	introduction
+Blockchain-master/european parliment blockchain.pdf	28	other	conclusions
+Blockchain-master/facebookiq_millennials_money_january2016.pdf	18	paper	appendix,conclusion,introduction,methodology
+Blockchain-master/federal_reserve_Distributed ledger technology.pdf	36	other	overview,summary
+Blockchain-master/file.2016_rubykaigi.pdf	83	other	background,summary
+Blockchain-master/free blockchain.pdf	24	paper	abstract,conclusion,discussion,introduction,references,related work
+Blockchain-master/futur of finance.pdf	69	other	
+Blockchain-master/infinity an-intelligent-decentralized-cloud.pdf	86	other	method,overview
+Blockchain-master/intro_cryptoeconomics.pdf	47	other	introduction
+Blockchain-master/intro_to_distributed_sys.pdf	51	other	
+Blockchain-master/ipfs-p2p-file-system.pdf	11	other	references
+Blockchain-master/kotlin-docs.pdf	144	paper	abstract,motivation
+Blockchain-master/laborx-whitepaper.pdf	10	other	design
+Blockchain-master/lamport-paxos.pdf	33	other	references
+Blockchain-master/legislation_francaise.pdf	2	other	
+Blockchain-master/lightning-network-paper.pdf	59	paper	abstract,conclusion,references
+Blockchain-master/mbc13-moeser-paper.pdf	10	other	discussion,results
+Blockchain-master/next_700_pbft.pdf	46	paper	abstract,conclusion,evaluation,introduction,overview,references,related work
+Blockchain-master/open-transactions.pdf	7	paper	abstract,references
+Blockchain-master/plasma.pdf	47	paper	abstract,conclusion,references,related work,summary
+Blockchain-master/png-t08_are_we_really_ready_for_blockchain_final.pdf	28	other	introduction
+Blockchain-master/pos-vs-pow-1.0.2.pdf	26	paper	abstract,conclusion,references
+Blockchain-master/pow_and_pos.pdf	5	paper	abstract,references
+Blockchain-master/power-fault-tolerance.pdf	6	paper	abstract,future work,references
+Blockchain-master/preneel_blockchain_march2017v1.pdf	17	other	
+Blockchain-master/presentation_Bitcoin.pdf	82	other	
+Blockchain-master/princeton_bitcoin_book.pdf	308	other	introduction
+Blockchain-master/privacy in bitcoin.pdf	18	paper	background,conclusion,discussion,introduction,references,related work
+Blockchain-master/public-vs-private-pt1-1.pdf	23	paper	abstract,conclusion,references
+Blockchain-master/public-vs-private-pt2-1.pdf	20	paper	abstract,appendix,conclusion,references
+Blockchain-master/pwc_blockchain_opportunity_for_energy_producers_and_consumers_en.pdf	46	other	summary
+Blockchain-master/qrp-secure-authentication.pdf	11	paper	abstract,introduction,references
+Blockchain-master/rafte_Consensus Algorithm.pdf	18	other	introduction,related work
+Blockchain-master/secret sharing.pdf	27	other	
+Blockchain-master/securities-law-framework.pdf	27	other	conclusion,results
+Blockchain-master/shared_send_untangling_in_bitcoin_8_24_2016.pdf	25	paper	abstract,conclusion,experiments,references
+Blockchain-master/sidechains.pdf	25	paper	abstract,design,introduction,references
+Blockchain-master/simplicity.pdf	34	paper	abstract,conclusion,introduction,references,results
+Blockchain-master/smart_contract_templates.pdf	15	paper	abstract,introduction,references,summary
+Blockchain-master/smart_contracts_in_finance.pdf	28	other	conclusion,references
+Blockchain-master/solidity documentation.pdf	117	other	overview,summary
+Blockchain-master/solidity.pdf	131	other	overview,summary
+Blockchain-master/stellar-consensus-protocol.pdf	32	other	introduction,limitations,references,related work,summary
+Blockchain-master/syscoin.pdf	14	other	references
+Blockchain-master/tangle.pdf	21	paper	abstract,references
+Blockchain-master/training_plan.pdf	6	other	appendix
+Blockchain-master/ubiq-report.pdf	5	other	conclusion,results
+Blockchain-master/universal-payment-channels.pdf	18	paper	abstract,references,related work
+Blockchain-master/us-fsi-blockchain-risk-management.pdf	12	other	conclusion
+Blockchain-master/useful proof of work.pdf	28	paper	abstract,introduction,references
+Blockchain-master/utxo analysis.pdf	14	other	introduction,references
+Blockchain-master/vitalik.ca_files_mauve_paper.pdf	3	other	
+Blockchain-master/whitepaper crypto note.pdf	20	paper	conclusion,introduction,references
+Blockchain-master/whitepaper_chronobank.pdf	9	other	
+Blockchain-master/zero proof of K.pdf	12	paper	abstract,conclusion,introduction,references
+Blockchain-master/zkSNARKs in a Nutshell.pdf	15	paper	abstract
+Blockchain-master/æternity-blockchain-whitepaper.pdf	10	other	
+Crypto Info/GRC-Cryptocurrency-Mining-Managing-Compute-Intensive-Transaction-White-Paper.pdf	9	other	
+Crypto Info/binance-coin-whitepaper.pdf	17	other	
+Crypto Info/bitcoin-whitepaper.pdf	9	paper	conclusion,introduction,references
+Crypto Info/chainlink-whitepaper.pdf	38	paper	abstract,conclusion,introduction,references
+Crypto Info/dogecoin-whitepaper.pdf	5	other	
+Crypto Info/ethereum-whitepaper.pdf	42	other	conclusion
+Crypto Info/hedera-whitepaper.pdf	97	paper	abstract,architecture,introduction
+Crypto Info/shiba-inu-whitepaper.pdf	22	other	
+Crypto Info/tether-whitepaper.pdf	20	paper	appendix,conclusion,implementation,introduction,references
+Crypto Info/thorchain-whitepaper.pdf	9	paper	conclusion,introduction,overview,references
+Crypto Info/toncoin-whitepaper (1).pdf	126	paper	abstract,introduction
+Crypto Info/toncoin-whitepaper.pdf	126	paper	abstract,introduction
+Crypto Info/xrp-whitepaper.pdf	8	paper	abstract,references
+technical-whitepapers-master/technical-whitepapers-master/base/(Linux FoundationTraining) Konstantin Ryabitsev-A SysAdmin’s Essential Guide to Linux Workstation Security-The Linux Foundation (2017).pdf	34	other	checklist,limitations
+technical-whitepapers-master/technical-whitepapers-master/base/04-dbt2-linux-filesystems-090410203844-phpapp02.pdf	69	other	
+technical-whitepapers-master/technical-whitepapers-master/base/13062-securing-&-hardening-linux-v1.0.pdf	18	other	conclusion,references
+technical-whitepapers-master/technical-whitepapers-master/base/A unique examination of the buffer overflow condition.pdf	180	paper	abstract,introduction,motivation,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Advanced SQL injection in SQL server applications.pdf	25	other	
+technical-whitepapers-master/technical-whitepapers-master/base/BPF_Tracing_and_more.pdf	72	other	overview
+technical-whitepapers-master/technical-whitepapers-master/base/Blind SQL injection.pdf	13	other	introduction
+technical-whitepapers-master/technical-whitepapers-master/base/Blindfolded SQL injection.pdf	17	other	overview,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Buffer overflow vulnerabilities.pdf	13	other	introduction
+technical-whitepapers-master/technical-whitepapers-master/base/CIS_Apache_Benchmark_v2.2.pdf	52	other	references
+technical-whitepapers-master/technical-whitepapers-master/base/Chromium_Sandbox_on_Linux_blackhoodie.pdf	69	other	architecture
+technical-whitepapers-master/technical-whitepapers-master/base/Container_Performance_Analysis.pdf	75	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Decimalisation table attacks for PIN cracking.pdf	13	paper	conclusions,introduction,references,results
+technical-whitepapers-master/technical-whitepapers-master/base/DevOps_Toolchain.pdf	11	other	appendix,conclusion
+technical-whitepapers-master/technical-whitepapers-master/base/Docker and High Security Microservices.pdf	117	other	architecture
+technical-whitepapers-master/technical-whitepapers-master/base/Durkee_OWASP_Top_10_2016_11_v11.pdf	42	other	discussion,introduction,summary
+technical-whitepapers-master/technical-whitepapers-master/base/From_DTrace_to_Linux.pdf	98	other	architecture
+technical-whitepapers-master/technical-whitepapers-master/base/Jogi_CyberSecurity_2017.pdf	79	paper	appendix,background,conclusions,discussion,future work,introduction,limitations,methodology,problem,references,related work,results,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_BPF_Superpowers.pdf	60	other	summary
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_Instrumentation.pdf	119	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_Performance_2014.pdf	90	other	method,problem,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_Performance_Analysis_New_Tools_and_Old_Secrets.pdf	75	other	background,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_Profiling_at_Netflix.pdf	84	other	problem
+technical-whitepapers-master/technical-whitepapers-master/base/Linux_System_Performance_2016.pdf	72	other	method,overview
+technical-whitepapers-master/technical-whitepapers-master/base/Luis_Franco_SELinux_Thesis.pdf	209	paper	abstract,background,introduction,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Manipulating Microsoft SQL Server using SQL injection.pdf	14	paper	conclusion,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/OWASP_Application_Security_Verification_Standard_3.0.1.pdf	70	other	architecture,references
+technical-whitepapers-master/technical-whitepapers-master/base/OffensiveCon2018 - The Return of Robin Hood vs Cisco ASA.PDF	159	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Open_Source_Systems_Performance.pdf	45	other	
+technical-whitepapers-master/technical-whitepapers-master/base/PE file format infection techniques - I.pdf	23	other	introduction,overview,references
+technical-whitepapers-master/technical-whitepapers-master/base/Pentest_Checklist.pdf	11	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Performance_Analysis__The_USE_Method.pdf	46	other	method,problem
+technical-whitepapers-master/technical-whitepapers-master/base/Radware_DDoS_Handbook_2015.pdf	44	other	introduction,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Reverse Engineering for Beginners.pdf	950	other	conclusion
+technical-whitepapers-master/technical-whitepapers-master/base/SREcon_2016_Performance_Checklists_for_SREs.pdf	79	other	checklist,overview
+technical-whitepapers-master/technical-whitepapers-master/base/Speeding up Networking - Precision IO.pdf	40	other	conclusion
+technical-whitepapers-master/technical-whitepapers-master/base/Stop_the_Guessing_Performance_Methodologies_for_Production_Systems.pdf	58	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Systems_Performance__Enterprise_and_the_Cloud.pdf	26	other	
+technical-whitepapers-master/technical-whitepapers-master/base/TCP Fast Open.pdf	12	other	
+technical-whitepapers-master/technical-whitepapers-master/base/TCPDumpTracePlot.pdf	41	paper	conclusion,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/The AWK Programming Language (1988).pdf	225	other	summary
+technical-whitepapers-master/technical-whitepapers-master/base/The Linux Kernel Hidden Inside Windows 10 - Alex Ionescu - Slides - Black Hat 2016.pdf	60	other	conclusion,references
+technical-whitepapers-master/technical-whitepapers-master/base/The Linux Scheduler - A Decade of Wasted Cores - 2016 (eurosys16-final29).pdf	16	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/The UNIX Time-Sharing System (1974).pdf	11	other	implementation,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/Tracing Privileged Memory Accesses to Discover Software Vulnerabilities (2015).pdf	89	paper	abstract,conclusion,limitations,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Unreliable Guide to Hacking the Linux Kernel (2000).pdf	29	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Using CUDA in Practice - GPU Programming - CSE 591 - Slides.pdf	20	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Velocity_2015_linux_perf_tools.pdf	142	other	discussion,method,problem
+technical-whitepapers-master/technical-whitepapers-master/base/Velocity_2017_Performance_analysis_superpowers_with_Linux_eBPF.pdf	54	other	future work
+technical-whitepapers-master/technical-whitepapers-master/base/Vim for Humans.pdf	49	other	introduction
+technical-whitepapers-master/technical-whitepapers-master/base/Virtual Threads - 2000 (cs263_cheong_reiss).pdf	11	paper	abstract,background,design
+technical-whitepapers-master/technical-whitepapers-master/base/WebAppSecurity.pdf	55	other	
+technical-whitepapers-master/technical-whitepapers-master/base/What Happens During a Join - Dissecting CPU and Memory Optimization Effects (P339).pdf	12	other	
+technical-whitepapers-master/technical-whitepapers-master/base/When To Use Splay Trees (2007).pdf	17	paper	background,conclusion,implementation,introduction,references,related work,results,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Why Threads Are A Bad Idea (For Most Purposes) - John Ousterhout (Sept 1995).pdf	8	paper	conclusions,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/WinDbg - A to Z (Slides).pdf	111	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Windows - A Software Engineering Odyssey (Lucovsky).pdf	37	other	architecture,design,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Windows - Disk Subsystem Performance Analysis (March 2004).pdf	31	paper	abstract,introduction,references,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Error Codes.pdf	497	other	introduction,method,overview,references
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Debugging Tutorial.pdf	64	other	
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Advance Virtual Memory.pdf	20	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Cache Manager.pdf	48	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - IO Architecture.pdf	31	other	discussion,problem
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Lightweight Procedure Calls.pdf	25	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - NT Registry Implementation.pdf	26	other	discussion,implementation,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - NTFS.pdf	25	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Object Manager.pdf	37	other	discussion,implementation
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Overview.pdf	20	other	discussion,overview
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Synchronization.pdf	56	other	discussion,summary
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Kernel Internals - Traps, Interrupts and Exceptions.pdf	21	other	discussion
+technical-whitepapers-master/technical-whitepapers-master/base/Windows Research Kernel - Design Notes (David Cutler et al, 1989).pdf	1255	other	introduction,overview
+technical-whitepapers-master/technical-whitepapers-master/base/Writing a Simple Operating System from Scratch - Nick Blundell - Dec 2010.pdf	77	other	introduction,summary
+technical-whitepapers-master/technical-whitepapers-master/base/avc_linux_2015_en.pdf	72	other	introduction
+technical-whitepapers-master/technical-whitepapers-master/base/dblug-linuxhardening.pdf	60	other	background,conclusions
+technical-whitepapers-master/technical-whitepapers-master/base/docker-lxc-security.pdf	26	other	
+technical-whitepapers-master/technical-whitepapers-master/base/handling-of-compromised-linux-systems.pdf	40	other	conclusions
+technical-whitepapers-master/technical-whitepapers-master/base/hardening_guide.pdf	27	paper	conclusion,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/lce-2015-strace-bash-en.pdf	16	paper	conclusion,introduction,references
+technical-whitepapers-master/technical-whitepapers-master/base/linuxsecurityfordevelopers.pdf	85	other	
+technical-whitepapers-master/technical-whitepapers-master/base/os-postgresecurity-pdf.pdf	21	paper	conclusion,introduction
+technical-whitepapers-master/technical-whitepapers-master/base/owasp-testing-guide-v4-en.pdf	453	other	appendix,introduction,overview,references,summary
+technical-whitepapers-master/technical-whitepapers-master/base/perezyves-alexishardened-kernels.pdf	37	other	introduction,references,results
+technical-whitepapers-master/technical-whitepapers-master/base/pf_iptables.pdf	69	other	
+technical-whitepapers-master/technical-whitepapers-master/base/simon_egli_same_origin_policy_v1.0.pdf	42	other	
+technical-whitepapers-master/technical-whitepapers-master/base/sysadmin_magazine_october_2016.pdf	21	other	
+technical-whitepapers-master/technical-whitepapers-master/base/system_call_tracing_overhead_joerg_zinke.pdf	51	paper	conclusion,introduction,overview,related work
+technical-whitepapers-master/technical-whitepapers-master/base/the_linux_kernel_hackers_guide.pdf	155	other	introduction
+technical-whitepapers-master/technical-whitepapers-master/base/tzvetanov_ddos_tutorial.pdf	103	other	introduction,motivation,overview
+technical-whitepapers-master/technical-whitepapers-master/base/xv6 - a simple, Unix-like teaching operating system (Aug 28 2012, draft 7).pdf	96	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Acces denied - magazyn - I (MetaSploit).pdf	25	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Administracja_serwerami.pdf	242	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Analiza algorytmow ukrywania w dzwieku.pdf	80	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Analiza dzialania podejrzanego programu.pdf	12	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Analiza nagłówków pocztowych.pdf	7	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Analiza skuteczności ataków DDOS na najpopularniejsze współczesne systemy operacyjne.pdf	87	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Atak man in the midle na Jabbera.pdf	14	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ataki HTML injection.pdf	8	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ataki SQL Injection na PHP MySQL.pdf	5	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ataki na drugą warstwę modelu OSI.pdf	11	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ataki na system UNIX.pdf	26	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Buffer overflow - Adam Zabrocki.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Buffer overflow - h07 p1.pdf	5	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Buffer overflow - h07 p2.pdf	14	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Buffer overflows - Mariusz Gądarowski.pdf	7	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/DNS spoofing, czyli podszywanie się pod serwer DNS.pdf	21	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/DNS spoofing, czyli podszywanie się pod serwery DNS.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Debugowanie.pdf	50	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Dodawanie nowych funkcji do plików binarnych.pdf	6	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Exploity, rootkity i shell code - Bartłomiej Rusiniak.pdf	19	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Firewall - metody filtracji.pdf	63	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Firewall - podstawy.pdf	41	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Firewall i serwer proxy w Linux.pdf	23	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Google hacking i testy penetracyjne.pdf	116	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Hack FAQ.pdf	71	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Hacking google.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Hakowanie aplikacji rootkity i ptrace.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/IT Security Services.pdf	31	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Karty elektroniczne w PKI - znane ataki i sposoby przeciwdzałania im.pdf	19	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Metody włamań do systemów komputerowych - SQL injection.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ochrona aplikacji i ważnych danych użytkownika poprzez stosowanie technik kodowania defensywnego.pdf	18	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ochrona przed Fingerprinting warstwy aplikacji.pdf	12	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Ochrona przed atakami DoS.pdf	117	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Praktyczna aplikacja do analizy Malware.pdf	9	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Prywatne wojny w sieci.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Reverse engineering - analiza dynamiczna kodu wykonywalnego ELF.pdf	13	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Robaki sieciowe.pdf	33	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Rodzaje wirusów komputerowych.pdf	9	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Shellcody nowej generacji - ewolucja kodów powłoki.pdf	9	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Struktury systemów operacyjnych.pdf	43	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Tryb chroniony 8x86.pdf	79	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Tworzenie poliformicznego szelkodu.pdf	7	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Wirusy.pdf	21	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Wstęp do Reverse Engineeringu.pdf	8	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/Własny rootkit w GNU Linux.pdf	6	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/analiza procesu i programu.pdf	12	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/aplikacje_webowe_na_celowniku.pdf	22	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/atak typu - injection HTML.pdf	8	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/buffer overflow - opis1.pdf	19	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/buffer overflow - opis2 (ang).pdf	11	other	conclusions,references
+technical-whitepapers-master/technical-whitepapers-master/pl/buffer overflow - opis3 (ang).pdf	24	paper	abstract,references
+technical-whitepapers-master/technical-whitepapers-master/pl/buffer overflow - opis4 ciagi formatujace.pdf	9	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/confidence2007.pdf	47	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/gentoo_instalacja_konfiguracja.pdf	255	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/prezentacja-security-pdf_69.pdf	30	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/sekurak-offline-1-final.pdf	59	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/sekurak-offline-2-final.pdf	65	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/sekurak-offline-3-final.pdf	82	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/sekurak-offline-4-final.pdf	70	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/selinux.pdf	90	other	
+technical-whitepapers-master/technical-whitepapers-master/pl/sql-admin-grant-revoke-roles.pdf	37	other	
