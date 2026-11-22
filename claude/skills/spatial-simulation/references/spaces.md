@@ -67,3 +67,7 @@ Engines: `witches_hat` (`action.py`: `ray_bundle`, `brim_bundle`, `tip_report`, 
 4. **Cutaway views**: remove the wedge (isometric) or half (front, side) that faces the camera, and draw the section through the hilltop; otherwise the wall hides the hill and trough.
 5. **Size budget**: draw each path as a few short coloured polylines, not one element per sample (10× smaller); target ≤ 5 MB per SVG (v2.0 came in at 2.7–4.6 MB).
 6. **Versioned names and a home with the paper**: `WitchesHat_Lagrangians_vX.Y_<name>.svg` under `FourthAgePapers/WitchesHat/papers/figures/lagrangians/vX.Y/`, each version kept; the generating script keeps the version in its name or header.
+
+## 11. Penrose space (conformal compactification)  (ESTABLISHED, asset)  added 2026-11-21
+Points: events of spherically symmetric Minkowski space, drawn in the triangle R ≥ 0, |T| + R ≤ π (T = p + q, R = p − q, p = atan(t + r), q = atan(t − r)). Axes: T (time), R (space), both compactified. Motions: boosts (hyperbolae through the diagram), time reversal T → −T. Invariant: causal order; null rays at exactly 45°; Ω = 2 cos p cos q. Views: the whole diagram; the past/future causal diamond of an event. Acceptance test: `assets/penrose.py` (`assert_penrose_sound`). Repo engine: `ValaQuenta/wiki/three_ring_scale.md` §1–§3 (the identification with the Smith chart). Status: ESTABLISHED (Penrose 1963–65; Carter 1966).
+

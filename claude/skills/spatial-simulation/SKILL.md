@@ -17,9 +17,12 @@ description: >
   Fano plane, sedenion space with bracketing and firing order, Mandelbrot-Julia, gauge space =
   orthogonal Smith charts / Apollonian gasket, equation space, the Higgs field space) and anything
   whose axes are not lines but hypercomplex fields; rendering the bundle of paths of a
-  Lagrangian on the hat. Built 2026-11-17 from the Witch's Hat simulator; Minkowski recognition
-  added the same day; spaces and the v2.0 rendering rules added 2026-11-19.
-version: 1.2.0
+  Lagrangian on the hat; Penrose (conformal) diagrams and causal structure at infinity (i+, i-, i0, scri);
+  choosing viewer axes, ranges and camera for n-dimensional data (the 3D overview function, static and moving).
+  Built 2026-11-17 from the Witch's Hat simulator; Minkowski recognition
+  added the same day; spaces and the v2.0 rendering rules added 2026-11-19; Penrose space and the 3D
+  overview function added 2026-11-21.
+version: 1.3.0
 ---
 
 # Spatial simulation: viewport, camera, Blender, and the maths behind them
@@ -152,6 +155,50 @@ A space is described by eight things: points · axes · motions · invariant · 
 | Higgs field space (the hat) | ℝ⁴ ≅ ℂ², O(4); brim = S³ | classical paths, time-dependent hat | ESTABLISHED, engine |
 
 Full entries, measured facts and the repo engines: `references/spaces.md`. Rendering rules settled in use (show the maths exactly; one natural vertical scale; report the tip number; cutaway views; size budget; versioned names kept with the paper): `references/spaces.md` §10.
+
+## 8. Penrose space (added 2026-11-21)
+
+Penrose space is Minkowski space compactified so that all of it, out to infinity, fits in a finite picture whose purpose is
+**causal structure**. Spherical symmetry, ds² = −dt² + dr²; null coordinates u = t − r, v = t + r; then **p = atan v, q = atan u,
+T = p + q, R = p − q** (`assets/penrose.py`). The image is the triangle R ≥ 0, |T| + R ≤ π. The conformal factor is Ω = 2 cos p cos q and
+−dT² + dR² = Ω²(−dt² + dr²), checked numerically by `assert_penrose_sound()`.
+
+| piece | locus | meaning |
+|---|---|---|
+| scri⁺ | p = π/2 (a 45° line) | where outgoing light ends |
+| scri⁻ | q = −π/2 (a 45° line) | where incoming light begins |
+| i⁺ | p = q = π/2 (a point) | every timelike worldline ends here, only as proper time → ∞ (approached, never reached) |
+| i⁻ | p = q = −π/2 (a point) | every timelike worldline begins here |
+| i⁰ | p = π/2, q = −π/2 (a point) | spacelike infinity |
+| R = 0 | the axis | the origin r = 0 (a line, not a boundary) |
+
+| Euclidean/Minkowski viewport | Penrose viewport |
+|---|---|
+| distances, intervals | **not shown**: only causal order and the 45° null lines are faithful |
+| a frame is a pose | a frame does not exist in the picture; a boost moves points along the hyperbolae |
+| infinity is off the page | infinity is the boundary, drawn |
+| a worldline is a curve | a worldline ends at i⁺ if timelike, at scri⁺ if null |
+
+Rules for a Penrose render: R horizontal, T vertical, **equal axes** so null rays are exactly 45°; label every boundary piece; state the
+radial coordinate; never read a length or an area off the diagram; time reversal is T → −T (swaps i⁺↔i⁻, scri⁺↔scri⁻, fixes i⁰ and T = 0).
+Black-hole diagrams change the topology (the singularity is a spacelike line, not i⁺); that needs its own recipe, not this one.
+The project's own use: the three-ring Scale (`ValaQuenta/wiki/three_ring_scale.md`) identifies the Penrose diagram with the Smith chart (Γ = (z−1)/(z+1)); the past
+boundary is full and write-once, the future boundary is empty. Acceptance test: `python3 assets/penrose.py`.
+
+## 9. The 3D overview function (added 2026-11-21)
+
+Purpose: for any n-dimensional data, always produce a renderable shadow: **static = 3 viewer axes; moving = 3 axes plus the 4th as the animation**, in a form
+OpenSCAD, Blender or OpenGL can take (`assets/overview3d.py`, `overview(X, mode='static'|'moving')`).
+
+1. **Centre and axes.** Robust centre (median); the three viewer axes are the directions of greatest spread (SVD), or `axes_hint` if the author names them.
+2. **Ranges.** Percentile-clip (default 1–99) so outliers do not stretch the view; rescale into [−1, 1]³; report what was clipped.
+3. **Rest.** The remaining directions ranked by variance: the channels for colour, size, opacity (budget in §2: 2–3), or small-multiples.
+4. **Camera.** The best of 40 canonical poses by projected spread (an edge-on pose scores zero); the distance is set so the unit cube fits the frustum with a 20% margin;
+   emitted as OpenSCAD `$vpr/$vpt/$vpd` and as a Blender location + TRACK_TO target.
+5. **Moving.** The fourth direction is a half-turn rotation in the (axis 3, axis 4) plane, 24 frames: every point's 4th coordinate is seen; every frame is an orthonormal
+   triple (the data is never changed; only the viewer moves).
+6. **Report with the figure:** variance explained by the three axes shown; the loadings of each axis (what it is made of); the clipped count; what the channels encode.
+Acceptance test: `python3 assets/overview3d.py` (orthonormal axes, unit cube, frustum fit, frames orthonormal). Use it before choosing axes by hand: the viewer axes come from the data's spread, not from the labels.
 
 ## Extending
 
