@@ -31,7 +31,6 @@ Note: pip's and Hugging Face's strings carry the OS distribution, CPU and (for H
 | textblob, emoji, empath, stanza, transformers, onnxruntime, sentencepiece, safetensors, torch (VAPMIP/.venv) | pip | pip default |
 | spaCy `en_core_web_md` | `spacy download` (pip) | pip default |
 | SamLowe/roberta-base-go_emotions, j-hartmann/emotion-english-distilroberta-base, cardiffnlp/twitter-roberta-base-irony | `huggingface_hub.snapshot_download` | hf_hub default |
-
 | 2026-11-22 apt install: fasttext, link-grammar, cg3, libgsl-dev, libmlpack-dev, r-base and r-cran-*, notcurses, ansilove, visidata, praat, sox, octave, ... (47 names + dependencies) | apt-get | apt default |
 | 2026-11-22 pip (VAPMIP/.venv): statsmodels, pingouin, scikit-posthocs, hypothesis, textstat, spacytextblob, better-profanity, alt-profanity-check, detoxify, sentence-transformers, datasets, optimum, plotext, textual, blessed, fasttext-wheel, numba, vaderSentiment, afinn, ... | pip | pip default |
 
