@@ -421,3 +421,69 @@ VERIFIED | Alcubierre 1994 CQG 11 L73 doi:10.1088/0264-9381/11/5/001 ; Sullivan 
   | Crossref records, titles/containers/volumes/pages/years compared (2026-11-13)
   | wiki 111, 112, 113, 114, 115, 117, zero_divisor_divergence_inversion
   | not downloaded; metadata verified (supersedes the QUEUED rows above for these items)
+
+# --- 2026-11-22 personal library intake (author's request) ---
+VERIFIED | Sun Tzu, The Art of War (Giles) ; Machiavelli, The Prince
+  | downloaded, public domain; see ContextPlease/claude/references/INDEX.md
+  | Ainulindale/media/add-reading/, ~/Documents/books/
+  | for the Monad's ingest (the Tao and the War corpus)
+- DSM-5 (APA 2013) 970pp; archive.org upload ia800707...info_munsha_DSM5; copy removed from my local_only dir 2026-11-22 (Cody holds his own at ~/Documents/DSM-5.pdf); copyrighted; do NOT commit to any repo. Fetched 2026-11-22 for Tone/recipe context.
+
+## VAPMIP Neurochemical Recipe Book (2026-11-22; PMC via NCBI efetch)
+Panksepp et al. 2010 | Affective neuroscience of the emotional BrainMind: evolutionary perspectives and implications for understanding depression | None | PMC3181986 | CC by-nc-nd/3.0 | local only
+Davis et al. 2019 | Selected Principles of Pankseppian Affective Neuroscience | Frontiers in Neuroscience | PMC6344464 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Godoy et al. 2018 | A Comprehensive Overview on Stress Neurobiology: Basic Concepts and Clinical Implications | Frontiers in Behavioral Neuroscience | PMC6043787 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Nuss et al. 2015 | Anxiety disorders and GABA neurotransmission: a disturbance of modulation | Neuropsychiatric Disease and Treatment | PMC4303399 | licence not explicit in file | local only
+Fogaça et al. 2019 | Cortical GABAergic Dysfunction in Stress and Depression: New Insights for Therapeutic Interventions | Frontiers in Cellular Neuroscience | PMC6422907 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Carhart-Harris et al. 2017 | Serotonin and brain function: a tale of two receptors | Journal of Psychopharmacology (Oxford, England) | PMC5606297 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+McCutcheon et al. 2019 | Schizophrenia, Dopamine and the Striatum: From Biology to Symptoms | Trends in Neurosciences | PMC6401206 | licence not explicit in file | local only
+Steimer et al. 2002 | The biology of fear- and anxiety-related behaviors | None | PMC3181681 | CC by-nc-nd/3.0 | local only
+Eslinger et al. 2021 | The neuroscience of social feelings: mechanisms of adaptive social functioning | Neuroscience and biobehavioral reviews | PMC8388127 | licence not explicit in file | local only
+Loseth et al. 2014 | State-dependent μ-opioid modulation of social motivation | Frontiers in Behavioral Neuroscience | PMC4264475 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Bakermans-Kranenburg et al. 2013 | Sniffing around oxytocin: review and meta-analyses of trials in healthy and clinical groups with implications for pharmacotherapy | Translational Psychiatry | PMC3669921 | CC by-nc-nd/3.0 | local only
+Quintana et al. 2020 | Advances in the field of intranasal oxytocin research: lessons learned and future directions for clinical research | Molecular Psychiatry | PMC7815514 | licence not explicit in file | local only
+Lebow et al. 2016 | Overshadowed by the amygdala: the bed nucleus of the stria terminalis emerges as key to psychiatric disorders | Molecular Psychiatry | PMC4804181 | licence not explicit in file | local only
+Šimić et al. 2021 | Understanding Emotions: Origins and Roles of the Amygdala | Biomolecules | PMC8228195 | licence not explicit in file | local only
+Drevets et al. 2008 | Brain structural and functional abnormalities in mood disorders: implications for neurocircuitry models of depression | Brain Structure &amp; Function | PMC2522333 | CC by-nc/4.0 | local only
+Jenkins et al. 2016 | Influence of Tryptophan and Serotonin on Mood and Cognition with a Possible Role of the Gut-Brain Axis | Nutrients | PMC4728667 | licence not explicit in file | local only
+Basso et al. 2017 | The Effects of Acute Exercise on Mood, Cognition, Neurophysiology, and Neurochemical Pathways: A Review | Brain Plasticity | PMC5928534 | CC by-nc/4.0 | local only
+Hansen et al. 2022 | Mapping neurotransmitter systems to the structural and functional organization of the human neocortex | Nature Neuroscience | PMC9630096 | licence not explicit in file | local only
+Krugers et al. 2025 | The Stress Response Is Adaptive in a Context- and State-Dependent Manner | Cells | PMC12731636 | licence not explicit in file | local only
+Smith et al. 2006 | The role of the hypothalamic-pituitary-adrenal axis in neuroendocrine responses to stress | None | PMC3181830 | CC by-nc-nd/3.0 | local only
+Rucker et al. 2020 | Pivotal mental states | Journal of Psychopharmacology (Oxford, England) | PMC8054165 | licence not explicit in file | local only
+Koob et al. 2015 | The dark side of emotion: the addiction perspective | European journal of pharmacology | PMC4380644 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Wu et al. 2013 | Understanding resilience | Frontiers in Behavioral Neuroscience | PMC3573269 | CC-BY (by/3.0) | in ContextPlease+VAPMIP refs
+Rutten et al. 2013 | Resilience in mental health: linking psychological and neurobiological perspectives | Acta Psychiatrica Scandinavica | PMC3746114 | CC-BY (by/2.5) | in ContextPlease+VAPMIP refs
+Connor et al. 2019 | Maladaptive Aggression: With a Focus on Impulsive Aggression in Children and Adolescents | Journal of Child and Adolescent Psychopharmacology | PMC6786344 | licence not explicit in file | local only
+Brodie et al. 2016 | Epilepsy, Antiepileptic Drugs, and Aggression: An Evidence-Based Review | Pharmacological Reviews | PMC4931873 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Jackson et al. 2026 | A locus coeruleus-centric framework for novelty, salience, and gamma oscillations: implications for neurostimulation, aging, and disease | Frontiers in Aging Neuroscience | PMC13478173 | licence not explicit in file | local only
+Cui et al. 2024 | Major depressive disorder: hypothesis, mechanism, prevention and treatment | Signal Transduction and Targeted Therapy | PMC10853571 | licence not explicit in file | local only
+Stępnicki et al. 2018 | Current Concepts and Treatments of Schizophrenia | Molecules : A Journal of Synthetic Chemistry and Natural Product Chemistry | PMC6222385 | licence not explicit in file | local only
+Adams et al. 2013 | The Computational Anatomy of Psychosis | Frontiers in Psychiatry | PMC3667557 | CC-BY (by/3.0) | in ContextPlease+VAPMIP refs
+Feldman et al. 2010 | Attention, Uncertainty, and Free-Energy | None | PMC3001758 | licence not explicit in file | local only
+Pezzulo et al. 2015 | Active Inference, homeostatic regulation and adaptive behavioural control | Progress in Neurobiology | PMC4779150 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Stephan et al. 2009 | Dysconnection in Schizophrenia: From Abnormal Synaptic Plasticity to Failures of Self-monitoring | Schizophrenia Bulletin | PMC2669579 | licence not explicit in file | local only
+Budniok et al. 2026 | Interdependency between oxytocin and dopamine in trust-based learning in mice | Scientific Reports | PMC12957489 | licence not explicit in file | local only
+Ji et al. 2026 | Translational pathways of oxytocin therapy in schizophrenia: bridging negative symptom domains and neural mechanisms | Translational Psychiatry | PMC13447861 | licence not explicit in file | local only
+Rusinova et al. 2026 | Understanding the neuroscience of communicating serious news | Intensive Care Medicine | PMC13623768 | licence not explicit in file | local only
+Alcaro et al. 2017 | The Affective Core of the Self: A Neuro-Archetypical Perspective on the Foundations of Human (and Animal) Subjectivity | Frontiers in Psychology | PMC5586212 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Venkatraman et al. 2017 | The Brainstem in Emotion: A Review | Frontiers in Neuroanatomy | PMC5343067 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Di Domenico et al. 2017 | The Emerging Neuroscience of Intrinsic Motivation: A New Frontier in Self-Determination Research | Frontiers in Human Neuroscience | PMC5364176 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+Tarr et al. 2014 | Music and social bonding: “self-other” merging and neurohormonal mechanisms | Frontiers in Psychology | PMC4179700 | CC-BY (by/4.0) | in ContextPlease+VAPMIP refs
+
+## VAPMIP Recipe Book: behaviours and persuasion (2026-11-22)
+Kaplan et al. 2016 | Neural correlates of maintaining one’s political beliefs in the face of counterevidence | Scientific Reports | PMC5180221 | CC-BY
+Colosio et al. 2017 | Neural Mechanisms of Cognitive Dissonance (Revised): An EEG Study | The Journal of Neuroscience | PMC5444193 | CC-BY
+Fujino et al. 2016 | Neural mechanisms and personality correlates of the sunk cost effect | Scientific Reports | PMC5017311 | CC-BY
+Arulpragasam et al. 2018 | Corticoinsular circuits encode subjective value expectation and violation for effortful goal-directed behavior | Proceedings of the National Academy of Sciences of the United States of America | PMC5984520 | local only
+Golkar et al. 2012 | Distinct Contributions of the Dorsolateral Prefrontal and Orbitofrontal Cortex during Emotion Regulation | PLoS ONE | PMC3492343 | CC-BY
+Tsai et al. 2024 | Social good reappraisal as a novel and effective emotion regulation strategy | PLOS ONE | PMC11198829 | local only
+Liang et al. 2021 | Framing and self-responsibility modulate brain activities in decision escalation | BMC Neuroscience | PMC7989009 | local only
+Czekalla et al. 2021 | Self-beneficial belief updating as a coping mechanism for stress-induced negative affect | Scientific Reports | PMC8384941 | local only
+Burns et al. 2018 | A functional near infrared spectroscopy (fNIRS) replication of the sunscreen persuasion paradigm | Social Cognitive and Affective Neuroscience | PMC6022533 | local only
+Zhu et al. 2025 | Human neurocomputational mechanisms of guilt-driven and shame-driven altruistic behavior | eLife | PMC12688305 | local only
+Wood et al. 2017 | Towards a social functional account of laughter: Acoustic features convey reward, affiliation, and dominance | PLoS ONE | PMC5574543 | CC-BY
+Mensen et al. 2014 | Humor as a Reward Mechanism: Event-Related Potentials in the Healthy and Diseased Brain | PLoS ONE | PMC3906016 | CC-BY
+Gurrieri et al. 2026 | Boredom in Psychiatric Disorders: Another Dimensional Construct? | Brain and Behavior | PMC13530392 | local only
+Jankowski et al. 2018 | Feeling left out: depressed adolescents may atypically recruit emotional salience and regulation networks during social exclusion | Social Cognitive and Affective Neuroscience | PMC6123522 | local only
+Pascal, The Art of Persuasion (Wight transl.), en.wikisource.org/wiki/Blaise_Pascal/The_Art_of_Persuasion; Pensees passage via themarginalian.org/2015/05/20/blaise-pascal-pensees-persuasion/

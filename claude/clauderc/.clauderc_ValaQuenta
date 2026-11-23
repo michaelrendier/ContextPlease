@@ -206,7 +206,21 @@ FourthAgePapers/DeSitterCavitation/ (paper + 00-03 notebooks + predictions.json
 + engine copy).
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928 circle_atlas pi_derivations"
+export CTX_BELL_CURVE="
+bell_curve -- THE BELL CURVE ENGINE v1.0 (2026-11-22). ESTABLISHED. Statistics, probability and statistical
+mechanics in ONE stdlib-only implementation: Moments (Welford/Pebay streaming, exact merge), quantiles, the
+normal/t/chi2/F/beta/gamma/binomial/Poisson distributions, n-sigma and Six Sigma (p_to_sigma, sigma_to_dpmo),
+Welch/paired/proportion/chi2/Mann-Whitney/KS/Jarque-Bera, Pearson/Spearman/OLS, Cohen d/kappa/F1/MCC/AUC,
+Holm/BH, seeded bootstrap+permutation, entropy/KL/JS, Bayes, canonical ensemble (Z,U,S,F,Cv; softmax IS it),
+Fermi-Dirac, Bose-Einstein, Maxwell-Boltzmann, Planck, 1-D Ising, circular stats (Rayleigh, von Mises).
+Requested by Cody 2026-11-22 as the statistics machinery for the user-emotional-state battery (VAPMIP).
+FILES: ValaQuenta/modules/bell_curve/{maths,tools,manifest.json}; Testing/test_bell_curve.py (45, scipy cross-checks);
+notebook 27; wiki/bell_curve.md; toolbox 44; Ainulindale wiki 144; proof_locale/bell_curve.json.
+FOUND WHILE BUILDING: p_to_sigma via norm_ppf(1-p/2) loses the tail (6 sigma -> 5.99999999); fixed with -norm_ppf(p/2).
+NOT YET: multivariate tests, ARMA, MCMC, GLM, exact small-sample tests.
+"
+
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928 circle_atlas pi_derivations bell_curve"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
