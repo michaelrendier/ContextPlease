@@ -19,6 +19,7 @@ can be diagnosed by looking here, and so we know which tools do NOT follow the r
 | `requests` 2.34.2 (stanza, many libs) | `python-requests/2.34.2` | no | `headers={'User-Agent': UA}` or `session.headers.update(...)` |
 | `httpx` 0.28.1 | `python-httpx/0.28.1` | no | `httpx.Client(headers={'User-Agent': UA})` |
 | `pip` 26.2.1 (also `spacy download`) | `pip/26.2.1 {json: installer, python, distro "Linux Mint 22.1", cpu, openssl, ...}` | no; no command-line option | `PIP_USER_AGENT` is not honoured; the string is built in `pip._internal.network.session.user_agent()`; to change it, download the wheel with curl and `pip install ./file.whl` |
+| `apt` / `apt-get` (Ubuntu noble archives, via sudo) | `Debian APT-HTTP/1.3 (<version>)` | no | `Acquire::http::User-Agent "<value>";` in `/etc/apt/apt.conf.d/` (not changed) |
 | `huggingface_hub` 1.33 | `unknown/None; hf_hub/2.4.0; python/3.12.3; torch/2.15.0; agent/claude-code` | no | env `HF_HUB_USER_AGENT_ORIGIN` only appends; for the files themselves use `hf_hub_download(..., headers=...)` / `build_hf_headers(user_agent=...)` or `curl` against `https://huggingface.co/<repo>/resolve/main/<file>` |
 
 Note: pip's and Hugging Face's strings carry the OS distribution, CPU and (for HF) the name of the calling agent. Neither contains the user's name or email.
@@ -30,6 +31,9 @@ Note: pip's and Hugging Face's strings carry the OS distribution, CPU and (for H
 | textblob, emoji, empath, stanza, transformers, onnxruntime, sentencepiece, safetensors, torch (VAPMIP/.venv) | pip | pip default |
 | spaCy `en_core_web_md` | `spacy download` (pip) | pip default |
 | SamLowe/roberta-base-go_emotions, j-hartmann/emotion-english-distilroberta-base, cardiffnlp/twitter-roberta-base-irony | `huggingface_hub.snapshot_download` | hf_hub default |
+
+| 2026-11-22 apt install: fasttext, link-grammar, cg3, libgsl-dev, libmlpack-dev, r-base and r-cran-*, notcurses, ansilove, visidata, praat, sox, octave, ... (47 names + dependencies) | apt-get | apt default |
+| 2026-11-22 pip (VAPMIP/.venv): statsmodels, pingouin, scikit-posthocs, hypothesis, textstat, spacytextblob, better-profanity, alt-profanity-check, detoxify, sentence-transformers, datasets, optimum, plotext, textual, blessed, fasttext-wheel, numba, vaderSentiment, afinn, ... | pip | pip default |
 
 All other downloads of other people's work (papers, corpora) go through curl with `$CLAUDE_UA` per the Literature Download Protocol.
 
