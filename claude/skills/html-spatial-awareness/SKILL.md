@@ -34,7 +34,12 @@ requestAnimationFrame 201 · SVG 186 · GSAP 89 · Canvas 2D 88 · GLSL shaders 
 5. **Make errors visible in the DOM** (shader log, `gl.getError()`, WebGL version) - a black canvas gives no other clue.
 6. `gl_PointCoord` is undefined for lines: round-point discard needs a uniform that is 0 when drawing lines.
 7. Data wider than the panel: set `aspect-ratio` on the canvas wrapper, not fixed pixel sizes; two columns above 800 px, one below; 16 px gutters.
-8. Do not run someone else's JavaScript to "see what it does": read it. (The harness blocked executing a downloaded page; the equations were verified by reading and by an independent Python port.)
+8. **Show a curve as a curve.** A frame of dots is not a path: default to `LINE_STRIP` for paths, draw sub-ranges with `drawArrays(mode, first, count)` (block-by-block views), and re-map the colour parameter per block (`uTmap`) so a block shows its own direction.
+9. **One LINE_STRIP joins everything in the buffer.** Several rings in one buffer get joined by long straight lines; draw each ring with its own `first`/`count`.
+10. **Pick a height scale that gives early frames room.** A chart whose height is t had the first 236 of 21,942 units squeezed into 1% of the height; use ln t.
+11. **Check that a grid resolves what it plots.** A spectrum on 1,800 grid points aliased spikes 4.5e-5 wide; evaluate at the known positions instead.
+12. **Animations: one step per second means a timer, not requestAnimationFrame.** Keep rAF for camera redraws, `setInterval(…, 1000)` for the steps; give play/pause/step/scrub, and URL options (`?step=&block=1&play=0`).
+13. Do not run someone else's JavaScript to "see what it does": read it. (The harness blocked executing a downloaded page; the equations were verified by reading and by an independent Python port.)
 
 ## 4. Cody's gallery conventions (image_gallery/Riemann_Fermat_Atlas_Gallery.html, gallery_config.json)
 - Config-driven: `name`, `slug`, `port`, `tagline`, `catalog`, `exclude`, and `groups` = {name, regex `match`, `blurb`}; every item carries its description and provenance.

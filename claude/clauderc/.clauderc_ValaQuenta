@@ -234,7 +234,7 @@ zeta_uns_path -- THE ZETA PATHWAY IN UNS v1.0 (2026-11-24). ESTABLISHED / CALCUL
 Fast Riemann-Siegel Z (1e-2 at t~25, 3e-3 at 100, 5e-6 at 1e4), sample_by_phase (16 pts/zero; jitter=True removes the 32-spoke lattice artefact), UNS cylinder (rho=log10|zeta|+3, phi=arg, height=t: the spring) and sphere charts,
 driver Z'/Z = sum over zeros 2t/(t^2-gamma^2) + smooth (spread .573 -> .007), prime spring (Euler path: one step per prime, p^-1/2, turned by -t ln p), prime resonance heights t=2 pi k/ln p,
 zero spectrum sum cos(gamma x): spikes at x=ln p^k (28x-750x over background, 25,000 zeros). Viewer: RiemannHypothesisProof/visualizations/javascript/webgl_aizawa_vs_zeta_uns.html.
-FILES: ValaQuenta/modules/zeta_uns_path/{maths,tools,manifest.json}; Testing/test_zeta_uns_path.py (18); notebook 29; wiki/zeta_uns_path.md; toolbox 46; Ainulindale wiki 146; proof_locale/zeta_uns_path.json.
+FILES: ValaQuenta/modules/zeta_uns_path/{maths,tools,manifest.json}; Testing/test_zeta_uns_path.py (20); notebook 29; wiki/zeta_uns_path.md; toolbox 46; Ainulindale wiki 146; proof_locale/zeta_uns_path.json.
 NOT YET: phase-offset reading of the diagonal prime quadratics; an orthogonal Dirichlet-character wave beside zeta; Euler product is formal on the line (a picture, not a value).
 "
 
