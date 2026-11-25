@@ -220,7 +220,25 @@ FOUND WHILE BUILDING: p_to_sigma via norm_ppf(1-p/2) loses the tail (6 sigma -> 
 NOT YET: multivariate tests, ARMA, MCMC, GLM, exact small-sample tests.
 "
 
-export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928 circle_atlas pi_derivations bell_curve"
+export CTX_AIZAWA_ATTRACTOR="
+aizawa_attractor -- THE AIZAWA ATTRACTOR ENGINE v1.0 (2026-11-24). ESTABLISHED. The Aizawa system (a=.95 b=.7 c=.6 d=3.5 e=.25 f=.1) read as a ROTATION with a RADIAL DRIVER:
+in cylindrical coordinates dr/dt=(z-b)r and dphi/dt=d exactly (residual 9e-16); r never reaches the axis; at f=0 the 3-D orbit is the 2-D (r,z) flow swept round the axis (1.7e-8);
+fixed points on the axis (c+az-z^3/3=0, eigenvalues (z*-b)+-id and a-z*^2); largest Lyapunov exponent +0.085; js_layout = the animation page's buffer order (x,z,y) + lineDistances i/n.
+Requested by Cody 2026-11-24 (the zeta path he sees is this skeleton). The animation page that drew it was read, not run; original author unknown; local copy only.
+FILES: ValaQuenta/modules/aizawa_attractor/{maths,tools,manifest.json}; Testing/test_aizawa_attractor.py (9); notebook 28; wiki/aizawa_attractor.md; toolbox 45; Ainulindale wiki 145; proof_locale/aizawa_attractor.json.
+NOT YET: original paper reference unverified; no claim about zeta here (see zeta_uns_path).
+"
+
+export CTX_ZETA_UNS_PATH="
+zeta_uns_path -- THE ZETA PATHWAY IN UNS v1.0 (2026-11-24). ESTABLISHED / CALCULATED. zeta(1/2+it)=exp(-i theta)Z: rotation at -theta'(t) with a SIGNED radius Z(t) (zeros = axis passages Aizawa forbids).
+Fast Riemann-Siegel Z (1e-2 at t~25, 3e-3 at 100, 5e-6 at 1e4), sample_by_phase (16 pts/zero; jitter=True removes the 32-spoke lattice artefact), UNS cylinder (rho=log10|zeta|+3, phi=arg, height=t: the spring) and sphere charts,
+driver Z'/Z = sum over zeros 2t/(t^2-gamma^2) + smooth (spread .573 -> .007), prime spring (Euler path: one step per prime, p^-1/2, turned by -t ln p), prime resonance heights t=2 pi k/ln p,
+zero spectrum sum cos(gamma x): spikes at x=ln p^k (28x-750x over background, 25,000 zeros). Viewer: RiemannHypothesisProof/visualizations/javascript/webgl_aizawa_vs_zeta_uns.html.
+FILES: ValaQuenta/modules/zeta_uns_path/{maths,tools,manifest.json}; Testing/test_zeta_uns_path.py (16); notebook 29; wiki/zeta_uns_path.md; toolbox 46; Ainulindale wiki 146; proof_locale/zeta_uns_path.json.
+NOT YET: phase-offset reading of the diagonal prime quadratics; an orthogonal Dirichlet-character wave beside zeta; Euler product is formal on the line (a picture, not a value).
+"
+
+export VALAQUENTA_ENGINE_INDEX="berry_keating clay_millennium constants derivation_chain h_rb_hat hyperwebster inversion jwst lagrangian noether noether_information sigma_cavitation singularity_null sonification spherical tier6_physics tier7_cosmos tier8_sedenion tier9_chem turing_diagonal udeo_crypto sigma_expansion l_io_photon_path archimedes_screw box_kite monad translator_discocat translator_vsa translator_common _crosscutting angular_rank desitter_cavitation emerger oblique_gear spectral_primes bracketing_firing_order prime_gauge_field scale units add_scale_sign basile addition_matrix ptycho_weak_lensing session_20260928 circle_atlas pi_derivations bell_curve aizawa_attractor zeta_uns_path"
 
 ctxengine() {
   local var="CTX_$(echo "$1" | tr '[:lower:]' '[:upper:]')"
