@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/contextplease_header.jpg" alt="A tea-merchant's wall of labelled drawers and jars: ContextPlease/claude/ with .clauderc, .clauderc_canonical_maths, .clauderc_ValaQuenta, the context files, scratchpad contents, memory, user provenance, and the cabinets clauderc/, hist_prime/, scratchpad/, references/, skills/" width="100%"></p>
+
 # ContextPlease — read this first
 
 **Manual Transmission Context Continuity.**
