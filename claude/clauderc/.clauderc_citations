@@ -491,3 +491,4 @@ Pascal, The Art of Persuasion (Wight transl.), en.wikisource.org/wiki/Blaise_Pas
 # 2026-11-23 VAPMIP/UserState: Kafka, The Complete Stories (Schocken 1971, LCCN 75-161559), Cody's PDF, local only; workup schocken_*.py
 # 2026-11-24 VAPMIP/UserState: Kiely, Inference Engineering (2025/26 PDF), Cody's own copy, local only (VAPMIP/references/, mirror ~/Documents); read after the vocabulary/nuance build
 # 2026-11-24 VAPMIP/UserState: Reimers & Gurevych 2019 (Sentence-BERT) arXiv:1908.10084; model all-MiniLM-L6-v2 (HF, Apache-2.0), local; WSD test
+# 2026-11-24 RiemannHypothesisProof: xml12333/HTML_CSS_JS 'Holographic Aizawa Attractor' (source of the Code with Bhurtel short's code), local only, read not executed
