@@ -10,7 +10,7 @@ description: >
 
 # HTML spatial awareness
 
-**STANDING RULES (Cody, 2026-11-24):** (1) Load and apply this skill every time an HTML gallery or visualization page is made or edited. (2) **ALL GALLERIES GET COMMITTED AND PUSHED when they are finished being edited** (name the files; GITHUB_TOKEN via http.extraheader; never rewrite history). (3) Every page mentions the GitHub source it draws on and cites the literature (links + references in the page footer).
+**STANDING RULES (Cody, 2026-11-24):** (1) Load and apply this skill every time an HTML gallery or visualization page is made or edited. (2) **ALL GALLERIES GET COMMITTED AND PUSHED when they are finished being edited** (name the files; GITHUB_TOKEN via http.extraheader; never rewrite history). (3) Every page mentions the GitHub source it draws on and cites the literature (links + references in the page footer). (4) **Every 3-D frame carries a 3-axis orientation gizmo in a corner (labelled for that chart) and marks the critical line σ = ½ in that frame's own coordinates**, where it can be (a frame, a curve, a plane or a tag).
 
 ## 1. The space a page has (decide these first)
 - **Panels are viewports.** Each panel is a rectangle of CSS pixels with its own backing store: canvas width/height = clientSize x devicePixelRatio, re-set on resize (`resize()` before every frame), `aspect = width/height`.
