@@ -10,3 +10,13 @@ claude/scratchpad/**/sedmul
 # Refsdal prediction papers: kept locally, not tracked
 claude/references/refsdal_predictions/
 claude/references/Veritasium_KfODG5REyss_transcript.txt
+
+# telescope data: kept locally, never tracked (raw observations, FITS and visibility files)
+claude/scratchpad/2026-11-17_ah919/
+*.exp
+*.fits
+*.fits.gz
+*.fz
+*.uvfits
+*.ms/
+*.fitsidi
