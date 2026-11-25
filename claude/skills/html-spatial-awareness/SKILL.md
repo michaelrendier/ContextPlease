@@ -10,6 +10,8 @@ description: >
 
 # HTML spatial awareness
 
+**STANDING RULES (Cody, 2026-11-24):** (1) Load and apply this skill every time an HTML gallery or visualization page is made or edited. (2) **ALL GALLERIES GET COMMITTED AND PUSHED when they are finished being edited** (name the files; GITHUB_TOKEN via http.extraheader; never rewrite history). (3) Every page mentions the GitHub source it draws on and cites the literature (links + references in the page footer).
+
 ## 1. The space a page has (decide these first)
 - **Panels are viewports.** Each panel is a rectangle of CSS pixels with its own backing store: canvas width/height = clientSize x devicePixelRatio, re-set on resize (`resize()` before every frame), `aspect = width/height`.
 - **Pick the up axis once.** Python/maths code is z-up; WebGL pages here are y-up. The shipped buffer layout (from the Aizawa page and rhp.strange_path) is positions `[x, z, y]` so z is drawn up. Say it in a comment.
