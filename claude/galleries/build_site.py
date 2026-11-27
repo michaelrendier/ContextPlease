@@ -50,7 +50,7 @@ for r in repos:
         body = f'<h1>{n}: gallery</h1><p class="sub">{d}</p>{hero}<div class="card">{html.escape(note)}</div>{gh}'; out = page(f"{n} gallery", body)
     open(os.path.join(SITE, "gallery", n + ".html"), "w").write(out)
 import build_index as BI
-INTER_PAGES = [x for x in BI.INTER if x[0] == "Equation Space Gallery"]
+INTER_PAGES = [x for x in BI.INTER if x[0] in ("Equation Space Gallery", "T32 Nilpotency Gallery")]
 BI.render("/", "/", False, repos, INTER_PAGES, [os.path.join(SITE, "index.html")])
 open(os.path.join(SITE, "README.md"), "w").write("""# michaelrendier.github.io
 
