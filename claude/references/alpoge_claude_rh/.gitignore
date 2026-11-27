@@ -1,0 +1,5 @@
+lean_src/
+lean_parts/
+*.pdf
+*.tex
+*.html
