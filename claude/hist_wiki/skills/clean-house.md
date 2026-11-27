@@ -39,7 +39,7 @@ The protocol was assembled from ValaQuenta engines 0 to 3. What those passes fou
 
 ## Open items
 
-The cutoff date of the claude.ai era and the `Oops:` label (the author may choose another); Witch's Hat children onto the `witches-hat` branch; CI (a package named in `pyproject.toml` but gitignored); Midline without digits; the Sanderson compression video link; four failing registry and docstring tests; the ArdaQuenta visualizers.
+CI (a package named in `pyproject.toml` but gitignored); the text-only Midline address (a TODO, not built); four failing registry and docstring tests; the ArdaQuenta visualizers. Settled 2026-11-27: the claude.ai era ends at the move to Claude Code (`PTOLEMY_DOCS`); the Witch's Hat family is on the `witches-hat` branch with one `.venv`.
 
 ## Licence
 
