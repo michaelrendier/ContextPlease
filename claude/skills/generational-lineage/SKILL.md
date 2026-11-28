@@ -1,7 +1,7 @@
 ---
 name: generational-lineage
 description: Track the generational lineage of every operation in a calculation and watch for emergent geometries, decomposing against the Two Trees domain. Use when doing ANY mathematical, physical, or structural derivation in this project — factoring, decomposing operators, checking whether a named "geometry" is primitive or derived, deciding whether a result is a discovery or a restatement, or when the user asks to "watch for emergence", "run the lineage", "decompose this", or "is this a new operator".
-version: 0.2.0
+version: 0.3.0
 ---
 
 # Generational Lineage
@@ -132,6 +132,18 @@ The three irreducibles are not only a list. They are the generators of **Aff(1, 
 - The exact 18-element window (add ∈ {−2, 0, 3/2}, scale ∈ {1/2, 1, 3}, sign ±1) is **not a subgroup**: 76 of 324 ordered pairs commute, 84 products stay inside, the centre is the identity. The only finite subgroups of Aff(1, ℝ) have order 1 or 2, so never present a finite Cayley table of the tier-0 floor.
 
 **How to use it in a derivation.** (1) Write each step as `ASS(add, scale, sign)` and compose with `@`; read the resulting element, not a sum of words. (2) Test whether two steps commute with the commutator before claiming order does or does not matter; a translation left behind is the `[SCALE, ADD] = ADD` signature. (3) If a claim says "the words add", it is wrong at this tier unless `g = +1` or `s = 1`; check `firing_defect`. (4) Report which convention (`x⁻¹y⁻¹xy`, right factor fires first) the number uses.
+
+## 1c. Bracketing, firing order and plans (added 2026-11-27, clean-house engine 7)
+
+Order and grouping are the two things a lineage can hide. The engine is `ValaQuenta/modules/bracketing_firing_order/` (0.2; record page `ValaQuenta/wiki/bracketing_firing_order.md`; standalone port `GenerationalLineage/engine/bracketing_firing_order.py`, wiki `GenerationalLineage/wiki/Firing-Plans.md`, tests `tests/test_firing_plans.py`; origin `SedenionSpectralRelativity/firing_plan.py`). Keep the two copies in step: a change to one is a change to the other. Pictures: `ValaQuenta/gallery/bracketing_firing_order/` (port 8795): the evolving sedenion (input to output under A–D, both readings), every plan of one kind, a plan as a tree, the counts to n = 16, set membership (Recamán revisits numbers: only the down-step is tested).
+
+**Three tools and a plan layer.** (1) Bracketing as set partitions: `bell_number`, Bell(16) = 10,480,142,147. (2) Firing order as a permutation: `apply_firing_order`, n!. (3) Set membership: `trajectory`, `collisions`, `would_collide` for ANY sequence of callables (the Recamán flip test, generalised from `ASSWord`), and `jurisdiction_violation(object, operation, map)`, a failed membership test. (4) **Plans**: a `Bracket(children, order)` of `Leaf`s; `(A B | 2 1)` fires B first; a nested bracket runs as one operation in its own order; `((A B | 2 1) C | 2 1)` fires C, B, A.
+
+**The four orderings (Cody, 2026-11-27)** over n written items, binary plans: **A** bracketing (Catalan(n−1)); **B** firing order (n!); **C** firing order of brackets, the written grouping with an order at every bracket (Catalan(n−1)·2ⁿ⁻¹); **D** bracketing of firing orders, a firing order first and then a grouping of the fired sequence (n!·Catalan(n−1) = (2n−2)!/(n−1)!, every ordered product of the items, so A, B, C ⊂ D). C reaches only the separable permutations as firing orders (6, 22, 90 of 6, 24, 120); B and D reach all n!. Functions: `plans_bracketing`, `plans_firing_order`, `plans_firing_of_brackets`, `plans_bracketing_of_firing`, `mode_counts`, `reachable_orders`, `compare_modes`.
+
+**Two readings of a plan on a 16-component sedenion (input and output are both sedenions, as for Ĥ_RB).** *Operator* reading (`plan_operator`, `apply_plan`): compose left-multiplication matrices, first fired applied first; matrices are associative, so **only the firing order changes the output** (written-order bracketing gives one output). *Element* reading (`plan_value`): multiply the sedenions, folding the fired children left to right; the sedenion product is not associative, so **the bracketing changes the output too** (generic sedenions: every plan gives its own output). Watch the vector with `evolve_operator(plan, x)` (the input, then the vector after each leaf) and `evolve_value(plan)` (every product as computed). Always show the input beside the output.
+
+**Three different "bracketings" at 16 components:** set partitions Bell(16) = 10.48·10⁹; contiguous blocks (compositions) 2¹⁵ = 32,768, which is what the Emerger's `{4:8:4}` is; trees Catalan(15) = 9,694,845 (A), up to 2.03·10²⁰ ordered products (D). Name which one a claim means.
 
 ## 2. The tiers
 

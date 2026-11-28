@@ -1,7 +1,7 @@
 # generational-lineage
 
 **Skill:** `~/.claude/skills/generational-lineage/` · mirror `ContextPlease/claude/skills/generational-lineage/`
-**Created:** 2026-08-18 (VAPMIP session) · **Version 0.2.0:** 2026-11-27 · **Owner of the method:** Cody Michael Allison (Michael Rendier)
+**Created:** 2026-08-18 (VAPMIP session) · **Version 0.3.0:** 2026-11-27 · **Owner of the method:** Cody Michael Allison (Michael Rendier)
 
 ## What it is
 
@@ -19,6 +19,10 @@ Cody: "since add:scale:sign is the base of GenerationalLineage, update your gene
 * the exact 18-element window is not a subgroup; the finite subgroups of Aff(1, ℝ) have order 1 or 2.
 
 A standing check was added: write a self-check from the documentation, not from the code (it is how X-71 was found).
+
+## 0.3.0 (2026-11-27): bracketing, firing order and plans
+
+Section 1c: the `bracketing_firing_order` engine (0.2): the four orderings A bracketing, B firing order, C firing order of brackets, D bracketing of firing orders; the operator and element readings on a 16-component sedenion; `evolve_operator` / `evolve_value`; three different meanings of "bracketing" at 16 components. Standing rule recorded the same day (Cody): any change to GenerationalLineage updates this skill, its mirror and this page (memory `feedback_gl_skill_sync`).
 
 ## Where it lives
 
