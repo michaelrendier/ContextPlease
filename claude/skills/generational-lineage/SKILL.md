@@ -1,7 +1,7 @@
 ---
 name: generational-lineage
 description: Track the generational lineage of every operation in a calculation and watch for emergent geometries, decomposing against the Two Trees domain. Use when doing ANY mathematical, physical, or structural derivation in this project — factoring, decomposing operators, checking whether a named "geometry" is primitive or derived, deciding whether a result is a discovery or a restatement, or when the user asks to "watch for emergence", "run the lineage", "decompose this", or "is this a new operator".
-version: 0.1.0
+version: 0.2.0
 ---
 
 # Generational Lineage
@@ -117,6 +117,21 @@ invisible delimiters), and why the gain spectrum of a zero divisor is
 SIGN's entire content is one bit. Measured: commutator norms in {0, 2} with
 nothing between; 1848 of 1848 associator disagreements are pure sign flips;
 chirality is det +/-1; legality is even-vs-odd mistakes.
+
+## 1b. The floor is a datatype: `ASS` (added 2026-11-27, clean-house engine 6)
+
+The three irreducibles are not only a list. They are the generators of **Aff(1, ℝ) = ℝ ⋊ (ℝ_{>0} × ℤ/2)**, the maps `x ↦ sign·scale·x + add`, and the repository has the value type for it: `ValaQuenta/modules/add_scale_sign/` (`ASS`, `ASSWord`; version 0.3; downstream copy `GenerationalLineage/engine/add_scale_sign.py`; record page `ValaQuenta/wiki/add_scale_sign.md`; gallery `ValaQuenta/gallery/add_scale_sign/`, port 8794). The name `ASS` (Add : Scale : Sign) is locked by the author: never rename it. When a derivation needs its lineage recorded, build it as an `ASS` word, do not hand-wave the order.
+
+**What was measured (tests: `ValaQuenta/tests/test_add_scale_sign.py`, 17):**
+
+- `a @ b` fires **b first**: `(a@b)(x) = a(b(x))`, add = `a.add + a.sign·a.scale·b.add`, scale and sign multiply. Inverse `~` is `(−g·a/s, 1/s, g)`. In `Fraction` arithmetic the laws hold exactly (18 elements, 5832 triples, no failure); the inverse keeps the type since 0.2 (before that it returned floats).
+- **`[SCALE, ADD] = ADD` is a statement about the group.** With the commutator `x⁻¹y⁻¹xy`: `[ADD(a), SCALE(s)]` is the translation `a·(1/s − 1)`; `[ADD(a), SIGN(−1)]` is the translation `−2a`; `[SCALE, SIGN]` is the identity. Order matters at tier 0 **only through the offset**; SIGN and SCALE commute. (The other commutator convention negates the translation: name the convention.)
+- **The word `u = g·ln s + a` is a readout of ONE element, not a homomorphism.** `u(a@b) ≠ u(a) + u(b)` in general (measured 0.708 against 1.595). The sum `Σₖ[gₖ ln sₖ + aₖ]` runs over the **recorded steps** (`ASSWord.u_sum_of_steps`). The **firing defect** `(g − 1)·ln s` is 0 exactly when `g = +1` or `s = 1`, else `−2·ln s`: SIGN changes the fold only where SCALE is non-trivial.
+- The fold is `Γ = tanh(u/2)`. Smith charts: `Γ_SCALE = tanh(½ ln s)` on the **E–W** ring, `Γ_ADD = tanh(½ a)` on the **N–S** ring, SIGN = −1 adds a prime to the quadrant (`NE′`). At 0.1 the code had the letters swapped (ledger X-71); trust the documented rings, which the gallery self-check enforces.
+- The **Long Path**: `ASSWord.trajectory(x0)` is the positions visited step by step; `collisions` lists revisits; `would_collide(step)` is the Recamán flip test (refuse a step that lands on a visited position). `lineage('chrono')` and `lineage('zeta')` order the same steps as fired or by `|u|` descending; the two end at the same element only if the steps commute.
+- The exact 18-element window (add ∈ {−2, 0, 3/2}, scale ∈ {1/2, 1, 3}, sign ±1) is **not a subgroup**: 76 of 324 ordered pairs commute, 84 products stay inside, the centre is the identity. The only finite subgroups of Aff(1, ℝ) have order 1 or 2, so never present a finite Cayley table of the tier-0 floor.
+
+**How to use it in a derivation.** (1) Write each step as `ASS(add, scale, sign)` and compose with `@`; read the resulting element, not a sum of words. (2) Test whether two steps commute with the commutator before claiming order does or does not matter; a translation left behind is the `[SCALE, ADD] = ADD` signature. (3) If a claim says "the words add", it is wrong at this tier unless `g = +1` or `s = 1`; check `firing_defect`. (4) Report which convention (`x⁻¹y⁻¹xy`, right factor fires first) the number uses.
 
 ## 2. The tiers
 
@@ -236,6 +251,7 @@ through — never collapsed to |z|^2, which is the one step with no adjoint.
   earlier agents that were never the author's. The rule tests the FILE, not the
   IDEA: something the author is using right now is authoritative because they
   are saying it, not because a stale file agrees.
+- **Write a gallery or test self-check from the documentation, not from the code.** The tier-0 gallery's JavaScript, written from the documented rings, found the swapped quadrant letters in the engine (X-71); a check copied from the code would have agreed with the bug.
 - **Derive the parametrisation; do not guess it.** Three times in one thread a
   curve comparison came back False on a translation or a spurious phase, when
   the underlying fact was never in doubt. If a known identity fails to verify,
@@ -262,12 +278,22 @@ the space allows. Reach for the move that matches the KIND of factor:
 | group order lineage | `pohlig_hellman` | cost from the largest prime factor; refuses over budget |
 | how much evidence is enough | `unicity` | U = H(K)/D; rigorous bound vs literature estimate kept apart |
 | every unit circle / which conic / is a coincidence just π-algebra | `circle` | catalogue of constants × roles (r, d, C, A), `pi_lattice` first-line test, imaginary circle (A = −π), six drawings + the ℓ_p seventh, σ_RB reading |
+| a 2×2 linear flow dx/dt = Ax: which of nine behaviours, and which KIND of circle | `matrix_flow` | class (centre, stable/unstable spiral, saddle, stable/unstable node, star, degenerate node, line of fixed points); split A = a·I + b·J + h1·K1 + h2·K2 (SCALE, quarter turn J²=−I, boost K²=+I); sign of h²−b² = elliptic / hyperbolic / parabolic; closed-form exp(tA); `build_up(B)` counts integer matrices per class |
 
 Rules the moves share (all already practised in this repo): exact round-trip,
 a control/null before the measurement, explicit refusal (`AscentNotFree`) over a
 confident approximation, and "UNKNOWN" reported as unknown. The full catalogue
 of ~110 candidate moves, tagged by where each already lives, is in
 `ContextPlease/claude/scratchpad/2026-09-28_gl_move_catalogue/README.md`.
+
+Matrix flow (added 2026-11-20, the 30th toolset): use it when a claim is
+"this operator is a circle". Do not say "circle" bare; ask which kind. The three
+answers are computable: b > h elliptic (round), b < h hyperbolic (boost), b = h
+parabolic (shear, the nilpotent ADD). The nine classes are the textbook nine and match
+the source reel (matharium, 2026-10-29) panel for panel. Planar only; boundaries use a 1e-12 scaled tolerance.
+Companion piece in `MultiplicationMatrixExplorer/toolsets/flow.py`: the
+discrete-time version, the order of an integer matrix mod 10^k (the circle
+number) and its elliptic/hyperbolic/parabolic type by discriminant mod p.
 
 ## 9. Report format
 
