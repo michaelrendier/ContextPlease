@@ -59,3 +59,37 @@ Read the PNG; check the DOM-written GL status line; look at the equatorial AND t
 
 ## 7. Where to look in the collection (ThePlace/Build/HTML_CSS_JS; local clone, no licence shown, read-only reference)
 1137 Holographic Aizawa Attractor (three.js + bloom, RK4 buffers) · 1030 Electric Attractor (1,525-line Lorenz page) · 923 Decomposed Torus · 1074 Gradient Mesh · 1156 Navier-Stokes · 500 3D Globe · 503 3D CSS · 814 Portal Effect · 527 Whale Animation · 893 Stars (CSS Houdini) · 1007 Glass Clock (Pixi). Author of the collection: "Nikolay T." (github.com/xml12333, 30 public repos, learning projects from TraversyMedia, FlorinPop, EasyTutorials, TylerPotts, Bedimcode, Kevin Powell, Codepen). A learner's collection, not an authority; the originals are the sources.
+
+## 8. CherryPy: the loopback web API behind a page (added 2026-11-28; Cody uses it for the PTorrent browser version)
+CherryPy 18.10 (pure Python, threaded, no framework) is the web API server. It is installed in `ValaQuenta/.venv` and `PtolemyDesktop/.venv`; tutorials and a test are in `Ptolemy2/Mouseion/cherrypy/tut01…tut12.py`. The recipe below was **run and checked** (index, JSON GET and POST, Range 206, server-sent events, JSON error page) on 2026-11-28.
+- **Serve the page and the API from ONE app, one port.** Same origin means no CORS, and it removes the `file://` problems of §3 rule 3: the page `fetch()`es `/api/...` and the favicon works (§ standing rule 5). Bind **127.0.0.1** only (`server.socket_host`), never 0.0.0.0 unless Cody says; one port per gallery (8765–8795 are taken: check `ContextPlease/claude/galleries/build_index.py`). Turn autoreload off (`engine.autoreload.on: False`) and the screen log off for a background server.
+- **Skeleton.**
+```
+import cherrypy
+from cherrypy.lib import static
+class Api:
+    exposed = True                                   # MethodDispatcher: one class per resource, one method per HTTP verb
+    @cherrypy.tools.json_out()
+    def GET(self, name=None, **kw): return {"hello": name or "world"}
+    @cherrypy.tools.json_in()
+    @cherrypy.tools.json_out()
+    def POST(self): body = cherrypy.request.json; return {"sum": sum(body.get("xs", []))}
+class Root:
+    api = Api()
+    @cherrypy.expose
+    def files(self, name): return static.serve_file(path_for(name))      # Range, If-Modified-Since, Content-Length for free
+    @cherrypy.expose
+    def events(self):                                                      # progress with server-sent events (no WebSocket library needed)
+        cherrypy.response.headers["Content-Type"] = "text/event-stream"
+        def gen():
+            for i in range(3): yield f"data: {json.dumps({'step': i})}\n\n"
+        return gen()
+    events._cp_config = {"response.stream": True}
+conf = {"/": {"tools.staticdir.on": True, "tools.staticdir.dir": PAGES, "tools.staticdir.index": "index.html", "error_page.default": error_json},
+        "/api": {"request.dispatch": cherrypy.dispatch.MethodDispatcher()}}
+cherrypy.config.update({"server.socket_host": "127.0.0.1", "server.socket_port": 8801, "engine.autoreload.on": False, "log.screen": False, "server.thread_pool": 8})
+cherrypy.tree.mount(Root(), "/", conf); cherrypy.engine.start(); cherrypy.engine.block()      # in a test: start(), call, then engine.exit()
+```
+- **Rules that came out of running it.** (1) Return a *generator* and set `response.stream = True` (via `_cp_config`) for anything large or long; otherwise CherryPy buffers it all. (2) `static.serve_file` is the way to hand out data files (PTorrent shards, FITS, .bin): it answers `Range` with 206 and `Content-Range`, which a browser needs for seeking and resuming. (3) JSON errors for the page: set `error_page.default` to a function returning `json.dumps({"error": status, "detail": message})` so `fetch()` can read failures. (4) A handler that takes more than a second belongs in a background thread (`cherrypy.process.plugins.BackgroundTask`/`Monitor`) with progress polled from `/api/status` or pushed over SSE: the thread pool is small. (5) CORS is needed only if the page comes from another origin; then add a `before_handler` tool that sets `Access-Control-Allow-Origin` to that exact origin and answer `OPTIONS`. (6) Every outbound request the server makes carries the Mozilla user agent (standing rule); the page itself makes no network call except to its own API, so it works offline.
+- **The page side.** `fetch('/api/x').then(r => r.json())`; keep the §1 viewport model (panels, `resize()`, aspect) unchanged; put the page's **JS-vs-Python self-check** behind `/api/selfcheck` (the page sends what it computed, the server compares with the Python engine and returns the verdict), the same convention as the galleries (`#selfcheck`).
+- **Test it like the rest.** Start the server in a thread, call it with `urllib`, `cherrypy.engine.exit()`; assert status codes, JSON, `Content-Range`. Then screenshot with headless Firefox over `http://127.0.0.1:PORT/` (§6). **Commit and push** a finished page and its API module (standing rule 2).
