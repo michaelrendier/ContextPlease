@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Wirtinger Derivative · Ptolemy MathLex</title>
@@ -166,6 +167,14 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
   <div class="cell-out-body">∂z²/∂z̄ = 0j  (holomorphic ✓)
 ∂|z|²/∂z̄= (1+1j)  (not holomorphic ✓)</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">ERROR: AttributeError: &#x27;complex&#x27; object has no attribute &#x27;round&#x27;</pre>The cell raises AttributeError (`complex` has no `.round`); the stated results are the correct mathematics (∂z²/∂z̄ = 0 and ∂|z|²/∂z̄ = z). The stated output is kept above as written. The cell has a second fault: it divides the y-derivative by 1j (∂/∂y needs no such factor), which would give wrong values even without the `.round` error.<div class="m-label" style="margin-top:10px">CORRECTED CELL (2026-11-13; ran as shown)</div><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;margin:6px 0;">def dbar(f, z, h=1e-6):
+    dx = (f(z+h) - f(z-h)) / (2*h)
+    dy = (f(z+h*1j) - f(z-h*1j)) / (2*h)
+    return 0.5*(dx + 1j*dy)             # d/dzbar
+r1 = dbar(lambda z: z**2, 1+1j); r2 = dbar(lambda z: abs(z)**2, 1+1j)
+print(&quot;d(z^2)/dzbar =&quot;, complex(round(r1.real, 6), round(r1.imag, 6)))
+print(&quot;d|z|^2/dzbar =&quot;, complex(round(r2.real, 6), round(r2.imag, 6)), &quot;(= z = 1+1j)&quot;)</pre><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--green);margin:6px 0;">d(z^2)/dzbar = -0j
+d|z|^2/dzbar = (1+1j) (= z = 1+1j)</pre></div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes + Kryptos</p><p style="margin-top:6px"><strong>Use:</strong> Kryptos encryption uses complex-analytic functions. The Wirtinger framework allows Kryptos to check whether a transformation is holomorphic (information-preserving in the complex-analytic sense) or not.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Treating z and z̄ as truly independent variables — they're not. They're related by complex conjugation. The notation is formal but powerful.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Confusing ∂/∂z with d/dz (complex derivative). ∂/∂z always exists; d/dz exists only when ∂f/∂z̄ = 0.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Applying Wirtinger derivatives to real functions and getting confused — on ℝ, z̄=z and the formulas reduce to ordinary derivatives.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="cauchy_riemann_equation.html">Cauchy-Riemann Equation →</a><a class="crosslink" href="jacobian_form.html">Jacobian Form →</a><a class="crosslink" href="mobius_transform.html">Möbius Transform →</a></div></div>

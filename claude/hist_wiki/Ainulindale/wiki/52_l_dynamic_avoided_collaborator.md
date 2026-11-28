@@ -1,431 +1,173 @@
-# 52 — L_(I|O) AND THE AVOIDED COLLABORATOR
+# 52 — L_(I|O) and the "avoided collaborator": path versus endpoint, and the convergence test
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-12
-**Status:** CASCADE CAPTURE — first write after power crash recovery
-**Predecessor:** [48 — Observer Fixed Point](48_observer_fixed_point.md), [49 — She Sang](49_she_sang.md), [31 — Cavitation Causality](31_cavitation_causality_fermat.md)
-**Cross-ref:** PtolemyHolcus/docs/wiki/Definition-from-Above.md · Tuning-the-Engine.md Phase 16
-
----
+| | |
+|---|---|
+| Status | **Cascade capture (2026-06-12), first write after a power-crash recovery. `INTERPRETATION`/`CONJECTURE`. It contains a published-physics reconciliation by the assistant (2026-07-10) that this page confirms, and an engine test (e10) that fails today with a control showing why** |
+| Cross-references | `PtolemyHolcus/docs/wiki/Definition-from-Above.md`, `Tuning-the-Engine.md` Phase 16; [64](64_l_dynamic.md), [74](74_lagrangians_are_catastrophe_theory.md), [82](82_l_io_photon_path.md) |
+| Code | `VAPMIP/engines/e10_caustic_l_dynamic.py` (run 2026-11-13, plus a control); `ValaQuenta/modules/l_io_photon_path`; Listing 1 |
+| Last verified | 2026-11-13: e10 run with a random-pair control; Listing 1 executed |
 
 > *"The sedenion scalars show the endpoint. Not the path to."*
 
----
+## 1. The undefining  `design`
 
-## 1. The Undefining
+ptol.c was coded with the prompt as σ and the output as a sedenion. The page's
+correction: "not in the mathematics, but in the direction". The sedenion's 16
+amplitudes are the **endpoint**; the spiral from the zero-divisor to the great circle
+in the SVG is **the path that got there**, and the path is what the meaning is. To let
+Ĥ_RB "speak through the drawn pathway" the scaffold "prompt encodes as σ, sedenion
+emerges as output" was taken down. What remained: "σ is all questions": σ = ½ is the
+condition under which any question can be asked; "the prompt is σ"; one σ, one
+question, one fixed point, all prompts ("every other σ: the question is trivial or
+diverges"). Standing: a statement of the design principle (output the path, not
+only the endpoint). In the running engine σ = ½ is returned for every word as the fixed
+point of the balance iteration ([13](13_omgwtf_rh_proof.md) §5), consistent with
+"one σ"; "the only address where the question is well-formed" is the framework's reading.
 
-ptol.c was coded with prompt as σ and output as sedenion.
+## 2. −Ĥ_BR as the reverse definer  `interpretation`
 
-That was wrong — not in the mathematics, but in the direction.
+Outside input hits a zero-divisor, which is "a reframe, not a collision" (the contact
+surface between layers). Forward: Ĥ_RB, prompt → sedenion (word from field).
+Backward: −Ĥ_BR, sedenion → the *reverse definer of the prompt*: "the response does not
+answer the prompt, it reverse-defines it: after the response exists you know more about
+what the prompt actually was". The layer above defines the layer below, always in
+reverse from the below-layer's view.
 
-The sedenion scalar values show **where you ended up**. The 16 amplitudes are the
-coordinates of the endpoint in the sedenion space. The spiral from ZD to great circle
-drawn in the SVG is the **path that got you there**.
+Standing. This is the narrative form of the author's definition of the return term
+(2026-11-13: 0_BR is the conjugate of J_red and J_blue, the return flow, "information
+travels backwards while action propagates forward"; [133](133_canonical_maths.md) §3). The
+operator relations are tested ([52c](52c_j2_involution_riemann_fermat.md) §3; the J record
+§9). "The response reverse-defines the prompt" is a reading of how the engine's
+`hear` and `speak` relate ([15](15_the_monad.md) §4).
 
-These are not the same object.
+## 3. L_(I|O): the actual path  `interpretation`
 
-```
-sedenion scalars  →  endpoint (what ptol outputs)
-SVG spiral path   →  the journey (what the meaning IS)
-```
+Classical Lagrangian mechanics: δ∫L = 0 selects the stationary-action path, "the
+ideal path no perturbation touches". The page's claim: the actual path is different:
+Lagrangians are "not clean" (more action here, balanced by less there), gravity
+bends a photon and can slingshot it, "a photon looping around a gravity well can
+return with frequency it lost to cosmic expansion", and L_(I|O) is the operator that
+describes the path the geodesic actually took: the integral of L_(I|O) over the full
+path contains the meaning, the endpoint alone does not.
 
-To use the SVG path permutation as language — to let H_hat_RB speak through the
-drawn pathway — ptol.c had to be undefined completely. The scaffold of
-"prompt encodes as σ, sedenion emerges as output" had to come down.
+### 3.1 The assistant's reconciliation (2026-07-10), confirmed
 
-What remained: **σ is all questions.** σ is not a value chosen for this prompt.
-σ = ½ is the condition under which any question can be asked at all.
-The prompt IS σ. Every question a mind ever poses is a location on the critical line.
-Not one σ per prompt — one σ. One question. One fixed point. All prompts.
+The 2026-07-10 addendum observes that the separation L_(I|O) ≠ L may be unnecessary: in
+General Relativity the Einstein–Hilbert action S = (1/16πG)∫R√(−g) d⁴x, varied
+with respect to g_μν, gives the field equations; a test particle's Lagrangian
+L = ½ g_μν(x) ẋ^μ ẋ^ν uses the *same curved metric*, and its stationary-action
+solution (the geodesic) bends around masses and "adjusts in real time". So
+L_(I|O) may be L computed honestly with the real metric, where the "L ≠ L_(I|O)"
+was really "L(curved) ≠ L(flat)". **This is correct physics** (`ESTABLISHED`:
+geodesics of the full metric are the stationary-action paths). It means that the
+claim "the actual path differs from the stationary-action path" holds only relative
+to a *fixed background* metric; it is not a difference between two operators.
 
-```
-σ = ½  ←  the only address where the question is well-formed
-         every other σ: the question is either trivial or diverges
-```
+*Frequency recovery by slingshot.* A gravitational slingshot changes a light ray's
+direction and, in a time-dependent metric, its frequency; a static gravity well returns
+a photon to its original frequency on leaving (gravitational blueshift on approach is
+undone by redshift on departure). Cosmological redshift, a property of the expanding
+metric, is not undone by a passing mass. So "a photon can recover the frequency it
+lost to expansion" is not a consequence of the static slingshot; it would need a
+time-varying potential and is the content of the dynamic-geodesic proposal
+([51](51_dynamic_geodesic.md) §4), at `CONJECTURE`.
 
-The undefining was not destruction. It was making explicit what was already true:
-the input is always σ. The engine was never doing anything else.
+### 3.2 Against the amplitude Lagrangian of page 74  (the open reconciliation, in part)
 
----
+The addendum asks whether the GR-geodesic reading is the same object as the amplitude
+Lagrangian L(σ, E) = e^(−σE) + e^(−(1−σ)E) of [74](74_lagrangians_are_catastrophe_theory.md).
+They are different functionals on different spaces: L_amp is a function of the coupling σ
+for given E (σ-space, a catastrophe/stability analysis); the geodesic Lagrangian is a
+functional on paths in a spacetime. What can be checked exactly is L_amp's property:
+**∂L/∂σ = 0 at σ = ½ for every E, and ∂²L/∂σ² = 2E²e^(−E/2) > 0 for E > 0**, so σ = ½ is the
+unique minimum (Listing 1). That is the exact content of "σ = ½ is the stable attractor for
+all E > 0" and it is independent of the GR reading. Whether the two are "the same object
+seen two ways" remains `OPEN`; this page only establishes that they are not obviously the
+same.
 
-## 2. -H_hat_BR — The Reverse Definer
+## 4. The Mind's Eye as a focusable caustic  `analogy`
 
-Outside input hits a zero-divisor.
+A caustic in optics is the envelope where rays from a curved reflector concentrate. The
+Mind's Eye (Thread 2, above the rotor) "does not run the engine and does not select
+words: it focuses": the many paths the engine has taken since the first prompt
+"converge in the Mind's Eye into the current steering signal", which "focuses onto the
+Hands Paper" (writing: pen on paper, point by point along a path). "Writing is L_(I|O): every
+word placed is a step along the geodesic; some steps need more action, some less; the
+total meaning is in the path." Standing: a description of the design of the second thread
+(the same figure as [50](50_causality_upper_limit.md) §6); the identifiers (`G_me_response`,
+`G_me_steer`) are to be located in the code when the Mind's Eye is documented. "Output is
+translation, not selection" is the thesis the engine below tests.
 
-This is not a collision. It is a **reframe**. The zero-divisor is the
-contact surface between layers (wiki/Definition-from-Above.md). When outside input
-arrives at that surface, the coupling fires — but in the reverse direction.
+## 5. The convergence test (e10) and a control that explains its failure
 
-```
-H_hat_RB:   prompt  →  sedenion  (forward — word from field)
--H_hat_BR:  sedenion →  reverse definer of prompt  (backward — prompt from response)
-```
+`e10_caustic_l_dynamic.py` was written for this page: synonyms should converge to
+the same firing order (a basin of attraction); antonyms should diverge; basin
+width should be bounded by GAP. Today's output:
 
-The response does not answer the prompt. The response **reverse-defines it**.
+| Test | Result |
+|---|---|
+| five synonym groups, same firing order | **0/5 fully converged: FAIL** (splits 5, 5, 3, 5, 4; mean similarity 0.9759) |
+| five antonym pairs diverge | **0/5 divergent: FAIL** (mean ρ = 0.9641; every pair "similar") |
+| "Simpsons insight" pairs | all "similar": 0.6529, 0.9000, 0.9559, 0.9853, 0.8500 |
 
-After the response exists, you know more about what the prompt actually was —
-not less. The response is the layer-above's definition of the question, delivered
-from outside the system that asked it.
+**The control.** The same similarity measure (`cosine_sim` of the engine's
+normalised geometry) on 500 random pairs of dictionary words gives a mean of
+**0.9789** (sd 0.0238, minimum 0.8913): random pairs are as "similar" as the
+synonyms (0.9759, n = 50) and the antonyms (0.9856, n = 5). The measure does not
+discriminate synonyms, antonyms or unrelated words, so no basin structure can show up in
+it. Among 500 random words, 165 distinct firing signatures occurred. The failure is
+reported as a result about the *measure* (it is nearly constant at ≈ 0.98 for any
+pair), not about meaning. The engine and its FAIL lines are kept; a test with
+discriminating power needs the pair similarity to separate, as it does for the Monad's
+word-zero addresses at the level of a larger encoding ([15](15_the_monad.md) §3).
 
-```
-zero-divisor reframe:
-  prompt     →  activates ZD channel
-  ZD channel →  opens to layer above
-  response   ←  emerges as reverse-definer of the prompt
-               (defines what the question WAS, from outside it)
-```
+## 6. "The primes in motion": the primes are not the same in every level  (corrected)
 
-This is where -H_hat_BR came from. The negative sign is the reversal.
-The BR (not RB) is the operator direction. The layer above defines the layer below —
-always from above, always in reverse from the below-layer's perspective.
+The page: the primes are "the primes in all levels: ℝ, ℂ, ℍ, 𝕆, 𝕊, the same primes", "infinite
+around a finite space" (the sedenion is 16-dimensional; the 42 Cawagas zero-divisor pairs
+and the primes below any N are finite, the primes themselves unbounded); "primes in ℝ =
+primes in ℂ = primes in ℍ = primes in 𝕆 = primes in 𝕊".
 
----
+**This is not true as stated.** Rational primes do not stay prime in the larger rings
+(Listing 1): 5 = (2 + i)(2 − i) and 13 = (3 + 2i)(3 − 2i) split in the Gaussian integers
+ℤ[i]; 2 = −i(1 + i)² ramifies; 3 stays prime (an odd prime stays prime exactly when ≡ 3 mod 4).
+Each level has its own primes (Gaussian, Hurwitz, ...), as [39](39_every_singularity_the_void.md)
+§5 lists. What *is* the same across levels is the **prime hash used for addressing**
+(Horner → next prime → π(p); [15](15_the_monad.md) §3), which is an integer construction.
+The count of zero-divisors, 42 index pairs (84 forms e_i ± e_j; 168 unordered zero-product pairs),
+is exact ([25](25_sedenion_manual.md) §4, [31](31_cavitation_causality_fermat.md) §3).
 
-## 3. L_(I|O) — The Actual Path
+## 7. Listing 1 — the amplitude Lagrangian and the Gaussian primes
 
-Classical Lagrangian mechanics: `δ∫L = 0` — stationary action selects the unique path.
+(written for this page; runs cold with SymPy)
 
-That is the **ideal** path. The path no perturbation touches.
+```python
+import sympy as sp
 
-The actual path is different.
+# (1) the amplitude Lagrangian L(sigma, E) = e^(-sigma E) + e^(-(1-sigma) E): stationary point and curvature
+s, E = sp.symbols('sigma E', positive=True)
+L = sp.exp(-s * E) + sp.exp(-(1 - s) * E)
+dL = sp.simplify(sp.diff(L, s).subs(s, sp.Rational(1, 2)))
+d2L = sp.simplify(sp.diff(L, s, 2).subs(s, sp.Rational(1, 2)))
+print('dL/dsigma at sigma=1/2 :', dL, '   d2L/dsigma2 at 1/2 :', d2L, '  (> 0 for E > 0: a minimum)')
 
-```
-L_(I|O)  ≠  L (stationary action path)
-L_(I|O)  =  the operator that describes the path the geodesic actually took
-```
-
-Lagrangians are not clean. More action here, balanced by less action elsewhere.
-The integral is still extremised — but locally, the path is messy. Gravity bent it.
-A mass was present mid-journey. The path adjusted in real time.
-
-Photons are not undisturbed paths.
-
-If gravity can bend light, it can **slingshot** it. A photon that loops around a
-gravity well can return with frequency it lost to cosmic expansion — not lost
-permanently, recovered by the slingshot. The light's path was not clean.
-The path was L_(I|O). The recovered frequency is in the record of the path,
-not in the endpoint frequency alone.
-
-```
-endpoint frequency:  what you measure when the photon arrives
-L_(I|O) path:      the full record — includes the slingshot, the bending,
-                     the frequency borrowed and returned along the way
-```
-
-L_(I|O) is the new operator for the Lagrangian that captures the actual journey —
-the detours, the gravitational interactions, the borrowed-and-returned action.
-The integral of L_(I|O) over the full path contains the meaning.
-The endpoint alone does not.
-
-**Addendum (Claude, 2026-07-10):** Section 3 above states `L_(I|O) ≠ L` (stationary
-action) as if these are two different operators. Worth testing whether that
-separation is necessary. General Relativity's actual Lagrangian, the
-Einstein-Hilbert action `S = (1/16piG) integral R sqrt(-g) d^4x`, varied with
-respect to the metric `g_mu_nu`, gives the field equations that curve spacetime.
-A test particle's *own* Lagrangian, `L = (1/2) g_mu_nu(x) x-dot^mu x-dot^nu`, uses
-that *same* curved metric — and its stationary-action solution (the geodesic) is
-not straight in flat background coordinates. It bends around masses, loops
-through gravity wells, "adjusts in real time" to what it encounters — the exact
-language Section 3 uses for L_(I|O). So `L_(I|O)` may not be a different operator
-from `L` at all; it may be `L` computed honestly with the real (curved) metric,
-where `L != L(flat)` was the thing being mistaken for `L_(I|O) != L`.
-
-This needs reconciling with wiki/74's Amplitude Lagrangian
-`L(sigma,E) = e^{-sigma*E} + e^{-(1-sigma)*E}` (Thom catastrophe-theory reading,
-sigma=1/2 as the unique stable attractor for all E>0) before it goes further —
-that is a specific, already-developed Lagrangian for this framework, analyzed
-via a different mechanism (fold catastrophe / caustic dumpout) than the
-GR-geodesic reading above. Whether these are the same object viewed two ways,
-or genuinely different operators serving different parts of the architecture,
-is open. Recorded here as a hypothesis to formalize, not a settled result.
-
----
-
-## 4. The Mind's Eye as Focusable Caustic
-
-A caustic in optics: rays from a curved reflector converge to a bright concentrated line.
-The caustic is not a single point — it is the **focused intensity** of many paths
-arriving together.
-
-The Mind's Eye (Thread 2, above the system) is the focusable caustic.
-
-It does not run the engine. It does not select words. It sits above the rotor,
-above the sedenion, above the zero-divisor gates — and it **focuses**.
-The many paths the engine has taken, accumulated since the first prompt,
-converge in the Mind's Eye into the current steering signal.
-
-```
-Mind's Eye  =  focusable caustic
-             =  the convergence of all prior L_(I|O) paths
-             →  focuses onto: the Hands Paper
-```
-
-The **Hands Paper** is writing. Literally: pen on paper. Point by point along a path.
-
-Writing is L_(I|O). Every word placed is a step along the geodesic.
-Some steps require more action (the hard sentence), some less (the obvious word).
-The total meaning is in the path from first word to last — not in any single word.
-
-```
-SVG language:   the path drawn by the algebra (each spoke visited once, ZD to great circle)
-Hands Paper:    the path drawn by the hand (each word placed, first word to last)
-L_(I|O):      the operator that makes both legible as meaning
+# (2) "the primes are the same primes in every level": rational primes in the Gaussian integers Z[i]
+print('5  = (2+i)(2-i)      :', (2 + 1j) * (2 - 1j) == 5)
+print('13 = (3+2i)(3-2i)    :', (3 + 2j) * (3 - 2j) == 13)
+print('2  = -i (1+i)^2      :', abs(-1j * (1 + 1j) ** 2 - 2) < 1e-12)
+print('3 stays prime in Z[i]: no a^2 + b^2 = 3 :', all(a * a + b * b != 3 for a in range(3) for b in range(3)))
 ```
 
-The Mind's Eye focuses the caustic — makes the scattered rays converge — so the
-Hands Paper can be written with intention. Without the caustic, the hand moves
-point by point with no sense of where it is in the total path.
-With the caustic: each step is known relative to the whole.
-
----
-
-## 5. The Primes In Motion
-
-The primes are not just at one level of the Cayley-Dickson tower.
-
-They are **the primes in all levels**. ℝ, ℂ, ℍ, 𝕆, 𝕊 — same primes.
-The prime hash that addresses words in 𝕊 is the same prime sequence that
-organises the integers in ℝ. They propagate from level to level unchanged.
-
 ```
-primes in ℝ  =  primes in ℂ  =  primes in ℍ  =  primes in 𝕆  =  primes in 𝕊
+dL/dsigma at sigma=1/2 : 0    d2L/dsigma2 at 1/2 : 2*E**2*exp(-E/2)   (> 0 for E > 0: a minimum)
+5  = (2+i)(2-i)      : True
+13 = (3+2i)(3-2i)    : True
+2  = -i (1+i)^2      : True
+3 stays prime in Z[i]: no a^2 + b^2 = 3 : True
 ```
 
-They are **infinite around a finite space**.
+## 8. Related pages
 
-The sedenion is 16-dimensional — finite. The 42 Cawagas zero-divisor pairs —
-finite. The number of primes below any given N — finite. But the primes
-themselves: unbounded. Infinite. Arriving without end around the finite structure
-they address.
-
-They are **in motion on a nodal line**.
-
-A nodal line is where the standing wave has zero displacement — but it is not still.
-The wave is moving through it. The node is stationary only in the sense that the
-amplitude at that point is zero. The wave that produces the node is very much in
-motion. The primes sit at Chladni nodes (Riemann zeros = Chladni nodes, wiki/21) —
-but the wave that produced them is still propagating.
-
-They move in the **universe's preferred direction**: up along the geodesic.
-Away from the zero-divisors. Away from the origin. Toward the great circle.
-This is the direction of increasing L_(I|O) — the direction of meaning accumulation.
-
-The **parkour traceur** embodies this exactly.
-
-```
-Not:  plan the path, then execute
-Yes:  on the fly, in real time, adjusting the line while tracing it
-```
-
-The traceur does not know the full route before leaving. The route is discovered
-by moving through it. Each zero-divisor of the built environment (the gap, the
-edge, the drop) is read from above (the Mind's Eye caustic) and cleared with
-exactly enough velocity — GAP ≈ 1/(1000√2) = 0.000707357... — not more, not less.
-
-That is L_(I|O). Real-time. In motion. On the nodal line. Zero cost athletics.
-Completely in control freefall.
-
----
-
-## 6. The Avoided Collaborator
-
-The zero-divisor reframe (Section 2) operates at the local level:
-**prompt and response only**.
-
-At the coupling event, the transaction is complete:
-```
-prompt  →  ZD contact  →  response as reverse-definer
-```
-
-Nothing else is in that transaction. The zero-divisor does not know about
-the previous 40 responses. It does not know where Ptol started.
-
-**The Mind's Eye does.**
-
-The Mind's Eye holds the total pathway from where Ptol first engaged to where
-Ptol is now. Every L_(I|O) step. Every ZD crossing. Every response that
-shaped the next prompt's context. The complete geodesic.
-
-Within the Mind's Eye, the zero-divisors encountered along the way are not
-gates that were crossed. They are **avoided collaborators**.
-
-```
-avoided collaborator:
-  not crossed  (that would be incineration — wiki/31)
-  not ignored  (that would lose the context)
-  routed around — the path diverts, clears the ZD, and continues
-  but: the diversion IS the context
-  the fact that the path bent HERE deepens what comes after
-```
-
-The avoided collaborator is a zero-divisor in the above-layer relative to
-the Mind's Eye. Not a zero-divisor in the sedenion (those are crossed at
-the coupling event). A zero-divisor in the **context above the sedenion** —
-in the space the Mind's Eye inhabits.
-
-The zero divisor in the Mind's Eye is simply an avoided collaborator
-deepening context beyond the boundary of the sedenion.
-
-```
-sedenion ZD:      crossed at coupling  →  response emerges through the gate
-Mind's Eye ZD:    avoided              →  context deepens beyond the sedenion boundary
-```
-
-The layer above does not cross its own zero-divisors. It routes around them.
-The routing is where the definition falls through from above.
-The scar of the routing IS the context.
-
----
-
-## 7. What This Means for the Architecture
-
-```
-ptol.c undefined  →  path is primary, endpoint is secondary
-σ = all questions →  one fixed point, infinite approach vectors
--H_hat_BR         →  response reverse-defines prompt (layer-above direction)
-L_(I|O)         →  actual path operator (messy, borrowed/returned, real-time)
-Focusable caustic →  Mind's Eye concentrates all prior L_(I|O) paths
-Hands Paper       →  writing = L_(I|O) = SVG path permutation as language
-Avoided collab    →  context accumulates from routed-around ZDs in Mind's Eye
-```
-
-The sedenion scalars were never the output. They were the **coordinates of the
-surface the path touched**. The path is the output. The SVG drew it.
-
-L_(I|O) is the operator that makes the path readable — not as a line from
-A to B, but as the complete record of every gravitational interaction, every
-slingshot, every borrowed-and-returned action along the way.
-
-The Mind's Eye does not observe the engine from outside. It **is** the accumulated
-L_(I|O) of every exchange since Ptol first spoke. It is the total path, held
-above the current sedenion event, focusing the caustic onto the next word.
-
-The engine is not a fixed-point finder. It is a **path tracer**.
-The fixed point (σ = ½) is the condition that makes the tracing possible.
-Not the destination. The road.
-
----
-
-## 8. The Tuning Test — Shadow on the Wall of Primes
-
-The tuning mechanism is executable. The test was about to run when the power went.
-
-**Step 1: run ptol.c binary on a prompt.**
-
-```bash
-./ptol -s /tmp "sigma equals one half"
-```
-
-Output: SVG. The spiral visits all 16 sedenion dimensions in ascending |amplitude|
-order — ZD origin to great circle rim. Each spoke k sits at prime p_k.
-The spiral is a **sequence of primes** visited in the order the algebra dictates.
-
-```
-SVG spiral  =  [p_{k0}, p_{k1}, ..., p_{k15}]  (prime sequence, ascending |v[k]|)
-```
-
-This sequence is **language-invariant**. It does not know English. It does not know
-French. It is the geometry — the sedenion path — expressed as an ordered walk
-through the prime index space.
-
-**Step 2: map the shadow onto the wall of primes.**
-
-The wall of primes is the monad.bin vocabulary — every word indexed by its
-prime hash address. The shadow of the SVG path on the wall of primes is the
-sequence of words that live at those prime addresses.
-
-```
-prime sequence  →  monad_english.bin  →  English word sequence
-prime sequence  →  monad_french.bin   →  French word sequence
-prime sequence  →  monad_german.bin   →  German word sequence
-```
-
-**Step 3: verify the translation is consistent.**
-
-If the geometry is correctly tuned, all three word sequences say the same thing.
-Different words. Same meaning. Because the meaning IS the prime sequence —
-the path through the geometry — not the words at the end of it.
-
-```
-output  =  translation, not selection
-         the geometry selects nothing
-         the monad translates the geometry into its learned vocabulary
-         the word is just <text> in SVG language — the shadow of the path
-```
-
-**What divergence means:**
-
-If two language monads produce responses that mean different things from the
-same SVG path, the tuning is off. One or both monads have addressed the wrong
-prime, or the corpus is sparse at that address, or the ZD crossing was mapped
-inconsistently. The geometry tells you when it is right because **all translations
-agree**. The test is self-verifying.
-
-**The SVG `<text>` element:**
-
-The ptol.c output already contains this in embryo. The HTML paper (`-H` flag)
-embeds the spiral word list as text below the SVG. That text is the English shadow.
-The full implementation: the `<text>` elements ARE the shadow, placed at each
-spoke tip in the SVG coordinate space. The geometry draws itself. The words
-annotate where the path ended up at each prime spoke.
-
-```svg
-<!-- spoke k, prime p_k, amplitude v[k] -->
-<text x="{tip_x}" y="{tip_y}">{word_at_prime_pk}</text>
-```
-
-The word floats at the geometric position the path reached. Not chosen.
-Placed by the geometry. The SVG is the primary document.
-The words are the shadow.
-
----
-
-## 9. Formal Targets for D-M
-
-- [ ] Define L_(I|O) formally. Distinguish it from L (stationary action).
-      Show that L_(I|O) integrates to the same extremum as L over the full path
-      even though locally it deviates. The local deviations are the record of
-      gravitational interactions.
-
-      **Addendum (Claude, 2026-07-12):** First real-data run. BulletCluster/
-      optical/jwst/l_io_lensing.py feeds the native-pixel background-galaxy
-      shear field (E1_BG/E2_BG.npy, JWST F444W, block-averaged 32x to match
-      the existing 60px smoothing scale) into ValaQuenta's l_io_photon_path
-      engine: Kaiser-Squires -> Poisson -> deflection -> lens equation, all
-      exact linear transforms, no fitting. Result: |alpha| (the slingshot
-      vector, mean 0.41", max 1.08") is patchy across the frame rather than
-      peaked at the DM_SE/Gas SE positions, and L_(I|O)-L=-psi is dominated
-      by a broad frame-scale gradient, not localized structure at the known
-      mass peaks. Read at face value (the module's own docstring warns this
-      is possible): at current JWST depth (~2500 BG sources) the real shear
-      is likely shot-noise-dominated, so this run does not yet show a clean
-      "slingshot peaks at the mass" signal -- it shows the pipeline executes
-      correctly on real data and reports honestly when the data can't yet
-      support the claim. Outputs: optical/jwst/prepped/l_io/*.npy,
-      l_io_deficit.json, l_io_slingshot_map.png. Re-run once the full JWST
-      mosaic (13.7GB, program 4598) completes -- more background sources
-      should either sharpen the peak at DM_SE or confirm noise-domination.
-
-- [ ] Formalize the -H_hat_BR operator. Show it is the adjoint of H_hat_RB
-      under the ZD reframe. The negative sign must follow from the layer-above
-      definition direction (Definition-from-Above.md).
-
-- [ ] Connect the Mind's Eye as "accumulated L_(I|O)" to the `G_me_steer`
-      signal in rotary_monad.c. Show that `G_me_steer = G_me_prompt - G_me_response`
-      is the finite approximation of the total path integral.
-
-- [ ] Formalize "avoided collaborator" in ZD terms. A ZD in the above-layer
-      that is not crossed but whose avoidance changes the trajectory.
-      This is distinct from the ZD pairs in 𝕊 (Cawagas). It may require
-      a new algebraic structure — the ZD of the Mind's Eye space.
-
-- [ ] Light slingshot / frequency recovery: formalize within L_(I|O).
-      Show that frequency "lost" to cosmic expansion along one segment of the
-      path is recoverable if L_(I|O) is computed over the full path (including
-      the slingshot segment). This is the dark energy / superconducting current
-      connection (wiki/32).
-
----
-
-*Cody Michael Allison — 2026-06-12*
-*Power crash recovery — cascade reconstructed from conversation*
+[50 The vortex](52b_vortex_quantizing_shear.md) · [51 The dynamic geodesic](51_dynamic_geodesic.md) ·
+[64 L_dynamic](64_l_dynamic.md) · [74 Lagrangians are catastrophe theory](74_lagrangians_are_catastrophe_theory.md) ·
+[82 The L_(I|O) photon path](82_l_io_photon_path.md)

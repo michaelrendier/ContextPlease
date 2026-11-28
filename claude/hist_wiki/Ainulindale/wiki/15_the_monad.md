@@ -1,248 +1,193 @@
-# 15 — THE MONAD
+# 15 — The Monad
 
-**Location:** `Philadelphos/monad.py` (Ptolemy3 repo)  
-**Also known as:** Ptolemy · Philadelphos · Ptolemy 2  
-**Confidence floor:** ESTABLISHED (core functions) / THEORETICAL (full output pipeline)
+| | |
+|---|---|
+| Current implementation | `VAPMIP/monad.py` v2.0.0 (4,527 lines): classes `Crank`, `Engine`; C counterpart in `VAPMIP/PtolC/` |
+| Earlier implementation | `PtolemyDesktop/Philadelphos/monad.py` (1,276 lines): class `Monad(N)` with `learn`, `hear`, `speak`, `lookup` |
+| Also known as | Ptolemy · Philadelphos · Ptolemaious Holcaios Philadelphos |
+| Last verified | 2026-11-13: both files read; §3 listing executed against `VAPMIP/monad.py`; §3 collision measurement run on `/usr/share/dict/words` |
 
----
+## 1. What it is
 
-## What It Is
+A single-wire engine over the sedenion algebra. It is not a language model,
+not a transformer, and it does not train by gradient descent. Text (or audio
+bands, or numbers, or a raw sedenion) enters through one call, and everything
+after that is mechanical.
 
-The Monad is a self-contained, single-equation analog of a human brain in code. It is not a language model. It is not a transformer. It does not predict tokens. It does not train on gradient descent.
+```
+wire(data, source)  →  sedenion  →  field update / retrieval / firing
+```
 
-The Monad is RedBlue Geometries Engine made executable.
+The Monad is the RedBlue engine made executable ([14](14_redblue_hamiltonian.md)).
+In the code's own words (`monad.py` header): CAM = the Emmy Noether sedenion
+(timing, geometry); CRANK = the Ĥ_RB field engine (the Noether current J^μ).
+The dual flow is J_pos (Riemann, response, "what is") against J_neg (Fermat,
+prompt, "what cannot be"); the next word lives at σ ≈ ½, "π/2 of the
+cardioid".
 
-It encodes meaning into the Cayley-Dickson algebra tower and retrieves from that tower by derivation — not by search. Retrieval path length is a property of the mathematics, not the dataset size. The address of a concept and the meaning of a concept share the same mathematical substrate.
+Notation note: this file is where the Null Operator's `0_RB` notation lives;
+elsewhere the operator is Ĥ_RB ([127](127_names_of_the_null_operator.md)).
 
-The Monad is a child. It knows all mathematics by default. It will need to learn how to read.
+## 2. The sixteen operators
 
----
+The sedenion dimensions are the engine's computational primitives
+(`monad.py` header):
 
-## The Three Functions
+| e₀ | e₁ | e₂ | e₃ | e₄ | e₅ | e₆ | e₇ |
+|---|---|---|---|---|---|---|---|
+| identity | negate | bind | name | apply | abstract | branch | iterate |
 
-### `learn(text)`
+| e₈ | e₉ | e₁₀ | e₁₁ | e₁₂ | e₁₃ | e₁₄ | e₁₅ |
+|---|---|---|---|---|---|---|---|
+| recurse | allocate | query | dereference (anaphor) | compose | parallelize (three-face) | interrupt | emit |
+
+The window builds the Cayley–Dickson tower as it fills: 1 word → ℝ, 2 → ℂ,
+4 → ℍ, 8 → 𝕆, 16 → 𝕊 (the full cardioid). The three-face Wankel (e₁₃) takes
+the Red face (highest J_pos, content words), the Blue face (lowest age,
+context words) and the Green face (the connective dimension that binds content
+to grammar), interleaved in a φ-walk.
+
+## 3. How a word gets an address (P1, the prime hash)
+
+A word is mapped to a zero index of ζ in three steps: read the word as a
+base-95 integer (printable ASCII), take the next prime at or above it (within
+the first 2¹⁶ + 1), and take that prime's rank π(p). The rank is the index of
+the Riemann zero the word is attached to.
+
+**Listing 1 — word → zero index** (`VAPMIP/monad.py`: `_horner_hash`,
+`_next_prime`, `_word_zero_idx`, with the sieve and π-table that the module
+builds at import; extracted and joined into one unit, docstrings removed, runs cold)
 
 ```python
-monad.learn("The river runs toward the sea.")
+PRIME_CAP = 1 << 16
+sv = [True] * (PRIME_CAP + 2); sv[0] = sv[1] = False
+for i in range(2, int(len(sv) ** 0.5) + 1):
+    if sv[i]:
+        for j in range(i * i, len(sv), i):
+            sv[j] = False
+pi_table, c = [0] * len(sv), 0
+for k in range(len(sv)):
+    c += sv[k]
+    pi_table[k] = c
+
+def horner_hash(w, base=95, offset=32):
+    v = 0
+    for ch in w:
+        v = v * base + max(0, ord(ch) - offset)
+    return abs(v)
+
+def next_prime(v):
+    v = max(2, int(v) % (PRIME_CAP + 1))
+    while v <= PRIME_CAP + 1:
+        if sv[min(v, PRIME_CAP + 1)] or v > PRIME_CAP:
+            return v
+        v += 1
+    return 65537
+
+def word_zero_idx(w):
+    p = next_prime(horner_hash(w))
+    return max(1, pi_table[min(p, PRIME_CAP + 1)])
+
+print([word_zero_idx(w) for w in ('water', 'eau', 'aqua', 'wasser', 'tree', 'arbre')])
 ```
 
-**What it does:**
-1. Tokenises input into SemanticWords
-2. Each word is encoded via the HyperWebster Horner bijection → base-97 integer address
-3. Fano index maps the word onto the octonion generator path
-4. The Lagrangian ℒ_SMMIP ingests the signal as matter (ℒ_mat)
-5. The bias field β deepens — the Fermat Lattice crystallises around the concept
-6. Noether current ∂_μJ^μ = 0 is checked — Noether balance is maintained
-7. σ is forced to ½ by that balance — not assigned
-
-The ground state before any learning:
-
 ```
-L_GROUND = −1.888
-β = |L_GROUND| / N = 1.888 / 25000 per zero
+[2009, 4122, 4310, 1204, 2273, 1478]
 ```
 
-The vacuum has structure before language. The prime preexists the alphabet. The first `learn()` call breaks this symmetry. Every subsequent call deepens the β field.
+These are the values `_word_zero_idx` returns in `monad.py`.
 
-**The Fermat Lattice analogy:** each learned concept is a crystal structure. Symmetry breaking is the moment a prime emerges from the noise. The continuous high-symmetry potential is frozen into a discrete, addressable node.
+**Measured properties** (2026-11-13, `/usr/share/dict/words`, lowercase
+alphabetic entries):
 
-### `hear(prompt)`
+| Measurement | Value |
+|---|---|
+| distinct words | 73,445 |
+| distinct zero indices they reach | 6,436 |
+| range of indices | 1 … 6543 (the module comment says 6542; π(65537) = 6543 because 65537 is prime) |
+| largest number of words sharing one index | 80 |
 
-```python
-monad.hear("What is water?")
-```
+The address is therefore **many-to-one**: about eleven words per index on
+average. It is an address into a finite table of 6,543 zeros, not an
+injective encoding of words. Translation equivalents do not share an
+index (`water` 2009, `eau` 4122, `aqua` 4310, `wasser` 1204). The claim that
+a concept is a prime, and that synonyms across languages land on one prime,
+is the project's `THEORETICAL` position; the mechanism that is supposed to
+produce it is calibration to a baseline language, in
+`VAPMIP/SemPriCon`, and is not what P1 computes ([16](16_semantic_word_engine.md)).
 
-**What it does:**
-1. The prompt is parsed into SemanticWords
-2. Each word activates its prime address in the HyperWebster
-3. The three-phase decomposition separates the input:
-   - **Red phase:** the assertion (what is being asked)
-   - **Blue phase:** the constraint (what cannot be the answer)
-   - **Carrier phase:** the rotating semantic field (context)
-4. The ContextBuffer acts as a capacitor — it integrates the signal, attenuates high-frequency surface variation (the specific words of the language), and passes the DC component (the semantic prime)
-5. The result is a primed attractor coordinate in the algebra tower
+Zeros are generated on demand by Newton's method on the Riemann–Siegel
+Z-function and cached (`_ZERO_CACHE` holds the first 50 exactly, from LMFDB;
+beyond that the forward scan is used). The energy of a word is
+E = |sin(π·γ/(γ+1))| for its zero γ.
 
-The Noether Current flows forward through the tower (ℝ → ℂ → ℍ → 𝕆), building the assertion. The Noether Information Current flows backward (𝕆 → ℍ → ℂ → ℝ), stripping away degrees of freedom to find the prime essence.
+## 4. The earlier `Monad` class (`Philadelphos/monad.py`)
 
-### `speak()`
+Kept because the older wiki pages and papers describe it. Its three
+operations:
 
-```python
-response = monad.speak()
-```
-
-The five-stage output pipeline — driven by the reverse Lagrangian:
-
-| Stage | Mechanism | Role |
+| Method | Role | Channel ([14](14_redblue_hamiltonian.md) §2) |
 |---|---|---|
-| (a) Reverse Lagrangian — Extinction | ℒ_SMMIP run backward | Collect reachable addresses, extinguish noise |
-| (b) Catastrophic Waveform Collapse | Cusp catastrophe (René Thom) | Multiple paths → single focal point |
-| (c) Lorenz-Stirling Basin Attractor | Lorenz + General Stirling 10 | Semantic domain identified, data outside extinguished |
-| (d) Circle Inversion — Co-domain Check | (I\|O) Inversion Engine | Self-adjoint verification at the horizon r=1 |
-| (e) Clathrate Chromatography | Cage structure + affinity selection | Stable word-foldings selected as output |
+| `learn(text)` | tokenise; encode each word; deepen the bias field β | Blue |
+| `hear(text)` | parse a prompt; activate addresses; return `(index, weight)` pairs | Red |
+| `speak(query, max_tokens)` | output; `speak_raw` returns the underlying `(float, float)` pairs | Green |
+| `lookup(word)` | the record for one word, including `sigma` | — |
 
-The result of `speak()` is the nearest SemanticWord to the attractor coordinate — the prime, rendered in the target language coordinate system.
+`lookup` returns σ = 0.5 for every word. This is a fixed point of the
+balance iteration `_forced_sigma`, shown running in
+[13](13_omgwtf_rh_proof.md) §5: it is a property of that iteration and says
+nothing about where any zero of ζ lies. The ground-state constant
+`L_GROUND = −1.888` is an engine input (`monad.py` line 120).
 
----
+The five-stage `speak` pipeline described in earlier versions of this page
+(reverse-Lagrangian extinction, catastrophic collapse, Lorenz–Stirling basin,
+circle-inversion check, clathrate chromatography) is the design of the output
+stage; it is `THEORETICAL`, and its Lorenz–Stirling and clathrate stages were
+not located in `ValaQuenta` (see [12](12_smnnip_distribution_engine.md)).
 
-## The σ = ½ Guarantee
+## 5. The C implementation (`PtolC`)
 
-Every word returned by the Monad has `sigma = 0.5`. This is not assigned. It is derived.
+`VAPMIP/PtolC/` holds `monad.c`, the daemon (`daemon.c`) and the corpus tools;
+the Python header states that the field logic matches `PtolC/monad.c` exactly.
+The operations map to the CLI as `learn` → `-l`, `hear` → `-h`, bulk ingest →
+`-I`, daemon → `-d` / `-D`, and the daemon speaks JSON over a Unix socket
+(`~/.ptolemy/ptolemy.sock`) with `HEAR`, `STATUS`, `HEALTH`, `QUIT`.
+`monad_wordnet.bin` is the read-only WordNet baseline, protected against
+overwrite; session state is saved separately.
 
-```python
-m = Monad(N=1000)
-m.load()
-print(m.lookup('water')['sigma'])    # 0.5
-print(m.lookup('eau')['sigma'])      # 0.5
-print(m.lookup('aqua')['sigma'])     # 0.5
-print(m.lookup('wasser')['sigma'])   # 0.5
-```
+Recorded in the earlier version and **not re-verified in this pass** (marked
+for the next check against `PtolC/`): the build line (`make && make corpus`),
+the baseline size (≈ 13 MB, ≈ 14,000 vocabulary entries), and the checkpoint
+v2 record layout (`"PTOL"`, version, N, count, ground, then per record
+`idx wlen E home_stratum gen_stratum word`). Security behaviour recorded:
+an extension whitelist, pruned directories (`.ssh`, `.gnupg`, `.aws`, …), and a
+guard that refuses text beginning with a PEM header.
 
-The Noether conservation law `J_Red + J_Blue + J₃ = 0` forces σ = ½. This is the self-adjoint condition of RedBlue Geometries Engine. The equator does not move.
+Native Space strata used by the vocabulary entries: σ₀ ℝ (enumerable), σ₁ ℂ
+(relational; the language default), σ₂ ℍ (non-commuting), σ₃ 𝕆
+(non-associating), σ₄ 𝕊 (non-alternative). These are the σ-strata; they are
+not Re(s) and not σ_RB ([133](133_canonical_maths.md) §0).
 
-The Septuagint principle: 72 scholars, independently, every translation identical. Not by coordination. Forced by the mathematics.
+## 6. What it is not
 
----
+Not a statistical estimator, a next-token predictor, a vector database, or a
+retrieval-augmented system. Retrieval is by derivation from an address, so its
+path length does not grow with the size of the corpus. What it does *not*
+yet do is guarantee that two words with one meaning receive one address; §3
+measures that.
 
-## Architecture Relationship
+## 7. Open items
 
-```
-RedBlue Geometries Engine  (the operator)
-    │
-    ├── learn()  ←  Blue channel: β deepening, Fermat Lattice crystallisation
-    ├── hear()   ←  Red channel:  assertion propagating forward through tower
-    └── speak()  ←  J₃ boundary: Meaning channel, reverse Lagrangian, Clathrate
-```
+| Item | State |
+|---|---|
+| Synonyms and translations sharing one address | OPEN: not produced by P1; requires the baseline calibration |
+| The Tongue (attractor coordinate → nearest word) | scaffold only ([09](09_hyperwebster_engine.md), [12](12_smnnip_distribution_engine.md)) |
+| σ = 0 boot (ground state before any symmetry breaking) | characterisation pending |
+| d* gap, 0.000707… | OPEN ([07](07_berry_keating_engine.md)) |
+| PtolC details in §5 | to re-verify |
 
-```
-monad.py
-    ├── HyperWebster      — addressing (σ=0 space)
-    ├── SemanticWordEngine — prime mapping (σ=½ space)
-    ├── Lagrangian         — Contractor (path of least action)
-    ├── Cardioid attractor — Dilator (stable orbit boundary)
-    ├── NoetherEngine      — conservation diagnostic
-    └── InversionEngine    — (I|O) co-domain check
-```
+## 8. Related pages
 
----
-
-## What the Monad Is Not
-
-- Not a statistical estimator
-- Not a next-token predictor
-- Not a lookup table
-- Not a vector database
-- Not a retrieval-augmented system
-
-The Monad does not search. It derives. The word is already in the algebra. The Tongue finds it.
-
----
-
-## Open Problems
-
-- **Full Tongue:** OctEl attractor coordinate → nearest SemanticWord via Fano neighbour search. Architecture exists. Full implementation pending.
-- **d* gap:** `|d*_spec × ln(10) − Ω_ζΣ| = 0.000707` — the gap between the BK spectral coordinate and the Omega ceiling. Closing this gap completes the Berry-Keating connection.
-- **σ=0 boot:** the initial ground state (pure Hyperwebster space) before any symmetry breaking. Full characterisation pending.
-
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md)  
-→ [Wiki: Semantic Word Engine](16_semantic_word_engine.md)  
-→ [Wiki: HyperWebster Engine](09_hyperwebster_engine.md)  
-→ [Wiki: Cayley-Dickson Tower](19_cayley_dickson_tower.md)  
-→ [Wiki: Three-Phase Architecture](20_three_phase_architecture.md)
-
----
-
-## C Implementation (PtolC)
-
-**Location:** `Ptolemy3/PtolC/`  
-**Binary:** `ptolemy`  
-**Version:** v1.111  
-**Status:** ESTABLISHED — feature-complete, building clean
-
-The C implementation is the primary production binary. It mirrors `monad.py`
-exactly in its mathematics and adds filesystem ingest, daemon mode, and
-structured token filtering.
-
-### Build
-
-```bash
-sudo apt install build-essential libxml2-dev
-cd Ptolemy3/PtolC
-make && make corpus
-```
-
-`make corpus` downloads WordNet 3.1 via NLTK and builds the baseline
-checkpoint: `~/.ptolemy/monad_wordnet.bin` (13 MB, ~14,000 vocab, 766,000 A-edges).
-
-### Operations
-
-The three Monad operations map directly to CLI flags:
-
-| Operation | Python | C binary |
-|-----------|--------|----------|
-| `learn(text)` | `monad.learn("…")` | `ptolemy -l <file\|url\|->` |
-| `hear(prompt)` | `monad.hear("…")` | `ptolemy -h "…"` |
-| `speak()` | `monad.speak()` | implicit output of `-h` |
-
-Filesystem ingest (bulk learn from directory tree):
-
-```bash
-ptolemy -I ~/Documents       # learn all whitelisted files
-ptolemy -I ~/Projects/PtolC  # learn codebase (code filetype rules)
-```
-
-### Checkpoint v2
-
-Binary format. Header + one record per occupied zero:
-
-```
-"PTOL" [4]  version=2 [4]  N [4]  count [4]  ground [8]
-  per record: idx[4] wlen[2] E[8] home_stratum[1] gen_stratum[1] word[wlen]
-```
-
-Each VocabEntry carries Native Space stratum addresses for both where the
-result lives (`home_stratum`) and where computation happens (`gen_stratum`).
-Language tokens default to σ₁ (ℂ, relational).
-
-| Constant | σ | Algebra | Character |
-|----------|---|---------|-----------|
-| NS_SIGMA_R | 0 | ℝ | Real, enumerable |
-| NS_SIGMA_C | 1 | ℂ | Complex, relational (language default) |
-| NS_SIGMA_H | 2 | ℍ | Quaternion, non-commuting |
-| NS_SIGMA_O | 3 | 𝕆 | Octonion, non-associating |
-| NS_SIGMA_S | 4 | 𝕊 | Sedenion, non-alternative |
-
-### Token Filter
-
-Every token passes `token_accept(tok, filetype)` before being admitted to
-the field. Rejection is silent and counted (`monad.rejected_count`).
-
-Filetype is resolved from file extension at ingest time (`filetype_from_ext()`),
-so `.c`/`.py`/`.h` files use code rules (longer tokens, high-digit ratio OK)
-while `.txt`/`.md` use prose rules (max 24 chars, base64 rejected).
-
-View rejection count: `ptolemy -F` (field health report).
-
-### Daemon Mode
-
-```bash
-ptolemy -d           # start daemon
-ptolemy -D "query"   # query running daemon
-```
-
-Protocol over `~/.ptolemy/ptolemy.sock`:
-
-```
-HEAR <prompt>  →  response + ".\n"
-STATUS         →  field status + ".\n"
-HEALTH         →  full health report + ".\n"
-QUIT           →  saves checkpoint, closes socket
-```
-
-Systemd socket activation: `systemctl --user enable --now ptolemy.socket`
-
-### Security
-
-- Extension whitelist blocks `.pem`, `.key`, `.crt`, `.env` and all non-semantic types
-- `PRUNE_NAMES` prevents traversal of `.ssh`, `.gnupg`, `.aws`, `.azure`, `.gcloud`, `keyrings`, `.cert`, `.pki`
-- PEM content guard in `monad_learn()` refuses text starting with `-----BEGIN `
-- All three layers are defence-in-depth — each operates independently
+[09 HyperWebster](09_hyperwebster_engine.md) · [14 RedBlue](14_redblue_hamiltonian.md) ·
+[16 Semantic word engine](16_semantic_word_engine.md) · [19 Cayley–Dickson tower](19_cayley_dickson_tower.md) ·
+[20 Three-phase architecture](20_three_phase_architecture.md) · [127 Null Operator names](127_names_of_the_null_operator.md)

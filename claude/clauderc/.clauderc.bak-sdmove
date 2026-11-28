@@ -1,0 +1,208 @@
+# ~/.clauderc — Claude Code environment
+# Sourced by .bashrc. Bash-first protocol shortcuts, repo paths, constants.
+# Do not duplicate vars already in .bashrc / .profile.
+
+# ============================================================
+# PROJECT ROOT
+# ============================================================
+
+export PROJ="/media/rendier/0123-4567/ThePlace"
+
+# ============================================================
+# REPO SHORTCUTS
+# ============================================================
+
+export AIN="$PROJ/Ainulindale"
+export VALE="$PROJ/ValaQuenta"
+export VAPMIP_DIR="$PROJ/VAPMIP"
+export FAP="$PROJ/FourthAgePapers"
+export TURING="$PROJ/TuringStack"
+export PTORRENT="$PROJ/PTorrent"
+export POE_DIR="$PROJ/POE"
+export USYNTH="$PROJ/UniversalSynth"
+export DATASETS="$PROJ/DataSets"
+export ADDPAPERS="$AIN/AddPapers"
+
+# ============================================================
+# MEMORY + SCRATCHPAD
+# ============================================================
+
+export CLAUDE_MEMORY="/home/rendier/.claude/projects/-media-rendier-0123-4567-ThePlace/memory"
+export CLAUDE_SCRATCH="/tmp/claude-1000/-media-rendier-0123-4567-ThePlace"
+
+# ============================================================
+# PYTHON PATH — enables: from ValaQuenta.X import Y
+# ============================================================
+
+export PYTHONPATH="$PROJ:${PYTHONPATH}"
+
+# ============================================================
+# AINULINDALE CANONICAL CONSTANTS
+# Exact values from canonical_math.md — use these, never retype.
+# ============================================================
+
+export D_STAR="0.24600"
+export OMEGA_ZS="0.5671432904097838"
+export GAP="0.000707357533249"
+export GAP_APPROX="1/(1000*sqrt(2))"       # 0.035% approx — NOT 1/sqrt(2000)
+export N_STAR="5.2570"                       # n-ball volume peak
+export V16="0.2353"                          # V(16) — NOT equal to D_STAR
+export ZD_PAIRS="84"                         # sedenion zero-divisor pairs on S^15
+export ZD_CLASSES="42"                       # canonical equivalence classes
+export ZD_COMPOSITE="168"                    # composite zero-divisors
+
+# ============================================================
+# GIT — push any repo using GITHUB_TOKEN
+# Usage: gpush                    (auto-detects repo name)
+#        gpush RepoName           (explicit)
+# ============================================================
+
+gpush() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    if [ -z "$repo" ]; then
+        echo "gpush: not in a git repo and no repo name given" >&2
+        return 1
+    fi
+    git push "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+}
+
+# Pull with token
+gpull() {
+    local repo="${1:-$(basename "$(git rev-parse --show-toplevel 2>/dev/null)")}"
+    git pull "https://michaelrendier:${GITHUB_TOKEN}@github.com/michaelrendier/${repo}.git" main
+}
+
+# ============================================================
+# REPO STATUS — quick sweep of all project repos
+# ============================================================
+
+rstatus() {
+    for repo in Ainulindale ValaQuenta VAPMIP FourthAgePapers TuringStack PTorrent POE UniversalSynth; do
+        local path="$PROJ/$repo"
+        if [ -d "$path/.git" ]; then
+            local branch count
+            branch=$(git -C "$path" rev-parse --abbrev-ref HEAD 2>/dev/null)
+            count=$(git -C "$path" status --porcelain 2>/dev/null | wc -l)
+            printf "%-20s  %-6s  %s dirty files\n" "$repo" "$branch" "$count"
+        fi
+    done
+}
+
+# ============================================================
+# VALAQUEST — run a ValaQuenta engine one-liner
+# Usage: vale "from ValaQuenta.bao_mass_gap import validate; validate()"
+# ============================================================
+
+vale() {
+    python3 -c "$@"
+}
+
+# ============================================================
+# CANONICAL MATH CHECK — print key constants to console
+# Prevents introducing wrong values mid-session.
+# ============================================================
+
+canon() {
+    echo "d*       = $D_STAR"
+    echo "OMEGA_ZS = $OMEGA_ZS   (Lambert W(1))"
+    echo "GAP      = $GAP"
+    echo "GAP approx: $GAP_APPROX  (NOT 1/sqrt(2000))"
+    echo "n*       = $N_STAR       (n-ball peak)"
+    echo "V(16)    = $V16          (≠ d*, 4.3% off)"
+    echo "ZD:      $ZD_PAIRS pairs / $ZD_CLASSES classes / $ZD_COMPOSITE composite on S^15"
+    echo ""
+    echo "Full table: $CLAUDE_MEMORY/canonical_math.md"
+}
+
+# ============================================================
+# SEARCH — grep across all project repos
+# Usage: psearch "symbol_name"
+#        psearch "symbol_name" "*.py"
+# ============================================================
+
+psearch() {
+    local pattern="$1"
+    local glob="${2:-*}"
+    grep -r --include="$glob" -l "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".archive" 2>/dev/null
+}
+
+# Print matching lines with context
+pgrep() {
+    local pattern="$1"
+    local glob="${2:-*.py}"
+    grep -r --include="$glob" -n "$pattern" "$PROJ" \
+        --exclude-dir=".git" --exclude-dir="__pycache__" \
+        --exclude-dir=".archive" 2>/dev/null
+}
+
+# ============================================================
+# MEMORY — quick read of a memory file by partial name
+# Usage: mem canonical_math
+#        mem user_profile
+# ============================================================
+
+mem() {
+    local name="$1"
+    local file
+    file=$(find "$CLAUDE_MEMORY" -name "*${name}*" 2>/dev/null | head -1)
+    if [ -n "$file" ]; then
+        cat "$file"
+    else
+        echo "mem: no file matching '$name' in $CLAUDE_MEMORY" >&2
+        ls "$CLAUDE_MEMORY"
+    fi
+}
+
+# ============================================================
+# WIKI — open a ValaQuenta wiki page by number or name
+# Usage: wiki 64
+#        wiki noether
+# ============================================================
+
+wiki() {
+    local query="$1"
+    local file
+    file=$(find "$VALE/wiki" -name "*${query}*" 2>/dev/null | head -1)
+    if [ -n "$file" ]; then
+        cat "$file"
+    else
+        echo "wiki: no page matching '$query'" >&2
+        ls "$VALE/wiki" 2>/dev/null | head -20
+    fi
+}
+
+# ============================================================
+# BIN ARCHIVE — holcus monad .bin files
+# ============================================================
+
+export BIN_ARCHIVE="/media/rendier/0123-4567/PTorrent/bin_archive/clean"
+
+# ============================================================
+# PTOL — C sedenion engine shortcuts
+# ============================================================
+
+export PTOL_BIN="$VAPMIP_DIR/PtolC/ptol"
+export PTOL_DIR="$VAPMIP_DIR/PtolC"
+export PTOL_PAPERS="$HOME/.ptolemy/papers"
+
+# Run ptol with raw output piped to ptol_layer for full response
+ptol_r() { "$PTOL_BIN" -r "$@"; }
+ptol_s() { "$PTOL_BIN" "$@"; }   # default: SVG + English path
+
+# ============================================================
+# UDEO — Unified Dimensional Entropy Oracle (TuringStack)
+# Zero-divisor attack class; embargo ends 2026-11-25.
+# ============================================================
+
+export UDEO_POC="$TURING/udeo_poc.py"
+export UDEO_EMBARGO="2026-11-25"
+
+# ============================================================
+# NETCUP SERVER — ssh shorthand
+# ============================================================
+
+ptol_ssh() {
+    ssh "${NETCUP_REMOTE_SSH_USERNAME}@${NETCUP_REMOTE_SSH_HOSTNAME}" "$@"
+}

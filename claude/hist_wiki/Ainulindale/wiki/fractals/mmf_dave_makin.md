@@ -39,6 +39,7 @@ Iteration types for each: Pn(z)+c (classical), c*Pn(z), Piter(z)+c (applying rec
   - Hermite: `exp(-hash^2/2)*Hₙ(hash)` — Gaussian-weighted semantic depth encoding
   - Laguerre: `exp(-hash)*Lₙ(hash)` — one-sided exponential semantic decay (forward context only)
   The Hermite polynomials are the optimal Holcus basis because the Gaussian weight `exp(-x²/2)` is the natural prior for semantic uncertainty, and the Hermite zero structure mirrors the GUE eigenvalue statistics hypothesized for Riemann zeros.
+  - **Correction, 2026-11-13.** "The Hermite zero structure mirrors the GUE eigenvalue statistics" is false of the zeros themselves: the zeros of Hₙ are a rigid deterministic set (unfolded spacing variance ≈ 5×10⁻⁵ for n = 16, 32, 64, against 0.178 for GUE and 1 for Poisson). GUE correlations are carried by the Hermite *kernel* of random-matrix eigenvalues. The Gaussian prior argument ("optimal Holcus basis") is a design choice, not a result. See [_holcus_integration_notes.md](_holcus_integration_notes.md) Listing 1.
 
 ---
 

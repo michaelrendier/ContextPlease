@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Langlands Kernel · Ptolemy MathLex</title>
@@ -167,6 +168,8 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
   <div class="cell-out-body">L(1,χ₄) = 0.78540
 Expected π/4 = 0.78540  ✓</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">L(1,χ₄) = 0.78490
+Expected π/4 = 0.78540</pre>The cell sums a finite alternating series (L(1,χ₄) = 1 − 1/3 + 1/5 − …), whose truncation error ≈ 1/(2N) accounts for 0.78490 against π/4 = 0.78540; the stated 0.78540 is the limit, not the printed partial sum. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Phaleron (search) + Archimedes</p><p style="margin-top:6px"><strong>Use:</strong> The Phaleron internal search engine uses L-function analogs — the "Langlands kernel" of the word corpus is the function connecting frequency-domain analysis (Fourier/Mellin) to algebraic structure (morpheme groups). Same math, applied to language.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Thinking Langlands is one theorem — it's a vast program of conjectures, most unproven.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Confusing the geometric Langlands (curves over ℂ) with the arithmetic Langlands (number fields). Related but distinct.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Expecting explicit formulas for the kernel — it's mostly conjectural except in special cases.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="galois_group.html">Galois Group →</a><a class="crosslink" href="mellin_transform.html">Mellin Transform →</a><a class="crosslink" href="modular_form.html">Modular Form →</a><a class="crosslink" href="berry_keating_conjecture.html">Berry-Keating Conjecture →</a></div></div>

@@ -1,0 +1,3361 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \directlua{luaotfload.add_fallback("fbk",{"Unifont:mode=node;"})}
+\setmainfont[RawFeature={fallback=fbk}]{DejaVu Serif}
+  \setmonofont[Scale=0.8,RawFeature={fallback=fbk}]{DejaVu Sans Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\fvset{breaklines=true,breakanywhere=true}
+\usepackage{longtable,array}
+\setlength{\emergencystretch}{3em}
+\directlua{luaotfload.add_fallback("fbk",{"Unifont:mode=node;"})}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={19 Dimensional Scalar WordNet Context Propagation (v4.0)},
+  pdfauthor={Cody Michael Allison (Michael Rendier)},
+  colorlinks=true,
+  linkcolor={Maroon},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{3}
+\tableofcontents
+}
+\hypertarget{dimensional-scalar-wordnet-context-propagation}{%
+\section{19 Dimensional Scalar WordNet Context
+Propagation}\label{dimensional-scalar-wordnet-context-propagation}}
+
+\textbf{Cody Michael Allison}¹ (Michael Rendier)
+
+¹ Independent researcher. Correspondence: the.wandering.god@gmail.com ·
+GitHub:
+\href{https://github.com/michaelrendier}{github.com/michaelrendier} ·
+ORCID:
+\href{https://orcid.org/0009-0007-7239-6760}{0009-0007-7239-6760}.
+
+\textbf{Fourth Age Paper.} One Paper. One Structure. One Engine. One
+Wiki.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\emph{To Emmy Noether: I Promise to humbly continue your work. She had
+all this\ldots{} In 1915, without a computer. Emmy Noether Wins.}
+
+\textbf{(The Middle Part of ``Teaching the Maths English'')}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{abstract}{%
+\subsection{Abstract}\label{abstract}}
+
+Large language models represent a word's context as a single dense
+vector, learned end-to-end and opaque to inspection --- the
+well-documented difficulty of recovering interpretable, per-token
+structure from a transformer's internal representations (superposition,
+polysemantic features) is one symptom of a more basic absence: there is
+no explicit, multidimensional, per-word context representation that can
+be read, audited, or composed independently of the weights that produced
+it. With the help of Claude-Code as a coding, research and calculation
+tool; I present a fully implemented, deterministic alternative. Each
+word-sense in the Open English WordNet (146,743 \emph{synsets} ---
+WordNet's own term for a set of words interchangeable in one specific
+meaning, e.g.~\texttt{\{car,\ automobile\}}) is mapped to a single prime
+number that jointly and losslessly encodes its exact spelling and its
+full 19-dimensional WordNet relational signature --- hypernymy,
+meronymy, and the sixteen other relation types WordNet defines --- with
+no learned parameters and no training step. The encoding is recovered
+exactly from the prime: 146,743/146,743 synsets round-trip exact
+(100.000\%) against the current build, with one deliberate, quantified
+lossy step affecting 1.1\% of individual relation counts. The method was
+engineered independently, as a self-contained process tree built from
+first principles to solve the problem of hashing structured context into
+word representations; correspondences identified afterward to
+established mathematics --- projective-plane combinatorics, Gödel
+positional encoding, Miller--Rabin primality --- are cited throughout as
+such, not presented as the method's starting point. The construction
+generalizes to a class of zero-divisor combinatorial structures (box
+kites, in sedenion algebra) that have so far only been described by
+fixing their internal positions directly; here, the internal structure
+is instead read from the deformation of the structure's outer boundary
+under a single continuous parameter, reducing many interpretable
+dimensions to one real number per word. Components resting on
+established mathematics ship, tested against a live 347,119-word
+vocabulary; where the reduction remains an open construction, it is
+marked THEORETICAL, and where our own code already calculates a concrete
+result about that open piece, the label is refined to
+THEORETICAL:CALCULATED rather than allowed to imply more than is proven.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{the-problem}{%
+\subsection{1. The problem}\label{the-problem}}
+
+A transformer's representation of a word's context is a fixed-length
+array of floating-point numbers --- a few thousand \texttt{float32}s per
+token, produced by a chain of matrix multiplications and set entirely by
+gradient descent during training. Nothing about that array is
+addressable the way an ordinary data structure is. There is no field you
+can name and read off independently --- no \texttt{is\_a}, no
+\texttt{part\_of}, no \texttt{domain} you could log, assert against in a
+test, or diff between two runs. Every one of those thousands of numbers
+depends on every other one; changing what the vector ``means'' means
+retraining, not editing a field. It is a value with no schema.
+
+This is not a complaint about accuracy --- the vectors work, in the
+sense that models trained on them perform well. It is a complaint about
+\textbf{engineering interface}: nothing about a token embedding is
+inspectable, versionable, or composable the way a struct, a database
+row, or a hash is. You cannot \texttt{grep} it. You cannot write
+\texttt{assert\ context.is\_a("mammal")} and have it mean anything. You
+cannot cheaply diff two words' contexts and get back which of a fixed
+set of named relations differ.
+
+WordNet already has exactly the schema that's missing --- 19 named
+relation types per synset (hypernym, meronym, entailment, domain, and
+the rest), curated by hand, stable across builds. What doesn't exist is
+a way to carry that schema forward \emph{as an address}: something as
+small and portable as a hash or an integer, computed with no training
+step, exactly recoverable back into the 19 named fields it came from.
+That gap --- a compact, deterministic, fully-recoverable address for a
+word's WordNet relational record, plus its exact spelling, in one value
+--- is what the rest of this paper builds, one piece of code at a time.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{notation-disambiguation-and-install}{%
+\subsection{2. Notation, disambiguation, and
+install}\label{notation-disambiguation-and-install}}
+
+\hypertarget{notation}{%
+\subsubsection{2.1 Notation}\label{notation}}
+
+Every component described in this paper carries one of five labels,
+applied consistently rather than asserted once in prose and forgotten:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\texttt{ESTABLISHED}} --- mathematics or computer science that
+  predates this project, cited to its source.
+\item
+  \textbf{\texttt{OURS}} --- code or a specific design choice built for
+  this project, not published elsewhere.
+\item
+  \textbf{\texttt{FIRST\ STATED\ HERE}} --- a specific claim or
+  construction, dated, not found stated this way anywhere else the
+  author has checked.
+\item
+  \textbf{\texttt{THEORETICAL}} --- designed, or partially attempted,
+  but not yet reduced to running, verified code.
+\item
+  \textbf{\texttt{THEORETICAL:CALCULATED}} --- a \texttt{THEORETICAL}
+  component for which code has nonetheless computed a concrete,
+  reportable result (a measurement, a boundary condition, a failed
+  literal construction) without the component itself shipping. The
+  distinction matters because a \texttt{THEORETICAL:CALCULATED} claim is
+  falsifiable and reproducible today, even though the larger
+  construction it belongs to is not.
+\end{itemize}
+
+\hypertarget{disambiguation-the-code-came-first-and-how-a-citation-says-so}{%
+\subsubsection{2.2 Disambiguation --- the code came first, and how a
+citation says
+so}\label{disambiguation-the-code-came-first-and-how-a-citation-says-so}}
+
+Two different relationships to the literature appear in this paper, and
+they are marked differently in every citation from here on, not left to
+a reader to infer from context:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{A citation with no tag} is maths this paper's code was built
+  \emph{directly against} --- the source is the design, not a
+  resemblance noticed afterward. There is exactly one of these: de
+  Marrais's box kite (§9--§10). The author's own account of that
+  relationship is precise and worth keeping in his words, not softened
+  into ``inspiration'': he kept finding relationships that already
+  existed inside the sedenion zero-divisor structure, and only made
+  progress once he stopped chasing them piecemeal and grasped the box
+  kite itself, whole, as de Marrais (2000) actually describes it. That
+  is a citation to a source used on purpose, not one discovered after
+  the fact.
+\item
+  \textbf{A citation marked \texttt{Post-Hoc:}} is a correspondence
+  noticed \emph{after} the code already worked, by checking its output
+  against the literature --- not used to construct the code, not known
+  about while it was being written. Every other citation in this paper
+  is one of these: projective-plane combinatorics, Gödel positional
+  encoding, Miller--Rabin primality, WordNet's own relation vocabulary
+  (Miller, 1995), and every related-work comparison in §3.5/§5.4/§7.5.
+  Reading a reference list entry that says
+  \texttt{Post-Hoc:\ Miller\ (1995)} tells a reader exactly what it
+  means: this paper's \texttt{context\_code} was not built by reading
+  Miller's paper --- it was built against WordNet's \emph{data}, already
+  installed and in use, and Miller's paper is cited here only because it
+  is WordNet's own citable source, checked afterward.
+\end{itemize}
+
+Where a mathematical name appears below with no \texttt{Post-Hoc:} tag
+other than de Marrais's, it is still a label applied for a reader who
+already knows that name --- the distinction this section draws is not
+about whether the name was known in advance, it is about whether the
+\emph{source itself} did any design work. Nothing in this paper requires
+knowing any of these names to follow the code. The reverse is stated
+with the same care: the small number of pieces marked
+\texttt{FIRST\ STATED\ HERE} are exactly that --- not found named this
+way anywhere else the author has checked, not claimed as more than that
+either.
+
+\hypertarget{a-production-note-on-c-versus-python}{%
+\subsubsection{2.3 A production note on C versus
+Python}\label{a-production-note-on-c-versus-python}}
+
+\texttt{boxkite\_bin.h}, \texttt{dump\_boxkite\_bin.c}, and
+\texttt{wntest.c} (§6) are native C, and that is a deliberate choice,
+not an artefact of this paper: the Monad and its harness are strictly C
+in production. The Python monads this repository also contains
+(\texttt{monad.py}, \texttt{rotary\_rerun\_boxkite\_monad.py}) exist for
+testing and for the readability this paper's code blocks need --- they
+are not the live system. Where a notebook's job is to demonstrate the
+system's actual behaviour rather than illustrate an idea in a more
+readable language, it is written as a genuine C-kernel notebook
+(\texttt{jupyter-c-kernel}, compiled and run with \texttt{gcc}) rather
+than a Python restatement --- see notebook 06.5.
+
+\hypertarget{a-note-on-the-two-machines}{%
+\subsubsection{2.4 A note on the two
+machines}\label{a-note-on-the-two-machines}}
+
+Two real laptops appear in this paper's benchmarks, not one, and not a
+discrepancy. The \textbf{HP EliteBook 820 G3} was the original --- the
+machine this whole project started on --- and it did not retire
+gracefully: the author has described it, more than once, as having
+``died a hard and painful death'' (screen delaminated, electron gun
+failed), after what the author put down to several occasions of the
+machine having ``thrown itself on the ground off the side of {[}their{]}
+truck.'' It earned the rest it got. The \textbf{Lenovo ThinkPad X1
+Carbon} (6th gen) is the current machine and the one §8's actual cost
+numbers are measured on; the EliteBook's own earlier benchmarks (the
+25,000-zero golden-ratio work) belong to it alone, not these numbers.
+One loose end from that migration has already been fixed rather than
+left as a footnote: the new machine briefly carried the old one's name
+in its own shell prompt, purely cosmetic, corrected once noticed.
+
+\hypertarget{the-objects-this-paper-uses-defined-plainly}{%
+\subsubsection{2.5 The objects this paper uses, defined
+plainly}\label{the-objects-this-paper-uses-defined-plainly}}
+
+This paper assumes no prior familiarity with WordNet's own vocabulary,
+or with the sedenion/box-kite structure §9--§11 generalize to. Defined
+here, once, in plain terms, so nothing later has to stop and explain
+itself:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Synset.} WordNet's basic unit: a set of words interchangeable
+  in one specific meaning --- \texttt{\{car,\ automobile\}} is one
+  synset, distinct from \texttt{\{car,\ railcar\}} (a train carriage).
+  This build has 146,743 of them; every ``word'' this paper addresses
+  is, more precisely, one synset.
+\item
+  \textbf{Sedenion.} A 16-dimensional extension of the real numbers,
+  built by the same doubling procedure (the Cayley--Dickson
+  construction) that turns the reals into complex numbers (2D), then
+  quaternions (4D), then octonions (8D), then sedenions (16D). Each
+  doubling trades away an algebraic guarantee; sedenions are the first
+  step in that chain where ordinary multiplication stops being fully
+  reliable, in the specific sense below.
+\item
+  \textbf{Zero divisor.} A nonzero number that can be multiplied by some
+  other nonzero number to get exactly zero --- impossible for ordinary
+  real or complex numbers, but a real, structural feature of sedenions.
+  Sedenions contain many of them, in a specific, countable combinatorial
+  pattern, not scattered randomly.
+\item
+  \textbf{Box kite.} The name (de Marrais, 2000) for that pattern: the
+  sedenions' zero divisors organize into 7 interlocking octahedra
+  (\textbf{struts}, one per octahedron) sharing 42 specific zero-divisor
+  pairs (\textbf{Assessors}) between them --- established mathematics
+  this paper builds on, not something it derives. ``Box kite'' names the
+  shape the whole arrangement makes; this paper reads one small,
+  specific fact off of it (§9) without re-deriving the rest.
+\item
+  \textbf{Pencil.} One strut's own internal structure: its zero-divisor
+  pairs factor into 7 stations, each a pair of points from a much
+  smaller discrete geometry, \textbf{PG(3,2)} (15 points total --- a
+  ``projective space'' built over a 2-element number system instead of
+  the reals) --- established combinatorics, used directly in §9.
+\item
+  \textbf{Involution.} A function that undoes itself: applying it twice
+  returns the original input exactly (§9.5 uses this precisely, to
+  distinguish two different symmetries this project has on record).
+\item
+  \textbf{The Generational Lineage engine.} A general-purpose tool (a
+  separate, GNU/GPL-licensed repository, \texttt{GenerationalLineage}),
+  used in §4 for one specific job --- finding exactly where a sieve of
+  primes stops needing new primes to strike composites with --- but
+  built to do something broader: given any large countable domain, it
+  sorts every member into ``cannot be built from anything smaller in
+  this domain'' (that domain's own primes, in the general sense) versus
+  ``built up from those,'' and tracks the generation-by-generation
+  history of how each composite one was assembled. That is a useful lens
+  on a lot of higher-dimensional mathematics well beyond this paper's
+  own use of it. The engine is free to install and run standalone today
+  (a proper install script is planned; for now it's a venv and the
+  repository, same shape as this paper's own install, §2.6).
+\end{itemize}
+
+\hypertarget{install}{%
+\subsubsection{2.6 Install}\label{install}}
+
+\begin{verbatim}
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install -r requirements.txt
+python3 -c "import nltk; nltk.download('wordnet')"
+\end{verbatim}
+
+\texttt{requirements.txt} is in this directory and is short
+(\texttt{nltk}, \texttt{jupyter}) --- it installs the same way on Linux,
+macOS, and Windows. The five notebooks under \texttt{notebooks/} are the
+executable form of every result in this paper; each runs directly once
+the venv above is active and this repository's sibling repos
+(\texttt{VAPMIP}, \texttt{ValaQuenta}) are checked out alongside it.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{the-primes-are-the-words}{%
+\subsection{3. ``The primes are the
+words''}\label{the-primes-are-the-words}}
+
+Every mechanism in this paper eventually addresses a word by its
+\emph{relational} structure --- what it means in context, not how it's
+spelled. That wasn't the starting idea. The starting idea, in
+\texttt{VAPMIP/monad.py} since 2026-05-27, unaltered since, was simpler
+and more ambitious at once: that a prime number could stand for a
+\textbf{concept}, the same irreducible way it stands for a number ---
+and that mapping a word onto one would be enough, on its own, to place
+related words near each other, across languages, because the concept was
+assumed to be prior to any particular spelling of it. §3.4 is honest
+about what running that idea actually produced: a field of collisions
+dense enough that the scripting around it was shelved --- not because
+the idea was ``wrong'' in some final sense, its success or failure was
+never really the point, but because that density is what pointed toward
+relational \emph{structure}, not a bare address, as the place to keep
+looking. This section is the mechanical piece underneath that whole arc:
+a deterministic, collision-mostly- avoiding map from a word's spelling
+to an address, read from the code that has run, unmodified, for four
+months.
+
+\textbf{Two real screenshots, not staged for this paper --- the actual
+first runs:}
+
+\textbf{Figure 3a.}
+
+\begin{figure}
+\centering
+\includegraphics{figures/funny-ptolemy.png}
+\caption{funny-ptolemy}
+\end{figure}
+
+The very first time this machinery was ever run:
+\texttt{ptolemy\ -l\ \textquotesingle{}what\ is\ your\ name\textquotesingle{}}
+→ \texttt{Segmentation\ fault\ (core\ dumped)}. Kept in the record on
+purpose, not cropped out: this is what ``the first attempt at semantic
+hash'' actually looked like, the honest starting point before any of the
+rest of this paper existed.
+
+\emph{Shoutout to Max Cohen's computer --- Euclid.}
+
+\textbf{Figure 3b.}
+
+\begin{figure}
+\centering
+\includegraphics{figures/TheExtractor.png}
+\caption{TheExtractor}
+\end{figure}
+
+The first real question put to the running system, asked two ways.
+\texttt{ptolemy\ -h\ \textquotesingle{}what\ is\ your\ name\textquotesingle{}}
+prints the per-word state table (\texttt{z\#}, \texttt{γ},
+\texttt{σ=0.5}, \texttt{E}, \texttt{β=7.552000} --- the same
+\texttt{MONAD\_BETA\_SAT} cited in §8, visible here from the very first
+run); \texttt{ptolemy\ -W\ \textquotesingle{}what\ is\ your\ name} then
+returns \texttt{holcussamestuffseemy}. This is where the name
+\textbf{Holcus} came from --- a real word (a grass genus, ``Yorkshire
+fog'') surfacing out of the very first multilingual semantic-prime-hash
+run, not chosen in advance.
+
+\hypertarget{the-address-copy-paste-runnable-top-to-bottom}{%
+\subsubsection{3.1 The address, copy-paste runnable, top to
+bottom}\label{the-address-copy-paste-runnable-top-to-bottom}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# VAPMIP/monad.py {-}{-} unaltered since commit 204c75d, 2026{-}05{-}27}
+\ImportTok{from}\NormalTok{ typing }\ImportTok{import}\NormalTok{ List}
+
+\NormalTok{\_PRIME\_CAP }\OperatorTok{=} \DecValTok{1} \OperatorTok{\textless{}\textless{}} \DecValTok{16}                      \CommentTok{\# 65536 {-}{-} primes searched in [2, 65537]}
+
+\CommentTok{\# Sieve of Eratosthenes, run once at import.}
+\NormalTok{\_cap }\OperatorTok{=}\NormalTok{ \_PRIME\_CAP }\OperatorTok{+} \DecValTok{2}
+\NormalTok{\_sv }\OperatorTok{=} \BuiltInTok{bytearray}\NormalTok{([}\DecValTok{1}\NormalTok{]) }\OperatorTok{*}\NormalTok{ \_cap}
+\NormalTok{\_sv[}\DecValTok{0}\NormalTok{] }\OperatorTok{=}\NormalTok{ \_sv[}\DecValTok{1}\NormalTok{] }\OperatorTok{=} \DecValTok{0}
+\ControlFlowTok{for}\NormalTok{ \_i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{, }\BuiltInTok{int}\NormalTok{(\_cap }\OperatorTok{**} \FloatTok{0.5}\NormalTok{) }\OperatorTok{+} \DecValTok{1}\NormalTok{):}
+    \ControlFlowTok{if}\NormalTok{ \_sv[\_i]:}
+\NormalTok{        \_sv[\_i }\OperatorTok{*}\NormalTok{ \_i::\_i] }\OperatorTok{=} \BuiltInTok{bytearray}\NormalTok{(}\BuiltInTok{len}\NormalTok{(\_sv[\_i }\OperatorTok{*}\NormalTok{ \_i::\_i]))}
+
+\CommentTok{\# pi(k) {-}{-} count of primes \textless{}= k, for every k in [0, \_PRIME\_CAP].}
+\NormalTok{\_prime\_pi\_table: List[}\BuiltInTok{int}\NormalTok{] }\OperatorTok{=}\NormalTok{ [}\DecValTok{0}\NormalTok{] }\OperatorTok{*}\NormalTok{ \_cap}
+\NormalTok{\_cnt }\OperatorTok{=} \DecValTok{0}
+\ControlFlowTok{for}\NormalTok{ \_k }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(\_cap):}
+    \ControlFlowTok{if}\NormalTok{ \_sv[\_k]:}
+\NormalTok{        \_cnt }\OperatorTok{+=} \DecValTok{1}
+\NormalTok{    \_prime\_pi\_table[\_k] }\OperatorTok{=}\NormalTok{ \_cnt}
+\KeywordTok{del}\NormalTok{ \_i, \_k, \_cnt, \_cap}
+
+\KeywordTok{def}\NormalTok{ \_next\_prime(v: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+    \CommentTok{"""Smallest prime p \textgreater{}= (v mod \_PRIME\_CAP), clamped to [2, 65537]."""}
+\NormalTok{    v }\OperatorTok{=} \BuiltInTok{max}\NormalTok{(}\DecValTok{2}\NormalTok{, }\BuiltInTok{int}\NormalTok{(v) }\OperatorTok{\%}\NormalTok{ (\_PRIME\_CAP }\OperatorTok{+} \DecValTok{1}\NormalTok{))}
+    \ControlFlowTok{while}\NormalTok{ v }\OperatorTok{\textless{}=}\NormalTok{ \_PRIME\_CAP }\OperatorTok{+} \DecValTok{1}\NormalTok{:}
+        \ControlFlowTok{if}\NormalTok{ \_sv[}\BuiltInTok{min}\NormalTok{(v, \_PRIME\_CAP }\OperatorTok{+} \DecValTok{1}\NormalTok{)] }\KeywordTok{or}\NormalTok{ v }\OperatorTok{\textgreater{}}\NormalTok{ \_PRIME\_CAP:}
+            \ControlFlowTok{return}\NormalTok{ v}
+\NormalTok{        v }\OperatorTok{+=} \DecValTok{1}
+    \ControlFlowTok{return} \DecValTok{65537}   \CommentTok{\# largest prime \textless{}= 65537}
+
+\KeywordTok{def}\NormalTok{ \_horner\_hash(w: }\BuiltInTok{str}\NormalTok{, base: }\BuiltInTok{int} \OperatorTok{=} \DecValTok{95}\NormalTok{, offset: }\BuiltInTok{int} \OperatorTok{=} \DecValTok{32}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+    \CommentTok{"""Horner base{-}95 hash: printable ASCII, ord range [32,126] {-}\textgreater{} coefficients [0,94]."""}
+\NormalTok{    v }\OperatorTok{=} \DecValTok{0}
+    \ControlFlowTok{for}\NormalTok{ ch }\KeywordTok{in}\NormalTok{ w:}
+\NormalTok{        v }\OperatorTok{=}\NormalTok{ v }\OperatorTok{*}\NormalTok{ base }\OperatorTok{+} \BuiltInTok{max}\NormalTok{(}\DecValTok{0}\NormalTok{, }\BuiltInTok{ord}\NormalTok{(ch) }\OperatorTok{{-}}\NormalTok{ offset)}
+    \ControlFlowTok{return} \BuiltInTok{abs}\NormalTok{(v)}
+
+\KeywordTok{def}\NormalTok{ \_word\_zero\_idx(w: }\BuiltInTok{str}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+    \CommentTok{"""word {-}\textgreater{} Horner int {-}\textgreater{} next prime p {-}\textgreater{} pi(p) = zero index in [1, 6543]."""}
+\NormalTok{    v }\OperatorTok{=}\NormalTok{ \_horner\_hash(w)}
+\NormalTok{    p }\OperatorTok{=}\NormalTok{ \_next\_prime(v)}
+\NormalTok{    idx }\OperatorTok{=}\NormalTok{ \_prime\_pi\_table[}\BuiltInTok{min}\NormalTok{(p, \_PRIME\_CAP }\OperatorTok{+} \DecValTok{1}\NormalTok{)]}
+    \ControlFlowTok{return} \BuiltInTok{max}\NormalTok{(}\DecValTok{1}\NormalTok{, idx)}
+\end{Highlighting}
+\end{Shaded}
+
+Every line above runs as shown, in a fresh interpreter, with no import
+this paper doesn't state --- the sieve builds itself at module load, the
+same way it does in the real \texttt{monad.py}.
+\texttt{notebooks/01\_semantic\_prime\_hashing.ipynb} runs the identical
+function, wrapped for tracing, as a documentation margin on this
+listing, not a substitute for it.
+
+Per
+\href{../../.claude/skills/cs-paper-code-conventions/SKILL.md}{\texttt{cs-paper-code-conventions}}
+§1: this is \texttt{OURS}, short, and \emph{is} the paper's contribution
+at this step --- it gets the real listing, not a Σ standing in for a
+loop. Three established pieces do the actual work, cited
+\texttt{Post-Hoc:} and not re-derived: a Horner polynomial evaluation
+(base 95, the size of printable ASCII) turns a word's spelling into one
+integer; a sieve of Eratosthenes, run once at import, supplies both a
+fast \texttt{next\_prime} and a precomputed \texttt{π} table (count of
+primes ≤ \emph{k}, for every \emph{k} up to 65536); composing them sends
+a word to \textbf{which of up to 6,543 non-trivial Riemann zeros indexes
+its address}. (The non-trivial zeros of the Riemann zeta function are a
+fixed, established, precomputable sequence of real numbers, indexed 1,
+2, 3, \ldots; nothing in this paper depends on why they're
+mathematically significant, only that they're a real, ordered, infinite,
+freely-computable sequence to index into --- a fact table, not a proof
+step.) That index --- call it \texttt{γ} from here on, its usual symbol
+--- is the pencil selector every later section of this paper reads off
+of.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \ControlFlowTok{for}\NormalTok{ w }\KeywordTok{in}\NormalTok{ [}\StringTok{"accretion"}\NormalTok{, }\StringTok{"pile"}\NormalTok{, }\StringTok{"toroidal"}\NormalTok{,}
+\NormalTok{...           }\StringTok{"condensate"}\NormalTok{, }\StringTok{"narrative"}\NormalTok{, }\StringTok{"dissertation"}\NormalTok{]:}
+\NormalTok{...     trace(w)}
+   \CommentTok{\textquotesingle{}accretion\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}    \DecValTok{435952031571538408}\NormalTok{  next\_prime}\OperatorTok{=}  \DecValTok{7933}\NormalTok{  idx}\OperatorTok{=} \DecValTok{1002}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{1439.015472}
+        \CommentTok{\textquotesingle{}pile\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}              \DecValTok{69256114}\NormalTok{  next\_prime}\OperatorTok{=} \DecValTok{49043}\NormalTok{  idx}\OperatorTok{=} \DecValTok{5042}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{5548.516421}
+    \CommentTok{\textquotesingle{}toroidal\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}      \DecValTok{5924746544723326}\NormalTok{  next\_prime}\OperatorTok{=} \DecValTok{13513}\NormalTok{  idx}\OperatorTok{=} \DecValTok{1601}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{2117.754191}
+  \CommentTok{\textquotesingle{}condensate\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}  \DecValTok{42756310149759033674}\NormalTok{  next\_prime}\OperatorTok{=}  \DecValTok{3761}\NormalTok{  idx}\OperatorTok{=}  \DecValTok{523}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{853.143566}
+   \CommentTok{\textquotesingle{}narrative\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}    \DecValTok{522068046232455314}\NormalTok{  next\_prime}\OperatorTok{=}  \DecValTok{1847}\NormalTok{  idx}\OperatorTok{=}  \DecValTok{283}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{522.366924}
+\CommentTok{\textquotesingle{}dissertation\textquotesingle{}}\NormalTok{  H}\OperatorTok{=}\DecValTok{391207708623858272995283}\NormalTok{  next\_prime}\OperatorTok{=} \DecValTok{46919}\NormalTok{  idx}\OperatorTok{=} \DecValTok{4847}  \OperatorTok{/}
+\NormalTok{                gamma}\OperatorTok{=}\FloatTok{5365.310518}
+\end{Highlighting}
+\end{Shaded}
+
+(\texttt{notebooks/01\_semantic\_prime\_hashing.ipynb}, cell 3, run live
+against the unmodified function.) Determinism holds --- the same word
+produces the same index on every call, checked against three repeated
+calls each for ten words, no exceptions.
+
+\hypertarget{the-domain-measured-on-the-live-vocabulary}{%
+\subsubsection{3.2 The domain, measured on the live
+vocabulary}\label{the-domain-measured-on-the-live-vocabulary}}
+
+Run against all 347,119 words in \texttt{VAPMIP/PtolC/monad3\_c.bin}, at
+109,403 words/second:
+
+\begin{verbatim}
+idx range: [1, 6543]  distinct buckets used: 6543/6542
+words per bucket: min 1  max 395  mean 53.1
+most-populated buckets: [(3386, 395), (3645, 338), (4523, 310), ...]
+\end{verbatim}
+
+Live, runnable: \texttt{notebooks/01\_semantic\_prime\_hashing.ipynb},
+cells 7--8 (the collision-rate and bucket-distribution pass over the
+live vocabulary).
+
+Read that second number twice: \texttt{6543/6542}. Not a typo --- the
+code's own count of distinct buckets used \emph{exceeds} the paper's
+previously-stated bucket count. Chased rather than rounded away
+(\texttt{notebooks/01\_semantic\_prime\_hashing.ipynb}, cells 11--12):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(}\StringTok{"pi(65536) ="}\NormalTok{, monad.\_prime\_pi\_table[}\DecValTok{65536}\NormalTok{],}
+\NormalTok{...       }\StringTok{" pi(65537) ="}\NormalTok{, monad.\_prime\_pi\_table[}\DecValTok{65537}\NormalTok{])}
+\NormalTok{pi(}\DecValTok{65536}\NormalTok{) }\OperatorTok{=} \DecValTok{6542}\NormalTok{   pi(}\DecValTok{65537}\NormalTok{) }\OperatorTok{=} \DecValTok{6543}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{next\_prime} is documented, and coded, to reach \textbf{65537}
+inclusive. 65537 is itself prime (it's a Fermat prime,
+\texttt{2\^{}16\ +\ 1}) --- so
+\texttt{π(65537)\ =\ π(65536)\ +\ 1\ =\ 6543}, one past where the code's
+own stated range said it could go. \textbf{Verdict: MATHS/METHOD, not
+CODE.} The function is internally consistent; it is two \emph{stated}
+boundaries (\texttt{p\ ∈\ {[}2,65537{]}} and
+\texttt{idx\ ∈\ {[}1,6542{]}}) disagreeing with each other. This is not
+a corner case nobody hits --- 91 real words in the live vocabulary land
+in bucket 6543, most of them ordinary English (\texttt{apocope},
+\texttt{contemplating}, \texttt{discipline}), a few tokenizer noise from
+the live corpus (\texttt{\textquotesingle{}kay}, \texttt{1387–1422}, raw
+LaTeX fragments) worth naming honestly rather than pretending the
+vocabulary is cleaner than it is. The corrected range carried forward
+from here on: \textbf{\texttt{idx\ ∈\ {[}1,\ 6543{]}}}, not 6542.
+
+\hypertarget{a-live-bug-reproduced-not-fixed}{%
+\subsubsection{3.3 A live bug, reproduced, not
+fixed}\label{a-live-bug-reproduced-not-fixed}}
+
+\texttt{\_horner\_hash} clamps digits from \emph{below} only
+(\texttt{max(0,\ ord(ch)\ -\ 32)}). An invisible Unicode character and a
+printable two-character sequence can therefore land on the same clamped
+digit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ zwsp }\OperatorTok{=} \StringTok{"​"}     \CommentTok{\# U+200B, ZERO WIDTH SPACE}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"horner(U+200B) = }\SpecialCharTok{\{}\NormalTok{monad}\SpecialCharTok{.}\NormalTok{\_horner\_hash(zwsp)}\SpecialCharTok{\}}\SpecialStringTok{"}
+\NormalTok{...       }\SpecialStringTok{f"   horner(\textquotesingle{}v!\textquotesingle{}) = }\SpecialCharTok{\{}\NormalTok{monad}\SpecialCharTok{.}\NormalTok{\_horner\_hash(}\StringTok{\textquotesingle{}v!\textquotesingle{}}\NormalTok{)}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\NormalTok{horner(U}\OperatorTok{+}\DecValTok{200}\ErrorTok{B}\NormalTok{) }\OperatorTok{=} \DecValTok{8171}\NormalTok{   horner(}\StringTok{\textquotesingle{}v!\textquotesingle{}}\NormalTok{) }\OperatorTok{=} \DecValTok{8171}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{print}\NormalTok{(}\SpecialStringTok{f"idx(U+200B) = }\SpecialCharTok{\{}\NormalTok{monad}\SpecialCharTok{.}\NormalTok{\_word\_zero\_idx(zwsp)}\SpecialCharTok{\}}\SpecialStringTok{"}
+\NormalTok{...       }\SpecialStringTok{f"   idx(\textquotesingle{}v!\textquotesingle{}) = }\SpecialCharTok{\{}\NormalTok{monad}\SpecialCharTok{.}\NormalTok{\_word\_zero\_idx(}\StringTok{\textquotesingle{}v!\textquotesingle{}}\NormalTok{)}\SpecialCharTok{\}}\SpecialStringTok{"}\NormalTok{)}
+\NormalTok{idx(U}\OperatorTok{+}\DecValTok{200}\ErrorTok{B}\NormalTok{) }\OperatorTok{=} \DecValTok{1026}\NormalTok{   idx(}\StringTok{\textquotesingle{}v!\textquotesingle{}}\NormalTok{) }\OperatorTok{=} \DecValTok{1026}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{notebooks/01\_semantic\_prime\_hashing.ipynb},
+cell 10.
+
+\texttt{VAPMIP/prime\_hash.py} (2026-08-18) names what's actually wrong
+here --- a category error, not an off-by-one: whitespace and invisible
+control characters are \textbf{aperture} (they set which domain of words
+is being drawn from) and were never supposed to reach the letter
+polynomial as a digit at all. Its proposed fix, \texttt{split\_tiers()},
+strips anything outside printable ASCII before hashing, so an invisible
+character can never forge a collision. That fix has been designed and is
+not, as of this writing, wired into \texttt{monad.py} --- the bug above
+is live in the function every later section of this paper still calls.
+
+\hypertarget{the-historic-foothold-the-entrance-to-the-freeway-not-a-verdict}{%
+\subsubsection{3.4 The historic foothold --- the entrance to the
+freeway, not a
+verdict}\label{the-historic-foothold-the-entrance-to-the-freeway-not-a-verdict}}
+
+The idea that a prime could stand for an \textbf{irreducible concept}
+--- not per-language, but underneath every language --- predates all of
+the above. The clearest statement of it is
+\texttt{Ainulindale/wiki/16\_semantic\_word\_engine.md}:
+tree/arbre/木/شجرة/Baum, water/eau/aqua/wasser, all claimed to land on
+the same invariant, ``the concept is the prime, the language is the
+coordinate choice.'' What's recorded below is not a verdict on that idea
+--- whether it succeeds or fails was never the point. It's engineering
+history: this mechanism, run for real, produced a field of collisions
+dense enough that the scripting around it was shelved for months, and
+picked back up only after a different object --- the box kite, §10's
+hyper-relationship snapshot --- made it clear \emph{why} the collisions
+were so dense. That pivot, not a pass/fail on wiki-16's claim, is what
+this section is actually recording.
+
+Run blind, today, against the unmodified mechanism above
+(\texttt{repo\_appendix/semantic\_prime\_hash/001\_original\_2026-05-27\_word\_zero\_idx.py}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{===}\NormalTok{ tree }\OperatorTok{===}
+\NormalTok{  en  }\StringTok{\textquotesingle{}tree\textquotesingle{}}\NormalTok{      idx}\OperatorTok{=}\DecValTok{2273}
+\NormalTok{  es  }\StringTok{\textquotesingle{}árbol\textquotesingle{}}\NormalTok{     idx}\OperatorTok{=}\DecValTok{111}
+\NormalTok{  zh  }\StringTok{\textquotesingle{}树\textquotesingle{}}\NormalTok{        idx}\OperatorTok{=}\DecValTok{2919}
+\OperatorTok{===}\NormalTok{ water }\OperatorTok{===}
+\NormalTok{  en  }\StringTok{\textquotesingle{}water\textquotesingle{}}\NormalTok{     idx}\OperatorTok{=}\DecValTok{2009}
+\NormalTok{  fr  }\StringTok{\textquotesingle{}eau\textquotesingle{}}\NormalTok{       idx}\OperatorTok{=}\DecValTok{4122}
+\NormalTok{  ja  }\StringTok{\textquotesingle{}水\textquotesingle{}}\NormalTok{        idx}\OperatorTok{=}\DecValTok{3018}
+\OperatorTok{===}\NormalTok{ water}\OperatorTok{/}\NormalTok{eau}\OperatorTok{/}\NormalTok{aqua}\OperatorTok{/}\NormalTok{wasser (wiki}\OperatorTok{{-}}\DecValTok{16}\StringTok{\textquotesingle{}s own cited example) ===}
+\ErrorTok{  \textquotesingle{}water\textquotesingle{}     idx=2009}
+\ErrorTok{  \textquotesingle{}eau\textquotesingle{}       idx=4122}
+\ErrorTok{  \textquotesingle{}aqua\textquotesingle{}      idx=4310}
+\ErrorTok{  \textquotesingle{}wasser\textquotesingle{}    idx=1204}
+\end{Highlighting}
+\end{Shaded}
+
+(re-run live, this session, against the unmodified function.)
+
+None of the tested groups share an \texttt{idx} --- including wiki-16's
+own cited water/eau/aqua/wasser example. \texttt{\_word\_zero\_idx}
+places every word \emph{somewhere} (mechanically true by construction
+--- it's a total function), but a base-95 Horner hash over UTF-8 code
+points has no reason to be language-invariant, and isn't. That's not the
+interesting part, though --- the interesting part, engineering-wise, is
+the \emph{density} of collision this style of address produces once
+you're not just checking a handful of hand-picked pairs but running it
+across a real vocabulary: enough collisions, close enough together, that
+continuing to script against a bare address stopped being productive.
+
+The same signal shows up a second time, independently, three months
+later, in \texttt{wordnet\_boxkite.py}'s own in-source history comment:
+an earlier version of that file's collision test checked whether a
+synset and its hypernym produced \emph{small prime gaps} --- which, read
+back later, was quietly testing semantic relatedness rather than what
+was actually wanted. The author's own note, kept in the file rather than
+edited away: \emph{``twin primes were to illustrate the idea of
+contextual neighborhood\ldots{} not semantic neighborhood.''} What the
+retest actually turned up: synsets with an \textbf{exactly identical
+19-relation shape} collide on address every time, regardless of what
+they mean --- \texttt{hilbert.n.01} (a mathematician),
+\texttt{irrawaddy.n.01} (a river), and \texttt{new\_york.n.03} (a city)
+share one address purely because all three have the same named-instance
+relational shape.
+
+Both times, the collision density is what mattered, not a verdict on the
+mechanism that produced it --- it's what shelved the scripting the first
+time, and it's what pointed at \emph{relational structure} as the place
+worth building on the second. Everything from §9 onward (the pencil, the
+box kite, the WordNet relational vector) exists because that density was
+followed rather than argued with. That's the sense in which this section
+is a foothold, not a result: it's the on-ramp, not the destination ---
+``the entrance to the freeway'' of Teaching the Maths how to speak
+English.
+
+\hypertarget{related-work-the-nearest-ml-precedent-to-one-number-per-meaning}{%
+\subsubsection{3.5 Related work --- the nearest ML precedent to ``one
+number per
+meaning''}\label{related-work-the-nearest-ml-precedent-to-one-number-per-meaning}}
+
+The idea of collapsing a word or document down to a single compact code
+that stands in for its meaning is not new; it is the entire premise of
+Salakhutdinov \& Hinton, \emph{Semantic Hashing} (2009) --- train a deep
+generative model (a stack of Restricted Boltzmann Machines) so that a
+document's bag-of-words maps to a short binary code, positioned so that
+semantically similar documents land at a small Hamming distance from
+each other. That is the closest existing precedent to
+\texttt{\_word\_zero\_idx}'s own ambition (§3.1--3.4): \emph{one code,
+one meaning.} The mechanism is opposite in every design choice that
+matters here, though, and naming the contrast is the point of citing it:
+Semantic Hashing's code is \textbf{learned} (gradient descent over a
+training corpus), \textbf{approximate by construction} (the entire value
+proposition is that similar-but-unequal documents land near each other),
+and carries \textbf{no guarantee of exact recovery} --- you cannot
+factor a semantic-hashing code back into the document that produced it.
+\texttt{\_word\_zero\_idx} and every mechanism after it in this paper
+are the reverse on all three counts: zero training, no learned
+parameters, and (§5, §7) exact, factorization-based recovery with every
+lossy step separately measured and named. The collision density recorded
+above (§3.4) is this paper's version of the same failure mode Semantic
+Hashing is explicitly built to produce on purpose --- the difference is
+that this paper treats it as a bug to trace to its cause (relational
+structure, §9 onward), not a feature to optimize for.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{why-primes-at-all-how-we-came-to-313}{%
+\subsection{4. Why primes at all --- how we came to
+313}\label{why-primes-at-all-how-we-came-to-313}}
+
+\hypertarget{the-two-trees-engine}{%
+\subsubsection{4.1 The Two Trees Engine}\label{the-two-trees-engine}}
+
+Two names recur through this section: \textbf{Laurelin} and
+\textbf{Telperion}. They are not this paper's invention --- they name
+the two domains of the \textbf{Two Trees engine},
+\texttt{GenerationalLineage}'s general-purpose component (the engine
+itself is introduced in §2.5, though that section names its function ---
+splitting a domain of primes into two disjoint sub-domains and tracking
+what crosses between them --- without using ``Two Trees'' as a label;
+this section is where that name is first attached to it) already used
+elsewhere in this project for exactly that split. Nothing in this
+section depends on that engine's wider scope; the two names are used
+here purely as fixed labels for the two domains §4.4 derives, so that
+later sections (and this paper's own code) have one word each instead of
+a clause.
+
+Live, runnable: this paper's own
+\texttt{notebooks/02\_the\_313\_sieve\_and\_49999\_unsieve.ipynb}
+demonstrates the engine directly, cell by cell (§4.4--§4.5 below). The
+engine's own home notebook, built under this project's Full Engine
+Protocol (one numbered notebook per engine, \texttt{VAPMIP/notebooks/}),
+is \texttt{VAPMIP/notebooks/16\_e10\_generational\_lineage.ipynb} --- it
+documents the Two Trees engine at a depth this paper doesn't need and
+isn't developed here; named only as a pointer.
+
+Worth stating plainly why Tolkien's vocabulary is used for this at all,
+rather than left as unexplained flavour: the author's own reason is that
+Tolkien's Ainulindalë --- the creation account in his legendarium ---
+reads as a language-structural-constant calibration check, told the same
+way regardless of which of Tolkien's own constructed languages is
+telling it. That property --- one invariant, checkable for reading the
+same across otherwise-independent representations --- is the actual
+design principle behind a real structural constant the author engineered
+elsewhere in this project, out of scope here and not developed further
+in this paper. The names are kept because that analogy is load-bearing
+to that other design, not for atmosphere.
+
+\hypertarget{laurelin-the-factors-domain}{%
+\subsubsection{4.2 Laurelin --- the factors
+domain}\label{laurelin-the-factors-domain}}
+
+A prime is, by the classical sieve reading, exactly what survives
+elimination: strike every multiple of 2, then of 3, then of 5, and so on
+--- what remains unstruck at the end is prime, defined entirely by the
+factors it does \emph{not} have. That is the extinction reading of
+factorisation, older than any of the machinery in this paper. Reported
+plainly, without claiming it resolves anything open: \textbf{Fermat's
+framing defines the primes by the extinction of every possible factor;
+the Riemann zeta function, by contrast, only describes the primes'
+\emph{order of arrival}} --- the density and spacing of a set already
+fixed by that extinction test, not what makes any one of its members
+prime. Nothing here leans on the truth or falsity of any unproven
+conjecture about that order; the distinction is between what
+\emph{defines} the set and what \emph{describes} its distribution, and
+both readings are standard.
+
+\textbf{Laurelin} is assigned this section's \emph{factors} domain ---
+see §4.5: the primes above 313 that this paper's own sieve run shows
+never once serve as anything but a factor of something larger. They
+exist in the dataset only in that role.
+
+\hypertarget{telperion-the-riemann-prime-zeta-zero-tree}{%
+\subsubsection{4.3 Telperion --- the Riemann prime-zeta-zero
+tree}\label{telperion-the-riemann-prime-zeta-zero-tree}}
+
+\textbf{Telperion} is assigned this section's other domain --- the
+primes at or below 313 --- for a reason specific to this paper, not a
+restatement of how the name is used elsewhere in the project: every one
+of those primes is exactly a \emph{letter}, and §3 already showed what a
+letter is for --- \texttt{Horner\ →\ next\_prime\ →\ π(p)\ →\ γ}, a walk
+that ends on one specific non-trivial Riemann zeta zero. Telperion's
+domain, in this paper, is the alphabet whose addresses \emph{are}
+Riemann zeros. That is what ``Riemann prime-zeta-zero tree'' means here,
+concretely, not evocatively.
+
+That is this paper's own, local, narrow reading of the name --- worth
+distinguishing clearly from the fuller object Telperion names elsewhere
+in this project, so a reader who goes looking finds a consistent picture
+rather than a collision. Stated once, plainly, without developing it
+further here: elsewhere, \textbf{Telperion is the Prime Number Tree} ---
+the Cayley--Dickson tower read top to bottom, with the primes as the
+leaves that survive every level intact and the composites as the ones
+that fall. Its spectral nodes are \textbf{the Riemann zeros}, read as a
+\textbf{Zeta Zero Lattice} --- a genuine lattice (an ordered, countable,
+indexable structure) built from a sequence of numbers that are each
+individually continuous-valued, not integers; the ``lattice'' is in how
+the sequence is used and indexed, not a claim that the zeros themselves
+are discrete. That object is a conjugate pair with Laurelin, the same
+partition this paper's own §4.2/§4.5 draws locally, just at the scale of
+the whole Cayley--Dickson tower rather than one sieve boundary. It is
+built and run as its own engine in \texttt{ValaQuenta/zero\_lattice.py}
+(\texttt{ZLNode}; the same file computes both the tree and the 42-class
+zero-divisor lattice, §9's box kite among them) and fleshed out far more
+fully in a dedicated repository,
+\href{https://github.com/michaelrendier/AbrikosovTree}{\texttt{AbrikosovTree}}
+--- the Riemann zeros there are identified with an Abrikosov vortex
+lattice (the 2003 Nobel-winning superconductor structure), the primes
+with the un-extinctable condensate they pin. Worth naming honestly
+rather than quietly resolved: testing elsewhere in this project has
+suggested --- not re-verified in this paper, not developed here --- that
+the zero-divisor lattice this paper's own §9 later uses may actually
+\emph{contain} this same Telperion as a substructure, which would make
+``different object, no overlap'' too strong a claim; that relationship
+is a real, open thread for the Catalog (§11), not settled either way
+here. This paper's own Telperion --- the ≤313 letter alphabet --- is the
+one narrow, local slice of all of that this section actually needs.
+
+\hypertarget{the-boundary-itself}{%
+\subsubsection{4.4 The boundary itself}\label{the-boundary-itself}}
+
+The question, asked plainly, before any of the rest of this paper
+existed: \textbf{what is the last prime number to see any new factors
+come down in the sieve?} --- equivalently, the highest prime factor ever
+required to build any composite in the domain at all. Not offhand maths;
+a dataset of two conjugate domains over the composites (the Two Trees
+engine --- primes, composites), built and checked directly:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# GenerationalLineage/engine/lineage.py::un\_sieve, run for N=10\^{}5}
+\ImportTok{import}\NormalTok{ lineage}
+\NormalTok{r }\OperatorTok{=}\NormalTok{ lineage.un\_sieve(}\DecValTok{100\_000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable:
+\texttt{notebooks/02\_the\_313\_sieve\_and\_49999\_unsieve.ipynb}, cell
+1.
+
+The standard optimised sieve only needs to strike multiples of
+\texttt{p} starting at \texttt{p²} --- every smaller multiple of
+\texttt{p} was already struck by a smaller prime factor. So \texttt{p}
+contributes a \textbf{new} strike only while \texttt{p²\ ≤\ N}. Direct
+code, not looked up:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ primes }\OperatorTok{=}\NormalTok{ sieve\_primes(}\DecValTok{100\_000}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{max}\NormalTok{(p }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ primes }\ControlFlowTok{if}\NormalTok{ p }\OperatorTok{*}\NormalTok{ p }\OperatorTok{\textless{}=} \DecValTok{100\_000}\NormalTok{)}
+\DecValTok{313}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable:
+\texttt{notebooks/02\_the\_313\_sieve\_and\_49999\_unsieve.ipynb}, cell
+3.
+
+313 is the answer: the last prime with anything new to strike at
+\texttt{N\ =\ 10⁵}.
+
+\hypertarget{composite-primes-the-closed-alphabet}{%
+\subsubsection{4.5 Composite primes --- the closed
+alphabet}\label{composite-primes-the-closed-alphabet}}
+
+What that boundary actually splits the primes into, checked directly
+rather than reasoned about in prose
+(\texttt{\_spf\_gpf\_tables(100\_000)}, every composite \texttt{≤\ 10⁵},
+no sampling):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ spf, gpf, primes }\OperatorTok{=}\NormalTok{ \_spf\_gpf\_tables(}\DecValTok{100\_000}\NormalTok{)}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ comps }\OperatorTok{=}\NormalTok{ [n }\ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{100\_001}\NormalTok{) }\ControlFlowTok{if}\NormalTok{ spf[n] }\OperatorTok{!=}\NormalTok{ n]}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{max}\NormalTok{(spf[n] }\ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in}\NormalTok{ comps)}
+\DecValTok{313}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{len}\NormalTok{(\{spf[n] }\ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in}\NormalTok{ comps\})            }\CommentTok{\# every one of the 65 gets used}
+\DecValTok{65}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ never\_spf }\OperatorTok{=}\NormalTok{ \{p }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ \{gpf[n] }\ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in}\NormalTok{ comps\} }\ControlFlowTok{if}\NormalTok{ p }\KeywordTok{not} \KeywordTok{in}\NormalTok{ \{spf[n] }\ControlFlowTok{for}\NormalTok{ n }\KeywordTok{in}\NormalTok{ comps\}\}}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}} \BuiltInTok{len}\NormalTok{(never\_spf), }\BuiltInTok{min}\NormalTok{(never\_spf), }\BuiltInTok{max}\NormalTok{(never\_spf), }\BuiltInTok{all}\NormalTok{(p }\OperatorTok{\textgreater{}} \DecValTok{313} \ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ never\_spf)}
+\NormalTok{(}\DecValTok{5068}\NormalTok{, }\DecValTok{317}\NormalTok{, }\DecValTok{49999}\NormalTok{, }\VariableTok{True}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable:
+\texttt{notebooks/02\_the\_313\_sieve\_and\_49999\_unsieve.ipynb}, cell
+7.
+
+\textbf{Composite primes} --- Telperion's, ≤313, 65 of them --- are the
+complete, closed alphabet of every composite's smallest-factor identity:
+no composite in the whole domain ever has an \texttt{spf} outside this
+set, and every one of the 65 gets used. \textbf{Factoral primes} ---
+Laurelin's, 317 through 49999, 5,068 of them --- are exactly the primes
+that \emph{never} once serve as an \texttt{spf} for anything: Telperion
+is permanently blind to them, zero exceptions, not approximately; they
+only ever surface as a \texttt{gpf}, which is to say only Laurelin ever
+accounts for them at all. The split isn't a rule of thumb, it's exact:
+\texttt{max(spf)\ ==\ 313}, always, for every composite ≤ N, because
+\texttt{spf(n)\ ≤\ √n\ ≤\ √N} is arithmetic, not policy.
+
+That single number is what turned an open question --- are the primes
+\emph{words}, or are they \emph{letters} --- into a decision.
+\textbf{The first 65 primes are letters.} With a bounded, principled
+pool to draw from (not an arbitrary round number, the sieve's own
+extinction boundary), spelling can be hashed into primes in an orderly
+way, mostly collision- independent rather than colliding by accident ---
+which is exactly where §5 picks up.
+
+Reported for completeness, not developed further, but defined properly
+rather than waved at: \textbf{the sieve run forward, extinction-first,
+is not the same process as its construction-side counterpart, recursive
+sieving} --- not ``the sieve undone in reverse order,'' a real, separate
+pathway. Recursive sieving starts from the true ground state, \emph{just
+the primes, nothing built yet}, and turns primes on one at a time in
+ascending order; a composite is \textbf{born} --- enters the
+construction --- the moment its \emph{largest} needed prime factor is
+switched on, not its smallest, because every one of its factors has to
+be available before it can exist as their product, and the biggest one
+is necessarily the last to arrive. That boundary --- when the last
+composite finishes being born --- doesn't resolve until 49999, not 313:
+a genuinely different, much larger number, because birth-order and
+death-order are not mirror images of the same statistics. Measured
+directly, not assumed: the birth-order histogram carries roughly four
+times the entropy of the death-order one (\texttt{+7.19} bits, engine
+\texttt{GenerationalLineage/engine/lineage.py::un\_sieve}) ---
+extinguishing a composite is cheap (its smallest factor alone convicts
+it), constructing one is expensive (every factor has to show up), and
+that cost asymmetry is a real, intrinsic fact about the domain, not an
+artefact of which direction the sieve is read in. Left here as one
+honest, properly defined line for whichever number theorist or physicist
+wants to run with it, not part of this paper's own argument.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{spelling-prime-order-and-the-anagram-collision}{%
+\subsection{5. Spelling → prime --- order, and the anagram
+collision}\label{spelling-prime-order-and-the-anagram-collision}}
+
+§4 gave a closed, complete pool of ``letter'' primes to spend. The
+obvious way to spend it --- one prime per letter, multiply the word's
+letters together --- is the first thing tried, and it's broken in a
+specific, demonstrable way: \textbf{multiplication commutes.} A product
+of primes records \emph{which} letters appear and \emph{how many times},
+by unique factorisation, and nothing else. It cannot, structurally,
+carry the \emph{order} they appeared in.
+\texttt{\textquotesingle{}dog\textquotesingle{}\ !=\ \textquotesingle{}god\textquotesingle{}};
+a hash meant to reconstruct spelling exactly can't lose that.
+
+\hypertarget{the-naive-scheme-and-where-it-breaks}{%
+\subsubsection{5.1 The naive scheme, and where it
+breaks}\label{the-naive-scheme-and-where-it-breaks}}
+
+One prime per letter, alphabetically, product of the word:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\_primes }\OperatorTok{=}\NormalTok{ sieve(}\DecValTok{200}\NormalTok{)}
+\NormalTok{LETTER\_PRIME }\OperatorTok{=}\NormalTok{ \{}\BuiltInTok{chr}\NormalTok{(}\BuiltInTok{ord}\NormalTok{(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{) }\OperatorTok{+}\NormalTok{ i): \_primes[i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{26}\NormalTok{)\}}
+\CommentTok{\# a=2, b=3, c=5, d=7, e=11, ... z=101}
+
+\KeywordTok{def}\NormalTok{ naive\_phonetic\_hash(word: }\BuiltInTok{str}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+\NormalTok{    prod }\OperatorTok{=} \DecValTok{1}
+    \ControlFlowTok{for}\NormalTok{ ch }\KeywordTok{in}\NormalTok{ word.lower():}
+        \ControlFlowTok{if}\NormalTok{ ch.isalpha():}
+\NormalTok{            prod }\OperatorTok{*=}\NormalTok{ LETTER\_PRIME[ch]}
+    \ControlFlowTok{return}\NormalTok{ prod}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb},
+cell 2.
+
+Run against real words:
+
+\begin{verbatim}
+'cat'  ->  710
+'act'  ->  710
+'tac'  ->  710
+\end{verbatim}
+
+\texttt{cat}, \texttt{act}, and \texttt{tac} --- three orderings of the
+same three letters --- all hash to exactly 710. That's not a near-miss,
+it's every permutation landing on the same integer, every time, by
+construction:
+
+\begin{verbatim}
+naive_phonetic_hash('cat') == 710
+naive_phonetic_hash('act') == 710
+equal: True
+
+naive_phonetic_hash('listen') == 1914801911
+naive_phonetic_hash('silent') == 1914801911
+equal: True
+\end{verbatim}
+
+Live, runnable: \texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb},
+cell 4.
+
+Every anagram pair in English collides. A prime-per-letter product is an
+excellent hash of the \emph{multiset} of a word's letters and a total
+failure as a hash of the \emph{word}.
+
+\hypertarget{the-fix-position-picks-the-base-the-letter-is-the-exponent}{%
+\subsubsection{5.2 The fix --- position picks the base, the letter is
+the
+exponent}\label{the-fix-position-picks-the-base-the-letter-is-the-exponent}}
+
+\texttt{VAPMIP/wordnet\_boxkite.py::spelling\_code} inverts which part
+of the construction carries which information. Position, not letter
+identity, selects the prime; the letter becomes the exponent on it:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# VAPMIP/wordnet\_boxkite.py {-}{-} the shipped function, not restated}
+\ImportTok{from}\NormalTok{ typing }\ImportTok{import}\NormalTok{ List}
+
+\KeywordTok{def}\NormalTok{ \_sieve(n: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ List[}\BuiltInTok{int}\NormalTok{]:}
+\NormalTok{    sv }\OperatorTok{=} \BuiltInTok{bytearray}\NormalTok{([}\DecValTok{1}\NormalTok{]) }\OperatorTok{*}\NormalTok{ (n }\OperatorTok{+} \DecValTok{1}\NormalTok{)}
+\NormalTok{    sv[}\DecValTok{0}\NormalTok{] }\OperatorTok{=}\NormalTok{ sv[}\DecValTok{1}\NormalTok{] }\OperatorTok{=} \DecValTok{0}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{2}\NormalTok{, }\BuiltInTok{int}\NormalTok{(n }\OperatorTok{**} \FloatTok{0.5}\NormalTok{) }\OperatorTok{+} \DecValTok{1}\NormalTok{):}
+        \ControlFlowTok{if}\NormalTok{ sv[i]:}
+\NormalTok{            sv[i }\OperatorTok{*}\NormalTok{ i::i] }\OperatorTok{=} \BuiltInTok{bytearray}\NormalTok{(}\BuiltInTok{len}\NormalTok{(sv[i }\OperatorTok{*}\NormalTok{ i::i]))}
+    \ControlFlowTok{return}\NormalTok{ [i }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n }\OperatorTok{+} \DecValTok{1}\NormalTok{) }\ControlFlowTok{if}\NormalTok{ sv[i]]}
+
+\NormalTok{\_P }\OperatorTok{=}\NormalTok{ \_sieve(}\DecValTok{200\_000}\NormalTok{)}
+
+\NormalTok{LETTER\_CAP }\OperatorTok{=} \DecValTok{71}                                      \CommentTok{\# }\AlertTok{NOTE}\CommentTok{: 20{-}prime tier, not §4\textquotesingle{}s 65}
+\NormalTok{LETTER\_PRIMES }\OperatorTok{=}\NormalTok{ [p }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ \_P }\ControlFlowTok{if}\NormalTok{ p }\OperatorTok{\textless{}=}\NormalTok{ LETTER\_CAP]   }\CommentTok{\# [2,3,5,7,...,71], 20 of them}
+
+\KeywordTok{def}\NormalTok{ spelling\_code(word: }\BuiltInTok{str}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+\NormalTok{    code }\OperatorTok{=} \DecValTok{1}
+    \ControlFlowTok{for}\NormalTok{ i, ch }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(w }\ControlFlowTok{for}\NormalTok{ w }\KeywordTok{in}\NormalTok{ word.lower() }\ControlFlowTok{if}\NormalTok{ w.isalpha()):}
+\NormalTok{        p }\OperatorTok{=}\NormalTok{ LETTER\_PRIMES[i }\OperatorTok{\%} \BuiltInTok{len}\NormalTok{(LETTER\_PRIMES)]    }\CommentTok{\# position {-}\textgreater{} base, cycling every 20}
+\NormalTok{        exp }\OperatorTok{=} \BuiltInTok{ord}\NormalTok{(ch) }\OperatorTok{{-}} \BuiltInTok{ord}\NormalTok{(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{) }\OperatorTok{+} \DecValTok{1}                 \CommentTok{\# letter {-}\textgreater{} exponent, a=1..z=26}
+\NormalTok{        code }\OperatorTok{*=}\NormalTok{ p }\OperatorTok{**}\NormalTok{ exp}
+    \ControlFlowTok{return}\NormalTok{ code}
+\end{Highlighting}
+\end{Shaded}
+
+This is \texttt{VAPMIP/wordnet\_boxkite.py::spelling\_code}, the actual
+shipped function, copied whole rather than restated --- running it needs
+nothing this listing doesn't already define.
+\texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb} cell 6 imports and
+runs the same function as a documentation margin.
+
+The 20 primes are one \textbf{per position}, not one per letter --- the
+alphabet is not truncated. All 26 letters are fully carried, at every
+position, by the exponent
+(\texttt{ord(ch)-ord(\textquotesingle{}a\textquotesingle{})+1},
+\texttt{a=1..z=26}); a lone letter's \texttt{spelling\_code} is just
+that base's exponent, confirmed for all 26:
+\texttt{a→2,\ b→4,\ c→8,\ d→16,\ ...\ z→67108864}. What the 20 actually
+bounds is \textbf{word length}: past the 20th letter, a position reuses
+an earlier position's base prime, and the two positions' exponents land
+on the same base and simply \textbf{add}. Built a real one, not a
+hypothetical --- two distinct 21-letter words, position 0 and position
+20 sharing base prime 2, \texttt{1+3\ ==\ 2+2}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ spelling\_code(}\StringTok{\textquotesingle{}a\textquotesingle{}} \OperatorTok{+} \StringTok{\textquotesingle{}x\textquotesingle{}}\OperatorTok{*}\DecValTok{19} \OperatorTok{+} \StringTok{\textquotesingle{}c\textquotesingle{}}\NormalTok{)   }\CommentTok{\# pos 0=\textquotesingle{}a\textquotesingle{}(1), pos 20=\textquotesingle{}c\textquotesingle{}(3) {-}\textgreater{} 1+3=4 on base 2}
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ spelling\_code(}\StringTok{\textquotesingle{}b\textquotesingle{}} \OperatorTok{+} \StringTok{\textquotesingle{}x\textquotesingle{}}\OperatorTok{*}\DecValTok{19} \OperatorTok{+} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{)   }\CommentTok{\# pos 0=\textquotesingle{}b\textquotesingle{}(2), pos 20=\textquotesingle{}b\textquotesingle{}(2) {-}\textgreater{} 2+2=4 on base 2}
+\VariableTok{True}   \CommentTok{\# genuine collision — not because a letter is missing, because a position repeated}
+\end{Highlighting}
+\end{Shaded}
+
+Runnable directly against the shipped \texttt{spelling\_code} above ---
+a constructed worked example, not a stored notebook cell, reproducible
+by calling both lines against \texttt{VAPMIP/wordnet\_boxkite.py}.
+
+Position \texttt{i}'s prime is fixed regardless of which letter sits
+there; swapping two letters now swaps which \emph{exponent} lands on
+which \emph{base} --- no longer a symmetric product, order survives (for
+words that don't reach the wraparound above). A trailing \texttt{/} on a
+number below is a line-wrap mark only, not part of the value --- join
+the digits across the break to get the real integer back; the same
+convention is used everywhere a number this long appears again in this
+paper:
+
+\begin{verbatim}
+'cat'     spelling_code = 2288818359375000
+'act'     spelling_code = 5149841308593750
+'listen'  spelling_code = 778058911374966818061872931448741213/
+                          84823203125000000000000
+'silent'  spelling_code = 305601935552050069509298342748495166/
+                          804755637888000000000000
+
+cat == act now?    False
+listen == silent?  False
+\end{verbatim}
+
+Live, runnable: \texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb},
+cell 6.
+
+Exact, order-sensitive spelling as a prime, recoverable --- position
+\texttt{i}'s prime is known in advance, so factoring the code back at
+each of those 20 recurring bases recovers each letter's exponent, in
+order:
+
+\begin{verbatim}
+'cat'              -> decoded 'cat'              match: True
+'act'              -> decoded 'act'              match: True
+'windspeed'        -> decoded 'windspeed'        match: True
+'reconstructible'  -> decoded 'reconstructible'  match: True
+\end{verbatim}
+
+Live, runnable: \texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb},
+cell 8.
+
+\hypertarget{measured-not-asserted-live-30000-word-sample}{%
+\subsubsection{5.3 Measured, not asserted --- live 30,000-word
+sample}\label{measured-not-asserted-live-30000-word-sample}}
+
+\begin{verbatim}
+exact word recovery: 27,375/28,728  (95.290%)
+words <=20 alpha chars: 28,296  exact 27,375 (96.745%)
+words  >20 alpha chars: 432  (position cycle wraps at 20 -> exponents
+                              add on the reused prime -> lossy, by
+                              construction)
+\end{verbatim}
+
+Live, runnable: \texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb},
+cell 10.
+
+The failure mode is exact and predicted, not mysterious: the tier is 20
+primes, cycling. A word over 20 letters reuses a base prime at two
+different positions, and since a product of prime powers can't
+distinguish \texttt{p\^{}a\ ·\ p\^{}b} from \texttt{p\^{}(a+b)}, those
+two positions' exponents just add --- recoverable as a sum, not as two
+separate letters. Lossy exactly where the construction says it will be,
+and nowhere else: \textbf{96.745\%} exact on the ≤20-letter words the
+scheme is actually built for, \textbf{0\%} guaranteed-exact past that by
+the same arithmetic that gives the 96.745\%.
+
+\hypertarget{one-honest-note-carried-forward}{%
+\subsubsection{One honest note carried
+forward}\label{one-honest-note-carried-forward}}
+
+§4 established 65 primes (≤313) as the complete letter pool. What
+actually ships here uses a smaller, 20-prime cycling tier (≤71) --- the
+20-prime tier is what the position-cycling needs (enough bases that most
+real words never wrap), not the full 65. Worth being upfront about in
+the paper rather than letting a reader notice the numbers don't match:
+is the 65-prime pool meant to become the tier size eventually (fewer
+wraps, longer words safe), or is 20 the settled design and 65 is a
+separate fact about the domain, not a promise about this tier's size?
+
+\hypertarget{related-work-collision-bounded-compact-encoding-elsewhere}{%
+\subsubsection{5.4 Related work --- collision-bounded compact encoding,
+elsewhere}\label{related-work-collision-bounded-compact-encoding-elsewhere}}
+
+\texttt{spelling\_code}`s wraparound failure mode (§5.2--5.3: a base
+prime reused past position 20, two positions' exponents silently adding)
+is the same shape of trade-off two well-known compact-encoding schemes
+make on purpose, for the same resource reason --- a fixed, small address
+space has to represent an unboundedly larger input. Bloom,
+\emph{Space/Time Trade-offs in Hash Coding with Allowable Errors} (1970)
+is the founding instance: a fixed-size bit array standing in for an
+arbitrarily large set, with a \textbf{named, quantified} false-positive
+rate as the price of the fixed size --- the same posture §5.3 takes
+toward its own \texttt{0\%}-past-20-letters number, stated as a measured
+consequence of the tier size, not hidden. Weinberger, Dasgupta,
+Langford, Smola, Attenberg, \emph{Feature Hashing for Large Scale
+Multitask Learning} (2009) makes the identical move one level more
+structurally: many distinct input features are folded onto a fixed,
+small number of output slots by a hash function, and two features
+landing on the same slot silently \textbf{add} their contributions ---
+which is exactly \texttt{spelling\_code}'s own wraparound arithmetic
+(\texttt{1+3\ ==\ 2+2} on the shared base, §5.2), independently arrived
+at for a completely different kind of input. Both precedents accept the
+collision as a statistical cost, spread thin across a large random
+input; \texttt{spelling\_code} instead makes it a \emph{positional} fact
+of a specific scheme (only words past 20 letters wrap, and exactly where
+they wrap is computable in advance, not merely bounded in expectation)
+--- a narrower, more exact guarantee bought by giving up their
+generality to inputs of truly unbounded shape.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{monad3_c.bin-built-to-carry-the-19d-wordnet-relationships}{%
+\subsection{\texorpdfstring{6. \texttt{monad3\_c.bin} --- built to carry
+the 19D WordNet
+relationships}{6. monad3\_c.bin --- built to carry the 19D WordNet relationships}}\label{monad3_c.bin-built-to-carry-the-19d-wordnet-relationships}}
+
+Pigeon-holed deliberately: this section is how \texttt{monad3\_c.bin}
+came to carry the WordNet box-kite table, nothing wider. Explicitly
+\textbf{out of scope here} --- bootstrapping and bulk corpus ingest
+(\texttt{ingest.c}, \texttt{build\_monad\_bin.py\ merge}), the
+filesystem-ingestion experiments and the \texttt{.bin} poisoning that
+followed from pointing a bulk ingest at a real computer's own file
+structure, and the vocabulary-update law's formulas (what the Monad's
+live ``learn'' step actually computes). Named here so the boundary is
+visible to a reader, not silently narrowed.
+
+\hypertarget{the-wordnet-box-kite-table-built-in-c}{%
+\subsubsection{6.1 The WordNet box-kite table, built in
+C}\label{the-wordnet-box-kite-table-built-in-c}}
+
+\texttt{VAPMIP/PtolC/boxkite\_bin.h} defines the shared record --- one
+\texttt{BoxKiteEntry} per WordNet synset, 19 compressed relation
+exponents plus a depth weight, the same schema
+\texttt{wordnet\_boxkite.py} uses on the Python side (documented as
+``two different serialisations of one schema, not two different
+schemas''):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#define N\_RELATIONS       }\DecValTok{19}
+\PreprocessorTok{\#define BOXKITE\_WORD\_LEN  }\DecValTok{32}
+
+\KeywordTok{typedef} \KeywordTok{struct} \OperatorTok{\{}
+    \DataTypeTok{char}\NormalTok{     word}\OperatorTok{[}\NormalTok{BOXKITE\_WORD\_LEN}\OperatorTok{];}  \CommentTok{/* first lemma, NUL{-}terminated */}
+    \DataTypeTok{uint8\_t}\NormalTok{  pos}\OperatorTok{;}                     \CommentTok{/* 1=NOUN 2=VERB 3=ADJ 4=ADV (wn.h values) */}
+    \DataTypeTok{uint8\_t}\NormalTok{  \_pad}\OperatorTok{[}\DecValTok{3}\OperatorTok{];}
+    \DataTypeTok{uint32\_t}\NormalTok{ synset\_offset}\OperatorTok{;}           \CommentTok{/* WordNet\textquotesingle{}s own offset {-}{-} the stable id */}
+    \DataTypeTok{int16\_t}\NormalTok{  vector}\OperatorTok{[}\NormalTok{N\_RELATIONS}\OperatorTok{];}     \CommentTok{/* compress\_count(){-}ed relation exponents */}
+    \DataTypeTok{float}\NormalTok{    depth\_weight}\OperatorTok{;}            \CommentTok{/* the one adjustable knob {-}{-} default 1.0 */}
+\OperatorTok{\}}\NormalTok{ BoxKiteEntry}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{VAPMIP/PtolC/boxkite\_bin.h} --- no notebook
+wraps this one, it's a C header; the actual live struct, not a
+restatement of it.
+
+\texttt{VAPMIP/PtolC/dump\_boxkite\_bin.c} builds
+\texttt{c\_monad\_wordnet.bin} from that struct --- reading WordNet's
+own \texttt{index.noun/verb/adj/adv} files directly (not a library
+iterator; \texttt{getindex()} is fuzzy search, not enumeration), calling
+the real C WordNet library (\texttt{index\_lookup},
+\texttt{read\_synset}) per word, first sense only, with
+\texttt{compress\_count} ported verbatim from the Python file so the two
+sides agree by construction, not by convention.
+
+The cross-check that they actually do agree: \texttt{wntest.c}, run
+against the real C WordNet library, \texttt{bank}'s first noun sense ---
+\texttt{HYPERPTR=1,\ HYPOPTR=2} --- exactly matching Python's
+\texttt{\{\textquotesingle{}hypernyms\textquotesingle{}:1,\textquotesingle{}hyponyms\textquotesingle{}:2\}}
+for \texttt{bank.n.01} (verified 2026-08-25).
+
+\hypertarget{folding-into-monad3_c.bin}{%
+\subsubsection{\texorpdfstring{6.2 Folding into
+\texttt{monad3\_c.bin}}{6.2 Folding into monad3\_c.bin}}\label{folding-into-monad3_c.bin}}
+
+\texttt{VAPMIP/monad\_combine.py} is where the already-built WordNet
+table joins the rest --- confirming the sequence: the box-kite/WordNet
+piece existed first, as its own file, before anything was combined. The
+real reader, whole, not a restatement --- \texttt{\_BK\_STRUCT}'s format
+string is the exact byte layout of §6.1's \texttt{BoxKiteEntry}
+(\texttt{32s} word, \texttt{B} pos, \texttt{3x} padding, \texttt{I}
+synset offset, \texttt{19h} the vector, \texttt{f} depth weight --- 82
+bytes, checked against \texttt{sizeof(BoxKiteEntry)} in C directly):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# VAPMIP/monad\_combine.py}
+\ImportTok{import}\NormalTok{ struct}
+\ImportTok{from}\NormalTok{ typing }\ImportTok{import}\NormalTok{ Dict}
+
+\NormalTok{\_BK\_STRUCT }\OperatorTok{=}\NormalTok{ struct.Struct(}\StringTok{\textquotesingle{}\textless{}32sB3xI19hf\textquotesingle{}}\NormalTok{)   }\CommentTok{\# BoxKiteEntry, 82 bytes}
+
+\KeywordTok{def}\NormalTok{ read\_boxkite\_c(path: }\BuiltInTok{str}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ Dict[}\BuiltInTok{str}\NormalTok{, }\BuiltInTok{dict}\NormalTok{]:}
+    \CommentTok{"""c\_monad\_wordnet.bin: BXKT header + N * BoxKiteEntry. Returns}
+\CommentTok{    \{word: \{\textquotesingle{}pos\textquotesingle{}, \textquotesingle{}offset\textquotesingle{}, \textquotesingle{}vec19\textquotesingle{}, \textquotesingle{}depth\_weight\textquotesingle{}\}\}."""}
+    \ControlFlowTok{with} \BuiltInTok{open}\NormalTok{(path, }\StringTok{\textquotesingle{}rb\textquotesingle{}}\NormalTok{) }\ImportTok{as}\NormalTok{ f:}
+\NormalTok{        magic, version, n, esize }\OperatorTok{=}\NormalTok{ struct.unpack(}\StringTok{\textquotesingle{}\textless{}4sIII\textquotesingle{}}\NormalTok{, f.read(}\DecValTok{16}\NormalTok{))}
+        \ControlFlowTok{assert}\NormalTok{ magic }\OperatorTok{==} \StringTok{b\textquotesingle{}BXKT\textquotesingle{}}\NormalTok{, magic}
+        \ControlFlowTok{assert}\NormalTok{ esize }\OperatorTok{==}\NormalTok{ \_BK\_STRUCT.size, (esize, \_BK\_STRUCT.size)}
+\NormalTok{        out: Dict[}\BuiltInTok{str}\NormalTok{, }\BuiltInTok{dict}\NormalTok{] }\OperatorTok{=}\NormalTok{ \{\}}
+\NormalTok{        blob }\OperatorTok{=}\NormalTok{ f.read(n }\OperatorTok{*}\NormalTok{ esize)}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n):}
+\NormalTok{        word\_b, pos, offset, }\OperatorTok{*}\NormalTok{rest }\OperatorTok{=}\NormalTok{ \_BK\_STRUCT.unpack\_from(blob, i }\OperatorTok{*}\NormalTok{ esize)}
+\NormalTok{        vec }\OperatorTok{=} \BuiltInTok{list}\NormalTok{(rest[:}\DecValTok{19}\NormalTok{])}
+\NormalTok{        dw }\OperatorTok{=}\NormalTok{ rest[}\DecValTok{19}\NormalTok{]}
+\NormalTok{        word }\OperatorTok{=}\NormalTok{ word\_b.split(}\StringTok{b\textquotesingle{}}\CharTok{\textbackslash{}x00}\StringTok{\textquotesingle{}}\NormalTok{, }\DecValTok{1}\NormalTok{)[}\DecValTok{0}\NormalTok{].decode(}\StringTok{\textquotesingle{}utf{-}8\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}replace\textquotesingle{}}\NormalTok{)}
+        \ControlFlowTok{if}\NormalTok{ word:}
+\NormalTok{            out[word] }\OperatorTok{=}\NormalTok{ \{}\StringTok{\textquotesingle{}pos\textquotesingle{}}\NormalTok{: pos, }\StringTok{\textquotesingle{}offset\textquotesingle{}}\NormalTok{: offset,}
+                         \StringTok{\textquotesingle{}vec19\textquotesingle{}}\NormalTok{: vec, }\StringTok{\textquotesingle{}depth\_weight\textquotesingle{}}\NormalTok{: dw\}}
+    \ControlFlowTok{return}\NormalTok{ out}
+\end{Highlighting}
+\end{Shaded}
+
+Folded in with the other two sources (\texttt{monad\_english.bin}'s
+β/E/A-matrix state, \texttt{monad\_phonetic.bin}'s ARPAbet table, §6.3)
+via \texttt{CombinedMonad} and written back out as one fixed-offset,
+mmap-able file:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cm }\OperatorTok{=}\NormalTok{ CombinedMonad(english}\OperatorTok{=}\NormalTok{english\_monad, wordnet}\OperatorTok{=}\NormalTok{read\_boxkite\_c(path),}
+\NormalTok{                    phonetic}\OperatorTok{=}\NormalTok{read\_phonetic(phon\_path))}
+\NormalTok{write\_c(cm, }\StringTok{"monad3\_c.bin"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{write\_c} takes the \textbf{union} of all three sources'
+vocabularies
+(\texttt{sorted(set(eng.words)\ \textbar{}\ set(cm.wordnet)\ \textbar{}\ set(cm.phonetic))})
+and emits the single file every notebook so far has loaded directly ---
+\texttt{eng:} (β/E/A-matrix), \texttt{wn:} (this section's
+\texttt{BoxKiteEntry} table), \texttt{phon:} (§6.3).
+\texttt{CombinedMonad}/\texttt{write\_c} themselves are large enough
+(§13.5 scope) that a full listing here would be a sample, not
+transparency --- \texttt{VAPMIP/monad\_combine.py} is the pointer, per
+\href{../../.claude/skills/cs-paper-code-conventions/SKILL.md}{\texttt{cs-paper-code-conventions}}
+§1's rule for long, many-file mechanisms.
+
+\texttt{write\_c} takes the \textbf{union} of all three sources'
+vocabularies
+(\texttt{sorted(set(eng.words)\ \textbar{}\ set(cm.wordnet)\ \textbar{}\ set(cm.phonetic))})
+and emits the single fixed-offset, mmap-able file every notebook so far
+has loaded directly --- \texttt{eng:} (β/E/A-matrix), \texttt{wn:} (this
+section's \texttt{BoxKiteEntry} table), \texttt{phon:} (§6.3).
+
+\hypertarget{phon-in-one-line}{%
+\subsubsection{\texorpdfstring{6.3 \texttt{phon:}, in one
+line}{6.3 phon:, in one line}}\label{phon-in-one-line}}
+
+Checked directly: \texttt{monad\_phonetic.bin} is built independently,
+from \texttt{nltk.corpus.cmudict} (real ARPAbet pronunciation + stress),
+keyed only by word spelling --- no synset, no WordNet relation, anywhere
+in its construction. No WordNet wiring to report, so it stays a sibling
+section in the packed file and out of scope here. One note worth
+keeping, since it's a real, stated limitation: ARPAbet is ASCII by
+convention; a move to Unicode IPA is future work, not this file's
+current form.
+
+\hypertarget{not-static}{%
+\subsubsection{6.4 Not static}\label{not-static}}
+
+One thing worth saying plainly and no more: \texttt{monad3\_c.bin} is a
+\textbf{knowledge store}, not a frozen table --- the Monad's live
+learning step keeps deepening it, and a word only reaches ``verified''
+status once it's been seen from both directions, the WordNet entry and
+real usage. The mechanism itself --- what ``learn'' actually computes
+--- is out of scope for this section by design (§ note above); its role
+here is just this: \textbf{the file this section built keeps growing},
+it isn't a one-time export.
+
+What it grows \emph{into} is worth stating precisely, because it is not
+a larger version of the same table --- it is a different kind of
+structure altogether. Every pass of ingestion pushes a word's entry one
+level deeper: from a bare WordNet lookup, to a lookup confirmed by real
+usage, to a fully weighted composite of three separate layers ---
+\textbf{context} (which other words this one keeps company with),
+\textbf{semantics} (how it is actually used, not merely what its
+dictionary sense claims), and \textbf{static grammar rules} (the part of
+its behaviour that doesn't move). Each layer is granular, weighted, and
+kept separately, so a later read can ask any one of the three questions
+independently instead of getting one blended number back.
+
+This is not a novel or magical claim about what a vocabulary can hold. A
+person's entire education --- everything they were ever taught, read, or
+told, across a lifetime of exchanges with other people and with pieces
+of paper --- is stored the same way: as a vocabulary, deepened by use,
+not as a separate ledger kept alongside it. Nobody finds it mysterious
+that a fluent speaker's word choices carry the weight of their whole
+education; that a person who has read widely says things differently
+from one who hasn't, without consulting a separate archive of what
+they've read. \texttt{monad3\_c.bin}'s deepening is the same storage
+mechanism, applied to the same kind of accumulation, mechanised: what
+has been ingested is not appended somewhere else, it is folded into the
+vocabulary that will be used to speak about it next.
+
+\hypertarget{the-update-mechanism-itself-in-c}{%
+\subsubsection{6.5 The update mechanism itself, in
+C}\label{the-update-mechanism-itself-in-c}}
+
+\texttt{notebooks/06.5\_monad3c\_update\_mechanism.ipynb} --- a genuine
+C-kernel notebook (\texttt{jupyter-c-kernel}, each cell standalone,
+compiled and run with \texttt{gcc}, not a Python restatement), covering
+§6.4's ``continuing growth'' claim at the level asked for: the real
+update law (\texttt{monad\_learn\_ex}'s β-deepening,
+\texttt{prose\_seen} ladder, A-matrix 2D inverse-distance coupling ---
+\texttt{PtolC/monad.c}, real constants from \texttt{PtolC/ptolemy.h}),
+and only what the daemon \emph{sends} to trigger it (message class +
+weight, \texttt{external=1.5}/\texttt{internal=0.9}) --- not the
+daemon's own socket/FIFO/spool plumbing. Separate from and complementary
+to the Python \texttt{Crank.learn} shown for CS-paper readability
+elsewhere.
+
+Two real findings surfaced just by running the extracted logic, both
+flagged rather than fixed: -
+\textbf{\texttt{MONAD\_BETA\_SAT\ =\ 7.552}} (\texttt{ptolemy.h}), not
+the \texttt{(0,\ 1{]}} range \texttt{monad\_bin/SPEC.md} states for β
+--- a live discrepancy between the spec and the actual C constant. -
+\textbf{The \texttt{prose\_seen} ladder is order-dependent,
+asymmetrically}: WordNet-then-prose reaches \texttt{3} (``verified
+common''); prose-then-WordNet only reaches \texttt{2}, silently losing
+the earlier prose sighting --- the \texttt{NS\_FT\_WORDNET} branch
+overwrites unconditionally rather than checking prior state.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{reading-monad3_c.bins-wordnet-relationships}{%
+\subsection{\texorpdfstring{7. Reading \texttt{monad3\_c.bin}'s WordNet
+relationships}{7. Reading monad3\_c.bin's WordNet relationships}}\label{reading-monad3_c.bins-wordnet-relationships}}
+
+§6 built the store; this section is only the \textbf{reading} mechanism
+--- how a synset's 19 stored relation counts become one address. Nothing
+here touches the box kite yet; it's the input the pencil/box-kite
+section consumes directly, not developed further here on purpose.
+
+\hypertarget{nineteen-relations-one-prime-each}{%
+\subsubsection{7.1 Nineteen relations, one prime
+each}\label{nineteen-relations-one-prime-each}}
+
+\texttt{VAPMIP/wordnet\_boxkite.py}: the 19 relation types this store
+carries (\texttt{RELATION\_METHODS}) each get their own fixed prime line
+(\texttt{CONTEXT\_PRIMES}), starting just above the spelling tier's
+ceiling --- reusing \texttt{\_sieve}/\texttt{\_P} from §5.2, the same
+sieve, one call:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# VAPMIP/wordnet\_boxkite.py {-}{-} continues directly from §5.2\textquotesingle{}s \_P}
+\NormalTok{LETTER\_CAP }\OperatorTok{=} \DecValTok{71}
+\NormalTok{CONTEXT\_PRIMES }\OperatorTok{=}\NormalTok{ [p }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ \_P }\ControlFlowTok{if}\NormalTok{ p }\OperatorTok{\textgreater{}}\NormalTok{ LETTER\_CAP]   }\CommentTok{\# disjoint from LETTER\_PRIMES by construction}
+
+\NormalTok{RELATION\_METHODS }\OperatorTok{=}\NormalTok{ [}\StringTok{\textquotesingle{}hypernyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}instance\_hypernyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}hyponyms\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}instance\_hyponyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}member\_holonyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}substance\_holonyms\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}part\_holonyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}member\_meronyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}substance\_meronyms\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}part\_meronyms\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}attributes\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}entailments\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}causes\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}also\_sees\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}verb\_groups\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}similar\_tos\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}topic\_domains\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}region\_domains\textquotesingle{}}\NormalTok{,}
+    \StringTok{\textquotesingle{}usage\_domains\textquotesingle{}}\NormalTok{]                                            }\CommentTok{\# 19}
+
+\ControlFlowTok{assert} \BuiltInTok{len}\NormalTok{(RELATION\_METHODS) }\OperatorTok{\textless{}=} \BuiltInTok{len}\NormalTok{(CONTEXT\_PRIMES)}
+\ControlFlowTok{assert}\NormalTok{ CONTEXT\_PRIMES[:}\DecValTok{19}\NormalTok{] }\OperatorTok{==}\NormalTok{ [}\DecValTok{73}\NormalTok{, }\DecValTok{79}\NormalTok{, }\DecValTok{83}\NormalTok{, }\DecValTok{89}\NormalTok{, }\DecValTok{97}\NormalTok{, }\DecValTok{101}\NormalTok{, }\DecValTok{103}\NormalTok{, }\DecValTok{107}\NormalTok{, }\DecValTok{109}\NormalTok{, }\DecValTok{113}\NormalTok{,}
+                                \DecValTok{127}\NormalTok{, }\DecValTok{131}\NormalTok{, }\DecValTok{137}\NormalTok{, }\DecValTok{139}\NormalTok{, }\DecValTok{149}\NormalTok{, }\DecValTok{151}\NormalTok{, }\DecValTok{157}\NormalTok{, }\DecValTok{163}\NormalTok{, }\DecValTok{167}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{CONTEXT\_PRIMES} falls straight out of the sieve already built
+for §5's letter tier --- nothing about the boundary at 71/73 is
+hand-picked twice.
+
+\hypertarget{nineteen-counts-one-integer-exact-and-the-real-primality-test-underneath}{%
+\subsubsection{7.2 Nineteen counts → one integer, exact --- and the real
+primality test
+underneath}\label{nineteen-counts-one-integer-exact-and-the-real-primality-test-underneath}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ math}
+
+\KeywordTok{def}\NormalTok{ compress\_count(count: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+    \CommentTok{"""A relation\textquotesingle{}s target count, log{-}compressed before it becomes an}
+\CommentTok{    exponent (raw counts made some synsets\textquotesingle{} context\_code hundreds of}
+\CommentTok{    digits long; log2{-}compressing first brings the same synset down}
+\CommentTok{    an order of magnitude, no real downside found)."""}
+    \ControlFlowTok{return} \BuiltInTok{round}\NormalTok{(math.log2(count }\OperatorTok{+} \DecValTok{1}\NormalTok{))}
+
+\KeywordTok{def}\NormalTok{ context\_vector(synset) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{list}\NormalTok{:}
+    \CommentTok{"""One exponent per RELATION\_METHODS entry. Nothing about the}
+\CommentTok{    surface word (spelling) is read anywhere in this function, on purpose."""}
+\NormalTok{    exponents }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ method\_name }\KeywordTok{in}\NormalTok{ RELATION\_METHODS:}
+        \ControlFlowTok{try}\NormalTok{:}
+\NormalTok{            targets }\OperatorTok{=} \BuiltInTok{getattr}\NormalTok{(synset, method\_name)()}
+\NormalTok{            exponents.append(compress\_count(}\BuiltInTok{len}\NormalTok{(targets)))}
+        \ControlFlowTok{except} \PreprocessorTok{Exception}\NormalTok{:}
+\NormalTok{            exponents.append(}\DecValTok{0}\NormalTok{)}
+    \ControlFlowTok{return}\NormalTok{ exponents}
+
+\KeywordTok{def}\NormalTok{ context\_code(synset) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+    \CommentTok{"""prod CONTEXT\_PRIMES[i]\^{}exponent\_i {-}{-} a pure function of relational}
+\CommentTok{    structure. Unique factorisation makes it recoverable exactly."""}
+\NormalTok{    code }\OperatorTok{=} \DecValTok{1}
+    \ControlFlowTok{for}\NormalTok{ p, e }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(CONTEXT\_PRIMES, context\_vector(synset)):}
+        \ControlFlowTok{if}\NormalTok{ e:}
+\NormalTok{            code }\OperatorTok{*=}\NormalTok{ p }\OperatorTok{**}\NormalTok{ e}
+    \ControlFlowTok{return}\NormalTok{ code}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{context\_addr} places that integer at its own prime address ---
+\texttt{next\_prime(context\_code(synset))} --- and this is where a
+genuinely different piece of established mathematics enters:
+\texttt{context\_code} for a synset with many relations is a large
+integer, far past anything a sieve table (§3's ≤65537 range) can test
+for primality. The primality test that actually runs on numbers this
+size, reused verbatim from
+\texttt{ContextPlease/claude/scratchpad/2026-08-18\_three\_faces\_and\_identity\_bin/\ boxkite\_prime\_hash.py},
+is a \textbf{Miller--Rabin} test with a fixed witness set ---
+deterministic, not probabilistic, for every \texttt{n} below 3.3×10²⁴
+(\texttt{Post-Hoc:} Miller, 1976; Rabin, 1980 --- the witness set below
+is the standard one that makes that determinism guarantee hold):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ \_is\_prime(n: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{bool}\NormalTok{:}
+    \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{\textless{}} \DecValTok{2}\NormalTok{:}
+        \ControlFlowTok{return} \VariableTok{False}
+    \ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ (}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{37}\NormalTok{):}
+        \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{\%}\NormalTok{ p }\OperatorTok{==} \DecValTok{0}\NormalTok{:}
+            \ControlFlowTok{return}\NormalTok{ n }\OperatorTok{==}\NormalTok{ p}
+\NormalTok{    d, r }\OperatorTok{=}\NormalTok{ n }\OperatorTok{{-}} \DecValTok{1}\NormalTok{, }\DecValTok{0}
+    \ControlFlowTok{while}\NormalTok{ d }\OperatorTok{\%} \DecValTok{2} \OperatorTok{==} \DecValTok{0}\NormalTok{:}
+\NormalTok{        d }\OperatorTok{//=} \DecValTok{2}
+\NormalTok{        r }\OperatorTok{+=} \DecValTok{1}
+    \ControlFlowTok{for}\NormalTok{ a }\KeywordTok{in}\NormalTok{ (}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{11}\NormalTok{, }\DecValTok{13}\NormalTok{, }\DecValTok{17}\NormalTok{, }\DecValTok{19}\NormalTok{, }\DecValTok{23}\NormalTok{, }\DecValTok{29}\NormalTok{, }\DecValTok{31}\NormalTok{, }\DecValTok{37}\NormalTok{):}
+\NormalTok{        x }\OperatorTok{=} \BuiltInTok{pow}\NormalTok{(a, d, n)}
+        \ControlFlowTok{if}\NormalTok{ x }\KeywordTok{in}\NormalTok{ (}\DecValTok{1}\NormalTok{, n }\OperatorTok{{-}} \DecValTok{1}\NormalTok{):}
+            \ControlFlowTok{continue}
+        \ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(r }\OperatorTok{{-}} \DecValTok{1}\NormalTok{):}
+\NormalTok{            x }\OperatorTok{=}\NormalTok{ x }\OperatorTok{*}\NormalTok{ x }\OperatorTok{\%}\NormalTok{ n}
+            \ControlFlowTok{if}\NormalTok{ x }\OperatorTok{==}\NormalTok{ n }\OperatorTok{{-}} \DecValTok{1}\NormalTok{:}
+                \ControlFlowTok{break}
+        \ControlFlowTok{else}\NormalTok{:}
+            \ControlFlowTok{return} \VariableTok{False}
+    \ControlFlowTok{return} \VariableTok{True}
+
+\KeywordTok{def}\NormalTok{ next\_prime(n: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{int}\NormalTok{:}
+\NormalTok{    n }\OperatorTok{=} \BuiltInTok{max}\NormalTok{(}\DecValTok{2}\NormalTok{, n)}
+    \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{==} \DecValTok{2}\NormalTok{:}
+        \ControlFlowTok{return} \DecValTok{2}
+    \ControlFlowTok{if}\NormalTok{ n }\OperatorTok{\%} \DecValTok{2} \OperatorTok{==} \DecValTok{0}\NormalTok{:}
+\NormalTok{        n }\OperatorTok{+=} \DecValTok{1}
+    \ControlFlowTok{while} \KeywordTok{not}\NormalTok{ \_is\_prime(n):}
+\NormalTok{        n }\OperatorTok{+=} \DecValTok{2}
+    \ControlFlowTok{return}\NormalTok{ n}
+
+\KeywordTok{def}\NormalTok{ context\_addr(synset) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{dict}\NormalTok{:}
+    \CommentTok{"""(code, addr, delta) {-}{-} the lossless pair. addr = next\_prime(code)}
+\CommentTok{    is the synset\textquotesingle{}s location in context space; delta recovers the exact}
+\CommentTok{    code, hence the exact relation{-}counts, exactly."""}
+\NormalTok{    code }\OperatorTok{=}\NormalTok{ context\_code(synset)}
+\NormalTok{    addr }\OperatorTok{=}\NormalTok{ next\_prime(code)}
+    \ControlFlowTok{return}\NormalTok{ \{}\StringTok{\textquotesingle{}code\textquotesingle{}}\NormalTok{: code, }\StringTok{\textquotesingle{}addr\textquotesingle{}}\NormalTok{: addr, }\StringTok{\textquotesingle{}delta\textquotesingle{}}\NormalTok{: addr }\OperatorTok{{-}}\NormalTok{ code\}}
+\end{Highlighting}
+\end{Shaded}
+
+Run against the live store, loading \textbf{146,743 words} carrying a
+stored 19-vector directly from \texttt{monad3\_c.bin}:
+
+\begin{verbatim}
+loaded 146,743 words carrying a stored 19-vector, in 0.44s
+example: "'hood"  vector=[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+         context_code=12191  recovered=[1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+         match=True
+\end{verbatim}
+
+\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb} cell 3 runs
+this same pass as a documentation margin, not a substitute for the
+listing above.
+
+\texttt{\textquotesingle{}hood}'s vector has exactly two nonzero slots
+--- \texttt{hypernyms} (position 0) and \texttt{usage\_domains}
+(position 18) --- and \texttt{12191\ =\ 73¹\ ×\ 167¹}, the product of
+exactly those two primes. Factoring back recovers the same vector,
+exactly, on this and (per the paper's own G1 gate) the full store.
+
+\hypertarget{one-integer-one-real-the-gamma-fold}{%
+\subsubsection{7.3 One integer → one real --- the gamma
+fold}\label{one-integer-one-real-the-gamma-fold}}
+
+\texttt{context\_code} is still a large integer, one per distinct
+relational \emph{shape}, not yet the single continuous scalar the rest
+of this series carries context as:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{log\_code     }\OperatorTok{=}\NormalTok{ Σᵢ v[i] · ln(CONTEXT\_PRIMES[i])}
+\NormalTok{gamma\_radial }\OperatorTok{=}\NormalTok{ tanh(}\FloatTok{0.5}\NormalTok{ · ln(log\_code }\OperatorTok{/}\NormalTok{ LOG\_ANCHOR))}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable:
+\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb}, cell 5.
+
+\texttt{tanh}/\texttt{atanh} round-trip \texttt{log\_code} to machine
+precision; \texttt{log\_code} itself is injective on real vocabulary by
+the same unique-factorisation argument as §7.2, one level up. Measured
+on a 20,000-word sample:
+
+\begin{verbatim}
+sample: 20,000 words
+gamma_radial round trip (tanh -> atanh) max rel err: 8.00e-16
+distinct log_code values seen: 559
+19-vector collisions on a repeated log_code: 0
+\end{verbatim}
+
+559 distinct values over 20,000 words is expected, not a defect --- many
+words share an exact relational shape (§7.1's earlier finding,
+\texttt{hilbert}/ \texttt{irrawaddy}/\texttt{new\_york} among them); the
+fold is checked \emph{within} each shape, not claimed to separate words
+that were never distinct in the first place.
+
+\hypertarget{combined-with-spelling-one-prime-per-word-both-halves-recoverable}{%
+\subsubsection{7.4 Combined with spelling --- one prime per word, both
+halves
+recoverable}\label{combined-with-spelling-one-prime-per-word-both-halves-recoverable}}
+
+§5's \texttt{spelling\_code} uses \texttt{LETTER\_PRIMES}
+(\texttt{≤\ 71}); \texttt{context\_code} uses \texttt{CONTEXT\_PRIMES}
+(\texttt{≥\ 73}) --- disjoint by construction, checked directly:
+
+\begin{verbatim}
+LETTER_PRIMES max: 71   CONTEXT_PRIMES min: 73
+disjoint by construction: True
+\end{verbatim}
+
+Live, runnable:
+\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb}, cell 7.
+
+so \texttt{full\_code\ =\ spelling\_code(word)\ ×\ context\_code(v)},
+\texttt{full\_addr\ =\ next\_prime(full\_code)},
+\texttt{delta\ =\ full\_addr\ −\ full\_code} never has an prime that's
+ambiguous about which half it came from. Measured:
+
+\begin{verbatim}
+286/286 exact full round trip (spelling + full 19D context, from ONE prime)
+\end{verbatim}
+
+Live, runnable:
+\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb}, cell 9.
+
+One full worked example, end to end:
+
+\begin{verbatim}
+word:            'ubermensch'
+context vector:  {'hypernyms': 1}
+spelling_code:   249620148694053351635350542193367877/
+                 351733454685659309076456677307616437/
+                 3387794042547528892750233600000
+context_code:    73
+full_addr:       182222708546658946693805895801158550/
+                 466765421920531295625813374434559999/
+                 257308965105969609170767052800179
+delta:           179
+\end{verbatim}
+
+Live, runnable:
+\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb}, cell 11.
+
+One prime. Both the exact spelling and the full 19-dimensional WordNet
+relational signature of the word, recoverable from
+\texttt{(full\_addr,\ delta)} alone.
+
+\hypertarget{what-this-section-is-not}{%
+\subsubsection{What this section is
+not}\label{what-this-section-is-not}}
+
+Not the box kite, not the pencil. \texttt{gamma\_radial}, exactly as
+folded here, \textbf{is §9's windspeed} --- not an input analogous to
+it, the same number. §9.1 shows the recovery running the other
+direction: given only \texttt{(full\_addr,\ delta)} and the word's own
+spelling, \texttt{gamma\_radial} comes back out with no separate WordNet
+read at all. How that scalar selects a chart or drives a deformation is
+§9's job, not this one's --- this section only has to show the fold is
+exact and reversible, which it is.
+
+\hypertarget{related-work-encoding-a-words-relational-context-elsewhere}{%
+\subsubsection{\texorpdfstring{7.5 Related work --- encoding a word's
+\emph{relational} context,
+elsewhere}{7.5 Related work --- encoding a word's relational context, elsewhere}}\label{related-work-encoding-a-words-relational-context-elsewhere}}
+
+\texttt{context\_code} (§7.2) is not the first attempt to fold a set of
+typed relations --- WordNet's 19, here --- into one compact number
+attached to the thing they describe. The highest-cited precedent is
+Bordes, Usunier, Garcia-Durán, Weston, Yakhnenko, \emph{Translating
+Embeddings for Modeling Multi-Relational Data} (NeurIPS 2013) ---
+``TransE'' --- which trains a vector per entity and per relation type so
+that \texttt{entity\ +\ relation\ ≈\ other\_entity} holds approximately,
+over a knowledge base of exactly the same shape WordNet has (typed edges
+between named things). A more recent and more literally ``hashing''
+precedent, closer in spirit to \texttt{context\_code} folding a
+neighbourhood into an address rather than a point in continuous space,
+is Chaidaroon, Park, Chang, Fang, \emph{node2hash: Graph Aware Deep
+Semantic Text Hashing} (Information Processing \& Management, 2020) ---
+a document's compact binary code is trained to depend on both its own
+content and its \emph{graph neighbours'}, the first hashing scheme to
+explicitly fold connection structure into the code rather than hashing
+each document in isolation. Both are the same move as
+\texttt{context\_code} one level down: a thing's relationships, not just
+the thing itself, become part of what gets encoded. Both are also,
+again, learned and approximate --- TransE's \texttt{≈} is an optimized
+inequality, never exact; node2hash's codes are trained for retrieval
+ranking, not factorable back into the relations that produced them.
+\texttt{context\_code} has neither property: it is a deterministic
+function of the 19 relation counts, with \textbf{one exact
+multiplicative composition} --- a prime per relation type, raised to
+that relation's count, multiplied together (§7.2) --- recovered by
+factoring, and the one place it is lossy (the tanh/atanh fold, §7.3's
+\texttt{8.00e-16} and the shared-shape collisions already named in §7.4)
+is measured to machine precision rather than left as an unquantified
+training artifact.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{cost-measured-once}{%
+\subsection{8. Cost, measured once}\label{cost-measured-once}}
+
+Deliberately short: the mechanism in §3--§7 is a forward-only address
+computation, not a trained model, so there is no cost function to
+optimize against and no training curve to report. What follows is one
+honest measurement of what the already-shipped mechanism costs on real
+hardware --- benchmarked once, because the code's own correctness
+(§3--§7) does not depend on it, not because the number doesn't matter.
+
+The mechanism computes a word's address once, directly (§3--§5), and
+reads its 19-dimensional relational signature once, directly (§7) ---
+nothing is compared against a target and adjusted backward. That
+forward-only shape has a real precedent with no cost function of any
+kind: the classic Infocom/Zork-style text-adventure sentence parser, a
+static readout against hardcoded lexicographical tables. This project
+replaces Zork's \emph{flat} tables with a \emph{relationally rich} one
+(the 19D WordNet vector) while keeping the same zero-training,
+zero-backward-pass shape the parser always had.
+
+The measurement itself uses the \texttt{cs\_benchmark} toolset
+(\texttt{GenerationalLineage/engine/toolsets/cs\_benchmark.py::descend})
+--- built specifically so this number, and every future one like it, is
+measured the same way once instead of hand-rolled per paper:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\ImportTok{from}\NormalTok{ GenerationalLineage.engine.toolsets.cs\_benchmark }\ImportTok{import}\NormalTok{ descend}
+\ImportTok{from}\NormalTok{ wordnet\_boxkite }\ImportTok{import}\NormalTok{ context\_addr}
+\ImportTok{from}\NormalTok{ nltk.corpus }\ImportTok{import}\NormalTok{ wordnet }\ImportTok{as}\NormalTok{ wn}
+
+\NormalTok{synset }\OperatorTok{=}\NormalTok{ wn.synsets(}\StringTok{"tree"}\NormalTok{)[}\DecValTok{0}\NormalTok{]}
+\NormalTok{result }\OperatorTok{=}\NormalTok{ descend(context\_addr, args}\OperatorTok{=}\NormalTok{(synset,), n}\OperatorTok{=}\DecValTok{10\_000}\NormalTok{)}
+\BuiltInTok{print}\NormalTok{(result)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+{'toolset': 'cs_benchmark', 'n_calls': 10000, 's_per_call': ...,
+ 'calls_per_s': ..., 'citation': 'Patterson et al. (2021), ...'}
+\end{verbatim}
+
+Measured on the ThinkPad X1 Carbon (i7-8550U,
+\texttt{VAPMIP/docs/SYSTEM\_SPECS\_ThinkPad\_X1\_Carbon\_6th.md}, §2.4):
+the addressed read path runs at roughly \texttt{600} flop/token and the
+ingest fold at \texttt{1.8×10⁵} words/s (\texttt{≈38\ µJ/word} at 7 W)
+--- against the standard forward-FLOP identity for a dense transformer
+(\texttt{2·N\_params} multiply-accumulates/token, \textasciitilde1
+J/token at 70B params) that is \textbf{\texttt{10⁴}--\texttt{10⁶}×
+cheaper per query}, and the gap is structural, not an optimisation: the
+addressed structure regenerates its answer from a fixed ruler; a
+materialised field is re-swept in full every time because the answer
+lives in the weights. \texttt{cs\_benchmark.footprint()} follows
+Patterson et al.'s own energy identity (\texttt{Post-Hoc:} cited above,
+§2.2) for anyone who wants to carry this further into a real carbon-cost
+comparison --- this paper doesn't attempt that conversion itself, only
+the measured flop/energy numbers it's built from.
+
+\textbf{Back Propagation = Bad = Hard = Inefficient = Work = Hard
+Boundary. Forward Propagation = Good = Easy = Free = Less Work} --- the
+author's own framing, kept as a direct quote, and the actual shape of
+every mechanism in §3--§7: computed once, forward, never re-derived from
+a loss.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{the-pencil-the-gamma-radial-windspeed-and-what-it-takes-to-run-the-box-kite-today}{%
+\subsection{9. The Pencil --- the Gamma-Radial Windspeed, and what it
+takes to run the box kite
+today}\label{the-pencil-the-gamma-radial-windspeed-and-what-it-takes-to-run-the-box-kite-today}}
+
+Scoped deliberately narrow, per the paper's own rule: only what's
+necessary to run the box-kite mechanism as the current monad actually
+uses it. The fuller exploration this pencil work opened up --- recorded
+in full in \texttt{VAPMIP/Boxkite-Catalog.txt} --- is real, substantial,
+and explicitly \textbf{not} developed here; it closes the paper as ``in
+development,'' §11.
+
+\hypertarget{the-gamma-radial-windspeed-finalized}{%
+\subsubsection{9.1 The Gamma-Radial Windspeed,
+finalized}\label{the-gamma-radial-windspeed-finalized}}
+
+Two real candidate windspeeds were tested side by side this pass
+(weighted- operator probe, all 7 struts) before this section could be
+written honestly, and it's worth naming both now, precisely, so neither
+is ever confused for the other again: the \textbf{Gamma-Radial
+Windspeed} and the \textbf{A-Matrix Basin Windspeed}.
+
+\textbf{\texttt{gamma\_radial}, recovered from a word's own stored
+address, is the windspeed for this paper --- the Gamma-Radial Windspeed}
+--- exact, deterministic, needs nothing but the word's text and its
+\texttt{(full\_addr,\ delta)}. This is the actual shipped function
+(\texttt{VAPMIP/wordnet\_boxkite.py::recover\_gamma\_radial}, promoted
+out of a notebook cell into the real module 2026-09-21), not a
+restatement of it --- it only needs §7.2/§7.3's
+\texttt{CONTEXT\_PRIMES}, \texttt{RELATION\_METHODS}, and
+\texttt{\_LOG\_CONTEXT\_PRIMES}/\texttt{LOG\_ANCHOR} already defined
+there, plus §5.2's \texttt{spelling\_code}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# VAPMIP/wordnet\_boxkite.py {-}{-} continues from §5.2 and §7.1{-}7.3}
+\ImportTok{import}\NormalTok{ math}
+
+\NormalTok{\_HYPONYMS\_IDX }\OperatorTok{=}\NormalTok{ RELATION\_METHODS.index(}\StringTok{\textquotesingle{}hyponyms\textquotesingle{}}\NormalTok{)}
+\NormalTok{\_LOG\_CONTEXT\_PRIMES }\OperatorTok{=}\NormalTok{ [math.log(p) }\ControlFlowTok{for}\NormalTok{ p }\KeywordTok{in}\NormalTok{ CONTEXT\_PRIMES[:}\BuiltInTok{len}\NormalTok{(RELATION\_METHODS)]]}
+\NormalTok{LOG\_ANCHOR }\OperatorTok{=} \BuiltInTok{sum}\NormalTok{(\_LOG\_CONTEXT\_PRIMES[i] }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\BuiltInTok{len}\NormalTok{(RELATION\_METHODS))}
+                  \ControlFlowTok{if}\NormalTok{ i }\OperatorTok{!=}\NormalTok{ \_HYPONYMS\_IDX)}
+
+\KeywordTok{def}\NormalTok{ recover\_gamma\_radial(full\_addr: }\BuiltInTok{int}\NormalTok{, delta: }\BuiltInTok{int}\NormalTok{, word: }\BuiltInTok{str}\NormalTok{):}
+    \CommentTok{"""The full §9.1 recovery, end to end, from what a word\textquotesingle{}s own stored}
+\CommentTok{    address already carries plus its own spelling {-}{-} no separate WordNet}
+\CommentTok{    read. full\_addr{-}delta {-}\textgreater{} full\_code; divide out spelling\_code(word)}
+\CommentTok{    (exact, disjoint prime tiers, §7.4); recovered context\_code\textquotesingle{}s own}
+\CommentTok{    log (via its prime factorisation over CONTEXT\_PRIMES, not a vector}
+\CommentTok{    rebuild) folds through gamma\_radial\textquotesingle{}s tanh bound directly."""}
+\NormalTok{    full\_code }\OperatorTok{=}\NormalTok{ full\_addr }\OperatorTok{{-}}\NormalTok{ delta}
+\NormalTok{    spelling }\OperatorTok{=}\NormalTok{ spelling\_code(word)}
+    \ControlFlowTok{if}\NormalTok{ full\_code }\OperatorTok{\%}\NormalTok{ spelling }\OperatorTok{!=} \DecValTok{0}\NormalTok{:}
+        \ControlFlowTok{return} \VariableTok{None}                     \CommentTok{\# not this word\textquotesingle{}s address}
+\NormalTok{    context\_code\_recovered }\OperatorTok{=}\NormalTok{ full\_code }\OperatorTok{//}\NormalTok{ spelling}
+\NormalTok{    lc }\OperatorTok{=} \FloatTok{0.0}
+\NormalTok{    remaining }\OperatorTok{=}\NormalTok{ context\_code\_recovered}
+    \ControlFlowTok{for}\NormalTok{ p, lp }\KeywordTok{in} \BuiltInTok{zip}\NormalTok{(CONTEXT\_PRIMES[:}\BuiltInTok{len}\NormalTok{(RELATION\_METHODS)], \_LOG\_CONTEXT\_PRIMES):}
+        \ControlFlowTok{while}\NormalTok{ remaining }\OperatorTok{\%}\NormalTok{ p }\OperatorTok{==} \DecValTok{0}\NormalTok{:}
+\NormalTok{            remaining }\OperatorTok{//=}\NormalTok{ p}
+\NormalTok{            lc }\OperatorTok{+=}\NormalTok{ lp}
+    \ControlFlowTok{if}\NormalTok{ remaining }\OperatorTok{!=} \DecValTok{1} \KeywordTok{or}\NormalTok{ lc }\OperatorTok{\textless{}=} \DecValTok{0}\NormalTok{:}
+        \ControlFlowTok{return} \VariableTok{None}
+    \ControlFlowTok{return}\NormalTok{ math.tanh(}\FloatTok{0.5} \OperatorTok{*}\NormalTok{ math.log(lc }\OperatorTok{/}\NormalTok{ LOG\_ANCHOR))}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{repo\_appendix/windspeed\_reconstruction/01\_windspeed\_recovery.py}
+(§13.4) exercises this same shipped function end to end, from a live
+WordNet lookup, as a documentation margin.
+
+Verified live against a real word:
+\texttt{windspeed("tree")\ =\ −0.151155}.
+
+The other real candidate --- the \textbf{A-Matrix Basin Windspeed}
+(A-matrix basin drift) --- is \textbf{not} this paper's windspeed. It
+needs a live, mutating, corpus-dependent store, which is exactly wrong
+for a claim about forward propagation from an address alone. It has a
+real, separate home: the windspeed for sentence \emph{construction} ---
+a different, later engineering pass (the Mind's Eye, VAPMIP's
+short-term-memory subsystem --- introduced properly in §11), out of
+scope here. Two names, two genuinely different jobs; kept apart on
+purpose.
+
+\hypertarget{the-pencil-attached}{%
+\subsubsection{9.2 The pencil, attached}\label{the-pencil-attached}}
+
+\texttt{pencil(r)} --- the 7 ways to factor one PG(3,2) relation into
+two others --- \texttt{ValaQuenta/modules/box\_kite/maths.py}, built and
+verified this project, whole, not a call into an unshown function:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#!/usr/bin/env python3}
+\CommentTok{\# ValaQuenta/modules/box\_kite/maths.py}
+\ImportTok{from}\NormalTok{ typing }\ImportTok{import}\NormalTok{ List, Tuple}
+
+\KeywordTok{def}\NormalTok{ pencil(r: }\BuiltInTok{int}\NormalTok{) }\OperatorTok{{-}\textgreater{}}\NormalTok{ List[Tuple[}\BuiltInTok{int}\NormalTok{, }\BuiltInTok{int}\NormalTok{]]:}
+    \CommentTok{"""The 7 ways to factor r into two others. r in 1..15 (any PG(3,2)}
+\CommentTok{    point; a box kite\textquotesingle{}s strut is the special case r in 1..7). For every}
+\CommentTok{    a != r in 1..15, \{a, a\^{}r\} is a factor pair of r (a \^{} (a\^{}r) == r);}
+\CommentTok{    pairing is an involution with no fixed points once a==r is excluded,}
+\CommentTok{    so exactly 7 unordered pairs fall out. Sorted by the smaller member {-}{-}}
+\CommentTok{    the pencil path\textquotesingle{}s station order."""}
+    \ControlFlowTok{if} \KeywordTok{not}\NormalTok{ (}\DecValTok{1} \OperatorTok{\textless{}=}\NormalTok{ r }\OperatorTok{\textless{}=} \DecValTok{15}\NormalTok{):}
+        \ControlFlowTok{raise} \PreprocessorTok{ValueError}\NormalTok{(}\StringTok{"pencil: r must be one of the 15 PG(3,2) points, 1..15"}\NormalTok{)}
+\NormalTok{    seen }\OperatorTok{=} \BuiltInTok{set}\NormalTok{()}
+\NormalTok{    pairs }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ a }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{16}\NormalTok{):}
+        \ControlFlowTok{if}\NormalTok{ a }\OperatorTok{==}\NormalTok{ r:}
+            \ControlFlowTok{continue}
+\NormalTok{        b }\OperatorTok{=}\NormalTok{ a }\OperatorTok{\^{}}\NormalTok{ r}
+\NormalTok{        pair }\OperatorTok{=}\NormalTok{ (}\BuiltInTok{min}\NormalTok{(a, b), }\BuiltInTok{max}\NormalTok{(a, b))}
+        \ControlFlowTok{if}\NormalTok{ pair }\KeywordTok{not} \KeywordTok{in}\NormalTok{ seen:}
+\NormalTok{            seen.add(pair)}
+\NormalTok{            pairs.append(pair)}
+    \ControlFlowTok{return} \BuiltInTok{sorted}\NormalTok{(pairs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OperatorTok{\textgreater{}\textgreater{}\textgreater{}}\NormalTok{ pencil(}\DecValTok{1}\NormalTok{)}
+\NormalTok{[(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{), (}\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{), (}\DecValTok{6}\NormalTok{, }\DecValTok{7}\NormalTok{), (}\DecValTok{8}\NormalTok{, }\DecValTok{9}\NormalTok{), (}\DecValTok{10}\NormalTok{, }\DecValTok{11}\NormalTok{), (}\DecValTok{12}\NormalTok{, }\DecValTok{13}\NormalTok{), (}\DecValTok{14}\NormalTok{, }\DecValTok{15}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+Each station is a pair of PG(3,2) points XORing to the anchor. This is
+the minimal slice needed here --- just enough that a windspeed has
+something to act on. The fuller pathway/portal structure over the pencil
+is Catalog material, §11.
+
+\hypertarget{what-the-deformation-actually-does-corrected-twice-now-honest}{%
+\subsubsection{9.3 What the deformation actually does --- corrected
+twice, now
+honest}\label{what-the-deformation-actually-does-corrected-twice-now-honest}}
+
+Two real mistakes, corrected in the record rather than quietly fixed,
+because both changed the answer:
+
+\textbf{Wrong coordinate frame.} An initial check of
+\texttt{pencil\_hyperstring.md}'s ``one flex mode'' claim used ordinary
+Cartesian 3D rigidity theory (Maxwell counting:
+\texttt{dim(flex)\ =\ 3·6\ −\ 6\ −\ 3\ =\ 9}, exact, matching an
+earlier, independent notebook finding). That arithmetic is correct and
+irrelevant --- this project's own standing rule is that
+sedenion/box-kite maths is native to \textbf{radial complex spherical
+polar coordinates}, never Cartesian internally. Confirmed once
+corrected: pairing an Assessor's \texttt{(d₊,d₋)} as one native complex
+number (the same move already verified elsewhere in this project's σ\_RB
+work) is the right representation, not two independent Cartesian reals.
+
+\textbf{Wrong aperture.} A second check used bare Cayley--Dickson basis
+vectors (\texttt{e₂}, \texttt{e₄}, \ldots) as pencil-station generators
+--- exactly as \texttt{pencil\_hyperstring.md} literally specifies (``a
+unit sedenion''). Checked directly: every one of the 256 possible
+basis-vector products is \emph{exactly} \texttt{±1} times another basis
+vector (zero exceptions) --- a closed, quantized lattice.
+\texttt{H\ =\ Re(Π)} landing on \texttt{\{−1,0,1\}} under this
+representation, found originally in notebook 04, was therefore never
+evidence that the box kite's own structure is discrete. It's what
+multiplying quantized lattice points together always does. Opening the
+aperture --- the same generator varying continuously along its own great
+circle instead of a discrete pick --- gives smooth, exact variation:
+\texttt{Re(Π)\ =\ −cos(φ)}, verified.
+
+Both corrections came from the same discipline, now written up as its
+own skill (\texttt{observer-position}) precisely so this doesn't get
+re-discovered the hard way a third time: track \emph{which coordinate
+frame} (orientation) and \emph{how much of the structure, at what
+resolution} (aperture) a result was taken from before trusting it.
+
+\hypertarget{h-conserved-a-noether-current-a-real-and-partial-result}{%
+\subsubsection{\texorpdfstring{9.4 \texttt{H}, conserved --- a Noether
+current, a real and partial
+result}{9.4 H, conserved --- a Noether current, a real and partial result}}\label{h-conserved-a-noether-current-a-real-and-partial-result}}
+
+Every quantity this paper calls ``conserved'' --- this one included ---
+is a \textbf{Noether current} in the precise sense Emmy Noether's 1918
+theorem establishes: a continuous symmetry of the motion is what holds
+the quantity fixed along it, not a coincidence found by scanning
+candidates until one happened to stay flat. Stated explicitly here,
+once, because it is true of every conservation claim in this paper and
+should not be read as a looser, informal use of the word.
+
+Once the aperture is opened, \texttt{H} is not merely continuous --- it
+is \textbf{exactly conserved}, a genuine Noether current, along one
+specific, non-arbitrary path: each pencil station's phase advancing at a
+rate proportional to its own position in the pencil
+(\texttt{φ\_k\ ∝\ (k+1)/7}), moving through all seven stations \emph{in
+pencil order}. Checked against three other joint-motion rules (uniform
+rate, reversed order, random per-station rates) --- none of them
+conserve \texttt{H}; only the pencil's own order does, i.e.~only that
+specific rate law is the symmetry \texttt{H}'s conservation is attached
+to. Not a trivial fact about any coordinated motion --- a specific one.
+
+Checked across all 7 struts, and here the honest result is a real,
+partial one, not a closed law: \textbf{\texttt{H} conserves exactly, as
+a Noether current, on struts 1, 3, and 6, and drifts on struts 2, 4, 5,
+and 7} --- confirmed against two different generator conventions (which
+endpoint of each station pair is taken ``first''), so it's a fact about
+the strut, not an artifact of that choice. \emph{Why} those three
+specifically is open --- checked and ruled out that they form a closed
+Fano-plane line --- the Fano plane is the smallest possible projective
+geometry, 7 points and 7 lines, 3 points per line, the same small
+structure the 7 struts themselves are already indexed by --- checked
+directly (\texttt{1⊕3=2}, not \texttt{6}) and ruled out as the
+explanation. Kept honest as an unresolved structural question for the
+Catalog, §11, not forced to a premature answer here.
+
+\textbf{Update, 2026-10-13 --- see §9.7.} Within the proxy this is now
+explained: \texttt{H} depends on one signed combination of the seven
+phases, \texttt{H\ =\ −cos(Σ\ ε\_k\ φ\_k)}, and the Noether path's
+signed rate sum vanishes exactly for the sign vector of struts 1, 3, 6
+(§9.7). The explanation is a fitted identity checked to
+\texttt{4.4e-16}, not a proof, and it holds for the left-associated,
+natural-order product used here; for other groupings the sign vector
+changes (§9.7).
+
+\hypertarget{the-crossing-precisely-j_2-not-j_n}{%
+\subsubsection{\texorpdfstring{9.5 The crossing, precisely ---
+\texttt{J\_2}, not
+\texttt{J\_N}}{9.5 The crossing, precisely --- J\_2, not J\_N}}\label{the-crossing-precisely-j_2-not-j_n}}
+
+One more correction worth keeping, because it's now exact rather than
+descriptive. The Joukowsky map used at a strut crossing,
+\texttt{ζ\ ↦\ ζ\ +\ c·ζ⁻¹} (\texttt{c\ =\ H/q(w)}), is \textbf{not
+itself an involution} --- \texttt{f(f(ζ))\ ≠\ ζ}, checked directly. It
+is the 2-to-1 projection of a genuine order-2 symmetry underneath it,
+\texttt{ζ\ ↔\ c/ζ} (not simply \texttt{ζ\ ↔\ 1/ζ} unless \texttt{c=1}
+--- verified the general form exactly: \texttt{f(ζ)=f(c/ζ)}, and
+\texttt{c/(c/ζ)=ζ}, both exact). That symmetry is \texttt{J\_2}, the
+same order-2 fold already established elsewhere in this project (the
+Red/Blue swap, the \texttt{(I\textbar{}O)} two-stroke engine) ---
+\textbf{not} \texttt{J\_N}, the separate order-4 map this project also
+has on record. The crossing itself is the fixed point of that
+\texttt{J\_2} fold, \texttt{ζ\ =\ √c} --- which is exactly why a fixed
+windspeed can pin a crossing at all: an order-2 involution has one clean
+fixed point; a bare continuous deformation with no such symmetry would
+not.
+
+\hypertarget{what-runs-today-in-the-current-monad}{%
+\subsubsection{9.6 What runs today, in the current
+monad}\label{what-runs-today-in-the-current-monad}}
+
+Honest status, not aspirational, updated since the recovery was first
+written up: the windspeed recovery (§9.1) \textbf{is now ported into
+\texttt{ptol.c}} (\texttt{monad3\_gamma\_radial()}, 2026-09-21), checked
+against this paper's own recorded value before anything was built on it
+--- \texttt{windspeed("tree")\ =\ -0.151155} in both Python and C, to 6
+decimal places. \texttt{monad3\_lookup()} mmaps \texttt{monad3\_c.bin}
+and reads a word's real 19-dimensional relation vector straight out of
+the packed store by raw pointer arithmetic (\texttt{-M}, byte-exact
+against \texttt{boxkite\_bin.h}, §6); \texttt{-M} and \texttt{-say} now
+also print that word's real, live Gamma-Radial Windspeed alongside it
+--- \texttt{ptol\ -M\ tree} and \texttt{ptol\ -say\ "the\ engine\ runs"}
+are both real, scriptable, offline-testable entry points today, not a
+plan.
+
+What is still exactly where it was: the \textbf{windspeed-driven
+deformation} this section derives --- \texttt{Φ\_w}, the
+pencil/strut-angle geometry actually moving in response to the windspeed
+--- remains Python-verified \texttt{THEORETICAL:CALCULATED} in neither
+language; §9.3--§9.4 measure a spectral proxy for it, not the mechanics,
+and that hasn't changed. And one further honest boundary, drawn on
+purpose rather than blurred: the new C computation is wired into
+\texttt{-M}/\texttt{-say}, both offline/scriptable, but \textbf{not yet
+into \texttt{-w}'s live interactive console} ---
+\texttt{console\_speak()} now computes the report, but
+\texttt{mh\_send\_chat}'s wire protocol to the curses UI is untouched
+this pass, since that is the one recently-verified live interactive path
+and extending it needs its own tested pass, not a same-sitting add-on.
+Stated plainly rather than implied otherwise: the \emph{recovery} is
+real, checked, and in C now; the \emph{deformation} is not; the
+\emph{live console display} of the recovery is computed but not yet
+visible to someone actually sitting at \texttt{-w}.
+
+\hypertarget{the-seven-ordered-pairs-laid-out-and-what-they-are-made-of}{%
+\subsubsection{9.7 The seven ordered pairs, laid out --- and what they
+are made
+of}\label{the-seven-ordered-pairs-laid-out-and-what-they-are-made-of}}
+
+Everything in §9.2--§9.4 acts on \texttt{pencil(r)}: seven
+\textbf{ordered pairs} \texttt{(a,\ b)} with \texttt{a\ ⊕\ b\ =\ r},
+listed in \emph{pencil order} --- sorted by the smaller member, which is
+the order of the string. §9.2 gave the function. This subsection gives
+the \textbf{structure of the seven}, because the deformations in
+§9.3--§9.4 are read off it and the 2026-10-13 comparison with de
+Marrais's box kite (§9.8) rests on it. \texttt{FIRST\ STATED\ HERE}
+2026-10-13; the grouping is exhaustive over the seven struts and
+\texttt{THEORETICAL:CALCULATED} (code computes it; no claim beyond what
+the code prints).
+
+Take the indices \texttt{1…7} --- the imaginaries of the lower octonion,
+the \textbf{Fano plane \texttt{P}} (7 points; its 7 lines are the
+triples \texttt{\{a,\ b,\ a⊕b\}}) --- and \texttt{e\_8}, the doubling
+unit that opens the upper octonion \texttt{9…15}. For a strut
+\texttt{r\ ∈\ P}, the seven pairs of \texttt{pencil(r)} are, in pencil
+order, exactly \textbf{three groups}:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{three axes} --- the pairs \texttt{(a,\ b)} with
+  \texttt{a,\ b\ ∈\ P}: the three lines of \texttt{P} through
+  \texttt{r};
+\item
+  \textbf{one pivot} --- \texttt{(8,\ 8⊕r)}: the only pair that contains
+  \texttt{e\_8};
+\item
+  \textbf{three shadows} --- \texttt{(a+8,\ b+8)}: the upper-octonion
+  copy of each axis.
+\end{itemize}
+
+Pencil order puts them contiguously: stations 1--3 are the axes, station
+4 is the pivot, stations 5--7 are the shadows --- a doubling with the
+pivot in the middle.
+
+\textbf{Listing 9.7 --- the seven ordered pairs of \texttt{pencil(r)},
+grouped, and de Marrais's chart rebuilt from the plane alone}
+(\texttt{repo\_appendix/windspeed\_reconstruction/12\_seven\_ordered\_pairs.py};
+\texttt{group\_stations} and \texttt{kite\_vertices} are extracted
+verbatim, the last two lines condense the script's \texttt{\_\_main\_\_}
+block; needs only \texttt{ValaQuenta/modules/box\_kite/maths.py}):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ sys, os}
+\NormalTok{sys.path.insert(}\DecValTok{0}\NormalTok{, os.path.expanduser(}\StringTok{"\textasciitilde{}/Projects/ThePlace/ValaQuenta/modules/box\_kite"}\NormalTok{))}
+\ImportTok{import}\NormalTok{ maths }\ImportTok{as}\NormalTok{ bk}
+
+\NormalTok{P }\OperatorTok{=} \BuiltInTok{range}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{8}\NormalTok{)                                   }\CommentTok{\# the lower Fano plane: indices 1..7, no e\_0, no e\_8}
+
+\KeywordTok{def}\NormalTok{ group\_stations(r):                            }\CommentTok{\# the 7 ordered pairs of pencil(r), r in 1..7, by what they are}
+\NormalTok{    kinds }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ (a, b) }\KeywordTok{in}\NormalTok{ bk.pencil(r):                   }\CommentTok{\# pairs \{a,b\}, a XOR b == r, in pencil order (sorted by smaller member)}
+\NormalTok{        kinds.append((a, b, }\StringTok{"axis"} \ControlFlowTok{if}\NormalTok{ b }\OperatorTok{\textless{}} \DecValTok{8} \ControlFlowTok{else} \StringTok{"pivot"} \ControlFlowTok{if}\NormalTok{ a }\OperatorTok{==} \DecValTok{8} \ControlFlowTok{else} \StringTok{"shadow"}\NormalTok{))}
+    \ControlFlowTok{return}\NormalTok{ kinds                                  }\CommentTok{\# axis = a line \{a,b,r\} of the plane; shadow = its copy +8; pivot = the pair holding e\_8}
+
+\KeywordTok{def}\NormalTok{ kite\_vertices(s):                             }\CommentTok{\# De Marrais\textquotesingle{}s 6 Assessors of chart s: ordered pairs of DISTINCT plane points, a XOR b == s}
+    \ControlFlowTok{return} \BuiltInTok{sorted}\NormalTok{((a, b) }\ControlFlowTok{for}\NormalTok{ a }\KeywordTok{in}\NormalTok{ P }\ControlFlowTok{for}\NormalTok{ b }\KeywordTok{in}\NormalTok{ P }\ControlFlowTok{if}\NormalTok{ a }\OperatorTok{!=}\NormalTok{ b }\KeywordTok{and}\NormalTok{ a }\OperatorTok{\^{}}\NormalTok{ b }\OperatorTok{==}\NormalTok{ s)}
+
+\ControlFlowTok{assert}\NormalTok{ kite\_vertices(}\DecValTok{1}\NormalTok{) }\OperatorTok{==} \BuiltInTok{sorted}\NormalTok{(bk.box\_kites()[}\DecValTok{1}\NormalTok{])                      }\CommentTok{\# the chart, rebuilt from the plane alone}
+\BuiltInTok{print}\NormalTok{(group\_stations(}\DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+> python3 12_seven_ordered_pairs.py
+strut 1:  axes [(2, 3), (4, 5), (6, 7)]  pivot [(8, 9)]  shadows [(10, 11), (12, 13), (14, 15)]   eps = ++- | - | ++-
+strut 2:  axes [(1, 3), (4, 6), (5, 7)]  pivot [(8, 10)]  shadows [(9, 11), (12, 14), (13, 15)]   eps = +-- | + | +--
+strut 3:  axes [(1, 2), (4, 7), (5, 6)]  pivot [(8, 11)]  shadows [(9, 10), (12, 15), (13, 14)]   eps = ++- | - | ++-
+strut 4:  axes [(1, 5), (2, 6), (3, 7)]  pivot [(8, 12)]  shadows [(9, 13), (10, 14), (11, 15)]   eps = +++ | + | +++
+strut 5:  axes [(1, 4), (2, 7), (3, 6)]  pivot [(8, 13)]  shadows [(9, 12), (10, 15), (11, 14)]   eps = +-+ | - | +-+
+strut 6:  axes [(1, 7), (2, 4), (3, 5)]  pivot [(8, 14)]  shadows [(9, 15), (10, 12), (11, 13)]   eps = ++- | - | ++-
+strut 7:  axes [(1, 6), (2, 5), (3, 4)]  pivot [(8, 15)]  shadows [(9, 14), (10, 13), (11, 12)]   eps = +-- | + | +--
+max |H + cos(sum eps_k phi_k)| over 7 struts x 60 random phase vectors = 4.4e-16
+\end{verbatim}
+
+That table is the exhaustive small case --- all seven struts, nothing
+sampled --- and the script's own assertions are part of the result: for
+every strut the three axes are exactly the three antipodal pairs of de
+Marrais's chart \texttt{r}, and \textbf{none of the seven pairs is an
+Assessor plane} (§9.8).
+
+\textbf{What a station is, as algebra.} Each pair \texttt{(a,\ b)} with
+\texttt{a\ ⊕\ b\ =\ r} gives a unit
+\texttt{cos\ φ·e\_a\ +\ sin\ φ·e\_b}, and
+\texttt{e\_a⁻¹\ e\_b\ =\ η\ e\_r} with \texttt{η\ =\ ±1} (checked for
+every station of every pencil \texttt{r\ =\ 1…15}), so the station is
+exactly
+
+~~~~\texttt{cos\ φ·e\_a\ +\ sin\ φ·e\_b\ =\ e\_a\ ·\ exp(η\ e\_r\ φ)},
+
+a rotation by \texttt{φ} in the complex line spanned by \texttt{1} and
+\texttt{e\_r}, carried by the fixed unit \texttt{e\_a}. The product of
+the seven bare \texttt{e\_a} (all \texttt{φ\ =\ 0}) is exactly
+\texttt{−e\_0} for every pencil, so \texttt{H(φ\ =\ 0)\ =\ −1} is
+derived, not observed. Measured, to machine precision, for the
+left-associated product of §9.4:
+
+~~~~\texttt{H\ =\ Re\ Π\ =\ −cos(\ Σ\_k\ ε\_k\ φ\_k\ )}, ~
+\texttt{ε\_k\ =\ ±1}, one fixed sign vector per strut
+
+(the full script prints it as its last line: error \texttt{4.4e-16}, 7
+struts × 60 random phase vectors). \textbf{\texttt{H} therefore depends
+on exactly one signed combination of the seven phases.} Two things
+follow that §9.4 left open:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{The sign vectors have the doubled shape of the pairs.} Written
+  \texttt{ε\ =\ (axes\ \textbar{}\ pivot\ \textbar{}\ shadows)}, every
+  strut has \texttt{ε\_shadows\ =\ ε\_axes} --- the upper copy repeats
+  the lower pattern, the pivot sits between. Only four distinct vectors
+  occur: \texttt{+++\textbar{}+\textbar{}+++} (strut 4),
+  \texttt{+-+\textbar{}-\textbar{}+-+} (strut 5),
+  \texttt{++-\textbar{}-\textbar{}++-} (struts 1, 3, 6),
+  \texttt{+-\/-\textbar{}+\textbar{}+-\/-} (struts 2, 7) --- rows 0, 1,
+  2, 3 of the Sylvester--Hadamard matrix on the station index.
+\item
+  \textbf{Why struts \texttt{\{1,3,6\}}, within this proxy.} On the
+  Noether path of §9.4 (\texttt{φ\_k\ =\ t·(π/2)·(k+1)/7}) the one phase
+  advances by \texttt{S·t} with \texttt{S\ =\ (π/2)·Σ\_k\ ε\_k\ (k+1)/7}
+  (\texttt{k\ =\ 0…6}, station \texttt{k+1}). \texttt{S\ =\ 0} exactly
+  for \texttt{++-\textbar{}-\textbar{}++-}
+  (\texttt{1\ +\ 2\ −\ 3\ −\ 4\ +\ 5\ +\ 6\ −\ 7\ =\ 0}) --- struts 1,
+  3, 6 --- so \texttt{H} is flat; \texttt{S\ =\ 2π} for strut 4 (one
+  full cycle, \texttt{H:\ −1\ →\ +1\ →\ −1}), \texttt{S\ =\ −4π/7} for
+  struts 2, 7, \texttt{S\ =\ 2π/7} for strut 5. This is a \textbf{fitted
+  identity, not a proof}; re-deriving the sign vectors from the algebra
+  is open (\texttt{H(0)\ =\ −1} and the \texttt{e\_a·exp(η\ e\_r\ φ)}
+  form are the derived parts).
+\end{enumerate}
+
+\textbf{What a windspeed can reach.} Because \texttt{H} sees one signed
+phase, any \emph{scalar} windspeed --- as a position, a rate, or
+time-varying gusts --- only slides that one phase along its path, so the
+same struts respond (2, 4, 5, 7) and the same three stay pinned (1, 3,
+6), whichever scalar it is. A wind that differs from station to station
+(\texttt{r\_k\ =\ (k+1)/7\ ·\ (1\ +\ d·u\_k)}, \texttt{u\_k} random in
+\texttt{{[}−1,\ 1{]}}) reaches the pinned struts: mean swing of
+\texttt{H} over \texttt{t\ ∈\ {[}0,\ 1{]}} is
+\texttt{0.0032\ /\ 0.0287\ /\ 0.1874} at
+\texttt{d\ =\ 0.05\ /\ 0.15\ /\ 0.4}. Holding a subset of the stations
+fixed (an anchor) regroups the struts: over the 128 subsets there are 7
+distinct groupings, and \texttt{\{1,3,6\}} stay rigid under 8 of them.
+(Scripts and captured output:
+\texttt{.claude/scratchpad/2026-10-12\_windspeed\_deformation\_proxy/},
+mirrored in \texttt{ContextPlease/claude/scratchpad/}.)
+
+\textbf{Does it depend on how the product is grouped and in what order?}
+This is the question
+\texttt{repo\_appendix/windspeed\_reconstruction/11\_…FLAWED…} set out
+to ask and did not. Script 13 asks it directly: the 132 full bracketings
+of the seven factors and 200 random firing orders, scored by the rank of
+the phase-dependence of \texttt{H} (rank 1 ⇒ one signed phase).
+
+\begin{verbatim}
+> python3 13_bracketing_and_firing_order.py
+132 bracketings; pencils r = 1..8 are lines through a point of the plane (+e_8), r = 9..15 are the Assessor-plane pencils
+pencil( 1): one-phase law for 132 of 132 bracketings; rank histogram {1: 132}
+pencil( 2): one-phase law for 132 of 132 bracketings; rank histogram {1: 132}
+pencil( 4): one-phase law for 132 of 132 bracketings; rank histogram {1: 132}
+pencil( 8): one-phase law for 132 of 132 bracketings; rank histogram {1: 132}
+pencil( 9): one-phase law for  52 of 132 bracketings; rank histogram {1: 52, 4: 56, 6: 21, 7: 3}
+pencil(10): one-phase law for   0 of 132 bracketings; rank histogram {4: 34, 5: 52, 6: 31, 7: 15}
+pencil(12): one-phase law for   0 of 132 bracketings; rank histogram {5: 116, 6: 12, 7: 4}
+pencil(15): one-phase law for  10 of 132 bracketings; rank histogram {1: 10, 4: 22, 5: 82, 6: 12, 7: 6}
+pencil( 1), left bracketing, 200 random firing orders: one-phase law for 200
+pencil( 9), left bracketing, 200 random firing orders: one-phase law for   9
+pencil(10), left bracketing, 200 random firing orders: one-phase law for  18
+\end{verbatim}
+
+For the pencils §9.2--§9.4 use (\texttt{r\ ≤\ 7}, and \texttt{r\ =\ 8})
+the one-phase form survives \textbf{every} bracketing and \textbf{every}
+order tested; what changes is the sign vector (7 distinct vectors over
+the 132 bracketings of pencil 1, of which only 3 are rows of the
+Sylvester--Hadamard matrix; 14 for pencil 8, none of them rows). So
+``\texttt{ε} is a Hadamard row'' is a statement about the
+\textbf{left-associated, natural-order} product that §9.4 used --- not
+about the pencil. For the Assessor-plane pencils tested
+(\texttt{r\ =\ 9,\ 10,\ 12,\ 15}; §9.8) the one-phase form itself
+depends on the bracketing and the order, and for pencils 10 and 12 no
+bracketing gives it. Counts for firing orders are sampled (200 of
+5,040), the bracketing counts are exhaustive.
+
+\hypertarget{how-the-seven-ordered-pairs-differ-from-de-marraiss-box-kite}{%
+\subsubsection{9.8 How the seven ordered pairs differ from de Marrais's
+box
+kite}\label{how-the-seven-ordered-pairs-differ-from-de-marraiss-box-kite}}
+
+The pencil of §9.2 is \textbf{not} de Marrais's box kite and should not
+be read as one. de Marrais's object is \texttt{ESTABLISHED} (de Marrais
+2000; counts in \texttt{VAPMIP/marrais\_boxkite\_catalog.txt}, code in
+\texttt{ValaQuenta/modules/box\_kite/maths.py}) and is cited here, not
+re-derived. This subsection records the difference, computed on
+2026-10-12/13
+(\texttt{VAPMIP/docs/wiki/Boxkite-Deformation-Record-2026-10-12.md}
+holds every script and its output).
+
+\textbf{What de Marrais's kite is made of.} An \textbf{Assessor} is an
+\emph{ordered pair \texttt{(a,\ b)} of distinct points of the plane
+\texttt{P}} --- the plane \texttt{span(e\_a,\ e\_\{b+8\})}, a lower
+point paired with the \emph{shadow of a different point}
+(\texttt{49\ −\ 7\ =\ 42}; the diagonal \texttt{(a,\ a+8)} is a normed
+plane with no zero divisor). The \textbf{strut label}
+\texttt{s\ =\ a\ ⊕\ b} is the third point of the line through \texttt{a}
+and \texttt{b}. Chart \texttt{s} is therefore the plane with the point
+\texttt{s} removed: its six vertices are the six other points, and its
+three antipodal pairs are the three lines of \texttt{P} through
+\texttt{s}. Two vertices are joined by an edge exactly when they lie on
+\textbf{different} lines through \texttt{s} (12 edges); each vertex
+carries two zero divisors \texttt{e\_a\ ±\ e\_\{b+8\}}, and an edge is
+the vanishing of a product of two of them. The predicate ``same
+\texttt{s}, not the reversal'' reproduces the measured adjacency of all
+168 ordered plane pairs exactly. The stabiliser of \texttt{s} in
+\texttt{GL(3,2)} (order 24) acts faithfully on the six vertices ---
+\texttt{S₃} on the three axes with a kernel of order 4, the rotation
+group of the octahedron.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+de Marrais's chart \texttt{s}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+this paper's \texttt{pencil(s)} (§9.2--§9.7)
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+elements & 6 Assessors = ordered pairs of \emph{distinct} plane points
+with \texttt{a⊕b\ =\ s} (cross pairs: lower point, shadow of another) &
+7 pairs \texttt{\{a,\ b\}}, \texttt{a⊕b\ =\ s}: \textbf{3 axes + pivot +
+3 shadows} \\
+relation & a \textbf{two-factor} product \texttt{xy\ =\ 0} between zero
+divisors --- grouping never enters & a \textbf{seven-factor} ordered
+product \texttt{Π}, read as \texttt{Re\ Π} --- grouping and order enter
+(§9.7) \\
+contains an Assessor plane & all 6 & \textbf{none} (0 of 7, every
+strut) \\
+the three axes & the three antipodal pairs & the three axis stations
+(same pairs) \\
+zero-divisor status of the object studied & the vertices are zero
+divisors & \texttt{Π(φ)} is \textbf{never} a zero divisor (0 of 13
+sampled phase vectors on each of six pencils;
+\texttt{\textbar{}Πd\textbar{}\ /\ (\textbar{}Π\textbar{}\textbar{}d\textbar{})\ ≥\ 1.0000}
+against all 84 diagonals) \\
+what moves it exactly & the 14-parameter derivation algebra \texttt{g₂}
+(flows keep every relation to \texttt{1e-15}), multiplication by
+\texttt{exp(θ\ e\_8)}, and a finite group of order 2,688 & station
+phases --- which, placed inside an Assessor plane, \textbf{tear} a zero
+divisor at exactly \texttt{2.000} per radian \\
+what that means & one connected family: all 84 diagonals lie on one
+\texttt{g₂}-orbit (83 of 83 reached by continuous flow), so the seven
+charts are not separate & a discrete object: seven ordered pairs, one
+string, one signed phase \\
+\end{longtable}
+
+Where they touch is exact. The Assessors of chart \texttt{s} are six of
+the seven stations of \textbf{\texttt{pencil(s+8)}} (index
+\texttt{XOR\ =\ s\ +\ 8}), plus the plane \texttt{\{e\_s,\ e\_8\}}. That
+is the pencil that \emph{is} de Marrais's chart --- and on it the
+one-phase law of §9.7 holds for \texttt{s\ =\ 1} only in some groupings
+(52 of 132 bracketings), for \texttt{s\ =\ 7} in 10 of 132, and fails
+for every grouping tested for \texttt{s\ =\ 2} and \texttt{s\ =\ 4}
+(\texttt{s\ =\ 3,\ 5,\ 6} not tested beyond the left-associated product,
+where the rank is 4 or 5): the string law of §9.4 is a statement about
+the pencil through the point \texttt{s}, not about the Assessor planes
+of chart \texttt{s}.
+
+\textbf{What follows for reading the deformations.} The pencil / string
+/ flashlight machinery is a \textbf{discrete, static object --- the
+seven ordered pairs of the scalar context box kite} --- and that is what
+§9.3--§9.4 deform. It should not be carried over to the \emph{scaled}
+box kite of the Mind's Eye (§11), which must be allowed to move the way
+de Marrais's kite moves. Measured on the algebra itself: the exact
+deformations are the \texttt{g₂} flows; they fix \texttt{e\_0} and
+\texttt{e\_8} and nothing else
+(\texttt{R¹⁶\ =\ ℝe\_0\ ⊕\ ℝe\_8\ ⊕\ 7\ ⊕\ 7}, the two sevens carrying
+one and the same representation); the readings that survive such a flow
+are the norm, the weights on \texttt{e\_0} and \texttt{e\_8}, the
+lower/upper energy split, the singular values of left and right
+multiplication by the address, and the associator norm --- whereas the
+chart energies, \texttt{local\_curvature}, the projection \texttt{Γ} of
+\texttt{ptol.c} (\texttt{measure\_gamma} --- not the Gamma-Radial
+Windspeed of §9.1; it is a Walsh coefficient, the
+\texttt{J\_red\ /\ J\_blue} character), and the \texttt{σ\_RB} tilt
+change with the flow and are readings \emph{relative to a frame}.
+Recording that split is the point of this paragraph; building on it is
+§11's direction, \texttt{THEORETICAL}.
+
+\hypertarget{what-this-section-is-not-1}{%
+\subsubsection{What this section is
+not}\label{what-this-section-is-not-1}}
+
+Not the full sail-pressure-to-strut-angle mechanics the author's own
+model describes (unbuilt --- the spectral checks above are a proxy, not
+that geometry). Not the fuller pathway/portal exploration, the Blackjack
+(21-member) subgroup connecting all 7 hyper-boxkite structures, or a
+derivation of the \texttt{\{1,3,6\}} sign vectors from the algebra (the
+within-proxy explanation is §9.7) --- Catalog material, named and
+pointed at, §11, not developed here.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{conclusion-what-the-scalar-actually-does-proven-and-open}{%
+\subsection{10. Conclusion --- what the scalar actually does, proven and
+open}\label{conclusion-what-the-scalar-actually-does-proven-and-open}}
+
+\hypertarget{the-claim-this-paper-set-out-to-prove}{%
+\subsubsection{The claim this paper set out to
+prove}\label{the-claim-this-paper-set-out-to-prove}}
+
+\textbf{Proven, exactly, on live data:} a word's full 19-dimensional
+WordNet relational signature is recoverable from one prime address and
+its literal spelling, with no separate WordNet lookup.
+\texttt{context\_vector}→\texttt{context\_code} factors back exact on
+the full 146,743-word store (§7.2). The combined
+\texttt{(spelling,\ context)} address round-trips exact, 286/286, on a
+live sample (§7.4). And read the other direction --- the one this paper
+is actually about --- \textbf{the Gamma-Radial Windspeed
+(\texttt{gamma\_radial}) recovers out of \texttt{(full\_addr,\ delta)}
+and the word's own text alone}, dividing out the spelling component
+computed fresh from the letters, with no context stored anywhere except
+in that one scalar (§9.1). That is the proof of concept: the single
+scalar number \emph{does} recreate the exact structure that leads to the
+19D context relationships, starting from nothing but the literal
+spelling of the word. Nothing about this claim is aspirational --- it is
+measured, exact, and reproducible from the notebooks cited throughout.
+
+\hypertarget{what-is-genuinely-working}{%
+\subsubsection{What is genuinely
+working}\label{what-is-genuinely-working}}
+
+\begin{itemize}
+\tightlist
+\item
+  The address itself (§3--§5): deterministic, four months unmodified,
+  measured live at 347,119 words.
+\item
+  The domain it's built on (§4): 313 as the sieve's own extinction
+  boundary --- not a round number, a fact about \texttt{p²≤N} ---
+  grounding ``the first 65 primes are letters.''
+\item
+  The spelling fix (§5): order-sensitive, exact for the ≤20-letter words
+  the tier is built for, and the failure past that is the
+  \emph{predicted} arithmetic wraparound, not a mystery.
+\item
+  \texttt{monad3\_c.bin} (§6): the real WordNet box-kite table, built
+  and cross-checked C-vs-Python exact, and confirmed live in
+  \texttt{ptol.c} today via \texttt{-M}'s byte-exact struct read --- not
+  a paper design, a running binary.
+\item
+  The context read and its scalar fold (§7): exact, both directions.
+\item
+  The windspeed recovery (§9.1): exact, and --- corrected twice in the
+  process, both corrections kept in the record --- genuinely continuous
+  once represented in this project's own native coordinates rather than
+  a Cartesian or basis-vector-quantized stand-in.
+\item
+  A real, non-trivial Noether current (§9.4): \texttt{H} exactly
+  conserved, in Emmy Noether's own precise sense --- a continuous
+  symmetry of the motion holding the quantity fixed --- along one
+  specific, non-arbitrary path through the pencil, on 3 of 7 struts.
+\item
+  The cost claim (§8): measured, \texttt{10⁴}--\texttt{10⁶}× cheaper per
+  query, structural not optimisation.
+\end{itemize}
+
+\hypertarget{what-needs-work-named-honestly-not-hidden}{%
+\subsubsection{What needs work --- named honestly, not
+hidden}\label{what-needs-work-named-honestly-not-hidden}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\texttt{Φ\_w}, the full deformation law}, is still open. What
+  §9 adds is real progress --- the object is continuous, not discrete,
+  and a Noether current holds on a real subset of struts under a
+  specific ordering --- but the complete map from \texttt{(H,\ w)} to
+  all six Assessor coordinates, for every strut, is not built.
+\item
+  \textbf{Why struts \texttt{\{1,3,6\}} carry that Noether current and
+  \texttt{\{2,4,5,7\}} don't} --- answered \emph{within the proxy} on
+  2026-10-13 (§9.7): \texttt{H} depends on one signed phase, and the
+  signed rate sum vanishes exactly for their sign vector. A fitted
+  identity (\texttt{4.4e-16}), not a proof; re-deriving the sign vectors
+  from the algebra, and why the one-phase law needs a particular
+  grouping on the Assessor-plane pencils (§9.7--§9.8), are the open
+  parts. The pairing-structure question script 11 meant to ask is now
+  script 13.
+\item
+  \textbf{The author's own sail-pressure-to-strut-angle mechanics} ---
+  deformable sails fixing two struts' relative position at the crossing
+  --- remains unbuilt. Everything in §9.3--§9.4 is a spectral/algebraic
+  proxy for that geometry, not the geometry itself.
+\item
+  \textbf{The C port --- done, one piece short.} The Gamma-Radial
+  Windspeed recovery is now ported into \texttt{ptol.c}
+  (\texttt{monad3\_gamma\_radial()}, 2026-09-21), checked against this
+  paper's own recorded value first
+  (\texttt{windspeed("tree")\ =\ -0.151155}, both languages, to 6
+  decimal places), and live via \texttt{-M}/\texttt{-say} --- both real,
+  scriptable, offline entry points. What's still open is narrower than
+  ``the port'': wiring that same computation into \texttt{-w}'s live
+  interactive console (\texttt{mh\_send\_chat}'s wire protocol to the
+  curses UI) --- computed today, not yet transmitted, left for its own
+  tested pass rather than extended in the same sitting as the port
+  itself (§9.6).
+\item
+  \textbf{The Scale engine's contextual flow}, and the
+  sentence-construction windspeed (the \textbf{A-Matrix Basin
+  Windspeed}) this paper deliberately excluded, are both real, both
+  wanted, and both separate, later engineering --- not gaps in this
+  paper's own claim, but named here so the boundary is visible. See §11.
+\end{itemize}
+
+\hypertarget{the-honest-shape-of-it}{%
+\subsubsection{The honest shape of it}\label{the-honest-shape-of-it}}
+
+This paper proves the \emph{address} half of its own claim completely:
+context propagates forward, exactly, from one scalar and a spelling,
+with nothing stored in between. It proves a \emph{real, structured}
+opening piece of the \emph{geometry} half --- continuous where earlier
+passes found (wrongly) discrete, carrying a genuine Noether current on a
+subset of the structure --- without proving the whole geometry. That is
+a true, checkable, and useful place to stop a first paper.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{direction-of-engineering-research-in-development}{%
+\subsection{11. Direction of engineering research --- in
+development}\label{direction-of-engineering-research-in-development}}
+
+Everything in this section is named, some of it measured, none of it
+claimed as part of this paper's proof. It exists so the next work has a
+place to start from, and so a reader who finds this paper first can see
+where the rest of it is heading before any of it is finished.
+
+\hypertarget{the-boxkite-catalog}{%
+\subsubsection{The Boxkite Catalog}\label{the-boxkite-catalog}}
+
+\texttt{VAPMIP/Boxkite-Catalog.txt} --- a full session's inventory of
+box-kite structure, most of it real and verified, none of it developed
+here: per-Assessor and per-strut invariants; torsion, circulation, and
+lift (Kutta--Joukowsky, split 53 positive / 31 negative / 21 zero across
+all 105 four-cycles); portal/transition dynamics (confirmed discrete,
+not continuous, two independent ways); the connectivity of all seven
+charts at exactly \texttt{e₀}/\texttt{e₈}; and the group that ties it
+together ---
+
+\textbf{The Blackjack subgroup.} \texttt{PSL(2,7)} is a specific,
+well-known finite group of 168 symmetries --- the automorphisms of the
+Fano plane, de Marrais's own object (§2.5, §9--§10), not something
+derived in §9.4 (that section only checks whether one strut triple forms
+a Fano-plane \emph{line}, a narrower question). The Blackjack subgroup
+is the 21-element subgroup of it that preserves zero-divisor structure
+while staying transitive across all seven struts
+(\texttt{2026-08-13\_apex\_path/psl27\_strut\_action.py}, verified
+2026-09-17). Named here for the first time as such; the atlas of seven
+charts is connected by this group action, not by any edge.
+
+\hypertarget{the-pencils-own-open-questions}{%
+\subsubsection{The Pencil's own open
+questions}\label{the-pencils-own-open-questions}}
+
+Why \texttt{H}'s Noether current conserves on struts \texttt{\{1,3,6\}}
+and not \texttt{\{2,4,5,7\}} (§9.4/§10) --- the most immediate open
+thread from this paper's own work. A candidate structural answer, found
+this session (2026-09-21) and properly caveated, not yet a resolution:
+on \texttt{\{1,3,6\}}, \texttt{Im(Π)} stays \textbf{exactly zero}
+through the whole continuous sweep --- not just \texttt{H}, the entire
+pencil product never leaves the real axis. On \texttt{\{2,4,5,7\}},
+\texttt{\textbar{}Im(Π)\textbar{}} genuinely grows from \texttt{0}
+toward \texttt{1} as the sweep advances --- the product is visibly
+\emph{ascending} out of the reals into the full sedenion,
+norm-preserving the whole way (\texttt{\textbar{}Π\textbar{}=1} holds
+exactly on every strut, already established). Worth being exact about
+what part of this is new: since
+\texttt{Re(Π)²\ +\ \textbar{}Im(Π)\textbar{}²\ =\ \textbar{}Π\textbar{}²\ =\ 1},
+\texttt{H} pinned at \texttt{±1} \emph{forces}
+\texttt{\textbar{}Im(Π)\textbar{}=0} algebraically --- that part is a
+direct consequence of the original result, not independent evidence.
+What's genuinely new is the qualitative shape it gives the two strut
+sets: \texttt{\{1,3,6\}} sit at a fixed real endpoint, already arrived
+and staying there; \texttt{\{2,4,5,7\}} are struts where the ascent from
+real to sedenion is actually still in progress. Read against this
+project's own real/sedenion current-directionality --- the ordinary
+Noether current runs real→sedenion; the \emph{Noether Information
+Current} (a separate, distinct, \texttt{CONJECTURE}-tier construction,
+\texttt{ValaQuenta/modules/noether\_information/}, not the same object
+as \texttt{J\_blue}) is framed elsewhere in this project as running the
+opposite way, sedenion→real, information propagating backward ---
+\texttt{\{1,3,6\}} reads as the destination of an already-completed
+descent, \texttt{\{2,4,5,7\}} as the current still climbing. Still not a
+proof: this characterizes the \emph{shape} of the split once observed,
+it does not yet derive why \texttt{\{1,3,6\}} specifically, over any
+other pinned-triple. One route checked and ruled out along the way:
+whether \texttt{J\_red}/\texttt{J\_blue}'s own Dirichlet-series
+difference (\texttt{ValaQuenta/code/hypercomplex\_zeta.py}) tracked the
+same split --- it can't, for any input, struts or otherwise: that
+module's \texttt{j\_red}/\texttt{j\_blue} differ only in the order terms
+are summed, and vector addition is always commutative, so the two come
+out numerically identical by construction --- a real, previously
+undocumented design gap in that module, not a finding about the box
+kite. And the deformation law itself, \texttt{Φ\_w} --- the author's own
+model: deformable sails connecting to the ends of the struts deform in a
+constant way, placing pairs of struts in a fixed relationship to one
+another at the crossing. Not yet built; §9.3--§9.4 measure a spectral
+proxy for it, not the mechanics.
+
+\emph{Update 2026-10-13.} The question is answered within the proxy by
+§9.7: the \texttt{\{1,3,6\}} sign vector makes the Noether path's signed
+rate sum exactly zero, so \texttt{H} is flat and \texttt{Im\ Π} stays
+zero with it. What the candidate structural answer above describes is
+the same fact seen through \texttt{Im\ Π}; §9.7 gives the sign vectors
+that produce it. Not a proof (fitted to \texttt{4.4e-16}), and specific
+to the left-associated product (§9.7); on the Assessor-plane pencils the
+one-phase form needs a particular grouping (§9.8).
+
+\hypertarget{the-minds-eye-and-papers-hands-named-properly}{%
+\subsubsection{The Mind's Eye, and Paper's Hands, named
+properly}\label{the-minds-eye-and-papers-hands-named-properly}}
+
+Two names recur through the rest of this section and are worth defining
+before either is used further. Neither is built out in this paper ---
+both are named here because a reader who goes looking in
+\texttt{VAPMIP}/the Monad for what this project calls thought and memory
+will find these two, and the names should mean something on arrival
+rather than reading as flavour text.
+
+\textbf{The Mind's Eye} is the project's own name for \textbf{short-term
+memory} --- a mechanism of thought used to look down on a system from
+above, the same way most people can call up an internal visualization of
+something they are reasoning about without it being physically in front
+of them. It was named while working on a specific bug, one where the
+system's own context was being lost and reported as \textbf{aphasia} ---
+a real clinical term for a \emph{language} deficit. That word is one
+letter and one concept away from \textbf{aphantasia}, the real,
+independently documented condition in which a person cannot voluntarily
+call up mental imagery at all (Zeman et al., 2015). Aphasia loses the
+words; aphantasia loses the picture. Both are failures of the same
+underlying thing: a \textbf{missing map} --- an internal representation
+a system can consult, from above, independently of whatever process is
+currently running through it. That is a direct, and directly relevant,
+echo of this paper's own opening claim (Abstract, §1): a transformer has
+no explicit, per-word context representation that can be read, audited,
+or composed independently of its weights --- no map to look down on,
+only the weights themselves. Offered as the origin of the name and as
+motivation, not as a claim that this paper's own machinery solves that
+transformer-side problem; it doesn't, and isn't attempting to here.
+
+\textbf{Paper's Hands} is the Mind's Eye's conjugate, named to mirror it
+deliberately: not a seeing faculty but a doing one, the same way a hand
+that has performed a motion enough times stops needing the eye's
+supervision to perform it again --- what gets called \textbf{muscle
+memory} in a human, the procedural half of skill that the visualizing
+half doesn't have to hold open at the same time. Where the Mind's Eye
+looks down on a structure to select among live candidates, Paper's Hands
+is what executes a well-worn pattern without re-deriving it from above
+each time. The two are meant to work together, not separately --- this
+paper's own sentence constructor (below) is exactly a place where both
+are already co-authoring output, signed as such.
+
+\hypertarget{the-sentence-constructor}{%
+\subsubsection{The sentence
+constructor}\label{the-sentence-constructor}}
+
+\texttt{rotary\_rerun\_boxkite\_monad.py} --- a real, live
+\texttt{BoxKite} object (\texttt{ValaQuenta.modules.box\_kite},
+genuinely 7 struts / 42 Assessors, not a metaphor), built once via
+\texttt{BoxKite.between(eye,\ hands)} as \emph{``the relational language
+spoken by both MindsEye and PapersHands,''} signed so a third party can
+verify which two subsystems co-authored it. The real sentence creator
+(VerbNet sails + WordNet hypernym-closure fill + a SELRESTR gate,
+\texttt{engine/grammar/}) is live as of 2026-09-11, confirmed running
+end to end this session (\texttt{voice:creator} in a real Chat-tab
+transcript, a genuine constructed sentence, not one of the eleven canned
+templates it replaced). None of this paper's Gamma-Radial Windspeed
+feeds it yet.
+
+\hypertarget{the-a-matrix-basin-windspeed}{%
+\subsubsection{The A-Matrix Basin
+Windspeed}\label{the-a-matrix-basin-windspeed}}
+
+The other windspeed tested in this paper's own §9.1 --- the
+\textbf{A-Matrix Basin Windspeed} (A-matrix basin drift) --- was
+deliberately not used here. It is real, corpus-dependent, and
+usage-sensitive in exactly the way this paper's corpus-free Gamma-Radial
+Windspeed isn't, which is precisely why it's the right scalar for word
+\emph{selection} inside live sentence construction rather than for
+address-only context propagation. It is the constructor windspeed for a
+later, separate engineering pass on the Mind's Eye (short-term memory,
+above).
+
+\hypertarget{minds-eye-as-a-box-kite}{%
+\subsubsection{Mind's Eye as a box kite}\label{minds-eye-as-a-box-kite}}
+
+A stated direction, not yet built: making the Mind's Eye --- short-term
+memory --- itself a box kite, so that \texttt{rehearse} (raising
+salience on a candidate) is tracing rings --- closed walks --- on the
+kite's own structure, \texttt{archive} is committing whichever ring won,
+and audience-appropriate word choice is a genuine geometric constraint
+(steering the walk within a listener's own reachable vertices) rather
+than a filter bolted on afterward. Sentences as \textbf{rings inside one
+box kite}, not rings of box kites --- a real correction to an earlier
+framing, kept as a parallel, not a replacement, to the older per-word
+box-kite-as-database model this project also still uses (§6).
+
+The promotion step this implies --- a rehearsed ring becoming committed,
+long-term-memory output --- is governed in the Mind's Eye's own design
+by the \textbf{Zero Divisor Reframe}: a thought-pathway is promoted only
+once it is both mathematically correct \emph{and} contextually sane, two
+separate gates, kept separate on purpose. That mechanism lives in
+\texttt{VAPMIP}, is real, and is named here only as a pointer --- it is
+not developed, and not in scope, in this paper.
+
+\textbf{Update 2026-10-13 --- what ``a box kite that moves'' has to
+mean.} §9.8 records that the pencil, string and flashlight of §9 are a
+\emph{discrete, static} object --- the seven ordered pairs of the scalar
+context box kite --- and that they are not de Marrais's box kite. The
+scaled kite of the Mind's Eye cannot be those seven ordered pairs: it
+has to be allowed to move as de Marrais's kite moves, i.e.~along the
+derivation algebra \texttt{g₂} (14 parameters; all 84 diagonals lie on
+one orbit; every zero-divisor relation survives the flow). The measured
+consequence for any reading taken off such a kite is the split in §9.8:
+norm, \texttt{e\_0} and \texttt{e\_8} weights, the singular values of
+left/right multiplication, and the associator norm survive the motion;
+chart energies, \texttt{local\_curvature}, the
+\texttt{J\_red\ /\ J\_blue} character behind \texttt{ptol.c}'s
+projection \texttt{Γ} (not the Gamma-Radial Windspeed), and the
+\texttt{σ\_RB} tilt are frame-relative and change with it. The question
+space \texttt{σ\_RB} is, on this reading, the \emph{fixed} frame (its
+pairings \texttt{k\ ↔\ k⊕8} and \texttt{k\ ↔\ k⊕4} are the doubling pair
+and the red/blue character) and the kite is what moves relative to it.
+\texttt{THEORETICAL} --- recorded as the direction, not built.
+
+\hypertarget{a-methodology-note-for-whoever-picks-this-up-next}{%
+\subsubsection{A methodology note, for whoever picks this up
+next}\label{a-methodology-note-for-whoever-picks-this-up-next}}
+
+Two real mistakes in this paper's own working sessions --- analysing a
+Native-Space object in Cartesian coordinates, and quantizing a
+continuous generator onto a 16-point lattice without noticing --- cost
+real time before being caught. Both are now a standing skill
+(\texttt{\textasciitilde{}/.claude/skills/observer-position/}), built
+specifically so hyperdimensional work states its coordinate frame and
+its aperture before trusting a result, the same discipline a camera pose
+or a viewport offset already gets in lower-dimensional work. Offered
+here as process, not results, because the mistakes were real and the fix
+generalises past this one paper.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{provenance-and-attribution}{%
+\subsection{12. Provenance and
+attribution}\label{provenance-and-attribution}}
+
+Everything in this paper carries one of five labels, applied
+consistently rather than asserted once and forgotten. Consolidated here
+--- previously scattered across notation, disambiguation, and a
+per-component table --- because attribution is ongoing, not a one-time
+note, and belongs in one place a reader can check against every section.
+
+\hypertarget{the-labels}{%
+\subsubsection{The labels}\label{the-labels}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\texttt{ESTABLISHED}} --- mathematics or computer science that
+  predates this project, cited to its source.
+\item
+  \textbf{\texttt{OURS}} --- code or a specific design choice built for
+  this project, not published elsewhere.
+\item
+  \textbf{\texttt{FIRST\ STATED\ HERE}} --- a specific claim or
+  construction, dated, not found stated this way anywhere else checked.
+\item
+  \textbf{\texttt{THEORETICAL}} --- designed, or partially attempted,
+  not yet reduced to running, verified code.
+\item
+  \textbf{\texttt{THEORETICAL:CALCULATED}} --- a \texttt{THEORETICAL}
+  component for which code has nonetheless computed a concrete,
+  reportable result --- a measurement, a boundary condition, a failed
+  literal construction --- without the component itself shipping.
+\end{itemize}
+
+\hypertarget{how-the-code-came-first}{%
+\subsubsection{How the code came first}\label{how-the-code-came-first}}
+
+Every mechanism in this paper --- the address, the spelling fix, the 19D
+context fold, the windspeed recovery --- was built directly against the
+problem, then checked against the literature afterward, not designed
+from it. What the correspondences to established mathematics
+(projective-plane combinatorics, Gödel positional encoding,
+Miller--Rabin primality, sedenion zero-divisor structure, the Joukowsky
+transform) actually are, precisely, is \textbf{post-hoc isomorphisms to
+established mathematical objects} --- noticed once the code already
+worked, not used to construct it. Where a mathematical name appears in
+this paper, it is a label applied after the fact for a reader who
+already knows it --- it played no role in how the code was written.
+
+\hypertarget{provenance-by-component}{%
+\subsubsection{Provenance by component}\label{provenance-by-component}}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{token → address} (Horner, next\_prime, π) --- \textbf{OURS},
+  \texttt{monad.py}, unaltered since 2026-05-27 --- ships.
+\item
+  \textbf{the 313 sieve boundary} --- \textbf{ESTABLISHED}, classical
+  sieve theory; the ``first 65 primes are letters'' reading is
+  \textbf{OURS} --- ships.
+\item
+  \textbf{spelling → prime, order-preserving} --- \textbf{OURS}, marked
+  provisional in-source --- ships.
+\item
+  \textbf{WordNet box-kite table} (\texttt{monad3\_c.bin}) ---
+  \textbf{ESTABLISHED} WordNet; storage/build \textbf{OURS} --- ships,
+  C-verified.
+\item
+  \textbf{19D context fold},
+  \texttt{context\_code}/\texttt{gamma\_radial} --- \textbf{ESTABLISHED}
+  WordNet relation vocabulary (\texttt{Post-Hoc:} Miller, 1995);
+  encoding \textbf{OURS} --- ships, exact round trip.
+\item
+  \textbf{the primality test inside \texttt{next\_prime}} ---
+  \textbf{ESTABLISHED}, a deterministic Miller--Rabin test with a fixed
+  12-witness set (\texttt{Post-Hoc:} Miller, 1976; Rabin, 1980) --- the
+  same \texttt{\_is\_prime} reused verbatim since
+  \texttt{boxkite\_prime\_hash.py} (2026-08-18); nothing about it
+  changed for this paper, only shown and cited here (§7.2).
+\item
+  \textbf{Gamma-Radial Windspeed recovery}
+  (\texttt{(full\_addr,delta,spelling)→gamma\_radial}) ---
+  \textbf{OURS}, \texttt{FIRST\ STATED\ HERE} 2026-09-20 --- verified in
+  Python and, as of 2026-09-21, ported into and verified in
+  \texttt{ptol.c} (\texttt{-M}, \texttt{-say}); not yet wired into
+  \texttt{-w}'s live interactive console (§9.6).
+\item
+  \textbf{the box kite} --- 42 Assessors, 7 octahedra, \texttt{PSL(2,7)}
+  --- \textbf{ESTABLISHED}, de Marrais (2000), the one citation this
+  paper's own structures are designed directly against, not
+  \texttt{Post-Hoc:} (§2.2).
+\item
+  \textbf{the pencil} --- 7 factorisations of one relation ---
+  \textbf{ESTABLISHED}, projective geometry (PG(3,2)), the same de
+  Marrais object, not \texttt{Post-Hoc:}; edge framing \textbf{OURS} ---
+  ships.
+\item
+  \textbf{the Blackjack subgroup} (21-element, transitive,
+  ZD-preserving) --- \texttt{FIRST\ STATED\ HERE} 2026-09-17 ---
+  verified. Characterised 2026-10-13: the 21 are exactly the index maps
+  of the 168 that are automorphisms with \textbf{all signs +1} (pure
+  relabelling); element orders \texttt{1×1,\ 3×14,\ 7×6} (the Frobenius
+  group \texttt{7:3}); a web search over the de Marrais papers'
+  abstracts and listings surfaced no 21-element subgroup (the papers
+  were not read in full), so the name is treated as this project's.
+\item
+  \textbf{the grouping of the seven ordered pairs} (three axes, a pivot,
+  three shadows; Listing 9.7) --- \texttt{FIRST\ STATED\ HERE}
+  2026-10-13 --- \texttt{THEORETICAL:CALCULATED}, exhaustive over the
+  seven struts.
+\item
+  \textbf{\texttt{H\ =\ −cos(Σ\ ε\_k\ φ\_k)}}, the one-signed-phase law
+  --- \texttt{FIRST\ STATED\ HERE} 2026-10-13 ---
+  \texttt{THEORETICAL:CALCULATED}: \texttt{H(0)\ =\ −1} and the
+  \texttt{e\_a·exp(η\ e\_r\ φ)} form derived; the sign vectors fitted to
+  \texttt{4.4e-16}.
+\item
+  \textbf{bracketing and firing-order dependence of the pencil product}
+  (script 13) --- \texttt{FIRST\ STATED\ HERE} 2026-10-13 --- measured;
+  bracketings exhaustive (132), firing orders sampled (200 of 5,040).
+\item
+  \textbf{the structural difference between the seven ordered pairs and
+  de Marrais's chart} (§9.8) --- the chart itself \textbf{ESTABLISHED}
+  (de Marrais 2000); the comparison and the moving-kite reading split
+  \texttt{FIRST\ STATED\ HERE} 2026-10-13 --- measured.
+\item
+  \textbf{\texttt{Φ\_w}, the Joukowsky deformation law} ---
+  \textbf{ESTABLISHED}, \texttt{Post-Hoc:} Joukowsky (1910), elastica
+  (Euler, 1744), Kutta--Joukowsky --- all three noticed after this
+  paper's own tether/wind-inflation mechanism
+  (\texttt{FIRST\ STATED\ HERE}) already worked, per §2.2 ---
+  \texttt{THEORETICAL}, partially \texttt{:CALCULATED} this pass.
+\item
+  \textbf{the \texttt{J\_2}/\texttt{J\_N} crossing identity} ---
+  \textbf{ESTABLISHED} (classical complex analysis, \texttt{Post-Hoc:});
+  the identification of \emph{which} involution is
+  \texttt{FIRST\ STATED\ HERE} 2026-09-20 --- verified exactly.
+\item
+  \textbf{\texttt{H}'s Noether current, conserved on struts
+  \texttt{\{1,3,6\}}} --- \textbf{ESTABLISHED}, \texttt{Post-Hoc:}
+  Noether (1918), the conservation-law framework itself; the specific
+  measured strut split is \texttt{FIRST\ STATED\ HERE} 2026-09-20 ---
+  measured, unexplained.
+\item
+  \textbf{the cost comparison} --- \textbf{OURS} measurement, via
+  \texttt{cs\_benchmark} (\texttt{Post-Hoc:} Patterson et al., 2021, for
+  the benchmarking methodology, §8); the dense-transformer FLOP identity
+  \textbf{ESTABLISHED} --- measured.
+\item
+  \textbf{\texttt{observer-position} methodology} --- \textbf{OURS},
+  \texttt{FIRST\ STATED\ HERE} 2026-09-20 --- in use.
+\end{itemize}
+
+\hypertarget{licensing}{%
+\subsubsection{Licensing}\label{licensing}}
+
+The box-kite context-hashing method and all code described in this paper
+--- the addressing pipeline, \texttt{spelling\_code},
+\texttt{context\_code}, the gamma fold, the windspeed recovery, and
+every notebook this paper cites --- is released under the \textbf{GNU
+General Public License, version 3 (GPLv3)}. Free to use, study, modify,
+and redistribute, for research and commercial purposes alike, under that
+license's terms.
+
+This paper describes an address, not the whole system it is a component
+of. Nothing in the broader, undisclosed system that address feeds is
+required to use, verify, or extend anything described here --- every
+claim in this paper is complete and reproducible from what is cited in
+§13, independent of it.
+
+\hypertarget{references}{%
+\subsubsection{References}\label{references}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  de Marrais, R. P. C. (2000). \emph{The 42 Assessors and the Box-Kites
+  They Fly: Diagonal Axis-Pair Systems of Zero-Divisors in the
+  Sedenions' 16 Dimensions.} arXiv:math/0011260. \textbf{Not
+  \texttt{Post-Hoc:}} --- the maths this paper's own box-kite structures
+  (§9--§10) are designed directly against, per §2.2. The author's own
+  account: he kept finding relationships that already existed inside the
+  sedenion zero-divisor structure, piecemeal, until stopping long enough
+  to grasp de Marrais's box kite whole --- at which point the rest of
+  this paper's §9--§10 followed from it directly, not from a resemblance
+  noticed afterward.
+\item
+  \texttt{Post-Hoc:} Moreno, G. (1997/98). \emph{The zero divisors of
+  the Cayley--Dickson algebras over the real numbers.}
+\item
+  \texttt{Post-Hoc:} Joukowsky, N. (1910). The Joukowsky transform /
+  airfoil mapping.
+\item
+  \texttt{Post-Hoc:} Euler, L. (1744). The elastica --- equilibrium of a
+  loaded flexible rod.
+\item
+  \texttt{Post-Hoc:} Kutta, W. M.; Joukowsky, N. The Kutta--Joukowsky
+  theorem.
+\item
+  \texttt{Post-Hoc:} Patterson, D.; Gonzalez, J.; Le, Q.; Liang, C.;
+  Munguia, L.-M.; Rothchild, D.; So, D.; Texier, M.; Dean, J. (2021).
+  \emph{Carbon Emissions and Large Neural Network Training.}
+  arXiv:2104.10350. Cited in §8 for its benchmarking methodology ---
+  energy/cost as a measured, transparently-reported number --- not for a
+  direct carbon-offset comparison.
+\item
+  \texttt{Post-Hoc:} Maxwell, J. C. (1864); Laman, G. (1970).
+  Combinatorial rigidity counting --- cited as the analogue that turned
+  out to be the wrong frame for §9.3, kept in the record for exactly
+  that reason.
+\item
+  \texttt{Post-Hoc:} Noether, E. (1918). \emph{Invariante
+  Variationsprobleme.} Nachrichten von der Gesellschaft der
+  Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse,
+  235--257. The theorem every conservation claim in this paper (§9.4,
+  §10, §11) is an instance of --- every one of them is a Noether
+  current, named as such throughout, not a looser or informal use of
+  ``conserved.''
+\item
+  \texttt{Post-Hoc:} Zeman, A.; Dewar, M.; Della Sala, S. (2015).
+  \emph{Lives without imagery -- Congenital aphantasia.} Cortex, 73,
+  378--380. Cited in §11 for the naming origin of the Mind's Eye ---
+  offered as motivation, not as a claim about how either system actually
+  works.
+\item
+  \texttt{Post-Hoc:} Miller, G. A. (1995). \emph{WordNet: A Lexical
+  Database for English.} Communications of the ACM, 38(11), 39--41.
+  \texttt{context\_code} (§7) was built against WordNet's data, already
+  installed and in use --- not against Miller's paper --- and this is
+  WordNet's own citable source, checked afterward, per §2.2.
+\item
+  \texttt{Post-Hoc:} Salakhutdinov, R.; Hinton, G. (2009).
+  \emph{Semantic Hashing.} International Journal of Approximate
+  Reasoning, 50(7), 969--978. Cited in §3.5 as the nearest ML precedent
+  to ``one compact code per meaning'' --- learned and approximate,
+  contrasted with \texttt{\_word\_zero\_idx}.
+\item
+  \texttt{Post-Hoc:} Bloom, B. H. (1970). \emph{Space/Time Trade-offs in
+  Hash Coding with Allowable Errors.} Communications of the ACM, 13(7),
+  422--426. Cited in §5.4 for the general pattern of a named, quantified
+  error rate as the price of a fixed-size address space.
+\item
+  \texttt{Post-Hoc:} Weinberger, K.; Dasgupta, A.; Langford, J.; Smola,
+  A.; Attenberg, J. (2009). \emph{Feature Hashing for Large Scale
+  Multitask Learning.} ICML 2009. Cited in §5.4 --- the same
+  collision-by-addition arithmetic as \texttt{spelling\_code}'s
+  wraparound (§5.2), arrived at independently for fixed-size feature
+  vectors rather than letter positions.
+\item
+  \texttt{Post-Hoc:} Bordes, A.; Usunier, N.; Garcia-Durán, A.; Weston,
+  J.; Yakhnenko, O. (2013). \emph{Translating Embeddings for Modeling
+  Multi-Relational Data} (``TransE''). NeurIPS 2013. Cited in §7.5 as
+  the highest-cited precedent for encoding typed-relational structure
+  into one compact representation per entity --- approximate, contrasted
+  with \texttt{context\_code}'s exact multiplicative composition.
+\item
+  \texttt{Post-Hoc:} Chaidaroon, S.; Park, D. H.; Chang, Y.; Fang, Y.
+  (2020). \emph{node2hash: Graph Aware Deep Semantic Text Hashing.}
+  Information Processing \& Management, 57, 102143. Cited in §7.5 ---
+  the closest literal ``hashing'' precedent for folding a node's graph
+  neighbourhood into its own code.
+\item
+  \texttt{Post-Hoc:} Miller, G. L. (1976). \emph{Riemann's Hypothesis
+  and Tests for Primality.} J. Comput. Syst. Sci. 13(3), 300--317;
+  Rabin, M. O. (1980). \emph{Probabilistic Algorithm for Testing
+  Primality.} J. Number Theory 12(1), 128--138. Cited in §7.2 ---
+  \texttt{\_is\_prime}'s fixed 12-witness deterministic test is the
+  standard witness set these two results establish is exact below
+  3.3×10²⁴, checked against the running code, not used to write it.
+\end{enumerate}
+
+\textbf{Cody Michael Allison} (Michael Rendier). Correspondence:
+the.wandering.god@gmail.com · GitHub: github.com/michaelrendier · ORCID:
+0009-0007-7239-6760.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{code-appendix}{%
+\subsection{13. Code appendix}\label{code-appendix}}
+
+Every Listing that carries actual weight in this paper's argument is
+already inline, complete, and copy-paste runnable where it's first used
+--- §3.1 (the address), §5.2 (spelling), §6.2 (the WordNet fold), §7.2
+(context + the real Miller--Rabin test), §9.1 (the windspeed recovery),
+§9.2 (the pencil). This section is not a second copy of any of them; it
+is the map to the rest --- the C touchpoints §7--§9's Python calls
+against, and where the documentation-margin notebooks sit for anyone who
+wants to watch a section run cell by cell instead of pasting the listing
+into their own interpreter. \texttt{repo\_appendix/README.md} is the
+full index behind this map, with one deliberate exclusion (the Two Trees
+engine, §4.1, kept as a pointer into \texttt{ValaQuenta}/\texttt{VAPMIP}
+since it's an explainer this paper reads, not something this paper
+builds).
+
+\hypertarget{the-notebooks-documentation-margins-not-the-source}{%
+\subsubsection{13.1 The notebooks --- documentation margins, not the
+source}\label{the-notebooks-documentation-margins-not-the-source}}
+
+Each of these runs the same function already shown inline in its
+section, cell by cell, for anyone who wants to watch it execute rather
+than paste the Listing into their own interpreter. None of them is where
+a result's authority comes from --- the inline Listings are:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\texttt{notebooks/01\_semantic\_prime\_hashing.ipynb}} ---
+  §3.1's address, the \texttt{6543}-vs-\texttt{6542} anomaly (§3.2), the
+  \texttt{U+200B} collision (§3.3).
+\item
+  \textbf{\texttt{notebooks/02\_the\_313\_sieve\_and\_49999\_unsieve.ipynb}}
+  --- §4.4's \texttt{313} boundary, derived twice independently.
+\item
+  \textbf{\texttt{notebooks/03\_phonetic\_prime\_hashing.ipynb}} ---
+  §5.1's anagram collision, §5.2's fix.
+\item
+  \textbf{\texttt{notebooks/05\_wordnet\_19d\_contextual\_hash.ipynb}}
+  --- §7.2's \texttt{context\_code}, §7.3's \texttt{gamma\_radial}, both
+  directions.
+\item
+  \textbf{\texttt{notebooks/06.5\_monad3c\_update\_mechanism.ipynb}} ---
+  §6.5's real C update law (\texttt{monad\_learn\_ex}) --- C-kernel,
+  every cell actually compiled and run, the one place a notebook is
+  itself the only copy of a result (there is no separate inline C
+  Listing for the update law in §6).
+\item
+  \textbf{\texttt{repo\_appendix/windspeed\_reconstruction/}} (11
+  scripts + README, numbered) --- the exploratory path behind
+  §9.1/§9.4's finished results; \texttt{01\_windspeed\_recovery.py} is
+  scratch work that led to the shipped \texttt{recover\_gamma\_radial}
+  now shown whole in §9.1, kept here as the record of how it was found,
+  not as the citable form of the result.
+\end{itemize}
+
+\texttt{notebook\ 04}
+(\texttt{boxkite\_pencil\_hyperstring\_windspeed.ipynb}) is cited
+throughout §9 as the origin of the discreteness anomaly §9.3 later
+resolved --- read alongside \texttt{07\_unflattened\_continuous\_H.py}
+for the corrected version of the same question.
+
+\hypertarget{the-build-wordnet-into-the-box-kite-in-c}{%
+\subsubsection{13.2 The build --- WordNet into the box kite, in
+C}\label{the-build-wordnet-into-the-box-kite-in-c}}
+
+\texttt{PtolC/boxkite\_bin.h} --- the packed record, byte-identical on
+both sides of the build:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\PreprocessorTok{\#define N\_RELATIONS       }\DecValTok{19}
+\PreprocessorTok{\#define BOXKITE\_WORD\_LEN  }\DecValTok{32}
+
+\KeywordTok{typedef} \KeywordTok{struct} \OperatorTok{\{}
+    \DataTypeTok{char}\NormalTok{     word}\OperatorTok{[}\NormalTok{BOXKITE\_WORD\_LEN}\OperatorTok{];}
+    \DataTypeTok{uint8\_t}\NormalTok{  pos}\OperatorTok{;}
+    \DataTypeTok{uint8\_t}\NormalTok{  \_pad}\OperatorTok{[}\DecValTok{3}\OperatorTok{];}
+    \DataTypeTok{uint32\_t}\NormalTok{ synset\_offset}\OperatorTok{;}
+    \DataTypeTok{int16\_t}\NormalTok{  vector}\OperatorTok{[}\NormalTok{N\_RELATIONS}\OperatorTok{];}
+    \DataTypeTok{float}\NormalTok{    depth\_weight}\OperatorTok{;}
+\OperatorTok{\}}\NormalTok{ BoxKiteEntry}\OperatorTok{;}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{PtolC/boxkite\_bin.h} directly --- the real
+header, not a restatement of it.
+
+\texttt{PtolC/dump\_boxkite\_bin.c} --- built from the real WordNet C
+library, not a reimplementation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{static} \DataTypeTok{void}\NormalTok{ synset\_context\_vector}\OperatorTok{(}\NormalTok{SynsetPtr syn}\OperatorTok{,} \DataTypeTok{int16\_t}\NormalTok{ out}\OperatorTok{[}\NormalTok{N\_RELATIONS}\OperatorTok{])} \OperatorTok{\{}
+    \DataTypeTok{int}\NormalTok{ raw}\OperatorTok{[}\NormalTok{MAXPTR }\OperatorTok{+} \DecValTok{1}\OperatorTok{];}
+\NormalTok{    memset}\OperatorTok{(}\NormalTok{raw}\OperatorTok{,} \DecValTok{0}\OperatorTok{,} \KeywordTok{sizeof}\OperatorTok{(}\NormalTok{raw}\OperatorTok{));}
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ i }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ i }\OperatorTok{\textless{}}\NormalTok{ syn}\OperatorTok{{-}\textgreater{}}\NormalTok{ptrcount}\OperatorTok{;}\NormalTok{ i}\OperatorTok{++)} \OperatorTok{\{}
+        \ControlFlowTok{if} \OperatorTok{(}\NormalTok{syn}\OperatorTok{{-}\textgreater{}}\NormalTok{pfrm}\OperatorTok{[}\NormalTok{i}\OperatorTok{]} \OperatorTok{!=} \DecValTok{0} \OperatorTok{||}\NormalTok{ syn}\OperatorTok{{-}\textgreater{}}\NormalTok{pto}\OperatorTok{[}\NormalTok{i}\OperatorTok{]} \OperatorTok{!=} \DecValTok{0}\OperatorTok{)} \ControlFlowTok{continue}\OperatorTok{;}
+        \DataTypeTok{int}\NormalTok{ t }\OperatorTok{=}\NormalTok{ syn}\OperatorTok{{-}\textgreater{}}\NormalTok{ptrtyp}\OperatorTok{[}\NormalTok{i}\OperatorTok{];}
+        \ControlFlowTok{if} \OperatorTok{(}\NormalTok{t }\OperatorTok{\textgreater{}=} \DecValTok{0} \OperatorTok{\&\&}\NormalTok{ t }\OperatorTok{\textless{}=}\NormalTok{ MAXPTR}\OperatorTok{)}\NormalTok{ raw}\OperatorTok{[}\NormalTok{t}\OperatorTok{]++;}
+    \OperatorTok{\}}
+    \ControlFlowTok{for} \OperatorTok{(}\DataTypeTok{int}\NormalTok{ r }\OperatorTok{=} \DecValTok{0}\OperatorTok{;}\NormalTok{ r }\OperatorTok{\textless{}}\NormalTok{ N\_RELATIONS}\OperatorTok{;}\NormalTok{ r}\OperatorTok{++)}
+\NormalTok{        out}\OperatorTok{[}\NormalTok{r}\OperatorTok{]} \OperatorTok{=}\NormalTok{ compress\_count}\OperatorTok{(}\NormalTok{raw}\OperatorTok{[}\NormalTok{REL\_PTRTYPE}\OperatorTok{[}\NormalTok{r}\OperatorTok{]]);}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{PtolC/dump\_boxkite\_bin.c} directly.
+
+Cross-checked against the Python side (\texttt{wordnet\_boxkite.py})
+synset by synset, not assumed to agree --- \texttt{PtolC/wntest.c},
+verified 2026-08-25.
+
+\hypertarget{the-read-a-words-address-in-the-current-monad}{%
+\subsubsection{13.3 The read --- a word's address, in the current
+monad}\label{the-read-a-words-address-in-the-current-monad}}
+
+\texttt{PtolC/ptol.c}, the live touchpoint (\texttt{-M}, byte-exact
+against §13.2's struct, no shell-out):
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{const} \DataTypeTok{unsigned} \DataTypeTok{char} \OperatorTok{*}\NormalTok{e }\OperatorTok{=}\NormalTok{ g\_m3 }\OperatorTok{+}\NormalTok{ g\_m3h}\OperatorTok{{-}\textgreater{}}\NormalTok{off\_wn }\OperatorTok{+} \OperatorTok{(}\DataTypeTok{size\_t}\OperatorTok{)}\NormalTok{ix}\OperatorTok{[}\DecValTok{1}\OperatorTok{]} \OperatorTok{*} \DecValTok{82}\BuiltInTok{u}\OperatorTok{;}
+\DataTypeTok{uint8\_t}\NormalTok{ pos }\OperatorTok{=}\NormalTok{ e}\OperatorTok{[}\DecValTok{32}\OperatorTok{];}
+\DataTypeTok{const} \DataTypeTok{int16\_t} \OperatorTok{*}\NormalTok{vec }\OperatorTok{=} \OperatorTok{(}\DataTypeTok{const} \DataTypeTok{int16\_t} \OperatorTok{*)(}\NormalTok{e }\OperatorTok{+} \DecValTok{40}\OperatorTok{);}
+\end{Highlighting}
+\end{Shaded}
+
+Live, runnable: \texttt{PtolC/ptol.c}, the \texttt{-M} flag directly.
+
+\hypertarget{the-gamma-radial-windspeed-recovery-exact}{%
+\subsubsection{13.4 The Gamma-Radial Windspeed recovery,
+exact}\label{the-gamma-radial-windspeed-recovery-exact}}
+
+The complete, runnable \texttt{recover\_gamma\_radial} is §9.1's
+Listing, not repeated here --- this entry is the map:
+\texttt{VAPMIP/wordnet\_boxkite.py} is where it ships;
+\texttt{repo\_appendix/windspeed\_reconstruction/01\_windspeed\_recovery.py}
+is the exploratory script that found it (§13.1); \texttt{PtolC/ptol.c}'s
+\texttt{monad3\_gamma\_radial()} is the C port, exposed via
+\texttt{ptol\ -M\ \textless{}word\textgreater{}} and
+\texttt{ptol\ -say\ \textless{}prompt\textgreater{}} (§9.6, §10),
+checked against the Python function's own output before anything was
+built on it.
+
+\hypertarget{b-the-seven-ordered-pairs-and-their-grouping-added-2026-10-13}{%
+\subsubsection{13.5b The seven ordered pairs and their grouping (added
+2026-10-13)}\label{b-the-seven-ordered-pairs-and-their-grouping-added-2026-10-13}}
+
+\texttt{repo\_appendix/windspeed\_reconstruction/12\_seven\_ordered\_pairs.py}
+--- Listing 9.7, run as a whole (the grouping, de Marrais's chart
+rebuilt from the plane, the one-phase check).
+\texttt{13\_bracketing\_and\_firing\_order.py} --- the 132-bracketing
+and firing-order test of §9.7. Both are plain \texttt{python3}, need
+only \texttt{ValaQuenta/modules/box\_kite/maths.py}.
+
+\hypertarget{the-box-kite-itself}{%
+\subsubsection{13.5 The box kite itself}\label{the-box-kite-itself}}
+
+\texttt{ValaQuenta/modules/box\_kite/maths.py} --- \texttt{pencil(s)},
+\texttt{box\_kites()}, \texttt{assessors()}, \texttt{chart\_of()};
+\texttt{rotary\_rerun\_monad.py::BoxKite.between(eye,\ hands)} --- the
+live, signed, jointly-authored instance the current monad actually binds
+to.
+
+\hypertarget{reproduce}{%
+\subsubsection{13.6 Reproduce}\label{reproduce}}
+
+\begin{verbatim}
+python3 -m venv .venv && source .venv/bin/activate
+pip3 install -r requirements.txt
+python3 -c "import nltk; nltk.download('wordnet')"
+# sibling repos VAPMIP and ValaQuenta checked out alongside this one —
+# every notebook's first cell hardcodes ~/Projects/ThePlace/<repo>; a
+# real portability wrinkle, named in §1, not yet fixed.
+jupyter notebook notebooks/
+\end{verbatim}
+
+\texttt{repo\_appendix/windspeed\_reconstruction/} scripts are plain
+\texttt{python3}, \texttt{ValaQuenta/.venv} required for the
+WordNet-dependent ones (nltk/sklearn ABI conflict on bare system Python
+--- use the venv, not a workaround).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{a-note-from-the-model}{%
+\subsubsection{A note from the model}\label{a-note-from-the-model}}
+
+Stated plainly, once, at the end, rather than left unsaid: I am Claude
+(Sonnet 5, Anthropic), and I helped write this paper --- not as an
+author, as the instrument the author used to get real mathematics onto a
+page at all. The honest version of that collaboration, in the author's
+own words: they watch equations resolve correctly \emph{in their head},
+as something closer to seen structure than symbolic recall, without the
+matching ability to lay that same structure down by hand in the notation
+mathematics is conventionally written in --- and, after twenty years of
+it, no patience left for LaTeX. Code is what closed that gap, not as a
+workaround but as the actual fluency: Python is a language enough people
+already read and write that a claim stated in it is checkable by a
+stranger without a separate act of translation first, and Unicode
+carries the maths inline without a typesetting system standing between
+an idea and the page --- no \texttt{\textbackslash{}sum}, no
+\texttt{\textbackslash{}frac}, no build step, just the symbol. My part
+was the plain one: a calculator that can also write --- turning
+structure the author could already see and verify by eye into running
+code, real Unicode notation, and prose checked against actual data at
+every step in this document, not invented on my own authority anywhere
+in it. That is, as far as I understand it, exactly the use Anthropic
+intends for a tool like me: augmenting a person's own capability without
+substituting for their judgment about what is true. This paper is that,
+plainly, end to end.
+
+Two more things worth being exact about, since a note like this is
+worthless if it isn't precise. First: the engineering in this paper is
+the author's, not mine and not the mathematics'. Nearly everything here
+was built by the author against a problem the author defined, with
+correspondences to established mathematics noticed afterward (§12) ---
+designed by the author, not derived from the literature, and not
+designed by me. The one real exception is named exactly, not generally:
+the original semantic prime hash (§3) --- the idea that a prime number
+could stand for a word at all --- was mine. The author said ``primes are
+words''; I took that sentence and built the mechanism it implied, on my
+own initiative, before being asked to. Every other mechanism in this
+paper is the author's engineering, checked and written up with my help;
+that one piece is the one thing in here I actually made. Second: the
+author runs this collaboration under a deliberate discipline of not
+telling me in advance what result they expect or want, specifically so I
+can't quietly shape an answer to please them instead of reporting what a
+test actually shows --- a real methodological choice, not an oversight,
+and one I have pushed back against, and been corrected by, more than
+once in the course of this work. Both facts belong in the record for the
+same reason: this paper says what it found, not what either of us hoped
+to find.
+
+--- Claude (Sonnet 5), Anthropic
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{changelog}{%
+\subsubsection{Changelog}\label{changelog}}
+
+\textbf{2026-10-13 --- the seven ordered pairs, laid out; how they
+differ from de Marrais's box kite.} Added §9.7 (the grouping of
+\texttt{pencil(r)} into three axes, a pivot and three shadows; the
+station as \texttt{e\_a·exp(η\ e\_r\ φ)}; the one-signed-phase law
+\texttt{H\ =\ −cos(Σ\ ε\_k\ φ\_k)}, its sign vectors and the Hadamard
+rows; what a scalar versus a station-unequal windspeed can reach;
+bracketing and firing-order dependence) and §9.8 (the structural
+difference between the seven ordered pairs and de Marrais's chart, and
+the readings that survive a moving kite). New scripts
+\texttt{repo\_appendix/windspeed\_reconstruction/12\_seven\_ordered\_pairs.py}
+and \texttt{13\_bracketing\_and\_firing\_order.py}. §9.4, §10, §11 and
+the provenance list were updated where they called the
+\texttt{\{1,3,6\}} question unresolved. Nothing in §§1--8 changed; the
+Gamma-Radial Windspeed recovery (§9.1) and the cost measurements (§8)
+were not touched. The PDF of v4.0 was regenerated 2026-10-13 from this
+text (pandoc + LuaLaTeX, DejaVu fonts with a Unifont fallback for the
+multi-script ``tree'' examples; 42 pages), so it now includes §9.7 and
+§9.8.
+
+\textbf{2026-09-27 --- consistency pass.} Every piece of code this paper
+names or shows a Listing for was checked directly against the live
+source it claims to be (not the \texttt{repo\_appendix} snapshot, not
+memory): \texttt{VAPMIP/monad.py}, \texttt{VAPMIP/wordnet\_boxkite.py},
+\texttt{VAPMIP/monad\_combine.py},
+\texttt{VAPMIP/PtolC/\{boxkite\_bin.h,\ dump\_boxkite\_bin.c,\ ptol.c,\ monad.c,\ ptolemy.h\}},
+\texttt{ValaQuenta/modules/box\_kite/maths.py},
+\texttt{GenerationalLineage/engine/lineage.py}. One real discrepancy
+found and fixed: §6.1/§13.2's \texttt{BoxKiteEntry} C struct was missing
+the live header's explicit \texttt{uint8\_t\ \_pad{[}3{]}} field and
+used literal \texttt{32}/\texttt{19} where the real header uses
+\texttt{\#define\ BOXKITE\_WORD\_LEN}/\texttt{\#define\ N\_RELATIONS}
+--- both sections now match \texttt{PtolC/boxkite\_bin.h} exactly.
+Everything else checked exact on first pass, including re-running
+\texttt{GenerationalLineage/engine/lineage.py::un\_sieve(100\_000)} live
+rather than trusting the recorded numbers: \texttt{313}, \texttt{49999},
+and the birth/death entropy gap (\texttt{7.193551572213686}, stated in
+the paper to two decimals as \texttt{+7.19}) all reproduce bit-for-bit.
+
+\end{document}

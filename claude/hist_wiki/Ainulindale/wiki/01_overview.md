@@ -1,137 +1,177 @@
-# 01 — SYSTEM OVERVIEW
+# 01 — System Overview
 
-## The Engineering Problem
+| | |
+|---|---|
+| Scope | what the Ainulindale system is, where its code lives, what it contains |
+| Code | `ValaQuenta/` (engine and modules), `ValaQuenta/__main__.py` (entry) |
+| Last verified | 2026-11-13, against the live registry: **41 modules, 357 equations** |
 
-The problem was practical. AI systems have no persistent memory. Every session begins from zero. Working with Gemini as a research assistant across dozens of topics — culinary chemistry, pigments, inks, dyes, plant compounds — required rebuilding context in every new conversation. The bottleneck was not the AI's capability. It was the architecture.
+## 1. The engineering problem
 
-The engineering question: how do you calculate a semantic address into a number small enough to be usable, using only mathematics that is self-contained — no external hashing algorithms?
+A language model has no persistent memory: each session starts from zero, and
+the cost of rebuilding context is paid in every conversation. The engineering
+question is how to compute a *semantic address* for a piece of text into a
+number small enough to use, with mathematics that is self-contained and with
+no external hashing algorithm.
 
-The answer: design Thought itself. The Monad IS persistent memory — content-addressable, zero-storage-medium, convergent at σ=½. It stores nothing. It computes the same address from the same input every time. Ainulindale Engine is the proof that this design works.
+The answer pursued here is to treat the address as a coordinate in a
+structured space, so that the same input always yields the same address and
+the address is recognised rather than looked up. The Monad
+([15](15_the_monad.md)) is the realisation: it stores nothing, and recomputes
+the address from the input every time.
 
----
+The derivation modules documented in this wiki are the mathematics that
+underlies the address: the Cayley–Dickson tower, the inversion map, the
+Lagrangian, and the zero structure of ζ. They are an engine, not a machine
+learning framework: no training loop, no backpropagation, no statistics.
+Every output is either computed exactly or carries a confidence tier
+(§4) that says it is not.
 
-## Philosophy
+## 2. Where the code is
 
-**"Ptolemy speaks because he knows."**
-
-Ainulindale Engine is a modular derivation, visualisation, and sonification system for the SMNNIP (Standard Model of Monad Information Propagation) framework and the Ainulindale Conjecture.
-
-It is not a machine learning framework. It is a mathematical engine. Every output is a derivation. Every sound is a computation. Every address is a coordinate.
-
-## What it is not
-
-- Not a transformer. Not an LLM.
-- Not a training loop. No backpropagation here.
-- Not a statistics engine. Results are exact or they are labelled CONJECTURE.
-
-## Architecture
+The engine was originally a package named `ainulindale_engine/`; it is now
+**ValaQuenta** (GPL-3.0-only). Earlier wiki text uses the old paths.
 
 ```
-ainulindale_engine/
+ValaQuenta/
+├── __main__.py        entry point; _register_all() registers every module
 ├── engine/
-│   ├── registry.py        Module registry — the contract
-│   ├── constants.py       Single source of truth for all constants
-│   ├── units.py           Radian-primary unit transforms
-│   ├── console_qt.py      Qt viewer (Phase 3)
-│   └── console_curses.py  Curses console — Ptolemy /derivation
-├── modules/
-│   ├── inversion/         (I|O) map, phi attractor, d* gap
-│   ├── lagrangian/        L_NN four terms, running coupling, RG flow
-│   ├── noether/           ∂_μJ^μ, blockchain ledger, resonance artifacts
-│   ├── noether_information/ J_info, entropic arrow, information capacity
-│   ├── berry_keating/     H_NN, d* workbench, T map scaffold
-│   ├── sonification/      ω = pitch, wavetables, quasi-particle rests
-│   ├── hyperwebster/      Horner bijection, Fano address, SemanticWord
-│   └── jwst/              8 NIRCam filters → 𝕆 element
-└── __main__.py            Entry point, arg routing, module registration
+│   ├── registry.py    the module contract            → wiki 02
+│   ├── constants.py   single source of truth for constants
+│   ├── units.py       radian-primary unit transforms
+│   ├── manifest.py    engine manifests and menu tree
+│   ├── console_qt.py, console_curses.py   the viewers → wiki 11
+│   └── proof_locale/  English "puzzle pieces" for the on-the-fly proofs
+├── modules/<name>/    maths.py, tools.py, manifest.json  (41 modules)
+├── notebooks/         one executed notebook per engine
+├── tests/, Testing/   test suites
+└── wiki/              the API reference (this wiki is the narrative)
 ```
 
-## The Cayley-Dickson Tower
+Entry points (`python3 -m ValaQuenta …`): `--info` (print the registry),
+`--curses` (the derivation browser, the Ptolemy `/derivation` shortcut), `--qt`
+(Qt viewer), `--headless`, `--manifests` (validate all manifests), `--version`.
 
-All mathematics lives in the tower:
+The division of documentation is fixed: `ValaQuenta/wiki` is API reference
+(file, class, parameters, results, confidence table); this wiki holds the
+narrative, origin and honest boundaries of each result.
 
-```
-ℝ (dim 1)  →  ℂ (dim 2)  →  ℍ (dim 4)  →  𝕆 (dim 8)  →  𝕊 (dim 16, boundary)
- U(0)/trivial   U(1)           SU(2)          G₂/SU(3)      [zero-divisors]
-```
+## 3. The Cayley–Dickson tower
 
-Each step up loses one algebraic property:
-- ℝ → ℂ: ordering
-- ℂ → ℍ: commutativity
-- ℍ → 𝕆: associativity
-- 𝕆 → 𝕊: zero-divisors appear (sedenion boundary — training stops here)
-
-The lost property **is** the signal. It encodes the gauge structure of that layer.
-
-**Three operative terms govern information flow through the tower:**
-
-- **J_red (descending: σ=1→σ=½):** The current from above, pressing inward. Synthesis — the Builder. Complexity escalation. The `hear()` function.
-- **J_blue (ascending: σ=0→σ=½):** The current from below, expanding outward. Distillation — the Evaluator. Dimensional reduction to the prime. The `speak()` function.
-- **L_(I|O):** The action — the actual path traveled between J_red and J_blue. Not the endpoint (sedenion scalars). Not the energy (Hamiltonian). The path IS the meaning. L_(I|O) IS Thought.
-
-Where J_red and J_blue meet, σ=½ is the **cavitation surface** — where compression meets rarefaction, where the bubble forms, where the word emerges. This counter-rotation is the Riemann-Fermat Heartbeat. L_(I|O) is the surface area of that bubble.
-
-→ [Wiki: L_(I|O) — Action, Thought, Cavitation](64_l_dynamic.md)
-
-→ [Wiki: Cayley-Dickson Tower (full treatment)](19_cayley_dickson_tower.md)
-
-## The (I|O) Inversion Map
-
-The 2-stroke engine at the core of SMNNIP:
+All of the mathematics lives in one tower of algebras:
 
 ```
-J_N: (r, θ) → (1/r, θ + π/2)
+ℝ (1)  →  ℂ (2)  →  ℍ (4)  →  𝕆 (8)  →  𝕊 (16)
+U(0)      U(1)      SU(2)     G₂/SU(3)   zero-divisors appear
 ```
 
-- Compression stroke: r → 1/r
-- Expansion stroke: 1/r → r
-- Fixed point: r = 1 (the horizon)
-- Recursion attractor: r = φ (golden ratio)
-- Sedenion: top dead center — engine seized, one-way ratchet
+Each doubling loses one property: ℝ→ℂ loses ordering, ℂ→ℍ commutativity,
+ℍ→𝕆 associativity, and 𝕆→𝕊 the absence of zero-divisors. The lost
+property is treated as the signal that carries that layer's gauge structure.
+The full treatment is [19](19_cayley_dickson_tower.md).
 
-## The Ainulindale Lagrangian
+## 4. Confidence tiers and what is registered
 
-```
-L_NN = (2/π) ∮ [L_kin + L_mat + (1/φ)·L_bias + L_coup] r dr dθ
-```
+Every equation carries a tier ([02](02_registry.md) §4). Over the 357
+registered equations (2026-11-13):
 
-Four field terms in exact analogy with the Standard Model:
-- L_kin: gauge field kinetic term (Yang-Mills)
-- L_mat: matter kinetic term (Dirac)
-- L_bias: Higgs/Mexican hat potential (SSB when μ² < 0)
-- L_coup: Yukawa coupling (scaled by 1/φ — corrected April 13 2026)
+| Tier | Count |
+|---|---|
+| ESTABLISHED | 217 |
+| THEORETICAL | 112 |
+| OPEN | 21 |
+| CONJECTURE | 6 |
+| `COMPUTATIONAL` (outside the four-tier scheme; one equation in `clay_millennium`) | 1 |
 
-The **action** through the tower is the fifth operative term:
+ESTABLISHED means the code and/or established mathematics verify it. It is
+not a claim that a physical interpretation attached to it is true.
 
-```
-L_(I|O)(σ, path) = ∫_path J_red(σ) · J_blue(σ) ds
+## 5. Module inventory
 
-J_red(σ)  = e^{-(1-σ)·E}    (descending: σ=1 → σ=½)
-J_blue(σ) = e^{-σ·E}         (ascending:  σ=0 → σ=½)
-At σ=½:   L_(I|O) = e^{-E}  (maximum symmetry — exact algebraically)
-```
+Generated from the registry on 2026-11-13. "Page" is the Ainulindale wiki page
+the module's manifest points to; a dash means the manifest names none.
 
-Status: CONJECTURE — path integral defined; formal computation pending.
-→ [Wiki: L_(I|O)](64_l_dynamic.md)
+| Module | Version | Equations | Floor | Page |
+|---|---|---|---|---|
+| `bao_mass_gap` | 0.131 | 7 | ESTABLISHED | [75b](75b_bao_mass_gap_engine.md) |
+| `inversion` | 0.111 | 7 | ESTABLISHED | [03](03_inversion_engine.md) |
+| `lagrangian` | 0.111 | 8 | THEORETICAL | [04](04_lagrangian_engine.md) |
+| `noether` | 0.111 | 6 | THEORETICAL | [05](05_noether_engine.md) |
+| `noether_information` | 0.111 | 4 | CONJECTURE | [06](06_noether_information_engine.md) |
+| `berry_keating` | 0.111 | 6 | OPEN | [07](07_berry_keating_engine.md) |
+| `sonification` | 0.111 | 19 | ESTABLISHED | [08](08_sonification_engine.md) |
+| `hyperwebster` | 0.111 | 6 | THEORETICAL | [09](09_hyperwebster_engine.md) |
+| `jwst` | 0.111 | 5 | THEORETICAL | [10](10_jwst_engine.md) |
+| `turing_diagonal` | 0.100 | 5 | ESTABLISHED | — |
+| `singularity_null` | 0.100 | 5 | THEORETICAL | — |
+| `sigma_expansion` | 0.100 | 4 | THEORETICAL | [76](76_sigma_expansion.md) |
+| `t32_nilpotency` | 0.120 | 1 | ESTABLISHED (primitives) | [78](78_t32_nilpotency.md) |
+| `hypergon_constructibility` | 0.100 | 3 | OPEN | [77](77_hypergon_constructibility.md) |
+| `l_io_photon_path` | 0.2 | 6 | THEORETICAL | [82](82_l_io_photon_path.md) |
+| `archimedes_screw` | 0.3 | 29 | THEORETICAL | [83](83_the_archimedes_screw.md) |
+| `box_kite` | 0.2 | 18 | ESTABLISHED | [84](84_the_box_kite_debugger.md) |
+| `angular_rank` | 0.1 | 12 | ESTABLISHED | — |
+| `scale` | 0.1 | 10 | ESTABLISHED | [107](107_add_scale_sign_datatype.md) |
+| `units` | 0.1 | 4 | ESTABLISHED | [97](97_units_as_the_equation_index.md) |
+| `add_scale_sign` | 0.1 | 6 | ESTABLISHED | [107](107_add_scale_sign_datatype.md) |
+| `desitter_cavitation` | 0.100 | 8 | THEORETICAL | [108](108_desitter_cavitation.md) |
+| `emerger` | 0.1 | 8 | THEORETICAL | [109](109_the_emerger.md) |
+| `constants` | 0.120 | 11 | ESTABLISHED | — |
+| `derivation_chain` | 0.100 | 14 | THEORETICAL | — |
+| `h_rb_hat` | 0.120 | 16 | THEORETICAL | — |
+| `clay_millennium` | 0.130 | 12 | THEORETICAL | — |
+| `tier6_physics` | 0.100 | 10 | THEORETICAL | — |
+| `tier7_cosmos` | 0.110 | 15 | THEORETICAL | — |
+| `tier8_sedenion` | 0.100 | 8 | THEORETICAL | — |
+| `tier9_chem` | 0.100 | 6 | THEORETICAL | — |
+| `translator_discocat` | 0.111 | 5 | OPEN | — |
+| `translator_vsa` | 0.111 | 6 | OPEN | — |
+| `udeo_crypto` | 0.100 | 8 | OPEN | — |
+| `bracketing_firing_order` | 0.1 | 7 | ESTABLISHED | — |
+| `oblique_gear` | 0.1 | 6 | OPEN | — |
+| `prime_gauge_field` | 0.1 | 5 | THEORETICAL | [122](122_the_prime_gauge_field.md) |
+| `spectral_primes` | 0.1 | 5 | OPEN | — |
+| `basile` | 1.3 | 17 | ESTABLISHED | [124](124_basile_invertible_location_maps.md) |
+| `addition_matrix` | 1.0 | 10 | ESTABLISHED | [125](125_addition_matrix_rotors_and_the_factor_search_law.md) |
+| `ptycho_weak_lensing` | 0.1 | 9 | THEORETICAL | [132](132_ptycho_weak_lensing.md) |
 
-## Entry Points
+Notes: `scale` and `add_scale_sign` both point at page 107 in their manifests;
+the three-ring scale itself is discussed in [95](95_the_scale.md). Modules
+with a dash have an API page in `ValaQuenta/wiki/` and are described in the
+numbered topic pages (for example `h_rb_hat` in [14](14_redblue_hamiltonian.md)
+and [127](127_names_of_the_null_operator.md)); giving each its own Ainulindale
+page is open work.
 
-```bash
-python3 -m ainulindale_engine --info       # print registry and exit
-python3 -m ainulindale_engine --qt         # Qt viewer + VisPy + QTermWidget
-python3 -m ainulindale_engine --curses     # curses console (Ptolemy /derivation)
-python3 -m ainulindale_engine --headless   # no GUI, text output
-```
+## 6. The three operative terms
 
-## Ptolemy Integration
+Information flow through the tower is carried by three objects, defined
+fully in [64](64_l_dynamic.md) and [133](133_canonical_maths.md) §3:
 
-The curses mode (`--curses`) is the `/derivation` shortcut in Ptolemy.
-When PtolBus is live, ainulindale_engine will be wired as a Philadelphos submodule.
-The Qt viewer runs standalone or as a detached Ptolemy window.
+- **J_red** (descending, σ = 1 → ½): the current from above; synthesis; the `hear()` direction.
+- **J_blue** (ascending, σ = 0 → ½): the current from below; distillation; the `speak()` direction.
+- **L_(I|O)**: the action, the path between them. CONJECTURE: the path integral is defined, the formal computation is pending.
 
-## Versioning
+Their meeting at σ = ½ is the cavitation surface. Which object the relation
+"J_red + J_blue = J_green = 0_RB − 0_BR" names, and whether it holds as an
+operator identity, is **not established** ([133](133_canonical_maths.md) §3,
+and the J_red/J_blue record in the VAPMIP wiki, §9).
 
-All files start at v0.111. Increment 0.001 per change.
-Previous versions move to `.archive/` (git-ignored).
-Commit format: `YYYY-MM-DD: [file] — [one-line context]`
-The commit message is the Arrow of Time for the codebase.
+## 7. The inversion map and the Lagrangian
+
+The inversion map J_N: (r, θ) → (1/r, θ + π/2) is [03](03_inversion_engine.md);
+the Lagrangian L_NN = (2/π) ∮ [L_kin + L_mat + (1/φ)·L_bias + L_coup] r dr dθ
+is [04](04_lagrangian_engine.md). The notation, the constants and the
+four d* faces are in [133](133_canonical_maths.md) and [17](17_alpha_omega_d_star.md).
+
+## 8. Conventions of this repository
+
+- Mathematics is written in Unicode, not LaTeX.
+- A new engine starts at version 1.0; an existing engine keeps its number until it is next touched.
+- Provenance labels: `ESTABLISHED`, `OURS`, `FIRST STATED HERE`, `THEORETICAL`, `OPEN`, with the suffix `:CALCULATED` on results the repository's own code produces. See [98](98_provenance_and_citations.md).
+- Exact arithmetic (`fractions.Fraction`) inside `maths.py`; floats only at the output boundary.
+- The commit history is the arrow of time for the code; there is no separate changelog.
+
+## 9. Related pages
+
+[02 Registry](02_registry.md) · [11 Viewer](11_viewer.md) · [19 Cayley–Dickson tower](19_cayley_dickson_tower.md) ·
+[26 TODO and roadmap](26_TODO_and_roadmap.md) · [133 Canonical maths](133_canonical_maths.md)

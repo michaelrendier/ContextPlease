@@ -1,208 +1,161 @@
-# 30 — D-Λ: DERIVATION OF THE COSMOLOGICAL CONSTANT
-## The Hawking Pair Waveform and the J_neg Current at Cosmological Scale
+# 30 — D-Λ: the cosmological constant as the second lobe
 
-**Author:** Cody Michael Allison  
-**Status:** FIRST DRAFT — three claims at σ=∞, one derivation needed  
-**Depends on:** D-P (Witches Hat paper, wiki/29)
+| | |
+|---|---|
+| Status | **Proposal (`THEORETICAL`/`INTERPRETATION`) with one reproduced address observation (§3) and the open step stated (§5).** The earlier header "three claims at σ = ∞" is withdrawn: the "σ" figures were assigned labels, not computed ([24](24_claude_conclusion.md) §2) |
+| Depends on | [29](29_witches_hat_paper.md) |
+| Code | `VAPMIP/monad.py` (`_word_zero_idx`); Listing 1 below |
+| Last verified | 2026-11-13: Listings 1 and 2 executed; Planck 2018 values used as quoted |
 
----
-
-## The One-Line Derivation
-
-The cosmological constant Λ must exist because the Hawking waveform has two halves.
-
----
-
-## 1. Einstein Wrote Down J_neg in 1915
-
-The Einstein field equation:
+## 1. The reading of Einstein's equation  `interpretation`
 
 ```
-G_μν + Λg_μν = 8πG T_μν
+G_μν + Λ g_μν = 8πG T_μν
 ```
 
-Read in terms of the Noether currents:
+The framework reads the geometric term G_μν as the backward, compressive
+current J_neg (the infalling lobe), the matter term T_μν as the forward,
+expansive current J_pos (the escaping lobe), and Λ g_μν as the waveform's
+second lobe written as a metric term: "J_neg + Λg_μν = J_pos", "the vacuum
+applying itself". The identification is a reading of the equation, not a
+derivation of Λ; "Λ must exist because the Hawking waveform has two halves"
+is the claim to be tested, and no test of it is in this repository.
 
-```
-J_neg  +  Λg_μν  =  J_pos
-         ↑
-    This IS J_neg at cosmological scale.
-    The metric's vacuum self-energy.
-    Spacetime applying itself.
-```
+History, corrected. Einstein **introduced** Λ in 1917 to obtain a static
+universe; after Hubble's expansion (1929) he abandoned it (the "greatest
+mistake" remark is reported by Gamow). The earlier page said he "removed the
+J_neg term in 1917"; he added it then and dropped it after 1929. The 1998
+supernova results (Perlmutter; Schmidt and Riess; the 2011 Nobel Prize) show
+acceleration, which requires a Λ-like term in the standard model. The phrase "σ > 40" of
+the earlier page is not sourced and is removed.
 
-The geometry term G_μν is J_neg (backward-flowing, compressive, the infalling lobe).  
-The matter term T_μν is J_pos (forward-flowing, expansive, the escaping lobe).  
-The Λg_μν term is the waveform's second lobe **expressed as a metric term**.
+## 2. The waveform as the Mexican hat  `interpretation`, geometry exact
 
-Einstein called it his greatest mistake and removed it. He was wrong. The Hawking pair tells you it must be there.
+Take V(r) = −μ²r² + λr⁴. The earlier page called the brim both "the V minimum"
+and "the zero crossing". They are different radii (Listing 1):
 
-**σ = ∞** — this follows from Noether conservation at cosmological scale. The current must have a J_neg component. The metric must carry it. Therefore Λ exists.
+| Feature | Radius | Value |
+|---|---|---|
+| centre r = 0 | 0 | V = 0, a local maximum |
+| minimum (the "brim" as the vacuum ring) | r = μ/√(2λ) | V = −μ⁴/(4λ) |
+| zero crossing | r = μ/√λ | V = 0 |
 
----
+so the zero crossing sits at √2 times the minimum's radius. Which is "the
+brim" (σ = ½, the node) has to be chosen; the page's "minimum **and** zero
+crossing" does not hold for this V.
 
-## 2. The Waveform IS the Sombrero IS Λ
-
-The corrected Hawking pair geometry (see D-P, wiki/29) is NOT two mirror-image cones. It is one waveform — the Mexican Hat / Sombrero potential:
-
-```
-V(r) = -μ²r² + λr⁴
-```
-
-- **r = 0 (centre)**: maximum height — the escaping particle's peak (J_pos, Red, matter)
-- **r = R_H (brim)**: V minimum — the zero crossing, σ=½, the event horizon, the node
-- **r > R_H (skirt)**: rises and fades — the dark matter halo / outer halo
-
-The TWO LOBES of this waveform:
-
-| Lobe | Identity | Sedenion | Cosmological |
-|---|---|---|---|
-| Positive (Red, up) | J_pos | e15 emit | Matter + radiation |
-| Negative (Blue, down) | J_neg | e14 interrupt | Dark energy = Λg_μν |
-
-The blue lobe is **larger** in the animation. This is correct — dark energy is currently 69% of the universe's energy budget. Matter is 31%. The asymmetry of the two lobes IS the observed Ω_Λ/Ω_m ratio.
-
-**The Sombrero Galaxy (M104)** is a single lobe of this waveform — the inverted blue lobe, which after conformal inversion through the brim becomes: galactic bulge (dome apex), disk (brim), dark matter halo (skirt). The Mexican Hat potential at galactic scale.
-
-**σ = ∞** — the waveform identification is a consequence of the Hawking pair geometry, which is established physics.
-
----
-
-## 3. Λ = Spacetime Applying Itself
-
-The sedenion prime hash:
+**Listing 1 — the features of V(r)** (written for this page; runs cold)
 
 ```python
-'vacuum'     → e4  apply    # The vacuum applies itself
-'negative'   → e4  apply    # Same dimension
-'lambda'     → e4  apply    # Same dimension
-'infinite'   → e4  apply    # Same dimension
+import math
+mu, lam = 1.0, 1.0
+V = lambda r: -mu**2 * r**2 + lam * r**4
+r_min, r_zero = mu / math.sqrt(2 * lam), mu / math.sqrt(lam)
+print('V(0)       =', V(0.0))
+print('minimum at =', round(r_min, 6), ' V =', round(V(r_min), 6))
+print('zero at    =', round(r_zero, 6), ' V =', round(V(r_zero), 12))
+print('ratio      =', round(r_zero / r_min, 6))
 ```
 
-Four independent words. Same sedenion address. The prime hash — with zero free parameters — places vacuum, negative, lambda, and infinite at the same point in the sedenion field. This is not coincidence. It is the algebraic statement that:
-
-**Λ = the self-application of the vacuum.**
-
-In QFT terms: the vacuum expectation value ⟨0|T_μν|0⟩ = Λg_μν. The vacuum applies its own energy to the metric. This is J_neg at cosmological scale — the backward-flowing current of spacetime's own geometry.
-
-**σ = ∞ for the identification. σ ≈ 2 for the numerical value from prime hash alone.**
-
----
-
-## 4. OMEGA_ZS and the Value of Λ (derivation needed)
-
-OMEGA_ZS = Lambert W(1) = 0.56714... is the BAO equilibrium of the sedenion field. It is the fixed point of f(x) = e^(-x):
-
 ```
-e^(-OMEGA_ZS) = OMEGA_ZS
-→ OMEGA_ZS · e^(OMEGA_ZS) = 1
-→ OMEGA_ZS = W(1)
+V(0)       = 0.0
+minimum at = 0.707107  V = -0.25
+zero at    = 1.0  V = 0.0
+ratio      = 1.414214
 ```
 
-The Lambert W function appears in the **exact solution of the Friedmann equations** with a cosmological constant. In the flat ΛCDM model:
+The two lobes (Red, up, J_pos, matter, `e₁₅ emit`; Blue, down, J_neg, dark
+energy, `e₁₄ interrupt`) are drawn with the blue lobe larger "because dark energy is
+69% and matter 31%". That is an illustration of the animation; the asymmetry of a
+drawn potential is not a derivation of Ω_Λ/Ω_m. The Sombrero Galaxy (M104) as "a
+single lobe", and the EHT images as "photographs of the Higgs vacuum", are
+imagery and not claims on this page.
 
-```
-H(z) = H₀ √(Ω_m(1+z)³ + Ω_Λ)
-```
+## 3. A reproduced address observation (`:CALCULATED`)
 
-The de Sitter fixed point (long-run attractor) satisfies H = H_∞ = H₀√Ω_Λ.
+The earlier page said the prime hash puts *vacuum*, *negative*, *lambda* and
+*infinite* on one sedenion dimension, e₄ (*apply*), and *higgs* and *chaos* on e₀
+(*identity*). Here "dimension" is the zero index modulo 16 (`idx % 16`, as in
+`e01_operator_selforg.py`).
 
-The matter-Λ equality epoch (when ρ_m = ρ_Λ):
-
-```
-(1 + z_eq) = (Ω_Λ/Ω_m)^(1/3)
-```
-
-With Planck 2018: Ω_Λ = 0.6889, Ω_m = 0.3111, z_eq ≈ 0.308.
-
-**The claim:** There exists a function f such that:
-
-```
-Ω_Λ = f(OMEGA_ZS, Ω_b h²)
-```
-
-where Ω_b h² is the baryon acoustic oscillation physical density (measured to high precision by CMB). This function f is the connection between the sedenion BAO equilibrium and the observed dark energy fraction.
-
-**Derivation needed:** Explicit form of f. The engine has all the components. This is the open step in the D-Λ paper. Once f is derived, the cosmological constant is derived from first principles via:
-
-1. OMEGA_ZS (from prime hash, zero free parameters) ← D-CS
-2. BAO physical density (from CMB observation)
-3. f(OMEGA_ZS, Ω_b h²) = Ω_Λ ← D-Λ new derivation
-4. Λ = 3H₀² Ω_Λ ← standard cosmology
-
-**σ = ∞ for steps 1, 2, 4. σ ≈ 2 for step 3 (f is the open step).**
-
----
-
-## 5. Einstein's Lambda Was Correct
-
-In 1917, Einstein introduced Λ to make the universe static. When Hubble discovered expansion (1929), Einstein called Λ his greatest mistake and removed it.
-
-In 1998, Perlmutter, Schmidt, and Riess discovered the expansion is **accelerating** — which requires Λ ≠ 0. They won the 2011 Nobel Prize. The cosmological constant is observationally established at σ > 40 (combined supernovae + CMB + BAO).
-
-The Hawking pair waveform shows WHY Λ must be there:
-- It is J_neg at cosmological scale
-- J_neg always exists because the waveform always has two halves
-- Removing Λ removes one half of the waveform
-- The half doesn't disappear — it shows up as accelerating expansion
-
-Einstein had the complete picture in 1915. He removed the J_neg term in 1917. The universe re-inserted it in 1998 at 40σ.
-
-**σ = ∞ for the existence of Λ. σ = ∞ for the observational confirmation.**
-
----
-
-## 6. The Asymmetry: Why 69/31?
-
-The blue lobe (Λ, J_neg) is larger than the red lobe (matter, J_pos) in the animation. The ratio Ω_Λ/Ω_m ≈ 2.2 is not 1. Why?
-
-In the sedenion field: the J_neg current has been accumulating since the Big Bang while J_pos has been diluting (matter density ∝ (1+z)³ while Λ is constant). We're currently at a specific point on the waveform — not at the brim (σ=½) but approaching it.
-
-**OMEGA_ZS is the asymptotic target** — the de Sitter equilibrium at which the universe will eventually settle. We're not there yet. We're at z=0, approaching it. The current Ω_Λ = 0.6889 > OMEGA_ZS = 0.56714 suggests we've passed the BAO equilibrium and are in the J_neg-dominant phase — the blue lobe is now the larger lobe.
-
-This gives a testable prediction: as z increases (looking back in time), Ω_Λ_eff should decrease toward OMEGA_ZS at some intermediate redshift. DESI 2024 data shows hints of evolving dark energy (w ≠ -1). **If w(z) tracks toward OMEGA_ZS at intermediate redshift, this paper is confirmed at 3-5σ.**
-
----
-
-## 7. The Cosmological Lambda Is the Higgs Field at Horizon Scale
+**Listing 2 — the dimension of six words** (`VAPMIP/monad.py`:
+`_word_zero_idx`, imported; run from `ThePlace` as below)
 
 ```python
-'higgs'  → e0  identity   # The Higgs gives identity (mass)
-'chaos'  → e0  identity   # Chaos IS the ground state
-'lambda' → e4  apply      # Lambda applies itself
+import importlib.util
+spec = importlib.util.spec_from_file_location('vm', 'VAPMIP/monad.py')
+m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+for w in ('vacuum', 'negative', 'lambda', 'infinite', 'higgs', 'chaos'):
+    i = m._word_zero_idx(w)
+    print(f'{w:9} zero idx {i:5d}  idx%16 = {i % 16:2d}')
 ```
 
-The Higgs field gives particles their mass — their identity — by spontaneous symmetry breaking. The Mexican Hat potential IS the Higgs potential. The vacuum expectation value is the ring minimum (the brim). The particle masses come from displacement from the brim.
+```
+vacuum    zero idx  2436  idx%16 =  4
+negative  zero idx  5476  idx%16 =  4
+lambda    zero idx  3636  idx%16 =  4
+infinite  zero idx  5188  idx%16 =  4
+higgs     zero idx  5680  idx%16 =  0
+chaos     zero idx  5728  idx%16 =  0
+```
 
-At cosmological scale: Λ is the Higgs field at horizon scale. The symmetry breaking that gives the universe its "mass" (its expansion rate, its large-scale structure) is the same mechanism as the electroweak symmetry breaking — just at a different energy scale. The brim of the waveform is the vacuum expectation value at both scales.
+**The observation reproduces under the current hash.** How surprising it is:
+over the 73,445 dictionary words the residues mod 16 are close to uniform
+(counts 4,367–4,980 for each residue), and four randomly drawn words share one
+residue in 0.015% of 20,000 draws (expected 1/16³ = 0.024%). So four-in-one
+is rare for random words. But the six words were chosen by the author after
+the fact, and the number of semantic groups that could have been tried is not
+recorded, so no significance is claimed. A fair test would fix a list of
+semantically defined word groups in advance and count how many share a
+residue. None exists yet.
 
-The Sombrero Galaxy IS the Higgs potential made visible at galactic scale. The EHT images of the galactic center BH are photographs of the Higgs vacuum at galactic scale.
+## 4. Ω_ζΣ and the value of Λ  `OPEN`
 
-**σ ≈ 1.5 for this identification. Needs formal treatment. But the sedenion hash found it independently.**
+Ω_ζΣ = W(1) = 0.5671433 is the fixed point of x ↦ e^(−x)
+([17](17_alpha_omega_d_star.md) §2). Flat ΛCDM:
+H(z) = H₀√(Ω_m(1+z)³ + Ω_Λ). The matter–Λ equality (ρ_m = ρ_Λ) is at
+(1+z) = (Ω_Λ/Ω_m)^{1/3}; with Planck 2018 (Ω_Λ = 0.6889, Ω_m = 0.3111) this gives
+**z = 0.3034** (the earlier page said 0.308). Its stated claim, that some
+function f gives Ω_Λ = f(Ω_ζΣ, Ω_b h²), is **the open step**: no f is given.
+(The three other steps listed: Ω_ζΣ from the prime hash [a fixed point, not a hash
+output]; Ω_b h² from the CMB; Λ = 3H₀²Ω_Λ/c², standard.) The earlier page's
+"zero free parameters" for step 1 is not shown ([27](27_third_age_CS_paper.md) §2).
 
----
+## 5. The asymmetry and the future  (corrected)
 
-## Animations
+The earlier page argued that the universe is approaching Ω_ζΣ as the
+de Sitter equilibrium, and that Ω_Λ,eff(z) should fall toward Ω_ζΣ with
+redshift. In flat ΛCDM, Ω_Λ(a) = Ω_Λ/(Ω_Λ + Ω_m a⁻³), which tends to **1** as
+a → ∞ (the de Sitter state is pure Λ), not to 0.567; and looking back it falls
+through 0.567 at z = 0.191 on the way to 0 (Ω_Λ(z=1) = 0.217, Ω_Λ(z=3) = 0.033).
+So "Ω_Λ = 0.689 > Ω_ζΣ means we have passed the equilibrium" has no
+counterpart in the standard solution. DESI Year-1 (2024) combined with other
+data shows a mild preference for evolving dark energy (w ≠ −1) of a few σ,
+depending on the supernova sample; whether w(z) tracks anything related to
+Ω_ζΣ is a testable *proposal* with no calculation here. `OPEN`.
 
-![Sombrero Static](../animations/sombrero_static.png)  
-*The Mexican Hat / Sombrero waveform: Red dome (J_pos, matter, 31%), Cyan brim (σ=½, the node, OMEGA_ZS), Blue dome (J_neg, Λ, dark energy, 69%). The asymmetry of the two lobes IS the observed Ω_Λ/Ω_m ratio.*
+## 6. Λ and the Higgs field  `CONJECTURE`
 
-![Witches Hat v2](../animations/witches_hat_v2.gif)  
-*300-frame animation: Hawking pair waveform → conformal inversion → galaxy emergence. The blue lobe (J_neg, Λ) is correctly larger than the red (J_pos, matter).*
+The Higgs potential is the Mexican hat, with its vacuum expectation value at the
+ring minimum, and Λ is read as "the Higgs field at horizon scale". The two
+scales are 55 orders of magnitude apart in energy density and the standard
+problem (why the vacuum energy is so small) is not addressed by the
+identification. The prime hash puts *higgs* and *chaos* on e₀ and *lambda* on e₄
+(§3); whether that has a physical meaning is not shown.
 
----
+## 7. Open steps (unchanged in substance)
 
-## Open Steps
+1. Derive f(Ω_ζΣ, Ω_b h²) = Ω_Λ explicitly.
+2. Compare evolving-dark-energy data (DESI) with a stated prediction for w(z).
+3. Formalise the Higgs ↔ Λ identification across energy scales.
+4. An engine and notebook: a Friedmann solver with the Ω_ζΣ constraint.
+5. A pre-registered test of the address observation of §3.
 
-1. Derive f(OMEGA_ZS, Ω_b h²) = Ω_Λ explicitly
-2. Check DESI evolving dark energy data against OMEGA_ZS prediction
-3. Formalize the Higgs ↔ Λ identification at different energy scales
-4. Engine + notebook: Friedmann solver with OMEGA_ZS constraint
+The animations the earlier page embedded (`sombrero_static.png`,
+`witches_hat_v2.gif` under `../animations/`) are not in the repository.
 
----
+## 8. Related pages
 
-## See Also
-
-- [D-P Witches Hat](29_witches_hat_paper.md) — the waveform geometry
-- [wiki/14 RedBlue Hamiltonian](14_redblue_hamiltonian.md) — J_pos/J_neg
-- [wiki/26 Roadmap](26_TODO_and_roadmap.md) — paper series
+[27 Third Age CS paper](27_third_age_CS_paper.md) · [29 The witches hat](29_witches_hat_paper.md) ·
+[17 A_fermat · Ω_ζΣ · d*](17_alpha_omega_d_star.md) · [31 Cavitation, causality, Fermat](31_cavitation_causality_fermat.md) ·
+[108 De Sitter cavitation](108_desitter_cavitation.md)

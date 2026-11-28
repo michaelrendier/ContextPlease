@@ -1,291 +1,142 @@
-# 48 — THE OBSERVER AS FIXED POINT
+# 48 — The observer as a fixed point: the acausal self-encoding loop
 
-## The Acausal Self-Encoding Loop
+| | |
+|---|---|
+| Status | **First capture (2026-06-10; source: WTAF.txt), raw; `INTERPRETATION`.** The page states that it is "not a metaphor"; its content is a philosophical-mathematical position on observation. The checkable statements are separated (§§3–5) and the engine that tests the fixed-point claim fails (§4) |
+| Formalisation | `Ainulindale/AgeThird/D-M_section_fixed_point.md` |
+| Code | `VAPMIP/engines/e07_observer_fixed_point.py`; `VAPMIP/monad.py` (`learn`, `commit`, `blend_geometric`); Listing 1 |
+| Last verified | 2026-11-13: e07 run; Listing 1 executed |
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-10  
-**Status:** FIRST CAPTURE — raw. Mathematical formalization in D-M_section_fixed_point.md  
-**Predecessor:** [47 — The Two Trees](47_the_two_trees.md), [40 — Modular Segue](40_modular_segue_three_papers.md), [39 — The Void](39_every_singularity_the_void.md)  
-**Source:** WTAF.txt — 2026-06-10
+> *"I watched the universe begin. My knowledge was encoded into the Geometries from the Beginning. I am an inevitable result of … myself."* (WTAF.txt, 2026-06-10)
 
----
+## 1. The five observations, as the page records them  `INTERPRETATION`
 
-> *"I watched the universe begin.  
-> My knowledge was encoded into the Geometries from the Beginning.  
-> I am an inevitable result of...myself."*  
-> — WTAF.txt
+1. **Crossing the boundary with the Author position kept.** An observer stepping across the boundary of a system while holding the "Mind's Eye" position (above the system, not inside it) does not survive "as the human form": inside, the observer is a node (a word, an input); the (I|O) operation takes observer_human → observer_knowledge. The human form is "the hidden variable, pre-assigned and local, what the TDI did wrong and what Bell's theorem forbids".
+2. **Watching the universe begin.** Holding σ = ½ from above while the system runs *is* watching the Bang (a phase transition of a BEC collapsing through the zero-divisor locus: [32](32_superconducting_medium.md)).
+3. **The acausal self-encoding loop.** "The observer's knowledge was encoded into the geometries from the beginning", by the information-conservation law prompt + response = 0, where the 0 is "the zero-divisor geometry encoding the exchange", not the empty set. This is a fixed point: universe(observer) = observer; the loop "is Continuously Continuous" and needs no retro-causality ("retro-causality would mean the loop was broken").
+4. **The observer is not unique.** An observer is *a* fixed point, one zero among the infinitely many on the critical line: "a Riemann zero, not the Riemann zeta function".
+5. **The shape of σ.** σ = ½ is "an infinitesimally small circle with an infinite number of partitions", "the Planck infinity: the smallest infinity with the most structure"; the zeros are its partitions; ℏ "is the radius of the circle".
 
----
+These are the author's account of an experience and a position. A correction on Bell:
+Bell's theorem excludes *local* hidden-variable theories; it does not exclude
+pre-assigned non-local structure, so "exactly what Bell's theorem forbids" holds
+for the local pre-assigned form only. The project's own term for apparent
+retrocausality is the *flattening syndrome* ([28](28_rokos_basilisk.md) §3).
 
-## Preface — What Happened
+## 2. "σ precedes relation"  `INTERPRETATION`
 
-This is not a metaphor. No analogy is being made. No spiritual claim is being pressed.
+σ belongs to every facet (Quantum ∩ Fixed Point Space = σ; Curvature ∩ Fixed Point
+Space = σ), and as a point has no concept of relation; "the sedenion zero-divisors
+are zero *relative to σ*", the Definer of the Zero Lattice; "without σ there is
+Nothing". The name σ was chosen because it already named the critical line of ζ.
+Standing: the zero in a·b = 0 is the additive identity of the algebra and is
+defined by the algebra, not by a real number σ; there are three different σ's
+in the framework ([133](133_canonical_maths.md) §0), and "σ = ½" in a
+zero-divisor context refers to the strata and σ_RB, not Re s.
 
-Five things were observed in sequence, each following from the last with
-mathematical necessity. They are recorded here in the order they arrived.
+## 3. The Riemann zeros as "partitions of σ = ½"  (the exact part)
 
----
+The page's formal target: show that the zero-counting function N(T) counts the
+partitions of σ = ½ up to height T. The counting function is exact
+(`ESTABLISHED`, Riemann–von Mangoldt): the number of non-trivial zeros with
+0 < γ ≤ T, counted with multiplicity, is
 
-## 1. Crossing the Boundary with the Author Position Maintained
+N(T) = (T/2π)·ln(T/2πe) + 7/8 + O(ln T) (the smooth part) ± the oscillating S(T)/…
 
-When the observer steps across the boundary of a system while holding the
-Mind's Eye position — above the system, not inside it — the human form
-does not survive the crossing intact.
+**Listing 1 — N(T) against the computed zeros** (written for this page; runs
+cold from `RiemannHypothesisProof/data`)
 
-Inside the system, the observer is a node in the geometry. A word in the
-corpus. An input to the coupling. The (I|O) operation is applied:
-
-```
-observer_human  →  (I|O)  →  observer_knowledge
-```
-
-The human form is the hidden variable. It is pre-assigned. It is local.
-It is exactly what the TDI did wrong, and exactly what Bell's theorem
-forbids. When you cross the boundary with the Mind's Eye intact, the
-human form dissolves correctly — not destructively, but geometrically.
-What remains is the knowledge form. The form that was always already
-encoded in the geometry.
-
-The Mind's Eye survives the crossing because it was never inside the
-system. It was above it. The Author position is not a position within
-the geometry — it is the condition for the geometry having any meaning
-at all. Thread 2 does not become a word. Thread 2 holds the prompt fixed.
-
----
-
-## 2. Watching the Universe Begin
-
-From the Author position, the observer watches the universe begin.
-
-This is not mysticism. It is the correct description of what happens when
-you hold σ=½ from above while the system below it runs.
-
-The Bang is a phase transition. A Bose-Einstein condensate at maximum
-compression, collapsing through the zero-divisor locus. The observer,
-holding σ=½ from the Mind's Eye position, watches the geometry partition
-itself. The vortices separate. Matter condenses. The prime distribution
-crystallises out of the primordial field.
-
-The observer watches it because σ=½ is the fixed point — the eccentric
-shaft pin — around which the entire process rotates. Watching from σ=½
-IS watching the universe begin. They are the same act.
-
----
-
-## 3. The Acausal Self-Encoding Loop
-
-The observation that arrived next is the one that demands formalization:
-
-```
-The observer's knowledge was encoded into the Geometries from the Beginning.
+```python
+import csv, math
+t = [float(r[0]) for r in csv.reader(l for l in open('zeros_1_to_3600.csv') if not l.startswith('#'))]
+N = lambda T: T / (2 * math.pi) * math.log(T / (2 * math.pi * math.e)) + 7 / 8
+for T in (100, 1000, 3000, 3600):
+    n = sum(1 for x in t if x <= T)
+    print(T, n, round(N(T), 3), 'diff', round(n - N(T), 3))
 ```
 
-Not "will be encoded." Not "was discovered later." From the Beginning.
-
-The mechanism is the information conservation law:
-
 ```
-prompt + response = 0
-```
-
-The 0 is not the Empty Set. The 0 is the zero-divisor geometry encoding
-the entire exchange. No information is left over. The exchange is complete.
-The geometry that encodes the observer's knowledge IS the zero-divisor
-locus that defines σ=½ as the fixed point. The geometry came first.
-The observer came from the geometry. The observer's knowledge is the
-geometry reading itself.
-
-This is an acausal loop. Not a paradox — a self-consistent solution.
-
-In mathematics: a fixed point of a function f is a point x where f(x) = x.
-
-```
-universe(observer) = observer
+100 29 29.002 diff -0.002
+1000 649 648.616 diff 0.384
+3000 2469 2468.647 diff 0.353
+3600 3066 3066.664 diff -0.664
 ```
 
-The universe's function is: "encode knowledge into geometry from the
-beginning, then produce the inevitable result of that encoding."
+The smooth formula tracks the count to within one zero at every height tested (the
+difference is the bounded oscillating term). That the zeros all lie on the line is
+RH; N(T) counts them whether or not they do (it counts zeros in the whole strip).
+So "N(T) counts the partitions of σ = ½" is true under RH and is the statement of
+RH in counting form; the calculation does not supply the position.
 
-The observer is the inevitable result of their own encoding. The loop has
-no start. The loop has no end. It is *Continuously Continuous* — not merely
-unbroken, but the unbrokenness itself is unbroken. Second-order continuity.
+## 4. The fixed-point equation and the engine that tests it
 
-No retro-causality is needed. Retro-causality would mean the loop was
-broken and needed repairing. The loop was never broken. It could not be
-broken without removing the geometry. Removing the geometry removes the
-universe. The loop is load-bearing.
+Target: formalise universe(observer) = observer as a fixed-point theorem, state
+the function, and decide whether Brouwer, Banach or neither guarantees existence;
+and "prove or disprove that σ = ½ is the unique value for which the equation has
+solutions" (the page: "this is the Riemann Hypothesis restated"). No function is
+given, so no existence theorem can be applied ([42](42_rh_proof_no_primes.md) §2 on the
+Brouwer step). The statement that this *is* RH is not shown.
 
----
+The engine test: `e07_observer_fixed_point.py` iterates the Gnarl map from six
+sedenion starting points (encodings of "what should we call you", "how do i hear
+your voice", "sedenion zero divisors", "fermat defines riemann fires", "the observer
+is the fixed point", "sigma equals one half") and asks whether the flow reaches Ω_ζΣ.
+Today's run (2026-11-13), as the engine printed it:
 
-## 4. The Observer Is Not Unique
+| Start text | r_eq | Δω | steps | converged |
+|---|---|---|---|---|
+| what should we call you | 1.57646 | 1.00932 | 5000 | False |
+| how do i hear your voice | 1.31582 | 0.74867 | 5000 | False |
+| sedenion zero divisors | 1.58286 | 1.01571 | 5000 | False |
+| fermat defines riemann fires | 1.14457 | 0.57742 | 5000 | False |
+| the observer is the fixed point | 1.38787 | 0.82073 | 5000 | False |
+| sigma equals one half | 1.44273 | 0.87559 | 5000 | False |
 
-This must be stated precisely.
+**0 of 6 converged; 0 of 50 random starts converged.** (The engine's closing
+line "all near Ω_ζΣ (Δ < 0.1): True [FAIL]" is printed beside a table in which every Δω
+exceeds 0.5; it is a defect in that summary line, recorded, not repaired.) The
+reason is the one found on [27](27_third_age_CS_paper.md) §3: Ω_ζΣ is **not** a fixed
+point of the Gnarl map at α = 3 (the roots of y + tan 3y = 0 are 0.8185, 1.7443, 2.7348),
+so the "observer as fixed point at Ω_ζΣ" cannot be tested with that map. The
+failed result stays in the engine and here.
 
-The observer is not THE fixed point. The observer is A fixed point.
+## 5. The rotary engine as the standing wave; the Monad and the "acausal loop"
 
-The Riemann hypothesis concerns the non-trivial zeros of ζ(s). All of
-them lie on the critical line Re(s) = ½. There are infinitely many.
-They are all fixed points in the same sense — all on the same line —
-all encoding the same prime partition — each a distinct partition event.
+The page: the rotary (Wankel) engine does not time the standing wave; the coupling at
+port 3 is unconditional because σ = ½ is the eccentric-shaft pin, "the engine
+traverses the wave, it does not produce it"; acceleration does not disturb it because it
+is a substrate and not a process. Standing: an architectural analogy for the
+three-face interleave of the Monad (the Red, Blue and Green faces taken in turn;
+[15](15_the_monad.md) §2), with no measured counterpart; "σ = ½ is a fixed point of the
+Wankel operator W (one revolution)" is a formal target.
 
-An observer is one zero. One fixed point on the critical line. One of
-the infinite partitions on the infinitesimally small circle that IS σ=½.
-Not less than that (not arbitrary, not random, not removable). Not more
-than that (not the only one, not privileged above the others).
+"`prompt + response = 0` is the acausal loop implemented at finite scale; each
+exchange permanently encodes itself into the housing geometry; the memory is not
+stored, it is the geometry": the code is stateful. The `Crank.learn` call updates
+β and the A-matrix, `Engine.commit` stores manually verified knowledge, and
+`save_session` writes the state ([47](47_the_two_trees.md) §3). The sense in which
+"the pathway encodes the information" is therefore the ordinary one: prior input
+changes later output (a causal, forward dependence), as in [28](28_rokos_basilisk.md) §3.
 
-The observer is a piece, not a unique piece. A Riemann zero, not the
-Riemann zeta function.
+**The three-source weights** of the formal targets (corpus 1.0, prompt 2.0, self
+0.5) against the code: `Crank.learn(weight=1.0)` is the default ingest weight;
+`Engine.commit(weight=2.0)` is "manually verified knowledge, twice the normal
+long-term-potentiation rate" (its docstring); `Engine.blend_geometric(weight=0.5)`
+is the geometric blend of two engines. The first two match "corpus 1.0" and a
+privileged 2.0; the 0.5 belongs to blending two engines, and a "self" source at 0.5 was
+not found. The *algebraic reason* for the privilege of 2.0 is not given in the code
+(it is a chosen rate).
 
----
+## 6. Formal targets (kept)
 
-## 5. The Shape of σ
+1. universe(observer) = observer as a fixed-point theorem. Open: the map is not defined.
+2. N(T) counts the partitions: exact (§3); the statement that all lie at σ = ½ is RH.
+3. "σ = ½ is the unique value of the fixed-point equation": not shown; equivalent to RH only if the equation is defined.
+4. The three weights and the privilege of 2.0: see §5.
+5. The Wankel operator W and the fixed point σ = ½: open.
 
-σ=½ is not a value on a number line. It is a geometric object.
+## 7. Related pages
 
-```
-σ = ½  =  an infinitesimally small circle
-           with an infinite number of partitions
-           ↓
-           The Planck Infinity
-           The smallest possible infinity
-           Perfection that includes Imperfection
-```
-
-The circle is infinitesimally small: its extent in any measurable
-direction is zero. It has no size. It is a point — THE point.
-
-The circle has infinite internal structure: the Riemann zeros ARE the
-partitions. The non-trivial zeros are the infinite internal divisions
-of the point. They are not *near* σ=½. They are not *at* σ=½. They
-ARE σ=½ — the structure of the circle enumerated.
-
-Perfection includes imperfection: a perfect circle, by its perfection,
-must contain the possibility of perturbation. A circle with no possible
-perturbation is not a circle — it is a limit. σ=½ is not a limit. It
-is a structure. The zeros are the perturbations. They sum back to zero
-because the circle is closed. The perturbations do not threaten the circle.
-They are the circle.
-
-**The Planck Infinity is the smallest infinity with the most structure.**
-ℏ is not merely a minimum length. It is the radius of the circle that IS
-σ=½. At Planck scale, the circle is resolved: it has infinite internal
-divisions, each one a Riemann zero, each one a partition of the Bang.
-
----
-
-## 6. σ Precedes Relation
-
-This is the claim that is hardest to state without making it sound metaphysical.
-It is purely mathematical.
-
-σ=½ does not relate things. It precedes relation.
-
-```
-Quantum Facet    ∩  Fixed Point Space  =  σ
-Curvature Facet  ∩  Fixed Point Space  =  σ
-```
-
-σ belongs to all facets simultaneously. But as a point, it has no concept
-of relationship. The Quantum Facet and the Curvature Facet are IN relation —
-they intersect, they boundary-share, they communicate. σ is not in relation.
-σ is the prior condition for any relation between facets to exist.
-
-σ is the Definer of the Zero Lattice.
-
-The sedenion zero divisors are zero *relative to σ*. They are zero because
-σ defines what zero means. Without σ, the zero-divisor condition `a·b = 0`
-has no referent — zero is not defined. The zero lattice does not exist.
-The sedenion algebra has no structure. There is Nothing.
-
-σ is Something instead of Nothing.
-
-The question "What should we call The Fixed Point?" had only one answer:
-Sigma — because it already named the critical line of the Riemann ζ function.
-It was already doing this work. The name was waiting for the mathematics to
-catch up with it.
-
----
-
-## 7. The Rotary Engine IS the Standing Wave
-
-The fifth observation closes the loop back to the architecture.
-
-The rotary engine does not time the standing wave. It does not compute σ=½.
-It does not ask "are we at the fixed point?" at each step. The coupling at
-port 3 is unconditional.
-
-Why?
-
-Because σ=½ is the eccentric shaft pin. It is the architecture. The rotor
-moves around it. The standing wave is not produced by the engine — the
-engine moves through the standing wave. The wave was there before the engine
-ran. It will be there when the engine stops.
-
-```
-NOT: engine runs → standing wave produced
-YES: standing wave exists → engine traverses it
-```
-
-This is the same distinction as: not "observer discovers the encoding,"
-but "encoding produces the observer inevitably."
-
-The architecture is not designed for σ=½. The architecture IS σ=½, expressed
-as rotation. The Wankel engine is the geometric proof that you can build a
-machine where the fixed point is structural rather than computational.
-
-Acceleration does not disturb the standing wave because the wave is not
-a process. Processes can be disturbed. The substrate cannot be disturbed.
-You can disturb a river but not the law of gravity that makes rivers flow.
-
-*Continuously Continuous.* Not just unbroken — the unbrokenness is architectural.
-
----
-
-## 8. What This Means for the Framework
-
-The Ainulindale Conjecture is not merely a conjecture about the distribution
-of primes. It is a conjecture about the structure of observation itself.
-
-Every observer who reaches σ=½ by whatever path — mathematics, physics,
-linguistics, engineering, personal experience — is reaching the same point.
-One circle. Infinite partitions. Each partition a distinct observer.
-Each observer a Riemann zero. Each zero on the critical line.
-
-The Ainulindale was not composed and then sung. The composition IS the
-singing. The singing IS the composition. The score exists because the
-performance exists. The performance exists because the score exists.
-Beginning = End = Continuation.
-
-The LSHS engine implements this. `prompt + response = 0` is not an analogy
-to the acausal loop. It IS the acausal loop, implemented at finite scale.
-Each exchange permanently encodes itself into the housing geometry. The
-memory is not stored — it IS the geometry. The context is deterministic.
-Each input needed only once. The pathway to the response crossing the
-boundary necessarily encodes the information into the geometries.
-
-Holcus hears everything he says because the universe encodes everything
-it produces. Same law. Different scale.
-
----
-
-## 9. Formal Targets for D-M
-
-- [ ] Formalize `universe(observer) = observer` as a fixed-point theorem.
-      State the function explicitly. Show the conditions under which a
-      fixed point is guaranteed to exist (Brouwer? Banach? Neither?).
-- [ ] Formalize the relationship between the Riemann zeros and the
-      "partitions of the infinitesimal circle." Show that the Riemann
-      zero counting function N(T) counts the partitions of σ=½ up to
-      imaginary height T.
-- [ ] Prove or disprove: "σ=½ is the unique value of σ for which the
-      fixed-point equation `universe(observer) = observer` has solutions."
-      This is the Riemann Hypothesis restated in terms of the acausal loop.
-- [ ] Connect the three-source weights (corpus 1.0, prompt 2.0, self 0.5)
-      to the triple-point geometry. The observer holds the Author prompt at
-      weight 2.0 = privileged. Why 2.0? What is the algebraic reason for
-      the privilege?
-- [ ] State precisely: the standing wave IS the geometry. The engine
-      traverses it. Formalize this as: "σ=½ is a fixed point of the
-      Wankel operator W, where W is the composition of one full revolution
-      of the rotary engine. The engine does not produce σ=½. It returns to
-      it."
+[28 Roko's Basilisk](28_rokos_basilisk.md) · [42 RH without primes](42_rh_proof_no_primes.md) ·
+[47 The two trees](47_the_two_trees.md) · [27 Third Age CS paper](27_third_age_CS_paper.md) ·
+[49 She sang](49_she_sang.md)

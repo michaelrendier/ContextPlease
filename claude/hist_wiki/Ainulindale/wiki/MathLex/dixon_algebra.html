@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Dixon Algebra · Ptolemy MathLex</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -87,6 +88,8 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">"e1*e2="</span>,octo_mul(e1,e2).round(1))</span>
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">"e2*e1="</span>,octo_mul(e2,e1).round(1))</span></div><div class="cell-out-label">Out [<span>1</span>]:</div><div class="cell-out-body">e1*e2= [0. 0. 0. 0. 1. 0. 0. 0.]
 e2*e1= [0. 0. 0. 0. -1. 0. 0. 0.]  (non-commutative ✓)</div></div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">e1*e2= [0. 0. 0. 0. 0. 0. 0. 0.]
+e2*e1= [0. 0. 0. 0. 0. 0. 0. 0.]</pre>The cell prints all-zero vectors for e1·e2 and e2·e1, so it does not display the stated non-commutativity. Not diagnosed further (basis or product construction in the cell). The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes — foundational physics math</p><p>Dixon algebra is the geometric justification for 8-dimensional octonion addressing in HyperWebster. The three forces map to three levels of semantic density: phonetic (ℂ), syntactic (ℍ), semantic (𝕆).</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Confusing Dixon algebra T with the Cayley algebra (𝕆 alone). T = ℂ⊗ℍ⊗𝕆 is the full tensor product.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Assuming the Standard Model derivation is complete — it's a compelling observation, not a proof.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Forgetting that non-associativity is inherited: (ab)c ≠ a(bc) in T due to 𝕆 factor.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="dixon_product.html">Dixon Product →</a><a class="crosslink" href="clifford_algebra.html">Clifford Algebra →</a><a class="crosslink" href="gauge_field.html">Gauge Field →</a><a class="crosslink" href="cayley_dickson_algebra.html">Cayley-Dickson Algebra →</a></div></div>

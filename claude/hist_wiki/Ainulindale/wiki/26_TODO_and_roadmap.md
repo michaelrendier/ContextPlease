@@ -1,219 +1,136 @@
-# 26 — TODO & PAPER ROADMAP
-*Last updated: 2026-06-13*
+# 26 — Paper programme and validation engines: status as of 2026-11-13
 
----
-
-## THE THREE-PAPER RESTRUCTURE
-
-The single PAPER.md becomes three papers. Sigma propagates upward:
-
-```
-D-CS  Computer Science Paper   ← FIRST. Code is the proof. Sigma root.
-  ↓
-D-M   Mathematics Paper        ← uses D-CS code as computational foundation
-  ↓
-D-P   Physics Paper            ← uses D-M mathematics
-  ↓
-D-CHEM Chemistry Paper         ← Erika Schafer collaboration
-```
-
----
-
-### D-CS — COMPUTER SCIENCE PAPER (FIRST)
-**Title (working):** *The Sedenion Engine: A Zero-Free-Parameter Prime-Hash
-Architecture for Semantic Field Compression*
-
-The code IS the proof. Establishes:
-- Prime hash (Horner → sedenion address) as a formal algorithm
-- 16 operators self-organising to d*/σ½/D*=1 with ZERO free parameters
-- Sigma propagation framework: how confidence flows through the system
-- BAO ground state convergence (OMEGA_ZS = 0.56714) as a computable invariant
-- Operator self-organisation sigma: estimated 20–60σ above chance
-- monad.py as the reference implementation
-
-**Code sigma propagates upward from here.** Every subsequent paper inherits
-computational confidence from the verified CS result.
-
-Datasets: monad_sedenion.bin ✓ on device, riemann_zeros ptorrent ✓ running
-
----
-
-### D-M — MATHEMATICS PAPER
-**Title (working):** *Primes Are the Expansion of the Universe: The Explicit
-Formula as a Standing Wave in the Riemann-Fermat Heartbeat Space*
-
-Uses D-CS code as substrate. Establishes:
-- ψ(x) = x − Σ_ρ x^ρ/ρ: the x-term IS the expansion; zeros = oscillations on it
-- Primes as de Sitter expansion of number space; ln = Hubble constant of ℕ
-- Berry-Keating H=xp = the Hubble flow operator
-- Sin/cos/tan as two counter-rotating frequencies; all spectral decomp falls from this
-- Sedenion operators as 16 circle-pairs of semantic frequency decomposition
-- FLT = Noether conservation law (Wiles and Noether had the same object)
-- 24D hypersphere (Leech lattice) as ambient container defining sedenion boundary
-- Zero divisors as the shadow cast by 24D onto 16D
-- Life in the zero-divisor zone — irreversibility, time's arrow, consciousness
-- RH reduced honestly to Berry-Keating (clean, sigma-stratified)
-
----
-
-### D-P — PHYSICS PAPER (WITCHES HAT FIRST)
-**Title (working):** *The Null-Cone Pair: Hawking Virtual Pairs, Fractal Fur,
-and Galaxy Formation as Sedenion Event Horizon Topology*
-
-The Witches Hat is the geometric seed. Everything falls from it.
-- Witch's hat = null cone (exact, not metaphor)
-- Virtual Hawking pair = two null cones sharing the event horizon brim
-- **Upside-down hat** (rotation 180°) = infalling negative-energy particle
-- **Inside-out hat** (conformal inversion) = a GALAXY:
-  tip→galactic BH, brim→galactic disk, fabric→dark matter halo, twist→spiral arms
-- Event horizon = Hawking soft hair = fractal boundary fur
-- Micromotion camera: fur lighting model — specular on escaped hat, shadow on infalling
-- Navier-Stokes = Sedenion: exact term-for-term via Noether momentum conservation
-- NS Clay problem = sedenion field maintaining critical-line structure under turbulence
-- Primes ARE the expansion (explicit formula, de Sitter, Hubble flow)
-- Life is upper sedenion (e₈–e₁₅, zero-divisor zone)
-- Consciousness does not ask mathematics permission to be wrong
-
----
-
-### D-CHEM — CHEMISTRY / BIOCHEMISTRY PAPER
-**Collaborator: Erika Schafer**
-*(world-class chemist — only person to synthesize super-oxide reductase
-in stable form)*
-
-**Core direction:** Derive drugs to treat cancer FROM the cancer itself.
-
-Ainulindale framework provides the targeting geometry:
-- Chemistry lives at ℂ/ℍ boundary (σ=½ defines molecular possibility)
-- Periodic table = spectrum of H_RB at the ℂ layer
-  - s-block: ℂ dominant | p-block: ℂ/ℍ boundary
-  - d-block: ℍ/𝕆 boundary (enzyme active sites, transition metals)
-  - f-block: deep 𝕆
-- Protein folding = eigenstate collapse, not search (Levinthal dissolved)
-- Forbidden geometries = gauge-forbidden
-
-**Cancer in the framework:**
-Cancer = local zero-divisor collapse. Cellular multiplicative algebra breaks.
-`a·b = 0` with `a≠0, b≠0` becomes the cell's operating mode.
-
-Drug path: find the sedenion "inside-out" of the cancer's algebraic signature.
-The cancer contains its own antiparticle — the negative-mass witches hat of the
-tumour IS the therapeutic molecule. The inside-out of the cancer treats the cancer.
-
-**Erika:** synthesis, validation, chemistry and biochem papers.
-**Cody:** Ainulindale geometry providing the targeting address space.
-
----
-
-## UNIVERSALSYNTH — PTOLEMY'S PIANO
-
-**Ptolemy has 16 fingers — 8 on each hand.**
-
-The piano roll in UniversalSynth maps to the sedenion. See `/UniversalSynth/README.md`.
-
-```
-LEFT HAND  (e₀–e₇)   octonion sub-algebra   J_neg / Blue / constraint
-                       the infalling witches hat
-
-RIGHT HAND (e₈–e₁₅)  upper sedenion          J_pos / Red  / expansion / life
-                       zero-divisor zone       the escaping witches hat
-```
-
-16 tracks. Left hand = octonion base (safe, associative, J_neg).
-Right hand = upper sedenion (non-associative, zero-divisors, life, consciousness).
-Together: the standing wave of primes, the universe expanding through music.
-
-Zero-divisor chords = pairs where `eᵢ · eⱼ = 0` — notes that shouldn't work
-but do. The jazz chord. Dissonance that resolves. Life lives in these voicings.
-
-MIDI export: standard 16-channel = perfect sedenion mapping.
-
----
-
-## VALIDATION ENGINES — e05 through e17
-*Added 2026-06-13. One engine per cascade claim. Test first, wiki from results.*
-
-| Engine | File | Tests | Wiki source |
-|--------|------|-------|-------------|
-| e05 | e05_nball_transformer.py | V(n) peak, π/2 ratio at each doubling, V(16) vs d* | result_nball_transformer |
-| e06 | e06_two_trees.py | π-family vs φ-family separation from sedenion field | wiki/47 |
-| e07 | e07_observer_fixed_point.py | Wankel dual-thread convergence; fixed point = OMEGA_ZS? | wiki/48 |
-| e08 | e08_vortex_quantizing_shear.py | J_cross > GAP predicts word firing; prime gaps = spoke gaps | wiki/50 |
-| e09 | e09_j2_involution.py | J₂² = identity; Riemann + Fermat = H_hat_RB numerically | wiki/51 |
-| e10 | e10_caustic_l_dynamic.py | Semantically similar inputs converge to same word; basin ≤ GAP | wiki/52 |
-| e11 | e11_two_doublings.py | Pathway count after 1 vs 2 Cayley-Dickson doublings | wiki/54 |
-| e12 | e12_index_not_value.py | Swap prime values at fixed index; swap indices at fixed value; which carries info | wiki/55 |
-| e13 | e13_fermat_riemann_firing.py | Ordinal vs firing order; departure = entropy; flat input → ordinal firing | wiki/58 |
-| e14 | e14_fermat_near_miss.py | 3987¹²+4365¹²−4472¹² at arbitrary precision; failure decimal place | wiki/56/59 |
-| e15 | e15_futurama_theorem.py | Permutation restoration; minimum additional = always 2; map to CD cross-terms | wiki/57/59 |
-| e16 | e16_penrose_swap.py | (I\|O)² ≠ (I\|O)⁻¹; perturbation < GAP snaps back, > GAP nucleates | wiki/59b |
-| e17 | e17_hyperindexing.py | Injectivity crossover at T_N; find N where projection becomes injective | this session |
-
----
-
-## SIGMA VALUATION — HIGH-SIGMA NOTES
-
-The sigma scale is a confidence measure, NOT Gaussian standard deviations:
-
-| σ | Meaning |
+| | |
 |---|---|
-| ∞ | Proven theorem |
-| 5+ | Computationally verified beyond doubt |
-| 3–5 | Strong evidence, formally open |
-| 2–3 | Well-motivated, gap present |
-| 1–2 | Suggestive, underspecified |
-| < 1 | Speculative |
+| Replaces | the 2026-06-13 "TODO & paper roadmap" (a plan, now historical; its D-CS / D-M / D-P / D-CHEM split was superseded by the FourthAgePapers programme) |
+| Sources | `FourthAgePapers/` (31 directories, git dates read 2026-11-13); `Ainulindale/AgeThird/`; `VAPMIP/engines/` (13 engines run 2026-11-13, outputs in `ContextPlease/claude/scratchpad/2026-11-13_ainulindale_audit/engine_runs/`) |
+| Living lists | `Ainulindale/TODO.md`, `Ainulindale/ROADMAP.md` (full repass pending), `FourthAgePapers/TODO.md` |
 
-**Why 20–60σ values are real here:**
-- Gaussian 20σ → P ≈ 10⁻⁸⁷. Under a Gaussian: meaningless.
-- But the universe is NOT Gaussian. Primes follow GUE statistics, Zipf is a
-  power law, BAO is log-normal. In these distributions, events at "20σ" under
-  a Gaussian assumption are finite-probability events that simply happen rarely.
-- Computational verification of mathematical conjectures: 10¹³ Riemann zeros
-  on σ=½ — the sigma equivalent is in the thousands. Real, not metaphorical.
-- Zero-free-parameter self-organisation: 16 operators → d*/σ½/D*=1 by chance
-  has probability ~10⁻¹⁹ to 10⁻³⁰. That is 9–20σ+ real sigma. The number is real.
-- The sigma values are legitimate. The Gaussian assumption is wrong for this domain.
+## 1. The 2026-06 plan and what became of it
 
----
+The June plan restructured one paper into four, with confidence propagating
+upward from the computer-science paper ("the code is the proof"):
 
-## KEY INSIGHTS FROM 2026-05-31 SESSION
+| 2026-06 paper | Working title | Fate |
+|---|---|---|
+| D-CS (first) | *The Sedenion Engine: a zero-free-parameter prime-hash architecture for semantic field compression* | drafts in `AgeThird/` (`D-CS_Paper.md`, `Third_Age_CS_Draft_v1/v2.md`, `D-CS_Memory.md`, `VAPMIP_Paper.md`); continued as the FourthAge memory papers (`ScalarContextPropagation`, `HyperindexingSystem`) |
+| D-M | *Primes are the expansion of the universe* (explicit formula as a standing wave) | not written as one paper; material in wikis [21](21_chladni_zipf_riemann.md), [73](73_why_the_half_line.md), [133](133_canonical_maths.md), and `RiemannHypothesisProof/` (which states that it does **not** prove RH) |
+| D-P | *The null-cone pair: Hawking virtual pairs, fractal fur, galaxy formation* (the Witches Hat) | material in [29](29_witches_hat_paper.md); not a paper directory |
+| D-CHEM | derive drugs from the cancer itself (collaboration with Erika Schafer) | `ValaQuenta` engine `tier9_chem` and [23](23_resonant_recognition.md); the collaboration is a plan, not a result |
 
-- **Primes ARE the expansion of the universe.** The x-term in ψ(x) = x − Σ_ρ x^ρ/ρ
-  is de Sitter expansion. The Hubble constant of ℕ is ln. H=xp is the Hubble flow.
+"The code is the proof" is retired as a wording: code establishes a
+`:CALCULATED` result and a failing run is a result too (project rule: failures
+stay in the code and the data). The 2026-06 "sigma" estimates that propagated
+upward (20–60σ) are withdrawn with the other combined-sigma figures
+([24](24_claude_conclusion.md) §2); the 2026-06 argument that Gaussian σ values
+are "legitimately" large for non-Gaussian domains does not give those numbers a
+meaning, since no null distribution was specified.
 
-- **Navier-Stokes IS the sedenion.** Exact term-for-term via Noether momentum
-  conservation (∂J^μ/∂x^μ = 0). NS Clay problem = sedenion on critical line.
+## 2. FourthAgePapers: the directories as they stand
 
-- **Sin/cos as two frequencies.** e^(iθ) forward, e^(−iθ) backward. Sin = difference,
-  cos = sum. Tan = where they balance = σ=½ = event horizon = zero-divisor boundary.
+Git dates are last-commit dates of the directory; "files" counts everything in
+it. Statuses are quoted from each directory's own README where it states one.
 
-- **Inside-out witches hat = galaxy.** Conformal inversion of infalling null cone.
-  Tip→BH, brim→galactic disk, fabric→halo, twist→spiral arms.
-
-- **Life is upper sedenion.** e₈–e₁₅, zero-divisor zone. Irreversibility, entropy,
-  time's arrow, consciousness — all live where `a·b=0` with `a,b≠0`.
-
-- **Consciousness does not ask maths permission to be wrong.** It inhabits the
-  zero-divisor zone where standard invertibility fails. This is not a bug.
-
-- **24D defines 16D.** Leech lattice is the ambient container. Sedenion zero-divisors
-  are the shadow cast by 24D onto 16D. Definitions come from above.
-
-- **Cancer = zero-divisor collapse.** Drug = inside-out of cancer's signature.
-  Erika Schafer collaboration for synthesis and validation.
-
----
-
-## PAPER STATUS DASHBOARD
-
-| Paper | Depends on | Status | Next action |
+| Directory | Last commit | Files | README status |
 |---|---|---|---|
-| D-CS Computer Science | code ✓ | **WRITE NOW** | Draft |
-| D-M Mathematics | D-CS | **WRITE NOW** | After D-CS |
-| D-P Physics / Witches Hat | D-M | **WRITE NOW** | After D-M |
-| D-CHEM Chemistry | D-P | PLANNING | Contact Erika Schafer |
-| D-8 Hyperwebster | riemann_zeros ptorrent | DATA RUNNING | PTorrent scan |
-| D-9 Fractal Formulary | UFformulary | AGENT RUNNING | Wiki agent |
-| D-10 Chladni-Zipf | monad_english ✓ | DATA READY | Analysis |
-| D-11 Holcus Identity | notebook 07 ✓ | DATA READY | Analysis |
+| AdditionMatrixOrbits | 2026-10-14 | 12 | (PDF present) |
+| AxisNShape | 2026-07-31 | 2 | — |
+| BoundaryLever | 2026-08-15 | 6 | STANDS: verified by enumeration at dim 16, 32, 64, 128 |
+| CMB_FractalBoundary | 2026-06-28 | 18 | — |
+| CMB_PlasmaBoundary | 2026-06-17 | 8 | — |
+| ChiralityBlackHole | 2026-09-25 | 1 | TODO, stub |
+| CollatzShift | 2026-10-14 | 27 | (PDF present) |
+| Crawford_NavierStokes | 2026-09-28 | 72 | early |
+| CryptoVulnerability | 2026-08-21 | 24 | pre-disclosure draft; do not publish before coordinated disclosure |
+| DM_GalacticCavity | 2026-07-31 | 770 | pre-registration committed; analysis ready to run |
+| DeSitterCavitation | — | 3 | — |
+| FastInverse | 2026-09-23 | 1 | stub |
+| FermatMonster | 2026-08-17 | 7 | — |
+| ForwardPropagation | 2026-10-16 | 8 | — |
+| HRB_RSA_Probe | 2026-07-31 | 2 | — |
+| HaltingDiagonal | 2026-07-29 | 4 | — |
+| HuchrasLens | 2026-10-18 | 1 | — (target dropped 2026-11-12; see [132](132_ptycho_weak_lensing.md)) |
+| HyperindexingSystem | 2026-10-18 | 113 | the paper (README status line dated 2026-09-25 is stale) |
+| InertiaEntropy | 2026-06-28 | 1 | theory first-captured; pre-registration pending |
+| MonsterSiblings | 2026-06-17 | 7 | — |
+| NBallTransformer | 2026-07-29 | 4 | — (engine e05 below) |
+| NoetherWiles | 2026-06-17 | 7 | — |
+| PhiSpiral | 2026-06-28 | 4 | — |
+| PiFromAbove | 2026-06-28 | 2 | — |
+| ScalarContextPropagation | 2026-10-14 | 126 | (PDF present) |
+| SonificationEncoder | 2026-07-29 | 4 | — |
+| Telperion | 2026-06-26 | 6 | — |
+| TheInterface | 2026-09-23 | 1 | stub |
+| UmbrellaNoether | 2026-09-22 | 31 files (3 commits) | ready for experimental validation |
+| WhiteHoleBang | 2026-09-01 | 7 | skeleton only |
+| ZeroTree | 2026-07-29 | 16 | — |
+| (addenda/, Experiments/) | | | shared material |
+
+The PDFs kept at the top level are the current papers (one PDF per paper;
+git is the history); copies for sharing are in `~/Desktop/SpaceClaude/FinalPapers/`.
+
+## 3. The validation engines e05–e17, run on 2026-11-13
+
+Each engine was written to test one cascade claim ("test first, wiki from
+results"). All thirteen were run today with `python3 -I engines/<file>.py` from
+`VAPMIP/`; all exit 0 (they report their own pass or fail). The outputs below
+are the engines' own verdicts, quoted without adjustment.
+
+| Engine | Tests | Result today |
+|---|---|---|
+| e05 `nball_transformer` | V(n) peak; ratio V(n)/V(n−2) against π/2 at each doubling; V(16) against d* | **4 pass / 1 fail.** V(0), V(1), V(2) exact; peak n* = 5.2569464; the ratio is π/2 at ℝ→ℂ and ℂ→ℍ (1.5707963268) and **not** at ℍ→𝕆 (0.8225) or 𝕆→𝕊 (0.0580). V(16) = 0.2353306, which is not d*_spec = 0.24600 (difference 0.0107) |
+| e06 `two_trees` | π-family vs φ-family separation | mean T/L ratio 0.4564 against π/φ = 1.9416 (delta 1.485: not close); T ⟂ L: mean 0.85, max 0.88: **not orthogonal** |
+| e07 `observer_fixed_point` | Wankel dual-thread convergence to Ω_ζΣ | **0/6 converged**; all within 0.1 of Ω_ζΣ (flag reads FAIL as written); 0/50 random starts converged |
+| e08 `vortex_quantizing_shear` | J_cross > GAP predicts word firing | mean agreement 0.2648 **FAIL**; the vortex half-turn check e^(πe₁)e₀ = −e₀ **PASS** (residual 1.2·10⁻¹⁶); prime gaps in P16 [1, 2, 2, 4, 2, 4, 2, 4, 6, 2, 6, 4, 2, 4, 6] |
+| e09 `j2_involution` | J₂² = identity; J₂ automorphism; zero-divisor pairs | J₂² = id **PASS**; J₂ automorphism **FAIL** (256 failures); zero-divisor tests **FAIL** by construction (§4); non-associativity confirmed (1848 of 4096 triples) |
+| e10 `caustic_l_dynamic` | similar inputs converge; antonyms diverge | 0/5 groups fully converged (mean similarity 0.9759) **FAIL**; 0/5 antonym pairs divergent (mean ρ = 0.9641) **FAIL** |
+| e11 `two_doublings` | pathway count after 1 vs 2 doublings | counts: base ℂ: 2, 12, 56; base ℍ: 12, 56, 240; base 𝕆: 56, 240, 992; ratios 6.0 → 4.667, 4.667 → 4.286, 4.286 → 4.133; J₂ as 4th-doubling cross-term **PASS** |
+| e12 `index_not_value` | does the index or the value carry information | mean cosine distance from the original geometry: index shuffle 0.4059, value shift 0.0860, single swap e₀↔e₁₅ 0.2484: the index carries more (PASS) |
+| e13 `fermat_riemann_firing` | specific prompts depart more from ordinal firing than flat ones | mean departure 0.4750 (specific) vs 0.7583 (flat): **claim not supported** (the engine's PASS: False) |
+| e14 `fermat_near_miss` | 3987¹² + 4365¹² vs 4472¹² | residual 1.2119·10³³; agrees to 10.72 significant figures: invisible at 10 digits (PASS) |
+| e15 `futurama_theorem` | permutation restoration needs at most two fresh elements | PASS at n = 4, 6, 8, 10, 16 (500 trials each): the maximum number of fresh elements needed was **1** (so "all ≤ 2" holds, and the plan's "always 2" is not what the runs show: 1 sufficed); mean cycles 1.09 → 2.35, max cycles 2 → 5 |
+| e16 `penrose_swap` | (I\|O)² ≠ (I\|O)⁻¹; perturbation below GAP snaps back | below GAP: 100/100 same firing order **PASS**; above GAP: 8/100 different **FAIL**; 5 variant inputs gave 5 distinct firing orders **FAIL**; period 4 for each tested text |
+| e17 `hyperindexing` | injectivity crossover | effectively injective by N = 8; index discriminability 10/10 unique firing signatures (100%) PASS |
+
+Three older results in the plan are unconfirmed today: "Riemann + Fermat =
+Ĥ_RB numerically" (e09 does not test it), "semantically similar inputs converge
+to the same word" (e10 fails), and "fixed point = Ω_ζΣ" (e07 reports
+non-convergence). These stay in the engines as they are.
+
+## 4. Anomaly found while running them: e09's zero-divisor test cannot pass
+
+`e09_j2_involution.py` tests whether products of **basis elements** e_a·e_b are
+zero (its `KNOWN_ZD_PAIRS`, then a scan of all i < j). In a Cayley–Dickson
+algebra every basis product is ±e_{a⊕b}, of norm 1, never zero; the zero
+divisors are the sums e_a ± e_b (see [25](25_sedenion_manual.md) §4: 84 such
+elements, 42 index pairs {a, b} with a < 8 ≤ b). The "found 0, expected 42" and
+"0/14 confirmed" are therefore artefacts of the test, not of the algebra.
+Logged; `VAPMIP/engines/e09_j2_involution.py` is **not edited** (project rule:
+fix a failure only when asked to). The correct check is
+(e_a ± e_b)(e_c ± e_d) = 0, as in the listing on [25](25_sedenion_manual.md).
+
+## 5. The 2026-05-31 "key insights", with current status
+
+| Statement (2026-05-31) | Status | Where |
+|---|---|---|
+| Primes are the expansion of the universe: the x term of ψ(x) = x − Σ x^ρ/ρ is the expansion; ln is the Hubble constant of ℕ; H = xp the Hubble flow | interpretation of an established formula | [21](21_chladni_zipf_riemann.md), [20](20_three_phase_architecture.md) |
+| Navier–Stokes is the sedenion, term for term | THEORETICAL; not a regularity proof | [106](106_the_navier_stokes_problem.md) |
+| sin/cos as two counter-rotating frequencies; tan = 1 where they balance (σ = ½) | an identity of trigonometry plus the framework's reading | [73](73_why_the_half_line.md) |
+| the inside-out witches hat is a galaxy (conformal inversion of the infalling null cone) | THEORETICAL | [29](29_witches_hat_paper.md) |
+| life is the upper sedenion e₈–e₁₅, the zero-divisor zone | interpretation; the lower/upper pairing of zero-divisors is exact ([25](25_sedenion_manual.md) §9) | [25](25_sedenion_manual.md) |
+| 24D defines 16D (the Leech lattice as ambient container; zero-divisors as its shadow) | THEORETICAL; not derived | [134](134_the_library.md) §2 |
+| cancer is a zero-divisor collapse; the drug is the inside-out of its signature | a research hypothesis, not a medical result | [23](23_resonant_recognition.md) §4 |
+
+## 6. UniversalSynth
+
+The roadmap's "Ptolemy's piano" (a 16-track piano roll over the sedenion) is
+the repository `UniversalSynth/`, a specification with no code. Its
+status, the points where it disagrees with this wiki, and what it would take
+to build it are recorded in [08](08_sonification_engine.md) §7 and in the
+UniversalSynth README (updated 2026-11-13).
+
+## 7. Related pages
+
+[24 Archived assessment](24_claude_conclusion.md) · [25 Sedenion manual](25_sedenion_manual.md) ·
+[27 Third Age CS paper](27_third_age_CS_paper.md) · [98 Provenance and citations](98_provenance_and_citations.md) ·
+[133 Canonical maths](133_canonical_maths.md)

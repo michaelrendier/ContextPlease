@@ -11,3 +11,7 @@
 ## Cite in
 
 `ContextPlease/claude/hist_prime/VAPMIP/CONTEXT_PRIMER_2026-10-16_SEMANTIC_ORBWEAVER.md`; any paper that presents the orb-weaver composition cycle.
+
+## Verification, 2026-11-13
+
+The video id `wt4p2oalmRY` resolves (YouTube oEmbed) to "Is spider web really stronger than steel?", channel Veritasium. The upload date and the 1,617 s length were not re-read in this pass.

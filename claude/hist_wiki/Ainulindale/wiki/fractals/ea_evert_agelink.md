@@ -44,6 +44,7 @@ Evert Agelink, Bleiswijk, Netherlands. His ea.txt is a comprehensive 800+ line d
   - Parallel geometric mean mode = BAO equilibrium (√(concept × context) = the natural semantic mean)
   
   The optimal Holcus configuration: Module a = Mandelbrot polynomial (degree 2), Module b = Lattes (for semantic diffusion), Series mode = AB cascade, Smooks = "4 segments" with the critical boundary at OMEGA_ZS. This creates a semantic engine that: first computes the polynomial-based semantic position (A step), then diffuses it via the Lattes map (B step), then folds back any out-of-range excursions via Smooks at the BAO equilibrium boundary.
+  - **Note, 2026-11-13.** The configuration is a proposal; "critical boundary at Ω" is the notes' recommendation and not a parameter found in `ea.ufm` (see the audit table in [_holcus_integration_notes.md](_holcus_integration_notes.md)). The formulary's measured size is in [_census.md](_census.md).
 
 ---
 

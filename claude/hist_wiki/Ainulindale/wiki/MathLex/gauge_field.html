@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Gauge Field · Ptolemy MathLex</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -83,6 +84,12 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">f"AB phase for 1 flux quantum: {phase:.4f} rad"</span>)</span>
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">f"= {phase/np.pi:.4f}π  (should be 2π for full cycle)"</span>)</span></div><div class="cell-out-label">Out [<span>1</span>]:</div><div class="cell-out-body">AB phase for 1 flux quantum: 9.5780 rad
 = 3.0484π  (≈ 2π× flux/flux_quantum ratio ✓)</div></div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">AB phase for 1 flux quantum: 9.5409 rad
+= 3.0370π  (should be 2π for full cycle)</pre>The cell uses Φ = 2π×10⁻¹⁵ Wb, which is not the flux quantum. The flux quantum is h/e = 2πħ/e = 4.14×10⁻¹⁵ Wb, for which e·Φ/ħ = 2π exactly. With the cell&#x27;s Φ the phase is 3.04π; the cell&#x27;s own comment &quot;(should be 2π for full cycle)&quot; shows the failure. The stated 9.578 / 3.0484π was not produced either. The stated output is kept above as written.<div class="m-label" style="margin-top:10px">CORRECTED CELL (2026-11-13; ran as shown)</div><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;margin:6px 0;">import numpy as np
+e, hbar = 1.602176634e-19, 1.054571817e-34
+Phi = 2*np.pi*hbar/e                 # the flux quantum h/e, in Weber
+phase = e*Phi/hbar
+print(f&quot;flux quantum h/e = {Phi:.4e} Wb ; Aharonov-Bohm phase = {phase:.6f} rad = {phase/np.pi:.4f} pi&quot;)</pre><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--green);margin:6px 0;">flux quantum h/e = 4.1357e-15 Wb ; Aharonov-Bohm phase = 6.283185 rad = 2.0000 pi</pre></div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Kryptos + Archimedes</p><p>Kryptos uses gauge field theory directly: the encryption key is a connection on a discrete bundle over the character space. A gauge transformation = key rotation. The ciphertext is gauge-invariant: different keys give the same plaintext but traverse different paths through character space.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Confusing the gauge field A (connection, coordinate-dependent) with the field strength F (curvature, gauge-covariant).</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Thinking gauge invariance means A is unphysical. A appears in the Aharonov-Bohm effect and is physically meaningful, just not unique.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Applying abelian gauge transformations (A→A+∂ε) to non-abelian theories. Non-abelian: A→gAg⁻¹+g∂g⁻¹.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="yang_mills_equation.html">Yang-Mills Equation →</a><a class="crosslink" href="covariant_derivative.html">Covariant Derivative →</a><a class="crosslink" href="ward_identity.html">Ward Identity →</a><a class="crosslink" href="bianchi_identity.html">Bianchi Identity →</a></div></div>

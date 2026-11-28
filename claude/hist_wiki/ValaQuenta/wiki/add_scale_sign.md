@@ -4,7 +4,7 @@
 roll-down) · **`ValaQuenta/modules/add_scale_sign/` (the DATATYPE — `ASS`,
 `ASSWord`, `AddScaleSignModule`)** · `SedenionFactoralRelativity/engine/lineage.py`
 (`root_irreducible`, `ROOT_OF`, `AFF1`) · `VAPMIP/engines/e10_generational_lineage.py`
-(`r_add_scale_sign_floor`, `decompose_operation`) · v0.1 · Status:
+(`r_add_scale_sign_floor`, `decompose_operation`) · v0.3 · Status:
 **ESTABLISHED** (the group structure is elementary; the {0, 1, √2} spectrum
 and the one-bit sign structure are measured at run time, not asserted)
 
@@ -361,6 +361,34 @@ is zero). SIGN only matters where SCALE is non-trivial.
    `forced_sigma`'s model, **not** `sigma_expansion`'s Dirichlet-projected
    currents — the two were not compared numerically.
 
+## Clean-house pass, engine 6 (versions 0.2 and 0.3, 2026-11-27)
+
+Rerun against the code (`tests/test_add_scale_sign.py`, 17 tests; before this pass the module had none).
+
+| claim | outcome | evidence |
+|---|---|---|
+| Aff(1,ℝ) laws: associative, identity, two-sided inverse | **HOLDS**, in exact `Fraction` arithmetic (18 elements, 5832 triples) | `group_laws_exact()` |
+| manifest: "`fractions.Fraction` exact; float only at the output boundary" | **HOLDS-WITH-CHANGE.** It did not hold at 0.1: `~` added `0.0` and divided by `1.0`, so a Fraction element came back as floats. Fixed in `__invert__`; the `-0.0` normalisation is kept for floats. Same fix in `GenerationalLineage/engine/add_scale_sign.py` | `test_inverse_of_a_fraction_element_is_a_fraction_element` |
+| `[SCALE, ADD] = ADD` is the one non-trivial bracket; SIGN and SCALE commute | **HOLDS.** Group commutator `x⁻¹y⁻¹xy`: `[ADD(3), SIGN(−1)] = (−6,1,+1)`, `[ADD(3), SCALE(2)] = (−1.5,1,+1)`, `[SCALE(2), SIGN(−1)] = identity` (the wiki §3 values) | `test_the_bracket_table_of_the_wiki` |
+| `ln F − ln B = ASS(0, 2E, −1)(σ − ½)` | **HOLDS** over E ∈ {0.5, 2, 10} × σ ∈ {0, ¼, ½, ¾, 1}, max difference below 1e-12 | `test_the_noether_identity…` |
+| firing defect `= (g−1)·ln s`; flipping SIGN shifts `u` by `−2 ln s` | **HOLDS** | two tests |
+| `u = Σₖ[gₖ ln sₖ + aₖ]` | **HOLDS-WITH-CHANGE (wording).** The Σ runs over the *recorded steps* (`u_sum_of_steps`). The `u` of a composed element is **not** the sum of the factors' `u`: for `a = ASS(1.5, 2, +1)`, `b = ASS(0.5, 3, −1)`, `u(a@b) = 0.708` and `u(a) + u(b) = 1.595`. So `u` is a readout of one element, not a homomorphism | `test_u_is_a_readout_not_a_homomorphism` |
+| Smith quadrant letters: Γ_SCALE is the E–W ring, Γ_ADD the N–S ring (`to_smith` docstring, Ainulindale wiki 107) | **FAILS at 0.1, fixed at 0.3.** The code named the quadrant N/S by *scale* and E/W by *add*, the reverse of its own docstring (ADD(+1)·SCALE(2) came out `NE` only by luck; ADD(+1)·SCALE(½) came out `SE`, should be `NW`). Found by the gallery's JavaScript self-check, which followed the documentation. Retraction kept in ledger X-71 | `test_smith_quadrant_follows_the_documented_rings` |
+
+The fast-inverse-square-root worked example and the SFR-side wording are unchanged and untested here (they live in `SedenionFactoralRelativity`).
+
+### Interactive pages (version 0.3)
+
+`gallery/add_scale_sign/` (raw Canvas 2D, no libraries, no network; `serve_gallery.sh`, port 8794). Each page recomputes its numbers in the browser and compares them with `ass_data.js`, baked from the Python engine by `build_data.py`; the self-check is printed on the page.
+
+| page | shows | does not show |
+|---|---|---|
+| `canvas2d_plane.html` | two elements as lines, the composites X∘Y and Y∘X, fixed points, a cobweb; when the two orders agree | the record of steps |
+| `canvas2d_bracket.html` | the commutator x⁻¹y⁻¹xy walked on a number line: `a·(1/s − 1)` for (ADD, SCALE), `−2a` for (ADD, SIGN), identity for (SCALE, SIGN) | the Lie-algebra bracket |
+| `canvas2d_fold.html` | `u`, `Γ`, `Γ_SCALE` east–west, `Γ_ADD` north–south, the sign sheet, `u` over the (add, ln s) plane, the firing defect | the fold of a composite |
+| `canvas2d_longpath.html` | `ASSWord.trajectory`, collisions, the flip test, chrono against zeta order | the composite element |
+| `canvas2d_grouptable.html` | an exact 18-element window: 5832 triples associate; 76 of 324 ordered pairs commute; 84 products stay inside; the centre is the identity | a Cayley table (the window is not a subgroup) |
+
 ## See also
 
 - [scale.md](scale.md) — SCALE pulled out of a quantity, both directions, three levels
@@ -368,3 +396,9 @@ is zero). SIGN only matters where SCALE is non-trivial.
 - [telperion.md](telperion.md) — the BLUE tree; irreducible = what cannot be decomposed
 - [units.md](units.md) — the same discipline on dimensional exponent vectors
 - `generational-lineage` skill §§0–3 — the Two Trees domain and the four-question test
+
+---
+
+## Gamma function: the n-ball (added 2026-11-27)
+
+Gamma appears in this engine (see the code for where). It is also the bookkeeping of a hypersphere: the Gaussian integral of e^(−|x|²) over n dimensions is (√π)^n = (S/2)·Γ(n/2), so the unit ball has volume V(n) = π^(n/2)/Γ(n/2 + 1) and the unit sphere area S(n) = 2π^(n/2)/Γ(n/2) = n·V(n) for every real n. At n = 2 these are π and 2π, the circle. V peaks at n = 5.2569464 and S at n = 7.2569464 (`bell_curve.nball_peak`, which is the `n* ≈ 5.257` of the Ainulindale texts; its identification with the BAO freeze point is THEORETICAL, not computed). Machinery: `ValaQuenta/modules/bell_curve/maths.py` (`nball_volume`, `nsphere_area`, `nball_peak`); pictures: `gallery/hypergon_constructibility/canvas2d_nball.html` (the curves, the poles of Γ at 0, −1, −2, …) and `canvas2d_frame3d.html` (the curve in the frame n, V, S).

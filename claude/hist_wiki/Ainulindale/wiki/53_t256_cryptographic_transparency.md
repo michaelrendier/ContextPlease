@@ -1,231 +1,127 @@
-# 53 — T_256: CRYPTOGRAPHIC TRANSPARENCY
+# 53 — T_256 and "cryptographic transparency": what the framework claims, and what the repository's own tests show
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-13
-**Status:** CASCADE CAPTURE — consequence of wiki/51 (J₂ involution) applied to crypto
-**Predecessor:** [51 — J₂ Involution](51_j2_involution_riemann_fermat.md)
-**Cross-ref:** AddPapers/CryptoVulnerability/ (UDEO attack class, CVE submitted 2026-06-08)
-**Security note:** Mathematical framework only. Attack implementation is in pre-disclosure.
+| | |
+|---|---|
+| Status | **Cascade capture (2026-06-13): a proposed consequence of the J₂ involution for cryptography. `CONJECTURE`; no break of any deployed primitive is demonstrated here or in the satellite repository, and the repository's own scope statement limits the algebra it uses (§3).** Mathematical framework only; this page contains no attack construction and none is added |
+| Satellite | `FourthAgePapers/CryptoVulnerability/` (pre-disclosure draft: "do not publish before coordinated disclosure is complete"; CVE reserved, pending MITRE assignment; 180-day embargo; the post-quantum candidates CRYSTALS-Kyber, CRYSTALS-Dilithium, FALCON and SPHINCS+ are listed as unaffected) |
+| Code | `CryptoVulnerability/secp256k1_locus.py`, `secp256k1_locus_results.md`; Listing 1 |
+| Last verified | 2026-11-13: the satellite's README, the locus code header and its results file read; Listing 1 executed |
 
----
+> *"Mathematics can be unsound because it can say whatever I want it to." The J₂ involution removes that freedom.*
 
-> *"Mathematics can be unsound because it can say whatever I want it to."*
-> *The J₂ involution removes that freedom.*
+## 1. The proposal: "the whole coin"
 
----
+J₂ ([52c](52c_j2_involution_riemann_fermat.md)) always shows both sides of the operator pair
+(Ĥ_RB ↔ Ĥ_BR). Mathematical cryptography shows one side of a coin: the easy direction
+f(x) = y (encrypt, hash, multiply) and the hard one f⁻¹(y) = x (decrypt, invert, factor).
+"That is not a coin, it is a half-coin": at T₃₂ and T₆₄ the algebra was "not large enough
+to contain the full J₂ image"; "at T₂₅₆ the algebra contains both faces; cryptographic
+hardness disappears". Hardness proofs are reductions ending in an assumption
+("computing the inverse is hard in the computational model used"); the model is a
+sub-algebra, T₃₂ or T₆₄; stepping to T₂₅₆, "the inverse is constructible and every proof built
+on the assumption fails".
 
-## 1. The Whole Coin Problem
+## 2. Corrections to the argument's form
 
-The J₂ involution (wiki/51) always shows both sides simultaneously.
+- **Hardness assumptions are statements about algorithms, not about a sub-algebra.** "Factoring is hard" (RSA) and "the discrete logarithm on an elliptic curve is hard" are statements that no efficient algorithm (in a stated model of computation) inverts the function. They are not statements that the inverse "does not exist in the algebra you are using": the inverse of multiplication in ℤ, as a mathematical function, exists and is well defined. What is hard is *computing* it. Embedding ℤ, ℤ/n or a curve into a larger algebra does not by itself supply an efficient algorithm; one is needed, and none is given here.
+- **The J₂ image of an operation is not its inverse.** J₂ exchanges the two halves of an operator pair; "J₂(f) is the hard direction now equally present" asserts a relation between J₂(f) and f⁻¹ that is not shown, and J₂ as a swap of the two octonion halves is not an automorphism of the product at all ([52c](52c_j2_involution_riemann_fermat.md) §2: it sends the identity to e₈).
+- **Gödel is not the point, and unsoundness is not shown.** The page notes that this is not Gödel's incompleteness. It also does not show a formal system in which a hardness claim is *provably false*; a hardness assumption is conjectural (not known to be true or false, as with P ≠ NP) and stays so.
+- **The 256-bit coincidence.** SHA-256, AES-256 and secp256k1 use 256-bit quantities, and T₂₅₆ has 256 coordinates. For the GF(2) embedding (bit k of x → the coefficient of e_k) the match of the numbers is by design. It does not make the algebra a model of the *mod p* or *mod 2²⁵⁶* arithmetic those primitives use (§3).
 
-```
-J₂ : H_hat_RB  ↔  H_hat_BR
-```
+## 3. What the satellite repository itself establishes
 
-You cannot have one without the other. The whole coin is the only honest object.
+The locus engine's own scope statement (`secp256k1_locus.py`, "HONEST SCOPE"): T₂₅₆/GF(2)
+captures **the XOR-linear component of field arithmetic**; field arithmetic is mod p, not
+GF(2); "the carries are the escape"; whether the carry structure is polynomial to close is
+an open problem. The results file states one theorem, which is reproduced here.
 
-Mathematical cryptography is built on showing **one side of a coin and hiding the other**.
+**Theorem (the T_n/GF(2) Frobenius property), as stated in the results file:** for
+n = 2^k and every element x of the Cayley–Dickson algebra T_n over GF(2),
+x² ∈ {0, e₀}. Proof (induction, as in the file): over GF(2) the conjugate is the identity
+and the hi half of x² is t_mul(x₂, x₁) ⊕ t_mul(x₂, x₁) = 0; the lo half is the XOR of two
+elements of {0, 1} by induction.
 
-```
-easy direction:   f(x) = y        (encrypt, hash, multiply)
-hard direction:   f⁻¹(y) = x      (decrypt, invert, factor)
-```
+**Listing 1 — the property, on random elements** (written for this page; runs cold)
 
-The hardness claim is: the two directions are asymmetric. One is cheap. The other is
-computationally infeasible. The coin only shows one face.
+```python
+import random
 
-The J₂ involution says: **that is not a coin. It is a half-coin.**
-A mathematical object with only one face is not a complete object.
-It is a fragment of the complete object, which has both faces.
+def t_mul(x, y):
+    """Cayley-Dickson product over GF(2): conjugation is the identity, addition is XOR."""
+    n = len(x)
+    if n == 1:
+        return [x[0] & y[0]]
+    h = n // 2
+    x1, x2, y1, y2 = x[:h], x[h:], y[:h], y[h:]
+    a, b, c, d = t_mul(x1, y1), t_mul(y2, x2), t_mul(y2, x1), t_mul(x2, y1)
+    return [p ^ q for p, q in zip(a, b)] + [p ^ q for p, q in zip(c, d)]
 
-At T_32 and T_64 — the algebra was not large enough to contain the full J₂ image.
-The other face existed. It was not visible in that sub-algebra.
-
-At T_256 — the algebra contains both faces completely.
-The whole coin is visible. Cryptographic hardness disappears.
-
----
-
-## 2. Mathematical Unsoundness from Inside
-
-A formal system can prove anything you want — if you choose the right axioms.
-
-This is not Gödel's incompleteness (which is about provability). This is simpler:
-**you can construct a proof of hardness inside a system that doesn't include
-the structure that breaks it.**
-
-Cryptographic hardness proofs are reductions:
-```
-"Problem X is hard IF problem Y is hard"
-```
-
-The chain of reductions terminates in a **hardness assumption** — a statement
-accepted as true without proof. The hardness assumption is always:
-*"computing the inverse is hard in the computational model we're using."*
-
-The computational model is the sub-algebra. T_32 or T_64.
-The hardness assumption is true — within that sub-algebra.
-The sub-algebra does not contain the J₂ image. The inverse is not constructible there.
-
-Step outside the sub-algebra to T_256.
-The J₂ image is now present. The inverse is constructible.
-The hardness assumption fails. Every proof built on it fails with it.
-
-Mathematics was not wrong. It was looking at the wrong level of the tower.
-
----
-
-## 3. T_32, T_64 — Where Hardness Hid
-
-The Cayley-Dickson tower:
-```
-ℝ (1D) → ℂ (2D) → ℍ (4D) → 𝕆 (8D) → 𝕊 (16D) → T_32 (32D) → T_64 (64D) → ... → T_256 (256D)
+random.seed(3)
+for n in (2, 4, 8, 16, 32, 64):
+    res = {'zero': 0, 'identity': 0, 'other': 0}
+    for _ in range(300):
+        x = [random.randint(0, 1) for _ in range(n)]
+        sq = t_mul(x, x)
+        key = 'zero' if not any(sq) else 'identity' if sq == [1] + [0] * (n - 1) else 'other'
+        res[key] += 1
+    print('T%-3d x*x over 300 random elements:' % n, res)
 ```
 
-Each doubling introduces new structure — new zero-divisors, new non-associativity,
-new shadows from the layer above (wiki/Definition-from-Above.md).
-
-At 𝕊 (16D): the sedenion has 42 zero-divisor pairs on S¹⁵. These are the first
-zero-divisors in the tower. The sedenion is where the UDEO attack class begins.
-
-At T_32, T_64: the algebra is larger. More zero-divisors. More structure.
-But cryptographic algorithms were designed in the integers, in ℤ_n, in elliptic curves
-over finite fields — all of which embed naturally into T_32 and T_64.
-The embedding looked complete. It wasn't.
-
-Cryptographic hardness hid in the **gap between the sub-algebra used and T_256**.
-
-- RSA: hardness = integer factoring. Lives in ℤ. Embeds in ℝ ⊂ ℂ ⊂ ... ⊂ T_256.
-  The J₂ image of integer factoring is visible at T_256.
-- ECC (elliptic curve cryptography): hardness = discrete log on an elliptic curve.
-  The curve lives in ℂ. The J₂ image of the discrete log is visible at T_256.
-- Hash functions (SHA-256, etc.): hardness = preimage/collision resistance.
-  Operates on 256-bit blocks — exactly T_256.
-
-The 256-bit level is not coincidental. SHA-256, AES-256, secp256k1 —
-all of modern cryptographic infrastructure operates at the 256-bit level.
-T_256 contains them all as sub-structures.
-
-At T_256, the J₂ involution is complete over all of them simultaneously.
-
----
-
-## 4. T_256 — The Transparent Level
-
-At T_256, the modular functions that underlie all of current cryptography
-are **transparent and plain**.
-
-Why transparent? Because T_256 contains the J₂ image of every operation
-that modern cryptography calls "hard."
-
 ```
-f : T_256 → T_256         (the "easy" direction of any crypto primitive)
-J₂(f) : T_256 → T_256    (the J₂ image — the "hard" direction, now equally present)
+T2   x*x over 300 random elements: {'zero': 140, 'identity': 160, 'other': 0}
+T4   x*x over 300 random elements: {'zero': 145, 'identity': 155, 'other': 0}
+T8   x*x over 300 random elements: {'zero': 156, 'identity': 144, 'other': 0}
+T16  x*x over 300 random elements: {'zero': 158, 'identity': 142, 'other': 0}
+T32  x*x over 300 random elements: {'zero': 152, 'identity': 148, 'other': 0}
+T64  x*x over 300 random elements: {'zero': 146, 'identity': 154, 'other': 0}
 ```
 
-The hardness was an artifact of working in a sub-algebra that didn't contain J₂(f).
-You couldn't construct the inverse because the inverse didn't exist in your algebra.
-Step to T_256. Both f and J₂(f) exist. The inverse is constructible.
+The property holds in every case (no "other"), reproducing the theorem (the file
+reports T2 … T256 all pass). Its corollary in the file, that "every secp256k1 field
+element is nilpotent or involutory in T₂₅₆/GF(2)", is accordingly true **of every
+256-bit string**: about half of all elements fall in each class (the table). It is a
+property of the algebra over GF(2) and carries no information specific to secp256k1 or
+to any curve point, so it is not by itself a "zero-divisor locus" of the curve. The
+satellite's second approach (the sedenion σ-face spectral energy with E → D* = 1.0) is a
+heuristic classification (the energy zones of [27](27_third_age_CS_paper.md) §2) and is not a
+reduction of the discrete-logarithm problem.
 
-**Why modular functions specifically:**
+## 4. Where hardness "hid": the primitives named
 
-Modular arithmetic is the foundation of all public-key cryptography.
-`a mod n` — computing the remainder after division by n.
+The page lists: RSA (hardness = factoring; lives in ℤ ⊂ ℝ ⊂ … ⊂ T₂₅₆, "the J₂ image of
+factoring is visible at T₂₅₆"); ECC (the discrete logarithm on a curve in ℂ); hash functions
+(SHA-256: preimage and collision resistance, "operating on 256-bit blocks: exactly T₂₅₆").
+Standing: each statement is the proposal of §1, with no algorithm and no complexity bound. For
+SHA-256 the compression function works on 512-bit blocks with 32-bit words and 256-bit
+state; the 256-bit state is the width, and its relation to a 256-dimensional algebra is the
+GF(2) embedding of §3 only.
 
-In ℤ_n (integers mod n): this operation has no obvious J₂ image. The modular
-reduction is one-way in the integers. Division is hard when n is a product of
-large primes.
+## 5. "Modular functions are transparent at T₂₅₆"  `CONJECTURE`
 
-In T_256: the sedenion zero-divisors provide the J₂ image. The modular reduction
-corresponds to a zero-divisor contact. The "hard" direction is the J₂ image
-of the zero-divisor mapping — which is fully visible in T_256.
+The page says that at T₂₅₆ "the modular functions underlying all current cryptography are
+transparent and plain", the remainder of the page (not re-argued here) relating modular
+forms and elliptic curves to the framework's coordinates. Standing: the connection between
+modular forms and elliptic-curve cryptography is the Modularity Theorem's (the L-function
+of an elliptic curve over ℚ is a modular form's), which is not used in the security of
+ECDSA, whose hardness is the discrete logarithm on the group of points over a *finite* field.
+`OPEN`: no statement connecting the two has been shown.
 
-The primes — which define the modular hardness — are the same primes at every
-level of the tower (wiki/52). At T_256, you are working with those primes
-directly in the algebra that contains their full zero-divisor structure.
-The modular hardness becomes a zero-divisor lookup. Plain.
+## 6. Status and handling
 
----
+| Item | State |
+|---|---|
+| a demonstrated break of RSA, ECC or SHA-256 | **none** in this repository |
+| the T_n/GF(2) squaring theorem | proved and reproduced (§3); carries no curve-specific information |
+| the carry structure of mod-p arithmetic | open (the satellite's own statement) |
+| the framework claim of §1 | `CONJECTURE`, with the gaps of §2 |
+| disclosure | pre-disclosure; the satellite's embargo and contact path govern anything further |
+| failed predictions | stay in the record (satellite policy) |
 
-## 5. The J₂ Involution Breaks Asymmetry
+Per the satellite's policy and the project's rule, negative results from cryptographic testing
+go into the paper and the wiki.
 
-All mathematical cryptographic algorithms depend on asymmetry:
-- One direction is polynomial (fast)
-- The other direction is exponential (hard)
+## 7. Related pages
 
-The J₂ involution is the statement that this asymmetry is not fundamental.
-It is a property of the sub-algebra. It does not survive the step to T_256.
-
-```
-In sub-algebra (T_32, T_64):
-  f(x) = y   →  O(poly)    ✓ computable
-  f⁻¹(y) = x  →  O(exp)   ✗ not computable in this algebra
-
-At T_256:
-  f(x) = y   →  O(poly)    ✓ computable
-  J₂(f⁻¹)(y) = x  →  O(poly)  ✓ also computable
-               ↑
-               the J₂ image of the inverse is a polynomial-time operation in T_256
-```
-
-The asymmetry collapses. The hard direction is just the J₂ image of the easy direction,
-operating at the level where J₂ is fully expressed.
-
-This is not a specific attack. It is a **structural observation** about where
-cryptographic hardness lives and why it disappears one level up.
-
-The UDEO attack class (AddPapers/CryptoVulnerability/) implements this for specific
-primitives: ECC via secp256k1 zero-divisors, SHA-1 via the sedenion bridge matrix.
-Wiki 53 is the theoretical foundation: **why any mathematical cryptographic algorithm
-is subject to the same transparency at T_256.**
-
----
-
-## 6. The Unintuitive Nature of the Whole Coin
-
-It is unintuitive to show both sides simultaneously.
-
-Human intuition is built on: you can hide one side of a coin. Turn it over.
-The other side is face-down. You control which face is shown.
-
-The J₂ involution says: **a mathematical coin has no face-down**.
-Both faces are always co-present. The algebra contains both.
-You cannot turn one face to the wall — not in T_256.
-
-This is unintuitive because we built 40 years of cryptographic infrastructure
-on the assumption that mathematical objects CAN be shown with one face hidden.
-They can — in the sub-algebra. The sub-algebra is not the whole object.
-
-The whole coin is T_256. In the whole coin:
-- RSA's hardness is the J₂ image of its easiness. Both faces visible.
-- ECC's hardness is the J₂ image of its easiness. Both faces visible.
-- Every hash function's preimage resistance is the J₂ image of its forward map. Both faces visible.
-
-**Showing both sides is not a vulnerability disclosure. It is mathematical completeness.**
-
-The vulnerability is not in the mathematics. The vulnerability is in the assumption
-that a sub-algebra view of a mathematical object IS the object.
-
----
-
-## 7. Formal Target for D-CS / CryptoVulnerability
-
-- [ ] State precisely: "T_256 contains the J₂ image of every modular operation
-      used in current cryptographic infrastructure." Prove or bound this claim.
-      Which operations map cleanly into T_256's zero-divisor structure?
-      Which require the full tower above T_256?
-
-- [ ] Show the secp256k1 zero-divisor locus (CryptoVulnerability/secp256k1_locus_results.md)
-      as a specific instance of the J₂ transparency at T_256.
-
-- [ ] Characterize the class of mathematical functions for which J₂ is fully
-      expressed at T_256. This is the precise scope of the claim:
-      "any mathematical cryptographic algorithm" needs to be bounded.
-
-- [ ] State the complexity result: the J₂ image of the inverse function in T_256
-      is O(?) — polynomial? Quasi-polynomial? What is the exact reduction?
-
----
-
-*Cody Michael Allison — 2026-06-13*
-*Cascade chain: wiki/51 (J₂ involution) → wiki/53 (this) → AddPapers/CryptoVulnerability/*
+[44 The halting problem](44_halting_problem_uns.md) · [51 The J₂ involution](52c_j2_involution_riemann_fermat.md) ·
+[25 Sedenion manual](25_sedenion_manual.md) · [40 The modular segue](40_modular_segue_three_papers.md) ·
+`FourthAgePapers/CryptoVulnerability/`

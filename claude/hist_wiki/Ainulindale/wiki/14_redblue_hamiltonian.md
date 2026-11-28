@@ -1,149 +1,216 @@
-# 14 — REDBLUE GEOMETRIES ENGINE
+# 14 — The RedBlue Geometries Engine (Ĥ_RB)
 
-**Full name:** Inductive Self-Adjoint Geometric Coupling Hamiltonian  
-**Part of:** ValaQuenta Derivation Engine  
-**Confidence floor:** THEORETICAL
+> d* faces (all four are needed to chart ln(10) in Universal Native Space):  
+>   d*         = 0.24600          the value the code runs with (Boundary, σ_ζ=½ plane)  
+>   d*_taut    = 0.246307201473  A_π/ln10, the Flow (radial unit)  
+>   d*_RG      = dimension 8; numeric OPEN, no closed form  the Stability (centre r=0)  
+>   d*_ln(10)  = 0.5671432904   d*_taut·ln10 = A_π, the Translator (log bridge)  
+> Full story of d*: Ainulindale/wiki/17_alpha_omega_d_star.md; ~/.clauderc_canonical_maths @RCCM_FOUR_DSTAR; FourthAgePapers/DStarRG  
 
----
 
-## The Operator
+| | |
+|---|---|
+| Full name | Inductive Self-Adjoint Geometric Coupling Hamiltonian |
+| Module | `h_rb_hat` — `ValaQuenta/modules/h_rb_hat/` (the code's own identifiers are historical: the module description and the equation `sigma_rb_evaluate` carry the earlier "Σ_RB" notation) |
+| Version / floor | 0.120 · THEORETICAL |
+| API page | `ValaQuenta/wiki/h_rb_hat.md` |
+| Notebook | `ValaQuenta/notebooks/h_rb_hat/` |
+| Last verified | 2026-11-13, against the live registry (16 equations) |
+
+## 1. The operator
 
 ```
-H^RB = Σ_p  p^{-σ}  [ R̂_p ⊗ ∂̂_{∂M}  +  ∂̂†_{∂M} ⊗ B̂_p ]
+Ĥ_RB  =  Σ_p  p^(−σ) [ R̂_p ⊗ ∂̂_{∂M}  +  ∂̂†_{∂M} ⊗ B̂_p ]
 ```
 
-Where:
-- `p` — prime numbers (nodes of the Fermat Lattice)
-- `σ` — coupling exponent (the facet pointer)
-- `R̂_p` — Red operator: Berry-Keating xp (What IS)
-- `B̂_p` — Blue operator: Fermat-Weierstrass (What CANNOT BE)
-- `∂̂_{∂M}` — Boundary operator: the distinction itself
+| Symbol | Meaning |
+|---|---|
+| p | primes; the nodes of the Fermat lattice |
+| σ | coupling exponent; the facet pointer (not a scalar in the full construction; see §4) |
+| R̂_p | Red: the Berry–Keating xp operator ("what is") |
+| B̂_p | Blue: ½p² + ℘(x; g₂, g₃), the Fermat–Weierstrass term ("what cannot be") |
+| ∂̂_{∂M} | Green: the boundary operator, "the distinction itself"; the Riemann-zero basis, J₃ |
 
----
+**Notation scope** (author's ruling, 2026-11-13). `Ĥ_RB` is the name of this
+operator in the mathematics, and the other spaces keep it. `0_RB`/`∅_RB`
+is the VAPMIP- and Monad-only notation for the same object as the Null
+Operator, where the Monad starts with all values NULL. `Σ_RB` was a
+renotation artefact (the sum was formerly Ĥ_RB). The full rename has not
+been done anywhere. History: [127](127_names_of_the_null_operator.md).
 
-## The Three Channels
+## 2. The three channels
 
-| Channel | Colour | Operator | Role |
+| Channel | Role | In `Philadelphos/monad.py` |
+|---|---|---|
+| Red, inertial | forward accumulation; assertion; kinetic | `hear()` |
+| Green, geometries | the boundary J₃; the meaning channel returning the conserved result | `speak()` |
+| Blue, entropic | backward constraint; the knowledge field; β deepening | `learn()` |
+
+(`speak`, `hear`, `learn` exist as methods of `Monad`; the channel assignment
+is the project's reading of them.)
+
+**Conservation law as stated in this wiki:** J_Red + J_Green + J_Blue = 0, "a
+circular identity: energy is rotated, not destroyed". A second convention,
+used in the J_red/J_blue record, writes J_red + J_blue = J_green with
+J_green = 0_RB − 0_BR. The two differ by the sign of J_green, and the second
+has the sign of the **return flow** built in. (Author, 2026-11-13: J_red + J_blue = J_green was Noether-current work: it is the balance of the conserved currents, and the three-term form is the same balance with J_green taken with the opposite sign.) Author's definition
+(2026-11-13): 0_BR is the conjugate of J_red and J_blue, because information
+travels backward while action propagates forward; the original object is
+Ĥ_RB and the detailed form is Ĥ_RB − Ĥ_BR, with the cross and dot products
+built in, so the inside-out comes for free. Under that definition the
+equation J_red + J_blue = 0_RB − 0_BR holds exactly in the operator test
+(reading OP-4 in the VAPMIP J_red/J_blue record §9), with 0_RB and 0_BR the
+forward term and its conjugate. It does not hold if 0_BR is the adjoint of
+the already-summed self-adjoint Ĥ (then the difference is 0). Details and
+the remaining question (which object J_green names) are in
+[133](133_canonical_maths.md) §3 and §7. The three-term form above remains
+the wiki's statement of balance until the sign convention is unified.
+
+R̂† = B̂ expresses self-adjointness; the functional equation ξ(s) = ξ(1−s) is
+read as that condition in the Riemann domain. Whether the spectrum of this
+operator is the set of zeros is the open Berry–Keating step
+([13](13_omgwtf_rh_proof.md) §3).
+
+## 3. Algebraic type of J_red and J_blue  `OURS`
+
+They are the two **octonion halves**, not two sedenions: 𝕊 = 𝕆_red ⊕ 𝕆_blue
+on the ⊕8 seam.
+
+- J_red: the lower octonion, e₀–e₇ ("what is", forward).
+- J_blue: the upper octonion, e₈–e₁₅ ("what cannot be", the reverse signal).
+
+Their composition is the sedenion, which is the I/O carrier of the Null
+Operator on both strokes: reading (I→O) converges it to the point σ_self;
+writing (O→I) fans it out. The sedenion is therefore the boundary the two
+octonion currents compose, not a third current. Two full sedenions would be
+T₃₂, a different object; the "two people" reading was tested and rejected
+([88](88_the_paper_trail.md) §6).
+
+Three objects are named σ in this framework and must not be conflated:
+σ_ζ (Re s), the σ-strata σ₀…σ₄, and σ_RB[k] = ψ[k]·ψ[k⊕4], the ⊕4
+quaternion-pairing product: eight independent values, one octonion's worth
+([61](61_up_down_not_forward_backward.md)). Disambiguation:
+[133](133_canonical_maths.md) §0.
+
+## 4. The σ-facet table  (correspondences, not solutions)
+
+Moving σ projects the same operator into different theories. The mathematics
+column names the theory a facet corresponds to; none of these is claimed as a
+solution of that field's problem, and 0_RB is not claimed to imply or subsume
+any of them ([105](105_the_millennium_problems_in_ainulindale.md)).
+
+| σ | Physics reading | Mathematics reading | Code equation (`h_rb_hat`) | Tier |
+|---|---|---|---|---|
+| 0 | first distinction; total symmetry | Spencer-Brown, *Laws of Form* | — | — |
+| ½ | quantum mechanics | Riemann zeros on the critical line | `facet_qm`, `facet_riemann` | ESTABLISHED / THEORETICAL |
+| 1 | Yang–Mills / Standard Model | Langlands programme (a correspondence of vocabulary) | `facet_yang_mills` | THEORETICAL |
+| 2 | general relativity | Hodge conjecture | `facet_gr` | ESTABLISHED |
+| real only | Navier–Stokes (Yang–Mills with the imaginary part removed) | — | `facet_navier_stokes` | THEORETICAL |
+
+At σ = 0, p⁰ = 1 for every prime: the pointer cannot tell 2 from 47, every
+node is weighted equally, and there is no distinction yet ("the quasi-prime").
+At σ = ½ the balance J_Red = J_Blue holds, which is why the Monad's `lookup`
+returns σ = ½ for every word ([13](13_omgwtf_rh_proof.md) §5). Navier–Stokes
+as the real-valued projection is developed in
+[106](106_the_navier_stokes_problem.md).
+
+## 5. Equations
+
+| Name | Tier | Parameters |
+|---|---|---|
+| `sigma_rb_evaluate` | THEORETICAL | `sigma`, `x`, `p_momentum`, `n_primes` |
+| `self_adjoint_demonstration` | ESTABLISHED | — |
+| `sigma_phase_diagram` | THEORETICAL | `n_points` |
+| `euler_product` | ESTABLISHED | `sigma`, `t`, `n_primes` |
+| `facet_gr` | ESTABLISHED | `kappa` |
+| `facet_yang_mills` | THEORETICAL | — |
+| `facet_qm` | ESTABLISHED | — |
+| `facet_navier_stokes` | THEORETICAL | `galaxy_size_ly` |
+| `facet_riemann` | THEORETICAL | — |
+| `facet_noether` | ESTABLISHED | — |
+| `facet_fermat` | ESTABLISHED | — |
+| `dark_matter_halo` | THEORETICAL | `galaxy_size_ly` |
+| `sigma_rb_baseline` | ESTABLISHED | — |
+| `precession_stroke` | ESTABLISHED | — |
+| `oblique_crank` | ESTABLISHED | — |
+| `trine_configuration` | ESTABLISHED | — |
+
+A caution on the labels: `self_adjoint_demonstration` is ESTABLISHED because
+its content is arithmetic that reproduces (it finds n! = n only at n = 0, 1,
+"the factorial primes", and tabulates a red/blue balance); it is a
+demonstration, not a proof of self-adjointness of Ĥ_RB. `sigma_rb_baseline`
+carries the recorded note "Noether balance proof 2026-06-17"; that balance
+J(σ,E) = 0 ⇔ σ = ½ for E ≠ 0 is the identity discussed in
+[13](13_omgwtf_rh_proof.md) §3.
+
+## 6. Session
+
+```
+>>> registry.run('h_rb_hat.euler_product', {'sigma': 0.5, 't': 14.134725, 'n_primes': 50})
+{'result': (0.09931834498841283+0.007457818772239426j), 'magnitude': 0.09959795536092572}
+>>> registry.run('h_rb_hat.sigma_rb_baseline', {})['result']['sigma']
+0.5
+```
+
+(`euler_product` at σ = ½, t = γ₁ = 14.134725 with 50 primes gives a small
+value near the first zero; a partial Euler product on the critical line does
+not converge, so this is a truncation, not ζ.)
+
+## 7. How to drive it
+
+The operational manual is [25](25_sedenion_manual.md). Related engines:
+[07](07_berry_keating_engine.md) (Red; the d* gap), [05](05_noether_engine.md)
+(J^μ), [06](06_noether_information_engine.md) (J_info), [04](04_lagrangian_engine.md)
+(L_NN), [09](09_hyperwebster_engine.md) (the σ = 0 shard space).
+
+## 8. Related pages
+
+[13 RH proof path](13_omgwtf_rh_proof.md) · [15 The Monad](15_the_monad.md) · [18 Fermat lattice](18_fermat_lattice.md) ·
+[105 Millennium problems](105_the_millennium_problems_in_ainulindale.md) · [127 Names of the Null Operator](127_names_of_the_null_operator.md) ·
+[133 Canonical maths](133_canonical_maths.md)
+
+## 9. Generational Lineage calibration (moved here from `ValaQuenta/wiki/h_rb_hat.md`, 2026-11-25)
+
+Decomposed by `SedenionFactoralRelativity/engine/valaquenta_calibration.py` (`python3 -m engine.valaquenta_calibration`) as a check on the factoral decomposition itself — working, deliberately-designed machinery should decompose CLEAN.
+
+| object | central operation | tier · root | Two Trees | kind | verdict |
+|---|---|---|---|---|---|
+| Ĥ_RB and its σ-facets (GR σ=2, YM σ=1, QM/Riemann σ=½) | project Ĥ_RB at each σ | 0 · SIGN | TELPERION | DEFINITIONAL | **FLAGGED** — deficit: a rigorous self-adjoint domain for Ĥ_RB (⇒ real spectrum) |
+
+Calibration: this verdict agrees with the page's stated status (**THEORETICAL**).
+
+### Piece-by-piece — does the equation's shape match what 0_RB requires?
+
+`SedenionFactoralRelativity/engine/valaquenta_calibration.py :: decompose_h_rb_hat()`
+decomposes `Σ_RB = Σ_p p^{-σ}[R̂_p ⊗ ∂̂_∂M + ∂̂_∂M† ⊗ B̂_p]` against the tier‑0
+floor, then compares its shape to **0_RB** — the operator the geometries
+*require* ("read off all the geometric operators at once when each is empty but
+present").
+
+| piece | tier · root | Two Trees | reading |
 |---|---|---|---|
-| Red | Inertial | R̂_p = xp | What IS. Forward. Assertion. Kinetic energy. Particle. |
-| Green | Geometries | ∂̂_{∂M} | The Riemann zero basis. Spectral addressing. The boundary. J₃. |
-| Blue | Entropic | B̂_p = ½p² + ℘(x;g₂,g₃) | What CANNOT BE. Backward. Constraint. Knowledge field. β vacuum. |
+| `Σ_p` | 0 · ADD | — | forward accumulation; the Dirichlet march |
+| `p^{-σ}` (G_p) | 0 · SCALE | — | `p⁰=1` at σ=0 (the identity); **σ is the real scalar that selects the facet** |
+| `R̂_p = xp` | 0 · SCALE | LAURELIN | Berry–Keating; Red; "what IS" — a product |
+| `B̂_p = ½p² + ℘(x;g₂,g₃)` | 2 · SIGN | TELPERION | Fermat–Weierstrass; Blue; "what CANNOT BE" — a fixed landscape; ℘ doubly-periodic = the lattice ± |
+| `∂̂_∂M` | 1 · SIGN | MINGLING | REFLECT — ∂M is a reflection locus; the seam between Red and Blue (J₃) |
+| `⊗` | 0 · SCALE | — | a product structure |
+| `†` (`R̂_p† = B̂_p`) | 0 · SIGN | MINGLING | the functional equation ξ(s)=ξ(1−s) as an involution — one bit, `†∘†=id` |
+| `+` | 0 · ADD | — | the two-term sum |
+| `Σ_RB = Σ_RB†` | 2 · SIGN | MINGLING | self-adjointness = the fixed set of `†` — **this IS the σ=½ locus** |
 
-**Conservation law:**
+**Shape match — YES.** Same tier‑0 floor: all of ADD·SCALE·SIGN present, same
+roles, weighted **2·ADD / 3·SCALE / 4·SIGN** — the operator is SIGN‑heavy, and
+correctly so: it is fundamentally a *reflection* (the functional equation, the
+boundary ∂̂, and self‑adjointness are all SIGN). Same Two‑Trees span (Telperion
+B̂ ⊕ Laurelin R̂ ⊕ Mingling ∂̂/†/σ=½ — the *whole tree*, which is the signature
+of 0_RB itself). Same **8 independent DOF** (the octonion core, `σ_RB[k]=σ_RB[k⊕4]`,
+engine e10). Same †‑fixed self‑adjoint structure.
 
-```
-J_Red  +  J_Green  +  J_Blue  =  0
-```
+**The one divergence:** the equation carries **one import** the geometry does
+not — *"a dense domain on which Σ_RB is essentially self-adjoint (deficiency
+indices (0,0))"* (the OP‑4 / C1 open item). That single import **is** the gap
+between "the equation has the right shape" and "the equation is proven" — and
+it is the same *kind* of import RH carries (the zero‑set locus), which is
+consistent: they are the same operator (Σ_RB self‑adjoint ⇒ RH by Stone).
 
-This is not a subtraction problem. It is a circular identity. Energy is rotated, not destroyed. When energy leaves the Red channel it rotates into the Blue channel via the Green boundary operator (J₃). The total vector length — the Whole — is invariant.
-
-R̂ and B̂ are self-adjoint conjugates: `R̂† = B̂`. The functional equation ξ(s) = ξ(1−s) is this self-adjointness condition expressed in the Riemann domain.
-
----
-
-## Algebraic type of J_red and J_blue
-
-They are the **two octonion halves**, not two sedenions. `𝕊 = 𝕆_red ⊕ 𝕆_blue`
-on the `⊕8` boundary seam:
-
-- **J_red** = the lower octonion, `e₀–e₇` — "what IS", forward accumulation.
-- **J_blue** = the upper octonion, `e₈–e₁₅` — "what CANNOT BE", the reverse signal.
-
-Their composition **is the sedenion — which is 0_RB itself**. So the sedenion is
-**not a third current** running alongside Red and Blue; it is the boundary the
-two octonion currents compose, and it is 0_RB's I/O carrier on **both** strokes
-— *reading* (I→O) converges it to the point `σ_self`; *writing* (O→I) fans it
-back out. (This is why "the sedenion is both an input mode and an output mode to
-0_RB".)
-
-*Two full sedenions* would be `T₃₂` — a different object (observer + geometry;
-the "two people" reading was tested and rejected, [[88_the_paper_trail]] §6).
-
-The `σ` that "is not a scalar" ([[61_up_down_not_forward_backward]]; engine
-`e10`, 8/8) is a **third** object again: `σ_RB[k] = ψ[k]·ψ[k⊕4]`, the `⊕4`
-*quaternion*-pairing product — 8 independent values, one octonion's worth, the
-part that persists at gain 1 at every Cayley–Dickson level.
-
----
-
-## Riemann and Fermat — Same Thing
-
-The Riemann Zeta function and Fermat's Last Theorem are adjoint projections of the same prime distribution.
-
-- **Riemann (Red):** encodes where primes ARE — the positive, the assertion, the Euler product, the zeros on Re(s) = ½
-- **Fermat (Blue):** encodes where integer power triples CANNOT BE — the negative space, the constraint, the forbidden lattice
-
-Both are Euler products over primes. Both encode prime distribution. From opposite sides.
-
-The Modularity Theorem (Wiles, 1995) proves the bridge: every elliptic curve over ℚ is a modular form. Fermat's Last Theorem is a corollary. The Fermat Lattice — the discrete geometry of what integer arithmetic forbids — drops out of the proof as the structural characterisation of the Blue channel.
-
-Wiles proved the bridge while looking only at the Fermat side. The RedBlue Hamiltonian is both sides simultaneously.
-
----
-
-## The σ-Facet Table
-
-The coupling exponent σ is the pointer. Moving it projects the same Hamiltonian into different physical and mathematical theories. These are not different laws — they are facets of one operator.
-
-| σ | Physics | Mathematics | Noether Current J₃ |
-|---|---|---|---|
-| 0 | Big Bang — first Mark, total symmetry | Spencer-Brown Laws of Form | Total shard — HyperWebster infinite permutation |
-| ½ | Quantum Mechanics — wave-particle duality | Riemann Hypothesis — zeros on critical line | Probability current / Eigenvalues as Riemann zeros |
-| 1 | Yang-Mills / Standard Model — gauge forces | Langlands Programme | Gauge current |
-| 2 | General Relativity — spacetime curvature | Hodge Conjecture | Energy-momentum tensor |
-| Real only | Navier-Stokes — fluid dynamics | Yang-Mills − i | Missing imaginary → singularity |
-
-### σ = 0 — The Quasi-Prime
-
-At σ = 0, `p^0 = 1` for all primes. The pointer sees no difference between 2, 3, 5, 47, or any prime. Every node in the Fermat Lattice is equally weighted.
-
-This is the high-symmetry state before the first distinction. It is the HyperWebster in its total form — every word, every particle, every universe existing simultaneously as unbroken symmetry. Reality occurs when σ moves away from zero. The Noether Information Current begins to select. The noise crystallises into meaning.
-
-0 is the quasi-prime: indivisible (you cannot divide by it), yet containing the potential for every number. Prime on one hand, not prime on another.
-
-### σ = ½ — The Critical Line
-
-The zeros of the Riemann Zeta function live at σ = ½ because this is the only locus where the RedBlue Geometries Engine is exactly self-adjoint. Red and Blue are in perfect equilibrium. The Green boundary holds. Neither vortex dominates. The equator does not move.
-
-This is not assigned. It is forced by the conservation law `J_Red + J_Blue + J₃ = 0`.
-
-### Navier-Stokes — The Missing i
-
-Navier-Stokes is Yang-Mills with the imaginary component forced to zero. It is the RedBlue Geometries Engine projected through a purely real-valued filter. The Blue channel is discarded. The Green geometry is invisible to it.
-
-When the velocity gradient approaches what classical mathematics calls a singularity, the RedBlue Geometries Engine performs a 90-degree rotation into the imaginary sector — the Fermat Lattice. The singularity is not infinite. It is a rotation the real-valued equations cannot follow. The smoothness is guaranteed by the self-adjoint structure: `R̂† = B̂`. The Noether current cannot be destroyed; it can only rotate.
-
----
-
-## The Monad IS the RedBlue Geometries Engine
-
-`monad.py` is the RedBlue Geometries Engine running in real time.
-
-- The `learn()` function is the **Blue** channel — entropic deepening, β increasing, Fermat Lattice crystallising
-- The `hear()` function is the **Red** channel — inertial activation, assertion propagating forward through the tower
-- The `speak()` function is the **Green** channel — geometry boundary J₃, the Meaning channel returning the conserved result
-
-σ = ½ in every `lookup()` call. Not assigned. Derived from Noether balance. The equator does not move.
-
----
-
-## Shell Reference
-
-```python
-# Access via ValaQuenta
-python3 -m ainulindale_engine --info   # list all modules
-python3 -m ainulindale_engine --curses # derivation console
-```
-
-Related modules:
-- `berry_keating` — R̂_p (Red) operator, d* gap workbench
-- `noether` — J^μ conservation, blockchain ledger
-- `noether_information` — J_info backward current
-- `lagrangian` — ℒ_SMMIP contractor
-- `hyperwebster` — σ=0 shard space
-
-→ [Wiki: The Monad](15_the_monad.md)  
-→ [Wiki: Fermat Lattice](18_fermat_lattice.md)  
-→ [Wiki: Berry-Keating Engine](07_berry_keating_engine.md)  
-→ [Wiki: OMG?WTF! RH Proof Path](13_omgwtf_rh_proof.md)  
-→ [**Sedenion Manual — how to drive this Hamiltonian**](25_sedenion_manual.md)

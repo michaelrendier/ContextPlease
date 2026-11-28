@@ -1,3 +1,61 @@
+# Audit of these notes, 2026-11-13 (added; the 2026-06 text below is unchanged and stays as the record of what was proposed)
+
+These notes are **proposals** written when part of the formulary had been read. Re-checked against the source files in `PtolemyDesktop/Archimedes/Maths/Formula/UFformulary/` and by computation. Census of the formulary: [_census.md](_census.md).
+
+**Listing 1 — the numerical claims of the notes** (written for this page; numpy and scipy; runs cold)
+
+```python
+import numpy as np
+from math import log, pi
+from scipy.optimize import brentq
+from numpy.polynomial import hermite as H
+W1 = 0.5671432904097838
+g = lambda y: y + np.tan(3 * y)
+print('Popcorn: y + tan(3y) at y = W(1): %.4f ; sin(x + tan 3x) at x = W(1): %.4f' % (g(W1), np.sin(W1 + np.tan(3 * W1))))
+print('first nonzero root of y + tan(3y) = 0 in (0.5, 1.5): %.5f' % brentq(g, 0.55, 1.0))
+for n in (16, 32, 64):
+    z = np.sort(H.hermroots([0] * n + [1])); x = z / np.sqrt(2 * n)
+    N = n * (0.5 + (x * np.sqrt(1 - x ** 2) + np.arcsin(x)) / pi); s = np.diff(N); s /= s.mean()
+    print('Hermite H_%d zeros: unfolded spacing variance %.5f (GUE 0.178, Poisson 1)' % (n, s.var()))
+tia = lambda u, v: (abs(u + v) - abs(abs(u) - abs(v))) / (2 * min(abs(u), abs(v)))
+print('TIA for |u| = |v|, angle 0/60/90/120/180 deg:', [float(round(tia(1, np.exp(1j * np.radians(a))), 4)) for a in (0, 60, 90, 120, 180)])
+print('cos(angle/2) for the same angles:           ', [float(round(np.cos(np.radians(a) / 2), 4)) for a in (0, 60, 90, 120, 180)])
+print('geometric mean sqrt(J_red J_blue) with J_red J_blue = exp(-E): equals W(1) only at E = %.4f' % (-2 * log(W1)))
+print('reset hierarchy k/W(1), k = 1..4:', [round(k / W1, 2) for k in (1, 2, 3, 4)], '; 7 * W(1) = %.4f' % (7 * W1))
+```
+
+```
+Popcorn: y + tan(3y) at y = W(1): -7.0443 ; sin(x + tan 3x) at x = W(1): -0.6897
+first nonzero root of y + tan(3y) = 0 in (0.5, 1.5): 0.81855
+Hermite H_16 zeros: unfolded spacing variance 0.00006 (GUE 0.178, Poisson 1)
+Hermite H_32 zeros: unfolded spacing variance 0.00004 (GUE 0.178, Poisson 1)
+Hermite H_64 zeros: unfolded spacing variance 0.00002 (GUE 0.178, Poisson 1)
+TIA for |u| = |v|, angle 0/60/90/120/180 deg: [1.0, 0.866, 0.7071, 0.5, 0.0]
+cos(angle/2) for the same angles:            [1.0, 0.866, 0.7071, 0.5, 0.0]
+geometric mean sqrt(J_red J_blue) with J_red J_blue = exp(-E): equals W(1) only at E = 1.1343
+reset hierarchy k/W(1), k = 1..4: [1.76, 3.53, 5.29, 7.05] ; 7 * W(1) = 3.9700
+```
+
+| Claim in the notes | Result | Tier now |
+|---|---|---|
+| Gnarl/Popcorn: "the fixed-point condition y + tan(3y) = 0 at y ≈ 0.567 is the Lambert-W equilibrium Ω"; equilibrium at (0.567, 0) | **False.** y + tan(3y) = −7.04 at y = W(1); sin(x + tan 3x) = −0.69 there, so (W(1), 0) is not a fixed point of the map; the first non-zero root of y + tan(3y) = 0 is 0.81855. The map's true fixed points need x + tan 3x and y + tan 3y both at multiples of π | refuted, kept |
+| "The Gnarl formula IS the RedBlue Hamiltonian in closed form"; "the anti-symmetry is the exact J_pos/J_neg conservation" | The update (x − h sin(y + tan αy), y + h sin(x + tan αx)) has opposite signs in its two lines, a structural similarity to a two-current balance; nothing here derives the Ĥ_RB correspondence, and the retired Noether-current premise ([133](../133_canonical_maths.md) §3) is not available as support | `INTERPRETATION` |
+| Hermite zeros "IDENTICAL by GUE" to Riemann-zero statistics | **False as stated.** The zeros of Hₙ are a deterministic, rigid set: unfolded spacing variance ≈ 5×10⁻⁵ (GUE 0.178, Poisson 1). GUE enters through the *kernel* of random-matrix eigenvalues, which is built from Hermite functions, not through the zeros of Hₙ. The recurrence Hₙ₊₁ = 2zHₙ − 2nHₙ₋₁ is correct; the largest zero of H₁₆ is 4.689 (√(2n+1) = 5.745 is only an upper estimate), not a "position proportional to √(2n+1)" | refuted, kept |
+| Triangle-inequality average "is the cosine of the angle"; "= ½ at 60°", "−1 for anti-aligned" | **False.** For |u| = |v| the quantity is cos(φ/2): 0.866 at 60°, 0.5 at **120°**, 0 at 180°. It lies in [0, 1] and is never negative, and the notes' form (dividing by 2|c|) is correct only when |c| ≤ |z²| (the denominator is 2·min) | corrected |
+| "√(J_pos·J_neg) = Ω_ζΣ at equilibrium" | With J_red·J_blue = e^(−E) for every σ the geometric mean is e^(−E/2), equal to W(1) only at E = 1.1343 | not an identity |
+| Reset hierarchy [1.76, 3.52, 5.28, 7.04] | k/W(1) = 1.76, 3.53, 5.29, 7.05 (rounded down in the notes); 7·W(1) = 3.970 | arithmetic corrected |
+| "BAO appearances of Ω": Gnarl fixed point; Mira weight; IFS critical value; ring-trap diameter; Verhulst a = 7Ω; CantorBoost dimension | Gnarl: false (above). **Penzo and "Verhulst" occur nowhere in the formulary (0 hits in any file type); "Mira" occurs only in `reb.ucl`, `reb.ulb`, `rkb.ucl`**; the dmj ring-trap diameter defaults to **1.0** (Ω is the notes' recommendation, not the source); the IFS critical value and the CantorBoost dimension were not located. The only place Ω = 0.56714329… is written in the sources is `jam.ucl` / `jam2.ucl` / `lkm3.ucl` as an author's "constants for my own convenience" comment (the constant is known to the formulary's authors; it is not a hidden fixed point). The six "independent appearances" are therefore not supported | not supported |
+| dmj OrbitTraps "23 shapes" | **Reproduced**: the `trapshape` enumeration in `dmj` / `bar.txt` lists 23 (point … heart) | `ESTABLISHED` |
+| Monnier "135 trap shapes" | Not located: `sam.ucl` contains "135" only inside modular-arithmetic constants (`%135`) | not located |
+| Two Square 64 and Two Cube 256 sign-choice families | Not counted: `mmf.ufm` has 54 formula blocks, none named Two Square / Two Cube; "Two Square" appears in comments and in `lkm.ufm`. 2⁶ = 64 and 2⁸ = 256 are arithmetic, not a count of catalogued entries | not located |
+| "Approximately 1,500–2,000 formulas across 213 files" ([index.md](index.md)) | Measured 11,523 formula blocks, 153 author codes, 213 `.ufm` files | corrected in [_census.md](_census.md) |
+| "Avariant is the ONLY formula that activates all 16 sedenion dimensions" | The source shows Avariant (`ea.ufm`, `AvariantM`/`AvariantJ`, about 91 parameters in the Mandelbrot form) as a large combining meta-formula; "16 sedenion dimensions" is the notes' mapping, and the file contains no sedenion arithmetic; "the only one" was not checked against the other 11,500 blocks | `INTERPRETATION` |
+| The tick-by-tick table (e₀ … e₁₅ ↔ formula families) and the "Holcus implications" | Design proposals, not results; nothing in this audit tests them | `CONJECTURE` |
+
+**Reading rule.** Where the notes and a re-run page disagree, the re-run page wins. The refuted items (Popcorn fixed point, Hermite = GUE, TIA = cosine) stay in the record.
+
+---
+
 # Holcus Integration Notes — UFformulary Analysis
 
 ## Overview

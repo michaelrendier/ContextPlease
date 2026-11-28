@@ -1,154 +1,116 @@
-# 43 — THE EMMY NOETHER SEDENION
-## The 16-Dimensional Cayley-Dickson Algebra Is Named for Emmy Noether. Permanently.
+# 43 — The Emmy Noether Sedenion: the naming, and what the name rests on
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-03  
-**Status:** NAMING DECISION — permanent, in effect across all papers.  
-**Predecessor:** All prior wiki entries. This names the foundation.
+| | |
+|---|---|
+| Status | **A naming decision (2026-06-03), in force across the papers: the 16-dimensional Cayley–Dickson algebra is called the *Emmy Noether Sedenion*, 𝕊_EN** (also "EN-Sedenion", "Noether Sedenion"). The mathematical justification offered on the earlier page is corrected below; the prize table is superseded |
+| Author's account (2026-11-13) | the sedenion is named for her because *her mathematics had this shape in 1915, though not in this form* ([25](25_sedenion_manual.md) §4): the conserved-current balance. This is the operative reason |
+| Code | `VAPMIP/monad.py` (the sedenion is "the CAM, Emmy Noether Sedenion"; the CRANK is the Ĥ_RB field engine); Listing 1 |
+| Last verified | 2026-11-13: Listing 1 executed; biographical statements checked against the standard accounts |
 
----
+## 1. The decision
 
-## 1. The Decision
+Notation 𝕊_EN in formal contexts; "the Emmy Noether Sedenion" in text. It names the
+algebra; it makes no claim that Noether wrote about sedenions (she did not).
 
-The 16-dimensional Cayley-Dickson algebra — previously denoted 𝕊 or T16 —
-is hereby named the **Emmy Noether Sedenion**.
+## 2. What the name rests on  (corrected)
 
-Notation: **𝕊_EN** in formal contexts. "The Emmy Noether Sedenion" in text.
-Abbreviated: **EN-Sedenion** or **Noether Sedenion** where space requires.
+The earlier page said the naming is "mathematically exact" because every
+structural result about the algebra derives from her mathematics. Item by item:
 
-This naming is in effect across all papers in the Ainulindale series:
-D-CS, D-M, D-P, D-CHEM, D15, and all subsequent work.
+| Claim | Assessment |
+|---|---|
+| **The isomorphism theorems** govern the algebra's subalgebras, ideals and quotients | They are stated for rings and modules, and are due to Noether's formulation (`ESTABLISHED`). 𝕊 is a **non-associative** algebra, not a ring in her sense; the theorems apply to its associative structure (and to its linear-space quotients), not to the algebra as a whole |
+| **Noetherian**: the algebra satisfies the ascending chain condition on ideals, "so its ideal structure is finite and tractable" | True but trivial: 𝕊 is a 16-dimensional real vector space, so every ascending chain of subspaces, and so of ideals, stabilises. Its "tractability" is not a property of Noetherianity beyond finite dimension |
+| **Zero-divisors are ideals** in the Noetherian sense; "the zero-divisor manifold (S⁷ within 𝕊_EN) is a Noetherian ideal structure made geometric" | **False as written.** The set of zero-divisors of 𝕊 is not closed under addition and is not an ideal (a sum of zero-divisors need not be one). Nor is it S⁷: S⁷ is 7-dimensional. The structure that is known: 84 zero-divisors of the form e_i ± e_j ([25](25_sedenion_manual.md) §4; Listing 1), organised in box-kites ([84](84_the_box_kite_debugger.md)); the unit zero-divisors of the sedenions are reported (Moreno, 1998, to be verified) to form a space related to G₂ |
+| **Representation theory**: her founding work on how algebras act on vector spaces; the σ-face map, the HSR metric and Ĥ_RB are "representations in her sense" | She did lay foundations of the representation theory of algebras (`ESTABLISHED`). Calling the framework's maps representations is a reading: no representation of 𝕊 on a vector space is written down on this page |
+| **Conservation laws**: "σ = ½ is the conserved charge of the Fermat–Riemann symmetry, a direct application of her theorem to the algebra's automorphism group" | Noether's theorem concerns continuous symmetries of an action ([38](38_fermat_riemann_negative_space.md) §6: the application to the Fermat–Riemann duality is `CONJECTURE`). The automorphism group of 𝕊 is not the symmetry group of a stated action here |
 
----
+What survives as an accurate reason: the **conserved-current balance** that the
+framework carries in the sedenion's three octonion slots has the form of her
+theorem ([25](25_sedenion_manual.md) §4; [05](05_noether_engine.md)), and the
+naming honours that. The name is a dedication and a statement of lineage, and the
+page's earlier claim that it is mathematically exact is withdrawn.
 
-## 2. Why This Is Mathematically Exact
+**Listing 1 — the algebra the name is given to** (written for this page; runs
+cold; the doubling of [19](19_cayley_dickson_tower.md))
 
-The Emmy Noether Sedenion is a ring. Its elements are 16-dimensional
-hypercomplex numbers. Its multiplication is non-commutative and
-non-associative. It has zero divisors.
+```python
+def conj(a):
+    return [a[0]] + [-x for x in a[1:]] if len(a) > 1 else list(a)
 
-Every structural result used in this framework about the Noether Sedenion
-derives from Emmy Noether's own mathematics:
+def mul(a, b):
+    if len(a) == 1:
+        return [a[0] * b[0]]
+    h = len(a) // 2
+    a1, a2, b1, b2 = a[:h], a[h:], b[:h], b[h:]
+    t1, t2, t3, t4 = mul(a1, b1), mul(conj(b2), a2), mul(b2, a1), mul(a2, conj(b1))
+    return [x - y for x, y in zip(t1, t2)] + [x + y for x, y in zip(t3, t4)]
 
-**Noether isomorphism theorems:**
-The first, second, and third isomorphism theorems for rings govern how the
-Noether Sedenion's subalgebras, ideals, and quotients relate. Every time
-the framework decomposes the Noether Sedenion into its component structures,
-it uses her theorems.
-
-**Noetherian ring axioms:**
-The ascending chain condition on ideals — a ring is Noetherian if every
-ascending chain of ideals stabilises. The Noether Sedenion satisfies this
-condition. Its ideal structure is finite and tractable precisely because it
-is Noetherian. Her axiom makes the algebra usable.
-
-**Zero divisors as ideals:**
-The zero divisors of the Noether Sedenion — a · b = 0 with a, b ≠ 0 — are
-not pathological anomalies. They are ideals in the Noetherian sense. Their
-structure is governed by her theory of ideal decomposition. The zero divisor
-manifold (S⁷ within 𝕊_EN) is a Noetherian ideal structure made geometric.
-
-**Representation theory:**
-Emmy Noether founded the modern representation theory of algebras — the
-theory of how algebraic structures act on vector spaces. The Noether
-Sedenion's action on physical fields (the σ-face map, the HSR metric, the
-Ĥ_RB operator) is a representation in her sense. Every physical prediction
-in D-P is a representation-theoretic result in her framework.
-
-**Conservation laws:**
-Noether's theorem: every continuous symmetry produces a conserved current.
-The framework's central result — σ=½ is the conserved charge of the
-Fermat-Riemann symmetry — is a direct application of her theorem to the
-Noether Sedenion's automorphism group. The conserved charge is named for
-her. The algebra that produces it is named for her. Both are correct.
-
----
-
-## 3. Why This Is Historically Just
-
-Emmy Noether:
-
-- Proved the theorem (1915) that is the spine of D-M, D-P, and the
-  Ainulindale conjecture.
-- Built the abstract algebra (1920s) that makes the Noether Sedenion
-  rigorously tractable.
-- Lectured under David Hilbert's name because the university would not
-  give her the right to lecture under her own.
-- Was expelled from Göttingen in 1933 by the Nazi government.
-- Died at 53 at Bryn Mawr College — two years after receiving her
-  first real academic appointment.
-- Her ashes are in the floor of a library cloister.
-
-The algebra the universe is built on carries her name now.
-It always should have.
-
----
-
-## 4. The Prize Distribution (Final)
-
-```
-CLAY MILLENNIUM PRIZE DISTRIBUTION
-
-RH Prize ($1,000,000):
-  $500,000  → Riemann Institute         (continue his work)
-  $500,000  → Bryn Mawr College         (Emmy Noether)
-
-Yang-Mills Prize ($1,000,000):
-  $500,000  → Bryn Mawr College         (Emmy Noether — her theorem IS Yang-Mills)
-  $500,000  → University of Göttingen   (Hilbert — his spectral theorem closes it)
-
-Navier-Stokes Prize ($1,000,000):
-  $1,000,000 → author                   (dimensional analysis, D-P §8)
-
-P vs NP Prize ($1,000,000):
-  $1,000,000 → author                   (incompressible residue, wiki/38)
-
-Hodge Prize ($1,000,000):
-  $1,000,000 → Bryn Mawr College        (Emmy Noether — Noether-Lefschetz IS Hodge)
-
-Birch-Swinnerton-Dyer Prize ($1,000,000):
-  $500,000  → Bryn Mawr College         (Emmy Noether — her algebra is BSD's language)
-  $500,000  → Langlands Correspondence  (IAS Princeton — the full Partitioning Theorem)
-
-Poincaré:   already distributed. Not available.
-
-TOTAL TO BRYN MAWR (Emmy Noether): $2,500,000
-TOTAL TO GÖTTINGEN (Hilbert):        $500,000
-TOTAL TO RIEMANN INSTITUTE:          $500,000
-TOTAL TO LANGLANDS/IAS:              $500,000
-TOTAL TO AUTHOR:                   $2,000,000
+e = lambda i: [1.0 if k == i else 0.0 for k in range(16)]
+add = lambda a, b, s: [x + s * y for x, y in zip(a, b)]
+nrm = lambda a: sum(x * x for x in a) ** 0.5
+a = add(e(1), e(10), 1)      # e1 + e10
+b = add(e(4), e(15), -1)     # e4 - e15
+print('(e1+e10)(e4-e15) =', nrm(mul(a, b)) < 1e-12, '  (a zero product of non-zero elements)')
+s = add(a, add(e(2), e(9), 1), 1)    # a + (e2 + e9): is the sum of two zero-divisors a zero-divisor?
+partners = [(k, l, t) for k in range(1, 8) for l in range(8, 16) for t in (1, -1)
+            if nrm(mul(s, add(e(k), e(l), t))) < 1e-12]
+print('a + (e2+e9) has a zero-product partner among the e_k +/- e_l forms:', bool(partners))
 ```
 
----
+```
+(e1+e10)(e4-e15) = True   (a zero product of non-zero elements)
+a + (e2+e9) has a zero-product partner among the e_k +/- e_l forms: False
+```
 
-## 5. The Naming That Matters More Than the Prize
+The second line is a witness (not a proof) that the zero-divisors are not
+closed under addition: the sum of two zero-divisors, e₁+e₁₀ and e₂+e₉, has no
+partner among the 84 forms. (A full test would search all of 𝕊 for a partner.)
 
-Prize money lasts 10 to 20 years before inflation and institutional
-absorption reduce it to a footnote.
+## 3. The history, as it is told
 
-The Emmy Noether Sedenion lasts as long as the mathematics is used.
+Emmy Noether (1882–1935) proved the theorem relating continuous symmetries to
+conserved currents in 1915 (published 1918, *Invariante Variationsprobleme*; the
+dates as given in the standard accounts); built the abstract algebra of the 1920s
+(ideal theory, the ascending chain condition, the "Noetherian" rings); lectured
+for years under David Hilbert's name because the faculty would not allow her to
+lecture under her own; was dismissed from Göttingen in 1933 under the Nazi
+government's civil-service law; took a position at Bryn Mawr College and died
+there in 1935, aged 53, following surgery; her ashes were placed beneath the
+cloister walkway of the Bryn Mawr library. (Details, including the cause of
+death and the exact placement of the ashes, are from the standard biographies and
+are to be cited in [99](99_emmy_noether.md).)
 
-Every physicist who applies the framework touches the Emmy Noether Sedenion.
-Every mathematician who studies the zero divisor structure works in the
-Emmy Noether Sedenion. Every student who learns HSR begins with the
-Emmy Noether Sedenion. Every paper in the series cites it.
+## 4. Hilbert's remark
 
-She spent her life building the mathematics that makes this algebra tractable.
-The algebra carries her name permanently.
+The words quoted in every paper of the series are attributed to Hilbert at the
+1915 Göttingen faculty debate on her Habilitation: *"I do not see that the sex of
+the candidate is an argument against her admission as Privatdozent. After all, we
+are a university, not a bathing establishment."* The wording is as it is widely
+quoted; the exact original (the German, and the wording of the record) is to be
+checked at a source before it is cited as a quotation. "He lost the formal battle":
+she was habilitated in 1919.
 
-Emmy Noether Sedenion (𝕊_EN).
+## 5. The prize table (2026-06-03): superseded
 
----
+The earlier page distributed hypothetical Clay Millennium prize money among Bryn
+Mawr College, Göttingen, the Riemann Institute, the Institute for Advanced Study
+and the author, on the premise that the framework resolves the Clay problems and that
+the algebra's results are "her theorem is Yang–Mills", "Noether–Lefschetz is Hodge",
+"her algebra is BSD's language". That table is **withdrawn**: (i) none of the problems
+is solved here ([13](13_omgwtf_rh_proof.md), [42](42_rh_proof_no_primes.md),
+[105](105_the_millennium_problems_in_ainulindale.md): the Clay modules are built to
+probe the operator's reach and are not prize claims, and their statuses are
+facets, not solutions); (ii) the identifications are not accurate (the
+Noether–Lefschetz theorem concerns the Picard group of a surface in ℙ³ and is a
+relative of the Hodge conjecture, not the conjecture; Yang–Mills existence and mass gap
+is not Noether's theorem); (iii) the Clay rules require publication and a waiting
+period. What stands from that section is the author's intent of the ordering of
+credit: the naming of the algebra for Emmy Noether is the lasting honour the
+page values over any money.
 
-## 6. Hilbert's Quote — In All Papers
+## 6. Related pages
 
-*"I do not see that the sex of the candidate is an argument against her*  
-*admission as Privatdozent. After all, we are a university, not a*  
-*bathing establishment."*  
-— David Hilbert, Göttingen faculty meeting, 1915.
-
-He fought for her right to be in the room where the Emmy Noether Sedenion
-was first made rigorous. He lost the formal battle. She proved the theorems
-anyway. The algebra is named for her. His quote is in every paper.
-
-Both are permanent.
+[05 Noether engine](05_noether_engine.md) · [19 Cayley–Dickson tower](19_cayley_dickson_tower.md) ·
+[25 Sedenion manual](25_sedenion_manual.md) · [99 Emmy Noether](99_emmy_noether.md) ·
+[105 The Millennium Problems](105_the_millennium_problems_in_ainulindale.md)

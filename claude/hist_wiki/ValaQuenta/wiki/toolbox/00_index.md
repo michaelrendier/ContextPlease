@@ -51,7 +51,7 @@ in the order found.
 | [08_lagrangian.md](08_lagrangian.md) | L_NN  Ainulindale Lagrangian | 2026-09-27 | `modules/lagrangian/` |
 | [09_noether.md](09_noether.md) | Noether Currents  ∂_μJ^μ = 0 | 2026-09-27 | `modules/noether/` |
 | [10_noether_information.md](10_noether_information.md) | J_info  Information Current | 2026-09-27 | `modules/noether_information/` |
-| [11_bao_mass_gap.md](11_bao_mass_gap.md) | The Mass Gap — spectral residue of BAO | 2026-09-27 | `modules/bao_mass_gap/` |
+| [11_inductive_onset_residual.md](11_inductive_onset_residual.md) | The inductive onset residual | 2026-09-27 | `modules/inductive_onset_residual/` |
 | [12_clay_millennium.md](12_clay_millennium.md) | Clay Millennium Problems — Σ_RB derivations | 2026-09-27 | `modules/clay_millennium/` |
 | [13_turing_diagonal.md](13_turing_diagonal.md) | Turing Diagonal Engine — i²=-1 = Cantor = Gödel = Enigma = UDOE | 2026-09-27 | `modules/turing_diagonal/` |
 | [14_singularity_null.md](14_singularity_null.md) | Singularity-NULL Engine — the singularity IS identity | 2026-09-27 | `modules/singularity_null/` |
@@ -81,6 +81,13 @@ in the order found.
 | [38_udeo_crypto.md](38_udeo_crypto.md) | UDEO RSA Key-Recovery — Five Candidate Mechanisms | 2026-09-27 | `modules/udeo_crypto/` |
 | [39_basile.md](39_basile.md) | Basile — Invertible Location Maps (Library of Babel / Babelia) | 2026-09-30 | `modules/basile/` |
 | [40_addition_matrix.md](40_addition_matrix.md) | Addition Matrix: Columns as Rotors, the Law of the Factor Search | 2026-10-14 | `modules/addition_matrix/` |
+| [41_witches_hat.md](41_witches_hat.md) | The Witch's Hat Engine (virtual brim, hat potential, paths of action) | 2026-11-19 | `modules/witches_hat/` |
+| [42_lagrangian_sm.md](42_lagrangian_sm.md) | L_SM: the Standard Model Lagrangian | 2026-11-19 | `modules/lagrangian_sm/` |
+| [43_relativity.md](43_relativity.md) | Relativity: Minkowski, curved, tangent and metric spaces | 2026-11-19 | `modules/relativity/` |
+| [44_bell_curve.md](44_bell_curve.md) | The Bell Curve (Statistics, Probability, Statistical Mechanics) | 2026-11-22 | `modules/bell_curve/` |
+| [45_aizawa_attractor.md](45_aizawa_attractor.md) | The Aizawa Attractor (rotation with a radial driver) | 2026-11-24 | `modules/aizawa_attractor/` |
+| [46_zeta_uns_path.md](46_zeta_uns_path.md) | The Zeta Pathway in Universal Native Space (rotation, spring, primes) | 2026-11-24 | `modules/zeta_uns_path/` |
+| [47_ptycho_weak_lensing.md](47_ptycho_weak_lensing.md) | Ptycho-Weak-Lensing (shear, mass map, pointings, polarization) | 2026-11-28 | `modules/ptycho_weak_lensing/` |
 
 **Not carried here** (no `tools.py`, so no tool-level API to document —
 see each one's own theory page for the maths): `hamiltonian.py`,

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Berry-Keating Operator · Ptolemy MathLex</title>
@@ -166,6 +167,9 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 N(100) ≈ 29.1
 N(1000) ≈ 649.4</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">N(10) ≈ 0.0
+N(100) ≈ 29.0
+N(1000) ≈ 648.6</pre>Small differences (29.1 vs 29.0; 649.4 vs 648.6; 0.1 vs 0.0): the stated values were not produced by this code. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes + Phaleron (Ptolemy-specific search)</p><p style="margin-top:6px"><strong>Use:</strong> The Phaleron search face uses spectral methods. The Berry-Keating operator is the theoretical model for why frequency-domain search (Mellin + spectral) finds the right things — zeros of a generating function locate the natural resonances of the corpus.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Assuming the conjecture is proven — it is NOT. It's one of the Millennium Prize Problems.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Confusing the Berry-Keating operator with a standard quantum Hamiltonian — H=xp is unbounded and its domain is subtle.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Missing that the conjecture requires specific boundary conditions that remain unknown.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="mellin_transform.html">Mellin Transform →</a><a class="crosslink" href="spectral_representation.html">Spectral Representation →</a><a class="crosslink" href="berry_keating_conjecture.html">Berry-Keating Conjecture →</a><a class="crosslink" href="langlands_kernel.html">Langlands Kernel →</a></div></div>

@@ -1,0 +1,711 @@
+                          THE 3x + 1 CONJUGACY MAP
+
+                     Daniel J. Bernstein, Jeffrey C. Lagarias
+
+                                            19960215
+        Abstract. The 3x +1 map T and the shift map S are de ned by T (x) = (3x +1)=2
+        for x odd, T (x) = x=2 for x even, while S (x) = (x 1)=2 for x odd, S (x) = x=2 for
+        x even. The 3x + 1 conjugacy map  on the 2-adic integers Z2 conjugates S to T ,
+        i.e.,   S   1 = T . The map  mod 2n induces a permutation n on Z=2n Z. We
+        study the cycle structure of n . In particular we show that it has order 2n 4 for
+        n  6. We also count 1-cycles of n for n up to 1000; the results suggest that  has
+        exactly two odd xed points. The results generalize to the ax + b map, where ab is
+        odd.
+
+
+                                        1. Introduction
+  The 3x + 1 problem concerns iteration of the 3x + 1 function
+                                    
+                                        (3x + 1)=2 if x  1 (mod 2)
+(1.1)                     T (x) =
+                                        x=2        if x  0 (mod 2)
+on the integers Z. The well-known 3x + 1 Conjecture asserts that, for each posi-
+tive integer n, some iterate T k (n) equals 1, i.e., all orbits on the positive integers
+eventually reach the cycle f1; 2g.
+   The 3x + 1 function (1.1) is de ned on the larger domain Z2 of 2-adic integers.
+It is a measure-preserving map on Z2 with respect to the 2-adic measure, and it
+is strongly mixing, so it is ergodic; see [8]. More is true. Let S : Z2 ! Z2 be the
+2-adic shift map de ned by
+                                    
+                                        (x 1)=2 if x  1 (mod 2)
+(1.2)                     S (x) =
+                                        x=2     if x  0 (mod 2);
+         P                 P
+i.e., S ( 1       i       1      i
+          i=0 bi 2 ) = i=0 bi+1 2 , if each bi is 0 or 1. Then T is topologically
+conjugate to S : there is a homeomorphism  : Z2 ! Z2 with
+(1.3)                                      S   1 = T:
+In fact T is metrically conjugate to S : one map  satisfying (1.3) preserves the
+2-adic measure. Thus T is Bernoulli.
+  1991 Mathematics Subject Classi cation. Primary 11B75.
+                                                                            Typeset by AMS-TEX
+                                                 1
+2                DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+   The map  is determined by (1.3) up to multiplication on the right by an au-
+tomorphism of the shift S . It is known that the automorphism group of S is
+isomorphic to Z=2Z, with nontrivial element V (x) = 1 x. (See [6, Theorem 6.9]
+and the introduction to [3].) We obtain a unique function  by adding to (1.3) the
+side condition (0) = 0. We call  the 3x + 1 conjugacy map. This function has
+been constructed several times, apparently rst in [8], where  1 is denoted Q1 ,
+and also in [1], [2].
+   An important property of  is that it is solenoidal. Here we say that a function
+f on Z2 is solenoidal if, for every n, it induces a function mod 2n , i.e.,
+                   x  y (mod 2n) =) f (x)  f (y) (mod 2n ):
+This solenoidal property, together with (0) = 0, implies that
+(1.4)                             (x)  x (mod 2):
+For completeness, we give a self-contained proof that  is unique. Let  and 0
+be two invertible functions satisfying (1.3) and (1.4). Write Q and Q0 for their
+inverses. Then S  Q = Q  T and S  Q0 = Q0  T , and (1.4) gives Q  Q0 (mod 2).
+If Q  Q0 (mod 2k ) then Q  T = Q0  T (mod 2k ), so S  Q  S  Q0 (mod 2k ). Now
+S  Q and S  Q0 agree in the bottom k bits, and Q and Q0 agree in the bottom
+bit, so Q and Q0 agree in the bottom k + 1 bits. Hence Q  Q0 (mod 2k+1 ). By
+induction Q  Q0 (mod 2k ) for every k, so Q = Q0 , so  = 0 .
+   There is an explicit formula for  1 ([8]). Let T m denote the mth iterate of T .
+Then
+                                 X1
+(1.5)                      (x) = (T i (x) mod 2)2i :
+                              1
+
+                                 i=0
+This implies (1.3) and (1.4), and also shows that  1 is solenoidal.
+  There is also an explicit formula for  ([2]). For x 2 Z2 , expand x as
+                                           X d
+                                     x=            2 l;
+                                           l
+in which fdl g is a nite or in nite sequence with 0  d1 < d2 <    . Then
+                                           X
+(1.6)                             (x) =            3 l 2dl :
+                                               l
+This also implies (1.3) and (1.4), and shows that  is solenoidal.
+   Various properties of the 3x + 1 map under iteration can be formulated in terms
+of properties of . The 3x + 1 Conjecture is reformulated as follows ([2], [8]). Here
+Z+ denotes the positive integers.
+3x + 1 Conjecture. Z+  ( 13 Z).
+   Furthermore, it is known that (Q \ Z2 )  Q \ Z2 . (This is easily proven from
+(1.6); see [2].) The following conjecture is proposed in [8].
+                           THE 3x + 1 CONJUGACY MAP                                  3
+Periodicity Conjecture. (Q \ Z ) = Q \ Z .
+                                         2         2
+
+  This would imply that the 3x + 1 function T has no divergent trajectories on
+Z. Recall that a trajectory T k (n) : k  1 is divergent if it contains an in nite
+number of distinct elements, so that T k (n) ! 1 as k ! 1. In fact, if
+                               
+                                 (3x + k)=2 if x  1 (mod 2),
+                    T ;k (x) =
+                      3
+                                 x=2          if x  0 (mod 2),
+then the Periodicity Conjecture is equivalent to the assertion that, for all k 
+1 (mod 6), the 3x + k function has no divergent trajectories on Z. (This follows
+from [9, Corollary 2.1b].)
+   This paper studies the 3x + 1 conjugacy map  for its own sake. The function
+ is a solenoidal bijection; it induces permutations n of Z=2nZ. Our object is to
+determine properties of the cycle structure of the permutations n . In e ect, our
+results give information about the iterates k of . We prove in particular that n
+contains three \long" cycles of length 2n 4 , for all n  6.
+   We remark that the results we prove are not related to the 3x + 1 Conjecture
+in any immediate way; indeed for the iterates T k the conjugacy (1.3) gives  
+S k   1 = T k , a relation which does not involve k for any k  2. We do note
+that the Periodicity Conjecture is equivalent, for any k  1, to the assertion that
+k (Q \ Z2 ) = Q \ Z2 . Consequently information about k may conceivably prove
+useful in resolving the Periodicity Conjecture.
+   The contents of the paper are as follows. In x2 we give a table of the cycle lengths
+of n for n  20. This table motivated our results. We also give data on 1-cycles
+of n for n  1000. We conjecture that  has exactly two odd xed points. In x3
+we formulate results on the progressive stabilization of the \long" cycles of n . In
+x4 we generalize these results to the conjugacy map for the ax + b function
+                                 
+                                     (ax + b)=2 if x  1 (mod 2)
+                     Ta;b(x) =
+                                     x=2        if x  0 (mod 2),
+where ab is odd. We prove all these results in x5. The proofs are based on Theorem
+5.1, which keeps track of the highest-order signi cant bit in the orbit of x mod 2n+2 .
+In x6 we reconsider \short" cycles of n , and present a heuristic argument that
+relates their asymptotics to the number of global periodic points. This heuristic is
+consistent with the data on 1-cycles presented in x2.
+   There are two appendices on solenoidal maps. Appendix A shows the equivalence
+of \solenoidal bijection," \solenoidal homeomorphism," and \2-adic isometry." Ap-
+pendix B shows that a wide class of functions U generalizing the 3x + 1 map T are
+conjugate to the 2-adic shift S by a solenoidal conjugacy map U .
+   Finally, we note that, for odd k, the map Q(x) = kx conjugates the 3x + 1
+function to the 3x + k function; i.e., Q  T  Q 1 = T3;k . Thus the cycle structure
+of the permutations mod 2n of all the conjugacy maps 3;k are identical. Other
+properties of the 3x + 1 conjugacy map appear in [2], [10], [11]. In particular, 
+and  1 are nowhere di erentiable on Z2 ; see [10], [2].
+   We thank Mike Boyle and Doug Lind for supplying references concerning the
+automorphism group of the one-sided shift, and the referee for helpful comments.
+4                   DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+                    2. Empirical Data and Two Conjectures
+   By (1.4), n takes odd numbers to odd numbers. Let ^ n : (Z=2nZ) !
+(Z=2nZ) denote its restriction. The properties of n are completely determined
+by ^ n . Indeed, (2j x) = 2j (x) by (1.6), so the action of ^ n j describes the
+action of n on odd numbers times 2j .
+   Each ^ n consists of cycles of various lengths, all of which are powers of 2. (See
+x3 for a proof.) The exact form of ^ n for n  6 appears in Table 2.1.
+           n        ^ n                                          order(^ n )
+           2        identity                                                1
+           3        f1; 5g                                                  2
+           4        f1; 5g f9; 13g                                          2
+           5        f1; 21gf5; 17gf7; 23gf9; 29; 25; 13g                    4
+           6        f1; 21gf3; 35gf5; 17; 37; 49gf7; 23gf9; 29; 25; 13g
+                    f19; 51gf27; 59gf33; 53gf39; 55gf41; 61; 57; 45g 4
+         Table 2.1. Cycle structure of ^ n , n  6. 1-cycles are omitted.
+   Table 2.2 below lists the number of cycles of various lengths in ^ n for n  20.
+Let Xn;j denote the set of cycles of ^ n of period 2j , and let jXn;j j be the number
+of such cycles. From Table 2.2 we see, empirically, that
+(2.1)                         order(^ n ) = 2n 4;     n  6:
+We also see a progressive stabilization of the number of \long" cycles in ^ n . In
+x3{x5 we prove both these facts.
+   How does jXn;j j, the number of cycles of ^ n of size 2j , behave as n ! 1, for
+ xed j ? We give data for the simplest case jXn;0 j of 1-cycles. Table 2.3 gives all
+values of jXn;0 j for n  100, and Table 2.4 gives values of jXn;0 j at intervals of
+10 for n  1000. We computed the values jXn;0 j recursively for increasing n by
+tracking each 1-cycle individually.
+          (k; j )      0     1      2     3     4      5     6     7     8     9
+               1            12     32    52    80    116   106   152   124   110
+               2       2    16     38    54    82    122   112   144   124   108
+               3       2    26     36    56    96    124   110   120   130   108
+               4       4    22     38    54   106    124   112   108   128    92
+               5       6    18     36    54   116    114   106   114   128    96
+               6       6    20     36    54    90    128    92   132   136    96
+               7       8    18     50    68    82    118   106   140   124   102
+               8      14    12     60    68    92     94   116   144   118   108
+               9      14    16     62    84   102     92   122   144   104    88
+             10       10    26     50    92   108    100   132   144    98    90
+                      Table 2.3. Number of 1-cycles in ^ 10j+k .
+                               THE 3x + 1 CONJUGACY MAP                           5
+ (n; j )     0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+      2      2
+      3      2 1
+      4      4 2
+      5      6 3 1
+      6      6 7 3
+      7      8 10 3 3
+      8     14 17 8 0 3
+      9     14 21 18 4 0 3
+    10      10 35 24 14 2 0 3
+    11      12 40 37 18 12 2 0 3
+    12      16 48 70 23 16 10 2 0 3
+    13      26 53 79 60 24 11 10 2 0 3
+    14      22 63 111 98 50 14 11 10 2 0 3
+    15      18 81 129 153 84 40 11 11 10 2 0 3
+    16      20 96 179 186 137 78 31 11 11 10 2 0 3
+    17      18 91 242 236 207 131 61 29 11 11 10 2 0 3
+    18      12 104 305 308 312 192 105 56 29 11 11 10 2 0 3
+    19      16 86 375 401 432 307 152 99 54 29 11 11 10 2 0 3
+    20      26 95 424 573 564 445 281 133 91 54 29 11 11 10 2 0 3
+           Table 2.2. Number of cycles jXn;j j of ^ n of order 2j , 0  j  n.
+             (k; j )     0     1     2     3 4 5 6 7 8 9
+                  1     10    96   380   700 844 1278 1078 1330 1944 2030
+                  2     26    90   458   788 840 1176 1130 1142 2180 2162
+                  3     50   116   452   916 1134 1000 1212 1170 2194 2230
+                  4     92   156   544   780 942 914 1270 1240 2226 2128
+                  5    108   240   574   678 874 998 1462 1346 2130 2206
+                  6    100   278   588   908 910 1110 1476 1538 2294 2362
+                  7    132   282   628   818 866 1172 1360 1562 2204 2354
+                  8    144   320   634   784 932 1172 1358 1778 2184 2362
+                  9     98   378   784   870 1060 1072 1190 1974 2114 2242
+                10      90   404   714   892 1150 1086 1208 1808 2056 2308
+                       Table 2.4. Number of 1-cycles in ^ 100j+10k .
+
+   The tables show that jXn;0 j behaves irregularly, but has a general tendency to
+increase. In x6 we present a heuristic model which suggests that
+(2.2)                         jXn; j  F n
+                                   0     0     as    n ! 1;
+where F0 is the number of odd xed points of . Comparison with Table 2.4
+suggests the following conjecture.
+Fixed Point Conjecture. The 3x + 1 conjugacy map  has exactly two odd xed
+points.
+6                 DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+    We searched for odd rational xed points, and immediately found two: x = 1
+and x = 1=3. The conjecture thus asserts that these are the only odd xed points
+of . We do not know of any approach to determine the existence or non-existence
+of non-rational odd xed points.
+    More generally we propose the following conjecture.
+3x +1 Conjugacy Finiteness Conjecture. For each j  0, the 3x +1 conjugacy
+map  has nitely many odd periodic points of period 2j .
+    We have no idea whether the 3x + 1 conjugacy map  has nitely many odd
+periodic points in total. There are examples of ax + b conjugacy maps that have
+no odd periodic points; see x4.
+         3. Cycle structure of n : Inert Cycles and Stable Cycles
+    There is a simple relation between the cycles of n and those of n+1 : For
+x 2 Z2 , the cycle n+1 (x) that x belongs to in n+1 has length jn+1 (x)j either
+equal to or double the length of the cycle n (x) that x belongs to in n .
+    This follows from a more general fact. Call a function fn+1 : Z=mn+1 Z !
+Z=mn+1Z consistent mod mn if it induces a function fn from Z=mnZ to Z=mnZ,
+i.e., if
+(3.1)         x1  x2 (mod mn ) =) fn+1 (x1 )  fn+1 (x2 ) (mod mn ):
+Lemma 3.1. Let fn+1 : Z=mn+1Z ! Z=mn+1Z be a function which is consistent
+mod mn . If x is a purely periodic point of fn+1 then x is a purely periodic point of
+fn and
+                                 jn+1 (x)j = k jn (x)j
+for some integer k with 1  k  m.
+Proof. The image of n+1 (x) under projection mod mn consists of k copies of a
+purely periodic orbit n (x), for some k  1. The bound k  m follows because any
+element of Z=mnZ has only m distinct preimages in Z=mn+1Z. 
+    Lemma 3.1 applies to n+1 , because  is solenoidal. Since m = 2 we have
+                    jn+1 (x)j = k jn (x)j with k = 1 or 2:
+We call a cycle n+1 (x) split if jn+1 (x)j = jn (x)j, because n (x) lifts to two
+cycles mod 2n+1 , namely n+1 (x) and n+1 (x) + 2n . If jn+1 (x)j = 2 jn (x)j we
+call n+1 (x) inert, because n (x) has lifted to a single cycle. If n+1 (x) is an inert
+cycle, and jn (x)j = p, then jn+1 (x)j = 2p and
+(3.2)                       pn+1 (x)  x + 2n (mod 2n+1 ):
+By induction on n, the length of any cycle jn (x)j is a power of 2.
+    We call a cycle n (x) stable if m (x) is an inert cycle for all m  n. If n (x) is
+a stable cycle, then
+                      jm (x)j = 2m n+1 jn 1 (x)j ; m  n:
+For a stable cycle n (x), Lemma 3.1 guarantees that the map  restricted to
+                   fy 2 Z2 : y  xi (mod 2n ) for some xi 2 n (x)g
+has no periodic points.
+    Our main result concerning  is as follows.
+                            THE 3x + 1 CONJUGACY MAP                                     7
+Theorem 3.1. For the 3x + 1 conjugacy map , suppose that jn (x)j  4 and
+that n (x) and n+1 (x) are both inert cycles. Then n+2 (x) is also an inert cycle.
+Consequently n (x) is a stable cycle.
+   Theorem 3.1 follows from Corollary 5.1 at the end of x5.
+   The hypothesis jn (x)j  4 is necessary in Theorem 3.1. For example, 5 (3) =
+f3g, so both 6 (3) = f3; 35g and 7 (3) = f3; 99; 67; 35g are inert, but 8 (3) =
+f3; 227; 195; 163g is split.
+Corollary 3.1a. order(^ n) = order(n) = 2n 4, for n  6.
+Proof. 6 (5) = f5; 17; 37; 49g is stable. 
+   We next consider Table 2.2 in light of Theorem 3.1. Again let Xn;j denote the
+set of cycles of ^ n of period 2j . Call Xn;j stabilized if it consists entirely of stable
+cycles.
+Corollary 3.1b. Assume that all Xn;n j are stabilized for 0  j  k 1, and that
+jXn;n k j = jXn+1;n+1 k j = jXn+2;n+2 k j. Then Xm;m k is stabilized for m  n,
+and jXm;m k j = jXn;n k j.
+   This criterion gives the stabilized region indicated in Table 2.2. For n = 20 over
+90% of all elements in (Z=2nZ) are in stable cycles.
+                          4. The ax + b Conjugacy Map
+   Consider now the ax + b function
+                              
+                                 (ax + b)=2 if x  1 (mod 2)
+(4.1)               Ta;b(x) =
+                                 x=2         if x  0 (mod 2),
+where ab is odd. See [4], [5], [7], and [12] for various properties of Ta;b under
+iteration on Z.
+   The 2-adic shift map S is conjugate to the general ax + b function Ta;b Pby the
+ax + b conjugacy map a;b : Z2 ! Z2 ; i.e., a;b  S  a;b1 = Ta;b . If x = l 2dl ,
+where fdl g is a nite or in nite sequence with 0  d1 < d2 <    , then
+                                               X
+(4.2)                           a;b (x) = b        a l 2d ;
+                                                          l
+
+                                                l
+see [2]. Associated to a;b are the permutations a;b;n on Z=2n Z obtained by
+reducing a;b mod 2n . The following result generalizes Theorem 3.1.
+Theorem 4.1. For the ax + b conjugacy map a;b, suppose that a cycle n(x) of
+a;b;n has jn (x)j  4. (i) If a  1 (mod 4), and n (x) is an inert cycle, then
+n+1 (x) is an inert cycle. (ii) If a  3 (mod 4), and n (x) and n+1 (x) are both
+inert cycles, then n+2 (x) is an inert cycle.
+   This theorem follows from Corollary 5.1 in x5. The proof actually shows that in
+case (i) the weaker hypothesis jn (x)j  2 suces, when b  3 (mod 4).
+   There are examples of ax + b conjugacy maps a;b for which all cycles eventually
+become stable. Such a;b then have no odd periodic points. Using Theorem 4.1 we
+easily check that the 25x 3 conjugacy map when taken mod 32 has an odd part
+consisting of two stable cycles of period 8.
+8                  DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+                                 5. The Highest Order Bit
+   Throughout this section,  = a;b is a general ax + b conjugacy map, where a
+and b are odd. We analyze the high bit of the iterates of  mod 2n+2 . All earlier
+results follow from Theorem 5.1 below.
+   For x 2 Z2 , expand x as
+                                               1
+                                               X
+(5.1)                                   x=           bitk (x)2k ;
+                                               k=0
+where bitk (x) is either 0 or 1. De ne the bit sums
+                                                      k
+                                                      X
+(5.2)                                 popk (x) :=            bitj (x):
+                                                      j =0
+The ax + b conjugacy map is then given by
+                                           1
+                                           X     b bit (x)2k ;
+(5.3)                        a;b (x) =           x   k
+                                           k=0 a
+                                                     popk ( )
+
+
+
+by (4.2).
+Lemma 5.1. If y; z 2 Z with z  y (mod 2n), then
+                             2
+
+
+      (z ) (y) (z y)
+                                   
+(5.4)      n     ab + 1 b(a 1)                                    n+2
+      2    +1
+                    2 + 2 popn 1 (y) (bitn (y) + bitn (z )) (mod 2 ):
+
+Proof. Expand (z ) (y) (mod 2n+2 ) using (5.3). We have bitk (z ) = bitk (y) and
+popk (z ) = popk (y) for 0  k  n 1, so the rst n terms in (z ) (y) cancel.
+Thus
+                                                                            
+    (z )   (y)  2n             b                               b
+                        apop(z) bitn (z ) apop (y) bitn (y) 
+                                  n                               n
+                                                                                
+                    + 2n+1           b      bit     (z )      b     bit    (y )   :
+                                                n+1                    n+1
+                                apop +1(z) n             apop +1(y)          n
+
+
+
+Substitute a 1  a (mod 4) in the coecient of 2n , and b  a 1  1 (mod 2) in
+the coecient of 2n+1 :
+             (z ) (y)  2n (bapopn (y) bitn (y) bapopn (z) bitn (z ))
+(5.5)
+                            + 2n+1 (bitn+1 (z ) bitn+1 (y)) (mod 2n+2 ):
+On the other hand
+(5.6) z y  2n (bitn (z ) bitn (y)) + 2n+1(bitn+1 (z ) bitn+1 (y)) (mod 2n+2 ):
+                             THE 3x + 1 CONJUGACY MAP                             9
+Subtract (5.6) from (5.5):
+(z ) (y) (z y)  2n((bapopn(y) +1) bitn (y) (bapopn(z) +1) bitn (z )) (mod 2n+2):
+Substitute ak  1 + (a 1)k (mod 4), popk (x) bitk (x) = (1 + popk 1 (x)) bitk (x),
+and then popn 1 (z ) = popn 1 (y):
+   (z ) (y) (z y)
+         2n((b(1 + (a 1) popn (y)) + 1) bitn (y)
+              (b(1 + (a 1) popn (z )) + 1) bitn (z ))
+           n
+         2 ((ab + 1 + b(a 1) popn 1 (y)) bitn (y)
+              (ab + 1 + b(a 1) popn 1 (z )) bitn (z ))
+         2n((ab + 1 + b(a 1) popn 1 (y))(bitn (y) bitn (z ))
+                                             
+        2 n     ab + 1   b(a  1)                               n+2
+                    2 + 2 popn 1 (y) (bitn (y) bitn (z )) (mod 2 ):
+            +1
+
+
+
+
+This is equivalent to (5.4). 
+  Now x x 2 Z2 , and x n  0. Set jn (x)j = 2j and assume from now on that
+(5.7)                                   n+1 (x) is inert,
+so that jn+1 (x)j = 2j+1 . We wish to determine whether or not n+2 (x) is inert.
+According to (3.2) this occurs if and only if
+                                 +1
+(5.8)                    2 (x)  x + 2n+1 (mod 2n+2 ):
+                             j
+
+
+
+
+We now introduce the quantities
+                                      ek [i] := bitk (i (x)):
+In terms of the ek [i], we have
+(5.9)               n+2 (x) is inert () en+1 [0] 6= en+1 [2j+1 ];
+by (5.8). We proceed to evaluate en+1 [2j+1 ] en+1 [0] mod 2. The main theorems
+of this paper are deduced from the following formula.
+Theorem 5.1. If jn (x)j = 2j and n+1(x) is an inert cycle, then
+(5.10)      en+1 [2j+1 ] en+1 [0]  1 + ab 2+ 1 2j + b(a 2 1) N (mod 2);
+where
+                                         2j
+                                         X1
+(5.11)                           N=            popn 1 (i (x)):
+                                         i=0
+10                    DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+Proof. First we de ne Xi = (i+1+2j (x) i+1 (x)) (i+2j (x) i (x)). Since
+n+1 (x) is an inert cycle, i+2j (x)  i (x) + 2n (mod 2n+1 ), so, by Lemma 5.1,
+                                                                      
+          Xi  2n+1 ab 2+ 1 + b(a 2 1) popn 1 (i (x)) (mod 2n+2):
+Adding up the Xi gives
+                2j                                                
+(5.12)
+                X1
+                          Xi  2n+1         ab + 1 2j + b(a 1) N (mod 2n+2 ):
+                 i=0                           2           2
+Next de ne Yi = 2n ((en [i + 1 + 2j ] en[i + 1]) (en [i + 2j ] en [i])). The sum of
+the Yi telescopes:
+                      2j  X1
+                                Yi = 2n (en [2j+1 ] en [2j ] en [2j ] + en [0]):
+                          i=0
+Since n+1 (x) is an inert cycle, en [0] = en [2j+1 ] 6= en [2j ], so
+                     2j
+                     X1
+(5.13)                      Yi = 2n(2en [0] 2en [2j ])  2n+1 (mod 2n+2 ):
+                     i=0
+On the other hand,
+      Xi Yi  2n+1 (en+1 [i + 1 + 2j ] en+1 [i + 1] en+1 [i + 2j ] + en+1 [i])
+               2n+1 (en+1 [i + 1 + 2j ] + en+1 [i + 1] en+1 [i + 2j ] en+1 [i]):
+In this form the sum of Xi Yi also telescopes:
+               2j
+               X1
+                      (Xi Yi )  2n+1 (en+1 [2j+1 ] en+1 [0]) (mod 2n+2):
+               i=0
+Comparing this sum with (5.12) and (5.13), we get
+                                                             
+ 2n+1(en+1 [2j+1 ] en+1 [0])  2n+1 ab 2+ 1 2j + b(a 2 1) N 2n+1 (mod 2n+2 );
+which implies (5.10). 
+Corollary 5.1. (i) If a  1 (mod 4), then
+                                    
+                  j                   1 (mod 2) if b  3 (mod 4) or j  1
+           en+1 [2 ] en+1 [0] 
+                    +1
+                                      0 (mod 2) otherwise.
+(ii) If a  3 (mod 4), and n (x) is inert, then
+                                            
+                                               1 (mod 2) if j  2,
+                     en+1 [2j+1 ] en+1[0] 
+                                               0 (mod 2) if j = 1.
+                                THE 3x + 1 CONJUGACY MAP                                                11
+  Note that (i) proves Theorem 4.1(i), and (ii) proves Theorem 4.1(ii), using (5.9).
+Theorem 3.1 then follows as a special case of Theorem 4.1(ii).
+Proof. (i) Here a  1 (mod 4), so the term involving N in (5.10) drops out.
+  (ii) Here a  3 (mod 4), and j  1, so (5.10) simpli es to
+                            en+1 [2j+1 ] en+1 [0]  1 + N (mod 2):
+The inertness of n (x) gives
+                                               1
+                        bitn 1 (i+2 (x)) = 1 bitn 1 (i (x));
+                                          j
+
+
+
+
+so                                    1
+                   popn 1 (i+2 (x)) + popn 1 (i (x))  1 (mod 2):
+                                  j
+
+
+
+Thus
+              1                                                                    1
+         X 1
+        2j
+                                 j 1
+                                                                            2j
+                                                                              X1
+ N=                popn 1   (i+2 (x)) + pop        n 1   (i (x))                     1 = 2j 1 (mod 2):
+             i=0                                                                  i=0
+Now (ii) follows. 
+                    6. Cycle Structure of ^ n : Short Cycles
+   We consider the behavior of \short" cycles of the 3x + 1 conjugacy map; i.e.,
+the behavior of jXn;j j as n ! 1 for xed j . We describe a heuristic model which
+relates the asymptotics of jXn;j j to the number of global odd periodic points of .
+   We rst note that the odd periodic points Per () of  determine the entire set
+Per() of periodic points of . The relation
+(6.1)                                         (2x) = 2(x)
+implies that x has period 2j if and only if 2x has period 2j . Thus
+                                      
+(6.2)                  Per() = 2k x : k  0 and x 2 Per () :
+Let Fj be the number of orbits of  containing an odd periodic point of minimal
+period 2j . The 3x + 1 Conjugacy Finiteness Conjecture of x2 asserts that all Fj are
+ nite.
+   We obtain a simple heuristic model for the 1-cycles Xn;1 of ^ n by classifying
+them into two types: those arising by reduction mod 2n from an odd xed point of
+, and all the rest. Call these \immortal" and \mortal" 1-cycles, respectively. Our
+heuristic model is to assume that each \mortal" 1-cycle has equal probability of
+splitting or remaining inert, independently of all other 1-cycles. When a \mortal"
+1-cycle splits, both its progeny in Xn+1;1 are \mortal." An \immortal" 1-cycle in
+Xn;1 always splits, and gives rise to two 1-cycles in Xn+1;1 , at least one of which is
+\immortal." We also assume that only F0 \immortal" 1-cycles appear in total, i.e.,
+for all large enough n each \immortal" 1-cycle splits into one \immortal" 1-cycle
+and one \mortal" 1-cycle.
+12                DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+  This model is a branching process model with two types of individuals. The
+expected number of individuals Zn;1 at step n is
+(6.3)                            E [Zn;1] = F0 n + c0 ;
+where c0 is a constant depending on the levels of the initial occurrences of the F0
+\immortal" 1-cycles. The empirical data in Tables 6.3 and 6.4 seem consistent with
+this model, with F0 = 2. We know that F0  2 in any case. The two \immortal"
+1-cycles that we know of both appear at n = 1, so that if F0 = 2, then c0 = 0 in
+(6.3).
+   To obtain a heuristic model for jXn;j j when j  1, we use a re ned classi cation
+of cycles of ^ n . A step consists of passing from ^ n 1 to ^ n . For 0  d  j  n
+let Xn;j;d denote the set of cycles of ^ n of size 2j which have remained inert for
+exactly d steps. Let Yn;j;d denote the subset of Xn;j;d that consists of cycles that
+split in going to ^ n+1 . Then we have
+                                                  n
+                                                  X
+                              jXn ;j; j = 2
+                                  +1   0                jYn;j;d j
+                                                  d=0
+and
+                         jXn ;j ;d j = jXn;j;dj jYn;j;d j :
+                             +1 +1   +1
+
+
+We know the following facts about these quantities:
+   (1) If a cycle of length at least 8 has been inert for d  2 steps, it remains inert.
+       Thus jYn;j;d j = 0 if j  3 and d  2.
+   (2) Any cycle of length 4 which has been inert for d = 2 steps must split; i.e.,
+       jXn;2;2 j = jYn;2;2 j.
+   (3) Any odd periodic point x of  of period 2j gives rise to a cycle of period 2j
+       of ^ n for all suciently large n. This cycle always splits. Such cycles are
+       in both Xn;j;0 and Yn;j;0 .
+The quantity we are interested in is
+                                            n
+                                            X
+                                jXn;j j =         jXn;j;dj :
+                                            d=0
+The facts above imply that jXn;j j is entirely determined by knowledge of jXm;j;0 j,
+jYm;j;0 j, and jYm;j;1 j, for all m  n.
+  Our heuristic model is then to suppose the following:
+   (1) Each cycle in Xn;j;1 has (independently) probability 1=2 of falling in Yn;j;1 .
+   (2) Each \mortal" cycle in Xn;j;0 has (independently) probability 1=2 of falling
+          in Yn;j;0 , and if so its two progeny in Xn+1;j;0 are \mortal."
+   (3) Each \immortal" cycle in Xn;j;0 lies in Yn;j;0 , and one of its progeny in
+          Xn+1;j;0 is \immortal" and the other is \mortal," with nitely many excep-
+          tions.
+                          THE 3x + 1 CONJUGACY MAP                                13
+This is a multi-type branching process model. If Zn;j denotes the total number of
+individuals in such a process, then one may calculate that, for large n,
+(6.4)             E [Zn;1 ] = 41 F0 n2 + (F1 + 41 F0 )n F1 + 21 F0 + c1 ;
+in which c1 is a constant depending on the initial occurrence of \immortal" cycles.
+(We assume that c0 = 0.) For j  2, where stable cycles may occur, the formula
+for E [Zn;j ] becomes quite complicated.
+   It might be interesting to further compare predictions of this model for j  1
+with actual data for . We know of one odd periodic cycle of  of length 2, namely
+f1; 1=3g; i.e., (1) = 1=3 and ( 1=3) = 1. Thus F1  1.
+                        Appendix A. Solenoidal Maps
+    Call a map F : Z2 ! Z2 solenoidal if, for all n,
+(A.1)                 x  y (mod 2n ) =) F (x)  F (y) (mod 2n):
+An equivalent condition in terms of the 2-adic metric jj2 is that F is nonexpand-
+ing; i.e.,
+(A.2)                 jF (x) F (y)j2  jx yj2 ; all x; y 2 Z2 .
+If F1 and F2 are solenoidal maps, then so is F1  F2 .
+    Call a family of functions Fn : Z=2nZ ! Z=2nZ compatible if Fn agrees with
+Fn 1 under projection n : Z=2nZ ! Z=2n 1 Z; i.e., if n  Fn = Fn 1  n . A
+compatible family fFn g has an inverse limit F : Z2 ! Z2 de ned by
+(A.3)                     F (x)  Fn (x) (mod 2n); for all n.
+The term \solenoidal" is justi ed by the following lemma.
+Lemma A.1. F is solenoidal if and only if F is the inverse limit of a compatible
+family fFn g.
+Proof. If F is solenoidal, then F mod 2n induces a function Fn : Z=2nZ ! Z=2nZ,
+for each n; and fFn g is a compatible family. The reverse implication follows from
+(A.3). 
+Lemma A.2. Let U be the inverse limit of a compatible family fUng. Then the
+following are equivalent. (i) U is a bijection. (ii) For each n, Un is a permutation.
+(iii) For each n, if U (x)  U (y) (mod 2n ) then x  y (mod 2n ).
+Proof. (i) =) (ii). U is surjective, so Un is surjective.
+    (ii) =) (i). Write Vn = Un 1 . Then fVn g is a compatible family. Let V be its
+inverse limit. By construction U  V is the inverse limit of identity functions, so
+U  V is the identity. Similarly V  U is the identity. Hence U is a bijection.
+    (ii) =) (iii). If U (x)  U (y) (mod 2n) then Un (x mod 2n ) = Un (y mod 2n ) so
+x mod 2n = y mod 2n .
+    (iii) =) (ii). Suppose that Un (a) = Un (b). Select x and y in Z2 such that
+a = x mod 2n , b = y mod 2n . Then Un (x mod 2n ) = Un(y mod 2n ), so U (x) 
+U (y) (mod 2n), so x  y (mod 2n), so a = b. 
+14                 DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+Corollary A.3. The following are equivalent. (i) U is a solenoidal bijection. (ii)
+U is a solenoidal homeomorphism. (iii) U is a 2-adic isometry.
+   U is a 2-adic isometry if jU (x) U (y)j2 = jx yj2 .
+Proof. (i) =) (iii). U is solenoidal so jU (x) U (y)j2  jx yj2 . On the other
+hand, by Lemma A.1, U is an inverse limit; and U is a bijection, so jU (x) U (y)j2 
+jx yj2 by Lemma A.2(i =) iii).
+   (iii) =) (ii). Since jU (x) U (y)j2  jx yj2 , U is solenoidal. By Lemma
+A.1, U is an inverse limit; by Lemma A.2(iii =) i), U is a bijection. Since
+jU (x) U (y)j2  jx yj2 , U 1 is solenoidal. Finally, solenoidal implies continuous.
+     (ii) =) (i). Immediate. 
+       Appendix B. Functions Solenoidally Conjugate to the Shift
+     For any two solenoidal bijections V0 ; V1 de ne UV0 ;V1 : Z2 ! Z2 by
+                               
+                                   V0 (x=2)     if x  0 (mod 2),
+                     U (x) =
+                                   V1 ((x 1)=2) if x  1 (mod 2).
+For example, take V0 (x) = x and V1 (x) = ax + (a + b)=2; then UV0 ;V1 is the ax + b
+function.
+    In this appendix we show that a map is solenoidally conjugate to the 2-adic shift
+map S |i.e., conjugate to S by a solenoidal bijection|if and only if it is of the
+form UV0 ;V1 .
+Lemma B.1. Let V be a solenoidal bijection. If z  w (mod 2m 1) then V (z) 
+V (w) + z w (mod 2m).
+Proof. If z  w (mod 2m ) then V (z )  V (w) (mod 2m ).
+    If z  w + 2m 1 (mod 2m ) then still V (z )  V (w) (mod 2m 1 ). By Corol-
+lary A.3, V is an isometry, so if V (z )  V (w) (mod 2m ) then z  w (mod 2m),
+contradiction. Thus V (z )  V (w) + 2m 1 (mod 2m ). 
+Lemma B.2. Set U = UV0;V1 . Fix m  1. If y  x + 2me (mod 2m+1) then
+U (y)  U (x) + 2m 1e (mod 2m).
+Proof. Put b = x mod 2; then U (x) = Vb (S (x)). Also U (y) = Vb (S (y)), since y 
+x (mod 2). We have S (y)  S (x) + 2m 1e (mod 2m ); by Lemma B.1, Vb (S (y)) 
+Vb (S (x)) + 2m 1e (mod 2m ). 
+Lemma B.3. Set U = UV0;V1 . Fix m  j  1. If y  x + 2me (mod 2m+1) then
+U j (y)  U j (x) + 2m j e (mod 2m j+1 ).
+Proof. Lemma B.2 and induction on j . 
+Lemma B.4. Set U = UV0;V1 . Fix m  1. If y  x + 2me (mod 2m+1) then
+U m (y)  U m (x) + e (mod 2).
+Proof. Lemma B.3 with j = m. 
+                           THE 3x + 1 CONJUGACY MAP                              15
+Lemma B.5. Set U = UV0 ;V1 . Fix b ; b ; b ; : : : 2 f0; 1g. De ne x = 0 and
+                                           0    1   2                     0
+xm = xm + 2m (bm U m(xm )). Then y  xm (mod 2m ) if and only if U i (y) 
+  +1
+bi (mod 2) for 0  i < m.
+Proof. We induct on m. For m = 0 there is nothing to prove.
+   Say y  xm+1 (mod 2m+1 ). Then y  xm + 2m (bm U m (xm )) (mod 2m+1);
+by Lemma B.4, U m (y)  U m (xm ) + bm U m(xm ) = bm (mod 2). Also y 
+xm (mod 2m ), so by the inductive hypothesis U i (y)  bi (mod 2) for 0  i < m.
+   Conversely, say U i (y)  bi (mod 2) for 0  i  m. By the inductive hypothesis
+y  xm (mod 2m ). Write y = xm +2me. Then bm  U m (y)  U m (xm )+ e (mod 2)
+by Lemma B.4. Thus y  xm + 2m(bm U m (xm )) = xm+1 (mod 2m+1). 
+Theorem B.1. Set U = UV0 ;V1 . De ne Q(x) = P1m (U m(x) mod 2)2m. Then
+                                                        =0
+Q is a solenoidal bijection, and U = Q  S  Q.
+                                            1
+
+
+  Thus any map of the form UV0 ;V1 is solenoidally conjugate to S . (See Theorem
+B.2 below for the converse.) Q 1 generalizes the ax + b conjugacy map.
+Proof. Injective: Say Q(y) = Q(x). De ne bm = U m (x) mod 2; then U m (y) 
+U m (x)  bm (mod 2). Next de ne x0 = 0 and xm+1 = xm + 2m (bm U m(xm )).
+By Lemma B.5, y  xm (mod 2m ) and x  xm (mod 2m ). Thus y  x (mod 2m )
+for every m; i.e., y = x.
+   Solenoidal: Say y  x (mod 2n ). De ne bm = U m (x) mod 2, x0 = 0, and
+xm+1 = xm + 2m (bm U m (xm )). Then x  xn (mod 2n ) by Lemma B.5, so
+y  xn (mod 2n); by Lemma B.5 again, U m(y)  bm (mod 2) for 0  m < n. Thus
+Q(y)  Q(x) (mod 2n). P
+   Surjective: Given b = 1          i
+                            i=0 bi 2 with bi 2 f0m; 1g, de ne x0 = 0 and xm+1 = xm +
+2 (bm U (xm )). Since xm+1  xm (mod 2 ) the sequence x1 ; x2 ; : : : converges
+ m          m
+to a 2-adic limit y, with y  xm (mod 2m ). By Lemma B.5, U m (y)  bm (mod 2)
+for all m. Thus Q(y) = b.
+   Finally, it is immediate from the de nition of Q that Q  U = S  Q. 
+Theorem B.2. Let Q be a solenoidal bijection. De ne U = Q  S  Q. Then
+                                                                      1
+
+U = UV0 ;V1 for some solenoidal bijections V0 ; V1 .
+Proof. If Q(0) is even then Q 1 (x)  x (mod 2) for all x; so write
+                           
+                               2W0 (x=2)         if x  0 (mod 2),
+               Q 1 (x) =
+                               1 + 2W1 ((x 1)=2) if x  1 (mod 2).
+Then W0 ; W1 are solenoidal bijections, and U = UV0 ;V1 where Vi = Q  Wi .
+  Similarly, if Q(0) is odd then Q 1(x)  1 x (mod 2) for all x; so write
+                               
+                                   1 + 2W0 (x=2) if x  0 (mod 2),
+                 Q 1 (x) =
+                                   2W1 ((x 1)=2) if x  1 (mod 2).
+Again W0 ; W1 are solenoidal bijections, and U = UV0 ;V1 where Vi = Q  Wi . 
+16                    DANIEL J. BERNSTEIN, JEFFREY C. LAGARIAS
+                                          References
+ 1. E. Akin, Why is the 3x + 1 problem so hard?, to appear, Math. Magazine.
+ 2. D. J. Bernstein, A non-iterative 2-adic statement of the 3x +1 conjecture, Proc. Amer. Math.
+    Soc. 121 (1994), 405{408.
+ 3. M. Boyle, J. Franks, B. Kitchens, Automorphisms of one-sided subshifts of nite type, Ergod.
+    Th. Dyn. Sys. 10 (1990), 421{449.
+ 4. R. E. Crandall, On the `3x + 1' problem, Math. Comp. 32 (1978), 1281{1292.
+ 5. Z. Franco, C. Pomerance, On a conjecture of Crandall concerning the QX + 1 problem, to
+    appear, Math. Comp. 49 (1995).
+ 6. G. Hedlund, Endomorphisms and automorphisms of the shift dynamical system, Math. Sys-
+    tems Theory 3 (1969), 320{375.
+ 7. E. Heppner, Eine Bemerkung zum Hasse-Syracuse Algorithmus, Arch. Math. 31 (1978), 317{
+    320.
+ 8. J. C. Lagarias, The 3x + 1 problem and its generalizations, Amer. Math. Monthly 92 (1985),
+    3{23.
+ 9. J. C. Lagarias, The set of rational cycles for the 3x +1 problem, Acta Arithmetica 56 (1990),
+    33{53.
+10. H. Muller, Das `3n + 1' Problem, Mitteilungen der Math. Ges. Hamburg 12 (1991), 231{251.
+                  eine Klasse 2-adischer Funktionen im Zussamenhang mit dem \3x + 1"-
+11. H. Muller, Uber
+    Problem, Abh. Math. Sem. Univ. Hamburg 64 (1994), 293{302.
+12. R. P. Steiner, On the \QX + 1 problem," Q odd, I, II, Fibonacci Quart. 19 (1981), 285{288,
+    293{296.
+     Department of Mathematics, University of California, Berkeley, CA 94720
+    Current address : Department of Mathematics, Statistics, and Computer Science, The Univer-
+sity of Illinois at Chicago, Chicago, IL 60607{7045
+    E-mail address : djb@math.uic.edu
+     AT&T Bell Laboratories, Murray Hill, NJ 07974
+     E-mail address : jcl@research.att.com
+

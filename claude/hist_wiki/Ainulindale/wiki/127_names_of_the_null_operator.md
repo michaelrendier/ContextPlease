@@ -32,6 +32,15 @@ One operator, introduced as a Hamiltonian, that the code uses as the **fixed poi
 
 **Names you listed that are not in any repository text as written:** *Inductive Geometric Coupling Hamiltonian* (found as "Inductive **Self-Adjoint** Geometric Coupling" and "RedBlue Inductive **Geometry** Coupling"); *The Seg Fault Handler* (only the file name `segfault-monad.py`); *the literal Mathematical Hyperindexer* (the hyperindexer paradigm exists in 13 files, never with that phrase attached to this operator); *Red Blue Empty Set* (the nearest is "Emptyset_RB", 2026-08-04, VAPMIP Phase 24, and the 2026-07-29 wording "denoting the empty set"). These names probably live in the claude.ai conversations themselves, which are not in the repositories.
 
+## Scope of the notation (Cody, 2026-11-13 — supersedes any reading that says "the rename is done")
+
+- **Ĥ_RB / H_hat_RB is still the name of the operator everywhere in the mathematics** (the wikis, the papers, the engines, `h_rb_hat`). The full rename has **not** been done in any repository, and is not to be treated as stale.
+- **0_RB (∅_RB) is VAPMIP-only notation**, for the **Null Operator**: the point where the Monad starts with every value NULL, so that the mathematics can speak the way it wants to. It began as a typing convenience (0 is easier than Ĥ_RB) and then acquired the "empty set, never the numeral zero" meaning. It denotes the same object Ĥ_RB names, which an earlier model found "just sitting there" as a Hamiltonian.
+- **Σ_RB** (as the name of the sum J_red + J_blue) was a renotating artefact of a discussion about notation: at one point the notation was J_red + J_blue = Ĥ_RB, and Cody asked whether J_green = Ĥ_RB. It is not "wrong"; it is a historical notation. Lowercase σ_RB (tilt/axis) is a different, in-use object.
+- The chain now in force: **J_red + J_blue = J_green**, and J_green is to equal **0_RB (− 0_BR)**, the minus baking in the cross and dot products. Definition of 0_BR (author, 2026-11-13): the conjugate of J_red and J_blue, the return flow; Ĥ_RB is the original object and Ĥ_RB − Ĥ_BR the detailed form with cross and dot built in. Test record: VAPMIP `docs/wiki/J_red-J_blue-0_RB-Record.md` §4 and §9; reading in wiki 133 §3.
+
+---
+
 ## Chronology
 
 | date | event | source |
@@ -62,6 +71,7 @@ One operator, introduced as a Hamiltonian, that the code uses as the **fixed poi
 | 2026-09-24 | recorded: 0_RB fell out because all the maths were present and mutually consistent at once, not because the scope was empty | session record (memory) |
 | 2026-10-13 | notation correction: J_red + J_blue = J_green = 0_RB − 0_BR | Ainulindale `d9416be` |
 | 2026-10-15 | the VAPMIP paper is scoped around the compiled monad and the scaled boxkite Mind's Eye monad, with 0_RB as its core | this page |
+| **2026-11-11** | Cody: the four d\*, three Lambert-W values and the BAO-residual mass gap together made "the complete shape" visible, the moment the original Ĥ_RB was found; used as an error check on every equation in the Archimedes formulary (`PtolemyDesktop/Archimedes/CANONICAL_MATHS.md`, 503 rows); "the wikis follow what I say, which is why the Authoritative Maths is 0_RB". Visuals: Gemini widgets of 2026-04-11 (before the first repo commit, 04-15). | `ContextPlease/claude/hist_prime/RiemannHypothesisProof/PRIMER_2026-11-11_COMPLETE_SHAPE_AND_0RB.md` |
 
 ## The census (`n1`, `n5`)
 
@@ -95,3 +105,7 @@ The date and description of the claude.ai incident itself; the claude.ai convers
 ## Tests (2026-10-15, persistent scratchpad)
 
 `t1_battery.py` (13 checks, all PASS), `t2_rerun_jred_jblue.py` (the 2026-10-13 scripts re-run: 5 of 5 byte-identical), and the shape decomposition of the operator against the tier-0 floor (`GenerationalLineage/engine/valaquenta_calibration.py: decompose_h_rb_hat()`: shape matches). Results and the NULL-discipline census are in `VAPMIP/docs/wiki/J_red-J_blue-0_RB-Record.md`, section 2026-10-15.
+
+## Verification, 2026-11-13  `ESTABLISHED` (re-run)
+
+All fourteen commit hashes in the chronology resolve in their repositories, with the dates stated: Ainulindale `12e13f0` 2026-04-15, `a894f42` and `9224f6e` 2026-04-16, `dd7666b` 2026-04-27, `b7075a7` 2026-05-15, `91bd7b8` 2026-06-02, `d181172` 2026-06-03, `3a509bb` 2026-07-29, `d9416be` 2026-10-13; PtolemyDesktop `b6b25a6` 2026-05-10, `ca896fc` 2026-05-12, `27fbe82` 2026-05-16; FourthAgePapers `1d0f242` 2026-06-26; `.claude` `b0c4fc0` 2026-07-31. The census counts (302 files, 1,882 hits) were not re-run; Σ_RB's first date remains unchecked, as the table says.

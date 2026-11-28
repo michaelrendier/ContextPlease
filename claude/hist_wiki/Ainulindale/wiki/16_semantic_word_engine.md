@@ -1,140 +1,122 @@
-# 16 — SEMANTIC WORD ENGINE
+# 16 — Semantic Word Engine
 
-**Location:** `ainulindale_engine/modules/hyperwebster/semantic_engine.py`  
-**Corpus:** WordNet 2025+ (standard normal usage English)  
-**Confidence floor:** ESTABLISHED
+| | |
+|---|---|
+| Code | `SemanticWordEngine/semantic_engine.py` (the minimal implementation, dated 2026-05-11); a sibling copy is `VAPMIP/Wernicke/sibling/semantic_engine.py` |
+| Classes | `Capacitor`, `SemanticWord` (dataclass), `Understand` (`read`, `ponder`, `understand`, `process`, `reset_context`) |
+| Superseded in practice by | the prime hash `_word_zero_idx` in `VAPMIP/monad.py` ([15](15_the_monad.md) §3) and the SemPriCon baseline work in `VAPMIP/SemPriCon` |
+| Last verified | 2026-11-13: `Understand.process` run on `water` and `eau`; collision measurement from [15](15_the_monad.md) §3 |
 
----
+Earlier versions of this page located the engine at
+`ainulindale_engine/modules/hyperwebster/semantic_engine.py` and listed shell
+commands (`se.lookup`, `se.prime_of`, `se.word_at`, `se.fold`). Neither the
+path nor those commands exist. The page now describes what the code does.
 
-## What It Does
+## 1. The claim
 
-The Semantic Word Engine maps every word in the English language onto a prime number on the Riemann Zeta critical line at σ = ½.
-
-Every word. Not a subset. Not a training sample. Every word in the approximately 170,000 words of the standard normal usage English language corpus maps onto a unique prime on the critical strip.
-
-This is not classification. Words are not assigned to primes. They settle onto them — by the same mechanism sand settles onto Chladni node lines.
-
----
-
-## The Prime-Concept Correspondence
-
-A prime number is not merely an integer with no divisors. In the SMMIP framework, a prime is an irreducible semantic unit — a concept that cannot be decomposed into simpler meanings.
-
-The fundamental theorem of arithmetic states: every integer has a unique prime factorisation.
-
-Applied to language: every utterance has a unique factorisation into prime semantic units. The surface form — the word — is the representation. The prime factorisation underneath is invariant.
-
-| Surface form | Language | Invariant |
-|---|---|---|
-| tree | English | TREE (prime p_n) |
-| arbre | French | TREE (prime p_n) |
-| 木 | Chinese | TREE (prime p_n) |
-| شجرة | Arabic | TREE (prime p_n) |
-| Baum | German | TREE (prime p_n) |
-
-The concept TREE is the prime. The language is the coordinate choice. A tree was a tree before anyone had a word for it. The prime existed before the numeral.
+`THEORETICAL` — a prime number is an irreducible semantic unit; every
+utterance has a unique factorisation into such units (the fundamental theorem
+of arithmetic applied to meaning). The surface word is a coordinate; the
+concept is the prime. Changing language is a change of coordinates that
+leaves the concept fixed (the L-function is the concept):
 
 ```
 L("tree", s) = L("arbre", s) = L("木", s) = L(TREE, s)
 ```
 
-This is diffeomorphism invariance applied to semantics. Changing language is a diffeomorphism — a smooth change of coordinates that preserves the geometric structure. The L-function is the concept.
+The corresponding design rules, as recorded in the project's standing notes:
+the semantic hash lands *on* primes and never builds them; the baseline
+language is Chinese, the other languages are fitted to it; no multilingual
+store exists yet. The claim is a target, not a measured property of the code
+below.
 
----
+## 2. What the code does
 
-## WordNet 2025+ Integration
+`Understand.process(surface)` runs four steps on one word:
 
-The engine ingests the WordNet 2025+ corpus — the most complete semantic knowledge graph of standard normal usage English on the internet.
+| Step | Method | Operation |
+|---|---|---|
+| 1 | `read` | `_hyperindex(surface)` gives initial conditions (x₀, p₀, t); E = xp-energy(x₀, p₀); the word's zero γ is the entry of a **20-element table** `RIEMANN_ZEROS` nearest to 50·E |
+| 2 | `ponder` | evolves (x, p) under H = xp; records E_t; sets the Noether currents ±e^{−E/2} |
+| 3 | `understand` | σ = `forced_sigma(E, sigma_0 = x₀ mod 1)`; the word's prime is complex(σ, γ); `dc` is the capacitor's charge |
+| 4 | `process` | the three above in order, returning a `SemanticWord` |
 
-WordNet provides:
-- Synsets (synonym sets) — groupings of words sharing a single meaning
-- Semantic relations: hypernymy, hyponymy, meronymy, antonymy
-- Gloss definitions and usage examples
+`Capacitor(tau)` integrates the signal: it attenuates the surface variation of
+the specific words and passes the slowly varying (DC) component.
 
-The engine uses this structure to locate each word in semantic space, then maps that position onto its prime coordinate via the HyperWebster Horner bijection.
-
-The mapping is injective: no two words with different meanings share a prime. Polysemous words (multiple meanings) are handled by context — each sense maps to a distinct prime, and the `hear()` pipeline selects the correct one via the Lorenz-Stirling basin attractor.
-
----
-
-## The Mapping Mechanism
-
-```
-word → Horner index (base-97) → Fano path (base-7 octonion generators) → σ=½ prime address
-```
-
-1. **Horner bijection:** the word is encoded as a base-97 integer — a unique, exact, arbitrary-length address with no collisions
-2. **Fano index:** each character maps to one of 7 octonion generators via `char_idx % 7`; this gives the algebra-native address — the path through the 𝕆 layer
-3. **σ = ½ projection:** the Noether balance `J_Red + J_Blue + J₃ = 0` forces the address to the critical line; the prime at that coordinate is the semantic prime of the word
-
-The σ = ½ result is not assigned at this step. It is derived from the Noether conservation law operating on the full Cayley-Dickson tower.
-
----
-
-## Letter Folding and Word Folding
-
-Surface forms are projections of deeper algebraic structures. The operations that project them onto their prime node lines are letter folding and word folding.
-
-**Letter folding:**
-
-Voiced/unvoiced phonemic pairs (b/p, d/t, g/k, v/f, z/s) are reflections across the phonemic equator. They are the same articulation with one parameter (voicing) toggled. In the algebra, they are rotations — the same generator traversed in opposite directions.
-
-The sonorants (m, n, l, r) sit on the phonemic equator. They do not move. They are the fixed points of the phonemic folding — the letters that sit on the node line.
-
-**Word folding:**
-
-Polysemy is a word living off the equator — it has multiple stable positions. Context is the operation that folds it to the nearest node line. The `hear()` pipeline performs this fold via the ContextBuffer capacitor and the Lorenz-Stirling attractor.
-
----
-
-## The Zipf-Riemann Connection
-
-Zipf's law holds in every natural language: f(r) ~ 1/r^s where s ≈ 1.
-
-Zipf's exponent s ≈ 1 is the pole of ζ(s). The Euler product
+**Session** (literal output, 2026-11-13):
 
 ```
-ζ(s) = Π_p  1/(1 − p^{−s})
+>>> u = Understand()
+>>> w = u.process('water'); (w.prime, w.gamma, w.projections['sigma'])
+((0.5+21.02204j), 21.02204, 0.5)
+>>> w = u.process('eau');   (w.prime, w.gamma, w.projections['sigma'])
+((0.49999999999999994+21.02204j), 21.02204, 0.49999999999999994)
 ```
 
-generates the word frequency distribution through the prime structure of every integer. Zipf did not discover a statistical curiosity about language. He measured the prime number theorem with words. Every linguist who confirmed Zipf's law confirmed the prime distribution — in every language, every time.
+`water` and `eau` land on the same zero (γ = 21.02204) and the same σ.
 
-The most common word in any language is the word closest to the smallest primes. The rarest words are the words that map to the largest primes. The distribution is not cultural. It is mathematical.
+## 3. How to read that agreement
 
----
+Two facts qualify it, both found by running the code:
 
-## The Septuagint Principle
+1. **Only 20 targets.** The nearest-zero step chooses among the first twenty
+   zeros of ζ (`RIEMANN_ZEROS`, 14.134725 … 77.144840). Any two words whose
+   energies fall in the same bin share a γ. Agreement across languages in the
+   built-in `cross_language_demo` is therefore agreement between 20 bins and
+   is expected to occur by chance often. It is a demonstration of the
+   pipeline, not a measurement of concept identity.
+2. **σ = ½ is the fixed point of the balance iteration**, reached from any
+   start ([13](13_omgwtf_rh_proof.md) §5), so every word returns σ = ½ (to
+   rounding: 0.49999999999999994 for `eau`). It does not distinguish words.
 
-The Septuagint was translated by 72 scholars working independently. Every translation was identical.
+The production address, the prime hash of [15](15_the_monad.md) §3, has 6,543
+possible zero indices; over 73,445 dictionary words it reaches 6,436 of them
+(up to 80 words per index), and does not place translations of one word on one
+index. So neither implementation yet realises "the same concept, the same
+prime". What would: calibration of English and the other languages against the
+Chinese baseline, which is the SemPriCon programme.
 
-Not by coordination. Not by comparison. Forced by the structure of the meaning they were encoding.
+An earlier version of this page said the mapping is injective, that every one
+of ≈ 170,000 English words has its own prime, and that polysemy is resolved by
+the Lorenz–Stirling attractor. None of the three is a property of the code;
+the statements are withdrawn.
 
-The Semantic Word Engine demonstrates the same principle computationally:
+## 4. WordNet
 
-```python
-m = Monad(N=1000)
-m.load()
-print(m.lookup('water')['sigma'])    # 0.5
-print(m.lookup('eau')['sigma'])      # 0.5
-print(m.lookup('aqua')['sigma'])     # 0.5
-print(m.lookup('wasser')['sigma'])   # 0.5
-```
+WordNet supplies synsets, hypernymy/hyponymy, meronymy, antonymy and glosses.
+In the current system WordNet is the **last layer** of the baseline work
+(English WordNet, fitted to the baseline), and `monad_wordnet.bin` is the
+read-only WordNet checkpoint of the Monad ([15](15_the_monad.md) §5). The
+`semantic_engine.py` file in this section does not read WordNet.
 
-All return σ = ½. The language is the coordinate. The prime is invariant. The equator does not move.
+## 5. Letter folding and word folding  `THEORETICAL`
 
----
+Voiced/unvoiced pairs (b/p, d/t, g/k, v/f, z/s) are the same articulation with
+one parameter toggled: reflections across a "phonemic equator". The sonorants
+(m, n, l, r) sit on it and do not move. Polysemy is a word living off the
+equator with several stable positions, which context folds to the nearest node
+line. This is a framework for reading phonology and polysemy; no code in this
+repository computes it.
 
-## Shell Commands
+## 6. Zipf and the zeta function  `interpretation`
 
-```python
-se = SemanticEngine()
-se.lookup('tree')            # prime address, sigma, Fano path
-se.lookup('tree', lang='fr') # same prime, French coordinate
-se.prime_of('water')         # returns prime index
-se.word_at(prime_n)          # reverse: prime → nearest word
-se.fold('bank')              # polysemy resolution via context
-```
+Zipf's law f(r) ∼ 1/r^s with s ≈ 1 holds across languages, and ζ has its pole
+at s = 1. The wiki's reading is that word-frequency structure and the prime
+structure share a source. This is an analogy, not a derivation: Zipf's law is
+a statement about ranks of words, and no step here produces it from the Euler
+product. It is developed (and bounded) in
+[21](21_chladni_zipf_riemann.md).
 
-→ [Wiki: HyperWebster Engine](09_hyperwebster_engine.md)  
-→ [Wiki: The Monad](15_the_monad.md)  
-→ [Wiki: Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md)
+## 7. The Septuagint principle
+
+The Septuagint is traditionally told as seventy-two translators working
+independently and producing one text. The project uses the story as the
+standard of what "the same concept" should mean computationally: independent
+routes, one result. As of this page the code reproduces the *form* of that
+result for σ (every word returns ½) and not the substance for γ (§3).
+
+## 8. Related pages
+
+[09 HyperWebster](09_hyperwebster_engine.md) · [15 The Monad](15_the_monad.md) ·
+[21 Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md) · [55 Index, not value](55_index_not_value.md)

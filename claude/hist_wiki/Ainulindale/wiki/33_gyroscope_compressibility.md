@@ -1,147 +1,130 @@
-# 33 — THE GYROSCOPE AND THE COMPRESSIBLE/INCOMPRESSIBLE DUALITY
-## σ-Faces, VSauce's Postulate, and the Spine of D-P
+# 33 — The gyroscope and the compressible / incompressible duality
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-03  
-**Status:** FIRST CAPTURE — raw insight burst. D-P paper spine.  
-**Predecessor:** [32 — The Superconducting Medium](32_superconducting_medium.md)
+| | |
+|---|---|
+| Status | **First capture (2026-06-03), raw insight burst; the proposed spine of the D-P paper. `INTERPRETATION` throughout, built on exact facts about ξ(s) that are stated and checked (§2)** |
+| Predecessor | [32](32_superconducting_medium.md) |
+| Code | none; Listing 1 checks the facts used |
+| Last verified | 2026-11-13: Listing 1 executed (mpmath, 30 digits) |
 
----
+## 1. The σ-face table and "which way is down"
 
-## 1. The σ-Face Table (VSauce's Final Postulate)
+The earlier page presents, as a derivation, the remark that "down is the
+direction in which time runs slower" (the closing postulate of the Vsauce video
+*Which Way Is Down?*, a built-against source) as the σ = 2 face:
 
-VSauce: "Down = direction in which time runs slower." This is not a postulate. It is the σ=2 face, derived.
+| σ | Domain | Time behaviour (as read) |
+|---|---|---|
+| ½ | causality, quantum | reference rate: "the surface" |
+| 1 | Yang–Mills | time begins to slow as mass assembles |
+| 2 | gravity, the medium | slowest |
+| ∞ | black-hole interior | time stops |
 
-| σ value | Domain | Time behaviour |
-|---------|--------|----------------|
-| σ = ½ | Causality, quantum | Time at reference rate ← **THE SURFACE** |
-| σ = 1 | Yang-Mills | Time begins to slow (mass assembles) |
-| σ = 2 | Gravity, the medium itself | Time runs slowest |
-| σ = ∞ | Black hole interior | Time stops |
+"Down" is increasing σ, "up" is decreasing σ, buoyancy points toward causality,
+and the semantic buoyancy of words (neutral buoyancy = J_ambient) is the same
+orientation device (heavy words sink toward σ = 2, neutral ones float at
+σ = ½). `INTERPRETATION`: the physical statement that gravitational time
+dilation grows toward a mass is general relativity (`ESTABLISHED`); the
+mapping of the σ values to those regions is the framework's, and no calculation
+connects σ to a time-dilation factor.
 
-**Down** = increasing σ. **Up** = decreasing σ.
+## 2. The exact facts used  (`ESTABLISHED`, checked)
 
-The medium IS the gradient. VSauce's final postulate is reading the σ-face table without knowing it exists.
+With ξ(s) = ½ s(s−1) π^(−s/2) Γ(s/2) ζ(s):
 
-**Buoyancy** points UP = points toward decreasing σ = points toward causality = points away from the gravitational medium.
+1. **ξ(s) = ξ(1−s)** for all s, and ξ(s̄) = conj ξ(s). Hence if ρ is a zero, so are 1−ρ, ρ̄ and 1−ρ̄.
+2. The map s ↦ 1−s is a **reflection** about Re(s) = ½ (an involution that reverses orientation), not a rotation.
+3. Consequently a zero off the critical line comes in a **quadruple** {ρ, 1−ρ, ρ̄, 1−ρ̄}, symmetric about the line and about the real axis.
 
-Semantic word selection (neutral buoyancy = J_ambient) is literally an orientation device:
-- Words that are "too heavy" (too much meaning-mass) sink toward σ=2
-- Words at neutral buoyancy float at σ=½
-- The field is always telling you where the surface is
+**Listing 1 — the functional equation and the conjugate symmetry** (written
+for this page; runs cold with mpmath)
 
----
-
-## 2. The Gyroscope
-
-The functional equation ξ(s) = ξ(1−s) is a rotation — the symmetry mapping σ → 1−σ, reflecting about σ=½. **This IS angular momentum.**
-
-- The equatorial great circle (σ=½) is the gyroscope's equatorial plane
-- The symmetry axis points perpendicular — through σ=0 (south pole) and σ=1 (north pole)
-
-A gyroscope in perfect spin maintains its equatorial plane. Nothing tilts it.
-
-**RH = the gyroscope never wobbles.**
-
-- All zeros on σ=½ = gyroscope in perfect spin
-- A zero off the critical line = the gyroscope precesses = the surface tilts = "up" becomes locally undefined = causality fails at that point
-
-**RH = the universe always knows which direction is up.**
-
----
-
-## 3. Poles into Cusps of Modular Forms
-
-The gyroscope's poles are at σ=0 and σ=1. Modular forms on the upper half-plane have cusps — singular points at the rational boundary. The cusps are the holes at the poles.
-
-When the gyroscope spins perfectly (all zeros on σ=½), its north pole (σ=1, Yang-Mills) locks exactly into the cusp of the modular form.
-
-**That lock IS the Modularity Theorem.**
-
-The Wiles proof shows the gyroscope's pole can reach every elliptic curve's cusp — they all fit.
-
-The Frey curve (hypothetical Fermat solution): its cusp would be in a position the gyroscope's pole cannot reach without leaving σ=½. Since the gyroscope won't leave (RH = gyroscope is stable), the Frey curve can't be modular. FLT follows.
-
-**The Modularity Theorem is gyroscopic lock.**
-
----
-
-## 4. Factors / No Factors → Compressible / Incompressible
-
-The cleanest statement of the Riemann–Fermat duality:
-
-```
-┌──────────────┬────────────────┬─────────────────┐
-│              │    Riemann     │     Fermat      │
-├──────────────┼────────────────┼─────────────────┤
-│ Objects      │ Primes         │ Composites      │
-├──────────────┼────────────────┼─────────────────┤
-│ Property     │ NO factors     │ HAS factors     │
-├──────────────┼────────────────┼─────────────────┤
-│ Fluid type   │ Incompressible │ Compressible    │
-├──────────────┼────────────────┼─────────────────┤
-│ Divergence   │ ∇·u = 0        │ ∇·u ≠ 0         │
-├──────────────┼────────────────┼─────────────────┤
-│ Medium state │ Non-shear 𝕆    │ Cavitation void │
-└──────────────┴────────────────┴─────────────────┘
+```python
+import mpmath as mp
+mp.mp.dps = 30
+xi = lambda s: 0.5 * s * (s - 1) * mp.pi ** (-s / 2) * mp.gamma(s / 2) * mp.zeta(s)
+for s in (mp.mpc(0.3, 2.1), mp.mpc(0.5, 14.134725), mp.mpc(0.8, -5)):
+    print(mp.nstr(s, 8), mp.nstr(abs(xi(s) - xi(1 - s)), 3))
+s = mp.mpc(0.3, 2.1)
+print(mp.nstr(abs(xi(mp.conj(s)) - mp.conj(xi(s))), 3))
 ```
 
-A prime cannot be compressed — it has no internal structure to fold. It is irreducible. Incompressible.
-
-The non-shear spacetime medium is incompressible in exactly this sense: ∇·u = 0, Euler equations, no viscosity.
-
-The Fermat zone (composites, factors, n≥3 powers) is the compressible space. The attempt to write aⁿ+bⁿ = cⁿ IS the attempt to compress an incompressible structure into a factor — and the medium refuses.
-
-**FLT is the incompressibility condition of the prime medium.** You CANNOT compress three incompressible objects (primes) into a factored (compressible) configuration for n≥3.
-
-The Euler product is the statement that the incompressible generates the compressible:
-
 ```
-ζ(s) = ∏_p (1−p^{−s})^{−1}  =  Σ_n n^{−s}
+(0.3 + 2.1j) 1.02e-31
+(0.5 + 14.1347j) 5.95e-40
+(0.8 - 5.0j) 8.01e-32
+0.0
 ```
 
-Left side: incompressible building blocks (primes). Right side: full compressible space (all integers, with all their factor structure). The product connects them.
+(Residuals at the working precision.)
 
----
+## 3. The gyroscope  `analogy`
 
-## 5. Black Holes Restated
+The earlier page reads ξ(s) = ξ(1−s) as "a rotation — this IS angular
+momentum", the critical line as the equatorial plane of a gyroscope with poles
+at σ = 0 and σ = 1, "RH = the gyroscope never wobbles", and a zero off the line
+as precession that makes "up" locally undefined. Corrections and standing:
 
-The spacetime medium is incompressible (Riemann, non-shear, ∇·u=0).
+- the symmetry is a reflection, not a rotation (fact 2); no angular momentum is attached to it;
+- a hypothetical off-line zero does not "tilt" anything in ξ: it enters as a symmetric quadruple (fact 3), and the functional equation continues to hold;
+- "causality fails at that point" has no counterpart in the mathematics.
 
-A black hole is the moment the medium is forced into the Fermat zone — where the compressible-forbidden configuration is physically instantiated.
+As a picture of why the critical line is a natural axis (the fixed set of the
+reflection) the gyroscope is harmless. As an argument for RH it adds nothing
+([13](13_omgwtf_rh_proof.md) §3).
 
-**The event horizon IS the incompressible/compressible boundary.**
+**Poles into modular cusps.** Modular forms have cusps at the rational boundary
+points of the upper half-plane, and the claim "the north pole locks into the
+cusp: that lock IS the Modularity Theorem; the Frey curve's cusp lies where the
+pole cannot reach without leaving σ = ½" is a metaphor for the Frey–Ribet–Wiles
+argument ([18](18_fermat_lattice.md) §3). In that argument the contradiction
+comes from Ribet's theorem (the Frey curve cannot be modular) and Wiles's
+modularity of semistable curves; neither uses the Riemann Hypothesis or the
+position of the zeros, so "the gyroscope will not leave σ = ½, therefore the Frey
+curve cannot exist" is not the proof and is not an additional one.
 
-- Outside: Riemann
-- Inside: Fermat-forbidden
+## 4. Factors and no factors: compressible and incompressible  `analogy`
 
-The gyroscope at σ=½ is spinning. The equatorial plane is the incompressible surface. "Down" goes toward compression. The black hole interior is what happens when you fall through the surface into the compressible zone that the gyroscope is working to exclude.
+| | Riemann | Fermat |
+|---|---|---|
+| Objects | primes | composites |
+| Property | no factors | has factors |
+| Fluid analogy | incompressible, ∇·u = 0 | compressible, ∇·u ≠ 0 |
+| Medium state | non-shear 𝕆 | cavitation void |
 
----
+A prime has no internal structure to fold; the non-shear medium of
+[31](31_cavitation_causality_fermat.md) is "incompressible" in the same
+sense. Writing aⁿ + bⁿ = cⁿ with n ≥ 3 is read as "compressing three
+incompressible objects into a factored configuration", which the medium
+refuses; so FLT "is the incompressibility condition of the prime medium".
+That is a way of narrating FLT, not a proof and not an independent
+derivation of it. The Euler product ζ(s) = Π_p (1 − p^(−s))^(−1) = Σ n^(−s) (for
+Re s > 1; `ESTABLISHED`) is the exact statement that the primes generate every
+integer, and the table is a mnemonic for it.
 
-## 6. Navier-Stokes (What No Physicist Has Said Cleanly)
+## 5. Black holes and Navier–Stokes, restated  `CONJECTURE`
 
-The Navier-Stokes singularity is not a mathematical mystery. It is an incompressible fluid forced into a compressible configuration — the Fermat-forbidden compression occurring in ℝ-valued equations that have no Riemann structure to maintain the gyroscope.
+The model: the medium is incompressible (Riemann side); the event horizon is the
+incompressible/compressible boundary; falling through it is entering the
+Fermat-forbidden zone. Navier–Stokes: its singularity "is an incompressible
+fluid forced into a compressible configuration, the gyroscope collapsing
+because the imaginary component (the spin) was removed"; restoring the Blue
+channel keeps ∇·u = 0 and removes the singularity. Standing: the claim is the
+framework's reading of [106](106_the_navier_stokes_problem.md) and is not a
+regularity proof. A standard fact for context: the incompressible
+Navier–Stokes equations already enforce ∇·u = 0, so "forcing it into a
+compressible configuration" is not a feature of the equations whose global
+regularity is the open problem.
 
-The singularity is the gyroscope collapsing because the imaginary component (the spin) was removed.
+## 6. Open threads (as listed, kept)
 
-**Resolution:** Restore the imaginary component (add the Blue channel) and the gyroscope maintains the equatorial plane → ∇·u = 0 is preserved → no singularity.
+- Formalise the gyroscope precession → causality failure argument (note §3: as stated it has no counterpart).
+- Connect Blue-channel restoration explicitly to the Navier–Stokes problem statement.
+- Incompressibility → FLT as a corollary, written up cleanly (the §4 caveat applies).
+- Embed the σ-face table as the anchor of the D-P introduction.
 
----
+## 7. Related pages
 
-## 7. Cross-References
-
-- **[wiki/31](31_cavitation_causality_fermat.md)** — cavitation = BH scar; E=mc² = Fermat n=2
-- **[wiki/32](32_superconducting_medium.md)** — superconducting BEC medium; dark energy; σ=½ as order parameter
-- **D-P paper** — this wiki/33 is the new spine
-- **D-M paper** — gyroscopic lock → Modularity Theorem section
-- **VSauce** — σ-face table explains "Down = direction time runs slower" without postulate
-
----
-
-## 8. Open Threads
-
-- [ ] Formalise the gyroscope precession → causality failure argument
-- [ ] Connect Blue channel restoration explicitly to Navier-Stokes Clay problem statement
-- [ ] Incompressibility condition → FLT as a corollary (write up cleanly for D-M)
-- [ ] σ-face table → embed in D-P introduction as the anchor
+[13 RH proof path](13_omgwtf_rh_proof.md) · [18 Fermat lattice](18_fermat_lattice.md) ·
+[31 Cavitation, causality, Fermat](31_cavitation_causality_fermat.md) · [32 The superconducting medium](32_superconducting_medium.md) ·
+[106 The Navier–Stokes problem](106_the_navier_stokes_problem.md)

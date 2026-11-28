@@ -1,5 +1,7 @@
 # UF Formulary — Author Index
 
+See also: [_census.md](_census.md) (measured counts, 2026-11-13) · [_holcus_integration_notes.md](_holcus_integration_notes.md) (audited 2026-11-13).
+
 Complete index of all author codes in the UFformulary. Sorted by author code.
 
 | Code | Author Name | # Formulas (approx.) | Formula Type Summary | Wiki Page |
@@ -127,12 +129,23 @@ Complete index of all author codes in the UFformulary. Sorted by author code.
 
 ---
 
+## Verification status, 2026-11-13
+
+| Pages | Status |
+|---|---|
+| [_census.md](_census.md) | new; measured from the 213 `.ufm` files (Listing 1 runs cold) |
+| [_holcus_integration_notes.md](_holcus_integration_notes.md) | audited: Popcorn fixed point, Hermite = GUE, TIA = cosine and the Ω-appearances were tested and are **refuted or not supported** (kept in the record); 23 dmj trap shapes reproduced |
+| [mt_mark_townsend.md](mt_mark_townsend.md), [lkm_kerry_mitchell.md](lkm_kerry_mitchell.md), [mmf_dave_makin.md](mmf_dave_makin.md), [ea_evert_agelink.md](ea_evert_agelink.md) | correction notes added beside the specific claims that failed; the rest of each page is a catalogue description read from the authors' helpfiles and not re-derived |
+| the other author pages and `remaining_authors_batch1`–`4` | catalogue descriptions of other people's formulas, read from the `.txt`/`.ufm` headers; not re-verified formula by formula. The per-author counts in the table above are estimates, superseded by [_census.md](_census.md); the "J_pos/J_neg reading", "Holcus application" and "sedenion dimensions activated" bullets on every page are the framework's proposals (`INTERPRETATION` / `CONJECTURE`), not properties of the formulas |
+
+The Ainulindale statement that the formulary is "a comprehensive empirical mapping of the semantic space structure" ([_holcus_integration_notes.md](_holcus_integration_notes.md), Summary) is an interpretation: the UF community wrote these formulas as fractal generators; the audit found no measured correspondence with the Ĥ_RB structure.
+
 ## Summary Statistics
 
-- Total author codes: ~95
 - Author codes with identified names: ~50
 - Author codes with unread .ufm files: ~45
-- Approximate total formula count: 1500-2000 formulas across 213 .ufm files
+- **Measured 2026-11-13** ([_census.md](_census.md)): 213 `.ufm` files, 153 author codes, 11,523 formula blocks (plus 117 `comment` blocks).
+- **Earlier estimates, kept:** "Total author codes: ~95"; "Approximate total formula count: 1500-2000 formulas across 213 .ufm files". The 213 was right; the code and formula counts were low (about 1.7× and 6×) because the large catalogues had not been counted.
 - Formula types represented:
   - Escape-time Mandelbrot/Julia variants: ~60% of formulas
   - Newton/convergent types: ~10%

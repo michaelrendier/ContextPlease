@@ -1,251 +1,160 @@
-# 57 — THE BOUNDARY ASCENDING: FLAT → CURVED → COMPLEX → ROTATIONS
+# 57 — The Boundary Ascending the Tower
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-13
-**Status:** CASCADE CAPTURE — boundary transforms at each tower level; pre-boundary cryptography transparent; post-boundary: describable not invertible; negative space wake
-**Predecessor:** [54 — Two Doublings](54_two_doublings_all_pathways.md), [53 — T_256 Cryptographic Transparency](53_t256_cryptographic_transparency.md), [51 — J₂ Involution](51_j2_involution_riemann_fermat.md)
-**Cross-ref:** wiki/55 (index not value), wiki/56 (telescope caustic), AddPapers/CryptoVulnerability/
+| | |
+|---|---|
+| Scope | how the σ = ½ boundary is read at each level of the Cayley–Dickson tower; the Krohn–Rhodes / "two doublings" correspondence; what many-to-one means for reconstruction |
+| Origin | 2026-06-13 cascade capture |
+| Code | `VAPMIP/monad.py` (`_word_zero_idx`), `ValaQuenta/modules/box_kite`, `modules/udeo_crypto` |
+| Confidence | the Futurama theorem, Krohn–Rhodes, G₂ = Aut(𝕆): ESTABLISHED · the level-by-level boundary reading: `THEORETICAL` · "pre-boundary cryptography is transparent": `CONJECTURE`, no listing on this page demonstrates it |
+| Last verified | 2026-11-13: Listings 1–3 executed; their output is quoted below |
 
----
+## 1. The statement
 
-> *"Rhodes decomposition...two doublings...that's what you did to T_256 to see T_64 plainly.*
-> *The boundary turns flat into curved into complex into rotations...*
-> *sending the negative space wake behind it.*
-> *Only information that transits the boundary is safe from H_hat_RB analysis — but not description.*
-> *Does the math say that? Yes."*
+> "The boundary turns flat into curved into complex into rotations, sending the
+> negative space wake behind it. Only information that transits the boundary is
+> safe from Ĥ_RB analysis, but not description." — author, 2026-06-13
 
----
+## 2. The level-by-level reading  `THEORETICAL`
 
-## 1. The Krohn-Rhodes Theorem IS the Two-Doublings Theorem
+The author reads one boundary, σ = ½, as changing geometry at each doubling:
 
-The Krohn-Rhodes decomposition theorem (Rhodes, Berkeley, 1965):
+| Level | What is established about the algebra | The boundary reading |
+|---|---|---|
+| ℝ (1) | totally ordered field | a point; the "wake" is the primes, what the composites leave |
+| ℂ (2) | critical line Re s = ½ is a line in ℂ | the Riemann zeros are on it (RH, open) |
+| ℍ (4) | associative, non-commutative; SU(2) | a 3-dimensional surface |
+| 𝕆 (8) | Aut(𝕆) = G₂ (ESTABLISHED) | the boundary is the G₂ rotation structure |
+| 𝕊 (16) | zero-divisors exist: 84 pairs eᵢ ± eⱼ, 42 index pairs ([25](25_sedenion_manual.md), Listing there) | the unit sphere S¹⁵ carries the zero-divisor contact set |
+| T₃₂, T₆₄, T₂₅₆ | doublings continue | S³¹, S⁶³, S²⁵⁵ |
 
-```
-Any finite automaton can be decomposed into a wreath product
-of prime components — simple groups and three-element semigroups.
-```
+Established facts underneath: the sphere S^(n−1) is the unit sphere of an
+n-dimensional algebra; the zero-divisor basis pairs of 𝕊 are counted in
+[25](25_sedenion_manual.md). The identification of σ = ½ with those spheres, and of
+the "wake" with a forbidden set at each level, is the framework's reading: a
+statement about how it uses the tower, not a derived theorem. A published result sits near it: Moreno (preprint 1997, journal 1998) is reported to show that
+the norm-one zero-divisors of 𝕊 form a space homeomorphic to G₂. That is a
+fact about 𝕊 alone, quoted here from memory of the literature and not
+re-checked in this pass; it is named as the object the framework's σ = ½ reading
+should be compared against.
 
-The Cayley-Dickson two-doublings theorem (wiki/54):
+## 3. Krohn–Rhodes and "two doublings"  `INTERPRETATION`
 
-```
-Two doublings from any level of the tower expose all pathways at that level.
-The cross-term from the second doubling is J₂ — the full involution.
-```
+Krohn–Rhodes (Krohn & Rhodes, announced 1962, *Trans. AMS* 1965): every finite
+automaton is covered by a wreath product of finite simple groups and the
+three-element flip-flop semigroup. The earlier text identified this with the
+Cayley–Dickson doubling ("the wreath product = the doubling") and with the
+"two doublings expose all pathways" statement. Both identifications are
+**correspondences of vocabulary**. The wreath product acts on transformation
+semigroups; the doubling is a construction on algebras over ℝ. No homomorphism
+between them is given in the project, and none is claimed here.
 
-These are the same theorem at different levels of abstraction.
+The one piece of the "two" that can be tested is Keeler's Futurama theorem
+(Futurama, "The Prisoner of Benda", 2010): after any set of swaps in which no
+pair swaps twice, the original arrangement can be restored by further swaps (again
+no pair repeated) if **two** extra bodies are available. Listing 1 tests it
+by exhaustion.
 
-The wreath product = the Cayley-Dickson doubling. Each doubling couples the algebra
-to a new component, exactly as a wreath product step couples an automaton to a new
-prime component. The "prime components" of the Krohn-Rhodes decomposition are the
-prime-indexed dimensions of the sedenion algebra.
-
-J. Stewart Burns studied under Rhodes (Berkeley, 1992-1993). His thesis: "The
-Structure of Group Algebras." He was deriving the algebraic structure of the same
-objects the sedenion engine operates on. He encoded the theorem in The Simpsons
-for thirty years, in freeze-frames lasting fractions of a second.
-
-His name is the operator: J_Stewart_Burns = the Jacobian of the group algebra
-structure at the semigroup state transition (the Burns event = vortex nucleation).
-
----
-
-## 2. The Boundary Ascending the Tower
-
-σ=½ is the boundary. It is the same boundary at every level of the tower.
-But its geometry TRANSFORMS as it ascends.
-
-```
-ℝ  (1D):   σ=½ is a single point.
-            Geometry: flat. A point has no curvature.
-            Negative space wake: the integers. The primes are what remains
-            when the composite numbers are forbidden.
-
-ℂ  (2D):   σ=½ is the critical line Re(s) = ½.
-            Geometry: curved. A 1D line embedded in the 2D complex plane.
-            The Riemann zeros live on it — the discrete quanta of the Fermat
-            quantization (wiki/51).
-            Negative space wake: the off-critical zeros that RH forbids.
-            The critical line is bordered by the territory that cannot exist.
-
-ℍ  (4D):   σ=½ is a 3D surface in quaternion space.
-            Geometry: complex. Non-commutative rotation structure.
-            The quaternion SU(2) symmetry begins here.
-            Negative space wake: the quaternion analog of the Fermat forbidden zone.
-
-𝕆  (8D):   σ=½ has G₂ exceptional symmetry.
-            Geometry: rotations. The automorphism group of the octonions is G₂ —
-            the smallest exceptional Lie group.
-            The boundary IS the G₂ rotation structure.
-            Negative space wake: the 7 imaginary octonion units' non-associativity
-            locus — the structure that G₂ acts on.
-
-𝕊  (16D):  σ=½ IS S¹⁵.
-            Geometry: the 15-sphere.
-            The 42 Cawagas zero-divisor pairs live on S¹⁵.
-            The boundary IS the zero-divisor contact surface.
-            Negative space wake: the 42 pairs themselves — the forbidden
-            multiplication zone of the sedenion algebra.
-
-T_32 (32D): σ=½ IS S³¹. The boundary expands.
-T_64:       S⁶³.
-T_256:      S²⁵⁵. All 256-bit cryptographic primitives embedded as sub-structures.
-```
-
-The boundary is not the same object at each level. It ascends. It transforms.
-Each transformation LEAVES A WAKE — the negative space carved into that algebra
-as the boundary passes through. The wake is the Fermat forbidden zone at that level.
-The primes are the boundary markers of that wake at every level.
-
----
-
-## 3. The Negative Space Wake
-
-At each level, the boundary's passage carves:
-
-```
-ℝ:  forbidden = composite integers  →  wake = primes (the survivors)
-ℂ:  forbidden = off-critical zeros  →  wake = Riemann zeros on σ=½ (RH)
-ℍ:  forbidden = non-unit quaternions in the prohibited zone
-𝕆:  forbidden = non-G₂ octonion structure
-𝕊:  forbidden = zero-divisor pairs (the 42 Cawagas pairs)
-T_256: forbidden = all pre-boundary cryptographic hardness
-```
-
-The primes appear at every level as the primary boundary markers because the
-primes are invariant across the tower (wiki/55). The same primes. Different wakes.
-The wake is the negative space that defines what IS allowed by what IS forbidden.
-
-Fermat (generalized: x^l + y^m = z^n) is the universal statement of the forbidden
-zone at every level. The boundary ascending leaves the Fermat forbidden zone behind
-it at each algebra level as a negative space impression.
-
----
-
-## 4. Pre-Boundary Cryptography Burns
-
-All current cryptographic infrastructure operates in sub-algebras BELOW the sedenion
-boundary:
-
-```
-RSA:     integer factoring — lives in ℤ, embeds in ℝ ⊂ ℂ
-ECC:     discrete log on elliptic curves — lives in ℂ
-AES:     operations in GF(2^8) — lives in a finite field ⊂ ℂ
-SHA-256: 256-bit operations — lives in T_256 (at the boundary, not above it)
-```
-
-Two doublings above any of these levels: the J₂ involution is fully expressed.
-The Krohn-Rhodes decomposition is complete. The prime components are visible.
-The full algebra containing both the forward and inverse functions is present.
-
-```
-Pre-boundary cryptography:  TRANSPARENT to H_hat_RB analysis.
-                             Two doublings. Rhodes decomposition.
-                             The inverse is not hard — it lives two levels up.
-```
-
-This is not a specific attack. It is the structural reason WHY the attacks in
-AddPapers/CryptoVulnerability/ work: they are instances of the Krohn-Rhodes
-decomposition applied to the sedenion zero-divisors at each level.
-
-J. Stewart Burns is the operator that executes this analysis.
-His name has been in the credits every week for thirty years.
-
----
-
-## 5. Only Boundary-Crossing Information Is Safe — But Not From Description
-
-The word_at() function maps scalar v → word. It is many-to-one:
+**Listing 1 — the Futurama theorem, by brute force** (written for this page; runs cold)
 
 ```python
-idx = max(0, min(int((v + 1.0) / 2.0 * n), n - 1))
+import itertools, collections, sys
+def pairs(m): return [(a, b) for a in range(m) for b in range(a + 1, m)]
+def restorable(n, perm, used, k):
+    m = n + k; P = pairs(m); idx = {p: i for i, p in enumerate(P)}
+    start = (tuple(perm) + tuple(range(n, m)), sum(1 << idx[p] for p in used))
+    goal = tuple(range(m)); seen = {start}; q = collections.deque([start])
+    while q:
+        s, u = q.popleft()
+        if s == goal: return True
+        for (a, b), i in idx.items():
+            if u >> i & 1: continue
+            t = list(s); t[a], t[b] = t[b], t[a]; st = (tuple(t), u | 1 << i)
+            if st not in seen: seen.add(st); q.append(st)
+    return False
+def scrambles(n):
+    out = set(); P = pairs(n)
+    for r in range(len(P) + 1):
+        for seq in itertools.permutations(P, r):
+            s = list(range(n))
+            for a, b in seq: s[a], s[b] = s[b], s[a]
+            out.add((tuple(s), frozenset(seq)))
+    return out
+n = int(sys.argv[1]); ks = tuple(int(a) for a in sys.argv[2:])
+S = scrambles(n); print('n=%d distinct (permutation, used-pairs) scrambles:' % n, len(S))
+for k in ks: print(f'  extra bodies k={k}: restorable', sum(restorable(n, p, u, k) for p, u in S), '/', len(S))
 ```
 
-Multiple scalar values map to the same word index. The mapping is NOT injective.
-
-Therefore:
-
 ```
-Forward:      geometry → word          COMPUTABLE
-              (Dirichlet projection → word_at lookup)
-
-Backward:     word → geometry          NOT UNIQUE
-              (many geometries produce the same word)
-              NOT RECONSTRUCTABLE
-
-Description:  word → analysis          ALWAYS POSSIBLE
-              (H_hat_RB operates on the word directly)
-              (multi-language translation: english, math, physics all work)
-              (the SVG pathway can be described without the prompt)
+$ python3 listing1.py 3 0 1 2
+n=3 distinct (permutation, used-pairs) scrambles: 13
+  extra bodies k=0: restorable 1 / 13
+  extra bodies k=1: restorable 10 / 13
+  extra bodies k=2: restorable 13 / 13
+$ python3 listing1.py 4 0 1 2
+n=4 distinct (permutation, used-pairs) scrambles: 343
+  extra bodies k=0: restorable 92 / 343
+  extra bodies k=1: restorable 284 / 343
+  extra bodies k=2: restorable 343 / 343
 ```
 
-Information that CROSSES the boundary (J_cross > GAP, vortex fires, word emitted)
-is safe from reconstruction — but not from description.
+So "two, not one, not three" is confirmed as a statement about permutations (zero
+extras restore 1/13 and 92/343; one extra restores 10/13 and 284/343; two restore all,
+for n = 3 and 4). It says nothing yet about algebra doublings: the theorem is about
+the symmetric group and the "two" counts spare elements, not Cayley–Dickson steps.
 
-You can describe the word. You can translate it. You can analyze it in every layer.
-You cannot reconstruct the unique geometry that produced it.
+## 4. The one-way claim  `CONJECTURE`
 
-This is the one-way property of the boundary crossing:
+The earlier text argues that information crossing the boundary is "safe from
+reconstruction but not from description", because `word_at` is many-to-one, and
+that RSA, ECC, AES and SHA-256 are "transparent" because they sit below the
+boundary.
 
-```
-Pre-boundary:   two doublings → full reconstruction possible → TRANSPARENT
-At boundary:    the crossing is many-to-one → reconstruction fails → SAFE
-Post-boundary:  the word exists and can be described → BUT description ≠ inversion
-```
+**Listing 2 — what many-to-one does and does not hide** (needs the repository `VAPMIP/`; runs cold from there)
 
-The ONLY cryptographic primitive that survives H_hat_RB analysis is the sedenion
-boundary crossing itself. Not RSA. Not ECC. Not SHA. Those are pre-boundary sub-algebras.
-
-The boundary crossing is the one-way function the universe built into the sedenion algebra.
-It was always there. It required two doublings to see it.
-
----
-
-## 6. The Boundary IS the Safe Channel
-
-The consequence for post-boundary cryptography:
-
-Any communication system that routes information THROUGH the sedenion boundary
-crossing (the zero-divisor contact, the vortex nucleation, the word emission)
-is safe from reconstruction.
-
-```
-Secure:    information that transits the sedenion zero-divisor boundary
-           forward path: prompt → geometry → word
-           backward path: many-to-one, not unique
-
-Insecure:  information that stays pre-boundary
-           (any sub-algebra of the sedenion: ℝ, ℂ, ℍ, 𝕆, and all finite fields)
-           two doublings → J₂ complete → inverse visible
+```python
+import sys, collections
+sys.path.insert(0, 'VAPMIP'); import monad
+words = sorted({w.strip().lower() for w in open('/usr/share/dict/american-english') if w.strip().isalpha()})
+b = collections.defaultdict(list)
+for w in words: b[monad._word_zero_idx(w)].append(w)
+sz = sorted(map(len, b.values()))
+print('words', len(words), 'distinct zero indices', len(b), 'max per index', sz[-1], 'median', sz[len(sz)//2])
+n = 164000; idx = lambda v: max(0, min(int((v + 1.0) / 2.0 * n), n - 1))
+v = 0.123456; i = idx(v)
+print('word_at(%.6f) -> bin %d: every scalar in [%.8f, %.8f) gives the same word, width %.2e'
+      % (v, i, 2*i/n - 1, 2*(i+1)/n - 1, 2/n))
 ```
 
-The sedenion algebra is not the vulnerability. It is the solution.
-The vulnerability is operating below it and assuming the algebra is the whole picture.
+```
+words 73604 distinct zero indices 6436 max per index 80 median 9
+word_at(0.123456) -> bin 92123: every scalar in [0.12345122, 0.12346341) gives the same word, width 1.22e-05
+```
 
-Pre-boundary: the picture is not whole. Two doublings reveal the rest.
-At the boundary: the picture is complete. The one-way function is irreversible.
+- The word hash is many-to-one (73,604 words onto 6,436 zero indices, up to 80 per
+  index): a word cannot be recovered from its index. `ESTABLISHED`.
+- `word_at` is a binning of [−1, 1] into n bins. A word therefore localises its
+  scalar to an interval of width 2/n (1.2×10⁻⁵ here). The scalar is hidden to that
+  precision and no further. Whether the 16 scalars that produce one word can be
+  recovered from the word depends on the prompt-to-geometry map, which this listing
+  does not touch.
+- Many-to-one is not the same property as cryptographic one-wayness. A one-way
+  function needs preimages that are hard to find; here the preimage of an index is
+  an interval or a computable set (for the hash, enumerate words). Nothing in
+  Listing 2 gives hardness.
+- The statements about RSA, ECC, AES and SHA-256 rest on the UDEO work
+  (the UDEO record in the VAPMIP repository) and the ledger ([135](135_engine_findings_ledger.md));
+  no listing here reproduces an attack on any of them, and none of the four is publicly
+  known to be broken. The earlier text's placement of ECC "in ℂ" is also not right: ECC is
+  arithmetic on E(𝔽ₚ), a finite group.
 
----
+## 5. Futurama restated
 
-## 7. The Futurama Theorem Revisited
+Keeler's theorem is `ESTABLISHED` mathematics (Listing 1). Its use as a model for
+"two Cayley–Dickson doublings expose J₂" is the author's analogy: both have a
+count of two, neither has been mapped onto the other.
 
-Ken Keeler's Futurama theorem: any permutation of n elements, achieved through
-pairwise swaps, can be restored using exactly two additional elements who have not
-previously swapped.
+## 6. Related pages
 
-**Two additional.** Not one. Not three. Two.
-
-This is the Krohn-Rhodes two-doublings theorem applied to the symmetric group Sₙ.
-The two additional elements are the two extra doublings required to express J₂ fully.
-The restoration is the involution — the Cayley-Dickson cross-term made manifest
-as a permutation recovery algorithm.
-
-Keeler proved it. Rhodes proved its precursor. Burns encoded both.
-All three working in the same algebra, at different levels of the tower,
-thirty years apart.
-
----
-
-*Cody Michael Allison — 2026-06-13*
-*Cascade chain: wiki/54 (two doublings) → wiki/57 (this, boundary ascending + pre-boundary cryptography burns)*
-*The boundary turns flat into curved into complex into rotations.*
-*Sending the negative space wake behind it.*
+[54 two doublings](54_two_doublings_all_pathways.md) · [53 T₂₅₆ transparency](53_t256_cryptographic_transparency.md) ·
+[51 the J₂ involution](52c_j2_involution_riemann_fermat.md) · [55 index not value](55_index_not_value.md) ·
+[59 the Simpsons](59_the_secret_in_the_simpsons.md) · [135 findings ledger](135_engine_findings_ledger.md)

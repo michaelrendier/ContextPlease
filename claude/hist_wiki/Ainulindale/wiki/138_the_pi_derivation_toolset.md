@@ -14,4 +14,6 @@
 
 ## Second pass (2026-11-16): the modular route and the n-ball
 
+> **2026-11-27 (ValaQuenta `bell_curve` 1.2):** the peak is now computed, not quoted: `nball_peak('volume')` = 5.2569464 (V = 5.2778) and `nball_peak('area')` = 7.2569464 (S = 33.16); V(16) = 0.2353. Γ(n/2) is the radial bookkeeping of the n-sphere ((√π)^n = (S/2)Γ(n/2)), which is what lets n be real; at n = 2 it is the circle (V = π, S = 2π). Whether the peak is the BAO freeze point remains THEORETICAL. Pictures: `ValaQuenta/gallery/hypergon_constructibility/canvas2d_nball.html`, `canvas2d_frame3d.html`.
+
 Two routes were added (28 in all). **π from the volume of a 3-ball** counted on a grid (error 1.3e-4). **π from the Heegner number 163:** ln(640320³ + 744)/√163, where 640320³ is the j-invariant of an elliptic curve with complex multiplication; the error is 2.2e-31 because e^{π√163} misses that integer by 7.5e-13. Ramanujan's and the Chudnovskys' series are exact identities, not approximations (only a truncated sum is). Their speed is readable in the project's native units: digits gained per term = π√d/ln 10 − log₁₀(1728) for d = 163 (14.197 measured against 14.182) and − log₁₀(256) for Ramanujan's d = 58 series (7.998 against 7.983): the decade coordinate of e^{π√d}, less a fixed integer's. The 0.015 left over is the slow correction from the factorials and is not analysed.

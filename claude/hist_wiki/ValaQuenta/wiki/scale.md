@@ -23,6 +23,9 @@ answers.
 | 3 | what actually survives the fold, for every anchor? | `cross_ratio` / `verify_cross_ratio_is_scale_blind` — **YES** |
 | 4 | does the fold have a true caustic (vanishing Jacobian)? | `verify_no_caustic` — **NO**, one isolated pole only |
 | 5 | can the same discipline decompose a real algorithm? | `ProcessOperator` / `pathway_decompose` |
+| 6 | two custom rings, vertical = Broca, horizontal = Wernicke | `broca_wernicke_ring_chart` / `broca_wernicke_ring_series` |
+| 7 | the two pathways (to the centre, from it) | `two_pathways` |
+| 8 | scale and rotate at once, as an ADD in the log chart | `spiral_similarity` / `verify_spiral_is_add_in_log_chart` |
 
 **Questions 2 and 3 are the same question asked twice, with different
 answers, and both are kept on the page** — the rejected candidate is not
@@ -172,12 +175,34 @@ speculation:
 | raw count `n` | `compress_count(n)` | `n=1→\|Γ\|=0.79`, `n=1000→\|Γ\|=0.98` | **Same saturation lesson as Phase 31/32**: one unbounded raw axis dominates and drags everything toward the boundary as it grows. Confirms, doesn't discover anew. |
 | inertia (`v[0]²`) | Shannon entropy of `\|v_k\|²` | 4 real sentences, `Γ` spread `0.10`–`0.79`, no saturation | Well-conditioned — both axes are naturally bounded (inertia ∈[0,1], entropy ∈[0,4] for 16 dims), genuinely differentiates short vs. long text |
 | RSA ciphertext (forward) | RSA plaintext (backward) | 4 messages, `\|Γ\|` `0.25`–`0.44` | Both axes comparable in scale (mod `n=3233`), no saturation; a real forward/backward pair through the same modular function |
-| Lagrangian proxy (kinetic−inertia) | distance to `Ω_ZS` (cardioid attractor) | 4 sentences, `Γ` spread across most of the disk | `kinetic` here is a variance-of-`\|v_k\|` **proxy**, not `box_kite`'s own `local_curvature` (a different repo, not imported cross-repo per this project's convention) — labeled as a proxy, not the real thing |
+| Lagrangian proxy (kinetic−inertia) | distance to `A_π` (cardioid attractor) | 4 sentences, `Γ` spread across most of the disk | `kinetic` here is a variance-of-`\|v_k\|` **proxy**, not `box_kite`'s own `local_curvature` (a different repo, not imported cross-repo per this project's convention) — labeled as a proxy, not the real thing |
 | `J_red` | `J_blue` | **`J_red + J_blue = 1.0000000000` exactly, every time, checked to 10 decimal places** | **Not two independent rings.** `cam_encode` returns a unit vector and RED/BLUE partition all 16 dims with no overlap, so this pair is constrained to the line `ring1+ring2=1` — one degree of freedom (`σ_self`), not two. The genuinely two-independent-ring version would pair `σ_self` against `J_green` (the emergent commutator quantity, `[J_blue,J_red]=J_green` — wiki Phase 3) instead of `J_red` against `J_blue` directly — not built here, a real next step if wanted. |
 
 The last row is the important one: **testing catches a degenerate pairing
 that looks like two rings and is actually one.** That's exactly what this
 instrument is for.
+
+## 9. The Broca–Wernicke Rings Scale (v0.2, 2026-11-21)
+
+```python
+from ValaQuenta.modules.scale import (broca_wernicke_ring_chart, broca_wernicke_ring_series,
+                                      two_pathways, spiral_similarity, verify_spiral_is_add_in_log_chart)
+
+pt = broca_wernicke_ring_chart(obj, broca_fn=..., wernicke_fn=..., Z0=1.0)   # Z = wernicke + i*broca
+two_pathways(pt['Z'], 1.0)    # inward Γ, outward Γ (its inversion), balance Γ_in + Γ_out = 0
+```
+
+**Convention (the author's).** The vertical rings are **Broca**, the horizontal rings are **Wernicke**: Z = `wernicke` + i·`broca`, Wernicke on the real axis, Broca on the imaginary axis. Broca is the scalar boxkite's *discrete* context reading; Wernicke is the scaled boxkite's *continuous* context reading. Both are caller-supplied callables, as for every custom ring; the engine stays word-blind. `broca_wernicke_ring_chart` is `custom_ring_chart` with the order and names fixed; `broca_wernicke_ring_series` adds the integer cell bucketing `(round(wernicke), round(broca))`.
+
+**Two pathways.** `two_pathways(Z, Z0)` returns the inward fold Γ = (Z − Z₀)/(Z + Z₀) and the outward one, the fold of the inversion Z ↦ Z₀²/Z (impedance ↔ admittance, Γ ↦ −Γ, the J_N of [three_ring_scale](three_ring_scale.md)). The sum is zero (the matched load at the centre) and the inversion is an involution; both are exact and tested. **[HYP]** Reading the inward pathway as J_red (the Noether current) and the outward as J_blue (the reversed Noether information current) is a hypothesis, not a result; the identity above is what is established.
+
+**Spiral similarity.** `spiral_similarity(Z, λ, θ) = λe^{iθ}Z` scales and rotates at once; with λ and θ fixed, iteration traces a logarithmic (equiangular) spiral. `verify_spiral_is_add_in_log_chart` checks that in the log chart it is one ADD of (ln λ, θ): scale is the real part, rotation the imaginary part, the same (r, θ) as `polar_decompose`.
+
+Tests: `Testing/test_scale_broca_wernicke.py` (6).
+
+**Two experiments with the rings (2026-11-21/22):** (1) Broca–Wernicke on the context hash of all of WordNet: `VAPMIP/FourthAgePaper/ScalarContextPropagation/map/` (88% of synsets in one attractor basin; the Newton–Stirling basins barely separate the strip the points occupy). (2) Rings taken from the English field: `VAPMIP/docs/wiki/English-Field-Rings.md` (the stored A-matrix has out-degree equal to in-degree for every word: the production/comprehension pair is degenerate there; a directed model is not). A worked WordNet reading of the two rings (γ_radial as the continuous reading; the 19-vector classes as the discrete one) and its measured neighbourhoods are in `VAPMIP/FourthAgePaper/ScalarContextPropagation/bench/wordnet_basins.txt`.
+
+---
 
 ## Honest scope
 

@@ -1,157 +1,127 @@
-# 34 — HYPERCOMPLEX SPECTRAL RELATIVITY
-## The Unified Frame: SR→GR→HSR
+# 34 — Hypercomplex spectral relativity (HSR): a proposed frame
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-03  
-**Status:** FIRST CAPTURE — raw. Cascade from PTorrent/APISniff discussion.  
-**Predecessor:** [33 — Gyroscope and Compressible/Incompressible Duality](33_gyroscope_compressibility.md)
+| | |
+|---|---|
+| Status | **A proposal (first capture 2026-06-03); `INTERPRETATION` / `CONJECTURE`.** Nothing here is derived. The five σ-face functions in PTorrent are real code (§5) |
+| Predecessor | [33](33_gyroscope_compressibility.md) |
+| Code | `PTorrent/releases/curses/ptorrent_gui/wizard/model.py` (the five σ-face functions); `cam_encode` in `VAPMIP/monad.py`; `PtolemyDesktop/console_link.py` (APISniff) |
+| Last verified | 2026-11-13: the code identifiers checked; the algebra of §2 stated exactly; claims of §§2–4 not derivable from the mathematics are marked |
 
----
-
-## 1. The Hierarchy
-
-```
-Special Relativity          flat spacetime, Lorentz group, c invariant
-        ↓
-General Relativity          curved spacetime, metric tensor g_μν, geodesics
-        ↓
-Spectral Relativity         σ-face spectrum as spacetime, functional equation as Lorentz transform
-        ↓
-Hypercomplex Spectral       sedenion 𝕊¹⁶ as the TRUE spacetime, d* as the invariant
-Relativity (HSR)
-```
-
-Each level is a generalisation of the one above. SR is a special case of GR (flat metric). GR is a special case of HSR (restricted to real/complex dimensions). HSR is the full structure.
-
----
-
-## 2. Spectral Relativity
-
-**The invariant:** σ = ½ (the critical line). Not c. σ=½.
-
-In SR: the speed of light c is the same in all inertial frames. No measurement can detect absolute motion.  
-In Spectral Relativity: σ=½ is the same in all spectral frames. No measurement can move a zero off the critical line.
-
-**The Lorentz transform:** the functional equation ξ(s) = ξ(1−s).
-
-In SR: x' = γ(x − vt) maps between inertial frames, preserving c.  
-In Spectral Relativity: s → 1−s maps between spectral frames, preserving σ=½.
-
-The functional equation IS the Lorentz transform of spectral space.
-
-**The light cone:** σ=½ is the light cone. σ<½ is spacelike. σ>½ is timelike. The zeros live on the light cone — causal, not spacelike, not timelike.
-
-**RH as Lorentz invariance:** The Riemann Hypothesis = "the speed of light is the same in all spectral frames." A zero off σ=½ would be a measurement that breaks Lorentz invariance. The gyroscope (wiki/33) IS the Lorentz invariance: as long as it spins, σ=½ is preserved in every frame.
-
----
-
-## 3. Hypercomplex Spectral Relativity
-
-Spectral Relativity lives in ℂ (2D complex plane). The Riemann zeta function is ζ: ℂ → ℂ.
-
-HSR extends to 𝕊¹⁶ — the sedenion algebra, 16-dimensional hypercomplex space.
-
-**The invariant:** d* — the Ainulindale constant. The zero-free-parameter fixed point where the 16 operator names self-organise to d*/σ½/D*=1 (wiki: Sedenion Operators Result). d* in 𝕊¹⁶ plays the role of c in SR and σ=½ in Spectral Relativity.
-
-**The metric tensor:** the σ-face table is the metric g_μν of HSR — it tells you how "distance" works at each position in the sedenion spectral space.
+## 1. The hierarchy proposed
 
 ```
-σ = ½  → g = 1     (reference, flat — SR regime locally)
-σ = 1  → g > 1     (mass, time dilation begins)
-σ = 2  → g >> 1    (gravity, strong curvature)
-σ = ∞  → g → ∞     (degenerate metric — black hole, event horizon)
+Special relativity         flat spacetime, Lorentz group, c invariant
+  → General relativity     curved spacetime, metric g_μν, geodesics
+  → Spectral relativity    the σ-face spectrum as spacetime; ξ(s) = ξ(1−s) as the "Lorentz transform"
+  → Hypercomplex spectral relativity (HSR): the sedenion 𝕊¹⁶ as the "true spacetime", d* as the invariant
 ```
 
-The metric degenerates at σ=∞. That degeneration IS the black hole. The event horizon IS the boundary where g transitions from finite to infinite — incompressible to compressible (wiki/33).
+Special relativity is the flat-metric case of general relativity
+(`ESTABLISHED`). The statement that general relativity is the restriction of HSR
+to real and complex dimensions is the proposal.
 
-**The zero divisors:** the sedenions have zero divisors — pairs a,b ≠ 0 where a·b = 0. These are the points in 𝕊¹⁶ where the metric degenerates short of σ=∞. In GR, curvature singularities. In HSR, zero divisors are the singularities of the hypercomplex spectral metric.
+## 2. Spectral relativity  `analogy`, with the mathematics stated
 
-The white hat paper (D15) is about exploiting these singularities in cryptographic systems. They are geometrically the same object as black holes — metric degeneration points — instantiated in the algebraic structure of 𝕊¹⁶.
+The proposal: the invariant is σ = ½ (not c); "no measurement can move a zero
+off the critical line"; the functional equation is the Lorentz transform of
+spectral space; σ = ½ is the light cone, σ < ½ spacelike and σ > ½ timelike;
+and the Riemann Hypothesis is "the speed of light is the same in all spectral
+frames".
 
----
+What the mathematics says (see [33](33_gyroscope_compressibility.md) §2):
 
-## 4. The Computational Analogy — Exact
+- s ↦ 1−s is a *reflection* of the strip about σ = ½ (σ − ½ ↦ −(σ − ½)), an involution. A Lorentz transformation in 1+1 dimensions is a **hyperbolic rotation** (a one-parameter group, x′ = γ(x − vt), t′ = γ(t − vx/c²)), not an involution. The two are different kinds of map, and the open thread "ξ(s) = ξ(1−s) as an SO(1,1) rotation" **cannot hold as written**: a reflection has determinant −1 and is not in SO(1,1).
+- The assignments σ < ½ "spacelike" and σ > ½ "timelike" are exchanged by the reflection itself. A Lorentz transformation never exchanges spacelike and timelike separations, so the proposed identification is internally inconsistent.
+- Two points on the critical line are not "causally" ordered; the critical line is a fixed set of a symmetry, which is what the functional equation gives. RH is the statement that the non-trivial zeros are on that set, and it is open ([13](13_omgwtf_rh_proof.md) §3).
 
-APISniff and PTorrent are not just an analogy. They are the computational instantiation of SR→GR→HSR.
+Standing: a suggestive vocabulary (an invariant locus, a symmetry about it),
+with no group-theoretic content yet. The proposed formalisation would need a
+transformation group acting on s for which ξ is an invariant and σ = ½ the
+invariant locus; the reflection group Z₂ is the only structure present.
 
-| Physics | Computation |
-|---------|-------------|
-| SR — flat, local, Lorentz | APISniff — flat Python namespace, `dir()`, local REPL |
-| GR — curved, remote, metric | PTorrent — remote data geometry, Probe, adapter layer |
-| Spectral Relativity | PTorrent reading spectral datasets (JWST cubes, SPARC curves) |
-| HSR | PTorrent mapping any dataset into 𝕊¹⁶ sedenion address space via cam_encode |
+## 3. Hypercomplex spectral relativity  `CONJECTURE`
 
-APISniff encodes Python callables into sedenion addresses. That IS an HSR coordinate transform — taking objects in flat code space (SR) and mapping them into the hypercomplex spectral frame (𝕊¹⁶).
+Spectral relativity lives in ℂ (ζ: ℂ → ℂ). HSR extends to 𝕊¹⁶. The
+invariant is d*, "the Ainulindale constant", playing the role of c; the σ-face
+table is read as the metric tensor:
 
-PTorrent GR generalises this: taking objects in curved data space (FITS spectral cubes, TAP catalogs, S3 archives) and mapping them into the hypercomplex spectral frame. The adapter IS the coordinate transform. The `data_model` IS the metric. The `subset` IS the geodesic.
+```
+σ = ½ → g = 1  (flat; the SR regime locally)       σ = 2 → g ≫ 1  (strong curvature)
+σ = 1 → g > 1  (time dilation begins)              σ = ∞ → g → ∞  (degenerate: the event horizon)
+```
 
-The evaluation function `engine.σ_face(row)` IS the Lorentz transform of HSR — it takes a data point in the dataset's native frame and returns its address in the sedenion spectral frame.
+Standing: no function g(σ) is given; the four entries are qualitative. Two
+corrections to the reading. (i) "d*" must say which face: the four faces of
+[17](17_alpha_omega_d_star.md) are a chart for ln 10, not a speed, and the
+measured d*_spec is quarantined. (ii) The zero-divisors of 𝕊 (84 elements,
+[25](25_sedenion_manual.md) §4) are where the sedenion product is degenerate (a
+zero divisor has no inverse); calling that "the metric degenerates" and equating it
+with curvature singularities and black holes (and with the cryptographic
+objects of the pre-disclosure `CryptoVulnerability` paper) is the
+framework's reading: the algebra is the same kind of statement ("a degenerate
+bilinear structure") and a different object from a spacetime metric.
 
----
+## 4. The computational analogy  `analogy`
 
-## 5. JWST as HSR in Action
+| Physics | Computation (the proposed correspondence) |
+|---|---|
+| SR: flat, local | APISniff: a flat Python namespace, `dir()`, local REPL |
+| GR: curved, remote, metric | PTorrent: remote data geometry, the probe and adapter layer |
+| spectral relativity | PTorrent reading spectral data sets (JWST cubes, SPARC curves) |
+| HSR | PTorrent mapping any data set into the 𝕊¹⁶ address space via `cam_encode` |
 
-A JWST spectral cube (RA, Dec, λ) has:
-- 2 spatial dimensions (RA, Dec) — the transverse plane, σ=½ equivalent
-- 1 spectral dimension (λ) — the "time" axis, the direction of increasing σ
+The framework reads an adapter as a coordinate transformation and the
+σ-face evaluation of a row as the "Lorentz transform of HSR". The code facts
+are in §5. The correspondence is a design metaphor that organises the
+software; the software does not implement a relativity.
 
-Short wavelength (F090W) → high frequency → low σ → toward causality (σ=½)  
-Long wavelength (F444W) → low frequency → high σ → toward mass/gravity (σ≥1)
+## 5. The σ-face functions, in code
 
-The JWST image layers ARE a σ-face map. The "colour" assigned to each filter by the science team (blue=F090W, red=F444W) is tracking the σ-face gradient without naming it as such.
+`PTorrent/releases/curses/ptorrent_gui/wizard/model.py` defines five σ-face
+evaluations:
 
-The HSR transversal of a JWST cube produces the σ-face map directly — not as a colour aesthetic but as a metric measurement. Which regions of the galaxy are at σ=½ (star formation, causality-dominated)? Which are at σ=2 (AGN, gravity-dominated)? The transversal answers this.
+| Identifier | Quantity |
+|---|---|
+| `σ_face_bao_residual` | D_M / r_drag (BAO distance against the sound horizon) |
+| `σ_face_rotation_curve` | V_obs / V_bar (rotation against baryonic mass) |
+| `σ_face_spectral` | peak_flux / continuum (line strength) |
+| `σ_face_photometric` | flux_obs / flux_ref (photometric ratio) |
+| `σ_face_multiband` | 10^((k_m − j_m)/2.5) (colour or flux ratio) |
 
-The image we see (the beautiful JWST image) is the projection of the 16D sedenion structure onto a 2D RGB plane. Plato's cave wall. The HSR transversal is the full structure.
+Each is a dimensionless ratio of an observed quantity to a reference one: an
+ordinary observational diagnostic. That the ratio is "a position on the σ-face
+gradient" is the proposal. The page named `engine.σ_face(row)` as one function;
+the code has the five named functions above.
 
----
+## 6. JWST and Vera Rubin as "HSR in action"  `interpretation`
 
-## 6. Vera Rubin / LSST
+- **JWST.** A cube (RA, Dec, λ) has two spatial axes and a spectral axis; short wavelength is read as "low σ, toward causality" and long wavelength as "high σ, toward mass". The false-colour assignment (blue for F090W, red for F444W) is read as "tracking the σ gradient without naming it". The colour assignment is the ordinary chromatic ordering (shortest wavelength is rendered bluest) and is chosen by convention; no σ is involved. The wavelength ↔ σ mapping is unspecified (open thread: which filters correspond to which faces; [10](10_jwst_engine.md) for the filters' radial coordinate r, a linear map of λ).
+- **Vera Rubin (LSST).** Six bands (ugrizy) in increasing wavelength; for tens of billions of objects, a σ-face assignment, a buoyancy ratio and a deviation metric would be returned by a "transversal" that moves the terms to the data rather than the data to the terms. The survey scale quoted (60 PB, 40·10⁹ objects) is as recalled and not re-checked; it is a plan for a computation, and none has been run.
 
-60 PB of data in 6 photometric bands (ugrizy) mapping to increasing wavelength → increasing σ.
+## 7. Navier–Stokes as a corollary  `CONJECTURE`
 
-The Vera Rubin transversal produces, for 40 billion objects:
-- σ-face assignment per object
-- J_ratio (buoyancy: observed vs. expected luminosity at σ=½)
-- Deviation metric (how far from neutral buoyancy)
+The page: Navier–Stokes drops the imaginary components, reducing 𝕊¹⁶ to ℝ¹ and
+degenerating the metric, so the singularity "is the metric degenerating";
+restoring the components removes it, and "the problem was always about the
+wrong dimensional frame". This repeats [33](33_gyroscope_compressibility.md) §5 and
+[106](106_the_navier_stokes_problem.md), at the same standing: a proposal, not a
+regularity proof, and not a solution of the Clay problem.
 
-This is the largest HSR computation ever performed on observational data. The data never moves. The terms (the bin, the metric) go to the data. The transversal (the σ-face map of the observable universe) comes back.
+## 8. Paper assignments and open threads
 
----
+The assignments of the earlier page (D-P introduction and §§2, 5–8; D-M §§3–4;
+D-CS §2) refer to the 2026-06 plan ([26](26_TODO_and_roadmap.md) §1) and are
+not current. Open threads, with the §2 caveat on the first:
 
-## 7. Navier-Stokes (Wiki/33 Connection)
+- formalise "ξ(s) = ξ(1−s) as a Lorentz transform" (a reflection cannot be an SO(1,1) rotation: needs a different statement);
+- write the HSR metric tensor explicitly in sedenion coordinates;
+- decide whether d* and c are "the same object at different scales" (which d*);
+- the JWST σ-face map, filter by filter;
+- the Navier–Stokes argument written out as a regularity statement;
+- `probe.py` as the computational coordinate transform.
 
-Navier-Stokes removes the imaginary component. In HSR terms: reducing 𝕊¹⁶ → ℝ¹. Losing 15 dimensions of the hypercomplex metric. The metric becomes degenerate (g → ∞ at finite scale) because there is no spectral structure left to maintain the invariant.
+## 9. Related pages
 
-The singularity is not a mathematical mystery. It is the metric degenerating because the HSR structure was stripped down to ℝ¹.
-
-**Resolution:** restore the imaginary components (restore 𝕊¹⁶ from ℝ¹) → the metric is no longer degenerate → ∇·u = 0 is preserved → no singularity.
-
-This is Clay Millennium Problem #3 (Navier-Stokes) as a corollary of HSR. The problem was always about the wrong dimensional frame.
-
----
-
-## 8. Paper Assignments
-
-| Result | Paper |
-|--------|-------|
-| SR→GR→Spectral Relativity hierarchy | D-P introduction |
-| Functional equation as Lorentz transform | D-M §3 |
-| RH as Lorentz invariance of spectral space | D-M §4 |
-| d* as HSR invariant, σ-face as metric | D-P §2 |
-| Zero divisors as metric singularities / BH | D-P §5 (connects to D15 white hat) |
-| JWST as HSR in action | D-P §6 |
-| Vera Rubin transversal | D-P §7 |
-| Navier-Stokes as corollary of HSR | D-P §8 |
-| APISniff SR / PTorrent GR / HSR | D-CS §2 (computational instantiation) |
-
----
-
-## 9. Open Threads
-
-- [ ] Formalise the Spectral Relativity Lorentz transform (ξ(s)=ξ(1-s) as SO(1,1) rotation)
-- [ ] Write the HSR metric tensor explicitly in sedenion coordinates
-- [ ] Connect d* to the SR invariant c — are they the same object at different scales?
-- [ ] JWST σ-face map: which filters map to which σ-faces precisely?
-- [ ] Navier-Stokes resolution: write the full argument from HSR → Clay submission appendix
-- [ ] PTorrent probe.py as the computational HSR coordinate transform — implement
+[10 JWST engine](10_jwst_engine.md) · [17 A_fermat · Ω_ζΣ · d*](17_alpha_omega_d_star.md) ·
+[25 Sedenion manual](25_sedenion_manual.md) · [33 Gyroscope and compressibility](33_gyroscope_compressibility.md) ·
+[35 Frame dragging and BEC vortices](35_frame_dragging_bec_vortices.md)

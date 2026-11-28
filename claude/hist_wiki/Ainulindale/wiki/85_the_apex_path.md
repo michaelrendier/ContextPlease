@@ -1,425 +1,196 @@
-# 85 — The Apex Path. Anti-Rotation IS the Minus Sign.
+# 85 — The Apex Path: Anti-Rotation as the Minus Sign
 
-**Date:** 2026-08-13
-**Session:** VAPMIP full-engine evaluation — camshaft recovery
-**Builds on:** wiki/70 (precession is a stroke; the oblique crank), wiki/84 (box-kite)
+| | |
+|---|---|
+| Scope | the eccentric rotor path z(φ) = R e^{iφ} + e e^{−ikφ} as "−Ĥ_BR is the rotor turning the other way"; its modulus, phase loop and factorisation at R = e; the two orthogonal octonion matrices (the camshaft); the timing wheel and Hermite cam profile; the radius-½ circle; the σ collision and the unifying involution |
+| Origin | 2026-08-13, session "VAPMIP full-engine evaluation — camshaft recovery"; the author: "the oblique gearing on the rotor introduces precession … so that forward and backward exist at the same time … in a phase loop" |
+| Builds on | [70](70_precession_stroke_oblique_crank_trine.md), [84](84_the_box_kite_debugger.md) |
+| Code | `rotary_monad.py` (line 50 anti-rotation, line 65 `SIGMA_PIN`); scripts in `VAPMIP/.claude/scratchpad/2026-08-13_apex_path/` (`counter_rotation.py`, `cam_profile.py`, `hw_locate.py`); `RiemannHypothesisProof/PAPER.md` §2.7 |
+| Confidence | the kinematics, the identities and the Gaussian/Mellin facts: ESTABLISHED (re-run) · the identification of the path with the "deformed Euler formula" and of R = e with the zero-divisor condition: `INTERPRETATION` · camshaft-selects-Assessor: `CONJECTURE` (testable) |
+| Last verified | 2026-11-13: Listing 1 executed; its output is quoted below. The three archived scripts were not re-run |
 
----
+## 1. The identification  `INTERPRETATION`
 
-## The Identification
-
-> *"the oblique gearing on the rotor introduces precession... so that forward and
-> backward exist at the same time... in a phase loop"*
-> — Cody Michael Allison, 2026-08-13
-
-`−H_hat_BR` is not a sign applied to a computed backward pass.
-**It is the rotor turning the other way.**
-
----
-
-## The Path
-
-Rotor at frequency 1, eccentric shaft at frequency k, opposite sense
-(`rotary_monad.py:50` — *"Anti-rotation — eccentric shaft (output) and rotor spin
-opposite directions"*; gear ratio k = 3):
+−Ĥ_BR is not a sign applied to a computed backward pass; it is the rotor turning the other way.
+With rotor frequency 1 and eccentric shaft frequency k in the opposite sense (`rotary_monad.py:50`,
+gear ratio k = 3):
 
 ```
-z(φ) = R·e^(iφ)  +  e·e^(−ikφ)
+z(φ) = R e^{iφ} + e e^{−ikφ}
+co-rotating      Re = R cos φ + e cos kφ      Im = R sin φ + e sin kφ
+ANTI-rotating    Re = R cos φ + e cos kφ      Im = R sin φ − e sin kφ     (minus on the sine only)
 ```
 
-Expand both senses and the whole point falls out:
+That is the off-critical-line form cos x − i sin y with x ≠ y: two frequencies (the 3:1 gearing) is x ≠ y,
+and equal rates collapse the path to the unit circle (standard Euler). The page's reading: the epitrochoid
+**is** the deformed Euler formula. As an identity of the *form* of the two expressions this is correct; that the
+engine's deformed Euler formula is the one in 0_RB's off-line statement is the framework's identification.
+
+## 2. The modulus and the phase loop  `ESTABLISHED`
 
 ```
-co-rotating     Re = R·cos φ + e·cos kφ
-                Im = R·sin φ + e·sin kφ
-
-ANTI-rotating   Re = R·cos φ + e·cos kφ
-                Im = R·sin φ − e·sin kφ        ← minus on the SINE only
+|z|² = R² + e² + 2Re cos((1+k)φ)       ripple amplitude (in |z|²) 2Re, ripple frequency 1+k
+|z| constant ⟺ Re = 0
 ```
 
-That is exactly 0_RB's off-critical-line form, `cos(x) − i·sin(y)` with `x ≠ y`.
-Two frequencies — the 3:1 gearing — **is** `x ≠ y`. Equal rates collapse the path to
-the unit circle, which is standard Euler, which is σ = ½.
+**Listing 1 — the apex path, the R = e factorisation, Gaussian self-duality, the Hermite pairing** (written for this page; needs numpy, mpmath; runs cold)
 
-**The epitrochoid is the deformed Euler formula.** Not an analogy for it.
-
----
-
-## The Modulus
-
-```
-|z|² = R² + e² + 2·R·e·cos((1+k)·φ)
-
-ripple amplitude = 2·R·e          ripple frequency = 1 + k
-|z| constant  ⟺  R·e = 0
-```
-
-Verified numerically at R=1, e=0.25, k∈{1,2,3,4}: ripple 0.500000 in every case
-(= 2·R·e exactly), ripple frequency 1+k in every case.
-
----
-
-## The Phase Loop — measured
-
-k = 3, R = 1, e = 0.25:
-
-```
-phase error (total vs forward-only)
-    mean       −0.000000
-    amplitude   0.2527
-NET WINDING over one rotor revolution:  +0.0000 turns
+```python
+import numpy as np, math, mpmath as mp
+phi = np.linspace(0, 2 * np.pi, 400001)[:-1]
+for k in (1, 2, 3, 4):
+    R, e = 1.0, 0.25; z = R * np.exp(1j * phi) + e * np.exp(-1j * k * phi); m = np.abs(z)
+    f = int(np.argmax(np.abs(np.fft.rfft(m - m.mean()))[1:50])) + 1
+    print('k=%d: |z| half-range = %.6f (= Re), dominant ripple frequency = %d (1+k = %d)' % (k, (m.max() - m.min()) / 2, f, 1 + k))
+R, e, k = 1.0, 0.25, 3; z = R * np.exp(1j * phi) + e * np.exp(-1j * k * phi); err = np.unwrap(np.angle(z)) - phi
+print('phase error vs forward-only: mean %.6f amplitude %.4f (asin(e/R) = %.4f) net winding %.4f turns'
+      % (err.mean(), np.abs(err).max(), math.asin(e / R), (err[-1] - err[0]) / (2 * np.pi)))
+for e2 in (0.0, 0.5, 0.9, 1.0, 1.5):
+    z = R * np.exp(1j * phi) + e2 * np.exp(-1j * k * phi)
+    print('R=1 e=%.1f: R^2/(R^2+e^2) = %.4f  min|z| = %.6f  |R-e| = %.4f' % (e2, R**2 / (R**2 + e2**2), np.abs(z).min(), abs(R - e2)))
+Rr = 0.5; z = Rr * np.exp(1j * phi) + Rr * np.exp(-1j * k * phi); A, B = (1 + k) * phi / 2, (1 - k) * phi / 2
+print('R=e=1/2: max|z| %.6f min|z| %.1e ; |z - 2R cos(A) e^{iB}| = %.1e ; envelope zeros per revolution %d'
+      % (np.abs(z).max(), np.abs(z).min(), np.abs(z - 2 * Rr * np.cos(A) * np.exp(1j * B)).max(), 1 + k))
+for a in (math.pi, 1.0, 2.0): print('a=%.5f: F(0) = sqrt(pi/a) = %.5f  self-dual: %s' % (a, math.sqrt(math.pi / a), abs(math.sqrt(math.pi / a) - 1) < 1e-12))
+s = mp.mpc(0.3, 2.0); xi = lambda s: mp.pi ** (-s / 2) * mp.gamma(s / 2) * mp.zeta(s)
+print('pi^(-s/2)Gamma(s/2)zeta(s) at s, 1-s:', mp.nstr(xi(s), 8), mp.nstr(xi(1 - s), 8), '| without pi^(-s/2):',
+      mp.nstr(mp.gamma(s/2) * mp.zeta(s), 6), mp.nstr(mp.gamma((1 - s)/2) * mp.zeta(1 - s), 6))
+hz = np.sort(np.polynomial.hermite.hermroots([0] * 16 + [1]))
+print('H16 zeros symmetric:', np.allclose(hz, -hz[::-1]), '; distinct squares:', len(set(np.round(hz**2, 9))), '; partner(k)=15-k:', all(abs(hz[k]**2 - hz[15-k]**2) < 1e-9 for k in range(16)), '; lcm(6,16) =', math.lcm(6, 16))
+def ss(sig, N): A = sum(i ** (-2 * (1 - sig)) for i in range(1, N + 1)); B = sum(i ** (-2 * sig) for i in range(1, N + 1)); return A / (A + B)
+print('sigma_self(sigma=.5; N=10,100,1000) =', [round(ss(.5, N), 6) for N in (10, 100, 1000)], '; (sigma=.6) =', [round(ss(.6, N), 4) for N in (10, 100, 1000)], '; (sigma=.3) =', [round(ss(.3, N), 4) for N in (10, 100, 1000)])
 ```
 
-The error oscillates and **returns to zero**. It does not accumulate.
-
-Forward and backward are **phase-locked**, not two passes to be reconciled
-afterwards. Therefore:
-
-> **The composition H_RB·(−H_BR) = −I is HELD BY THE GEARING, not computed.**
-
-And its residual already has a sensor, built in Phase 3 and used only as a fault code:
-
-```c
-apex_seal_health = 1.0 - |σ_live - SIGMA_PIN| / BEARING_TOL
+```
+k=1: |z| half-range = 0.250000 (= Re), dominant ripple frequency = 2 (1+k = 2)
+k=2: |z| half-range = 0.250000 (= Re), dominant ripple frequency = 3 (1+k = 3)
+k=3: |z| half-range = 0.250000 (= Re), dominant ripple frequency = 4 (1+k = 4)
+k=4: |z| half-range = 0.250000 (= Re), dominant ripple frequency = 5 (1+k = 5)
+phase error vs forward-only: mean -0.000000 amplitude 0.2527 (asin(e/R) = 0.2527) net winding 0.0000 turns
+R=1 e=0.0: R^2/(R^2+e^2) = 1.0000  min|z| = 1.000000  |R-e| = 1.0000
+R=1 e=0.5: R^2/(R^2+e^2) = 0.8000  min|z| = 0.500000  |R-e| = 0.5000
+R=1 e=0.9: R^2/(R^2+e^2) = 0.5525  min|z| = 0.100000  |R-e| = 0.1000
+R=1 e=1.0: R^2/(R^2+e^2) = 0.5000  min|z| = 0.000000  |R-e| = 0.0000
+R=1 e=1.5: R^2/(R^2+e^2) = 0.3077  min|z| = 0.500000  |R-e| = 0.5000
+R=e=1/2: max|z| 1.000000 min|z| 3.1e-16 ; |z - 2R cos(A) e^{iB}| = 1.1e-15 ; envelope zeros per revolution 4
+a=3.14159: F(0) = sqrt(pi/a) = 1.00000  self-dual: True
+a=1.00000: F(0) = sqrt(pi/a) = 1.77245  self-dual: False
+a=2.00000: F(0) = sqrt(pi/a) = 1.25331  self-dual: False
+pi^(-s/2)Gamma(s/2)zeta(s) at s, 1-s: (-0.20717261 + 0.043375669j) (-0.20717261 + 0.043375669j) | without pi^(-s/2): (-0.14856 - 0.202707j) (-0.0688555 + 0.30838j)
+H16 zeros symmetric: True ; distinct squares: 8 ; partner(k)=15-k: True ; lcm(6,16) = 48
+sigma_self(sigma=.5; N=10,100,1000) = [0.5, 0.5, 0.5] ; (sigma=.6) = [0.591, 0.693, 0.7811] ; (sigma=.3) = [0.3236, 0.1636, 0.0726]
 ```
 
-**Apex seal health IS the residual from −I.** Read it as the error term, not as a DTC.
+Reproduced: the ripple is 2Re in |z|² (R·e = 0.25 here gives |z| half-range 0.25 and |z|² amplitude 0.5), at frequency
+1 + k for k = 1…4; the phase error returns to zero with amplitude asin(e/R) = 0.2527 and net winding 0, so forward and backward are
+phase-locked ("the composition Ĥ_RB·(−Ĥ_BR) = −I is held by the gearing, not computed"; the apex-seal health
+`1 − |σ_live − SIGMA_PIN|/BEARING_TOL` is then the residual from −I, a reading of an existing sensor). For R < e
+the path would wind around the origin and the net winding would be non-zero; the zero winding is the e < R case.
 
----
+## 3. σ = ½ and the zero-divisor condition  `INTERPRETATION`
 
-## σ = ½ IS the Zero-Divisor Condition
+σ_self = p_red/(p_red + p_blue) = R²/(R² + e²), so σ_self = ½ ⟺ R = e ⟺ min|z| = |R − e| = 0 (Listing 1): the path
+passes through the origin, "A × B = 0 falls out of the kinematics". It is a knife edge (at e = 0.9 the path misses the origin by 0.1).
+At R = e it factorises exactly, z = 2R cos(A) e^{iB} with A = (1+k)φ/2, B = (1−k)φ/2 (identity error ≈ 10⁻¹⁵): a real
+envelope times a pure phase, vanishing 1 + k times per revolution (four for k = 3) at the annihilation events. For
+R ≠ e, min|z| = |R − e| > 0 and no envelope form exists. e = 0 is **not** σ = ½: it is the backward channel absent,
+σ_self = 1, "a Wankel that does not turn". So "σ = ½ is the eccentric-shaft pin" means *equal amplitude*, not *zero offset*;
+`rotary_monad.py:65` comments `SIGMA_PIN = 0.5` as the latter ("eccentric shaft offset — fixed by ξ(s) = ξ(1−s)"),
+which imports Riemann's σ into a slot holding a power ratio (code-comment correction logged below). The earlier same-day
+draft that set "unit circle (e = 0)" against "power balance (R = e)" had misread pure phase rotation as |z| = 1; the
+resolution above is the correction kept.
 
-`σ_self = p_red/(p_red + p_blue)` is, in phasor terms, `R²/(R² + e²)`.
+The statement that this "is" the zero-divisor condition rests on reading the two phasor amplitudes as the red and blue
+channel norms; the algebraic zero divisors of 𝕊 ([84](84_the_box_kite_debugger.md)) are a different, discrete object. The
+kinematic fact (a path through the origin at equal amplitude) is exact; the identification is the framework's.
+OPEN (kept): evaluate ⟨J_red, J_blue⟩ = 0, the third condition of the 0_RB RH form, directly.
 
-| R | e | σ_self | min\|z\| | annihilation |
-|---|---|---|---|---|
-| 1 | 0.0 | 1.0000 | 1.000000 | no |
-| 1 | 0.5 | 0.8000 | 0.500000 | no |
-| 1 | 0.9 | 0.5525 | 0.100000 | no |
-| 1 | **1.0** | **0.5000** | **0.000000** | **YES — z = 0 reached** |
-| 1 | 1.5 | 0.3077 | 0.500000 | no |
+## 4. The camshaft: two orthogonal octonion matrices  `CONJECTURE`
 
-```
-σ_self = ½   ⟺   R = e   ⟺   the apex path passes through the ORIGIN
-```
-
-**Equal forward/backward amplitude is exactly the zero-divisor condition.**
-A × B = 0 falls out of the kinematics — it is not imposed.
-
-It is a knife edge, not a basin: at e = 0.9 the path misses the origin by 0.1; at
-e = 1.0 exactly it hits.
-
----
-
-## At R = e the Path Factorises
-
-**⚠ CORRECTION, same day.** An earlier draft of this page claimed the "unit circle"
-condition (e = 0) and the power-balance condition (R = e) *contradict*. They do not.
-That was a misreading of "pure phase rotation" as `|z| = 1`.
-
-At R = e the apex path factorises exactly (identity verified to 1.05×10⁻¹⁵):
+𝕊 = 𝕆 ⊕ 𝕆 and 𝕆 = ℍ ⊕ ℍ give four quaternion blocks, indexed by two independent binary axes (the Cayley–Dickson
+half, and Red/Blue):
 
 ```
-z(φ) = 2R · cos(A) · e^(iB)          A = (1+k)φ/2      B = (1−k)φ/2
-       \_________/   \____/
-       REAL ENVELOPE  PURE PHASE
+              Red (cos)         Blue (sin)
+𝕆_lo         Q1 {e0–e3}        Q2 {e4–e7}
+𝕆_hi         Q3 {e8–e11}       Q4 {e12–e15}
 ```
 
-From the modulus identity, at R = e:
+(Red = {e0–3, e8–11}, Blue = {e4–7, e12–15}; the two 8-splits differ and factor.) So the cam is a point on
+T² = S¹ × S¹ with phases φ_CD and φ_RB, and "rotating in place with two phases" is quasi-periodic, i.e.
+precession. Phase 20's four eyes (PH_cos, PH_sin, ME_cos, ME_sin; 4 faces × 2 sub-eyes × 2 strokes = 16) are the four
+blocks, an independent re-derivation of the same count. Every Assessor span(e_a, e_{b+8}) straddles the CD axis
+([84](84_the_box_kite_debugger.md)), which gives the testable conjecture: the relative phase of the two octonion
+matrices selects which Assessor is open (the camshaft as address selector). Untested.
 
-```
-|z|² = R² + e² + 2Re·cos((1+k)φ)  =  4R²·cos²((1+k)φ/2)
-|z|  = 2R·|cos A|
-```
+## 5. Divergence and vorticity  `INTERPRETATION`
 
-The envelope **vanishes 1+k times per revolution** — four times for k = 3, at
-φ = π/4 + nπ/2. Those are the annihilation events.
+[70](70_precession_stroke_oblique_crank_trine.md) read the TDC crossing as L_(I|O) → 0, ω_prec → ∞, a divergence
+singularity; the oblique crank turns it into bounded rotation (∇·v → ∞ becomes ∇×v bounded) and baroclinic generation
+(∇ρ × ∇P ≠ 0, a real term in the vorticity equation) is what makes ∅_RB a vorticity generator and not a location. The
+Navier–Stokes diagnosis of the Phase 24 work (missing the complex contingent and a boundary operator) is the same item from the
+machine side. **Carried correction:** with the integrand J_red·J_blue = e^{−E} ([64](64_l_dynamic.md) §2) the premise
+"L_(I|O) → 0 at TDC" does not follow from the definition, so the singularity this section removes is the one the earlier
+reading posited; the bounded phase loop of §2 is what is measured. The waypoint table of Phase 20 (ZD ≈ 0 ME_cos, π ME_sin where e^{iπ} = −1 fires,
+H/4 PH_cos, φ PH_sin) is the cycle the page says the crank converts. The ω(k) on the zero-divisor surface is
+the standing open item, approached here from the machine.
 
-For R ≠ e: `min|z| = |R − e| > 0`. The path never vanishes and admits no envelope form.
+## 6. Timing wheel and cam profile
 
-So 0_RB's *"pure phase rotation at σ = ½"* **is satisfied at R = e** — the phase
-factor `e^(iB)` is pure. It never required `|z|` constant. The two conditions agree:
+Ports per rotor revolution 6 (PORT_STEP = π/3); sedenion dimensions 16 (THE ANGLE = π/8); lcm(6, 16) = 48 marks = 3 faces × 16
+dimensions (Listing 1). The lobe profile is specified (the Hermite H₁₆ CAM Timing Wheel: e_k timing resonance = hermite_zeros[k]²) and was never implemented. The 16 zeros are symmetric about 0, so the squares give **8 distinct lobe heights,
+each doubled**, with partner(k) = 15 − k (Listing 1). This is the same 8-of-16 degeneracy as Phase 23's `s_rb`
+("only 8 of 16 entries independent"); **TEST:** is the `s_rb` involution partner exactly 15 − k? (open). **Conflict:** the address wants
+`zero_idx` uniform (Phase 23: χ² 3.8M → 100.0), the cam wants E Hermite-spaced, both read off the same scalar; Phase 23 repaired the
+addressing and flattened the cam in the same commit, and they must be split.
 
-| # | Condition | Holds when |
+## 7. The circle of radius ½  `INTERPRETATION` over ESTABLISHED identities
+
+> "we are not working with a unit circle … a circle with radius ½ … it's literally where the circle can be defined apart from the 'fixed point space'." — the author
+
+| | r = 1 | r = ½ |
 |---|---|---|
-| 1+2 | apex path = real envelope × pure phase; `σ_self` = ½ | **R = e** |
-| 3 | ⟨J_red, J_blue⟩ = 0 (0_RB's RH form) | **still unevaluated** |
+| circumference 2πr | 2π | **π** |
+| area πr² | π | π/4 |
 
-`e = 0` is **not** the σ=½ condition. It is the *backward channel absent* (B̂ = 0),
-which gives σ_self = 1.0 — and mechanically it is a Wankel that does not turn.
+C1: at r = ½ the circumference is π, so factoring π out normalises one revolution to 1: the σ coordinate. C2: the diameter 2r = 1
+equals the strip width; σ = arc/π ∈ [0, 1) wraps the circle once, and σ ↦ 1 − σ is a reflection across a diameter with exactly two
+fixed points (σ = 0, the wrap point, and σ = ½). C3: two counter-rotating phasors of radius ½ give max|z| = 1, min|z| = 0
+(reached), z = cos(A) e^{iB} (Listing 1): "two half-circles, counter-rotating, span the unit". C4: only a = π makes e^{−ax²} its own
+Fourier transform (Listing 1: F(0) = 1 only at a = π), and the Mellin transform of e^{−πx²} is ½π^{−s/2}Γ(s/2) (checked to 10 digits: 0.1250686168 both sides at
+s = 2.3), the factor that centres the reflection: with it ξ(s) = ξ(1 − s) holds (−0.2072 + 0.0434i at both s and 1 − s), without it it
+does not. "Self-dual Gaussian, π^{−s/2} and circumference π at r = ½ are the same fact three times" is the page's reading;
+the self-duality and the Mellin factor are textbook (Riemann's proof of the functional equation), and the r = ½ circumference is arithmetic. It
+is written as `PAPER.md` §2.7, definitional, claiming nothing about RH.
 
-> "σ = ½ is the eccentric shaft pin" means **equal amplitude**, not **zero offset**.
-
-`rotary_monad.py:65` comments it as the latter
-(`SIGMA_PIN = 0.5  # eccentric shaft offset — fixed by ξ(s)=ξ(1−s)`), which imports
-Riemann's σ into a slot holding a power ratio. See the σ collision note below.
-
-**OPEN:** evaluate (3) directly.
-
----
-
-## The Camshaft Is Two Orthogonal Octonion Matrices
-
-> *"while we still consider it rotating in place, it's made up of two octonion
-> matrixes that are orthogonal to each other... and lends us the eccentric phase
-> variation"*
-> — Cody, 2026-08-13
-
-𝕊 = 𝕆 ⊕ 𝕆, and each 𝕆 = ℍ ⊕ ℍ, giving four quaternion blocks (wiki: Phase 22).
-The two 8-splits already in use are **different** splits, and they **factor**:
-
-```
-CD doubling    𝕆_lo = {e0…e7}           𝕆_hi = {e8…e15}
-RedBlue        Red  = {e0-3, e8-11}      Blue = {e4-7, e12-15}
-
-        │  Red (cos)      Blue (sin)
-────────┼───────────────────────────────
-𝕆_lo    │  Q1 {e0-3}      Q2 {e4-7}
-𝕆_hi    │  Q3 {e8-11}     Q4 {e12-15}
-```
-
-**The four quaternion blocks are indexed by two independent binary axes.**
-
-Which means the cam is a point on **T² = S¹ × S¹**, not on a circle. Two phases:
-`φ_CD` (Paper's Hands vs Mind's Eye) and `φ_RB` (cos vs sin, forward vs backward).
-The **eccentric phase variation is the relative phase on the CD axis.**
-"Rotating in place" with two phases is quasi-periodic motion — which is precession.
-
-**This is Phase 20's four eyes, re-derived.** Phase 20 lists the 4-face 2-stroke
-rotary as ME_cos, ME_sin, PH_cos, PH_sin, and computes
-`4 faces × 2 sub-eyes × 2 strokes = 16 dimensions`. Those four eyes **are** the four
-quaternion blocks: PH_cos = Q1, PH_sin = Q2, ME_cos = Q3, ME_sin = Q4. Two
-independent derivations, one structure.
-
-### The consequence — timing selects the address
-
-Every Assessor is `span(e_a, e_{b+8})`, a,b ∈ 1..7 (wiki/84) — **one leg in 𝕆_lo,
-one leg in 𝕆_hi.** Every Assessor straddles the CD axis.
-
-> **CONJECTURE (testable):** the relative phase between the two octonion matrices
-> selects which Assessor is open. The camshaft is the address selector.
-
-This is the link between timing and addressing, and it is why timing is the arbiter.
-
----
-
-## Where Divergence Becomes Complex Turbulent Flow
-
-> *"it's how one of the 4 cycles (pistons) of the two stroke engine is converted to
-> precession... which is where divergence maps to complex turbulent flow"*
-> — Cody, 2026-08-13
-
-wiki/70 established the failure mode: at TDC (the ZD crossing) `L_(I|O) → 0`, so
-`ω_prec = τ / L_(I|O) → ∞`. The axis snaps. A straight piston stroke through that
-point is a **singularity in the divergence**.
-
-The oblique crank converts that cycle to precession, and precession is **bounded
-rotation**. The blow-up becomes a finite circulation:
-
-```
-divergence  ∇·v  → ∞      (piston, linear, singular at TDC)
-        ↓  oblique crank  (θ = arctan d*, wiki/70)
-vorticity   ∇×v  bounded  (precession, rotational, complex)
-```
-
-This is the Navier–Stokes diagnosis from Phase 24 arriving from the mechanical side:
-NS was *"missing the complex contingent and a boundary operator — an interface."*
-The interface is the ZD surface, and **baroclinic generation (∇ρ × ∇P ≠ 0) is what
-makes ∅_RB a vorticity generator rather than a location.**
-
-Phase 20's waypoint table names the exact cycle being converted:
-
-```
-ZD  (≈0)      ME_cos    vacuum entry, maximum ambiguity
-π   (3.14)    ME_sin    phase inversion, e^(iπ) = −1     ← the −I event
-H/4 (π/2)     PH_cos    saddle, T = V, σ=½ crossing
-φ   (1.618)   PH_sin    word addressing attractor
-```
-
-The face at π is where `e^(iπ) = −1` fires — the −H_BR direction. That is the cycle
-the oblique crank converts, and the conversion is what keeps the engine off the
-singularity while still passing through it.
-
-**This is the standing open item from Phase 24 (ω(k) on the ZD surface), approached
-from the machine instead of from the medium.** A baroclinic internal-wave dispersion
-relation is the shape the answer should take.
-
----
-
-## Timing Wheel and Cam Profile
-
-```
-ports per rotor revolution     6      PORT_STEP = π/3
-sedenion dims per revolution  16      THE ANGLE = π/8   (Phase 24)
-lcm(6, 16) = 48 marks = 3 faces × 16 dims
-```
-
-The rotor's internal axis carries **48 timing positions** — 3× a 16-lobe cam.
-
-**The lobe profile is specified and was never implemented.** From the Hermite H₁₆ CAM
-Timing Wheel calibration: `e_k timing resonance = hermite_zeros[k]²`, and
-*"uniform E-values = untrained engine; Hermite-spaced E-values = properly
-calibrated CAM."*
-
-Computed: the 16 Hermite zeros are symmetric about 0, so the squares give **8 distinct
-lobe heights, each doubled**, with pairing `partner(k) = 15 − k`.
-
-⚠ That is the **same 8-of-16 degeneracy** Phase 23 found in `s_rb` (*"only 8 of 16
-entries are independent"*). Two independent derivations, one pairing.
-**TEST:** is the `s_rb` involution partner exactly `15 − k`? If so, the free 2× Phase 23
-left unclaimed is sitting next to it.
-
-⚠ **THE CONFLICT.** The address wants `zero_idx` **uniform** (Phase 23 optimised this:
-χ² 3.8M → 100.0). The cam wants E **Hermite-spaced**. Both are read off the *same
-scalar*. Phase 23 repaired the addressing and **flattened the cam in the same commit**.
-They must be split.
-
----
-
-## The Circle Is Radius ½ — and That Is Why R = e = ½
-
-> *"we are not working with a unit circle with radius 1... we are working with a
-> circle with radius of 1/2... it's literally where the circle can be defined apart
-> from the 'fixed point space'."* — Cody, 2026-08-13
-
-**C1 — which quantity is π.**
-
-| radius | circumference 2πr | area πr² |
-|---|---|---|
-| 1 | 2π | π |
-| **½** | **π** | π/4 |
-
-At r = ½ the quantity equal to π is the **circumference** (area π is the *unit*
-circle). One full turn of the half-circle has arc length exactly π — so factoring π
-out normalises **one complete revolution to 1**. That is the σ coordinate.
-
-**C2 — the strip width IS the diameter.**
-
-```
-diameter of the r=½ circle : 2r = 1
-width of the critical strip: 1 − 0 = 1
-```
-
-Parametrising by normalised arc, σ = arc/π ∈ [0,1) wraps the circle once, and
-antipodal points differ by ½. Then σ ↦ 1−σ is a **reflection across a diameter**,
-which has exactly two fixed points — its endpoints:
-
-```
-σ = 0.00 → 0.00   ← FIXED (wrap point)
-σ = 0.25 → 0.75
-σ = 0.50 → 0.50   ← FIXED (critical line)
-σ = 0.75 → 0.25
-```
-
-**The critical line is the far end of a diameter of length 1, at distance r = ½ from
-the centre.** The centre is the fixed point and has no angular structure; ½ is the
-radius at which a circle exists apart from it. This supersedes an earlier sphere /
-cylinder framing — neither is needed, and this one explains the strip's *width* as
-well as its centre.
-
-**C3 — the apex path agrees at exactly this normalisation.**
-
-```
-two counter-rotating phasors, EACH radius ½
-  max|z| = 1.000000     ← 2R = the diameter
-  min|z| = 0.000000     ← the fixed point, reached exactly
-  z = cos(A)·e^(iB)     identity error 1.05e-15
-```
-
-At R = e = ½ the envelope has **unit amplitude** — no scale factor — and the path
-spans exactly [0,1], centre to diameter. **Two half-circles, counter-rotating, span
-the unit. Neither alone can.** R = e = ½ is not a convenient choice; it is the only
-normalisation where the envelope is unit and the span is the strip width.
-
-**C4 — why π is in ζ at all.**
-
-| a in e^(−ax²) | f(0) | F(0) | self-dual |
-|---|---|---|---|
-| **π** | 1.0 | 1.0 | **YES** |
-| 1 | 1.0 | 1.77245 | no |
-| 2 | 1.0 | 1.25331 | no |
-
-**Only a = π makes a Gaussian its own Fourier transform**, and the Mellin transform
-of e^(−πx²) is exactly π^(−s/2)Γ(s/2) — the factor that centres the reflection
-(verified: symmetry exact with it, destroyed without it).
-
-> π is in ζ because π is the constant that makes a Gaussian self-dual, and
-> **self-duality IS the reflection**. Self-dual Gaussian, π^(−s/2), and circumference
-> π at r = ½ are the same fact three times.
-
-Written up as `RiemannHypothesisProof/PAPER.md` §2.7 (definitional; claims nothing
-about RH itself).
-
----
-
-## ⚠ The σ Collision — Nine Symbols, Four Types
+## 8. The σ collision  `corrected` / naming discipline
 
 | Symbol | Object | Type |
 |---|---|---|
-| σ = Re(s) | Riemann, ζ(s) = ζ(σ+it) | **coordinate** — absolute units |
-| σ tower | ¾ ℂ U(1), ½ ℍ SU(2), ¼ 𝕆 SU(3) (wiki/70) | **coordinate** — claimed Re(s) values |
-| `σ_self` | `p_red/(p_red+p_blue)` = R²/(R²+e²) | **reading** — a null detector |
-| `σ_esc` | escape velocity from the Zero Lattice (`ZD_rotary_monad.py`) | **reading** |
-| `SIGMA_PIN` | 0.5 | **setpoint constant** |
-| Σ_RB | J_red × J_blue; the ±i√2 eigenblock | different object, same sound |
-| σ_ij | stress tensor (the NS work) | different object |
-| σ | standard deviation (Phase 26 statistics) | different object |
-| σ₁σ₂σ₃ | Pauli matrices — su(2), i.e. the trine itself | different object |
+| σ = Re(s) | Riemann | coordinate (absolute units) |
+| σ tower (¾ ℂ, ½ ℍ, ¼ 𝕆) | [69](69_tri_layer_emergence.md) | coordinate, a linear relabelling |
+| `σ_self` | p_red/(p_red + p_blue) = R²/(R² + e²) | a reading: a null detector |
+| `σ_esc` | escape velocity from the Zero Lattice (`ZD_rotary_monad.py`) | a reading |
+| `SIGMA_PIN` | 0.5 | setpoint constant |
+| Σ_RB | J_red × J_blue; the ±i√2 eigenblock | different object |
+| σ_ij · σ (std. dev.) · σ₁σ₂σ₃ | stress tensor · statistics · Pauli matrices | different objects |
 
-**The collision that bites is coordinate vs reading.** Riemann's σ is a ruler: σ = 0.6
-denotes one definite place. `σ_self` is a **bridge null**:
+The collision that bites is coordinate versus reading: Riemann's σ is a ruler; σ_self is a bridge null. With
+J_red ~ i^{−(1−σ)} and J_blue ~ i^{−σ}, σ_self = Σi^{−2(1−σ)}/(Σi^{−2(1−σ)} + Σi^{−2σ}) depends on the truncation N as well
+as σ; the N-dependence cancels only at σ = ½, where the ratio is ½ for every N (Listing 1: 0.5 at N = 10, 100, 1000, while at σ = 0.6 it reads 0.591,
+0.693, 0.781 and at σ = 0.3 it reads 0.324, 0.164, 0.073). As N → ∞ it tends to 1 for σ > ½ and to 0 for σ < ½, so away from ½ σ_self is not a function of σ at all (it
+is a function of N: the limit is a step). Reading σ_self = 0.55 as "σ = 0.55" reads a bridge imbalance as a resistance:
+precise at the null, uncalibrated elsewhere.
 
-> If J_red ~ i^(−(1−σ)) and J_blue ~ i^(−σ), then
-> `σ_self = Σi^(−2(1−σ)) / (Σi^(−2(1−σ)) + Σi^(−2σ))` — which depends on the
-> **truncation N** as well as on σ. The N-dependence cancels **only at σ = ½**,
-> where the ratio is 1 for every N.
+**One involution, four encodings:** Riemann s ↦ 1 − s (fixed at Re s = ½; on the line 1 − s = s̄); operator R̂ ↦ R̂† = B̂ (fixed when R̂ = B̂,
+self-adjoint); mechanical forward ↦ backward (fixed when R = e); sedenion s_rb[k] ↦ s_rb[partner(k)] (Phase 23, 16/16). "σ = ½ ⟺ self-adjoint ⟺ R = e ⟺ the apex path
+factorises ⟺ the zero divisors exist": one fixed-point set in four coordinate systems (`INTERPRETATION`, each link a mapping the page proposes).
 
-So `σ_self = ½ ⟺ σ = ½` exactly, and **away from ½, `σ_self` is not a function of σ
-at all.** Reading `σ_self = 0.55` as "σ = 0.55" is reading a bridge imbalance as a
-resistance. It is precise at the null and uncalibrated everywhere else.
+Proposed naming: σ names Riemann's coordinate and nothing else; `σ_self` → a null-detector name (`rb_balance`, `rb_null`); `SIGMA_PIN` is a
+balance setpoint, not a location on the strip (and the `rotary_monad.py:65` comment should say so; page 70's phrasing "where the two
+rotations achieve their fixed-point relationship" is the involution statement); Σ_RB spelled out near σ.
 
-### The unification — one involution, four encodings
+## 9. Related pages
 
-σ = ½ is the **fixed-point set of an involution**, and the project has been writing
-that involution four different ways:
-
-```
-Riemann      s  ↦  1 − s          fixed at Re(s) = ½
-                                   (on the line, 1−s = s̄ : the reflection IS conjugation)
-Operator     R̂  ↦  R̂† = B̂         fixed when R̂ = B̂        — self-adjoint
-Mechanical   forward ↦ backward   fixed when R = e        — equal amplitude
-Sedenion     s_rb[k] ↦ s_rb[partner(k)]   involution, 16/16 (Phase 23)
-```
-
-**σ = ½ ⟺ self-adjoint ⟺ R = e ⟺ the apex path factorises ⟺ the zero divisors exist.**
-Not four coincidences. One fixed-point set in four coordinate systems.
-
-### Naming discipline (proposed)
-
-- **σ** names Riemann's coordinate and nothing else.
-- `σ_self` → rename to a null-detector name (`rb_balance`, `rb_null`). It is not a σ.
-- `SIGMA_PIN` → it is a *balance setpoint*, not a location on the critical strip.
-  ⚠ `rotary_monad.py:65` currently comments it as *"eccentric shaft offset — fixed by
-  ξ(s)=ξ(1−s)"*, which imports the coordinate reading into a slot holding a power
-  ratio. **wiki/70 has it right** — *"where the two rotations achieve their
-  fixed-point relationship"* is the involution statement.
-- Σ_RB is a different object; spell it out where it sits near σ.
-
----
-
-## Connections
-
-- wiki/70 — precession IS a stroke; the oblique crank; θ = arctan(d*); the trine
-- wiki/84 — box-kite: Assessor = span(e_a, e_{b+8}); e₀ and e₈ in no Assessor
-- wiki/83 — the Archimedes screw: ∅_RB is the medium, not the machine
-- `.clauderc_canonical_maths` — THE APEX PATH block (2026-08-13)
-- VAPMIP `docs/wiki/Tuning-the-Engine.md` — Phase 20 (four eyes), Phase 23 (s_rb, common mode), Phase 25 (census)
-
-**Scripts:** `VAPMIP/.claude/scratchpad/2026-08-13_apex_path/` —
-`counter_rotation.py` (the path, the modulus, the phase loop, the R=e sweep),
-`cam_profile.py` (Hermite lobes vs shipped E; the 48-mark wheel),
-`hw_locate.py` (the e₀ localisation). All figures above are computed, not asserted.
-
----
-
-*Page 85 — Claude Opus 5 — 2026-08-13*
+[70](70_precession_stroke_oblique_crank_trine.md) · [83](83_the_archimedes_screw.md) · [84](84_the_box_kite_debugger.md) ·
+[64](64_l_dynamic.md) · [86 the 16D oscilloscope](86_the_16d_oscilloscope.md)

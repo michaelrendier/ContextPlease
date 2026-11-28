@@ -11,3 +11,12 @@
 **Labels.** Lensing algebra ESTABLISHED (Kaiser & Squires 1993; Seitz & Schneider 2001; Bartelmann & Schneider 2001). Pointings-as-probes ePIE reading and modulus variant: THEORETICAL:CALCULATED. A link between spin-2 shear and J₂ / 0_RB is a hypothesis, untested.
 
 **Targets.** Euclid DR1-Foundation (released 2026-11-12) covers MACS J0416 only among 20 tested lens fields; JWST has no polarimeter, so the polarization field must come from radio / HST polarizers / SOFIA / Planck. See `RiemannHypothesisProof` primer `PRIMER_2026-11-12_ENGINE_PAUSE_ALL_FINDINGS.md` for the RHP side and the browser page of candidates (session scratchpad).
+
+## Verification, 2026-11-13
+
+`tests/test_ptycho_weak_lensing.py` (with `tests/test_addition_matrix.py`): 18 passed. The synthetic figures above (1e-3, 1.5e-4, 4e-16) are the notebook's recorded output and were not individually re-derived in this pass.
+
+
+## Pixels to shear (2026-11-28, ValaQuenta engine version 0.2)
+
+`ValaQuenta/modules/ptycho_weak_lensing/shapes.py`: the PSF from stars, PSF-forward-modelled galaxy shapes, simulation of sheared galaxies, rotated-pair calibration (m, c), PSF leakage; its catalogue goes straight into `ks_map`. Cody's requirement (2026-11-27): ptychography maps the dark matter, so weak lensing is required, and where no weak-lensing catalogue exists it is built from the data. Record page: `ValaQuenta/wiki/ptycho_weak_lensing.md`.

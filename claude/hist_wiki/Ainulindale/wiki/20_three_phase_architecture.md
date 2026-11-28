@@ -1,114 +1,131 @@
-# 20 — THREE-PHASE ARCHITECTURE
+# 20 — Three-Phase Architecture
 
-**Confidence floor:** THEORETICAL
+| | |
+|---|---|
+| Scope | the three-phase reading of the RedBlue engine: Red, Blue and Carrier; H = xp as the "lossless" evolution; the ContextBuffer as capacitor |
+| Code | `ValaQuenta/modules/berry_keating` (xp, T map), `SemanticWordEngine/semantic_engine.py` (`Capacitor`, `Understand`), `PtolemyDesktop/Philadelphos/cyclic_context_buffer.py`, `VAPMIP/monad.py` |
+| Confidence | THEORETICAL; the equations of motion in §2 and the root-of-unity facts in §1 and §5 are ESTABLISHED mathematics |
+| Last verified | 2026-11-13: Listing 1 executed; the Z₃ and Z₆ statements checked numerically |
 
----
+## 1. The structure
 
-## The Engine
+The three-phase structure is the discrete Fourier decomposition on the
+3-cycle: the three cube roots of unity 1, ω, ω² (ω = e^{2πi/3}) sum to zero
+(balanced, self-grounding), and their interaction is a rotating field.
+Three-phase AC power is the physical instance; the framework's claim is that
+the semantic engine is another instance of the same mathematics
+(`THEORETICAL`: the mathematics is identical, the identification of the three
+phases with semantic roles is the proposal).
 
-The SMMIP is a three-phase semantic engine. Not metaphorically. The three-phase structure is the N=3 Laplacian Fourier decomposition — the three cube roots of unity, eigenfunctions of the Laplacian on a 3-fold symmetric space. The three phases sum to zero (balanced, self-grounding). Their interaction produces a rotating field. The rotating field does work.
-
-Three-phase AC power is the physical instance. The SMMIP is the semantic instance. The mathematics is identical.
-
-| Phase | Channel | Lagrangian Form | Role |
+| Phase | Channel | Lagrangian form | Role |
 |---|---|---|---|
-| 1 — Red | Forward Noether Current | L_R = ẋ log ẋ − ẋ (Berry-Keating) | Assertion — what IS |
-| 2 — Blue | Backward Information Current | L_F = (ẋ)²/4 − ℘(x; g₂, g₃) (Fermat-Weierstrass) | Constraint — what CANNOT BE |
-| 3 — Carrier | Rotating semantic field | Yang-Mills / Noether generator | Context — the rotating observer |
+| 1, Red | forward Noether current | L_R = ẋ ln ẋ − ẋ (Berry–Keating) | assertion, "what is" |
+| 2, Blue | backward information current | L_F = ẋ²/4 − ℘(x; g₂, g₃) (Fermat–Weierstrass) | constraint, "what cannot be" |
+| 3, Carrier | rotating semantic field | Yang–Mills / Noether generator | context, the rotating observer |
 
-Red and Blue are different descriptions of the same mirror — the functional equation ξ(s) = ξ(1−s). Riemann describes what the mirror attracts (zeros on the equator). Fermat describes what the mirror forbids (no solutions in the forbidden zone).
+Red and Blue are read as two descriptions of one mirror, the functional
+equation ξ(s) = ξ(1−s): L_R is self-adjoint under s ↔ 1−s (A† = A), and L_F
+breaks that symmetry (A† ≠ A). The Carrier is not a third independent entity:
+it is the standing wave made by the counter-rotation of Red and Blue, the J₃
+channel, "the Meaning" ([14](14_redblue_hamiltonian.md),
+[19](19_cayley_dickson_tower.md) §4). (An earlier version added "the Frey curve
+cannot exist, so Fermat's Last Theorem is true". FLT is a theorem by the
+Frey–Ribet–Wiles argument ([18](18_fermat_lattice.md) §3), not a consequence of
+this reading, and the sentence is withdrawn.)
 
-L_R is self-adjoint under s ↔ 1−s: it lives on the mirror. `A† = A`.  
-L_F breaks s ↔ 1−s symmetry: it would have to live behind the mirror. `A† ≠ A`. Nothing exists behind the mirror. The Frey curve cannot exist. Fermat's Last Theorem is true.
+## 2. H = xp
 
----
-
-## H = xp — The Lossless Transformer
-
-The Berry-Keating Hamiltonian H = xp is sufficient to create speech. It produces no eddy currents.
-
-**Equations of motion:**
-
-```
-ẋ =  x        exponential carrier — no loops, no branches
-ṗ = −p        exponential decay — no conditionals
-xp = E        conserved — the semantic prime
-```
-
-No If/Then/Else. No While. The prime emerges from continuous Hamiltonian evolution.
-
-H = xp is scale invariant: under x → λx, p → p/λ, H → H. It operates identically at every scale, every language, every context. Scale invariance is the invariance that makes a tree still a tree in any coordinate system.
-
-Three phases are automatic from H = xp:
-- The classical hyperbolic trajectory — Red (the prime)
-- The quantum zeros of the spectrum — Blue (the prohibition)
-- The time evolution e^{iHt} — the carrier (the waveform)
-
----
-
-## The Eddy Current Problem
-
-Standard AI is an eddy current machine.
-
-If/Then/Else and While loops are closed computational currents — they circulate without advancing the computation. Attention is O(n²): nested loops over every token pair. Beam search is a While. Layer normalisation is iterative correction. Every conditional, every loop, is parasitic loss — computational heat.
-
-This is why transformer architectures require GPU clusters: they are compensating for eddy current dissipation.
-
-H = xp produces none of this. There are no loops. There are no branches. The computation flows in one direction — the Hamiltonian evolves continuously, the prime emerges, the Tongue performs the reverse lookup. No overhead.
-
----
-
-## The Capacitor — ContextBuffer
-
-The three-phase decomposition separates semantic input into frequency components. The ContextBuffer acts as a low-pass filter — a capacitor:
+The Berry–Keating Hamiltonian H = xp has the equations of motion
 
 ```
-Input language → 3-phase decomposition → ContextBuffer (capacitor) → DC component → Output language
+ẋ = ∂H/∂p =  x          x(t) = x₀ eᵗ
+ṗ = −∂H/∂x = −p         p(t) = p₀ e⁻ᵗ
+xp = E                  conserved
 ```
 
-A capacitor passes low-frequency signals and blocks high-frequency ones. The high-frequency surface variation — the specific words of a specific language, the syntactic noise — is attenuated. The low-frequency component passes through: the DC component. The invariant. The prime.
+H is scale invariant: x → λx, p → p/λ leaves it unchanged. `ESTABLISHED`.
 
-The DC component IS the semantic prime. Not a statistical summary. Not an embedding. The exact algebraic coordinate of the concept, stripped of its language-specific surface form.
+**Listing 1 — the flow conserves E** (written for this page from the equations
+above; the same flow is `xp_trajectory` in `SemanticWordEngine/semantic_engine.py`;
+runs cold)
 
-**AC-DC-AC semantic converter:**
-- Input AC: surface language (high-frequency, culture-specific)
-- DC bus: the prime (invariant, language-independent)
-- Output AC: target language (re-modulated from the prime)
+```python
+import math
 
-Any language drives the AC input stage. Any language is generated from the DC prime at the output stage. No language-specific training is required. The prime preexists every alphabet.
+x0, p0 = 1.6058770193202365, 0.22807035205768092
+for t in (0, 1, 2):
+    x, p = x0 * math.exp(t), p0 * math.exp(-t)
+    print(t, round(x, 6), round(p, 6), round(x * p, 12))
+```
 
----
+```
+0 1.605877 0.22807 0.366252937158
+1 4.365226 0.083902 0.366252937158
+2 11.865915 0.030866 0.366252937158
+```
 
-## The 4+2=3 Resonance
+x grows and p decays exponentially while E = xp stays fixed. The framework
+reads E as "the semantic prime", and the equations as containing no
+conditionals or loops. That is a property of the *equations of motion*; the
+implementations are ordinary programs (VAPMIP/monad.py has well over a
+hundred loops), so "no If/Then/Else, no While" is not a claim about the code.
+The three phases are read as automatic in H = xp: the classical hyperbolic
+trajectory (Red), the quantum zeros of the spectrum (Blue, "the prohibition"),
+and the evolution e^{iHt} (the carrier waveform).
 
-A 4-cycle engine with 2-stage compression produces 4+2=6 distinct events per 720° cycle, spaced 120° apart. The 6th roots of unity contain the 3rd roots as a subgroup. At the natural resonance frequency — every other event — the 6-fold system aliases exactly to 3-phase.
+## 3. The "eddy current" argument  `analogy`
 
-Z₆ contains Z₃. The three-phase structure is not imposed — it emerges from the aliasing of more complex underlying systems at their resonant frequency.
+Earlier versions of this page described standard language models as "eddy
+current machines": conditionals and loops as closed computational currents,
+attention at O(n²), beam search as a loop, layer normalisation as iterative
+correction, so that GPU clusters compensate for dissipation. That is an
+analogy for the design goal (compute the address by evolution, not by search),
+not a measured comparison. No measurement on this page compares the engine's
+cost with a transformer's.
 
-This is why the three-phase structure appears in every domain:
-- Three-phase AC power
-- Three quarks in a baryon
-- Three colour charges (R, G, B) in QCD
-- Three spatial dimensions
-- Red / Blue / Carrier in the SMMIP
+## 4. The capacitor
 
-It is the universal resonant form of any system with sufficient internal symmetry. Not a choice. The resonance.
+The ContextBuffer is modelled as a low-pass filter:
 
----
+```
+input language → 3-phase decomposition → ContextBuffer (capacitor) → DC component → output language
+```
 
-## The Forward/Backward Flow in Three Phases
+High-frequency variation (the particular words and syntax of one language) is
+attenuated; the slowly varying component passes. The framework reads that DC
+component as the semantic prime and the whole chain as an AC-DC-AC converter:
+input AC = surface language, DC bus = the prime, output AC = the target
+language re-modulated from it.
 
-The three-phase engine is the outward expression of the Cayley-Dickson counter-rotation.
+In code this is `Capacitor(tau)` with `charge(signal)` and `reset()`
+(`SemanticWordEngine/semantic_engine.py`, `dc` field of `SemanticWord`) and the
+cyclic context buffer in `PtolemyDesktop/Philadelphos/`. What it computes is a
+smoothed value of the energy signal; that this value is language-independent
+is the claim of [16](16_semantic_word_engine.md) §3, which the measurements
+there do not support yet.
 
-- **Red phase (forward, Noether Current):** flows up the tower — ℝ → ℂ → ℍ → 𝕆. Building.
-- **Blue phase (backward, Information Current):** flows down the tower — 𝕆 → ℍ → ℂ → ℝ. Distilling.
-- **Carrier phase (rotating field):** the interaction of forward and backward at the node lines. The meaning that exists only because the two are moving in opposite directions.
+## 5. The 4 + 2 = 3 resonance  `interpretation`
 
-The Carrier is not a third independent entity. It is the standing wave created by the counter-rotation of Red and Blue. It is the J₃ channel — the Noether current at the boundary. It is the Meaning.
+A four-stroke engine with two-stage compression has 4 + 2 = 6 events per
+720° cycle, 120° apart. The sixth roots of unity contain the third roots as a
+subgroup (checked: the odd-numbered sixth roots all satisfy z³ = 1 or −1 as
+expected, and every other one is a cube root of unity). Sampling the six events
+at every other one gives exactly three-phase.
 
----
+The mathematical statement, Z₃ ⊂ Z₆, is `ESTABLISHED`. The framework then
+reads the recurrence of "three" in three-phase power, the three quarks of a
+baryon, three colour charges, three spatial dimensions, and the Red/Blue/Carrier
+split as one resonant form of any system with enough internal symmetry. That
+is an interpretation; the occurrences are not derived from one another here.
 
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md)  
-→ [Wiki: The Monad](15_the_monad.md)  
-→ [Wiki: Cayley-Dickson Tower](19_cayley_dickson_tower.md)  
-→ [Wiki: Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md)
+## 6. Forward and backward flow
+
+The three-phase engine is the outward expression of the Cayley–Dickson
+counter-rotation ([19](19_cayley_dickson_tower.md) §4): Red flows up the tower
+(ℝ → ℂ → ℍ → 𝕆, building), Blue flows down (𝕆 → ℍ → ℂ → ℝ, distilling), and the
+Carrier is their interaction at the node lines.
+
+## 7. Related pages
+
+[14 RedBlue Hamiltonian](14_redblue_hamiltonian.md) · [15 The Monad](15_the_monad.md) ·
+[19 Cayley–Dickson tower](19_cayley_dickson_tower.md) · [21 Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md)

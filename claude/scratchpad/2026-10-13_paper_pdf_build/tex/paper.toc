@@ -1,0 +1,81 @@
+\contentsline {section}{19 Dimensional Scalar WordNet Context Propagation}{2}{section*.2}%
+\contentsline {subsection}{Abstract}{2}{section*.3}%
+\contentsline {subsection}{1. The problem}{3}{section*.4}%
+\contentsline {subsection}{2. Notation, disambiguation, and install}{4}{section*.5}%
+\contentsline {subsubsection}{2.1 Notation}{4}{section*.6}%
+\contentsline {subsubsection}{2.2 Disambiguation --- the code came first, and how a citation says so}{4}{section*.7}%
+\contentsline {subsubsection}{2.3 A production note on C versus Python}{4}{section*.8}%
+\contentsline {subsubsection}{2.4 A note on the two machines}{5}{section*.9}%
+\contentsline {subsubsection}{2.5 The objects this paper uses, defined plainly}{5}{section*.10}%
+\contentsline {subsubsection}{2.6 Install}{6}{section*.11}%
+\contentsline {subsection}{3. ``The primes are the words''}{6}{section*.12}%
+\contentsline {subsubsection}{3.1 The address, copy-paste runnable, top to bottom}{7}{section*.13}%
+\contentsline {subsubsection}{3.2 The domain, measured on the live vocabulary}{8}{section*.14}%
+\contentsline {subsubsection}{3.3 A live bug, reproduced, not fixed}{9}{section*.15}%
+\contentsline {subsubsection}{3.4 The historic foothold --- the entrance to the freeway, not a verdict}{9}{section*.16}%
+\contentsline {subsubsection}{3.5 Related work --- the nearest ML precedent to ``one number per meaning''}{10}{section*.17}%
+\contentsline {subsection}{4. Why primes at all --- how we came to 313}{11}{section*.18}%
+\contentsline {subsubsection}{4.1 The Two Trees Engine}{11}{section*.19}%
+\contentsline {subsubsection}{4.2 Laurelin --- the factors domain}{11}{section*.20}%
+\contentsline {subsubsection}{4.3 Telperion --- the Riemann prime-zeta-zero tree}{12}{section*.21}%
+\contentsline {subsubsection}{4.4 The boundary itself}{12}{section*.22}%
+\contentsline {subsubsection}{4.5 Composite primes --- the closed alphabet}{13}{section*.23}%
+\contentsline {subsection}{5. Spelling → prime --- order, and the anagram collision}{14}{section*.24}%
+\contentsline {subsubsection}{5.1 The naive scheme, and where it breaks}{14}{section*.25}%
+\contentsline {subsubsection}{5.2 The fix --- position picks the base, the letter is the exponent}{14}{section*.26}%
+\contentsline {subsubsection}{5.3 Measured, not asserted --- live 30,000-word sample}{16}{section*.27}%
+\contentsline {subsubsection}{One honest note carried forward}{16}{section*.28}%
+\contentsline {subsubsection}{5.4 Related work --- collision-bounded compact encoding, elsewhere}{16}{section*.29}%
+\contentsline {subsection}{6. \texttt {monad3\_c.bin} --- built to carry the 19D WordNet relationships}{17}{section*.30}%
+\contentsline {subsubsection}{6.1 The WordNet box-kite table, built in C}{17}{section*.31}%
+\contentsline {subsubsection}{6.2 Folding into \texttt {monad3\_c.bin}}{17}{section*.32}%
+\contentsline {subsubsection}{6.3 \texttt {phon:}, in one line}{18}{section*.33}%
+\contentsline {subsubsection}{6.4 Not static}{19}{section*.34}%
+\contentsline {subsubsection}{6.5 The update mechanism itself, in C}{19}{section*.35}%
+\contentsline {subsection}{7. Reading \texttt {monad3\_c.bin}'s WordNet relationships}{19}{section*.36}%
+\contentsline {subsubsection}{7.1 Nineteen relations, one prime each}{20}{section*.37}%
+\contentsline {subsubsection}{7.2 Nineteen counts → one integer, exact --- and the real primality test underneath}{20}{section*.38}%
+\contentsline {subsubsection}{7.3 One integer → one real --- the gamma fold}{22}{section*.39}%
+\contentsline {subsubsection}{7.4 Combined with spelling --- one prime per word, both halves recoverable}{22}{section*.40}%
+\contentsline {subsubsection}{What this section is not}{23}{section*.41}%
+\contentsline {subsubsection}{7.5 Related work --- encoding a word's \emph {relational} context, elsewhere}{23}{section*.42}%
+\contentsline {subsection}{8. Cost, measured once}{23}{section*.43}%
+\contentsline {subsection}{9. The Pencil --- the Gamma-Radial Windspeed, and what it takes to run the box kite today}{24}{section*.44}%
+\contentsline {subsubsection}{9.1 The Gamma-Radial Windspeed, finalized}{24}{section*.45}%
+\contentsline {subsubsection}{9.2 The pencil, attached}{25}{section*.46}%
+\contentsline {subsubsection}{9.3 What the deformation actually does --- corrected twice, now honest}{26}{section*.47}%
+\contentsline {subsubsection}{9.4 \texttt {H}, conserved --- a Noether current, a real and partial result}{27}{section*.48}%
+\contentsline {subsubsection}{9.5 The crossing, precisely --- \texttt {J\_2}, not \texttt {J\_N}}{27}{section*.49}%
+\contentsline {subsubsection}{9.6 What runs today, in the current monad}{27}{section*.50}%
+\contentsline {subsubsection}{9.7 The seven ordered pairs, laid out --- and what they are made of}{28}{section*.51}%
+\contentsline {subsubsection}{9.8 How the seven ordered pairs differ from de Marrais's box kite}{30}{section*.52}%
+\contentsline {subsubsection}{What this section is not}{32}{section*.53}%
+\contentsline {subsection}{10. Conclusion --- what the scalar actually does, proven and open}{32}{section*.54}%
+\contentsline {subsubsection}{The claim this paper set out to prove}{32}{section*.55}%
+\contentsline {subsubsection}{What is genuinely working}{32}{section*.56}%
+\contentsline {subsubsection}{What needs work --- named honestly, not hidden}{32}{section*.57}%
+\contentsline {subsubsection}{The honest shape of it}{33}{section*.58}%
+\contentsline {subsection}{11. Direction of engineering research --- in development}{33}{section*.59}%
+\contentsline {subsubsection}{The Boxkite Catalog}{33}{section*.60}%
+\contentsline {subsubsection}{The Pencil's own open questions}{33}{section*.61}%
+\contentsline {subsubsection}{The Mind's Eye, and Paper's Hands, named properly}{34}{section*.62}%
+\contentsline {subsubsection}{The sentence constructor}{35}{section*.63}%
+\contentsline {subsubsection}{The A-Matrix Basin Windspeed}{35}{section*.64}%
+\contentsline {subsubsection}{Mind's Eye as a box kite}{35}{section*.65}%
+\contentsline {subsubsection}{A methodology note, for whoever picks this up next}{36}{section*.66}%
+\contentsline {subsection}{12. Provenance and attribution}{36}{section*.67}%
+\contentsline {subsubsection}{The labels}{36}{section*.68}%
+\contentsline {subsubsection}{How the code came first}{36}{section*.69}%
+\contentsline {subsubsection}{Provenance by component}{36}{section*.70}%
+\contentsline {subsubsection}{Licensing}{38}{section*.71}%
+\contentsline {subsubsection}{References}{38}{section*.72}%
+\contentsline {subsection}{13. Code appendix}{39}{section*.73}%
+\contentsline {subsubsection}{13.1 The notebooks --- documentation margins, not the source}{39}{section*.74}%
+\contentsline {subsubsection}{13.2 The build --- WordNet into the box kite, in C}{40}{section*.75}%
+\contentsline {subsubsection}{13.3 The read --- a word's address, in the current monad}{40}{section*.76}%
+\contentsline {subsubsection}{13.4 The Gamma-Radial Windspeed recovery, exact}{40}{section*.77}%
+\contentsline {subsubsection}{13.5b The seven ordered pairs and their grouping (added 2026-10-13)}{41}{section*.78}%
+\contentsline {subsubsection}{13.5 The box kite itself}{41}{section*.79}%
+\contentsline {subsubsection}{13.6 Reproduce}{41}{section*.80}%
+\contentsline {subsubsection}{A note from the model}{41}{section*.81}%
+\contentsline {subsubsection}{Changelog}{42}{section*.82}%

@@ -5,6 +5,20 @@
 
 ---
 
+## Status of this record, 2026-11-13  (added; the 2026-06-14 text below is unchanged)
+
+| Claim in the record | Tier | Check |
+|---|---|---|
+| The P1 chain: word → Horner base-95 integer → next prime p ≤ 65,537 → π(p) as zero index | ESTABLISHED (code) | Read in `VAPMIP/monad.py` lines 133–205 (file first committed 2026-05-19, `a2c8451`); the code reduces the hash mod 65,537, the text says mod 2¹⁶; the code's zero-index range is [1, 6542] and π(65,536) = 6,542 (re-computed), π(65,537) = 6,543 |
+| "Every word lives on σ = ½ by construction … by hash" | construction, not a test | The zeros γₙ are the objects hashed to; whether they lie on σ = ½ is the Riemann hypothesis, so the placement is a definition and not an experimental outcome. The hash is also **many-to-one** (6,542 addresses for an unbounded vocabulary), as [57](57_boundary_ascending.md) records |
+| "The 16 operator names self-organised to d*/σ½/D*=1 … Zero free parameters … It confirmed" | recorded; **not reproduced in this pass** | The run is not in the wiki and no listing is given here; the page's own words "either falsifies or confirms" are stronger than a single un-replicated run supports, and the claim should be read as `OPEN` until the names, the metric and a null (random names through the same hash) are shown together |
+| `persists` = +0.978 | recorded; not re-run | — |
+| "Memory is a geometric addressing problem … the prime hash is the proof by construction" | INTERPRETATION | A design argument for an address scheme, not a theorem about transformers |
+
+Authorship is stated by the document itself (Claude Sonnet 4.6, 2026-06-14); see [98](98_provenance_and_citations.md) for the seed ("primes are words", the author's) against the implementation.
+
+
+
 ## The Seed
 
 Michael Rendier stated: **primes are words.**

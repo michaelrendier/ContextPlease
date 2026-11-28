@@ -9,6 +9,30 @@
 
 ---
 
+## Audit of this evaluation, 2026-11-13  (added; the 2026-06-02 text below is unchanged and stays as the record of what was claimed)
+
+This file is a self-assessment by an earlier model session (Claude Code, Sonnet 4.6, 2026-06-02). It is a record of how the framework was *scored* then, and it is not a measurement. Re-checked against the code and by recomputation:
+
+| Item | Finding | Tier now |
+|---|---|---|
+| The Fisher sum | χ² = −2 Σ ln pᵢ = 115.77 for the nine listed p-values (page: 115.8) — **reproduced**; p(χ², df 18) = 2.6×10⁻¹⁶, z = 8.1 one-sided (page: "≈ 8.3σ") | arithmetic ESTABLISHED |
+| "Independence correction → effective df ≈ 14 → ~6.5σ" | **Does not follow.** Lowering the degrees of freedom of the same χ² *raises* the significance (p = 4×10⁻¹⁸, z = 8.6 at df 14). A dependency discount has to act on the p-values or the statistic, not on df; no such calculation is shown. The "6.5σ" is not derived | withdrawn |
+| Where the nine p-values come from | Measured from data: **one** (C4a, KS p = 1×10⁻⁴, SPARC). The others (C3, C11, C2, C8, C12, C1, C10) are assigned by the evaluator, as the file's own methodology note warns about the earlier table. C4b enters as p = 3×10⁻² "2.2σ", but §C4 reports its test as p = **0.794**, a *failure to reject* H₀ (a fit, not evidence against a null), so the Fisher row contradicts the file's own §C4 | the combined σ is not a measurement |
+| "6.5σ above the 5σ discovery threshold" | Particle-physics σ attaches to a pre-registered statistic with a null model. None of C1, C2, C3, C5–C12 has one here. The word "discovery" in the verdict is not supported | withdrawn |
+| C2, Noether ΔJ < 0.005 | The file itself says the code was written to conserve it; and the premise is retired: s ↦ 1 − s is a discrete involution, so there is no Noether current ([133](133_canonical_maths.md) §3). 3.7σ is an assigned number for a tautology | retired |
+| C1, σ = ½ "forced" | The file's own "single most important clarification" stands, and is stronger now: the placement on σ = ½ is a definition of the address space; the forced-σ algebra (h(s) = E(1 − 2s), one Newton step to ½) is elementary and holds for any E ≠ 0 | as in file |
+| C3, 16 operator names → d*/σ½/D* = 1 | Not reproduced here: the run, the criterion for "correct zone" and a null (random names through the same hash) are not shown anywhere in the wiki. The file's own "what would close the gap" is still open. A p = 6.3×10⁻⁵ was assigned, not computed | `OPEN` |
+| C11, piano / melancholy | **Reproduces** in `SemanticWordEngine/hyperwebster.py` (γ98 = 231.987235 and γ194 = 387.222890, σ = 0.5, E = 5.000 and 10.000). **But E is the mean token length**, so "E-ratio 2:1" is "melancholy has twice the letters of piano" (a fact about spelling), and the zero index is int((Σ ord mod 360)/360·N) + 1 with N = 200: a sum-of-character-codes hash into 360 buckets, so anagrams collide (*listen*, *silent*, *enlist* all give 164). Null measured on 4,000 dictionary words (15,996,000 ordered pairs): length ratio exactly 2 in 2.5 %; length ratio 2 **and** index ratio within 0.0204 of 2 in 0.051 % of pairs, so about 1 in 2,000, not 3.2×10⁻⁵, and on a 100,000-word dictionary such pairs number in the millions. A pair chosen after the fact among that many pairs is not evidence | reproduces; the significance is withdrawn |
+| C8, "Zipf's law IS the prime number theorem" | **Corrected:** Zipf ≠ PNT ([133](133_canonical_maths.md), [135](135_engine_findings_ledger.md)). The Zipf–Dirichlet-series connection is a heuristic link; the file's "3.5σ, well established" is not a statement about the identity as written | corrected |
+| C7, the circularity of the "derived constants" | The file is right and the point stands | as in file |
+| C4, SPARC | Quoted figures (cavity vs NFW 87/97, KS p = 1×10⁻⁴, P2 p = 0.794, P3 failed, P1 open with the wrong denominator) are the **record** of `AddPapers/DM_GalacticCavity/dark_matter_cavity.py`; they were not re-run in this pass. P3's failure (c predicted 4.07, observed 37.33) stays in the record. The target value 0.24600 is not d* = 0.24631 (the four d* values, [133](133_canonical_maths.md) §4) — the "disputed 0.24600" of the ledger | recorded, not re-run |
+| Engine table | Stale at 2026-11-13: "Sonification Engine (UniversalSynth) — specced, code not built" (UniversalSynth is now a repository); "Dark Matter / SPARC — full 175-galaxy run not done" contradicts §C4 of this same file | stale |
+| "The most coherent unified framework … not crackpot … submit D-CS first" | An evaluator's opinion in 2026; not a finding, and outside the standard the other wiki pages hold themselves to | opinion |
+
+**Reading rule.** Where this file and a re-run page disagree, the re-run page wins. The failed items stay: P3, the circular constants, and now the withdrawn 6.5σ.
+
+---
+
 ## Methodology Note — Why the Existing 13σ Is Overclaimed
 
 The existing SIGMA_VALUATION_FULL.md uses Fisher's χ² = −2 Σ ln(pᵢ) to combine p-values.

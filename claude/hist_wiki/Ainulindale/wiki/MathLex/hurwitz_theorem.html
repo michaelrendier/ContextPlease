@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Hurwitz Theorem · Ptolemy MathLex</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -83,6 +84,25 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">"|a|·|b| ="</span>, (octo_norm(a)*octo_norm(b)).round(<span class="c-num">4</span>))</span>
 <span class="code-line"><span class="c-fn">print</span>(<span class="c-str">"Hurwitz: only 4 normed div algebras exist over ℝ"</span>)</span></div><div class="cell-out-label">Out [<span>1</span>]:</div><div class="cell-out-body">|a|·|b| = 2.4495
 Hurwitz: only 4 normed div algebras exist over ℝ</div></div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">|a|·|b| = 3.4641
+Hurwitz: only 4 normed div algebras exist over ℝ</pre>|a| = √6 and |b| = √2, so |a|·|b| = √12 = 3.4641 (the code); the stated 2.4495 = √6. The cell also only multiplies two norms; it does not compute the product ab, so it does not test multiplicativity. The stated output is kept above as written.<div class="m-label" style="margin-top:10px">CORRECTED CELL (2026-11-13; ran as shown)</div><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;margin:6px 0;">import numpy as np
+def mul(a, b):                         # Cayley-Dickson product
+    n = len(a)
+    if n == 1: return a * b
+    h = n // 2; a1, a2, b1, b2 = a[:h], a[h:], b[:h], b[h:]
+    cj = lambda x: np.concatenate([x[:1], -x[1:]])
+    return np.concatenate([mul(a1, b1) - mul(cj(b2), a2), mul(b2, a1) + mul(a2, cj(b1))])
+rng = np.random.default_rng(1)
+for n, name in ((2, &quot;complex&quot;), (4, &quot;quaternion&quot;), (8, &quot;octonion&quot;), (16, &quot;sedenion&quot;)):
+    worst = max(abs(np.linalg.norm(mul(a, b)) - np.linalg.norm(a)*np.linalg.norm(b)) for a, b in (rng.normal(size=(2, n)) for _ in range(2000)))
+    print(f&quot;{name:10s} (dim {n:2d}): largest | |ab| - |a||b| | over 2000 random pairs = {worst:.2e}&quot;)
+e = lambda k: np.eye(16)[k]
+a, b = e(3) + e(10), e(6) - e(15)
+print(&quot;sedenion zero-divisor example: |a||b| =&quot;, round(np.linalg.norm(a)*np.linalg.norm(b), 4), &quot;, |ab| =&quot;, round(float(np.linalg.norm(mul(a, b))), 4))</pre><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--green);margin:6px 0;">complex    (dim  2): largest | |ab| - |a||b| | over 2000 random pairs = 3.55e-15
+quaternion (dim  4): largest | |ab| - |a||b| | over 2000 random pairs = 3.55e-15
+octonion   (dim  8): largest | |ab| - |a||b| | over 2000 random pairs = 5.33e-15
+sedenion   (dim 16): largest | |ab| - |a||b| | over 2000 random pairs = 7.75e+00
+sedenion zero-divisor example: |a||b| = 2.0 , |ab| = 0.0</pre></div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes</p><p>Hurwitz theorem is the theoretical limit on why Ptolemy's addressing uses octonions (8D) and not higher. 𝕆 is the last algebra where the norm is multiplicative — meaning semantic distances compose cleanly. Going to 16D breaks the distance metric.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Confusing Hurwitz's theorem with the classification of all finite-dimensional division algebras (Frobenius: only ℝ,ℂ,ℍ are associative).</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Thinking sedenions are a normed division algebra. They have zero divisors: e.g. (e₃+e₁₀)(e₆−e₁₅) = 0.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Forgetting that alternativity (weaker than associativity) is what 𝕆 satisfies: a(ab)=(aa)b and (ba)a=b(aa).</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="cayley_dickson_algebra.html">Cayley-Dickson Algebra →</a><a class="crosslink" href="dixon_algebra.html">Dixon Algebra →</a><a class="crosslink" href="clifford_algebra.html">Clifford Algebra →</a><a class="crosslink" href="moufang_identity.html">Moufang Identity →</a></div></div>

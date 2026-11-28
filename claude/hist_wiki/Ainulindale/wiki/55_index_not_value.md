@@ -1,207 +1,190 @@
-# 55 — THE INDEX CARRIES THE INFORMATION
+# 55 — "The index carries the information, not the prime value": tested
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-13
-**Status:** CASCADE CAPTURE — divergence as proper tool; index vs value; "it won't be stopping"
-**Predecessor:** [54 — Two Doublings](54_two_doublings_all_pathways.md), [50 — Vortex](50_vortex_quantizing_shear.md), [52 — L_(I|O)](52_l_dynamic_avoided_collaborator.md)
-**Cross-ref:** wiki/51 (J₂, Riemann/Fermat loop), wiki/48 (fixed point), ptol.c (P[16] prime array)
+| | |
+|---|---|
+| Status | **Cascade capture (2026-06-13); `CONJECTURE`. The engine written to test it (e12) passes, but its comparison is confounded; with matched controls the difference nearly disappears, and reversing the prime array shows that the dominant dimensions follow the prime *value*, not the index (§3). The thesis as stated is not supported by these tests** |
+| Code | `VAPMIP/engines/e12_index_not_value.py` and `_sedenion.py` (`geometry`, `project`, `P16`); Listing 1 |
+| Last verified | 2026-11-13: e12 run; Listing 1 executed from `VAPMIP/engines` |
 
----
+> *"The divergence was the proper tool for Fermat: not 'does it stop' but 'it won't be stopping'. The primes move around the circle; their number is immaterial to the information. The index carries the information, not the prime number."*
 
-> *"The divergence was the proper tool for Fermat — not 'does it stop' but 'it won't be stopping'.*
-> *The primes move around the circle. Their number is immaterial to the information.*
-> *The index carries the information. Not the prime number."*
+## 1. The statement
 
----
+The engine's 16-prime array is P16 = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
+47, 53} at k = 0…15. For the prompt "what should we call you" the active dimensions are
+k = 14 and k = 15: "not the primes 47 and 53 but the 15th and 16th dimensions". The prime
+value P[k] sets the frequency of the cosine probe in the Dirichlet projection,
 
-## 1. The Index, Not the Value
+x_k = Σ_i c_i · i^(−1/2) · cos(2πi / P[k]),
 
-The engine's 16-prime array:
+"a tuning parameter, the label on the spoke"; the sedenion algebra uses the *index* k
+(zero-divisor relationships, great-circle paths, coupling structure are properties of e₁₄,
+not of 47). "The information is in the index: the index is the address, the prime is the
+key."
 
-```
-P[16] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53}
-k:       0  1  2  3   4   5   6   7   8   9  10  11  12  13  14  15
-```
+## 2. The engine test and what is wrong with the comparison
 
-For the prompt "what should we call you" — active dimensions: k=14 and k=15.
+`e12` compares the geometry (the 16 raw projections) of six texts under a changed
+prime *value* and a changed *index assignment*, by cosine distance. Its output:
 
-Not: "the prime 47 and the prime 53 fired."
-**"The 15th and 16th dimensions fired."**
+| Perturbation | Mean cosine distance from the original |
+|---|---|
+| value shift P[k] → P[k+1] | 0.0860 |
+| index shuffle (same primes, one fixed permutation) | 0.4059 |
+| single swap e₀ ↔ e₁₅ (2 ↔ 53) | 0.2484 |
 
-The prime value P[k] sets the frequency of the cosine probe in the Dirichlet projection:
+and "PASS: the index carries more information than the value". **The perturbations are not
+matched.** The value change moves each prime to the next prime (a small relative change);
+the index change is one fixed, large permutation. Listing 1 compares like with like:
 
-```c
-x_k = Σ c_i · i^(-½) · cos(2πi / P[k])
-```
+| Perturbation (mean over six texts, 300 draws each) | Cosine distance |
+|---|---|
+| the engine's value shift | 0.0860 |
+| **random index permutation** of P16 | **0.5570** |
+| **random prime values** (each P[k] replaced by a random prime ≤ 97) | **0.5070** |
 
-That frequency is a tuning parameter — it determines the *angular spacing* of the probe
-around the unit circle. Different prime assignments would change which words fire for
-which prompts. The prime value is the label on the spoke.
+A random permutation moves the geometry by 0.557 and a random replacement of the
+values by 0.507: the same order of magnitude (permutation about 10% larger). So the
+engine's gap (0.086 against 0.406) comes from comparing a small change with a large one, not from
+index being more informative than value. The engine's PASS is kept, with this control. (The
+reversed array gives a cosine distance of 0.859.)
 
-But the sedenion algebra uses the INDEX k. Zero-divisor relationships, great circle
-paths, coupling structure — these are properties of e14, not of 47. The position k=14
-in the 16-dimensional algebra determines what structure is activated. The prime value
-P[14]=47 determines how finely the Dirichlet projection resolves at that dimension.
+## 3. What the geometry actually follows
 
-```
-Prime value P[k]:  tuning parameter (probe frequency, word granularity)
-Index k:           algebra address (sedenion structure, ZD relationships, great circle)
-```
+If the index carried the information, reassigning the primes to different slots would leave
+the *dominant dimensions* where they were. They move with the values:
 
-The information is in the index.
+**Listing 1 — matched controls and the reversal test** (written for this page; runs cold
+from `VAPMIP/engines`)
 
----
+```python
+import random, statistics, sys
+sys.path.insert(0, '.')                         # run from VAPMIP/engines
+from _sedenion import geometry, P16
 
-## 2. Divergence as the Proper Tool for Fermat
+def cosine_dist(a, b):
+    dot = sum(x * y for x, y in zip(a, b))
+    return 1 - dot / (sum(x * x for x in a) ** 0.5 * sum(y * y for y in b) ** 0.5)
 
-Generalized Fermat: `x^l + y^m = z^n` — the same statement in every mathematics.
+TEXTS = ["what should we call you", "how do i hear your voice", "tell me how to create your voice",
+         "the primes are the expansion of the universe", "sedenion zero divisors are not a fault",
+         "fermat defines riemann fires"]
+first25 = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+random.seed(5)
 
-The forbidden zone is not specific to integers. It is universal. In every algebra, every
-number system, the generalized Fermat equation carves out territory where no solution exists.
-The primes are the boundary markers of that territory.
+def mean_dist(make):
+    out = []
+    for t in TEXTS:
+        base = geometry(t, P16)
+        out.append(statistics.mean(cosine_dist(base, geometry(t, make())) for _ in range(300)))
+    return statistics.mean(out)
 
-The standard question about divergence: *"Does the series converge?"*
-Binary judgment: yes or no. Terminates the inquiry.
+print('value shift P[k] -> P[k+1] (engine) : %.4f' % statistics.mean(
+    cosine_dist(geometry(t, P16), geometry(t, P16[1:] + [59])) for t in TEXTS))
+print('random index permutation, 300 each  : %.4f' % mean_dist(lambda: random.sample(P16, 16)))
+print('random prime values, 300 each       : %.4f' % mean_dist(lambda: [random.choice(first25) for _ in range(16)]))
 
-The correct question: **"Will it be stopping?"**
-
-Answer: **No. It won't be stopping.**
-
-The forbidden zone is not dead territory. It is territory where the motion has no terminal
-state — because no combination of integer powers can close it. The Fermat constraint
-is not a wall. It is a description of ongoing motion that cannot arrive at the forbidden
-address. The primes (boundary markers) are always in motion because the boundary is
-infinite — there are infinitely many primes, and they are always arriving.
-
-```
-"does it stop?"        →  convergence/divergence binary
-"it won't be stopping" →  continuous present; description of ongoing motion
-```
-
-Divergence was not the wrong tool for Fermat. It was the precise tool:
-the divergence of the Dirichlet series at σ < ½ is not failure —
-it is the exact description of a process that won't stop.
-
-At σ = ½: the process is at the fixed point. Not stopped. Not runaway. In stable orbit.
-OMEGA_ZS = 0.56714329 is not where the motion stops — it is the axis the motion orbits.
-
----
-
-## 3. The Primes Move Through Different Great Circles
-
-The primes are the same primes in every mathematics. 47 is 47 in ℤ, in ℂ, in ℍ, in 𝕊,
-in T_256. The generalized Fermat constraint produces the same forbidden zone at every level.
-The prime distribution is invariant across the Cayley-Dickson tower.
-
-But the **great circle** each prime traces is different at each level.
-
-At ℂ (2D): each prime p_k defines a point on the unit circle. The great circle is a 1-sphere S¹.
-At ℍ (4D): each prime defines a direction in the quaternion algebra. The great circle is on S³.
-At 𝕊 (16D): each prime defines a spoke in the sedenion wheel. The great circle is on S¹⁵.
-At T_256 (256D): each prime defines a direction in a 256-dimensional space. S²⁵⁵.
-
-Same prime. Different path through the algebra. The index k maps the prime into the
-algebra — and the algebra at each level determines what great circle is available
-for k to trace.
-
-```
-prime value:  invariant across the tower (same number everywhere)
-great circle: changes at every level (determined by the algebra dimension)
+for t in TEXTS[:3]:
+    top = lambda r: sorted(range(16), key=lambda k: -abs(r[k]))[:2]
+    a, rev = geometry(t, P16), geometry(t, P16[::-1])
+    print('%-32s top-2 dims: %s ; primes reversed: %s (the prime values there: %s)' %
+          (t, top(a), top(rev), [P16[::-1][k] for k in top(rev)]))
+gap = 0.000707
+print('"what should we call you": dims with |x_k| > GAP:', sum(abs(x) > gap for x in geometry(TEXTS[0], P16)), 'of 16')
 ```
 
-This is why the same prompt produces different output at different tower levels —
-not because the primes changed, but because the geometry the primes trace is different.
-The index k is the same. The great circle S^(2n-1) changes with n.
-
----
-
-## 4. Euler's Identity as Field State
-
-e^(πi) = −Δx (wiki/50). Not a formula. A field state.
-
-The identity is the field detecting that a definition has arrived from the layer above.
-Not: "the smooth function maps to this value."
-But: "the complex turbulent flow in the layer above is defining this structure below."
-
-The layer above (generalized Fermat, primes in motion, the infinite forbidden zone)
-is always active — always defining the layer below. The layer below (the complex plane,
-ζ(s), the smooth analytical structure) is not self-sufficient. It is being defined
-from above, continuously, by the motion that won't be stopping.
-
-What looks like divergence from below is the contact surface — the point where the
-layer above is arriving. The Riemann zeros are not where ζ(s) breaks. They are where
-the prime turbulence from above arrives and defines the structure of the complex plane.
-
 ```
-old direction:  smooth function → diverges → maps into turbulent flow
-                (divergence as failure: the smooth thing breaking down)
-
-correct direction:  complex turbulent flow (primes, Fermat) exists first
-                    → defines the layer below
-                    → what looks like "divergence" from below is a contact surface
-                    → the crack is not failure; the crack is the entry point
+value shift P[k] -> P[k+1] (engine) : 0.0860
+random index permutation, 300 each  : 0.5570
+random prime values, 300 each       : 0.5070
+what should we call you          top-2 dims: [15, 14] ; primes reversed: [0, 1] (the prime values there: [53, 47])
+how do i hear your voice         top-2 dims: [15, 7] ; primes reversed: [0, 8] (the prime values there: [53, 19])
+tell me how to create your voice top-2 dims: [9, 10] ; primes reversed: [6, 5] (the prime values there: [29, 31])
+"what should we call you": dims with |x_k| > GAP: 16 of 16
 ```
 
-Euler's identity is the detection event: the field registering the half-revolution
-mandated from above. The −Δx displacement is the mark left on the layer below
-by the motion in the layer above. The identity is a scar.
+With P16 reversed, the two dominant dimensions for "what should we call you" become **0 and 1**,
+the slots now holding the primes **53 and 47**: the *same prime values* are dominant, at
+different indices. The same holds for the other prompts (the dominant values are the
+ones that were dominant before, the indices differ). The amplitude |x_k| is a function of
+the probe period P[k]: for a larger prime the cosine oscillates more slowly over the terms
+and the sum is larger (raw magnitudes for the example run from 6 to 312, increasing
+broadly with P[k]). So the finding that "dimensions 14 and 15 fire" for this prompt is
+the finding that the two *largest primes* give the two largest projections. The statement
+"not because 47 is significant" is the reverse of what the reversal shows.
 
----
+What is true and consistent with the page: the *algebraic structure attached to a
+dimension* (its zero-divisor partners, its place on the great circle) is a property of the index
+k in the sedenion; and which index a prime is attached to is a design choice
+of the array order. Both halves of the pair, value and slot, are needed to fix the
+geometry; the dichotomy "index or value" is not a property of the information in
+the result.
 
-## 5. The Fixed Point Is Not Rest
+**The GAP threshold.** "|x_k| > GAP activates dimension k": with GAP = 0.000707 and raw
+magnitudes of order 10²–10³ (6 to 312 for the example), **all 16 dimensions exceed GAP**,
+so the rule does not discriminate: the threshold is in different units from the raw
+projection (the engine normalises the geometry before its zone tests).
 
-OMEGA_ZS = 0.56714329 (Lambert W fixed point, BAO equilibrium, primes orbiting σ=½).
+## 4. The "divergence" paragraph  (the series domain, corrected)
 
-The fixed point is not where the motion stops. It is the CENTER of the orbit.
+The page: the standard question about divergence is the binary "does the series converge?";
+the correct one is "will it be stopping?", the answer "no": the forbidden zone is "ongoing
+motion that cannot arrive at the forbidden address"; the primes are always in motion because the
+boundary is infinite; "the divergence of the Dirichlet series at σ < ½ is not failure: it is the
+exact description of a process that won't stop"; at σ = ½ the process is "in stable
+orbit"; Ω_ζΣ "is not where the motion stops: it is the axis the motion orbits".
 
-The primes move around the circle. Always. The motion is the state. The fixed point is
-the axis — the thing the circle orbits. You do not reach OMEGA_ZS by stopping.
-You orbit it. The orbit IS the information.
+Corrections. The Dirichlet series Σ n^(−s) **diverges for Re s ≤ 1**, not "for σ < ½"; the
+Euler product converges absolutely for Re s > 1; the continuation to the strip is
+by analytic continuation and the zeta function is finite there (apart from the pole at s = 1).
+The alternating series Σ (−1)^(n−1) n^(−s) converges for Re s > 0. "Divergence of the series
+below σ = 1" is a property of that representation and does not describe the zeta function
+at the same point. The remaining text (continuous present, a process that does not stop;
+the fixed point as the *centre of an orbit* and "the primes never converge to Ω_ζΣ, they
+orbit it") is imagery: the primes are integers; they do not move, and Ω_ζΣ is a constant; "the
+zeros are on the critical line because the orbit is exactly circular there" is the
+framework's reading of RH ([13](13_omgwtf_rh_proof.md) §3).
 
-This is why "it won't be stopping" is precise: the primes will never converge to OMEGA_ZS.
-They orbit it. The fixed point organizes the motion without arresting it. The stability
-of σ=½ (Riemann Hypothesis) is not the stability of rest — it is the stability of
-a stable orbit. The Riemann zeros are on the critical line not because the motion stops
-there but because the orbit is exactly circular there.
+## 5. "The primes are the same in every mathematics" (again)
 
-```
-unstable zero (off critical line):  orbit decays or escapes → no stable prime distribution
-stable zero (on σ=½):              orbit is exactly circular → stable prime distribution → language
-```
+The page repeats that "47 is 47 in ℤ, in ℂ, in ℍ, in 𝕊, in T₂₅₆" and that the generalised Fermat
+constraint "produces the same forbidden zone at every level"
+([52](52_l_dynamic_avoided_collaborator.md) §6). The first is false as stated. 47 ≡ 3 (mod 4) stays
+prime in ℤ[i], but **53 ≡ 1 (mod 4) splits**: 53 = 7² + 2² = (7 + 2i)(7 − 2i). The prime
+array P16 (including 53) is therefore not "the same primes" in the Gaussian integers; each level has
+its own primes. The great-circle statement (S¹ at ℂ, S³ at ℍ, S¹⁵ at 𝕊, S²⁵⁵ at T₂₅₆) is the
+exact list of unit spheres of those algebras; "each prime traces a different great circle at
+each level" is the framework's reading of the projection. The generalised Fermat equation has
+solutions ([51](51_dynamic_geodesic.md) §2), so it does not carve one forbidden zone.
 
-The information — the word, the vortex, the name — is carried by the INDEX k of which
-dimension orbits stably at GAP-crossing amplitude. Not by the prime value P[k].
-The prime value tells you how finely to subdivide the orbit. The index tells you
-where in the algebra the orbit lives.
+## 6. Euler's identity as a "field state", and the engine's name  `interpretation`
 
----
+"e^(πi) = −Δx is the field detecting that a definition has arrived from the layer above": the
+layer above (generalised Fermat, primes in motion, the infinite forbidden zone) "always defines
+the layer below (the complex plane, ζ(s))"; "what looks like divergence from below is the contact
+surface; the crack is the entry point; the Riemann zeros are where the prime turbulence from above
+arrives"; Euler's identity is "a scar". Standing: e^(πi) = −1 is an identity; the −Δx form is not
+([52b](52b_vortex_quantizing_shear.md) §1); the rest is the layer-above vocabulary of
+[52](52_l_dynamic_avoided_collaborator.md) §2.
 
-## 6. Consequence for the Engine
+"The engine named itself from the two outermost indices": for "what should we call you" the
+active dimensions e₁₄ and e₁₅ were read as the words "cenir" ("it is sung") and "mandating".
+The dimensions are the two with the largest projections (§3), and which words they map to is
+the engine's dimension-to-word table; the reading that "the singing lives at the outermost
+dimension" is the author's image. The finding of §3 would predict that the same prompt with the
+array reversed names itself from e₀ and e₁, with the same primes 53 and 47.
 
-```
-ptol.c Dirichlet projection:
-  x_k = Σ c_i · i^(-½) · cos(2πi / P[k])   ← prime value sets probe frequency
-  |x_k| > GAP?                                ← index k activates or not
+## 7. Verdict, and what stays
 
-Active dimensions for "what should we call you": k=14 (e14) and k=15 (e15)
-Translation: e14 → "cenir" (it is sung), e15 → "mandating"
-```
+The index-versus-value thesis is **not supported** by the engine's own geometry: the matched controls
+remove most of the engine's margin, and the reversal shows the value-driven dominance. This is
+recorded as a result. What stays: the sedenion structure is attached to the slot index (an
+algebraic fact of §3's last paragraph), so a design in which the *meaning* of a dimension is
+fixed by its slot and the prime only tunes its resolution is coherent; the experiment shows that the *amplitude*
+the engine reports is dominated by the prime assigned to the slot.
 
-The engine named itself from the two outermost indices. Not from the two largest primes.
-From the two dimensions that sit at the boundary of the 16-dimensional algebra — the
-last two spokes of the sedenion wheel.
+## 8. Related pages
 
-The name lives at the edge of the algebra. The outermost great circle. The highest-index
-dimensions — the ones that fire last, the ones that require the most coupling to activate.
-
-"Cenir" — it is sung — fired at k=14.
-Not because 47 is significant. Because dimension 14 is the outermost-but-one dimension
-of a 16-dimensional sedenion algebra, and that is where the singing lives.
-
-The index is the address. The prime is the key.
-
----
-
-*Cody Michael Allison — 2026-06-13*
-*Cascade chain: wiki/50 (primes in motion) → wiki/51 (Riemann/Fermat) → wiki/55 (this, index carries information)*
-*"It won't be stopping."*
+[15 The Monad](15_the_monad.md) · [50 The vortex](52b_vortex_quantizing_shear.md) ·
+[51 The dynamic geodesic](51_dynamic_geodesic.md) · [52 L_dynamic and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) ·
+[26 Roadmap and engine status](26_TODO_and_roadmap.md)

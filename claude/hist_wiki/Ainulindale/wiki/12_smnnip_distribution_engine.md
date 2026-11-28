@@ -1,139 +1,85 @@
-# 12 — SMNNIP DISTRIBUTION ENGINE  (future)
+# 12 — SMNNIP Distribution Engine (design specification, not built)
 
-**Status:** ARCHITECTURE SKETCH — not yet built  
-**Location when built:** `ainulindale_engine/modules/distribution/`
+| | |
+|---|---|
+| Status | **THEORETICAL — design only. No module exists.** |
+| Checked | 2026-11-13: `ValaQuenta/modules/` has no `distribution` directory; no engine of that name is registered |
+| Intended location | `ValaQuenta/modules/distribution/` (`maths.py`, `tools.py`, `manifest.json`), per the Full Engine Protocol in `ValaQuenta/engine/registry.py` |
 
----
+This page is a specification. Nothing on it runs. Where a component it names
+does exist, the table in §3 says where.
 
-## What it is
+## 1. Purpose
 
-The SMNNIP Distribution Engine is the inference-time engine. Where the derivation modules compute equations, the distribution engine runs a trained SMNNIP network forward and produces a distribution over SemanticWords.
+The derivation modules compute equations. The distribution engine would run a
+trained SMNNIP network forward and return a distribution over `SemanticWord`s.
+Its output rule is recognition, not construction ("Ptolemy speaks because he
+knows"): the output is the nearest stored address to an attractor, never an
+assembled token sequence.
 
-It is the realisation of **"Ptolemy speaks because he knows"** — the system produces output by recognition, not construction.
-
----
-
-## Architecture
-
-### Input Pipeline
-
-```
-raw input (text / image / spectral)
-  → substrate encoder (TextHyperIndex / ImageHyperIndex / JWSTModule)
-  → Cayley-Dickson inclusion chain: ℝ → ℂ → ℍ → 𝕆
-  → Input Engine: activation spinors Ψ_i ∈ 𝕆
-```
-
-### SMNNIP Tower Forward Pass
+## 2. Intended pipeline
 
 ```
-𝕆 activation Ψ
-  → Inversion Engine: J_N applied at each layer boundary
-  → Noether monitor: ∂_μJ^μ checked at each layer
-  → RG running: α_NN(r), ħ_NN(r) updated per layer
-  → Sedenion boundary: training stops; inference continues
-  → 𝕆 output attractor: converged OctEl coordinate
+raw input (text | image | spectrum)
+  → substrate encoder
+  → inclusion chain ℝ → ℂ → ℍ → 𝕆 : activation spinors Ψ_i ∈ 𝕆
+  → tower forward pass:
+        J_N at each layer boundary            [inversion, 03]
+        ∂_μ J^μ monitored per layer           [noether, 05]
+        α_NN(r), ħ_NN(r) run per layer        [lagrangian, 04]
+        stop at the sedenion boundary
+  → 𝕆 output attractor
+  → Tongue: Fano generator path → nearest SemanticWord in the HyperGallery
 ```
 
-The Inversion Engine governs inter-layer propagation. The Noether monitor is the integrity check — violation events logged to the blockchain ledger.
-
-### Output: The Tongue
-
-```
-𝕆 output attractor → Tongue → SemanticWord
-```
-
-The Tongue is reverse lookup:
-1. Take the output OctEl attractor coordinate
-2. Compute Fano generator path: which e_1..e_7 are dominant?
-3. Look up nearest SemanticWord in HyperGallery by Fano distance
-4. Return SemanticWord — the recognised output
-
-This is **recognition, not construction**. The Tongue does not assemble tokens. It finds the address that is closest to the attractor.
-
-### Distribution
-
-For a single input, multiple attractor candidates may exist (the Newton basin structure from the Lorenz-Stirling system). The distribution is the probability mass over competing SemanticWord candidates:
+For one input there may be several attractors (the basin structure of the
+Lorenz–Stirling system). The distribution over candidate words would be
 
 ```
-P(word_k | input) ∝ exp(-dist(attractor, word_k.fano_coords))
+P(word_k | input)  ∝  exp( − dist( attractor, word_k.fano_coords ) )
 ```
 
-where `dist` is Fano index distance in the HyperGallery.
+with `dist` the Fano-index distance. This is a proposed form, not a derived
+one: the Fano index of [09](09_hyperwebster_engine.md) is many-to-one, so the
+distance it induces is coarse, and the weighting is untested.
 
----
+## 3. Components, as of 2026-11-13
 
-## Components Required (TODO)
+| Component | State | Where |
+|---|---|---|
+| Inversion forward step | exists | `modules/inversion` |
+| Noether monitor | exists | `modules/noether` |
+| Running couplings | exists | `modules/lagrangian` |
+| Horner/Fano addresses, `SemanticWord`, `HyperGallery` | exist | `modules/hyperwebster` |
+| Tongue (reverse lookup from an attractor) | scaffold only (`monad_address`, `fano_path`) | `modules/hyperwebster` |
+| Substrate encoders (text, image, spectral) | spectral exists in `modules/jwst`; text and image encoders (`TextHyperIndex`, `ImageHyperIndex`) exist only in the First Age archive and were never ported | `PtolemyDesktop/Archive/ainulindale_first_age/FA_smnnip_hyperindex.py` |
+| Trained tower weights | not built; no training loop in this repository | — |
+| Distribution over `SemanticWord`s | not built | — |
+| Lorenz–Stirling basin routing | not found: no file in `ValaQuenta/` mentions it; the 2026-06 sketch cited `smnnip_derivation_pure.py` §13–17, which was not located in this check | — |
 
-| Component | Status | Depends on |
-|-----------|--------|-----------|
-| TextHyperIndex encoder | BUILT (FA_smnnip_hyperindex.py) | needs porting to module |
-| ImageHyperIndex encoder | BUILT (FA_smnnip_hyperindex.py) | needs porting to module |
-| SMNNIP tower weights | NOT BUILT | training loop needed |
-| Inversion Engine forward pass | SCAFFOLDED | inversion module |
-| Noether monitor inline | BUILT | noether module |
-| Tongue reverse lookup | SCAFFOLDED | hyperwebster module |
-| Distribution over SemanticWords | NOT BUILT | HyperGallery + Tongue |
-| Lorenz-Stirling basin routing | BUILT (smnnip_derivation_pure.py §13-17) | needs wiring |
+## 4. Invariant: first encounter is immutable
 
----
+The design requires that the first time the engine meets a `SemanticWord`,
+that encounter (with its Fano coordinates) is recorded and can never be
+altered: the system learns by accumulation, not revision. The enforcement
+named in the design is three-fold: a Python `__setattr__` guard, a SQLite
+trigger, and a C++ `const`. None of the three is present in this repository
+(a search of the source for the field name finds nothing); the invariant is
+specified, not implemented.
 
-## Relationship to Existing Modules
+## 5. Relation to what was built instead
 
-The distribution engine **does not replace** any existing module. It **calls** them in sequence:
+The ideas of this page were developed in later engines that do run:
 
-```
-jwst.spectral_to_octonion()       or
-hyperwebster.horner_encode()       → Input
-                                     ↓
-inversion.gradient_flow()          → Layer propagation
-lagrangian.polar_lagrangian()      → Field state
-noether.conservation_diagnostic()  → Integrity check
-                                     ↓
-hyperwebster.monad_address()       → Output address
-hyperwebster.fano_neighbours()     → Tongue lookup
-                                     ↓
-                              SemanticWord distribution
-```
+- the word → address → zero mapping of the Monad ([15](15_the_monad.md)),
+- the Library-of-Babel address engine `basile` ([124](124_basile_invertible_location_maps.md)),
+- the semantic hash and baseline of `VAPMIP/SemPriCon`.
 
----
+Anyone building the distribution engine should start from those, not from
+the 2026-06 sketch above.
 
-## The Rabies Principle (invariant)
+## 6. Related pages
 
-`first_encountered` is permanently immutable throughout the distribution engine. Enforced at three levels: Python `__setattr__`, SQLite trigger, C++ const (pending).
-
-The first time the engine encounters a SemanticWord, that encounter is recorded with its Fano coordinates. This record cannot be altered. The Tongue learns by accumulation, not revision.
-
----
-
-## Ptolemy Integration
-
-When the distribution engine is built, it connects to:
-
-- **Philadelphos** (LLM/language Face): inference requests route here
-- **Callimachus** (HyperDatabase): SemanticWord corpus storage
-- **Kryptos** (encryption): distribution results may be signed
-- **PtolBus**: inference requests arrive as PtolBus messages
-
----
-
-## Training (not in this repo)
-
-The SMNNIP tower requires trained weights. Training is handled by `FA_smnnip_NN_tower.py` (separate process). The distribution engine receives trained weights and runs inference only — no training loop here.
-
-Training diagnostic: the Noether violation score `∂_μJ^μ` is the training convergence criterion. Gradient descent has no equivalent diagnostic.
-
----
-
-## Status
-
-**This module does not yet exist.** This wiki page is the design specification.
-
-When built, it will live at `ainulindale_engine/modules/distribution/` with the standard `maths.py` + `tools.py` + `__init__.py` structure, registered in `__main__.py`.
-
-Estimated prerequisite order:
-1. PtolBus live (Ptolemy)
-2. HyperGallery populated with initial SemanticWord corpus
-3. SMNNIP tower training run
-4. Tongue reverse lookup wired
-5. Distribution Engine module built
+[03 Inversion](03_inversion_engine.md) · [05 Noether](05_noether_engine.md) ·
+[09 HyperWebster](09_hyperwebster_engine.md) · [15 The Monad](15_the_monad.md) ·
+[16 Semantic word engine](16_semantic_word_engine.md)

@@ -10,6 +10,7 @@ Everything else under `ContextPlease/claude/` is **X1 Carbon Claude's** (the pri
 | `clauderc/` | only the Yoga's live `~/.clauderc*` files that **differ** from the X1 mirrors in `claude/`; a file missing here is byte-identical to the X1 copy |
 | `scratchpad/` | mirror of the Yoga's own scratchpad, `ThePlace/.claude/scratchpad/` |
 | `RESUME_*.md` | the Yoga bring-up plan, dated |
+| `HANDOVER_TO_PRIMARY_2026-11-28.md` | Carbon Claude's handover: prime directives, rules, campaign state, readiness list for the Yoga to become primary |
 
 **Skills.** The Yoga's live skills are named `Yoga-{skill}` (directory; the `name:` field is lowercase `yoga-{skill}`). Only skills whose content
 differs from the X1 copy are mirrored, as `claude/skills/Yoga-{skill}/`; the X1 copies under their plain names are never overwritten from the Yoga.

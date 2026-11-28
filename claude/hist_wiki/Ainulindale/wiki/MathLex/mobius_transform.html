@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Möbius Transform · Ptolemy MathLex</title>
@@ -182,6 +183,9 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 z=(1+1j) → |w|=0.707
 z=2j → |w|=0.333  (all inside unit disk ✓)</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">z=1j → |w|=0.000
+z=(1+1j) → |w|=0.447
+z=2j → |w|=0.333</pre>The cell's map is w = (z − i)/(z + i); at z = 1 + i, w = 1/(1 + 2i) and |w| = 1/√5 = 0.447 (the code). The stated 0.707 is wrong; the three points all land inside the unit disk, as the cell intends. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes + Alexandria (OpenGL)</p><p style="margin-top:6px"><strong>Use:</strong> Conformal visualization. Möbius transforms are used in Alexandria to map hyperbolic graph layouts (the Cayley graph index) onto the rendering surface without distorting angular relationships between nodes.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Forgetting ad−bc=0 makes it degenerate — the output is constant, not a bijection.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Treating the pole z=−d/c as an error. It maps to ∞ — a valid point on the Riemann sphere.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Assuming all conformal maps are Möbius. On ℂ̂ yes, but on subdomains there are many more (Riemann mapping theorem).</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="cauchy_riemann_equation.html">Cauchy-Riemann Equation →</a><a class="crosslink" href="wirtinger_derivative.html">Wirtinger Derivative →</a><a class="crosslink" href="jacobian_form.html">Jacobian Form →</a><a class="crosslink" href="cayley_graph.html">Cayley Graph →</a></div></div>

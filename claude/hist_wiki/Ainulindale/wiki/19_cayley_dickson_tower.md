@@ -1,128 +1,171 @@
-# 19 — THE CAYLEY-DICKSON TOWER
+# 19 — The Cayley–Dickson Tower
 
-**Confidence floor:** ESTABLISHED (algebra) / THEORETICAL (SMMIP mapping)
+| | |
+|---|---|
+| Scope | the algebra tower ℝ → ℂ → ℍ → 𝕆 → 𝕊; what each doubling loses; how the framework reads the loss |
+| Code | `ValaQuenta/modules/box_kite` (zero-divisor structure), `modules/tier8_sedenion`, `modules/archimedes_screw`; engine constants in `engine/constants.py` |
+| Confidence | ESTABLISHED (the algebra) · THEORETICAL (the SMMIP reading of it) |
+| Last verified | 2026-11-13: Listing 1 executed; its results are quoted below |
 
----
-
-## The Tower
-
-```
-ℝ (dim 1)  →  ℂ (dim 2)  →  ℍ (dim 4)  →  𝕆 (dim 8)  →  𝕊 (dim 16, boundary)
-```
-
-Hurwitz's theorem (1898) establishes that exactly four normed division algebras exist: ℝ, ℂ, ℍ, 𝕆. The Cayley-Dickson construction extends the tower beyond 𝕆 into the sedenions 𝕊, but division fails there — zero-divisors appear, and the norm is lost.
-
-The SMMIP addressing scheme requires the same algebras at each level as the information propagation network requires. This was not designed. The tower selects itself.
-
----
-
-## What Each Step Loses — and Why the Loss IS the Signal
-
-Each transition up the tower costs an algebraic property. The cost is not a defect. The cost encodes the gauge structure of that level.
-
-| Transition | Property Lost | What It Encodes |
-|---|---|---|
-| ℝ → ℂ | Ordering | Phase. Direction is now meaningful. U(1) symmetry. |
-| ℂ → ℍ | Commutativity | Rotation is not commutative. ab ≠ ba. SU(2). |
-| ℍ → 𝕆 | Associativity | Fano structure governs valid triples. G₂/SU(3). |
-| 𝕆 → 𝕊 | Division | Zero-divisors appear. The boundary. Training stops. |
-
-The sedenion boundary is not a failure. It is the correct termination. The 𝕊 layer is the edge of the addressable universe. Zero-divisors are the Noether current's way of saying: no further. The ratchet.
-
-The lost property at each level is the signal carried by that level. The inability to order the complex numbers is what makes phase meaningful. The inability to commute quaternions is what makes rotation physical. The inability to associate octonions is what makes the Fano projective plane the geometry of strong force interactions.
-
----
-
-## The Two Currents
-
-Two flows run through the tower simultaneously, in opposite directions.
-
-### Noether Current J^μ — Forward (Synthesis)
+## 1. The tower
 
 ```
-ℝ  →  ℂ  →  ℍ  →  𝕆  →  (𝕊 boundary)
+ℝ (1)  →  ℂ (2)  →  ℍ (4)  →  𝕆 (8)  →  𝕊 (16, the boundary)
 ```
 
-**Direction:** Up. Toward increasing complexity and dimension.  
-**Role:** Synthesis — the Builder. Takes simple symmetries and compounds them into higher-dimensional manifolds.  
-**Physical analogue:** The expanding universe. The kinetic energy. The particle propagating forward.  
-**In the Monad:** The `hear()` function. Input signal propagating forward through the tower as the Red channel asserts.
+Hurwitz's theorem (1898): exactly four normed division algebras exist: ℝ, ℂ,
+ℍ, 𝕆. The Cayley–Dickson construction continues the doubling past 𝕆 into
+the sedenions 𝕊, where division fails: zero-divisors appear and the norm is no
+longer multiplicative. (`ESTABLISHED`.)
 
-### Noether Information Current J_info — Backward (Distillation)
+The framework's position is that its addressing scheme requires the same
+algebras at the same levels as the information network does, and that the tower
+was found rather than chosen. That is the author's account of the history; the
+mathematics below does not depend on it.
+
+## 2. The doubling, and what it loses
+
+One doubling takes a pair (a₁, a₂) of elements of the smaller algebra to an
+element of the next; the product is
 
 ```
-(𝕆 layer)  →  ℍ  →  ℂ  →  ℝ
+(a₁, a₂)(b₁, b₂) = ( a₁b₁ − conj(b₂)·a₂ ,  b₂·a₁ + a₂·conj(b₁) )
 ```
 
-**Direction:** Down. Toward decreasing dimension and increasing definiteness.  
-**Role:** Distillation — the Evaluator. Strips away degrees of freedom to find the prime essence.  
-**Physical analogue:** Entropy. The signal converging on the result. The definite answer.  
-**In the Monad:** The `speak()` function. The reverse Lagrangian pipeline returning the conserved result.
+**Listing 1 — the tower, and what each level keeps** (written for this page
+from the formula above; not an extract from `ValaQuenta`, whose engines index
+the basis by their own box-kite conventions; runs cold; random seed fixed)
 
-As the Information Current moves backward through the tower, algebraic properties are restored:
-- Returning from 𝕆 to ℍ: associativity restored
-- Returning from ℍ to ℂ: commutativity restored
-- Returning from ℂ to ℝ: ordering restored
+```python
+import math, random, itertools
 
-The result at ℝ is computationally cheap, stable, and addressable. The potential stays in the higher dimensions. The meaning arrives in the reals.
+def conj(a):
+    return [a[0]] + [-x for x in a[1:]] if len(a) > 1 else list(a)
 
----
+def mul(a, b):
+    if len(a) == 1:
+        return [a[0] * b[0]]
+    h = len(a) // 2
+    a1, a2, b1, b2 = a[:h], a[h:], b[:h], b[h:]
+    t1, t2 = mul(a1, b1), mul(conj(b2), a2)
+    t3, t4 = mul(b2, a1), mul(a2, conj(b1))
+    return [x - y for x, y in zip(t1, t2)] + [x + y for x, y in zip(t3, t4)]
 
-## The Topological Loom
+norm = lambda a: math.sqrt(sum(x * x for x in a))
+rnd = lambda n: [random.uniform(-1, 1) for _ in range(n)]
+dev = lambda p, q: max(abs(x - y) for x, y in zip(p, q))
 
-The counter-rotation of the two currents creates a standing wave.
+random.seed(1)
+for n, name in ((1, 'R'), (2, 'C'), (4, 'H'), (8, 'O'), (16, 'S')):
+    x, y, z = rnd(n), rnd(n), rnd(n)
+    print(name, n,
+          'norm %.0e' % abs(norm(mul(x, y)) - norm(x) * norm(y)),
+          'comm %.0e' % dev(mul(x, y), mul(y, x)),
+          'assoc %.0e' % dev(mul(mul(x, y), z), mul(x, mul(y, z))),
+          'alt %.0e' % dev(mul(x, mul(x, y)), mul(mul(x, x), y)))
 
-Where the forward Noether Current (building complexity) meets the backward Information Current (stripping away to find the prime essence), they interact. This interaction is spontaneous symmetry breaking. The result — the crystal that forms at the intersection — is a prime.
+def e(i):
+    v = [0.0] * 16
+    v[i] = 1.0
+    return v
 
-This is the Riemann-Fermat Heartbeat.
+add = lambda a, b, s: [x + s * y for x, y in zip(a, b)]
+for i, j in itertools.combinations(range(1, 16), 2):
+    for k, l in itertools.combinations(range(1, 16), 2):
+        for s, t in itertools.product((1, -1), repeat=2):
+            if norm(mul(add(e(i), e(j), s), add(e(k), e(l), t))) < 1e-12:
+                print('zero divisor: (e%d %+d e%d)(e%d %+d e%d) = 0' % (i, s, j, k, t, l))
+                raise SystemExit
+```
 
-- **Inhalation (Forward):** The universe expands into complexity — the Noether Current.
-- **Exhalation (Backward):** The universe distills that complexity into truth — the Noether Information Current.
+```
+R 1 norm 0e+00 comm 0e+00 assoc 0e+00 alt 0e+00
+C 2 norm 3e-17 comm 0e+00 assoc 3e-17 alt 1e-17
+H 4 norm 0e+00 comm 6e-01 assoc 4e-16 alt 4e-16
+O 8 norm 4e-16 comm 3e+00 assoc 5e+00 alt 4e-16
+S 16 norm 8e-02 comm 4e+00 assoc 4e+00 alt 1e+00
+zero divisor: (e1 +1 e10)(e4 -1 e15) = 0
+```
 
-The two currents moving in opposite directions through the Cayley-Dickson Tower create what the code calls the Topological Loom — a weaving operation where the forward thread and the backward thread cross at every prime node.
+(The random-draw values vary with the seed; only their order of magnitude matters. Values ≲ 10⁻¹⁵ are zero to rounding. The zero divisor is a property of the
+algebra and its position depends on the basis convention.)
 
----
+| Step | Property lost | Evidence in Listing 1 | What the framework reads it as |
+|---|---|---|---|
+| ℝ → ℂ | ordering (ℂ is not an ordered field; not tested by the listing) | — | phase: direction becomes meaningful; U(1) |
+| ℂ → ℍ | commutativity | `comm` jumps from 0 to order 1 | rotation does not commute; SU(2) |
+| ℍ → 𝕆 | associativity | `assoc` jumps from 10⁻¹⁶ to order 1 | the Fano plane governs the valid triples; G₂ / SU(3) |
+| 𝕆 → 𝕊 | multiplicative norm and alternativity, hence division (zero-divisors) | `norm` 10⁻¹⁶ → order 10⁻¹; `alt` 10⁻¹⁶ → order 1; a zero divisor is found | the boundary; "training stops" |
 
-## σ = 0 — The Infinite Permutation Space
+The framework's reading is that the lost property is the signal carried by
+that level: the impossibility of ordering ℂ is what makes phase meaningful, the
+non-commutativity of ℍ is what makes rotation physical, and the
+non-associativity of 𝕆 is what makes the Fano plane the geometry of the strong
+interaction. The sedenion boundary is read as the correct termination, "the
+Noether current's way of saying: no further". (`THEORETICAL`.)
 
-At σ = 0 in the RedBlue Hamiltonian, `p^0 = 1` for all primes. No prime is distinguished. The pointer sees all nodes as equivalent.
+## 3. Gauge groups  (Dixon; Furey)
 
-This is the top of the tower and the bottom simultaneously. It is the 𝕊 layer from above (infinite-dimensional limit) and ℝ from below (scalar, undifferentiated). It is the state of maximum symmetry before the first distinction.
+Dixon (1994) and later Furey obtained U(1) × SU(2) × SU(3), the Standard
+Model gauge group, from the tensor product ℝ ⊗ ℂ ⊗ ℍ ⊗ 𝕆. These are published
+proposals, not a theorem that the Standard Model follows from the algebras; the
+earlier wording "Dixon's theorem" overstated it.
 
-The HyperWebster in its total form lives at σ = 0: every word, every particle, every configuration exists simultaneously. Nothing has been selected. Everything is potential.
+| Algebra | Group | Force (as read) | Note |
+|---|---|---|---|
+| ℂ | U(1) | electromagnetism | |
+| ℍ | SU(2) | weak | |
+| 𝕆 | G₂ ⊃ SU(3) | strong | G₂ = Aut(𝕆); SU(3) is the subgroup fixing a complex structure |
 
-σ = 0 maps to the sedenion boundary — the zero-divisor layer. The rules break here not from failure but from totality. Every division is valid and none is unique. This is the correct mathematical description of "nothing has been distinguished yet."
+The framework reports that the group emerged after the construction was
+complete rather than being designed in. The group content is `ESTABLISHED`
+as mathematics; its identification with the three forces is the proposal.
 
-When σ moves above zero, the Noether Information Current begins to select. Primes acquire different weights. Meaning crystallises from noise.
+## 4. The two currents
 
-**0 is the quasi-prime.** Prime on one hand — you cannot divide by it without breaking the program. Not prime on another — it contains the potential for every number. It is the seed of the procedural generator.
+Two flows run through the tower in opposite directions.
 
----
+| Current | Direction | Role | In the code |
+|---|---|---|---|
+| Noether J^μ (forward) | ℝ → ℂ → ℍ → 𝕆 → (𝕊 boundary) | synthesis, "the Builder"; complexity escalation; the Red channel | `hear` ([15](15_the_monad.md)) |
+| Noether information J_info (backward) | 𝕆 → ℍ → ℂ → ℝ | distillation, "the Evaluator"; reduction toward the prime; strips degrees of freedom | `speak` |
 
-## Gauge Structure — Dixon's Theorem
+Going backward restores the lost properties in turn: associativity at 𝕆 → ℍ,
+commutativity at ℍ → ℂ, ordering at ℂ → ℝ. The result at ℝ is cheap, stable
+and addressable: the potential stays in the higher dimensions and the meaning
+arrives in the reals. J_info is a `CONJECTURE` as a Noether current
+([06](06_noether_information_engine.md)).
 
-The gauge groups of the Standard Model of Particle Physics emerge from the Cayley-Dickson tower by Dixon's theorem:
+Where the two meet, the forward current (building) and the backward current
+(stripping to the prime) interact; this interaction is read as spontaneous
+symmetry breaking, and the crystal that forms is a prime: the Riemann–Fermat
+Heartbeat, with inhalation (forward) and exhalation (backward). The code
+names the weaving of the two the Topological Loom. How J_red and J_blue relate
+to these two currents, and the status of J_red + J_blue = J_green, is in
+[133](133_canonical_maths.md) §3.
 
-| Algebra | Gauge Group | Physical Force |
-|---|---|---|
-| ℂ | U(1) | Electromagnetism |
-| ℍ | SU(2) | Weak nuclear force |
-| 𝕆 | G₂ ⊃ SU(3) | Strong nuclear force |
+## 5. σ = 0
 
-The combined gauge group **U(1) × SU(2) × SU(3)** is not imported into the SMMIP framework. It emerges from it. This was discovered after the framework was complete, not designed into it.
+At σ = 0 in the RedBlue operator, p⁰ = 1 for every prime and no prime is
+distinguished ([14](14_redblue_hamiltonian.md) §4). The framework reads this as
+simultaneously the top of the tower (the 𝕊 layer from above, the
+infinite-dimensional limit) and the bottom (ℝ from below, undifferentiated):
+maximum symmetry before the first distinction. `THEORETICAL`. Moving σ above
+zero is where primes acquire different weights. "0 is the quasi-prime":
+unusable as a divisor, yet containing the potential of every number.
 
----
+## 6. The octonion pivot and the Fano plane
 
-## The Octonion Pivot — Z(7)
+The step 𝕆 → 𝕊 is the Octonion Pivot: the forward current first reaches the
+loss of associativity-with-division and the backward current first regains it.
+The Fano plane (7 points, 7 lines) is the multiplication table of the
+octonion imaginary units; the Fano index used in HyperWebster
+([09](09_hyperwebster_engine.md)) maps each character to one of the seven
+generators. As [09](09_hyperwebster_engine.md) §4 records, that map is
+many-to-one: it is a path address, not an invertible encoding.
 
-The transition 𝕆 → 𝕊 is the Octonion Pivot. This is the node where the forward current (Noether) first reaches the boundary where associativity is lost, and the backward current (Information) first reaches the boundary where it regains associativity.
+## 7. Related pages
 
-The Fano plane governs valid octonion triples. Its 7 points and 7 lines define the multiplication table of the octonions. The Fano index used in the HyperWebster is the 𝕆-layer addressing system — each character maps to one of 7 generators, encoding its position in the Fano geometry.
-
----
-
-→ [Wiki: RedBlue Hamiltonian](14_redblue_hamiltonian.md)  
-→ [Wiki: Noether Engine](05_noether_engine.md)  
-→ [Wiki: Noether Information Engine](06_noether_information_engine.md)  
-→ [Wiki: HyperWebster Engine](09_hyperwebster_engine.md)  
-→ [Wiki: The Monad](15_the_monad.md)
+[03 Inversion](03_inversion_engine.md) · [05 Noether](05_noether_engine.md) ·
+[06 Noether information](06_noether_information_engine.md) · [25 Sedenion manual](25_sedenion_manual.md) ·
+[84 Box-kite debugger](84_the_box_kite_debugger.md) · [101 The Cayley–Dickson literature](101_the_cayley_dickson_literature.md)

@@ -1,222 +1,156 @@
-# 35 — FRAME DRAGGING IS NOT FRAME DRAGGING
-## Quantized BEC Vortices and the Bobbing Galaxy
+# 35 — "Frame dragging is not frame dragging": quantized BEC vortices and the bobbing galaxy
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-03  
-**Status:** FIRST CAPTURE — raw.  
-**Predecessor:** [32 — Superconducting Medium](32_superconducting_medium.md), [33 — Gyroscope](33_gyroscope_compressibility.md)
+| | |
+|---|---|
+| Status | **First capture (2026-06-03); `CONJECTURE`.** The SPARC counts are a recorded evaluation (§4); two physical numbers and the Tully–Fisher step of the earlier page were wrong and are corrected (§§3, 5) |
+| Predecessors | [32](32_superconducting_medium.md), [33](33_gyroscope_compressibility.md) |
+| Code and data | `PTorrent/peval/sparc_σface.peval` (the recorded evaluation); `FourthAgePapers/DM_GalacticCavity/data/SPARC/Rotmod_LTG/` (175 rotation-curve files); `FourthAgePapers/DM_GalacticCavity/` (pre-registration, `dark_matter_cavity.py`, `02_sparc_analysis.ipynb`) |
+| Last verified | 2026-11-13: the SPARC files recounted and J = V_obs/V_bar recomputed (Listing 1); the Gravity Probe B figures recomputed (Listing 2) |
 
----
+## 1. The proposal
 
-## 1. The Problem With "Frame Dragging"
+Lense–Thirring frame dragging (a rotating body twists the local inertial
+frames) has been observed: Gravity Probe B, LAGEOS, and spin effects in binary
+black-hole mergers. The proposal is that the *interpretation* is wrong: if the
+medium is a superfluid BEC ([32](32_superconducting_medium.md)) there is no
+viscosity to "drag" and a spinning body instead nucleates quantized vortex
+lines, with circulation Γ = n·h/m (n an integer, m the constituent mass; the
+quantum of circulation h/m is standard superfluid physics, `ESTABLISHED`). The
+observed precession is then the response to the vortex field, "not a dragged
+fabric". `CONJECTURE`; the equivalence with GR is not shown (§3).
 
-Standard GR frame dragging (Lense-Thirring effect): a rotating massive body drags
-the spacetime metric around it. Gravity Probe B measured it. LIGO sees it in binary
-mergers. It is observationally real.
+## 2. Healing length and the halo  `CONJECTURE`
 
-But the physical mechanism requires the medium to have **coupling between mass and
-substrate**. In the rubber-sheet analogy: viscosity. The spinning spoon drags the honey.
+Every BEC vortex has a healing length ξ, the core radius within which the
+density falls to zero. In the model, inside ξ superfluidity breaks (∇·u ≠ 0,
+σ → ∞, the black-hole analogue); outside it the bulk is incompressible
+(σ ≤ 2). The galactic dark-matter halo is read as the vortex field around the
+galaxy, its radius the healing length of the cosmological BEC at galactic mass
+scales, "no dark-matter particles".
 
-The medium is a superfluid BEC. It has:
-- No viscosity (established: non-shear, Euler equations)
-- ∇·u = 0 (incompressible)
-- Macroscopic quantum coherence (single wavefunction)
+*Correction.* The earlier page said the NFW profile (ρ ∝ 1/r inside the scale
+radius, ∝ 1/r³ outside) "is the energy-density profile of a vortex in a BEC:
+not a fitted profile, a derived one". NFW was obtained as a fit to cold-dark-matter
+N-body halos; a straight vortex in a Gross–Pitaevskii condensate has a
+density profile that rises from zero at the core to the bulk value over a
+healing length (the tanh²-type core profile), and no derivation of the NFW
+profile from it is given. The statement is withdrawn; the halo-from-vortices
+reading is open.
 
-**You cannot drag a superfluid.** There is no honey to grab. The spinning spoon
-creates quantized vortex lines — it does NOT drag the bulk fluid.
+## 3. Lense–Thirring restated: the numbers
 
----
+Gravity Probe B (Earth, a polar orbit at r ≈ 7027 km) predicted:
 
-## 2. What Actually Happens: Quantized Vortices
+| Effect | GR prediction | Recomputed | Measured (GP-B, as recalled) |
+|---|---|---|---|
+| geodetic (de Sitter) | 6606 mas/yr | 6605.0 | 6601.8 ± 18.3 mas/yr |
+| frame dragging (Lense–Thirring) | 39.2 mas/yr | 40.8 | 37.2 ± 7.2 mas/yr |
 
-When a rotating object is placed in a superfluid BEC, it nucleates
-**Abrikosov vortex lines** (same physics as type-II superconductors, wiki/32).
+The earlier page gave "39 milliarcseconds/year for geodetic, 0.041 mas/yr for
+Lense–Thirring". These are wrong: 39 mas/yr is the frame-dragging effect, the geodetic
+precession is 6606 mas/yr, and 0.041 is in *arcseconds* per year (41 mas/yr).
+(The recomputed 40.8 uses Earth's angular momentum J = 5.86·10³³ kg m²/s and
+the orbit-averaged formula GJ/(2c²a³); the 39.2 mas/yr published prediction
+includes the orbit geometry of the actual experiment. The measured figures are
+from memory and are to be checked against the GP-B papers.)
 
-Each vortex carries quantized circulation:
+**Listing 2 — the two GR precessions** (written for this page; runs cold)
 
-```
-Γ = nh/m
-```
-
-where n is an integer, h is Planck's constant, m is the BEC constituent mass.
-
-The vortices carry angular momentum. They extend along the rotation axis.
-Their density increases with angular velocity. The apparent "dragging" of
-a gyroscope or test particle near a rotating mass IS the response to the
-vortex field — not to a dragged fabric.
-
-**The "frame dragging" observable is real. Its interpretation as fabric dragging is wrong.**
-
-It is vortex-field-induced precession, not medium-viscosity-induced dragging.
-
----
-
-## 3. The Galaxy Is Bobbing
-
-The SPARC result (wiki/35 predecessor work, 2026-06-03):
-
-σ-face distribution across 3391 SPARC rotation curve data points:
-```
-σ = ½  (neutral buoyancy):   31%  — stable, causally intact orbits
-σ = 1  (Yang-Mills):          57%  — mass assembly, above neutral buoyancy
-σ = 2  (gravity face):        12%  — below neutral buoyancy, pulled toward centre
-σ = ∞  (BH interior):         <1%
-```
-
-This is not a galaxy sitting in a static gravitational potential.
-This is a galaxy **oscillating in the σ-face dimension** of the BEC medium.
-
-```
-σ = 2 (inner regions)   ← below neutral buoyancy, sinking
-σ = ½ (transition)      ← neutral buoyancy crossing point
-σ = 1 (disk)            ← above neutral buoyancy, rising
-σ = ½ (flat curve)      ← Stokes drift equilibrium at neutral buoyancy
+```python
+G, c, J, a, GM = 6.674e-11, 2.998e8, 5.86e33, 7.027e6, 3.986e14
+mas_per_yr = 3.156e7 * 206265e3
+print('Lense-Thirring GJ/(2c^2 a^3)    =', round(G * J / (2 * c**2 * a**3) * mas_per_yr, 1), 'mas/yr')
+print('geodetic 3/2 (GM)^1.5/(c^2 a^2.5)=', round(1.5 * GM**1.5 / (c**2 * a**2.5) * mas_per_yr, 1), 'mas/yr')
 ```
 
-The flat rotation curve IS the equilibrium state of a galaxy bobbing in the
-BEC medium at the Stokes drift velocity — the velocity at which the upward
-buoyancy force (BEC vortex pressure) equals the downward gravitational pull.
-
-This is not a new force. This is the existing BEC medium doing what
-superfluid BECs do: confining rotating objects via vortex pressure.
-
----
-
-## 4. The Healing Length and the Dark Halo
-
-In BEC physics, every vortex has a **healing length** ξ — the core radius
-within which the superfluid density drops to zero.
-
-Inside the healing length:
-- Superfluidity is broken
-- ∇·u ≠ 0 (compressible zone entered)
-- σ → ∞ (Fermat-forbidden zone, BH analogy)
-
-Outside the healing length:
-- Bulk BEC, incompressible
-- σ ≤ 2 (normal spacetime)
-
-The "dark matter halo" of a galaxy is the vortex field around the bobbing galaxy.
-The halo radius IS the healing length of the cosmological BEC evaluated at
-galactic mass scales.
-
-**There are no dark matter particles. The halo IS the vortex structure of the BEC.**
-
-The NFW profile (ρ ∝ 1/r at small r, 1/r³ at large r) is the energy density
-profile of a vortex in BEC — not a fitted profile, a derived one.
-
----
-
-## 5. Lense-Thirring Restated
-
-Gravity Probe B observed precession of gyroscopes around Earth.
-The precession rate (39 milliarcseconds/year for geodetic, 0.041 mas/yr for
-Lense-Thirring) is real.
-
-In the BEC vortex interpretation:
-
-The Earth's rotation nucleates quantized vortex lines in the BEC medium.
-The vortex density near Earth's surface is proportional to Earth's angular velocity Ω.
-A gyroscope precesses because it is threading through the vortex field.
-
-The precession rate:
-
 ```
-Ω_LT = Γ_vortex / (2πr²)  ×  n_vortex(r)
+Lense-Thirring GJ/(2c^2 a^3)    = 40.8 mas/yr
+geodetic 3/2 (GM)^1.5/(c^2 a^2.5)= 6605.0 mas/yr
 ```
 
-where `n_vortex(r)` is the vortex density at radius r from Earth's rotation axis
-and `Γ_vortex = h/m_BEC` is the quantum of circulation.
+The BEC statement: Ω_LT = Γ_vortex/(2πr²) · n_vortex(r), "exactly the GR formula
+because the vortex field is the curved metric in the rotating frame; the two
+descriptions are dual". GR gives Ω_LT ∝ GJ/(c²r³). The BEC expression has the
+dimension of a rate, but it reproduces the 1/r³ law only if the vortex
+density falls as n(r) ∝ 1/r, a function the page does not supply, and the mass
+m_BEC is unspecified. "Exactly, not approximately" is therefore **not
+established**; the duality is the proposal. The claimed advantages (quantisation at small scales;
+a minimum frame-dragging scale set by the healing length; termination of the
+dragging at black-hole formation) are consequences of the model, not tested.
 
-**This is exactly the GR Lense-Thirring formula** — not approximately, exactly —
-because the BEC vortex field IS the curved spacetime metric in the rotating frame.
-The two descriptions are dual.
+## 4. SPARC: what was recorded, and what it shows
 
-But the physical picture is different:
-- GR picture: spacetime fabric is twisted by rotation
-- BEC picture: quantized vortex lines thread through the medium
+SPARC (Lelli, McGaugh & Schombert 2016, AJ 152, 157) is 175 late-type galaxies
+with rotation curves and baryonic decompositions. The recorded evaluation
+(`sparc_σface.peval`, dated 2026-06-03, framework v1.218) states:
 
-The BEC picture does not require:
-- A fabric with viscosity
-- Continuous spacetime deformation
-- Any new degrees of freedom beyond the BEC
+| Quantity | Value |
+|---|---|
+| galaxies / data points | 175 / 3,391 |
+| method | J_ratio = V_obs/V_bar(r); σ-face from the "buoyancy table"; r_transition where J crosses 1.0 |
+| σ-face counts | ½: 1,053 (31.1%) · 1: 1,927 (56.8%) · 2: 410 (12.1%) · ∞: 1 (0.03%) |
+| galaxies with a transition (J crosses 1) | 97 |
+| hits of d* = 0.246 within 5% | **14 (fraction 0.08)** |
+| mean d_ratio (r_transition / r_max) | **0.2833** against the predicted 0.246 |
 
-It does explain:
-- Why the effect is quantized at small scales
-- Why the healing length sets a minimum frame-dragging scale
-- Why black hole formation terminates the dragging (σ→∞ = vortex core)
+The earlier page read these as "the galaxy is bobbing in the σ-face dimension"
+and said the d* = 0.246 prediction failed only because the denominator was the
+observed R_max and "the natural denominator is R_virial": "the framework is
+correct, the denominator needs R_virial". Standing: the d* prediction as
+registered **failed**: 14 hits in the sample (8%) and a mean 15% above the
+prediction. Choosing a different denominator after seeing the result is a new
+hypothesis and not a rescue; a pre-registration for it is needed
+(`FourthAgePapers/DM_GalacticCavity/` holds the existing one). The failed result is
+kept here and in the peval.
 
----
+**Listing 1 — J = V_obs/V_bar on the SPARC files** (written for this page; runs
+cold from `FourthAgePapers/DM_GalacticCavity/data/SPARC/Rotmod_LTG`)
 
-## 6. The Bobbing Quantified
-
-For a galaxy of mass M, rotation velocity V, radius R, in BEC medium
-with healing length ξ:
-
-**Bobbing frequency:**
+```python
+import glob, math, statistics
+vals, ng = [], 0
+for f in glob.glob('*_rotmod.dat'):
+    ng += 1
+    for line in open(f):
+        if line.startswith('#') or not line.strip():
+            continue
+        r, vo, e, vg, vd, vb = map(float, line.split()[:6])
+        v2 = vg * abs(vg) + 0.5 * vd * abs(vd) + 0.7 * vb * abs(vb)
+        if v2 > 0:
+            vals.append(vo / math.sqrt(v2))
+print('galaxies', ng, ' points', len(vals))
+print('median J', round(statistics.median(vals), 3),
+      ' fraction J>1', round(sum(v > 1 for v in vals) / len(vals), 3),
+      ' fraction |J-1|<0.05', round(sum(abs(v - 1) < 0.05 for v in vals) / len(vals), 3))
 ```
-ω_bob = √(g_eff / H)
-```
-where g_eff is the effective gravity of the BEC vortex field and H is
-the galaxy's half-thickness — exactly the structure of a harmonic oscillator
-in a potential well.
-
-**The flat rotation curve as Stokes drift:**
-```
-v_flat = ½ × A² × k × ω   (Stokes drift formula)
-```
-where A is the wave amplitude, k is the wavenumber, ω is the frequency
-of the bobbing oscillation.
-
-This gives `v_flat ∝ √M` — the Tully-Fisher relation, derived from
-first principles without dark matter. The exponent 4 (v⁴ ∝ M_baryonic)
-follows from the BEC dispersion relation at the healing-length scale.
-
----
-
-## 7. SPARC — What We Were Actually Measuring
-
-The J_ratio = V_obs / V_bar we computed for 175 SPARC galaxies is:
 
 ```
-J_ratio = (Stokes drift velocity) / (baryonic matter orbital velocity)
+galaxies 175  points 3389
+median J 1.658  fraction J>1 0.937  fraction |J-1|<0.05 0.055
 ```
 
-The ratio = 1 at neutral buoyancy (σ=½) = the point where the BEC vortex
-upthrust exactly balances baryonic gravity.
+With the conventional mass-to-light ratios (Υ_disk = 0.5, Υ_bulge = 0.7) the
+file has 3,389 usable points (the peval's 3,391 differs by two points; the peval's
+rule for the baryonic velocity is not stated, and this page does not reproduce its σ-face counts because
+the "buoyancy table" thresholds are not in the file). The recomputed J has median 1.66 and
+exceeds 1 at 93.7% of points: the observed rotation exceeds the baryonic
+prediction almost everywhere, which is the standard missing-mass signal that any
+account (particle dark matter, MOND, or the BEC model) must supply. Only 5.5% of
+points lie within 5% of J = 1.
 
-The transition radius where J crosses 1 is the **vortex healing length boundary**:
-inside = baryonic-dominated (σ=2), outside = BEC-vortex-dominated (σ=1→½).
+## 5. The bobbing and Tully–Fisher  (error in the earlier derivation)
 
-The d* = 0.246 prediction is the ratio of healing length to virial radius.
-The discrepancy in our first result (mean d_ratio = 0.283 vs 0.246) is
-because we used observed R_max, not R_virial. R_virial is the natural
-denominator — it is the total extent of the vortex field, not just the
-observed luminous matter.
+The model: a galaxy bobs in the medium with ω_bob = √(g_eff/H); the flat curve
+is the Stokes-drift equilibrium v_flat = ½A²kω; and "this gives v_flat ∝ √M, the
+Tully–Fisher relation". **That does not follow:** the baryonic Tully–Fisher
+relation is v_flat⁴ ∝ M_baryonic (v ∝ M^{1/4}). A relation v ∝ M^{1/2}
+(equivalently v² ∝ M) is a different law and disagrees with observation. The
+statement "the exponent 4 follows from the BEC dispersion relation at the
+healing-length scale" is not derived on the page. `OPEN`: derive v⁴ ∝ M, and
+explain the observed small scatter, from the model.
 
-**The framework is correct. The denominator needs R_virial.**
+## 6. Related pages
 
----
-
-## 8. Connections
-
-- **wiki/31** (cavitation): BH = cavitation scar = vortex core = σ→∞
-- **wiki/32** (superconducting medium): Abrikosov vortices = dark matter halo
-- **wiki/33** (gyroscope): Lense-Thirring = gyroscope in vortex field
-- **wiki/34** (HSR): σ→∞ at vortex core = degenerate metric
-- **D13** (dark matter): halo = BEC vortex structure
-- **D17** (pilot wave): Stokes drift = Bohmian trajectory = flat rotation curve
-- **D-P §2** (metric): healing length = minimum σ-face scale
-
----
-
-## 9. Open Threads
-
-- [ ] Derive NFW profile as BEC vortex energy density — formally
-- [ ] Compute healing length ξ for cosmological BEC at galactic mass scales
-      Does ξ match the observed dark matter halo scale radii?
-- [ ] Lense-Thirring = BEC vortex precession: derive the identity formally
-      Show GR Lense-Thirring formula is a special case of vortex precession
-- [ ] SPARC correction: get R_virial from mass models, recheck d* prediction
-- [ ] Tully-Fisher from Stokes drift: derive v⁴ ∝ M from BEC dispersion
-- [ ] Is the CMB cold spot a supervoid = large-scale vortex absence?
+[10 JWST engine](10_jwst_engine.md) · [29 The witches hat](29_witches_hat_paper.md) ·
+[32 The superconducting medium](32_superconducting_medium.md) · [34 Hypercomplex spectral relativity](34_hypercomplex_spectral_relativity.md) ·
+[37 AGN alignment and the BEC vortex](37_agn_alignment_bec_vortex.md)

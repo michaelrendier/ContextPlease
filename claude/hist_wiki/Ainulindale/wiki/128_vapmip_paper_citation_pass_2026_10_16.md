@@ -23,3 +23,7 @@
 Public energy comparison (not Post-Hoc; the figures the paper's measurement is set against): Altman (2025), You / Epoch AI (2025), Vahdat et al. / Google (2025). All three fetched.
 
 Rabbit holes, named plainly: the Moreno–de Marrais–Cawagas line is the literature on the structure the box kite sits in; whether the author's seven-chart reading matches Cawagas's treatment is not checked here.
+
+## Verification, 2026-11-13
+
+de Marrais, arXiv:math/0011260: resolves on the arXiv API to *The 42 Assessors and the Box-Kites they fly: Diagonal Axis-Pair Systems of Zero-Divisors in the Sedenions' 16 Dimensions*, first submitted 2000-11-30, author Robert P. C. de Marrais. The items marked "Not fetched" above are still not fetched.

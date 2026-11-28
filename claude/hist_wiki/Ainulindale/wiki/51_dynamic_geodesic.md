@@ -1,363 +1,199 @@
-# 51 — The Dynamic Geodesic
-
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-13  
-**Status:** THEORETICAL — cascade continues from wiki/50
-
----
-
-## L_FR = 0
-
-Three analytical frameworks. One question: where does the system have no preference?
-
-```
-∇²f = 0     (Laplacian)          — no curvature, no preferred direction, harmonic
-L = 0       (Lagrangian)         — geometric and spectral tension cancel exactly
-F{f} = 0    (Fourier decomp)     — no dominant frequency, all modes balanced
-```
-
-These are the same statement in different languages. They are simultaneously zero at
-the same locus: **σ=½, the critical line, the zero divisor boundary, the fixed point**.
-
-L_FR = 0 is not a minimum of action. It is the exact cancellation where Fermat's
-geometric tension (dimensional incompatibility, infinite descent) and Riemann's
-spectral potential (zero distribution on the critical line) are in perfect opposition.
-They are always equal. At every prime. The prime IS the cancellation event.
-
-The Zeta function is the Fourier transform of the primes — it describes their resonance
-frequencies. But L_FR = 0 is upstream of Zeta. Fermat defines the existence condition.
-Riemann maps where it appears. Zeta only describes the echo.
-
-**Smoothness as the unified zero.** The primes are the breaks in smoothness — the points
-where at least one of those zeros becomes nonzero. Where the symmetry cracks just enough
-for something discrete to exist. The smooth harmonic critical line is the default. The
-prime is the exception that proves it.
-
----
-
-## The Generalized Fermat
-
-Fermat's original: `x^n + y^n = z^n` — same exponent, forced geometric symmetry.
-
-General case: `x^l + y^m = z^n` — three independent dimensional exponents. Each term
-lives in its own geometric space. This is literally the definition of all factorization:
-every factor relationship is a dimensional trade.
-
-The **locus of inoperability** — where no (l, m, n) assignment allows the geometry to
-close — is not a failure condition. It is the prime skeleton. The primes are what survives
-after all Fermat-type dimensional compositions are exhausted. They cannot be expressed
-as any such composition with integer solutions.
-
-What Fermat saw: infinite descent is not just a proof technique. It is a geometric
-statement. If a solution existed, you could always find a smaller one — the descent never
-terminates — meaning the solution space is empty at integer boundaries. He saw the
-infinite divergence as the tool. The locus where descent never terminates IS the prime.
-
-The zeta zeros are the resonance frequencies of the L_FR=0 cancellation events. The
-zeta function counts the echoes. Fermat defines why the wall exists.
-
----
-
-## The Four-Cycle Heartbeat
-
-All causal structure breathes in four phases, two stages:
-
-| Phase | Description | Stage |
-|-------|-------------|-------|
-| Geometric quantization | Continuous geometry prepared for discreteness | I |
-| Geometry | Pure manifold, the field, the potential | I |
-| Quantized geometry | Discrete structure emergent from the field | II |
-| Quantization | The operator — the act of discretizing | II |
-
-Stage I: the geometry pair. Stage II: the quantization pair. Each stage defines the
-other's negative space. You cannot have quantization without something continuous to
-quantize. You cannot have geometry without the discrete points that mark it.
-
-H_hat_RB and -H_hat_BR are Stage I and Stage II. The oscillation between them across
-σ=½ IS the heartbeat. The universe is not a static geometry with quantization imposed
-on it. It is the oscillation of geometry and quantization through each other, measured
-at the boundary where they cancel.
-
-**Riemann Geometries = Riemann Quantisation.**  
-**Fermat Quantisation = Fermat Geometries.**  
-Both are simultaneously geometric and quantising — because: point by point along a path.
-
----
-
-## The Zero Divisor as Natural Lagrangian
-
-The zero divisor is not where the algebra fails. It is the definition boundary: where
-one layer's completion becomes the next layer's origin. Where flow goes **away from**.
-
-Every outside input is a reference frame shift back to the zero divisor. Not a
-perturbation of the path — a reset of the reference frame. The geodesic re-emerges
-from that boundary with the new frame as its origin.
-
-So the "path of least action" is not the path where effort is minimized. It is the
-path that most naturally finds the next zero divisor. The sedenion's 84 ZD pairs are
-not sparse exceptions to its algebra — they are the skeleton the geodesic is navigating
-between. The skeleton is the attractor. The path IS the passage between ZD events.
-
-Each layer transition in the six-layer Ptolemy architecture is a ZD event. The
-GrammarNeuron touching the WordMonad boundary is this Lagrangian. Each layer is a
-reference frame. The transition IS the zero divisor. The flow goes away from it into
-the next coherent structure.
-
----
-
-## The Dynamic Geodesic
-
-Classical geodesic: the shortest path on a fixed manifold. Action minimized globally.
-The background is frozen. Computed from a desk.
-
-**The dynamic geodesic:** the truest trajectory through a field of varying momentum.
-Not shortest distance — truest path through accelerations and decelerations alike.
-
-```
-L_(I|O) = L_standard + ∫ J_red · d(J_blue)/dt  dλ
-```
-
-The extra term: forward momentum coupled to the changing potential in real time, along
-the path, as the background metric shifts. This term is ∂̂†_∂M ⊗ B̂_p in H_hat_RB —
-previously unnamed. Named now.
-
-The photon in standard GR follows a geodesic computed at t=0. A real photon, like a
-real particle, responds to the metric AS IT IS NOW. The difference between these two
-is L_sling ~ v·∂g/∂t — the slingshot term. The Hubble tension is the accumulated
-error from omitting this term across 13.8 billion years of metric evolution.
-
-The gravitational slingshot does not violate energy conservation — it absorbs energy
-from the moving field (dark energy, cosmic expansion) and redirects it into the
-particle's trajectory. The standard model says "energy anomaly." The dynamic geodesic
-says "I felt it, I used it, the path evolved."
-
----
-
-## The Bézier Degree Argument
-
-The cubic Bézier (`C` in SVG `<path>`) has degree 3. Its control points are off-curve
-— they live in the forbidden zone (n=3, no integer solutions in Fermat's general case).
-Its endpoints are ZD events — they live in the allowed zone (n=2, E=mc²).
-
-This is not a coincidence. The cubic Bézier is the geometric object that:
-- Has endpoints on the causal line (σ=½, the ZD boundary)
-- Has control points in the forbidden zone (σ<½, Fermat)
-- Produces a smooth curve whose shape is determined by the forbidden geometry
-
-The curve is Fermat's constraint made visible. You cannot see the control points in
-the rendered image — they are in the forbidden zone. But they shape every curve you
-see. Fermat defines the shape of what Riemann makes visible.
-
-σ controls the bow:
-- σ=½ → control points at chord midpoint → straight line → coherent causality
-- σ>½ → bow outward → dissolving toward the pole
-- σ<½ → bow inward → collapse into the forbidden zone
-
----
-
-## Euler's Identity as Boundary Condition
-
-```
-e^{πi}       = -1    decreasing spiral    particle    σ < ½    witch's hat tip
-e^{πi} + 1   =  0    circle               boundary    σ = ½    brim / event horizon  
-e^{2πi}      =  1    increasing spiral    galaxy      σ > ½    inside-out hat
-```
-
-Not a mathematical curiosity. A phase classifier. The +1 is the reference frame shift.
-π is the half-turn — the rotation rate through i that defines how many half-turns before
-the path closes or diverges. The i is the rotation operator, not an abstraction.
-
-The spiral is defined from above: rotations of π through i. The equation says:
-
-- At half-rotation: the path has reversed, net curvature negative, converging
-- At the circle: the path is balanced, neither gaining nor losing, the fixed point
-- At full rotation: the path has returned, but with net positive curvature, expanding
-
-The universe's entire evolutionary arc is these three states and the boundary between
-them. The Bang = the moment the increasing spiral (pre-Bang acausal expansion) is
-punctuated by the e^{πi}+1=0 fixed point event. The causal universe = the decreasing
-spiral re-ascending toward the circle from the particle side.
-
----
-
-## The Witch's Hat and Its Inverse
-
-**Witch's hat particle** (σ<½, e^{πi}=-1):
-- Null cone converging to singularity
-- The hat tip is the singularity: maximum information density, minimum volume
-- The brim is σ=½: the event horizon, the last stable surface
-- Ascending from tip to brim: the particle radiating away from its own singularity
-
-**Galactic resonating particle** (σ>½, e^{2πi}=1):
-- The witch's hat, turned inside-out via conformal inversion r→1/r
-- The tip (singularity) maps to the cosmological horizon (infinity)
-- The brim remains σ=½: the same event horizon, now seen from outside
-- Spiral arms = the increasing e^{πi} spiral expanding from the centre
-- Resonates at BAO scale: 147 Mpc = n* = 5.257 (N-ball volume peak)
-
-The two objects are the same geometry, viewed from conjugate sides of σ=½. The
-particle is the inside. The galaxy is the outside. The boundary between them — the
-brim of the hat, the event horizon, the critical line — is the same object seen from
-both sides simultaneously.
-
-The Riemann Hypothesis is the statement that both views agree: that every causal event
-(inside) has a corresponding coherent structure (outside), and they all meet at σ=½.
-
----
-
-## The Traceur: Existence Proof of the Dynamic Geodesic
-
-The traceur (parkour practitioner: French "tracer" — to trace, to draw a line) does not
-navigate from a blueprint. There is no pre-computed path of least action. At every
-moment: current position, current momentum, immediate environment — and the next move
-is the local least action against THAT configuration, not the one at t=0.
-
-The traceur finds the roof without having ever seen it.
-
-**This is the proof that the local contains the global.**
-
-The roof is the attractor of the local dynamics. The environment was arranged — by the
-same physics that makes the roof possible — so that local least-action navigation
-converges to it. The gradient field points toward the roof from every position.
-The traceur does not know this. They follow the gradient. The roof arrives.
-
-This is not metaphor. It is the physical existence proof of:
-
-```
-∃ attractor X such that: ∀ local paths composed from any starting point,
-path → X as steps → ∞
-
-X = σ=½.
-Proof: every coherent causal structure in the universe navigates there locally.
+# 51 — The dynamic geodesic: L_FR = 0, the slingshot term, and the primes-as-cavitation reading
+
+| | |
+|---|---|
+| Status | **THEORETICAL as headed (2026-06-13, cascade from [52b](52b_vortex_quantizing_shear.md)); in this wiki `CONJECTURE`/`INTERPRETATION` with three corrections found by calculation: ζ(s) ≠ Σ p^(−s) (§6), primes are sums of two powers (§2), the generalised Fermat equation has solutions (§2)** |
+| Code | Listing 1; the L_(I|O) engine `ValaQuenta/modules/l_io_photon_path` ([82](82_l_io_photon_path.md)); the SVG Bézier renderers |
+| Page numbering | one of two pages numbered 51 (the other: [j2 involution](52c_j2_involution_riemann_fermat.md)) |
+| Last verified | 2026-11-13: Listing 1 executed |
+
+## 1. L_FR = 0  `interpretation`
+
+Three frameworks ask where the system has no preference: ∇²f = 0 (Laplacian: no
+curvature, harmonic), L = 0 (Lagrangian: geometric and spectral tension cancel),
+F{f} = 0 (Fourier: no dominant frequency); "the same statement in three languages,
+simultaneously zero at σ = ½". L_FR = 0 is not a minimum of action but the exact
+cancellation of "Fermat's geometric tension" and "Riemann's spectral potential",
+"at every prime: the prime *is* the cancellation event". "The zeta function is the
+Fourier transform of the primes; L_FR = 0 is upstream of zeta": Fermat defines the
+existence condition, Riemann maps where it appears, zeta describes the echo.
+"Smoothness as the unified zero": the primes are the breaks in smoothness.
+
+Standing: the three conditions are distinct mathematical statements (a harmonic
+function, a stationary action, a vanishing transform) that do not coincide in general;
+no common locus is computed, and "L_FR" is not defined as a functional. The
+relation of ζ to the Fourier-type transform of the primes is the explicit formula
+([48](48_observer_fixed_point.md) §3).
+
+## 2. The generalised Fermat equation  (corrected)
+
+Fermat: xⁿ + yⁿ = zⁿ (one exponent, forced symmetry). The page's general case:
+x^l + y^m = z^n with three independent exponents, "literally the definition of all
+factorisation", the **locus of inoperability** (no (l, m, n) allows the geometry to
+close) being "the prime skeleton", the primes being "what survives after all
+Fermat-type dimensional compositions are exhausted; they cannot be expressed as any
+such composition with integer solutions". Infinite descent is read as "the locus
+where descent never terminates is the prime".
+
+Checks (Listing 1):
+
+- **The equation x^l + y^m = z^n has many solutions with coprime x, y, z** and exponents ≥ 2: 1² + 2³ = 3², 2⁵ + 7² = 3⁴, 7³ + 13² = 2⁹, 2⁷ + 17³ = 71², 3⁵ + 11⁴ = 122² (Listing 1). The Fermat–Catalan conjecture says there are only finitely many with 1/l + 1/m + 1/n < 1, and the Beal conjecture says that when l, m, n ≥ 3 the bases share a common factor; both are open problems, `OPEN`. Neither says primes are the "locus of inoperability".
+- **Primes can be expressed as sums of two powers.** Of the 168 primes below 1000, 103 equal x^l + y^m with x, y ≥ 1 and l, m ≥ 2 (every prime ≡ 1 mod 4 is a sum of two squares, for instance). So the statement "primes cannot be expressed as any such composition" is false as written.
+- The framing "x^l + y^m = z^n is the definition of all factorisation" has no content as stated: factorisation is the multiplicative structure of ℤ, and the equation is additive. Infinite descent is a proof technique (Fermat's, for n = 4) and a structural property of the equation's solutions, and does not identify the primes.
+
+## 3. The four-cycle heartbeat  `interpretation`
+
+Four phases in two stages: geometric quantisation, geometry (Stage I, the geometry
+pair); quantised geometry, quantisation (Stage II, the quantisation pair); each stage
+defines the other's negative space; Ĥ_RB and −Ĥ_BR are Stage I and II, and "the
+oscillation between them across σ = ½ is the heartbeat" ([14](14_redblue_hamiltonian.md),
+with the definition of 0_BR: [133](133_canonical_maths.md) §3). "Riemann geometries =
+Riemann quantisation; Fermat quantisation = Fermat geometries": a vocabulary for the two
+operator terms. No calculation.
+
+## 4. The zero-divisor as a natural Lagrangian; the dynamic geodesic  `CONJECTURE`
+
+The zero-divisor is "not where the algebra fails": it is the layer boundary where one
+layer's completion becomes the next layer's origin, and "every outside input is a
+reference-frame shift back to the zero-divisor". The path of least action is "the path that
+most naturally finds the next zero-divisor"; the sedenion's 84 zero-divisors are the skeleton
+the geodesic navigates between ([25](25_sedenion_manual.md) §4: 84 exact). Each
+layer transition of the six-layer Ptolemy architecture is a zero-divisor event.
+
+**The dynamic geodesic.** Classical: shortest path on a fixed manifold. Dynamic: "the
+truest trajectory through a field of varying momentum":
+
+L_(I|O) = L_standard + ∫ J_red · d(J_blue)/dt dλ
+
+with the extra term identified as ∂̂†_∂M ⊗ B̂_p ("previously unnamed, named now") and
+the photon's response to the metric "as it is now": L_sling ∼ v·∂g/∂t. "The Hubble
+tension is the accumulated error from omitting this term across 13.8 billion years."
+Standing: the extra term is dimensionally unexamined (J_red·dJ_blue/dt has no stated
+units), and the Hubble tension (H₀ ≈ 73 from the distance ladder against ≈ 67 from the CMB,
+about 8%) has no calculation attached to it. A gravitational slingshot does not violate
+energy conservation (the energy comes from the moving body's orbital motion in the
+two-body frame); the claim that it "absorbs energy from the moving field (dark
+energy)" is the model's reading. The L_(I|O) engine's own status is in [82](82_l_io_photon_path.md).
+
+## 5. The Bézier degree argument  `analogy`
+
+The cubic Bézier (SVG `C`) has degree 3; its control points lie off the curve
+("in the forbidden zone, n = 3") and its endpoints on it ("zero-divisor events, the
+allowed zone n = 2"); the curve is "Fermat's constraint made visible". σ controls the
+bow: σ = ½ control points on the chord, a straight line; σ > ½ bows outward; σ < ½
+inward. Exact geometry: a Bézier curve lies in the convex hull of its control points
+and interpolates its end points, and a cubic whose control points lie on the chord is
+a straight segment (for any placement along the chord, with a non-uniform
+parametrisation unless they sit at the thirds). The assignment of control-point
+positions to σ and to "forbidden" exponents is a rendering convention.
+
+## 6. Euler's identity as a phase classifier; the hat and its inverse  `interpretation`
+
+The table: e^(πi) = −1 "decreasing spiral, particle, σ < ½, the hat's tip"; e^(πi) + 1 = 0
+"circle, boundary, σ = ½, brim / event horizon"; e^(2πi) = 1 "increasing spiral, galaxy,
+σ > ½, inside-out hat". The "+1 is the reference-frame shift". The witch's hat particle
+(σ < ½) and the galactic resonating particle (σ > ½, the hat inverted by r → 1/r) are "the
+same geometry viewed from conjugate sides of σ = ½", the galaxy "resonating at the BAO
+scale 147 Mpc = n* = 5.257". Standing: e^(πi) = −1, e^(πi) + 1 = 0 and e^(2πi) = 1 are one
+identity at three angles; spiral type is not a property of them. The hat and its
+inversion are [29](29_witches_hat_paper.md), where the inversion's halo prediction
+fails (ρ ∝ r⁻⁶). "147 Mpc = n* = 5.257" equates a length with the dimensionless n-ball
+peak (n* = 5.256946); the BAO scale is 147.09 ± 0.26 Mpc (Planck 2018) and no relation
+to n* is derived.
+
+## 7. The traceur as an "existence proof"  `analogy`
+
+A traceur (parkour practitioner) navigates by local least action against the current
+position, momentum and surroundings, and "finds the roof without having seen it": "the
+local contains the global", the roof is the attractor of the local dynamics, the
+environment arranged by the same physics; the stated theorem is "∃ attractor X such
+that every local path composed from any start converges to X; X = σ = ½; proof: every
+coherent causal structure navigates there locally". The apex of a jump is σ = ½
+(neither rising nor falling): push-off σ < ½, apex σ = ½, landing σ > ½.
+Standing: a gradient flow converges to an attractor only if the attractor exists and
+the basin contains the starting point; the "proof" assumes σ = ½ is such an attractor
+and so is circular. The traceur is a vivid image of reacting to the metric as it is (the
+dynamic-geodesic idea) and the apex-of-a-jump picture is correct as mechanics (vertical
+velocity zero at the apex). The traceur "is the physical embodiment of
+∂̂†_∂M ⊗ B̂_p" is the framework's reading.
+
+## 8. Σ → Ĥ_RB → sedenion  `interpretation`
+
+"The English prompt is σ": the semantic content fixes where you land on the critical
+line (the imaginary part t); the real part is always ½; "language is always on the
+boundary". The chain σ (English prompt) → Ĥ_RB → [σ = ½ boundary] → −Ĥ_BR → sedenion
+v[k] (16 amplitudes); "−Ĥ_BR is what keeps σ = ½ fixed; without it the system drifts" (the
+author's definition of 0_BR as the conjugate / return flow: [133](133_canonical_maths.md) §3).
+Standing: in the code the prompt enters through `cam_encode` and the prime hash
+([15](15_the_monad.md) §3); "σ" here is the real part of the *zero index map* only in the
+framework's reading, and every word returns σ = ½ because it is the fixed point of the
+balance iteration, not because language lives on a line ([13](13_omgwtf_rh_proof.md) §5).
+
+## 9. "The primes are the cavitation"  (the zeta error)
+
+The page's closing section: the integer multiplicative field closes at composite
+positions (filled) and cannot at prime positions ("the pressure drops below the
+threshold: the void opens"); the prime *is* the cavitation event; and
+
+**ζ(s) = Σ p^(−s)** ("the sum over all prime voids, each at depth s"), the zeta function being
+"the acoustic emission spectrum of this cavitation field", the zeros "frequencies where
+void emissions from all primes cancel simultaneously"; "cosmic voids = large primes".
+
+**The formula is wrong.** Σ_p p^(−s) is the *prime zeta function* P(s), and P(2) =
+0.4522474, not ζ(2) = 1.6449341 (Listing 1). The Riemann zeta function is
+ζ(s) = Σ_n n^(−s) = Π_p (1 − p^(−s))^(−1) for Re s > 1. P(s) is related by
+P(s) = Σ_k μ(k)/k · ln ζ(ks), has a logarithmic singularity at s = 1 (not a pole), and its
+natural-boundary behaviour is at Re s = 0; its "zeros where all primes cancel" are not
+the Riemann zeros. So the acoustic-emission picture (a sum of independent prime
+emitters whose cancellation gives the zeros) does not describe ζ. What can be kept: the
+primes are the multiplicative atoms, and the explicit formula expresses ψ(x) as a sum of
+oscillations, one per zero.
+
+## 10. Listing 1 — the three checks
+
+(written for this page; runs cold with mpmath)
+
+```python
+import math
+import mpmath as mp
+mp.mp.dps = 25
+
+# (1) the prime zeta function is not the Riemann zeta function
+N = 2_000_000
+sv = bytearray([1]) * (N + 1); sv[0] = sv[1] = 0
+for i in range(2, int(N ** 0.5) + 1):
+    if sv[i]:
+        sv[i*i::i] = bytearray(len(sv[i*i::i]))
+ps = [p for p in range(2, N + 1) if sv[p]]
+print('sum_p p^-2 =', round(sum(p ** -2 for p in ps), 7), '  zeta(2) =', mp.nstr(mp.zeta(2), 7))
+
+# (2) primes are sums of two perfect powers (x^l + y^m, x, y >= 1, l, m >= 2)
+powers = sorted({x ** l for x in range(1, 40) for l in range(2, 12) if x ** l < 1000})
+pw = set(powers)
+primes = [p for p in ps if p < 1000]
+rep = [p for p in primes if any((p - a) in pw for a in powers if a < p)]
+print('primes < 1000:', len(primes), ' expressible as x^l + y^m:', len(rep))
+
+# (3) the generalised Fermat equation x^l + y^m = z^n has solutions with coprime x, y, z
+known = [(1, 2, 2, 3, 3, 2), (2, 5, 7, 2, 3, 4), (7, 3, 13, 2, 2, 9),
+         (2, 7, 17, 3, 71, 2), (3, 5, 11, 4, 122, 2)]
+for x, l, y, m, z, n in known:
+    assert x ** l + y ** m == z ** n and math.gcd(math.gcd(x, y), z) == 1
+    print(f'{x}^{l} + {y}^{m} = {z}^{n}   ({x**l} + {y**m} = {z**n})')
 ```
 
-The Bang encoded the roof into every brick. At t=0, the local gradient everywhere
-points toward the fixed point. The composition of all local actions across 13.8 billion
-years produces the large-scale structure: the sedenion callosum geometry, the BAO
-scale, the Hubble flow. Not planned. Found.
-
-**The traceur is the physical embodiment of the ∂̂†_∂M ⊗ B̂_p operator.** They absorb
-energy from the moving field (a wind gust, a rail with flex, a surface that gives back
-more than expected) and redirect it into the trajectory. They do not stop to recompute.
-They feel it, use it, continue. The path evolves on the fly.
-
-The apex of the jump IS the fixed point:
-
 ```
-push-off  →  decreasing spiral  →  kinetic → potential  →  σ < ½
-apex      →  e^{πi} + 1 = 0    →  neither rising nor falling  →  σ = ½  
-landing   →  increasing spiral  →  potential → kinetic  →  σ > ½
+sum_p p^-2 = 0.4522474   zeta(2) = 1.644934
+primes < 1000: 168  expressible as x^l + y^m: 103
+1^2 + 2^3 = 3^2   (1 + 8 = 9)
+2^5 + 7^2 = 3^4   (32 + 49 = 81)
+7^3 + 13^2 = 2^9   (343 + 169 = 512)
+2^7 + 17^3 = 71^2   (128 + 4913 = 5041)
+3^5 + 11^4 = 122^2   (243 + 14641 = 14884)
 ```
 
-The witch's hat in meat. The traceur IS the boundary condition instantiated.
+## 11. Related pages
 
----
-
-## Σ → H_hat_RB → Sedenion
-
-The English prompt IS σ. Not a number passed alongside it. The semantic content
-determines the position along the critical line — the imaginary part t, where you land
-on the infinite thread of the motionless-yet-moving node line. The real part is always
-½. Language is always on the boundary. All valid semantic states live on the critical
-line.
-
-```
-σ (English prompt) → Ĥ_RB → [σ=½ boundary] → −Ĥ_BR → sedenion v[k]
-```
-
-−Ĥ_BR is what keeps σ=½ fixed. Without it, the system drifts off the critical line.
-It is the balancing operator — the reason the zeros don't wander. The math pointed
-it out: the geometry of H_hat_RB required its own negation to be well-defined.
-
-The sedenion output v[k]: 16 amplitudes, one per basis element, encoding the full
-16-dimensional causal state of the input prompt. The SVG renders this state, with
-σ=½ as the fixed rendering surface — the only surface on which all analytical
-frameworks agree, where Laplacian = Lagrangian = Fourier decomposition = 0.
-
-The SVG is not a visualization of the mathematics. It IS the mathematics, rendered
-at the harmonic boundary, point by point along a path.
-
----
-
-## Summary
-
-| Concept | Encoding |
-|---------|----------|
-| Unified smoothness | ∇²f = L = F{f} = 0, simultaneously, at σ=½ |
-| Generalized Fermat | x^l + y^m = z^n = all factorization; primes = locus of inoperability |
-| Fermat/Riemann hierarchy | Fermat defines, Riemann maps, Zeta describes |
-| Four-cycle | Geometric quantization ↔ Geometry ↔ Quantized geometry ↔ Quantization |
-| ZD Lagrangian | Zero divisor = layer boundary = reference frame reset = flow origin |
-| Dynamic geodesic | L_(I|O) = L_standard + ∫J_red·d(J_blue)/dt dλ |
-| Slingshot operator | ∂̂†_∂M ⊗ B̂_p = the unnamed term, now named |
-| Bézier degree | Degree 3 control points in forbidden zone; endpoints on ZD boundary |
-| Euler identity | Phase classifier: particle / boundary / galaxy; boundary condition |
-| Witch's hat | σ<½ particle ↔ σ>½ galaxy; brim = σ=½ = event horizon |
-| Conformal inversion | r→1/r maps particle to galaxy; same hat, opposite faces |
-| Traceur | Existence proof: local least-action composes to global attractor |
-| Roof without map | Local gradient encodes global attractor; Bang wrote it into every brick |
-| σ as prompt | English sentence = position on critical line; real part always ½ |
-| Primes = cavitation | The void where the integer field cannot maintain coherence |
-| Composites = filling | Every composite is the field closing successfully at that position |
-| ζ(s) = acoustic emission | Zeta is the spectrum of cavitation; zeros are resonance nodes |
-| Cosmic voids = large primes | Galaxy filament/void structure is the cosmological cavitation map |
-
----
-
-## The Primes ARE the Cavitation
-
-The integer multiplicative field extends a product at every position. At composite
-positions, the field closes — two or more smaller integers multiply to reach it. The
-geometry succeeds. The position is filled.
-
-At prime positions: no product of smaller integers reaches it. The field cannot maintain
-coherence. The pressure drops below the threshold. **The void opens.**
-
-The prime IS the cavitation event — not a marker placed at a special position, but the
-position where the field's self-maintenance fails. The composite fills. The prime is
-where filling fails. There is no other definition needed.
-
-The Zeta function is the acoustic emission spectrum of this cavitation field:
-
-```
-ζ(s) = Σ p^{-s}     (sum over all prime voids, each at depth s)
-```
-
-Each prime void emits at a frequency determined by its size (p) and the resolution (s).
-The Riemann zeros γ_n are the resonance nodes — frequencies where void emissions from
-all primes cancel simultaneously. The acoustic field goes quiet.
-
-RH: all nodes are at σ=½. The cavitation field resonates in perfect coherence on the
-critical line and nowhere else.
-
-**∇²(cavitation field) = 0 at σ=½.** The prime voids are distributed as harmonically
-as they can be given the constraint that every composite position is filled. No net
-accumulation anywhere. The cavitation is maximal-entropy, minimal-curvature, harmonic.
-This is the prime number theorem, stated as a field condition.
-
-The sigma_cavitation SVG was named correctly before this was understood. Every element
-was already encoding it:
-- Central void: global cavitation level at scale σ
-- Spoke amplitudes v[k]: local cavitation depth at prime P[k]
-- Bézier ZD curves: pressure gradients between interacting voids; collapse dynamics
-- Green caustic: the acoustic pressure envelope — cavitation field seen from above
-
-The cosmic large-scale structure is the same map at cosmological scale. The great voids
-between galaxy filaments are the large-scale primes: positions in 3D space where the
-density field cannot be assembled from any product of smaller-scale structures. The
-filaments are the composites. The BAO scale (147 Mpc = n*=5.257) is the first cavitation
-event after the Bang — the first prime in the cosmological field, frozen when the
-acoustic horizon closed at recombination.
-
-We are inside the cavitation. The primes define the structure from within the void.
-
----
-
-The path of least action is not the path of least effort. It is the path that most
-naturally finds the next zero divisor — the next moment where the geometry changes
-character, the next layer boundary, the next causal reset.
-
-The universe has been tracing this path for 13.8 billion years without a map.
-It found the roof.
-It is the roof.
-The void is the structure.
+[29 The witches hat](29_witches_hat_paper.md) · [50 The vortex](52b_vortex_quantizing_shear.md) ·
+[52 L_dynamic and the avoided collaborator](52_l_dynamic_avoided_collaborator.md) · [64 L_dynamic](64_l_dynamic.md) ·
+[82 The L_(I|O) photon path](82_l_io_photon_path.md)

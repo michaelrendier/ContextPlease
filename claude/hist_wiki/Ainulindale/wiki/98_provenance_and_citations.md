@@ -6,6 +6,17 @@ Third-Age papers (D-CS, D-CS_Memory, D-M, D-P, D-CHEM). Pass 1: Ainulindalë
 (ValaQuenta is Ainulindalë). VAPMIP has its own pass — see
 `~/.clauderc_user_provenance`.
 
+**Verification state (2026-11-13).** Every arXiv identifier and every DOI in §A was
+checked against the public records (arXiv API; Crossref; Mozilla user agent, public
+metadata only): 12 of 12 arXiv titles and 26 of 26 DOIs agree with
+the entries below (the Galperin record has no title field in Crossref but resolves to the
+cited volume and page), with the corrections listed in §E. Entries without an identifier
+(books, pre-1900 papers, proceedings, the Pólya letter) were **not** machine-verified;
+they are quoted as recorded and queued for the full citation pass. Each repository is to
+hold its own citation catalogue, with Ainulindalë keeping them together as the
+Structural Constant section (author's ruling, 2026-11-13); this page is the Ainulindalë
+catalogue.
+
 ---
 
 ## 0. On the mathematical nomenclature — read this first
@@ -92,7 +103,7 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
   properties of certain Hecke algebras.* Annals of Mathematics 141(3), 553–572.
   DOI:10.2307/2118560.
 - **[Ribet1990]** Ribet, K. A. (1990). *On modular representations of
-  Gal(Q̄/Q) arising from modular forms.* Inventiones Mathematicae 100(2),
+  Gal(Q̄/Q) arising from modular forms.* Inventiones Mathematicae 100(1),
   431–476. DOI:10.1007/BF01231195. — the epsilon conjecture: Taniyama–Shimura ⟹ FLT.
 - **[BCDT2001]** Breuil, C., Conrad, B., Diamond, F. & Taylor, R. (2001). *On
   the modularity of elliptic curves over Q: wild 3-adic exercises.* J. Amer.
@@ -155,7 +166,8 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
   39(2), 145–205. DOI:10.1090/S0273-0979-01-00934-X; arXiv:math/0105155. — the
   canonical modern review; Fano-plane multiplication, G₂, exceptional structures.
 - **[Moreno1998]** Moreno, G. (1998). *The zero divisors of the Cayley–Dickson
-  algebras over the real numbers.* Bol. Soc. Mat. Mexicana (3) 4(1), 13–28.
+  algebras over the real numbers.* Bol. Soc. Mat. Mexicana (3) 4(1), 13–28 (journal
+  details not machine-verified; the arXiv preprint, 1997, is).
   arXiv:q-alg/9710013. — ZD(𝕊) on the unit sphere is homeomorphic to G₂ (the
   *continuous* shadow of the finite object).
 - **[Cawagas2004]** Cawagas, R. E. (2004). *On the structure and zero divisors
@@ -302,8 +314,10 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
   integration and postdiction in visual awareness.* Science 287(5460),
   2036–2038. DOI:10.1126/science.287.5460.2036.
 - **[Eagleman2010]** Eagleman, D. M. (2010). *How does the timing of neural
-  signals map onto the timing of perception?* In *Problems of Space and Time in
-  Perception and Action*, CUP. (`references/perceptual_latency/`.)
+  signals map onto the timing of perception?* In *Space and Time in Perception and Action*
+  (eds. Nijhawan & Khurana), CUP (the PDF on disk is named ‘Problems of Space and
+  Time…’; chapter 14, title page and summary read 2026-11-13).
+  (`references/perceptual_latency/`.)
 - Stroke neuromodulation set (`references/stroke_neuromodulation/`): FDA
   P210007B Vivistim SSED; BCI-FES meta-analysis PMC11464471; CCFES vs NMES
   PMC10915254; FES upper-limb review PMC10739305; electrical/magnetic UE
@@ -350,7 +364,8 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
   DOI:10.1103/PhysicsPhysiqueFizika.1.195. — no local hidden variables ⇒ the
   sedenion must be produced *at* the coupling event, not pre-assigned.
 - **[Searle1980]** Searle, J. R. (1980). *Minds, brains, and programs.* Behav.
-  Brain Sci. 3(3), 417–457. DOI:10.1017/S0140525X00005756. — the Chinese Room;
+  Brain Sci. 3(3), 417–457 (the target article is pp. 417–424; the rest is the
+  peer commentary and reply). DOI:10.1017/S0140525X00005756. — the Chinese Room;
   the Mind's Eye / Thread 2 is what it lacks.
 - **[Penrose1964]** Penrose, R. (1964). *Conformal treatment of infinity.* In
   *Relativity, Groups and Topology* (eds. DeWitt & DeWitt), Gordon & Breach,
@@ -395,7 +410,51 @@ Download checklist: [`references/CITATION_DOWNLOADS.md`](../references/CITATION_
 
 ---
 
+### A.12 — The library: sphere packing, birdtracks, generating functions, and the Phillips articles
+
+Held in the local library (`/home/rendier/Documents/books/jeremy/`); inventory,
+hashes and per-source status in [134](134_the_library.md). The two open-access
+papers are held in `Ainulindale/references/library_convergence/`.
+
+- **[Viazovska2016]** Viazovska, M. S. (2016). *The sphere packing problem in
+  dimension 8.* arXiv:1603.04246 [math.NT]; Ann. of Math. 185 (2017), 991–1015.
+  *Takes:* E8 is the densest sphere packing in ℝ⁸. *Appears:* wiki 134 §2;
+  `FourthAgePapers/addenda/addendum_VII`. The identification of E8 with the
+  octonion constraint surface is the framework's reading.
+- **[CKMRV2016]** Cohn, H., Kumar, A., Miller, S. D., Radchenko, D. &
+  Viazovska, M. (2016). *The sphere packing problem in dimension 24.*
+  arXiv:1603.06518 [math.NT]. *Takes:* the Leech lattice is the densest packing
+  in ℝ²⁴ and the unique optimal periodic packing. The Leech → Monster → Wiles
+  chain is a reading, not part of the paper.
+- **[Leech]** Leech, J., *Some sphere packings in higher space*; *Notes on
+  sphere packings.* Journal and year to be confirmed (not on the title pages).
+- **[Cvitanovic2008]** Cvitanović, P. (2008). *Group Theory: Birdtracks, Lie's,
+  and Exceptional Groups.* Princeton University Press. (Local file: version
+  9.0.1, 2011.) *Takes:* birdtrack notation; the exceptional groups from the
+  Freudenthal–Tits magic square.
+- **[Wilf1994]** Wilf, H. S. (1990, 1994). *generatingfunctionology.* Academic
+  Press (Internet edition). *Takes:* generating functions as an algebraic
+  language; an analogy for the Horner encoding.
+- **[Phillips]** Phillips, S. M., *Articles 1–65* (author's website) and *Extra-
+  Sensory Perception of Quarks* (Theosophical Publishing House, 1980).
+  Cited as the source of the cross-disciplinary reading of the E8 × E8′ object
+  (sacred geometry, music, I Ching, genetic code). `EXTERNAL`: correspondences
+  of counts, not reviewed here and not adopted.
+
+Not in the library, cited elsewhere and still to be obtained and verified:
+Cosic (RRM; see [23](23_resonant_recognition.md) §6), Wyler, Dixon, Furey.
+
+---
+
 ## B. Originated here
+
+**Scope ruling (author, 2026-11-13).** Ainulindalë is where the Langlands programme, the
+GUT reading, a non-Noether-current Unified Field Theory consistent with quantum mechanics,
+and the Standard Model Lagrangian "fitted as it is" sit; the VAPMIP Lagrangian is the
+**derived backup analogue**, whose isometries were found while building a way to drop
+dimensions from calculations by using larger and larger puzzle pieces. Read the
+"derived Lagrangian … isometric term-for-term with the Standard-Model Lagrangian" rows
+below in that light.
 
 Detailed, with per-item prior-art notes, in `~/.clauderc_user_provenance`.
 Summary — expected to shrink as items are found to be already established:
@@ -411,7 +470,7 @@ Summary — expected to shrink as items are found to be already established:
 | **Ω_ZS six-family convergence** | W(1) as *the* cross-domain equilibrium constant | W(1) itself; the six formula families are their authors' |
 | **the Riemann–Fermat Horizon** | σ=½ as the balance of "what IS" and "what CANNOT BE"; ζ-zeros = FT of the Fermat lattice | Riemann; Fermat/Wiles; the functional equation |
 | **GAP = Ω_ZS − d\*·ln 10 ≈ 1/(1000√2)** | the semantic / Yang–Mills mass gap; 10³ factor OPEN | Yang–Mills mass-gap problem |
-| **J_red + J_blue = Σ_RB** | persistent memory = the two currents summed; a transformer has only J_red | Noether; Dirichlet series; co-occurrence graphs |
+| **J_red + J_blue = Σ_RB** *(historical notation: Σ_RB was a renotating artefact of a notation discussion; the sum was formerly H_hat_RB. Current chain: J_red + J_blue = J_green, = 0_RB − 0_BR; see the correction at the foot of this page and wiki 133 §3)* | persistent memory = the two currents summed; a transformer has only J_red | Noether; Dirichlet series; co-occurrence graphs |
 | **primes by extinction as a zero-gradient field** | the factorisation data = a complete, remainder-free, harmonic dataset = The Two Trees | the sieve; Möbius; Modularity |
 | **the Two Trees as the factoring map** | Telperion/Laurelin ↔ irreducible/composite ↔ what-cannot-be / what-is, exact partition of ℕ | names: J.R.R. Tolkien |
 | **the Wankel / Ahura Mazda speaking architecture** | speak() as the rotary cycle; sedenion produced at the coupling event | Wankel; Bell; Searle |
@@ -440,8 +499,8 @@ Summary — expected to shrink as items are found to be already established:
 - **Infocom / *Zork I* (1980)** — "West of House"; the parser question that
   opens both papers. **Built-against (prior work, deliberate tool selection), NOT
   Post-Hoc** — Cody, 2026-10-13; README Prerequisites item 10.
-- **Louise Bourgeois? no — Jorge Luis Borges** — *The Library of Babel*. Fix the
-  "Louise Borges" typo in VAPMIP_Paper §2.
+- **Jorge Luis Borges** — *The Library of Babel*. (The "Louise Borges" spelling in
+  VAPMIP_Paper §2 is an error to fix.)
 
 ---
 
@@ -453,6 +512,102 @@ the local filename to save each as — is
 Cody fetches these; a bundled `references/papers.zip` is optional and additive.
 
 ---
+
+---
+
+## E. Machine verification, 2026-11-13
+
+Method: arXiv API (`export.arxiv.org`) for each identifier; Crossref (`api.crossref.org`)
+for each DOI; Mozilla user agent; no personal data sent. The title returned is compared by
+eye with the entry. All rows below agree with the entries of §A unless §E.1 says otherwise.
+
+| identifier | title returned | year |
+|---|---|---|
+| arXiv:physics/0503066 | Invariant Variation Problems | 2005 |
+| arXiv:q-alg/9710013 | The zero divisors of the Cayley-Dickson algebras over the real numbers | 1997 |
+| arXiv:math/0011260 | The 42 Assessors and the Box-Kites they fly: Diagonal Axis-Pair Systems of Zero- | 2000 |
+| arXiv:math/0105155 | The Octonions | 2001 |
+| arXiv:math/9811068 | Trace formula in noncommutative geometry and the zeros of the Riemann zeta funct | 1998 |
+| arXiv:1611.09182 | Standard model physics from an algebra? | 2016 |
+| arXiv:1806.00612 | $SU(3)_C\times SU(2)_L\times U(1)_Y\left( \times U(1)_X \right)$ as a symmetry o | 2018 |
+| arXiv:1603.04246 | The sphere packing problem in dimension 8 | 2016 |
+| arXiv:1603.06518 | The sphere packing problem in dimension 24 | 2016 |
+| arXiv:math/0211159 | The entropy formula for the Ricci flow and its geometric applications | 2002 |
+| arXiv:math/0303109 | Ricci flow with surgery on three-manifolds | 2003 |
+| arXiv:math/0307245 | Finite extinction time for the solutions to the Ricci flow on certain three-mani | 2003 |
+| doi:10.2307/2118559 | Modular Elliptic Curves and Fermat's Last Theorem | 1995 |
+| doi:10.2307/2118560 | Ring-Theoretic Properties of Certain Hecke Algebras | 1995 |
+| doi:10.1007/BF01231195 | On modular representations of $$(\bar Q/Q)$$ arising from modular forms | 1990 |
+| doi:10.1090/S0894-0347-01-00370-8 | On the modularity of elliptic curves over 𝐐: Wild 3-adic exercises | 2001 |
+| doi:10.1007/BF01464225 | Idealtheorie in Ringbereichen | 1921 |
+| doi:10.2307/1967865 | On Quaternions and Their Generalization and the History of the Eight Square Theo | 1919 |
+| doi:10.1090/S0273-0979-01-00934-X | The octonions | 2001 |
+| doi:10.1137/S0036144598347497 | The Riemann Zeros and Eigenvalue Asymptotics | 1999 |
+| doi:10.1007/s000290050042 | Trace formula in noncommutative geometry and the zeros of the Riemann zeta funct | 1999 |
+| doi:10.2307/1968538 | On One-Parameter Unitary Groups in Hilbert Space | 1932 |
+| doi:10.2307/2007890 | On the distribution of spacings between zeros of the zeta function | 1987 |
+| doi:10.1007/978-3-642-58124-3 | Catastrophe Theory | 1992 |
+| doi:10.1112/blms/11.3.308 | Monstrous Moonshine | 1979 |
+| doi:10.1007/BF01232032 | Monstrous moonshine and monstrous Lie superalgebras | 1992 |
+| doi:10.1103/PhysRev.96.191 | Conservation of Isotopic Spin and Isotopic Gauge Invariance | 1954 |
+| doi:10.1145/800157.805047 | The complexity of theorem-proving procedures | 1971 |
+| doi:10.1152/jn.1998.79.6.3272 | Signal Timing Across the Macaque Visual System | 1998 |
+| doi:10.1126/science.287.5460.2036 | Motion Integration and Postdiction in Visual Awareness | 2000 |
+| doi:10.1098/rstl.1819.0023 | XXI. A new method of solving numerical equations of all orders, by continuous ap | 1819 |
+| doi:10.1007/BF01457962 | �ber die Abbildungen der dreidimensionalen Sph�re auf die Kugelfl�che | 1931 |
+| doi:10.1007/BF02124750 | On the LambertW function | 1996 |
+| doi:10.1103/PhysicsPhysiqueFizika.1.195 | On the Einstein Podolsky Rosen paradox | 1964 |
+| doi:10.1017/S0140525X00005756 | Minds, brains, and programs | 1980 |
+| doi:10.1007/BFb0079065 | Problems in the theory of automorphic forms to Salomon Bochner in gratitude | 1970 |
+| doi:10.1070/RD2003v008n04ABEH000252 |  | 2003 |
+(10.1140/epjc/s10052-018-5844-7 returned the Furey 2018 EPJC 78(5) record, title in
+math markup; 10.1070/RD2003v008n04ABEH000252 returned Galperin, *Regular and Chaotic
+Dynamics* 8(4) 375, with an empty title field in Crossref.)
+
+### E.1 Corrections made to §A, and what is not machine-verified
+
+- **[Ribet1990]**: Inventiones 100, **issue 1** (not 2), pp. 431–476.
+- **[HilbertPolya]**: archive address updated (§A.5).
+- **[Searle1980]**: pp. 417–457 is the whole target-plus-commentary block; the article itself
+  is 417–424.
+- **[Moreno1998]**: the preprint (1997) is verified; the journal details are not (the journal is
+  not indexed in Crossref). A search for [Cawagas2004] returned the entry
+  (*Discussiones Mathematicae – General Algebra and Applications* 24(2), 251, DOI
+  10.7151/dmgaa.1088).
+- **[Eagleman2010]**: the volume is usually cited as *Space and Time in Perception and Action*
+  (eds. R. Nijhawan & B. Khurana, CUP 2010); the file name on disk says "Problems of …".
+- **Not machine-verified** (no identifier): Riemann 1859; Hadamard and de la Vallée Poussin
+  1896; von Koch 1901; Legendre 1808; Möbius 1832 (Crossref carries a Crelle record, not
+  checked); Fermat; Cayley 1845; Hurwitz 1898; Schafer 1966; Montgomery 1973; Gürsey–Günaydin
+  1973; Griess 1982; Niemeier 1973; Conway–Sloane 1988; Thom 1975; Zeeman 1977; Clay 2000;
+  Leray 1934; Hermite 1864; Lambert 1758; the book entries; Viazovska and CKMRV journal
+  references (the arXiv records are verified); the Phillips articles. The Hilbert remark
+  quoted on [99](99_emmy_noether.md) is a widely repeated attribution and is not sourced here.
+- Open URLs checked: the Clay Millennium Problems page and OEIS A030178 (the omega constant)
+  both resolve.
+
+### E.2 Literature of pages 111–118, 124, 128–129 and the zero-divisor page: Crossref / arXiv check, 2026-11-13
+
+Each record below was resolved against the public Crossref API (or arXiv API) and the title, container, volume, pages and year compared with the citation on the page. `NOT verified` means no record was located in this pass.
+
+| Work | Used in | Record found | Status |
+|---|---|---|---|
+| Alcubierre (1994) *The warp drive: hyper-fast travel within general relativity*, Class. Quantum Grav. 11, L73–L77 | [111](111_alcubierre_reverse_gr.md) | doi:10.1088/0264-9381/11/5/001 | VERIFIED |
+| Sullivan (1985) *Quasiconformal homeomorphisms and dynamics I*, Ann. Math. 122, 401–418 | [112](112_sullivan_dictionary.md) | doi:10.2307/1971308 | VERIFIED |
+| Vollrath & Knight (2001) *Liquid crystalline spinning of spider silk*, Nature 410, 541–548 | [113](113_vollrath_knight_silk_spinning.md) | doi:10.1038/35069000 | VERIFIED |
+| Herrmann, Mantica & Bessis (1990) *Space-filling bearings*, PRL 65, 3223–3226 | [114](114_herrmann_apollonian_bearings_turbulence.md) | doi:10.1103/physrevlett.65.3223 | VERIFIED |
+| Constantin & Fefferman (1993) Indiana Univ. Math. J. 42, 775 | [115](115_necas_ruzicka_sverak_self_similar.md) | doi:10.1512/iumj.1993.42.42034 (volume, first page, year agree; title not returned by Crossref) | VERIFIED (partial) |
+| Askarieh et al. (2010) *Self-assembly of spider silk proteins is controlled by a pH-sensitive relay*, Nature 465, 236–238 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nature08962 | VERIFIED |
+| Hagn et al. (2010) *A conserved spider silk domain acts as a molecular switch that controls fibre assembly*, Nature 465, 239–242 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nature08936 | VERIFIED |
+| Rising & Johansson (2015) *Toward spinning artificial spider silk*, Nat. Chem. Biol. 11, 309–315 | [117](117_rising_johansson_spidroin_switch.md) | doi:10.1038/nchembio.1789 | VERIFIED |
+| Odlyzko & Sloane (1979) *New bounds on the number of unit spheres that can touch a unit sphere in n dimensions*, J. Combin. Theory A 26, 210–214 | [zero_divisor_divergence_inversion](zero_divisor_divergence_inversion.md) (the 196,560 kissing number) | doi:10.1016/0097-3165(79)90074-8 | VERIFIED |
+| Cohn, Kumar, Miller, Radchenko & Viazovska (2017) *The sphere packing problem in dimension 24*, Ann. Math. 185, 1017–1033 | same | doi:10.4007/annals.2017.185.3.8 | VERIFIED |
+| de Marrais (2000) arXiv:math/0011260 | [128](128_vapmip_paper_citation_pass_2026_10_16.md) | arXiv record, submitted 2000-11-30 | VERIFIED |
+| Post (1941) *The Two-Valued Iterative Systems of Mathematical Logic*, Ann. Math. Studies 5 | [116](116_post_lattice_clones.md) | a book; not resolved in Crossref in this pass | NOT verified |
+| Landreh et al. (2017) (title and journal missing from the page) | [117](117_rising_johansson_spidroin_switch.md) | not located: the page's entry is incomplete | NOT verified |
+| Basile, `libraryofbabel.info-algo` (2019) | [124](124_basile_invertible_location_maps.md) | the repository, read directly (2026-09-30); not a Crossref item | read, not machine-verified |
+
+Levenshtein (1979, kissing number in 24 dimensions, independent of Odlyzko–Sloane; *Dokl. Akad. Nauk SSSR* 245) was not resolved. The queue in `~/.clauderc_citations` was updated to match.
 
 ## See also
 

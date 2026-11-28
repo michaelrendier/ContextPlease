@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Galois Group · Ptolemy MathLex</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -84,6 +85,16 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 <span class="code-line"><span class="c-kw">for</span> i,s <span class="c-kw">in</span> enumerate(auts):</span>
 <span class="code-line">    <span class="c-fn">print</span>(<span class="c-str">f"σ{i}: √2 → {s(np.sqrt(2)):.3f}, fixes ℚ: {s(1.0)==1.0}"</span>)</span></div><div class="cell-out-label">Out [<span>1</span>]:</div><div class="cell-out-body">σ0: √2 → 1.414, fixes ℚ: True
 σ1: √2 → -1.414, fixes ℚ: True  (Gal = {e,σ₁} ≅ ℤ/2 ✓)</div></div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">σ0: √2 → 1.414, fixes ℚ: True
+σ1: √2 → -1.414, fixes ℚ: False</pre>The cell&#x27;s &quot;automorphism&quot; for σ₁ is `lambda x: -x` (negation), which sends 1 to −1 and so does not fix ℚ. A Galois automorphism of ℚ(√2) is a + b√2 ↦ a − b√2, which fixes ℚ; the printed False is the cell&#x27;s bug, and the stated True is the correct mathematics. The stated output is kept above as written.<div class="m-label" style="margin-top:10px">CORRECTED CELL (2026-11-13; ran as shown)</div><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;margin:6px 0;"># an automorphism of Q(sqrt 2) acts on a + b*sqrt(2); store the element as the pair (a, b)
+auts = {&quot;identity&quot;: lambda a, b: (a, b), &quot;conjugation&quot;: lambda a, b: (a, -b)}
+for name, s in auts.items():
+    print(f&quot;{name}: sqrt2 = (0, 1) -&gt; {s(0, 1)} ; fixes Q (rational r = (r, 0)): {s(5, 0) == (5, 0)}&quot;)
+x, y = (1, 2), (3, 1)          # (1+2s2)(3+s2) = 7 + 7 s2
+prod = lambda p, q: (p[0]*q[0] + 2*p[1]*q[1], p[0]*q[1] + p[1]*q[0])
+print(&quot;conjugation is multiplicative:&quot;, auts[&quot;conjugation&quot;](*prod(x, y)) == prod(auts[&quot;conjugation&quot;](*x), auts[&quot;conjugation&quot;](*y)))</pre><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--green);margin:6px 0;">identity: sqrt2 = (0, 1) -&gt; (0, 1) ; fixes Q (rational r = (r, 0)): True
+conjugation: sqrt2 = (0, 1) -&gt; (0, -1) ; fixes Q (rational r = (r, 0)): True
+conjugation is multiplicative: True</pre></div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Kryptos + Archimedes</p><p>Kryptos encryption uses Galois group structure: the charset permutation in the HyperWebster addressing scheme is a Galois automorphism of the character field. The encryption key = the generator of the Galois group of the character extension.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Assuming all field extensions are Galois. An extension must be both normal and separable to be Galois.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Confusing the Galois group (automorphisms fixing K) with the full automorphism group of L.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Forgetting the Galois correspondence reverses order: larger subgroup = smaller fixed field.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="langlands_kernel.html">Langlands Kernel →</a><a class="crosslink" href="modular_form.html">Modular Form →</a><a class="crosslink" href="index.html">Kryptos — Pharos Module →</a><a class="crosslink" href="lie_group.html">Lie Group →</a></div></div>

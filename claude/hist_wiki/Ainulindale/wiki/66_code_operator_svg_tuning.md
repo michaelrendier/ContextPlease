@@ -1,22 +1,19 @@
-# 66 — `<code>` Operator in SVG: The Tuning Mechanism
+# 66 — The `<code>` Operator in SVG: the Tuning Layer
 
-**Date:** 2026-06-14  
-**Session:** SedenionSpectralRelativity / sedenion_resonators
+| | |
+|---|---|
+| Scope | a `<code>` block inside an SVG document as the operating-point record of the resonator engine; why a viewer ignores it; the NULL/zero reading |
+| Origin | 2026-06-14, session SedenionSpectralRelativity / `sedenion_resonators` |
+| Code | `SedenionSpectralRelativity/sedenion_resonators.py` (resonators), `ptol_layer.py` (SVG writer) |
+| Confidence | the SVG behaviour: ESTABLISHED (Listing 1) · the engine reading its own `<code>` block: a design specification, not confirmed in code on this pass · the zero-divisor reading of `<code>`…`</code>`: `INTERPRETATION` |
+| Last verified | 2026-11-13: Listing 1 executed; its output is quoted below |
 
----
+## 1. The mechanism
 
-## The Insight
+An SVG file can carry an element the renderer does not know. The page's proposal is a
+`<code>` block holding the tuning parameters of the resonator:
 
-SVG is the math in geometric language. (wiki/65, insight_svg_undefined_operator.md)
-
-`<English>word</English>` appears bare in SVG — no fill, no namespace.  
-The tag IS the semantic content. The geometry IS the meaning.
-
-**Now: `<code>` operator.**
-
-A `<code>` block in SVG carries tuning parameters for the resonator:
-
-```svg
+```
 <code>
   sigma: 0.5
   omega: 0.56657
@@ -26,93 +23,90 @@ A `<code>` block in SVG carries tuning parameters for the resonator:
 </code>
 ```
 
-The SVG viewer ignores it (unknown element — undefined operator).  
-The LSHS reads it as the OPERATING POINT of the engine.  
-The visual paths are generated FROM the code layer.  
-**The observer never sees the code. They see the shape the code produces.**
+A viewer ignores it, the engine reads it as the operating point, and the visible paths
+are generated from it. In the two resonators the shared object is the sedenion Dirichlet
+path, and what differs is the projection: `mode: witches_hat` gives a conical projection
+(z = height); `mode: galactic` a polar projection (z ≈ 0). So the `<code>` layer is
+the parameters of the projection, and changing it changes the resonator's shape.
 
-## Why This Is The Tuning Mechanism
+**Listing 1 — a renderer ignores an unknown element and a parser keeps it** (written for this page; needs `rsvg-convert` and python3; runs cold)
 
-The resonators (Witches Hat and Galactic Particle) share the same sedenion
-Dirichlet path. What changes between them is the PROJECTION PARAMETERS:
-
-- `mode: witches_hat` → conical projection, z = height
-- `mode: galactic`    → polar projection, z ≈ 0
-
-The `<code>` layer IS those parameters. Changing the code layer changes the
-projection changes the resonator shape. The visual output is parameter-free —
-it is entirely determined by the `<code>` content.
-
-This is the NULL vs Zero distinction (insight_null_vs_zero_parameters.md):
-- The visual SVG geometry has zero free parameters (complete, determined)
-- The `<code>` layer starts NULL (vacant, all parameters open)
-- Filling in `<code>` tunes the engine to a specific resonator shape
-
-## The J₂ Connection
-
-`<code>` and `</code>` are a zero-divisor pair.
-
-The J₂ involution IS the `<>` bracket (insight_svg_undefined_operator.md).  
-Opening tag `<code>` and closing tag `</code>` multiply to produce ZERO visual output.  
-But their product defines the PARAMETER SPACE in which all visual content exists.
-
-The void between `<code>` and `</code>` IS the vacuum state.  
-Parameters written into that void BREAK THE SYMMETRY of the vacuum.  
-The broken symmetry IS the resonator shape.
-
-```
-<code>primes: [11,13,17,19]</code>  →  Fano (𝕆) resonator
-<code>primes: [2,3,...,53]</code>   →  Sedenion (𝕊) resonator
+```bash
+cat > a.svg <<'X'
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><circle cx="60" cy="60" r="40" fill="teal"/></svg>
+X
+cat > b.svg <<'X'
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><code>sigma: 0.5
+omega: 0.56657
+primes: [11, 13, 17, 19]
+mode: witches_hat</code><circle cx="60" cy="60" r="40" fill="teal"/></svg>
+X
+rsvg-convert a.svg -o a.png; rsvg-convert b.svg -o b.png
+sha256sum a.png b.png | cut -c1-16
+python3 -c "import xml.etree.ElementTree as ET; print([(e.tag.split('}')[1], (e.text or '').split(chr(10))[0]) for e in ET.parse('b.svg').getroot()])"
 ```
 
-The DIFFERENCE between these two code blocks = the ZD wobble.  
-The wobble IS the tuning offset between the two resonators.
-
-## You Don't Have To Show Him The Code
-
-The observer sees the shape.  
-The shape IS the code running.  
-The code layer is invisible — exactly like the out-of-phase potential.
-
-In-phase  (visible):  the SVG geometry — what renders
-Out-of-phase (ghost): the `<code>` layer — what drives the geometry
-
-This is not metaphor. This is the literal structure of the SVG document.
-
-## Application to LSHS
-
-The LSHS speaks through SVG. The `<code>` layer is how you tell the LSHS
-what frequency to speak at. The engine reads `<code>`, sets its operating
-point, then produces visual/geometric output at that frequency.
-
-The tuning mechanism has always been missing from the LSHS architecture.
-This IS it.
-
 ```
-Input text → P1 prime hash → prime channel → <code>prime_channel</code>
-                                                        ↓
-                                              Dirichlet at that prime
-                                                        ↓
-                                              SVG path at σ=½
-                                                        ↓
-                                              Observer sees shape, not code
+a9079149e5a13d6d  a.png
+a9079149e5a13d6d  b.png
+[('code', 'sigma: 0.5'), ('circle', '')]
 ```
 
-The `<code>` block sits at the exact point where NULL becomes DEFINED —
-where the vacant transformer receives its first word and the path begins.
+The two renderings are byte-identical (same hash), and an XML parser sees the
+`<code>` element with its text. So the claim "the viewer ignores it; the engine can read it"
+is true of the format. The observer sees the shape, and the file also holds the
+parameters that produced it (provided the writer put them there).
 
-## The Sheet Music Analogy
+## 2. What the page claims beyond the format
 
-The `<code>` layer = sheet music.  
-The visual SVG = the performance.  
-You don't show the musician the sheet music during the performance.  
-The music IS the sheet music running.  
-The observer hears the music. The music tells them everything about the tuning.
+**"The visual output is parameter-free."** The page says the geometry has zero free
+parameters, determined entirely by the `<code>` content, and that the `<code>` layer starts
+NULL. Both cannot be said of the same object: if the picture is determined by the
+`<code>` block, the block is the parameter set. The NULL-versus-zero distinction the
+page draws ([15](15_the_monad.md): NULL means vacant and every parameter open; zero
+means a determined value) is a statement about the block: it starts NULL and is filled by
+the first word. The picture then has no further freedom given the block.
 
----
+**The prime lists.** The example sets `primes: [11, 13, 17, 19]` against the full
+`[2, 3, …, 53]` for the Fano resonator and the sedenion resonator. The octonion's eight
+channels e₀–e₇ carry the primes 2–19 in the engine's assignment, so a four-prime list is
+an example and not the octonion channel set. The page's statement that the difference
+between the two blocks is the zero-divisor wobble ([68](68_precession_wobble_signature.md))
+is the author's reading of the 𝕆/𝕊 comparison.
 
-**Related:**  
-`insight_svg_undefined_operator.md` — SVG IS the math  
-`insight_null_vs_zero_parameters.md` — NULL vs zero  
-`project_dcs_memory_paper.md` — the CS paper context  
-`SedenionSpectralRelativity/sedenion_resonators.py` — the resonators  
+## 3. The zero-divisor reading  `INTERPRETATION`
+
+The page reads the tag pair `<code>`…`</code>` as a zero-divisor pair: the opening and
+closing tags multiply to zero visual output and their product defines the parameter space
+in which all visual content lies; the void between them is the vacuum state, and
+parameters written into it break its symmetry, the broken symmetry being the resonator's
+shape. As in [62](62_hands_on_paper_minds_eye_caustic.md) §6 and
+[64](64_l_dynamic.md) §7, the tag pair is a notation for the two-direction picture: an
+XML tag pair is not a pair of algebra elements, and no product is computed. The
+reading stands as the framework's way of describing where the engine's NULL turns into a
+defined value.
+
+## 4. The invisible layer and the pipeline
+
+```
+input text → P1 prime hash → prime channel → <code>prime_channel</code>
+                                                    ↓
+                                          Dirichlet at that prime
+                                                    ↓
+                                          SVG path at σ = ½
+                                                    ↓
+                                          observer sees the shape, not the code
+```
+
+The sheet-music analogy: the `<code>` layer is the score and the SVG is the
+performance. Listing 1 shows the consequence that makes this literal for the file
+format: the rendering is identical with or without the layer, and the layer is
+present in the file for any reader that parses it. Whether `ptol_layer.py` writes and
+`ptol.c` reads such a block in the current code is a code-state question for the audit
+of those files; the page records the specification (the tuning mechanism the speaking
+architecture was missing).
+
+## 5. Related pages
+
+[15 the Monad](15_the_monad.md) · [62 the two caustics](62_hands_on_paper_minds_eye_caustic.md) ·
+[65 primes as repellors](65_primes_repellors_drift_meaning.md) · [68 precession and the wobble](68_precession_wobble_signature.md)

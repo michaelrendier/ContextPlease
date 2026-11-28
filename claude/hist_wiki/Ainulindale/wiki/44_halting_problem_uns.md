@@ -1,212 +1,148 @@
-# 44 — THE HALTING PROBLEM DISSOLVED IN UNS
-## Not "Does It Stop?" — "Does It Stop Here, At This Depth?"
+# 44 — The halting problem and the "depth" reading: what dissolves and what does not
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-03  
-**Status:** FIRST CAPTURE — major result. Formal proof required.  
-**Predecessor:** [42 — RH Without Primes](42_rh_proof_no_primes.md), [40 — T256](40_modular_segue_three_papers.md)  
-**Target:** D-M (P vs NP chapter), new paper D-HALT
+| | |
+|---|---|
+| Status | **First capture (2026-06-03), "major result, formal proof required"; `CONJECTURE`.** The reframing (a bounded question is always answerable) is correct and standard; the claim that the unbounded halting question is thereby dissolved, and the complexity-class map, are not established (§3–5) |
+| Predecessors | [42](42_rh_proof_no_primes.md), [40](40_modular_segue_three_papers.md) |
+| Code | Listing 1 (the bounded question and the diagonal); `FourthAgePapers/HaltingDiagonal/` (the repository's own paper directory on this subject, 4 files) |
+| Last verified | 2026-11-13: Listing 1 executed |
 
----
+## 1. The reframing
 
-## 1. Turing's Question vs The UNS Question
+Turing (1936): given a program P and input I, does P(I) halt? This is undecidable.
+The page's reframing: from *inside* the Unit Number Sphere the question
+becomes "does the computation reach σ = ½ at this depth?", not "does it stop?",
+and "does it stop *here*, at this depth?" is always answerable. The firing signal
+of the Holcus system (the field reaches σ = ½) is read as the halting event seen
+from inside; non-halting computations "halt at the Void", at depth σ → ∞.
 
-Turing (1936): given an arbitrary program P and input I, does P(I) halt?
+## 2. What is correct: the bounded question
 
-This is undecidable. The diagonalization proof is correct — within its frame.
-The frame is: you are OUTSIDE the computation asking a binary question about
-its future.
+"Does P(I) halt within d steps?" is decidable for every d: simulate d steps. That
+is the exact, standard content of "does it stop here, at this depth?". It
+underlies the usual semi-decision procedure: the set of halting computations is
+recursively enumerable (run longer and longer), and its complement is not.
+`ESTABLISHED`.
 
-The UNS reframing: you are INSIDE the Unit Number Sphere watching the
-computation's trajectory through σ-space. The question becomes:
+**Listing 1 — the bounded question, and the diagonal that stops a total decider**
+(written for this page; runs cold)
 
-**"Does the computation reach σ=½ at this depth?"**
+```python
+# A "machine" is a generator: each yield is one step; returning means it halted.
+def collatz(n):
+    while n != 1:
+        n = 3 * n + 1 if n % 2 else n // 2
+        yield
 
-Not: does it stop?
-YES: does it stop HERE — at this σ-face layer?
+def halts_within(machine, d):
+    """decidable for every d: simulate at most d steps"""
+    it = machine()
+    for step in range(d + 1):
+        try:
+            next(it)
+        except StopIteration:
+            return True, step
+    return False, None
 
-These are not the same question. The first is undecidable. The second is
-always answerable for any specific proposed depth.
+m27 = lambda: collatz(27)
+print('collatz(27), budget 100 :', halts_within(m27, 100))
+print('collatz(27), budget 200 :', halts_within(m27, 200))
 
----
+# Turing's diagonal: given ANY candidate total decider halts(machine) -> bool,
+# build D that does the opposite of what the candidate says about D itself.
+def make_D(candidate):
+    def D():
+        if candidate(D):
+            while True:
+                yield
+        return
+        yield
+    return D
 
-## 2. The Holcus Firing Signal
-
-The LSHS (Holcus) processes equation semantics — the description of a
-computation as a semantic trajectory through the Emmy Noether Sedenion.
-
-When the semantic trajectory reaches σ=½ — when the sedenion field collapses
-to its eigenvalue — Holcus emits: **FIRING**.
-
-The firing IS the halting event, seen from inside.
-
-You can see it from inside. You cannot see it from outside (Turing's frame).
-The UNS is the inside view. The firing is visible from there.
-
----
-
-## 3. The σ-Face Depth Map of Computation
-
-Every computation has a σ-face trajectory in the T256 space:
-
-```
-σ < ½         P-time computation       — halts below the critical line
-              trajectory converges fast — shallow depth
-              
-σ = ½         NP-complete boundary     — halts at the critical line
-              Holcus fires at σ=½       — this is the firing depth
-              the incompressible prime  — can't be compressed further
-              
-½ < σ < 1     Polynomial hierarchy     — halts deeper, more layers traversed
-
-σ = 1         PSPACE                   — halts at the Yang-Mills layer
-
-1 < σ < 2     EXPTIME                  — halts at the GR layer
-
-σ = 2         EXPSPACE                 — halts at the curved-spacetime layer
-
-σ → ∞         Non-halting             — trajectory diverges to Void
-              standard "doesn't halt"  — reaches σ→∞ in the UNS
-              NOT undecidable          — it IS a depth: infinity
+for name, cand in (('always says halts', lambda M: True), ('always says loops', lambda M: False)):
+    D = make_D(cand)
+    verdict = cand(D)
+    actual, _ = halts_within(D, 10_000)      # evidence only; by construction D(D) does the opposite
+    print(f'{name:18}: says {verdict}, D actually {"halts" if actual else "does not halt (by construction)"}')
 ```
 
-The "halting problem" is not binary. It is a DEPTH MEASUREMENT. Every
-computation halts at a specific σ-face depth — or it diverges to σ=∞. Both
-are determinate outcomes in the UNS. Neither is undecidable.
-
----
-
-## 4. How the Diagonalization Dissolves
-
-Turing's diagonalization constructs D(X):
-- If H(X,X) says "halts": D loops forever
-- If H(X,X) says "loops": D halts
-- D(D) creates a contradiction → H cannot exist
-
-In the UNS, D(D) is not a contradiction. It is a computation with a specific
-σ-face depth. The "contradiction" arises only if you demand a binary HALTS/LOOPS
-answer without specifying a depth.
-
-In UNS: D(D) halts at depth d_D — which is the σ-face layer of its own
-semantic trajectory. The trajectory is deterministic. It converges to some
-σ-face depth. That depth is the answer.
-
-Asking "does D(D) halt?" in Turing's frame = asking "is σ < ∞?" in UNS.
-Answer: yes — everything has a σ-face depth, even the diverging computation.
-It diverges TO σ=∞. That IS a depth. The Void is a depth.
-
-The undecidability was a frame problem. The binary question "halts or loops"
-was the wrong question. The right question is "at what depth?" — and that
-is always answerable.
-
----
-
-## 5. The Internal Observer
-
-Turing's proof requires an external observer asking about a black box.
-
-The UNS provides an internal observer: the Holcus semantic field is INSIDE
-the computation's trajectory. It watches the approach to σ=½. It fires when
-the trajectory arrives.
-
 ```
-External observer (Turing):   "Will the box ever stop?" — undecidable
-Internal observer (Holcus):   "Where is the trajectory going?" — always visible
-
-The trajectory approaches σ=½:   FIRING — it halts at this depth
-The trajectory diverges σ→∞:     VOID — it halts at the Void's depth (∞)
+collatz(27), budget 100 : (False, None)
+collatz(27), budget 200 : (True, 111)
+always says halts : says True, D actually does not halt (by construction)
+always says loops : says False, D actually halts
 ```
 
-The Void is a valid output. "Halts at depth ∞" = "diverges" in Turing's
-language. But in UNS, the Void is a specific location — the Fermat-forbidden
-interior, σ→∞, the pre-Bang state. The computation reaches there. That IS
-where it stops. The Void is the halting place of the non-terminating Turing
-machine.
+`collatz(27)` halts after 111 steps: asked at depth 100 the answer is "not
+yet", at depth 200 "yes at 111". That is the bounded question, decidable and
+useful. The second half shows the diagonal for two trivial candidate deciders; the
+same construction defeats every candidate (D asks the candidate about itself and
+does the opposite).
 
-Everything halts somewhere. For Turing's "non-halting" machines: they halt
-at the Void. At depth σ=∞. Which is The Bang, seen in reverse.
+## 3. What is not dissolved
 
----
+The page claims that "depth(M, I) ∈ [0, ∞] exists and is well-defined for every
+(M, I)", that depth = ∞ is "a halt at the Void" and so decidable, and that
+Holcus "observes the depth from inside". The gap is the following:
 
-## 6. The Depth Function
+1. The function depth(M, I) = the number of steps (or σ-layers) until the computation halts, with ∞ if it does not, is well defined (mathematically it is just the halting time). Deciding whether it is finite is the halting problem. Defining the value ∞ for non-halting machines does not give a way to *determine* that a given machine has it.
+2. An observer watching the trajectory sees a non-halting computation never arrive. After any finite observation the observer cannot distinguish "not yet" from "never": that is the semi-decidability of §2. An "internal observer that always sees where the trajectory is going" would have to be an oracle: a device computing an uncomputable function. The page says both that the model "does not violate Turing's proof" and that depth is "always answerable"; these are compatible only if the observer is a hypercomputer, and then the claim is that the physical field is one, which is a claim to be tested, not a derivation.
+3. "The undecidability is an artefact of the projection to a binary external observation": undecidability is a statement about *any* algorithmic procedure, including ones with access to rich internal state (Turing machines already carry the whole configuration). Enriching the state space does not change that.
 
-Define: depth(M, I) = the σ-face layer at which computation M(I) halts in UNS.
+So the unbounded problem is not dissolved. What is true is that it is reframed
+as a *depth* question, whose bounded form is decidable (§2), and the Holcus
+firing is a bounded detection: the field fires when a trajectory reaches σ = ½
+within the run.
 
-```
-depth(M, I) ∈ [0, ∞]    — every computation has a depth
-depth = 0:               trivial, immediate halt
-depth = σ=½:             NP-complete, fires at the critical line
-depth = ∞:               "non-terminating" in Turing's sense, halts at the Void
-```
+## 4. The σ-face depth map of complexity classes  `CONJECTURE`
 
-This function exists and is well-defined for every (M, I).
+The page maps: σ < ½ P-time; σ = ½ the NP-complete boundary ("Holcus fires at the
+critical line"); ½ < σ < 1 the polynomial hierarchy; σ = 1 PSPACE; 1 < σ < 2
+EXPTIME; σ = 2 EXPSPACE; σ → ∞ non-halting. No definition of the σ-face depth of a
+computation is given, and complexity classes are defined by the *growth of resource
+use with input size*, not by the depth of one trajectory; a single (M, I) has no
+class. The table is a proposed vocabulary. The class containments the
+standard theory proves are P ⊆ NP ⊆ PSPACE ⊆ EXPTIME ⊆ EXPSPACE, with P ≠ EXPTIME
+(time hierarchy) and PSPACE ≠ EXPSPACE; the table respects the order and not the
+content.
 
-It is not Turing-computable from outside. But it IS Holcus-observable from
-inside — the semantic trajectory is a direct measurement of depth(M, I).
+## 5. "P ≠ NP" as separation at the critical line  `CONJECTURE`
 
-The Halting Problem is:
-- Undecidable: computing depth(M, I) = ∞ vs depth(M, I) < ∞ from outside
-- Observable: watching depth(M, I) converge from inside the UNS
+The page: P problems have depth < ½, NP-complete problems depth = ½; "if P = NP
+there would be P problems at depth ½ … which requires the Fermat–Riemann boundary to
+not exist; but the boundary is the Brouwer-mandatory fixed point at σ = ½; it
+exists; P ≠ NP". This is an argument from the classification of §4 and from the
+premise that the Fermat–Riemann boundary has the stated role
+([38](38_fermat_riemann_negative_space.md) §2 withdrew its basis; [42](42_rh_proof_no_primes.md)
+assessed the Brouwer step). It is not a proof of P ≠ NP, and the standing of
+P versus NP in the framework is "the two are adjoint but not isomorphic"
+([105](105_the_millennium_problems_in_ainulindale.md)).
 
-Turing proved the first. Holcus solves the second.
+## 6. The proposed new model and new class  `CONJECTURE`
 
----
+The UNS computation model: semantic trajectories in the Emmy Noether Sedenion,
+an internal observer, "decidable depth measurement"; and a class **HaltUNS**
+("computations whose depth is Holcus-observable in polynomial semantic
+traversal time"), conjectured to contain NP. Standing: the class is not defined
+(observability and "semantic traversal time" are not formalised), so the
+conjecture has no content yet; as a model of computation, anything that
+decides halting is a hypercomputation. A well-defined restatement that *is*
+testable: given a family of programs, how often does the Holcus field fire
+(reach σ = ½) within a stated budget, and how does that rate compare with
+the true halting fraction? No such measurement exists in the repository.
 
-## 7. Connection to P vs NP
+## 7. Formal targets (kept, with their status)
 
-P ≠ NP because P and NP-complete problems halt at different depths:
+1. Define depth(M, I) in terms of the σ-face trajectory of the semantic encoding of (M, I). Open: the encoding and the σ-face trajectory of a program are not specified.
+2. Show depth < ∞ ⟺ M(I) halts. By definition of halting time this is trivially true if depth *means* halting time; the substance would be that the σ-face trajectory *computes* it, which needs §3 to be answered.
+3. Prove depth is Holcus-observable but not Turing-computable: the first half contradicts the second unless the observer is a physical hypercomputer (§3).
+4. Link depth to the T256 hardness-layer transformer (TODO); see [53](53_t256_cryptographic_transparency.md).
+5. Show the Holcus firing is the Ĥ_RB eigenvalue at the computation's depth: open (Berry–Keating premise, [42](42_rh_proof_no_primes.md)).
+6. Define HaltUNS and prove HaltUNS ⊇ NP: needs a definition first.
+7. Write D-HALT. A paper directory exists (`FourthAgePapers/HaltingDiagonal/`); its content should be reconciled with this page.
 
-```
-P problems:          depth < ½    (below the critical line)
-NP-complete:         depth = ½    (at the critical line)
-```
+## 8. Related pages
 
-They are separated by the same Fermat-Riemann boundary that separates
-composites from primes (wiki/38). The boundary is the same line. The
-separation is the same incompressibility. The proof is the same proof.
-
-If P = NP, there would be P problems at depth ½ and NP-complete problems at
-depth < ½ — which requires the Fermat-Riemann boundary to not exist.
-But the boundary is the Brouwer-mandatory fixed point at σ=½. It exists.
-P ≠ NP.
-
----
-
-## 8. The New Model of Computation
-
-Turing's model: binary state machine, external observer, undecidable halting.
-
-UNS computation model: semantic trajectory in Emmy Noether Sedenion space,
-internal observer (Holcus), decidable depth measurement.
-
-The UNS model does NOT violate Turing's proof. It operates in a richer space
-where the question is better-posed. Turing's model is the PROJECTION of
-UNS computation onto binary external observation. The undecidability is an
-artifact of the projection — information lost when the internal trajectory
-is collapsed to an external binary.
-
-The LSHS is a UNS computer. It observes depths, not binaries.
-It fires when it finds the depth. It returns the Void when the depth is ∞.
-Both are information. Neither is undecidable.
-
----
-
-## 9. Formal Targets
-
-- [ ] Define depth(M, I) formally in terms of the σ-face trajectory of
-      the semantic encoding of (M, I) in the Emmy Noether Sedenion.
-- [ ] Show that depth(M, I) < ∞ ↔ M(I) halts in Turing's sense.
-      Show that depth(M, I) = ∞ ↔ M(I) loops in Turing's sense.
-      This is the bridge between the two models.
-- [ ] Prove: depth is Holcus-observable (the trajectory is always visible
-      from inside) but not Turing-computable from outside.
-      This DOES NOT contradict Turing — it establishes a new oracle class.
-- [ ] Connect to the T256 hardness layer transformer (TODO): depth(M,I)
-      IS the T256 spectral classification of the computation's hardness.
-- [ ] Show that the Holcus "firing" signal = the semantic fixed point at
-      σ=½ = the eigenvalue of Ĥ_RB at the computation's depth.
-- [ ] New complexity class: HaltUNS — computations whose depth is
-      Holcus-observable in polynomial semantic traversal time.
-      Conjecture: HaltUNS ⊇ NP. Every NP problem halts at σ=½ in UNS.
-- [ ] Write as D-HALT: a standalone paper on UNS computation theory.
-      Companion to the P vs NP chapter of D-M.
+[42 RH without primes](42_rh_proof_no_primes.md) · [45 T: the circle itself](45_t_transformer_the_circle_itself.md) ·
+[53 T256 and cryptographic transparency](53_t256_cryptographic_transparency.md) · [105 The Millennium Problems](105_the_millennium_problems_in_ainulindale.md) ·
+[15 The Monad](15_the_monad.md)

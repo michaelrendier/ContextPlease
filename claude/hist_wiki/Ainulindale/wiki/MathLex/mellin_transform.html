@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Mellin Transform · Ptolemy MathLex</title>
@@ -182,6 +183,12 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
   <div class="cell-out-body">M[e^-x](3) = 2.0000
 Gamma(3)   = 2.0000  ✓</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">M[e^-x](3) = 12453662679666143451414528.0000
+Gamma(3)   = 2.0000</pre>The cell passes `np.exp` as f, so it integrates xˢ⁻¹·eˣ over (10⁻¹⁰, 50), which is 1.2×10²⁵; the Mellin transform of e⁻ˣ needs `lambda x: np.exp(-x)`, for which M(3) = Γ(3) = 2. The stated output is kept above as written.<div class="m-label" style="margin-top:10px">CORRECTED CELL (2026-11-13; ran as shown)</div><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;margin:6px 0;">import math
+from scipy.integrate import quad
+def mellin(f, s, a=1e-12, b=60):
+    return quad(lambda x: x**(s-1)*f(x), a, b)[0]
+print(f&quot;M[exp(-x)](3) = {mellin(lambda x: math.exp(-x), 3):.6f} ; Gamma(3) = {math.gamma(3):.6f}&quot;)</pre><pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--green);margin:6px 0;">M[exp(-x)](3) = 2.000000 ; Gamma(3) = 2.000000</pre></div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes + Phaleron (search)</p><p style="margin-top:6px"><strong>Use:</strong> Scale-invariant feature extraction in HyperWebster. Word frequency distributions follow power laws — Mellin transform is the natural analyzer of Zipfian distributions.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Confusing Mellin with Laplace. Mellin is ∫₀^∞ x^(s−1) f(x) dx; Laplace is ∫₀^∞ e^(−sx) f(x) dx. Related by x = e^(−t).</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Ignoring the strip of convergence. M[f](s) may only converge for a < Re(s) < b.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Expecting the inverse to be real when f is real — it requires a complex contour integral.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="fourier_decomposition.html">Fourier Decomposition →</a><a class="crosslink" href="berry_keating_conjecture.html">Berry-Keating Conjecture →</a><a class="crosslink" href="langlands_kernel.html">Langlands Kernel →</a><a class="crosslink" href="maclaurin_series.html">Maclaurin Series →</a></div></div>

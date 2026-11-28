@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<html lang="en"><head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Berry-Keating Conjecture · Ptolemy MathLex</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Cinzel:wght@400;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
@@ -83,6 +84,14 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 <span class="code-line">    <span class="c-fn">print</span>(<span class="c-str">f"Zero {i+1}: Im={z:.2f}, N(Im)≈{N(z):.2f}"</span>)</span></div><div class="cell-out-label">Out [<span>1</span>]:</div><div class="cell-out-body">Zero 1: Im=14.13, N(Im)≈0.96
 Zero 2: Im=21.02, N(Im)≈1.99
 Zero 3: Im=25.01, N(Im)≈2.97  (counting matches ✓)</div></div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">Zero 1: Im=14.13, N(Im)≈0.45
+Zero 2: Im=21.02, N(Im)≈1.57
+Zero 3: Im=25.01, N(Im)≈2.39
+Zero 4: Im=30.42, N(Im)≈3.67
+Zero 5: Im=32.93, N(Im)≈4.32
+Zero 6: Im=37.59, N(Im)≈5.59
+Zero 7: Im=40.92, N(Im)≈6.57
+Zero 8: Im=43.33, N(Im)≈7.30</pre>The smooth counting function N(T) = (T/2π)·ln(T/2πe) + 7/8 passes through the **middle** of each unit jump at a zero, so N(γₙ) ≈ n − ½ (0.45, 1.57, 2.39). The stated ≈ 0.96, 1.99, 2.97 (≈ n) are not what this code prints, and &quot;counting matches ✓&quot; is true only up to the half-unit offset. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Phaleron + Archimedes</p><p>Phaleron's search ranking uses zeta-function analogs — the "Ptolemy zeros" are the frequencies where the corpus search response vanishes. If the Berry-Keating picture is correct, these zeros encode the prime factorization of word frequency — an arithmetic structure in the search spectrum.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Confusing the Berry-Keating conjecture (the operator exists) with the Riemann Hypothesis (zeros on critical line). They're equivalent but framed differently.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Assuming GUE statistics prove the conjecture. Statistical agreement is compelling evidence, not proof.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Thinking Berry-Keating operator H=xp+px is the answer — it lacks the boundary conditions needed to give a discrete spectrum.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="berry_keating_operator.html">Berry-Keating Operator →</a><a class="crosslink" href="mellin_transform.html">Mellin Transform →</a><a class="crosslink" href="langlands_kernel.html">Langlands Kernel →</a><a class="crosslink" href="spectral_representation.html">Spectral Representation →</a></div></div>

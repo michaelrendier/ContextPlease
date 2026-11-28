@@ -36,7 +36,7 @@ This module could not be instantiated before 2026-07-28: it inherits `EquationMo
 | `gauge_group_cd_tower` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'U(1)×SU(2)×SU(3) = Aut(ℂ)×Aut(ℍ)×Aut(𝕆). Derived from automorphisms. Not post… |
 | `gue_random_matrix` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'Riemann zero spacings = GUE statistics = quantum chaotic eigenvalues.', 'mont… |
 | `hydrogen_spectral_cd` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'Hydrogen spectral series = transitions between CD strata. Rydberg from SMMIP.… |
-| `lambda_cdm_omega_zs` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'OMEGA_ZS = de Sitter attractor. We are above it. Universe approaches it.', 'f… |
+| `lambda_cdm_omega_zs` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'A_PI = de Sitter attractor. We are above it. Universe approaches it.', 'f… |
 | `leech_lattice_sedenion` | ESTABLISHED+THEORETICAL | ✓ | {'claim': '24D Leech lattice defines 16D sedenion zero-divisors. Definitions come from a… |
 | `pauli_exclusion_fermat` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'Pauli exclusion = sedenion zero-divisors = FLT. Three names for one theorem.'… |
 | `sin_cos_frequencies` | ESTABLISHED+THEORETICAL | ✓ | {'claim': 'e^{±iθ} = two counter-rotating vortices. sin/cos = their difference/sum. tan … |
@@ -75,3 +75,9 @@ Moved from the module docstring: a docstring instructs the caller and holds no h
 > This engine was written during the session in which the transformer
 > insight was first seen. The mathematics is new. The measure is not.
 > V(n) has been known since Euler. Its role as CD transformer is new.
+
+---
+
+## Gamma function: the n-ball (added 2026-11-27)
+
+Gamma appears in this engine (see the code for where). It is also the bookkeeping of a hypersphere: the Gaussian integral of e^(−|x|²) over n dimensions is (√π)^n = (S/2)·Γ(n/2), so the unit ball has volume V(n) = π^(n/2)/Γ(n/2 + 1) and the unit sphere area S(n) = 2π^(n/2)/Γ(n/2) = n·V(n) for every real n. At n = 2 these are π and 2π, the circle. V peaks at n = 5.2569464 and S at n = 7.2569464 (`bell_curve.nball_peak`, which is the `n* ≈ 5.257` of the Ainulindale texts; its identification with the BAO freeze point is THEORETICAL, not computed). Machinery: `ValaQuenta/modules/bell_curve/maths.py` (`nball_volume`, `nsphere_area`, `nball_peak`); pictures: `gallery/hypergon_constructibility/canvas2d_nball.html` (the curves, the poles of Γ at 0, −1, −2, …) and `canvas2d_frame3d.html` (the curve in the frame n, V, S).

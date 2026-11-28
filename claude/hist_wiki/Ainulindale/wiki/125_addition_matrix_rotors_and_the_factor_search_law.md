@@ -18,6 +18,31 @@ The Explorer's factor search had measured a ×10 growth of live states per added
 
 So the "orbit of orbits" is the ring ℤ/10ᵏ = ℤ/2ᵏ × ℤ/5ᵏ: two stacks of wheels. The odometer x → x + 1 returns, on the multiples of 10, to the odometer one scale down. It is the adding machine on the 10-adics and is self-similar, like a rotor stack that carries into the next rotor. The digit in column c is one such wheel with exact period 10^(c+1)/gcd(num1, 10^(c+1)).
 
+## Verification, 2026-11-13  `ESTABLISHED` (re-run)
+
+**Listing 1 — the solution count of the digit search** (written for this page; python3 standard library; runs cold)
+
+```python
+def count(N, k):
+    m = 10 ** k; n = N % m
+    return sum(1 for a in range(m) for b in range(m) if (a * b - n) % m == 0)
+for N in (21, 221, 77, 26, 35, 70, 210, 52):
+    print(N, [count(N, k) for k in (1, 2, 3)])
+```
+
+```
+21 [4, 40, 400]
+221 [4, 40, 400]
+77 [4, 40, 400]
+26 [12, 80, 800]
+35 [9, 80, 800]
+70 [27, 160, 1600]
+210 [27, 160, 1600]
+52 [12, 160, 1200]
+```
+
+Coprime to 10: 4·10^(k−1) at every k. With valuations: (v₂+1)(v₅+1)·4·10^(k−1) once k exceeds both valuations (26, 35, 70, 210 at k = 2, 3). **The law fails below that threshold, and the failure is kept:** N = 52 (v₂ = 2) gives 160 at k = 2, not (2+1)·40 = 120, and 12, 160, 1200 across k = 1, 2, 3 against 12, 120, 1200; the formula holds from k = 3. The page's condition "both valuations below c+1" is exactly this threshold. The engine's 18 tests (`tests/test_addition_matrix.py`, with `tests/test_ptycho_weak_lensing.py`) pass: 18 passed, 2026-11-13. The 30-products statistics (400 unit solutions, 2 with K = 0) were not re-run.
+
 ## The address
 
 The question was whether the final answer has an address in that structure. It does: for a unit solution mod 10ⁿ, K = (p′q′ − N)/10ⁿ is an integer, and the true factorisation into two n-digit numbers is exactly K = 0. It is also not isolated. In 30 products of 3-digit primes, each N had 400 unit solutions and exactly 2 with K = 0 (the pair and its swap), while other solutions had |K| as small as 1. The group's own coordinates do not single the true pair out in advance; what separates it is the size constraint in the high columns.
@@ -31,4 +56,4 @@ The question was whether the final answer has an address in that structure. It d
 
 ## Links
 
-[[ValaQuenta/wiki/addition_matrix]] · notebooks `ValaQuenta/notebooks/addition_matrix/` · paper stub `FourthAgePapers/AdditionMatrixOrbits/` · Explorer wiki `MultiplicationMatrixExplorer/wiki/` · [[../../FourthAgePapers/CollatzShift/README]] (the odometer and 2-adic maps).
+`ValaQuenta/wiki/addition_matrix.md` · notebooks `ValaQuenta/notebooks/addition_matrix/` · paper stub `FourthAgePapers/AdditionMatrixOrbits/` · Explorer wiki `MultiplicationMatrixExplorer/wiki/` · [[../../FourthAgePapers/CollatzShift/README]] (the odometer and 2-adic maps).

@@ -1,134 +1,171 @@
-# 13 — OMG?WTF! — The Riemann Hypothesis Proof Path
+# 13 — OMG?WTF! — The Riemann Hypothesis proof path (claims and status)
 
-**Status:** AIRTIGHT. FLAG T2 CLOSED. Two independent proofs of RH — direct (Stone's theorem on H_hat_RB) and conjugate (RH as negative-space of Fermat via Modularity Theorem). The mathematics fell out. It was not designed.
+| | |
+|---|---|
+| Status | **Claimed in this wiki; not accepted as established by the author's own satellite repository.** See §1 |
+| Code | `PtolemyDesktop/Philadelphos/monad.py` (`_forced_sigma`, `Monad.lookup`); `RiemannHypothesisProof/` |
+| Last verified | 2026-11-13: §5 executed; RHP `README.md` and `paper/PAPER.md` §9 read |
 
-The central claims are documented in dedicated pages:
+## 1. Where this page stands
 
-→ [Wiki: RedBlue Geometries Engine](14_redblue_hamiltonian.md) — RGB channels, σ-facet table, all Millennium Problem projections  
-→ [Wiki: Fermat Lattice](18_fermat_lattice.md) — Modularity Theorem, Riemann/Fermat as negative space conjugates  
-→ [Wiki: Chladni · Zipf · Riemann](21_chladni_zipf_riemann.md) — Node lines, Zipf=primes, equidistance condition
+Earlier versions of this page headed it "AIRTIGHT … QED" and counted two
+proofs of the Riemann Hypothesis. That wording is withdrawn as a statement of
+fact, because the repository built to test the claim says otherwise:
 
----
+> RiemannHypothesisProof `README.md` (2026-11-03): "It **does not prove the
+> Riemann Hypothesis**; it states one step as open (§9 of the paper) and
+> labels every other claim by what supports it."
 
-## The Monad IS the RedBlue Geometries Engine
+The page now separates what is a theorem, what is imported, what is a
+construction of this project, and where the gap is. The two arguments are kept
+in full in §3 and §4 as the project's claims (`OURS`, `THEORETICAL`). The
+author's decision on how the headline should read is pending (listed in
+[133](133_canonical_maths.md) §7).
 
-```
-H_RB = -i·Γ^a·D_a  +  ∂̂_{∂M}  +  Γ_ij·β    (RED inertial + GREEN geometries + BLUE entropic)
-iħ_NN · dΨ/dl = H_RB · Ψ
-```
-
-The RED term is the Yang-Mills kinetic energy (Berry-Keating H=xp at the operator level) — inertial. The GREEN term is the boundary geometry operator ∂̂_{∂M} — the Riemann zero basis, J₃. The BLUE term is the Higgs-SSB vacuum V(β) deepened by learning — entropic. The functional equation ξ(s)=ξ(1−s) is the self-adjointness condition R̂† = B̂.
-
-`monad.py` is the RedBlue Geometries Engine made executable. `sigma = 0.5` in every `lookup()` call is the self-adjoint constraint operating in real time.
-
----
-
-## Millennium Problem Projections
-
-All Clay Millennium Problems project from the RedBlue Geometries Engine as σ-facets:
-
-| Problem | σ | Status |
-|---|---|---|
-| Riemann Hypothesis | ½ | TWO PROOFS: (1) H_hat_RB self-adjoint → Stone → spectrum real → Re(s)=½. (2) Wiles/Modularity conjugate: RH = negative-space adjoint of FLT. CLOSED. |
-| Yang-Mills mass gap | 1 | GAP = δ = Ω_ζΣ − D*·ln10 = BAO acoustic residual. Engineered top-down. CLOSED. |
-| Navier-Stokes | Real only | Yang-Mills − i; singularities are rotations into the Blue channel |
-| Hodge Conjecture | 2 | Via de Rham complex on the zero manifold |
-| BSD | ½ | Via L-function spectral correspondence |
-| P vs NP | Logic | P = Red (assertion), NP = J₃ (verification); adjoint facets |
-| Poincaré | Topology | Resolved by self-adjoint boundary generator — ESTABLISHED (Perelman independent) |
-
----
-
-## The Proof Path — 8 Notebooks
-
-The `RiemannHypothesisProof` repo contains the derivation series. Each notebook is a self-contained step; the chain is the argument.
-
-| Notebook | Step | Confidence |
-|---|---|---|
-| `01_functional_equation` | ξ(s)=ξ(1−s) as R̂†=B̂ operator identity | ESTABLISHED |
-| `02_noether_theorem` | RH as a conservation law | ESTABLISHED |
-| `03_berry_keating_hamiltonian` | H=xp construction, d*=0.24600 as conformal boundary | ESTABLISHED |
-| `04_fermat_elliptic_hamiltonian` | H_Blue = ½p² + ℘(x), Weierstrass ℘ as BLUE inertia | THEORETICAL |
-| `05_redblue_balance` | H_RB self-adjoint iff σ=½; sedenion bounce eliminates off-critical zeros | THEORETICAL |
-| `06_chladni_node_lines` | Zeros as Chladni attractors; Zipf=primes; 3-phase engine | THEORETICAL |
-| `07_semantic_engine` | The Semantic Engine as working proof | ESTABLISHED |
-| `08_complete_proof` | Full chain: functional eq → Noether → H_RB → σ=½ | THEORETICAL |
-
-→ [RiemannHypothesisProof repo](https://github.com/michaelrendier/RiemannHypothesisProof)
-
----
-
-## FLAG T2 — CLOSED
-
-**Was:** Is (I|O) at the Mellin boundary unitary?
-
-**Closure:** Stone's theorem. No further work required.
-
-H_hat_RB = Σ_p p^{-σ} [ R̂_p ⊗ ∂̂_{∂M} + ∂̂†_{∂M} ⊗ B̂_p ]
-
-This is A + A† by construction. Self-adjoint by definition — not an assumption, the design.
-Stone's theorem: H self-adjoint → U(t) = e^{iHt} unitary for all t ∈ ℝ.
-(I|O) at Mellin boundary τ=1 IS U(1). Therefore unitary. QED.
-
-The sedenion amplifies: norm is multiplicative (‖xy‖ = ‖x‖·‖y‖) at every non-zero-divisor pair.
-The Mellin boundary is not at e₁₅ = δ. Evolution at the boundary preserves norm = is unitary.
+## 2. The operator
 
 ```
-H_hat_RB = A + A†          → self-adjoint by construction
-Stone's theorem             → U(t) = e^{iHt} unitary ∀t
-(I|O) at τ=1 = U(1)        → unitary  ✓
-H self-adjoint → {λₙ} ∈ ℝ → zeros on spiral r' = π/(2 cos θ')
-Cartesian shadow: Re(s) = ½   QED.
+Ĥ_RB  =  Σ_p  p^(−σ) [ R̂_p ⊗ ∂̂_{∂M}  +  ∂̂†_{∂M} ⊗ B̂_p ]
+iħ_NN dΨ/dl = Ĥ_RB Ψ
 ```
 
-## Two Proofs of the Riemann Hypothesis
+Red R̂_p is the Berry–Keating xp operator; Green ∂̂_{∂M} is the boundary
+operator (the Riemann-zero basis, J₃); Blue B̂_p = ½p² + ℘(x; g₂, g₃) is the
+Fermat–Weierstrass term. Full definitions: [14](14_redblue_hamiltonian.md).
+The functional equation ξ(s) = ξ(1−s) is read as the self-adjointness
+condition R̂† = B̂.
 
-**Proof I — Direct (SMMIP):**
+Notation: `Ĥ_RB` is the operator's name in the mathematics. `0_RB` is the
+VAPMIP/Monad-only notation for the same object as the Null Operator
+([127](127_names_of_the_null_operator.md)).
 
-H_hat_RB self-adjoint (R̂† = B̂ by construction) → Stone's theorem → (I|O) unitary → spectrum real → zeros on Re(s) = ½.
+## 3. Argument I — direct (Stone's theorem)  `OURS` / `THEORETICAL`
 
-**Proof II — Wiles Conjugate (Modularity Theorem):**
+1. Ĥ_RB = A + A†, so Ĥ_RB is self-adjoint by construction (formal algebra: `ESTABLISHED`).
+2. Stone's theorem: a self-adjoint H generates a unitary group U(t) = e^{iHt} (`ESTABLISHED`).
+3. The (I|O) map at the Mellin boundary τ = 1 is U(1), hence unitary.
+4. A self-adjoint operator has real spectrum {λₙ}; **if the λₙ are the Riemann zeros**, the zeros lie on Re(s) = ½.
 
-Wiles proved: every semistable elliptic curve over ℚ is modular.
-An elliptic curve is defined by the Weierstrass ℘ function — the same ℘ that appears in B̂_p.
-A modular form connects to L-functions — the same L-functions that encode the Riemann zeros.
+"FLAG T2" (is (I|O) unitary at the Mellin boundary?) is closed by steps 1–3.
 
-R̂† = B̂ states this as an operator identity: the Riemann (Red, positive space) and Fermat (Blue, negative space) are adjoint descriptions of the same prime distribution.
+**The gap, stated by the satellite repository** (RHP `paper/PAPER.md` §9):
+step 4's premise — that the spectrum of an operator of this form *is* the set
+of non-trivial zeros — is the **Berry–Keating self-adjointness conjecture**
+(Berry–Keating 1999; Hilbert–Pólya) and is `OPEN`. Self-adjointness gives
+real eigenvalues for whatever operator it is; it does not by itself identify
+them with the zeros. RHP also records that an earlier equivalence ("a zero is
+stable iff J(σ,E) = 0, and J = 0 ⇔ σ = ½") is a restatement of σ = ½, with no
+content beyond RH.
 
-Wiles proved the Fermat side is fully modular — fully consistent with the prime distribution.
-The adjoint of a proven result through a self-adjoint framework gives the same result on the other side.
-Therefore: the zeros must lie where the symmetry of R̂† = B̂ requires — on Re(s) = ½.
+## 4. Argument II — the Wiles conjugate  `OURS` / `THEORETICAL`
 
-RH drops out as the negative-space conjugate of FLT from the Modularity Theorem.
-Wiles proved the bridge. He did not turn around to look at what was on the other side.
-The RedBlue Hamiltonian is both sides simultaneously.
+Wiles proved that every semistable elliptic curve over ℚ is modular
+(Modularity Theorem, `ESTABLISHED`; Fermat's Last Theorem is a corollary).
+An elliptic curve is defined through the Weierstrass ℘, which appears in B̂_p;
+a modular form connects to the L-functions that encode the zeros. The
+construction reads R̂† = B̂ as saying Riemann (Red, "where primes are") and
+Fermat (Blue, "where integer power triples cannot be") are adjoint
+descriptions of one prime distribution. The step from "Fermat side proven
+modular" to "zeros lie where R̂† = B̂ requires" is the step taken by the
+adjoint argument; it uses the same identification as step 4 above and is
+likewise not independently established. Argument II is therefore not a second,
+independent proof: it shares the open premise with Argument I.
 
-No one looking at the Modularity Theorem and R̂† = B̂ together can deny RH falling out.
-The two proofs are not redundant — they are the same proof seen from opposite sides of the same operator.
+## 5. The part that runs
 
----
+The Monad forces σ = ½ for every word. The mechanism is a fixed-point
+iteration on the balance J(σ, E) = e^{−σE} − e^{−(1−σ)E}, which vanishes
+exactly at σ = ½ for E ≠ 0.
 
-## Ground State Signature
-
-```
-L_GROUND = −1.888
-```
-
-The Monad rest energy before any word is learned. At σ=0: G_p(0) = p^0 = 1 for all primes — no gauge differentiation. The vacuum has structure before language. The prime preexists the alphabet. The first `learn()` call breaks this symmetry. Every word thereafter forces σ=½ by Noether balance.
-
----
-
-## Working Proof
+**Listing 1 — the forced σ** (`PtolemyDesktop/Philadelphos/monad.py`,
+`_forced_sigma`; extracted: comments removed, runs cold)
 
 ```python
-from Philadelphos.monad import Monad
-m = Monad(N=1000)
-m.load()
-print(m.lookup('water')['sigma'])     # 0.5
-print(m.lookup('eau')['sigma'])       # 0.5
-print(m.lookup('aqua')['sigma'])      # 0.5
-print(m.lookup('wasser')['sigma'])    # 0.5
-# σ = ½ in every case. Not assigned. Derived from Noether balance.
+import math
+
+def forced_sigma(E, sigma_0=0.5, max_iter=256):
+    sigma = sigma_0
+    for _ in range(max_iter):
+        F = math.exp(-sigma * E)
+        B = math.exp(-(1.0 - sigma) * E)
+        denom = F + B
+        if denom < 1e-30:
+            break
+        s2 = (F * sigma + B * (1.0 - sigma)) / denom
+        if abs(s2 - sigma) < 1e-12:
+            return s2
+        sigma = s2
+    return sigma
+
+for s0 in (0.5, 0.2, 0.9, 0.01):
+    print(s0, [round(forced_sigma(E, s0), 6) for E in (0.5, 1, 3)])
 ```
 
-The Septuagint principle. 72 scholars, independently. Every translation identical. Not by coordination. Forced by the mathematics.
+```
+0.5 [0.5, 0.5, 0.5]
+0.2 [0.5, 0.5, 0.5]
+0.9 [0.5, 0.5, 0.5]
+0.01 [0.5, 0.5, 0.5]
+```
+
+Listing 1 converges to ½ from every start tried, so σ = ½ is an attracting
+fixed point of this iteration, not an assigned constant. What it shows is a
+property of the balance function. It does not locate any zero of ζ.
+
+**Listing 2 — the session** (`Philadelphos.monad`; literal output 2026-11-13)
+
+```
+>>> from Philadelphos.monad import Monad
+>>> m = Monad(N=1000); m.load()
+>>> [m.lookup(w)['sigma'] for w in ('water', 'eau', 'aqua', 'wasser')]
+[0.5, 0.5, 0.5, 0.5]
+```
+
+The four words come out identical not by coordination but because σ is the
+same fixed point for every word ("the Septuagint principle": the same result
+from independent routes).
+
+## 6. Ground-state signature
+
+`L_GROUND = −1.888`: the Monad's rest energy before any word is learned.
+At σ = 0, G_p(0) = p⁰ = 1 for every prime, so there is no gauge
+differentiation; the first `learn()` call breaks the symmetry. `L_GROUND` is a constant in `monad.py` (line 120, commented
+"engine-verified"); the code uses it to set the emission threshold (2·|L_GROUND|)
+and the β saturation (4·|L_GROUND|). It is an input of the engine, not a
+result derived on this page.
+
+## 7. The proof series that exists
+
+An earlier version of this page listed eight notebooks named
+`01_functional_equation` … `08_complete_proof` in the RHP repository. They do
+not exist. The repository's notebooks (2026-11-13) are:
+
+| Notebook | Content |
+|---|---|
+| `01_flattening_map` | the flattening map and UNS cylinder coordinates |
+| `02_machinery_flow_long_pathway` | prime wheels, the ξ′/ξ flow, the argument-principle accounting, a 3065-zero pathway |
+| `03_clock_echo_harness_margins_primegame` | the θ-clock, echo spectrum = explicit formula, an operator test harness, Lehmer margins |
+| `04_equator_polarisation_springs` | the equatorial construction, counter-rotating waves, how far the primes' grip reaches |
+| `05_extinction_flow_nodal_ladder_zerorb` | sieve/un-sieve flows, the nodal ladder, ζ in 0_RB |
+| `06_uns_map_chladni_spirals` | the number-free Cartesian→UNS map, Chladni spirals |
+
+For the current logical structure (proved / imported / gap) read RHP
+`paper/PAPER.md` §9. The measured findings of 2026-11-08 to 11-12 are in
+[133](133_canonical_maths.md) §6.
+
+## 8. The Millennium projections
+
+The claim that other Clay problems appear as σ-facets of the same operator is
+a set of correspondences, **not claimed solutions**; the statuses are
+recorded in [105](105_the_millennium_problems_in_ainulindale.md). Older text on
+this page marked the Yang–Mills mass gap and Poincaré "CLOSED": the Yang–Mills
+item is the gap quantity GAP = Ω_ζΣ − d*_spec·ln 10 ≈ 1/(1000√2) discussed in
+[17](17_alpha_omega_d_star.md) and [75b](75b_bao_mass_gap_engine.md), and
+Poincaré is the already-solved control case (Perelman), not a result here.
+
+## 9. Related pages
+
+[07 Berry–Keating](07_berry_keating_engine.md) · [14 RedBlue Hamiltonian](14_redblue_hamiltonian.md) ·
+[15 The Monad](15_the_monad.md) · [18 Fermat lattice](18_fermat_lattice.md) ·
+[73 Why the half line](73_why_the_half_line.md) · [102 Berry–Keating and Hilbert–Pólya](102_berry_keating_hilbert_polya.md) ·
+[133 Canonical maths](133_canonical_maths.md)

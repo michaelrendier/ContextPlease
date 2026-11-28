@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Hamilton Product · Ptolemy MathLex</title>
@@ -166,6 +167,8 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
   <div class="cell-out-body">pq = [1 1 1 1]
 qp = [1 1 -1 -1]  (pq ≠ qp ✓)</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">pq = [1 1 1 1]
+qp = [ 1  1 -1  1]</pre>Direct multiplication: (1+k)(1+i) = 1 + i + j + k and (1+i)(1+k) = 1 + i − j + k, so qp = [1, 1, −1, 1] (the code), not [1, 1, −1, −1]. pq ≠ qp holds. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Alexandria (OpenGL) + Archimedes</p><p style="margin-top:6px"><strong>Use:</strong> Alexandria's 3D visualization uses quaternion rotation directly. Every camera orientation and object rotation in the OpenGL visualization layer is stored as a quaternion and composed via Hamilton product.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Using unit quaternion assumption without normalizing. Always normalize before using q as a rotation.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Forgetting that qvq⁻¹ requires v to be expressed as a pure quaternion (0, v_x, v_y, v_z).</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Mixing left-hand and right-hand conventions. The product pq applies q first, then p — or p first, then q, depending on convention. Pick one.</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="cayley_dickson_algebra.html">Cayley-Dickson Algebra →</a><a class="crosslink" href="dixon_product.html">Dixon Product →</a><a class="crosslink" href="lie_group.html">Lie Group →</a><a class="crosslink" href="lorentz_group.html">Lorentz Group →</a></div></div>

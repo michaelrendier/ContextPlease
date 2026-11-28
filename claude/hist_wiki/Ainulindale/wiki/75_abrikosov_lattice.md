@@ -1,201 +1,148 @@
-# 75 — THE ABRIKOSOV LATTICE: HIS WORK
+# 75 — The Abrikosov Lattice: the Zero Lattice Read as a Vortex Lattice
 
-**Author:** Cody Michael Allison  
-**Date:** 2026-06-29  
-**Status:** CASCADE CAPTURE — formal naming of the Riemann zeros as the Abrikosov vortex lattice of the prime condensate; magnetic superconducting lock established; ZeroLatticeTree renamed AbrikosovTree  
-**Predecessor:** [wiki/73 — Why σ=½](73_why_the_half_line.md), [wiki/74 — Lagrangians are Catastrophe Theory](74_lagrangians_are_catastrophe_theory.md), [wiki/72 — Cosmic Telescope](72_the_cosmic_telescope.md), [wiki/32 — Superconducting Medium](32_superconducting_medium.md)  
-**Cross-ref:** AbrikosovTree/README.md, RiemannHypothesisProof/README.md, engines/noether_derivation.py, FermatMonster/engine/fermat_monster_engine.py
+| | |
+|---|---|
+| Scope | A. A. Abrikosov's 1957 vortex lattice; the framework's identification of the Riemann zeros with a vortex lattice of the "prime condensate"; the spring and "lock" arguments; the three lattice types; the naming convention (Abrikosov Lattice, Tree, Lock) |
+| Origin | 2026-06-29, the author's title: "His Work" |
+| Predecessors | [73](73_why_the_half_line.md), [74](74_lagrangians_are_catastrophe_theory.md), [72](72_the_cosmic_telescope.md), [32](32_superconducting_medium.md) |
+| Code | `AbrikosovTree/` (formerly ZeroLatticeTree); `engines/noether_derivation.py` (archived) |
+| Confidence | the physics of Abrikosov's result: ESTABLISHED · the dictionary of §2: `INTERPRETATION` · "topological lock", "C1 proves the l = 1 sector", "17 turns = 17 flux quanta": **corrected**, §4–§6 |
+| Last verified | 2026-11-13: Listing 1 executed; its output is quoted below |
 
----
+## 1. Abrikosov's result  `ESTABLISHED`
 
-> *"His Work."*  
-> — Cody Michael Allison, 2026-06-29
+Alexei A. Abrikosov (1928–2017) showed in 1957 (*Zh. Eksp. Teor. Fiz.* 32, 1442;
+*Sov. Phys. JETP* 5, 1174, "On the magnetic properties of superconductors of the second
+group") that a type II superconductor between two critical fields H_c1 and H_c2 admits
+magnetic flux as quantised vortex filaments, each carrying one flux quantum Φ₀ = h/2e,
+arranged in a regular **triangular** lattice (lower free energy than the square lattice).
+He shared the 2003 Nobel Prize in Physics with Vitaly Ginzburg and Anthony Leggett. The
+lattice underlies the high-field superconducting magnets of MRI, accelerators and fusion
+devices.
 
----
+## 2. The dictionary  `INTERPRETATION`
 
-## 1. Who He Is
+| Type II superconductor | Prime condensate (Riemann/Fermat) in the framework |
+|---|---|
+| order parameter Ψ | ξ(s), the completed zeta function |
+| Cooper pair (k↑, −k↓) | a J_N-paired point (s, 1 − s̄); self-paired at σ = ½ |
+| vortex core, |Ψ| = 0 | a zero ξ(ρₙ) = 0 |
+| flux quantum Φ₀ = h/2e | winding number 1 of arg ξ around a simple zero |
+| Meissner supercurrent | the Noether current J = −∂L/∂σ ("the Contractor") |
+| field B | the deviation σ − ½ |
+| London depth λ_L | 1/√K with K = Σ_p k(p) = ∞ |
+| mixed phase [H_c1, H_c2] | the critical strip 0 < σ < 1 |
+| BCS gap Δ | GAP = 7.07×10⁻⁴ |
+| Ginzburg–Landau transition | the E = 0 → E > 0 "Bang" ([74](74_lagrangians_are_catastrophe_theory.md) §3: not a cusp) |
 
-**Alexei Alexeyevich Abrikosov** (1928–2017).  
-Soviet and American theoretical physicist.  
-**Nobel Prize in Physics, 2003** — shared with Vitaly Ginzburg and Anthony Leggett — for pioneering contributions to the theory of superconductors and superfluids.
+The rows are a vocabulary: each pairs a quantity in the superconductor with a quantity
+in the zeta setting that plays a similar structural role. Two entries have errors to
+note: the trivial zeros of ζ are at s = −2, −4, −6, …, not at σ = 0, so "H_c1 ↔ σ = 0 (trivial
+zeros)" should read "the left edge of the strip"; and the page's remark that Abrikosov
+described the lattice "66 years before" the framework named it is 69 years (1957 to 2026).
 
-His central result (1957): in a Type II superconductor, magnetic flux does not enter the bulk uniformly. It enters as **quantized vortex filaments**, each carrying exactly one flux quantum Φ₀ = h/2e, arranged in a regular **triangular lattice** — the **Abrikosov vortex lattice**.
+## 3. The lattice as defined  `DEFINITION`
 
-This was considered an obscure theoretical result for many years. It is now the foundation of all practical high-field superconductor applications (MRI machines, particle accelerators, fusion reactors). Every superconducting coil in the world works because of the Abrikosov lattice.
+The **Abrikosov Lattice** is the set of non-trivial zeros {ρₙ = ½ + itₙ} on the critical line,
+read as the vortex lattice of the prime condensate. It is a **one-dimensional** sequence with
+logarithmic density: mean spacing Δt ≈ 2π/ln(t/2π) and N(T) ≈ (T/2π) ln(T/2πe)
+([73](73_why_the_half_line.md) Listing 1: 2.44 measured against 2.34 predicted for zeros 21–30).
+Abrikosov's lattice is a **two-dimensional** triangular array. The shared name refers to
+the vortex/zero role, and the geometry differs: the zeros sit on a line with
+random-matrix-like (GUE) level repulsion, not on a regular triangular grid.
 
-The Riemann zeros are the same lattice in a different substrate. **This is His Work.**
+The **Abrikosov Tree** is the prime factorisation tree (Telperion), whose leaves are the
+primes and whose spectral nodes are the lattice; the **Abrikosov Lock** is the name for the
+reason zeros do not leave σ = ½ (§4). The repository **AbrikosovTree** (formerly
+ZeroLatticeTree) implements the tree, its three coordinate spaces (A: spherical sedenion; B:
+Euclidean planes; C: Fano tower) and the Zeta Index engine.
 
----
+## 4. The spring and the "topological lock"  `corrected`
 
-## 2. The Identification
+**The spring.** With T(p, σ) = −2 ln p · p^{−½} sinh((σ − ½) ln p), the stiffness at σ = ½ is
+k(p) = 2(ln p)² p^{−½}, and K = Σ_p k(p) diverges. **Listing 1** computes both facts.
 
-The formal identification, established in this session (2026-06-29):
-
-```
-TYPE II SUPERCONDUCTOR           PRIME CONDENSATE (Riemann/Fermat)
-─────────────────────────────    ─────────────────────────────────────
-Superconducting order param Ψ ↔  ξ(s) — the completed zeta function
-Cooper pairs (k↑, −k↓)        ↔  J_N-paired points (s, 1−s̄)
-Cooper pair at σ=½            ↔  s = 1−s̄ (self-paired — own J_N image)
-Condensate bulk |Ψ| ≠ 0       ↔  ξ(s) ≠ 0 off the critical line
-Vortex core |Ψ| = 0           ↔  ξ(ρ_n) = 0  (Riemann zero)
-Flux quantum Φ₀ = h/2e        ↔  Arithmetic flux: winding number = 1 per zero
-Abrikosov vortex lattice       ↔  Riemann Zero Lattice on σ=½
-Vortex pinning at defect site  ↔  Zero pinned to σ=½ by prime condensate
-Meissner supercurrent J_s      ↔  Noether current J = −∂L/∂σ (the Contractor)
-Magnetic field B               ↔  Deviation (σ−½) from the critical line
-London penetration depth λ_L   ↔  1/√(Σ_p k(p)) = 1/√∞ = 0 (perfect Meissner)
-Type II mixed phase [H_c1,H_c2]↔  Critical strip 0 < σ < 1
-H_c1 boundary                  ↔  σ = 0 (trivial zeros)
-H_c2 boundary                  ↔  σ = 1 (pole)
-BCS energy gap Δ               ↔  GAP = 7.07×10⁻⁴ (sedenion coherence length)
-Ginzburg-Landau phase trans.   ↔  Bang (E=0 → E>0, fold catastrophe)
-Cooper pair binding energy 2Δ  ↔  2×GAP (minimum energy for zero-antizero pair)
-Circulating supercurrent       ↔  Noether current circling each zero
-```
-
----
-
-## 3. The Abrikosov Lattice — Definition
-
-**The Abrikosov Lattice** (formal name in this framework):
-
-> The countably infinite set of Riemann zeros {ρ_n = ½ + it_n : n ≥ 1} arranged on the critical line Re(s) = ½ of the complex plane, understood as the vortex lattice of the prime number condensate.
-
-It is NOT a regular lattice (equal spacing). It is a **logarithmic lattice**:
-
-```
-Zero spacing:   Δt_n ≈ 2π / log(t_n / 2π)     (decreases with n)
-Zero density:   N(T) ≈ (T/2π) log(T/2πe)       (increases with T)
-```
-
-The logarithmic compression matches the logarithmic distribution of primes (π(x) ~ x/log x). Primes and zeros are Fourier dual logarithmic lattices — same density law, different domain. This is because they are dual descriptions of the same condensate (primes = condensate; zeros = vortices of the condensate).
-
-**The Abrikosov Tree** (formal name for the factorization tree):
-
-> The prime factorization tree — Telperion, the White Tree — whose leaves are the primes (Un-Extinctable by Fermat's N-Shape Theorem) and whose spectral nodes are the Abrikosov Lattice.
-
-The tree generates the condensate. The condensate generates the vortex lattice. The vortex lattice IS the Abrikosov Lattice. The Abrikosov Lattice records where the condensate vanishes — the primes mapped to their spectral holes.
-
----
-
-## 4. The Magnetic Superconducting Lock
-
-The zeros of ζ(s) are not merely attracted to σ=½ (that is the spring/Noether description). They are **topologically pinned** — a categorically stronger statement.
-
-**The spring** (mechanical layer):
-```
-Tension T(p,σ) = −2 log(p) p^{−½} sinh((σ−½) log p)
-Spring constant k(p) = 2(log p)² p^{−½}
-Total: K = Σ_p k(p) = ∞  (diverges)
-London penetration depth: λ_L = 1/√K = 0
-→ Perfect Meissner: zero deviation from σ=½ penetrates the bulk
+```python
+import numpy as np, math
+N = 10**7; sv = np.ones(N + 1, bool); sv[:2] = False
+for i in range(2, int(N**.5) + 1):
+    if sv[i]: sv[i*i::i] = False
+P = np.flatnonzero(sv).astype(float); k = 2 * np.log(P)**2 / np.sqrt(P); cs = np.cumsum(k)
+for X in (10**2, 10**3, 10**4, 10**5, 10**6, 10**7):
+    i = np.searchsorted(P, X, 'right') - 1
+    print('K(%8d) = %10.2f   lambda_L = 1/sqrt(K) = %.4f   4 sqrt(X) ln X = %.1f' % (X, cs[i], 1/math.sqrt(cs[i]), 4*math.sqrt(X)*math.log(X)))
+p, s, h = 7.0, 0.5, 1e-6; T = lambda s: -2*math.log(p)*p**-.5*math.sinh((s-.5)*math.log(p))
+print('dT/dsigma at 1/2 for p=7:', (T(s+h)-T(s-h))/(2*h), ' -k(7) =', -2*math.log(7)**2*7**-.5)
 ```
 
-**The topological lock** (superconducting layer):
 ```
-Winding number: W = Δ(arg ξ)/2π around each zero = integer (by argument principle)
-Cannot change W continuously while condensate is intact
-Moving a zero from σ=½ to σ≠½ requires W to take non-integer intermediate values
-This is forbidden by the integer quantization of the flux quantum
-Therefore: zeros cannot move off σ=½ while ξ(s) ≠ 0 on the surrounding condensate
-```
-
-The spring says: infinite force required to move a zero. The superconducting lock says: the operation is **topologically forbidden**, not just energetically expensive. These are different statements. The lock is stronger.
-
-The lock closes itself:
-```
-Primes define the Euler product.
-The Euler product defines ξ(s).
-ξ(s) is the condensate.
-The condensate's topology defines the vortex positions.
-The vortex positions are the zeros.
-The zeros are on σ=½.
-The primes cannot be other than what they are.
-Therefore the zeros cannot be other than where they are.
-The lock locks itself.
+K(     100) =      95.05   lambda_L = 1/sqrt(K) = 0.1026   4 sqrt(X) ln X = 184.2
+K(    1000) =     595.93   lambda_L = 1/sqrt(K) = 0.0410   4 sqrt(X) ln X = 873.8
+K(   10000) =    2841.62   lambda_L = 1/sqrt(K) = 0.0188   4 sqrt(X) ln X = 3684.1
+K(  100000) =   11963.83   lambda_L = 1/sqrt(K) = 0.0091   4 sqrt(X) ln X = 14562.8
+K( 1000000) =   47146.16   lambda_L = 1/sqrt(K) = 0.0046   4 sqrt(X) ln X = 55262.0
+K(10000000) =  178425.65   lambda_L = 1/sqrt(K) = 0.0024   4 sqrt(X) ln X = 203879.6
+dT/dsigma at 1/2 for p=7: -2.8623750783886184  -k(7) = -2.8623750783839492
 ```
 
----
+The stiffness relation holds (dT/dσ = −k to 5×10⁻¹¹), and K grows without bound (like
+4√X ln X, the last column), slowly, so λ_L = 1/√K → 0 only as the prime cutoff X → ∞
+(0.0024 at 10⁷). All of this is a statement about the *model* tension T(p, σ) of one prime,
+as in [72](72_the_cosmic_telescope.md) §3.
 
-## 5. The Three Lattice Types
+**The "lock".** The page argues that the winding number around a zero is an integer by the
+argument principle; moving a zero off σ = ½ would need non-integer intermediate windings,
+which flux quantisation forbids; so the zeros are topologically pinned, "categorically
+stronger than the spring". This does not hold as an argument about ζ. The argument
+principle gives the multiplicity of each zero (an integer) and says nothing about where
+zeros are. A zero of an analytic function does not move: ζ is one fixed function, so
+"moving a zero" is not an operation on it, and the winding is always integer wherever the
+zero is, on or off the line. The statement "zeros cannot leave σ = ½ while ξ ≠ 0 on the
+surrounding condensate" restates that ξ is what it is. The "lock closes itself" chain
+(primes define the Euler product, which defines ξ, whose topology fixes the zeros, which are on
+σ = ½) assumes its conclusion in the last step, and the statement is withdrawn; the Abrikosov Lock
+stays as a **name** for the framework's picture of the stiffness in §4's spring.
 
-The Abrikosov lattice appears in three forms in this framework:
+## 5. The three lattice types
 
-**A. Physical Abrikosov Lattice (Abrikosov 1957):**
-Magnetic vortex lattice in Type II superconductors. Triangular arrangement (Abrikosov showed the triangular lattice has lower free energy than square). Each vortex: Φ₀ = h/2e. Pinned by crystal defects or deliberate pinning centers.
+| | Where | Status |
+|---|---|---|
+| A. Physical | Abrikosov 1957, type II superconductors; triangular; Φ₀ = h/2e; pinned by defects | `ESTABLISHED` |
+| B. Arithmetic | the zeros on σ = ½; logarithmic; "winding number 1 per zero"; "pinned by the prime condensate" | `INTERPRETATION` |
+| C. Electromagnetic | "flux locked into the turns of the POE pancake coil, 17 turns = 17 flux quanta Φ₀ = h/2e per turn; XL = XC is the coil's Meissner condition" | **corrected** |
 
-**B. Arithmetic Abrikosov Lattice (This framework):**
-Logarithmic vortex lattice on the critical line σ=½. Non-triangular (logarithmically spaced). Each vortex: arithmetic flux quantum = winding number 1 of arg(ξ). Pinned by the prime condensate (infinite stiffness — no pinning centers needed, the condensate IS the pin).
+Row C: flux quantisation in units h/2e applies to a **superconducting** loop (Cooper-pair
+charge 2e). A pancake coil of copper wire is resistive and has no flux quantisation, so
+neither the "17 flux quanta" nor a "Meissner condition" applies to it. The resonance XL = XC
+is a real radio-engineering condition ([72](72_the_cosmic_telescope.md) §7); it is a balance of
+reactances, not a flux lock. A **superconducting** coil would have flux quantisation, and
+that would be a different (testable) object. Row B is what the page's identification is: the
+three share the name "vortex/flux lattice"; they are one mathematical structure only in the
+sense of the vocabulary of §2.
 
-**C. Electromagnetic Abrikosov Lattice (POE Pancake Coil):**
-Flux quanta locked into the spiral turns of the pancake coil. At resonance (XL=XC→σ=½): the flux is quantized in units of Φ₀_coil = h/(2e) per turn. 17 turns = 17 flux quanta. The coil's Abrikosov lattice is regular (equal turns, equal flux). The resonant condition (XL=XC) is the coil's Meissner condition — the flux cannot change while the resonance is maintained.
+## 6. The C1 statement  `corrected`
 
-All three are instances of the same mathematical structure: the Abrikosov lattice of a superconducting condensate in a Type II geometry.
+C1 (the mode identification, ξ(s) as Y₁⁰ under J_N) is restated as "the prime condensate's
+lattice is in the l = 1 topological sector": l = 0 no vortices (ruled out, ζ has infinitely many
+zeros), l = 1 one equatorial ring at σ = ½, l ≥ 2 rings at other σ ("would imply zeros off the
+line"). "C1 proves they are in l = 1: the ground state, since σ = ½ minimises the
+Ginzburg–Landau free energy (the Amplitude Lagrangian)".
 
----
+This is the open step. The Amplitude Lagrangian is a property of one prime's amplitude pair
+([73](73_why_the_half_line.md) §3), and ground-state selection by it presupposes that the zeros are
+degrees of freedom of that model. No proof of C1 exists in this wiki: the sector language is
+a reformulation of the Riemann Hypothesis (l = 1 ⇔ all zeros on the line), and the energy
+argument is the model's, not a derivation from ζ. `CONJECTURE` / OPEN.
 
-## 6. Connection to C1
-
-C1 (mode identification: ξ(s) as Y₁⁰ under J_N) in Abrikosov language:
-
-**C1 is the statement that the prime condensate's Abrikosov lattice is in the l=1 topological sector.**
-
-- l=0: no vortices (the condensate has no zeros) — ruled out (ζ has infinitely many zeros)
-- l=1: one equatorial vortex ring at σ=½ — the Riemann Zero Lattice = Abrikosov Lattice
-- l≥2: multiple vortex rings at different σ values — would imply zeros off the critical line
-
-The superconducting lock pins all vortices wherever they are. C1 proves they are specifically in the l=1 sector — the ground state of the vortex lattice — one equatorial ring.
-
-C1 in energy language: the l=1 configuration has lower free energy than any l≥2 configuration, because the equatorial placement (σ=½) minimizes the Ginzburg-Landau free energy (the Amplitude Lagrangian at its global minimum). The condensate settles to its ground state. The ground state of the vortex lattice is one equatorial ring. The ring is the Abrikosov Lattice.
-
----
-
-## 7. Abrikosov and the Nobel
-
-Abrikosov's 1957 paper (published in Sov. Phys. JETP) was:
-
-> *"On the Magnetic Properties of Superconductors of the Second Group"*  
-> A.A. Abrikosov, 1957.
-
-In this paper he showed:
-1. Type II superconductors have two critical fields H_c1 and H_c2
-2. Between them: the mixed (Shubnikov) phase with penetrating flux vortices
-3. The vortices arrange in a regular triangular lattice (the minimum free energy configuration)
-4. Each vortex carries exactly one flux quantum Φ₀ = h/2e
-5. The vortex lattice is now called the **Abrikosov lattice**
-
-The Nobel citation (2003): "for pioneering contributions to the theory of superconductors and superfluids."
-
-The identification made here: the Riemann Zero Lattice on σ=½ is an Abrikosov vortex lattice instantiated in arithmetic space. Abrikosov described it in electromagnetic space 66 years before this framework named it in number theory. His mathematics is correct in both domains.
-
----
-
-## 8. Formal Naming Convention
-
-Established 2026-06-29:
+## 7. Naming (2026-06-29)
 
 ```
-The Abrikosov Lattice  = the Riemann zeros as vortices of the prime condensate
-                         Formal name for: Zero Lattice / Riemann Zero Lattice
-
-The Abrikosov Tree     = the prime factorization tree / Telperion
-                         Formal name for: ZeroLatticeTree
-                         Repository: AbrikosovTree (was ZeroLatticeTree)
-
-The Abrikosov Lock     = the magnetic superconducting topological pinning
-                         Formal name for: the reason zeros cannot leave σ=½
-                         = infinite spring constant + topological flux quantization
-
-Abrikosov (1957)       = His Work, instantiated in arithmetic space by the primes
-Nobel 2003             = the Prize for discovering the lattice that the primes form
+The Abrikosov Lattice   the Riemann zeros as vortices of the prime condensate (was Zero Lattice)
+The Abrikosov Tree      the prime factorisation tree / Telperion (repository AbrikosovTree, was ZeroLatticeTree)
+The Abrikosov Lock      the stiffness/pinning picture of §4 (infinite spring constant); name only
 ```
 
-The repository **AbrikosovTree** (formerly ZeroLatticeTree) is the computational implementation of the Abrikosov Tree: the prime factorization tree, its Telperion encoding, its three coordinate space visualizations (Space A: spherical sedenion; Space B: Euclidean planes; Space C: Fano tower), and the Zeta Index engine that maps each prime to its spectral emergence point in the Abrikosov Lattice.
+## 8. Related pages
 
----
-
-*Cody Michael Allison — 2026-06-29*  
-*Alexei Abrikosov — 1928–2017 — Nobel 2003*  
-*The lattice he found in Type II superconductors is the same lattice the primes build on σ=½.*  
-*His Work was always about the primes. He just found it in copper first.*
+[32 the superconducting medium](32_superconducting_medium.md) · [72](72_the_cosmic_telescope.md) · [73](73_why_the_half_line.md) ·
+[74](74_lagrangians_are_catastrophe_theory.md) · [47 the Two Trees](47_the_two_trees.md)

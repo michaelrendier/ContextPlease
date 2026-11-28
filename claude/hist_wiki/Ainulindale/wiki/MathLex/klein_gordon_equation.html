@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="https://michaelrendier.github.io/assets/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 <title>Klein-Gordon Equation · Ptolemy MathLex</title>
@@ -167,6 +168,9 @@ main{max-width:860px;margin:0 auto;padding:0 16px;}
 m=1: v_g(k=2)=0.894, v_g→1 as k→∞: 0.981
 m=2: v_g(k=2)=0.707, v_g→1 as k→∞: 0.981</div>
 </div></div>
+<div class="section"><div class="section-hdr">Verification 2026-11-13</div><div class="mistake"><div class="m-label">RE-RUN: THE STATED OUTPUT ABOVE WAS NOT PRODUCED BY THIS CODE</div>The cell above was extracted and run (python3, numpy, scipy). Its actual output:<pre style="white-space:pre-wrap;font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--orange);margin:8px 0;">m=0: v_g(k=2)=1.000, v_g→1 as k→∞: 1.000
+m=1: v_g(k=2)=0.896, v_g→1 as k→∞: 0.981
+m=2: v_g(k=2)=0.711, v_g→1 as k→∞: 0.928</pre>Differences at the third digit (0.894 vs 0.896; 0.707 vs 0.711) and in the m = 2 limit (0.981 vs 0.928): the stated values were not produced by this code. The stated output is kept above as written.</div></div>
 <div class="section"><div class="section-hdr">Ptolemy Connection</div><div class="ptolemy-box"><div class="face-tag">⬡ Ptolemy Architecture</div><p><strong>Face:</strong> Archimedes</p><p style="margin-top:6px"><strong>Use:</strong> The Klein-Gordon equation is the model for how word meaning propagates through the semantic field. The mass term m² = inverse correlation length = how quickly a word's influence decays with semantic distance. High mass = local meaning. Zero mass = meaning propagates globally.</p></div></div>
 <div class="section"><div class="section-hdr">Common Mistakes</div><div class="mistake"><div class="m-label">MISTAKE 01</div>Trying to use Klein-Gordon for spin-½ particles — it gives negative probabilities for fermions. Use Dirac equation instead.</div><div class="mistake"><div class="m-label">MISTAKE 02</div>Confusing □ (d'Alembert: −∂t²+∇²) with Δ (Laplacian: +∂t²+∇² in Euclidean signature). Sign conventions matter.</div><div class="mistake"><div class="m-label">MISTAKE 03</div>Ignoring the iε prescription in the propagator — it determines causality (Feynman vs. retarded/advanced).</div></div>
 <div class="section"><div class="section-hdr">Cross-Links</div><div class="crosslinks"><a class="crosslink" href="dirac_equation.html">Dirac Equation →</a><a class="crosslink" href="yang_mills_equation.html">Yang-Mills Equation →</a><a class="crosslink" href="gauge_field.html">Gauge Field →</a><a class="crosslink" href="perturbation_series.html">Perturbation Series →</a></div></div>

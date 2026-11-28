@@ -19,9 +19,10 @@
 #   cd ContextPlease/claude/scratchpad && find . -type f \
 #     -not -path "*/__pycache__/*" -not -name "*.pyc" | sort
 #
-# Last regenerated: 2026-10-21
+# Last regenerated: 2026-11-28 (ContextPlease pass; added 2026-11-28_mirror_to_sdcard/ and the other session directories)
 
 - README.md
+- RHP_LOG_2026-11-07.md
 - migrate_datasets.sh
 
 2026-08-08_bracketing_and_null/
@@ -113,6 +114,8 @@
     README.md
     collatz_probe.py
 
+2026-08-22_barycenter_sigma/
+
 2026-08-22_fractal_decomp/
     README.md
     result.txt
@@ -130,6 +133,10 @@
 
 2026-08-22_parkour_orthogonal/
     README.md
+
+2026-08-22_pathway/
+
+2026-08-22_pathway_equals_i/
 
 2026-08-22_qm_gr_by_tree/
     README.md
@@ -300,6 +307,14 @@
     audit.py
     check_raises.py
     docedit.py
+    gen_class_docs.py
+    modules_todo.txt
+    noether_tools.before
+    rows.json
+    rstfix.py
+    sphinx2.log
+    sphinx3.log
+    stale.py
     edits/__main__.json
     edits/bao_mass_gap.json
     edits/c_cd.json
@@ -392,14 +407,6 @@
     edits/verify_install.json
     edits/w_wiles.json
     edits/zero_lattice.json
-    gen_class_docs.py
-    modules_todo.txt
-    noether_tools.before
-    rows.json
-    rstfix.py
-    sphinx2.log
-    sphinx3.log
-    stale.py
 
 2026-09-29_hyperindexing_code_read/
     README.md
@@ -426,8 +433,10 @@
     bench_layers.py
     bench_layers2.py
     bench_layers2_output_2026-09-29.txt
+    bench_layers2_output_2026-11-14.txt
     bench_layers_output_2026-09-29.txt
     bench_output_2026-09-29.txt
+    bench_output_2026-11-14.txt
     install_abstract.py
 
 2026-09-30_base_pi/
@@ -470,11 +479,11 @@
     README.md
     hyperindex.py
     make_json_perm.py
+    ptolemy_poc.py
+    run_poc.py
     out/run1.txt
     perm/ascii.perm
     perm/json.perm
-    ptolemy_poc.py
-    run_poc.py
 
 2026-10-02_three_layer_prototype/
     octonion_chain.py
@@ -590,17 +599,28 @@
     19_Dimensional_Scalar_WordNet_Context_Propagation_v4.0_2026-10-13.pdf
     README.md
     header.tex
+    paper_v4.0_rebuilt.pdf
+    pg-28.png
+    tex/log1.txt
+    tex/log2.txt
+    tex/paper.aux
+    tex/paper.log
+    tex/paper.pdf
+    tex/paper.tex
+    tex/paper.toc
 
 2026-10-13_portals_inventory_moving_kite/
     README.md
     common.py
     ders.npy
+    fibre_now_block.py
     g2decomp.py
     genealogy.py
     genealogy2.py
     invariants.py
     lambert3.py
     make_addendum.py
+    output_fibre_now_block.txt
     output_g2decomp.txt
     output_genealogy.txt
     output_genealogy2.txt
@@ -625,6 +645,8 @@
     output_struts.txt
     overlap.py
     struts.py
+
+2026-10-13_vapmip_abstract/
 
 2026-10-13_wsd_lesk_vs_ppr/
     README.md
@@ -675,6 +697,8 @@
     output_lyndon_chase.txt
     output_lyndon_chase2.txt
     output_matched_controls.txt
+    refs/Bernstein_Lagarias_conjugacy.pdf
+    refs/Bernstein_Lagarias_conjugacy.txt
 
 2026-10-14_poe_servo_ring/
     beam_geometry.py
@@ -798,13 +822,131 @@
     fp_triples.py
     mknb.py
 
+2026-11-04_bullet_inventory/
+    hst_products.csv
+    hst_query.py
+    validate.py
+    validate_BCData.csv
+    verify_hst.sh
+
+2026-11-04_he0435_perexposure/
+    measure.py
+    perexposure_products.csv
+
+2026-11-04_telescope_move/
+    move.sh
+    vla_fetch.sh
+
+2026-11-13_ainulindale_audit/
+    PROMPT_claudeai_twin_prime.md
+    jgreen_operator.py
+    output_jgreen_operator.txt
+    engine_runs/e02_gnarl_validator.out
+    engine_runs/e03_hermite_cam.out
+    engine_runs/e04_tia_similarity.out
+    engine_runs/e05_nball_transformer.out
+    engine_runs/e06_two_trees.out
+    engine_runs/e07_observer_fixed_point.out
+    engine_runs/e08_vortex_quantizing_shear.out
+    engine_runs/e09_j2_involution.out
+    engine_runs/e10_caustic_l_dynamic.out
+    engine_runs/e11_two_doublings.out
+    engine_runs/e12_index_not_value.out
+    engine_runs/e13_fermat_riemann_firing.out
+    engine_runs/e14_fermat_near_miss.out
+    engine_runs/e15_futurama_theorem.out
+    engine_runs/e16_penrose_swap.out
+    engine_runs/e17_hyperindexing.out
+
+2026-11-16_circle_atlas/
+    CONTEXT.md
+    WITCHES_HAT_NEEDS.md
+    exp1.py
+    exp2.py
+    make_notebook_catalog.py
+    make_scaffold.py
+    mknb.py
+    project_fixed_point_reframe.md
+    project_witch_hat_parent_paper.md
+    sweep.py
+    twin_wheels_COPY.py
+
+2026-11-17_drives/
+    sdc_full_read.log
+    sdc_full_read_part2.log
+    waiter.log
+
+2026-11-17_scaffold_gallery/
+    gallery.html
+    gallery_template.html
+    make_gallery.py
+
+2026-11-18_particle_views/
+    export_plane.py
+    l_io_graph.png
+    particle_views.html
+    render_plane.py
+    renders_plane2/sm_front.png
+    renders_plane2/sm_iso.png
+    renders_plane2/sm_side.png
+    renders_plane2/sm_top.png
+    renders_plane2/vap_front.png
+    renders_plane2/vap_iso.png
+    renders_plane2/vap_side.png
+    renders_plane2/vap_top.png
+
+2026-11-19_lagrangian_sm/
+    README.md
+    anomaly_chase.py
+    eikonal_check.py
+    em_flattenings.py
+    equation_space_counts.py
+    hbar_hat.py
+    length_time_figure.py
+    make_nb.py
+    make_nb_relativity.py
+    make_proof_locale.py
+    path_questions.py
+    planck_vs_native.py
+
+2026-11-20_9_maths_discoveries/
+    CONTEXT.md
+    transcript.txt
+
+2026-11-20_python_shadowing/
+    user_site_freeze.txt
+
+2026-11-20_telescope_inventory/
+    fits_pass2.csv
+    fits_verified.csv
+    merged.pkl
+    pass1_ok.pkl
+
+2026-11-28_mirror_to_sdcard/
+    contextplease_pass.sh
+    mirror_theplace.sh
+
 addition_matrix_sudoku/
     factor_search.py
+
+gl_header_options/
+    favicon.png
+    index.html
+    make_options.py
+    option1_vertical_dark.svg
+    option2_horizontal_light.svg
+    option3_radial_dark.svg
 
 spectral_primes/
     build_and_test.py
 
 youtube_AACwyjlk8ko/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+
+youtube_PWbfVcDcfFw/
     CONTEXT.md
     oembed.json
     transcript.json
@@ -816,12 +958,38 @@ youtube_Uvy5Cs9FDLg/
     transcript.json
     transcript.txt
 
-2026-11-16_circle_atlas/
+youtube_ZCu5KGpCl68/
     CONTEXT.md
-    mknb.py
-    sweep.py
+    oembed.json
+    transcript.json
+    transcript.txt
 
+youtube_Zg7xe8MkJHs/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
 
-2026-11-16 (pass 2): 2026-11-16_circle_atlas/{exp1,exp2}.py kite-spectrum/anchor experiments; make_notebook_catalog.py (NOTEBOOK_CATALOG.ipynb builder); twin_wheels_COPY.py
-- claude/scratchpad/2026-11-17_scaffold_gallery/ : gallery.html (interactive raw|false-colour viewer of every JWST scaffold; <base> points at FourthAgePapers worktree WitchesHat/scaffolds), make_gallery.py, gallery_template.html
-- claude/scratchpad/2026-11-18_particle_views/ : particle_views.html (the Witch's Hat three parts, SM vs VAPMIP Lagrangians, 8 stills + L_(I|O) graph), render_plane.py, export_plane.py
+youtube_kkfIXUjkYqE/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+
+youtube_qbsb9DpdZ6s/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+
+youtube_s86-Z-CbaHA/
+    oembed.json
+    transcript.json
+    transcript.txt
+
+youtube_sMZMpsHeFKc/
+    CONTEXT.md
+    oembed.json
+    transcript.json
+    transcript.txt
+

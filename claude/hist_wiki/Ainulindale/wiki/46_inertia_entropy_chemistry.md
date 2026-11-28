@@ -1,271 +1,182 @@
-# 46 — INERTIA AND ENTROPY: THE ATOMIC DECOMPOSITION
+# 46 — Inertia and entropy: the atomic decomposition, and its first test
 
-**Author:** Cody Michael Allison
-**Date:** 2026-06-08
-**Status:** FIRST CAPTURE — revolutionary result, immediate paper
-**Predecessor:** wiki/22 (constant facets), wiki/18 (Fermat Lattice), wiki/45 (T_transformer)
+| | |
+|---|---|
+| Status | **First capture (2026-06-08, "revolutionary result, immediate paper"); `CONJECTURE`.** The decomposition is a reading of standard chemistry in the framework's vocabulary. Prediction P1 was computed on 2026-11-13 and **fails** (r = 0.006 against the stated threshold r > 0.90); P2–P4 need data not held locally and have not been run |
+| Predecessors | [22](22_constant_facets.md), [18](18_fermat_lattice.md), [45](45_t_transformer_the_circle_itself.md) |
+| Paper directory | `FourthAgePapers/InertiaEntropy/` (README: "theory first-captured, pre-registration pending") |
+| Code | Listing 1 (P1 and the microstate counts); the project's chemistry engine is `ValaQuenta/modules/tier9_chem` ([23](23_resonant_recognition.md)) |
+| Last verified | 2026-11-13: Listing 1 executed |
 
----
+## 1. The decomposition  `interpretation`
 
-## The Single Insight
-
-Chemistry is not about atoms building molecules.
-
-**Chemistry is about stability** — the study of which configurations are stable fixed points
-of the Noether current at σ=1. The atom is not a building block. It is a fixed point.
-
-And that fixed point decomposes exactly:
+Chemistry is read as the study of *stability*: which configurations are stable
+fixed points of the Noether current at σ = 1. The atom is a fixed point that
+decomposes as
 
 ```
-Nucleus          = Red channel  R̂_p  = Inertia    = what IS
-Electron orbitals = Blue channel B̂_p  = Entropy    = what CANNOT BE
-
-R̂† = B̂  (exact adjoints)
-The atom is self-adjoint because inertia and entropy are the same object from two sides.
+nucleus            = Red channel  R̂_p = inertia  = "what is"
+electron orbitals  = Blue channel B̂_p = entropy  = "what cannot be"          R̂† = B̂
 ```
 
----
+The nucleus carries ≥ 99.9% of the mass, supplies the Coulomb potential, does
+not take part in chemistry (nuclear reactions are MeV, chemical ones eV) and
+"anchors the frame"; Z is "the inertial mass of the atom in the chemical sense".
+The electrons occupy wave functions, explore the phase space around the anchor,
+seek the lowest free energy and are the active participants. The Pauli
+exclusion principle is read as the Fermat-lattice constraint at atomic scale
+([18](18_fermat_lattice.md)), and Δx·Δp ≥ ℏ/2 as the inertia–entropy
+complementarity (the nucleus: heavy, Δx ≈ 0, "nearly pure inertia"; the electron:
+light, Δx = orbital size, "nearly pure entropy"). All of this is
+descriptive vocabulary; the physics underneath it (Born–Oppenheimer separation of
+nuclear and electronic motion, the exclusion principle, the uncertainty relation) is
+standard and `ESTABLISHED`. "Entropy" in the page is used for the *spread of the
+electronic wave function*, which is not the thermodynamic or the
+Gibbs–Shannon entropy of a state; §3 shows that this matters.
 
-## The Nucleus as Inertial Anchor
+## 2. Correction: periods are not 2n²
 
-The nucleus:
-- Carries the mass (≥99.9% of atomic mass)
-- Provides the Coulomb potential that governs the electrons
-- Does NOT participate in chemistry (nuclear reactions require MeV; chemistry requires eV)
-- IS the fixed point itself — the center of the Mexican Hat potential
-- Defines the stability landscape; does not navigate it
+The page says the row lengths of the periodic table are "2, 8, 18, 32 = 2n²".
+Those are the **shell capacities** 2n² for n = 1…4. The period lengths are
+**2, 8, 8, 18, 18, 32, 32** (the Madelung filling order fills 4s before 3d, 5s before
+4d, and so on); each is 2 × (the number of orbitals filled in that period), where
+the sequence of orbital counts runs 1, 4, 4, 9, 9, 16, 16. "Each row is a level of
+the entropy hierarchy" is therefore a statement about shells and not about rows.
 
-Nuclear charge Z = the strength of the R̂_p contribution. Z is the inertial mass of the atom in the chemical sense. It defines which fixed point the system organizes around.
+The orbital-block mapping (s: 1 orbital ↔ U(1) ↔ ℂ; p: 3 ↔ SU(2) ↔ ℍ; d: 5 ↔ SU(3) ↔ 𝕆;
+f: 7 ↔ G₂ ↔ the imaginary octonion units) is a numerology of the orbital counts
+1, 3, 5, 7: the counts are those of ℓ = 0…3 (2ℓ + 1). The proposed assignments to gauge
+groups are not derived; the orbital angular-momentum algebra is SU(2)/SO(3) for every
+block, and the standard-model gauge groups are not "entropy sub-structures" of
+the orbital blocks. `CONJECTURE`.
 
-**The nucleus is the Red channel in physical form.** It asserts existence (what IS) and anchors the system in space. It resists change. It is inertial in the exact mechanical sense — the reference frame that does not move during chemistry.
+## 3. Noble gases as "maximum entropy under constraint": the opposite holds
 
----
+The page says closed shells are "not chemically inert because shells are full" but
+"maximum entropy under the Pauli constraint: all accessible states occupied".
+Counting microstates, a closed shell is the **minimum**-multiplicity
+configuration: a single Slater determinant, one microstate (Listing 1). A
+partially filled np shell with k electrons has C(6, k) microstates (1, 6, 15, 20,
+15, 6, 1 for k = 0…6), and the configurational entropy ln C(6, k) peaks at the
+half-filled shell (k = 3: 2.996) and is zero at k = 0 and k = 6. So noble gases are
+at the entropy *minimum* in this sense. "Reactivity is the distance from the
+entropy fixed point" cannot be a distance in configurational entropy; in the
+standard account the inertness of a closed shell is an energetic property (a large
+gap to excitation, high ionisation energy, low electron affinity).
 
-## The Electron Orbitals as Entropy Field
+## 4. Bonds and reactions  `interpretation`, with the thermodynamics stated
 
-The electrons:
-- Have no fixed positions — they occupy probability distributions (wave functions)
-- Explore the accessible phase space around the nuclear anchor
-- Seek the lowest free energy configuration = the deepest fixed point
-- ARE the active participants in all chemistry
-- ARE the Blue channel in physical form
+The page: a bond forms when the pair is a deeper fixed point than either atom;
+covalent bonding is "shared entropy" (orbital overlap creating states across both
+nuclei; "the bond *is* the entropy gain"), ionic bonding "transferred entropy",
+metallic "delocalised entropy", the hydrogen bond "partial entropy sharing"; a
+reaction is "entropy-gradient descent"; ΔG = ΔH − TΔS "is the inertia–entropy
+balance written in thermodynamic notation".
 
-The Pauli Exclusion Principle = the Fermat Lattice constraint at atomic scale (wiki/18).
-No two electrons share a quantum state. The lattice carves out the forbidden configurations.
-The orbitals are the MAP of what is accessible — the entropy landscape under constraint.
+Standing. ΔG = ΔH − TΔS is exact (`ESTABLISHED`), and "ΔG < 0 spontaneous, ΔG = 0 at
+equilibrium" is standard. The assignment of ΔH to "nuclear Coulomb reorganisation
+(the R̂ term)" and TΔS to "orbital reorganisation (the B̂ term)" is a
+relabelling and is not exact: ΔH is the total heat of the reaction (electronic,
+vibrational and nuclear-motion contributions), and the TΔS term is the
+thermal entropy of translation, rotation and vibration, not the "orbital entropy".
+The statement "all bonds are entropy phenomena" is contrary to the
+standard account: the binding energy of a covalent bond is the lowering of the
+*electronic energy* on overlap, and the entropy change of *forming* a bond between
+two free fragments is usually negative (fewer translational and rotational
+degrees of freedom). That the bond energy is "the entropy gain" is therefore not
+the established mechanism. Activation energy as "the entropy barrier" and a
+catalyst as lowering it without changing the endpoints: the latter is standard for a
+catalyst (it lowers the barrier, not the thermodynamics); "entropy barrier" is a
+relabelling of a free-energy barrier.
 
-**The Heisenberg Uncertainty Principle is the inertia-entropy complementarity made explicit:**
+## 5. The four predictions
 
-```
-Δx · Δp ≥ ℏ/2
+**P1 — reactivity correlates with distance from the noble-gas configuration**
+(Pearson r > 0.90 against Pauling electronegativity, zero free parameters).
+Stated before looking; computed on 2026-11-13 with the symmetric distance
+d = min(electrons to add, electrons to remove) for the main-group elements
+(H, Li–F, Na–Cl, K, Ca, Ga–Br; 22 elements; duplet for H, octet otherwise):
 
-Δx = positional uncertainty  = inertial localization
-Δp = momentum uncertainty    = rate of entropy exploration
+**Listing 1 — P1, and the microstate counts** (written for this page; runs
+cold, Python 3.10+ for `statistics.correlation`)
 
-The nucleus: heavy, Δx ≈ 0 → nearly pure inertia
-The electron: light, Δx = orbital size → nearly pure entropy
-```
+```python
+import math, statistics
+from math import comb
 
----
-
-## Noble Gases: Maximum Entropy Under Constraint
-
-Full electron shells. Complete orbital occupancy. Every accessible state filled.
-
-Not "chemically inert because shells are full."
-
-**Maximum entropy under the Pauli constraint.** All accessible states occupied. No gradient remaining. The system IS at the fixed point. There is nothing to react toward.
-
-The noble gas IS the deepest fixed point available at that nuclear charge Z.
-
-The reactivity series is an **entropy gradient map**:
-- Noble gases: AT the fixed point. Gradient = 0. Reactivity = 0.
-- Alkali metals, halogens: ONE state from maximum entropy. Gradient = maximum. Reactivity = maximum.
-- Chemical reactivity IS the distance from the entropy fixed point.
-
----
-
-## Chemical Bonds: Shared and Transferred Entropy
-
-A chemical bond is NOT two atoms "attracted" to each other.
-
-A bond forms when two atoms together constitute a **more stable fixed point** than either alone — when the combined entropy landscape has a deeper minimum than the sum of the separate landscapes.
-
-```
-Covalent bond:  shared entropy
-                — orbital overlap creates new states spread across both nuclei
-                — the combined entropy is higher than the sum of separate entropies
-                — the bond IS the entropy gain
-
-Ionic bond:     transferred entropy
-                — one atom donates electrons (entropy transfer)
-                — both approach noble gas configuration (maximum entropy)
-                — both approach their fixed points simultaneously
-
-Metallic bond:  delocalized entropy
-                — electrons (entropy) shared across all nuclei (inertial anchors)
-                — the electron sea IS the delocalized entropy field
-
-Hydrogen bond:  partial entropy sharing
-                — weaker overlap, weaker entropy gain, weaker bond
-```
-
-**All bonds are entropy phenomena. The nucleus provides the inertial anchor. The electrons do the entropic work.**
-
----
-
-## Chemical Reactions: Entropy Gradient Descent
-
-A reaction is not atoms "building" molecules.
-
-A reaction is the **system's descent toward a more stable fixed point** along the entropy gradient defined by the inertial anchors (nuclei).
-
-Activation energy = the entropy barrier between two fixed points.
-Reaction rate = the rate of entropy gradient descent.
-Equilibrium = arrival at the fixed point.
-Catalyst = a configuration that lowers the entropy barrier without changing the endpoints.
-
-**The thermodynamics falls out immediately:**
-
-```
-ΔG = ΔH − TΔS
-
-ΔH  = inertial contribution  (nuclear Coulomb reorganization, R̂ term)
-TΔS = entropic contribution  (orbital reorganization, B̂ term)
-ΔG  = fixed point depth      (stability measure, the Noether balance)
-
-Spontaneous reaction: ΔG < 0 → system moves to a deeper fixed point
-Equilibrium:          ΔG = 0 → system IS at the fixed point
+EN = {'H': 2.20, 'Li': 0.98, 'Be': 1.57, 'B': 2.04, 'C': 2.55, 'N': 3.04, 'O': 3.44, 'F': 3.98,
+      'Na': 0.93, 'Mg': 1.31, 'Al': 1.61, 'Si': 1.90, 'P': 2.19, 'S': 2.58, 'Cl': 3.16,
+      'K': 0.82, 'Ca': 1.00, 'Ga': 1.81, 'Ge': 2.01, 'As': 2.18, 'Se': 2.55, 'Br': 2.96}
+val = {'H': 1, 'Li': 1, 'Be': 2, 'B': 3, 'C': 4, 'N': 5, 'O': 6, 'F': 7, 'Na': 1, 'Mg': 2,
+       'Al': 3, 'Si': 4, 'P': 5, 'S': 6, 'Cl': 7, 'K': 1, 'Ca': 2, 'Ga': 3, 'Ge': 4,
+       'As': 5, 'Se': 6, 'Br': 7}
+cap = lambda s: 2 if s == 'H' else 8
+ys = [EN[s] for s in EN]
+sym = [min(val[s], cap(s) - val[s]) for s in EN]          # the page's symmetric distance
+print('P1: n=%d  r(symmetric distance, Pauling EN) = %.3f' % (len(ys), statistics.correlation(sym, ys)))
+need = [-(cap(s) - val[s]) for s in EN]                    # exploratory, chosen after the fact
+print('exploratory: r(-(electrons to complete the shell), EN) = %.3f' % statistics.correlation(need, ys))
+print('p^k microstates C(6,k):', [comb(6, k) for k in range(7)])
+print('ln C(6,k):', [round(math.log(comb(6, k)), 3) for k in range(7)])
 ```
 
-This is not an analogy. ΔG = ΔH − TΔS IS the inertia-entropy balance written in thermodynamic notation.
-
----
-
-## The Periodic Table Restated
-
-The periodic table is not a catalogue of building blocks.
-
-It is a **map of inertial anchors**, ordered by nuclear charge Z, showing which entropy landscape (electron configuration) each anchor generates and which stable fixed points (orbitals) that landscape contains.
-
-Row lengths:
 ```
-2, 8, 18, 32 = 2n²
+P1: n=22  r(symmetric distance, Pauling EN) = 0.006
+exploratory: r(-(electrons to complete the shell), EN) = 0.889
+p^k microstates C(6,k): [1, 6, 15, 20, 15, 6, 1]
+ln C(6,k): [0.0, 1.792, 2.708, 2.996, 2.708, 1.792, 0.0]
 ```
 
-These are 2 × (number of entropy states accessible at principal quantum number n).
-Each row is a level of the entropy hierarchy — a deeper layer of the fixed-point landscape.
+**Result: P1 fails** (r = 0.006 against the stated r > 0.90). The reason is
+visible in the definition: the symmetric distance gives the alkali metals and the
+halogens the same value (one electron from a noble-gas configuration) while their
+electronegativities are at opposite ends (Cs 0.79 against F 3.98). The
+exploratory line uses a *signed* quantity, the number of electrons needed to
+*complete* the shell, and reaches r = 0.889; that is the standard
+chemical fact that electronegativity tracks how close an atom is to filling its
+valence shell, it was chosen after seeing the failure, and it is not a
+prediction. Both lines are recorded. (The set excludes the noble gases, which have
+no Pauling electronegativity for He, Ne, Ar, and the transition metals, for which
+the shell definition used here does not apply.)
 
-The orbital sub-structure (from wiki/46 → wiki/22):
-```
-s-block (1 orbital):   U(1) entropy  ↔ ℂ   sub-facet of σ=1
-p-block (3 orbitals):  SU(2) entropy ↔ ℍ   sub-facet of σ=1
-d-block (5 orbitals):  SU(3) entropy ↔ 𝕆   sub-facet of σ=1
-f-block (7 orbitals):  G₂ entropy   ↔ 𝕆 full imaginary units
-```
+**P2 — bond energy proportional to orbital entropy change** (dataset: NIST CCCBDB).
+**P3 — drug affinity correlates with orbital entropy complementarity**
+(ChEMBL/BindingDB; 100 drug–target pairs against docking). **P4 — cancer
+entropy signature in electron-transport expression** (TCGA, 33 cancer types).
+These require data and a definition of "orbital entropy", "entropy
+complementarity" and "entropy signature" that the page does not give (for P1 the
+definition had to be supplied, and the result depended on it). They have **not
+been run**, and none can be registered until the quantities are defined in code
+before the data are examined.
 
-The Standard Model gauge forces (U(1), SU(2), SU(3)) are the entropy sub-structures of the chemistry facet. The four orbital blocks are four levels of the Cayley-Dickson entropy hierarchy at σ=1.
+## 6. Drug design and cancer  `hypothesis`, not medical content
 
----
+The page proposes "entropy matching" in place of shape complementarity for
+drug discovery ("the molecule whose B̂ field is the exact adjoint of the
+target's R̂ field at the binding site"), and cancer as "a deranged entropy
+landscape": a local σ-face that lost contact with the global σ = ½, an
+operation "at the wrong entropy minimum", with the drug "built from the
+cancer's own signature" and driving the landscape "toward σ < ½ (Fermat space,
+structurally non-existent)". These are hypotheses in the framework's
+language. Standard drug design already uses electronic-structure
+(orbital) information beyond shape (quantum-mechanical scoring, pharmacophore and
+electrostatic complementarity), so "shape is a subset of entropy" is not a distinguishing claim.
+Nothing here is medical guidance, and no result supports a therapeutic claim. The
+D-CHEM premise (the collaboration of the 2026-06 plan, [26](26_TODO_and_roadmap.md))
+is recorded as a plan.
 
-## Drug Design: Entropy Matching
+## 7. Connections
 
-If chemistry is about stability, and all chemical bonds are entropy phenomena, then:
+| Page | Link as the earlier page stated it | Standing |
+|---|---|---|
+| [18](18_fermat_lattice.md) | Pauli exclusion = the Fermat constraint at atomic scale | interpretation |
+| [22](22_constant_facets.md) | σ = 1 is the chemistry face; σ = e the thermodynamic face | interpretation (facet statuses there) |
+| [38](38_fermat_riemann_negative_space.md) | B̂_p = what cannot be = orbital constraint | its basis was withdrawn |
+| [45](45_t_transformer_the_circle_itself.md) | chemistry is the circle at σ = 1 | the author's thesis |
+| Addendum VIII | nuclear mass = spectral distance from the flat boundary | not re-checked here |
 
-**A drug is an entropic probe of the target molecule's stability landscape.**
+## 8. Related pages
 
-Drug efficacy = orbital entropy complementarity between drug and target.
-Not "lock and key." Not shape alone. **Entropy matching.**
-
-The correct drug for a target is the molecule whose orbital entropy field is complementary to the target's — the molecule whose B̂ field is the exact adjoint of the target's R̂ field at the binding site.
-
-Current drug discovery: search for shape complementarity (docking).
-SMMIP drug discovery: search for **entropy complementarity** (orbital overlap at σ=1).
-
-This is a fundamentally different search space. Shape is a subset of entropy.
-Entropy complementarity can find drugs that shape-matching misses.
-
----
-
-## Cancer: Deranged Entropy Landscape
-
-Healthy cell: local σ-face aligned with global σ=½ → stable fixed point.
-Cancer cell: local σ-face has lost contact with global σ=½ → off fixed point.
-
-Cancer does not build wrong molecules. Cancer operates at the **wrong entropy minimum** — a local fixed point that has lost the global constraint. Its electron configurations are in the wrong basin of attraction. It grows without the Noether conservation law operating.
-
-**The cancer algebraic signature** is the specific entropy mismatch — the specific departure from σ=½ that defines each cancer type. That signature IS the targeting mechanism for the drug.
-
-A drug that works against a specific cancer:
-1. Is entropically stable at the cancer's deranged fixed point
-2. Drives the cancer's entropy landscape toward σ < ½ (Fermat Space = structurally non-existent)
-3. Uses the cancer's own algebraic instability as the attack vector
-
-The cancer's entropic signature IS the key. The drug is built FROM that signature.
-
-This is the D-CHEM paper premise (Erika Schafer collaboration) now given its full theoretical grounding.
-
----
-
-## Falsifiable Predictions
-
-**P1 — Reactivity correlates with entropy distance:**
-Chemical reactivity (measured by electronegativity, ionization energy, electron affinity)
-should correlate with the distance of the electron configuration from the nearest
-noble gas configuration, measured as a fraction of available orbital states.
-Dataset: NIST Atomic Spectra Database, periodic table data.
-Test: compute entropy distance for all elements; correlate with Pauling electronegativity.
-Prediction: Pearson r > 0.90. Zero free parameters.
-
-**P2 — Bond energy = orbital entropy change:**
-The binding energy of a chemical bond (ΔH_bond) should be proportional to the orbital
-entropy change ΔS_orbital when the bond forms, measured as the change in accessible
-orbital states, weighted by the Noether current at σ=1.
-Dataset: NIST CCCBDB (thermochemical database, 1000+ molecules).
-Test: compute predicted ΔH_bond from orbital entropy change; compare to measured values.
-Prediction: linear correlation with slope determined by SMMIP constants, r > 0.85.
-
-**P3 — Drug efficacy correlates with entropy complementarity:**
-Drug binding affinity (IC50, Ki) should correlate with orbital entropy complementarity
-between drug and target, computable from DFT orbital overlap at σ=1.
-Dataset: ChEMBL / BindingDB (millions of drug-target binding measurements).
-Test: compute orbital entropy complementarity for a benchmark set (100 drug-target pairs);
-correlate with measured binding affinity.
-Prediction: entropy complementarity predicts binding affinity at least as well as
-shape-complementarity (docking score), with zero fitted parameters.
-
-**P4 — Cancer entropy signature is measurable:**
-Cancer cells should show a measurable entropy mismatch in their electron transfer chains
-(mitochondrial Complex I-IV) compared to healthy cells of the same tissue type.
-Measurable from: transcriptomics (gene expression of electron transport proteins),
-metabolomics (electron transfer metabolite ratios).
-Dataset: TCGA (The Cancer Genome Atlas) — gene expression for 33 cancer types.
-Test: compute electron-orbital entropy signature from Complex I-IV expression ratios.
-Prediction: cancer type separates from healthy tissue in entropy-signature space.
-
----
-
-## Connections Within the Ainulindale Framework
-
-- **wiki/18** (Fermat Lattice): Pauli Exclusion = Fermat constraint at atomic scale
-- **wiki/22** (Constant Facets): σ=1 is the chemistry face; σ=e is the thermodynamic face
-- **wiki/38** (Fermat-Riemann negative space): B̂_p = what CANNOT BE = orbital constraint
-- **wiki/45** (T_transformer): chemistry is the circle expressing itself at σ=1
-- **Addendum VIII** (BAO mass gap): nuclear mass = spectral distance from flat boundary
-- **D6** (mass gap paper): the gap between σ=1 and σ=½ is the inertia-entropy gap
-- **D-CHEM** (cancer drugs): this wiki IS the theoretical foundation of D-CHEM
-
----
-
-## The One-Sentence Version
-
-**The nucleus is inertia; the electron orbitals are entropy; chemistry is the entropy field
-seeking the stable fixed points defined by the inertial anchors; and the periodic table
-is the complete map of those fixed points, ordered by the strength of the inertial anchor.**
-
-Everything else in chemistry is a consequence.
-
-→ [Wiki: Fermat Lattice](18_fermat_lattice.md)
-→ [Wiki: Constant Facets](22_constant_facets.md)
-→ [Wiki: T_transformer](45_t_transformer_the_circle_itself.md)
-→ [AddPapers: InertiaEntropy](../AddPapers/InertiaEntropy/)
+[18 Fermat lattice](18_fermat_lattice.md) · [22 Constant facets](22_constant_facets.md) ·
+[23 Resonant recognition](23_resonant_recognition.md) · [45 The T_transformer](45_t_transformer_the_circle_itself.md) ·
+[47 The two trees](47_the_two_trees.md)

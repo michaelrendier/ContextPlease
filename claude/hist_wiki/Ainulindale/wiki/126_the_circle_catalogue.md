@@ -17,8 +17,12 @@ Cody, 2026-10-15, looking at a card of six magnetism graphs: the six are **six d
 - **Imaginary circle.** d = 2iρ, C = 2πiρ, A = −πρ², C² = 4πA exactly. The laws of sines and cosines keep their form (homogeneous); every degree-2 quantity flips sign; Heron's 16A² is unchanged and its square-root branch is the Sign. A sphere of radius iρ is the hyperbolic plane: area ρ²(π − A − B − C), the angle deficit. The Gaussian ∫exp(−r²/R²) = πR² diverges at R = i (−π is the continuation); at R² = i it is Fresnel, value iπ.
 - **Dipole → normal.** U = −MB cosθ is a cosine well; e^(κcosθ) is von Mises; sd(θ) → 1/√κ, kurtosis → 0 — a normal distribution in the limit; many dipoles → CLT; von Mises is max-entropy at fixed ⟨cos⟩.
 - **Wire ↔ Mandelbrot ↔ gravity.** One flux law in n dimensions; the inversion fold is exact only at n = 2; the wire profile is the multiplier map c(μ) = μ/2 − μ²/4 with fold μ → 1/μ̄; the cardioid has area 3π/8 and perimeter 4.
-- **Fast inverse square root.** The bit trick is a scale ×(−½) in u = ln x; near the unit circle one Newton step 1/r ≈ (3 − r²)/2 is cheaper (error ≈ 3ε²/8) but only there. Ω/(4π) matching the optimal magic σ to 0.22 % is a weak coincidence.
+- **Fast inverse square root.** The bit trick is a scale ×(−½) in u = ln x; near the unit circle one Newton step 1/√x ≈ (3 − x)/2 with x = 1 + ε is cheaper (error ≈ 3ε²/8, measured 3.72×10⁻⁵ at ε = 0.01 against 3.75×10⁻⁵) but only there. **Correction kept:** the page formerly wrote 1/r ≈ (3 − r²)/2 with ε undefined; in r = 1 + ε the error is 3ε²/2, and 3ε²/8 holds only for ε = r² − 1. Ω/(4π) matching the optimal magic σ to 0.22 % is a weak coincidence.
 - **The seventh circle.** ℓ_p: π_p = π_q for 1/p + 1/q = 1; π₂ = π is the minimum; π₁ = π_∞ = 4; areas differ across a dual pair. Integer p ≥ 3 is the Fermat curve.
+
+## Verification, 2026-11-13  `ESTABLISHED` (re-run)
+
+The engine's own `verify()` returns `ok: True` (27 self-checks). Independently: the half-radius identity holds to 1.4×10⁻¹⁶ over 0 ≤ x ≤ 2π; the cardioid c(μ) = μ/2 − μ²/4 on |μ| = 1 has area 1.1780972451 (3π/8 = 1.1780972451) and perimeter 3.999999999996 (4); π_p by arc length gives π₂ = 3.14159265358, π_1.5 = 3.25976799289 and π₃ = 3.25976799304 (equal to 1.6×10⁻¹⁰, the quadrature error), consistent with π_p = π_q for 1/p + 1/q = 1. Ω/(4π) = 0.04513183; the "weak coincidence" label stays.
 
 ## Honest boundaries
 
