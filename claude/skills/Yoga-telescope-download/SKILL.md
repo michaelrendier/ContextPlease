@@ -82,6 +82,9 @@ systemctl --user stop tdl-<target>      # SIGTERM -> the downloader saves state 
 ```
 It survives Claude Code exiting and has a memory cap, a log and a name. Watch it from a session with Monitor on `journalctl --user -u tdl-<target> -f` or the STATE `.status` file. Record every disowned unit's name in the target's `already_evaluated/` README so the next session can find it. (`run_download.sh`: pass "" as the mount on internal disk; the guard is then omitted. Fixed 2026-11-28.)
 
+## 2e. Look entries up by the FULL dest path (learned 2026-11-28)
+JWST level-3 basenames repeat across programs (`jw01939-o001_t001_nircam_clear-f212n_i2d.fits` and `jw09257-o001_t001_nircam_clear-f212n_i2d.fits` differ only in the program number). A lookup by basename or substring returned program 1939's 1.66 GB size for program 9257's 14.0 GB file and raised a false anomaly. Key manifest and state records by the complete `dest` path, never by a name fragment.
+
 ## 3. Notifications (how the 15-minute updates reach Cody)
 A script cannot call Claude's tools. Run the download with `run_in_background`, then watch its stdout with the Monitor tool (each `[status]` line wakes the session and gets relayed). Optionally call PushNotification. This only works while the session is open; the STATE `.status` file is the fallback to read later.
 

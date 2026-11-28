@@ -444,3 +444,22 @@ export BIN_MATHS_OLD="$PTORRENT_BINS/dirty/monad_mathematics.bin"   # POISONED, 
 export BIN_PHYSICS_OLD="$PTORRENT_BINS/dirty/monad_physics.bin"   # POISONED, moved to dirty 2026-10-17; new sanitised bin: BIN_PHYSICS_NEW
 # others in $PTORRENT_BINS/clean: monad_english(36.7M) englishwordnet foundations meaning python c war sedenion, phone_* (adb pulls); dirty/: wordnet (POLLUTED, PDF OCR), sedenion burn stages, phone_20260601_*
 # the fetched page TEXT behind these bins was not found on disk (2026-10-17); re-fetch needs the Mozilla UA rule.
+
+# ── ANDROID SDK (Yoga, 2026-11-28) — command-line suite only, no IDE ─────────────────────────────────────────────
+# Installed: platforms 35/34/28, build-tools 35.0.0/34.0.0, NDK 27.2.12479018, CMake 3.22.1/3.18.1, platform-tools,
+# emulator + system-images;android-35;google_apis;x86_64 (KVM: rendier is in group kvm). Versions from PTorrent's gradle files
+# (compileSdk 35, AGP 8.2.2, Gradle 8.2, ndkVersion 27.2.12479018). sdkmanager is deprecated in cmdline-tools 23 in favour of `android sdk`.
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export ANDROID_NDK_HOME="$ANDROID_HOME/ndk/27.2.12479018"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+case ":$PATH:" in *":$ANDROID_HOME/platform-tools:"*) ;; *) export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH";; esac
+export PTOLEMY_SEEDER_APKS="$HOME/Android/apks/PtolemySeeder"      # README.md there; current.apk = phone's v9.0 (2026-11-28)
+
+# ── IDENTITY (from the X1's ~/.bashrc, 2026-11-28; public value, also in the repository READMEs) ─────────────────────
+# The variable name is misspelled "ORCHID" ON PURPOSE (the code reads it): never correct it. Only its value is ever front-facing.
+export ORCHID_ID="0009-0007-7239-6760"
+export PTOL_RESEARCHER_ORCID="$ORCHID_ID"
+
+# ── LEAN (Yoga, 2026-11-28): elan installed with --no-modify-path, so ~/.bashrc and ~/.profile are untouched; PATH from here.
+[ -f "$HOME/.elan/env" ] && . "$HOME/.elan/env"
