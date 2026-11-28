@@ -19,6 +19,7 @@ case "${1:-run}" in
   status) echo "done entries: $(wc -l < "$DONE")"; tail -n 5 "$LOG" 2>/dev/null; df -h "$DST" | tail -1
           [ -f "$PIDF" ] && kill -0 "$(cat "$PIDF")" 2>/dev/null && echo "running (pid $(cat "$PIDF"))" || echo "not running"; exit 0 ;;
   start)  nohup "$0" run >/dev/null 2>&1 & echo "started; $0 status"; exit 0 ;;
+  resync) : > "$DONE"; echo "resync: every entry is checked again (rsync copies only what changed since the first pass)" ;;
   verify) note "verify: dry-run comparison (names, sizes, mtimes) of $SRC against $DST"
           ionice -c3 nice -n 19 rsync -ain --no-inc-recursive "$SRC/" "$DST/" 2>&1 | grep -v '^\.d' | tee -a "$LOG" | head -40
           note "verify finished: any line above is a difference (nothing above = identical)"; exit 0 ;;
