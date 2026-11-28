@@ -29,7 +29,7 @@ Prints JWST programs and filters on the target, polarizer filters in MAST, and N
 
 ## 2. Download: `telescope_download.py`
 ```
-python3 telescope_download.py MANIFEST.json --state STATE.json [--min-free-gb 5] [--notify-secs 900]
+python3 telescope_download.py MANIFEST.json --state STATE.json [--min-free-gb 5] [--notify-secs 900] [--max-mbps 40]
 ```
 MANIFEST = list of `{"url","dest","size"?,"sha256"?}`. MAST file URL: `https://mast.stsci.edu/api/v0.1/Download/file?uri=<dataURI>`.
 - Streams in 8 MB chunks (memory bounded), writes `.part`, `os.replace` on success, sha256 recorded in STATE.
@@ -39,6 +39,8 @@ MANIFEST = list of `{"url","dest","size"?,"sha256"?}`. MAST file URL: `https://m
 - Status line every `--notify-secs` (default 900 s = 15 min) to stdout and `STATE.json.status`.
 - `TELESCOPE_DPRINT=1` turns on the dPrint feed.
 - Tested 2026-10-20 on a small file: full fetch, then truncated `.part` resume, identical bytes.
+
+`--max-mbps N` (added 2026-11-27) caps the average rate in megabit/s: use it, with `run_download.sh` (nice, ionice idle), whenever the machine is in use (Cody watching video). For NRAO request products (directory index + SHA1SUMS, per-request keys) there is also `BulletCluster/pending/nrao_downloads/crab_fetch/nrao_fetch.py` with `fetch_crab.sh`, tested against the live GBT links.
 
 ### 2b. Fault tolerance (added 2026-11-14, after the 2026-11-13/14 incidents)
 Incidents that taught it: an older SATA drive fell and was not unmounted; the USB 3 controller died on resume from a lid-close suspend (`xhci_hcd: HC died`), taking the drive with it; `gvfsd-google` (the desktop's Google-Drive mount) was OOM-killed three times, once at 5 GB resident; the machine did not reboot (up 5 days), it suspended and its USB bus reset.
