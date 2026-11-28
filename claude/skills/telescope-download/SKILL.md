@@ -29,7 +29,7 @@ Prints JWST programs and filters on the target, polarizer filters in MAST, and N
 
 ## 2. Download: `telescope_download.py`
 ```
-python3 telescope_download.py MANIFEST.json --state STATE.json [--min-free-gb 5] [--notify-secs 900] [--max-mbps 40]
+python3 telescope_download.py MANIFEST.json --state STATE.json [--min-free-gb 5] [--notify-secs 900] [--max-mbps 40] [--trust-server-size]
 ```
 MANIFEST = list of `{"url","dest","size"?,"sha256"?}`. MAST file URL: `https://mast.stsci.edu/api/v0.1/Download/file?uri=<dataURI>`.
 - Streams in 8 MB chunks (memory bounded), writes `.part`, `os.replace` on success, sha256 recorded in STATE.

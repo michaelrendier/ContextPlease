@@ -28,6 +28,7 @@ import argparse, hashlib, http.client, json, os, resource, shutil, signal, socke
 UA = os.environ.get("CLAUDE_UA") or ("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                                      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 CHUNK = 8 * 1024 * 1024          # never hold more than one chunk in memory
+TRUST_SIZE = False               # --trust-server-size: a manifest size that disagrees with the server's Content-Length is replaced (and logged), not fatal
 MAX_BPS = 0                      # --max-mbps: polite rate limit in bytes/second (0 = none)
 SLEEP_GAP = 60                   # seconds between chunks that means the machine slept
 TAIL_REWIND = 16 * 1024 * 1024   # bytes of a .part to discard and re-fetch after an interrupted run
@@ -163,6 +164,8 @@ def fetch_one(item, prog, min_free):
         if have and resp.status == 200:         # server ignored Range: start over
             have = 0; dp("have", have)
         total = have + int(resp.headers.get("Content-Length", 0))
+        if TRUST_SIZE and total and item.get("size") and total != item["size"]:
+            print(f"[size-fix] {os.path.basename(dest)}: manifest {item['size']} -> served {total}", flush=True); item["size"] = total
         if total and shutil.disk_usage(os.path.dirname(os.path.abspath(dest))).free < (total - have) + min_free:
             raise OSError(f"free-space guard: need {(total-have)/1e9:.2f} GB + {min_free/1e9:.1f} GB spare")
         last = time.monotonic(); t_file, got_file = time.monotonic(), 0
@@ -202,7 +205,7 @@ def fetch_one(item, prog, min_free):
 
 
 def main():
-    global MAX_BPS
+    global MAX_BPS, TRUST_SIZE
     ap = argparse.ArgumentParser()
     ap.add_argument("manifest"); ap.add_argument("--state", required=True)
     ap.add_argument("--min-free-gb", type=float, default=5.0)
@@ -210,10 +213,11 @@ def main():
     ap.add_argument("--retries", type=int, default=8)
     ap.add_argument("--require-mount", default=None, help="wait (never write) while this path is not a mount point")
     ap.add_argument("--max-mem-mb", type=int, default=1536, help="cap on address space (RLIMIT_AS); 0 = no cap")
+    ap.add_argument("--trust-server-size", action="store_true", help="use the server Content-Length when it differs from the manifest size (MAST product lists are often stale)")
     ap.add_argument("--max-mbps", type=float, default=0.0, help="rate limit in megabit/s (0 = none); use on a machine in use")
     ap.add_argument("--pause-file", default=None, help="while this file exists the run pauses (default STATE.json.PAUSE)")
     a = ap.parse_args()
-    MAX_BPS = int(a.max_mbps * 125000)
+    MAX_BPS = int(a.max_mbps * 125000); TRUST_SIZE = a.trust_server_size
     OPTS["require_mount"] = a.require_mount; OPTS["pause_file"] = a.pause_file or (a.state + ".PAUSE")
     if a.max_mem_mb:
         try: resource.setrlimit(resource.RLIMIT_AS, (a.max_mem_mb * 1024 * 1024, resource.RLIM_INFINITY))
